@@ -1,0 +1,1258 @@
+{
+  "season": "e1",
+  "command": "submission-diagnostics",
+  "evidence": {
+    "model_id": "engram-learned-pairs-e1",
+    "source_hashes_verified": true,
+    "lookup_benchmark_pass": true,
+    "lookup_benchmark_actual": -0.2553681574168317,
+    "heldout_prediction_reproduced": false,
+    "bangla_human_validation": false,
+    "full_layout_admitted": false,
+    "stage2_comfort_selection": "withheld",
+    "status": "partial_supported_pair_diagnostic",
+    "reason": "Missing key/layer/hand conditions and independent predictive validation.",
+    "source": {
+      "version": "engram-pair-source-v1",
+      "model_id": "engram-learned-pairs-e1",
+      "repository": "https://github.com/binarybottle/keyboard_layout_scorers",
+      "commit": "179e1c08b220ae1b02f6c425a7d1cbd1150c1db2",
+      "author": "Arno Klein",
+      "license": "MIT",
+      "paper": "https://doi.org/10.1080/10447318.2026.2665409",
+      "learning_repository": "https://github.com/binarybottle/typing_preferences_to_comfort_scores",
+      "learning_commit": "d8978d4ba8f81cd39c96ac2f8f2b730ed608a148",
+      "files": [
+        {
+          "file": "pair-scores.csv",
+          "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/prep/input/comfort_keypair_scores_24keys.csv",
+          "sha256": "3451d01bbcdddd45e50565cacfaf763d1ba262bba31507942a0dace4d7753003"
+        },
+        {
+          "file": "LICENSE",
+          "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/LICENSE",
+          "sha256": "b18be44d20a08a5acc1e1324438fab645ef0afaa94b8589a9ad489bef3f5256b"
+        },
+        {
+          "file": "lookup-benchmark.json",
+          "sha256": "10adf6ea882e609e270b4d3c166de6fd7769cca4ecc76c44d22a224f0cdbc0e4"
+        }
+      ],
+      "expected_pairs": 288,
+      "score_direction": "higher",
+      "score_meaning": "Source-distributed predicted key-pair preference latent scores; not milliseconds or comfort percentages.",
+      "supported_layers": [
+        "base"
+      ],
+      "fingering": "traditional ANSI",
+      "source_table_status": "Predicted-score input distributed with the scorer. Fit/derivation not independently replicated.",
+      "heldout_prediction_reproduced": false,
+      "bangla_human_validation": false,
+      "full_layout_admitted": false,
+      "limitations": [
+        "Only same-hand pairs in two 12-key blocks. Right-hand values reflect the source symmetry assumption.",
+        "Central keys T G B Y H N, cross-hand pairs, digits, Shift/chords and spaces lack table support.",
+        "Source rule-generated full tables are deliberately excluded.",
+        "Per-pair uncertainty lacks joint covariance; no layout confidence interval is inferred.",
+        "Exact estimated_bigram_scores.csv fitting output and held-out predictive results are not pinned here."
+      ],
+      "use": "Supported-pair diagnostic only; no comfort ranking, Pareto selection or replacement recommendation."
+    }
+  },
+  "official_data_version": "bangla-dh-challenge-v1",
+  "official_data_sha256": "2388d17bd9f375763eff19eac4dc2d4397d62c1f28d574d2597d414febb55b0a",
+  "submissions": [
+    {
+      "file": "D-reference.json",
+      "name": "Bangla-DH D reference",
+      "style": "D",
+      "layout_sha256": "5642cc695d29dd6a6bc1e6e1a735a411cf9cc8674eb1697be16c981f2162113a",
+      "official": {
+        "name": "Bangla-DH D reference",
+        "style": "D",
+        "valid": true,
+        "problems": [],
+        "script_version": "1.1.0",
+        "data_version": "bangla-dh-challenge-v1",
+        "data_sha256": "2388d17bd9f375763eff19eac4dc2d4397d62c1f28d574d2597d414febb55b0a",
+        "layout_sha256": "5642cc695d29dd6a6bc1e6e1a735a411cf9cc8674eb1697be16c981f2162113a",
+        "J1": 1.808795895,
+        "J1_exact": "20267423295525455061841/11204925526983059080000",
+        "reference_J1": 1.808795895,
+        "difference_vs_reference_percent": 0.0,
+        "beats_reference": false,
+        "parts": {
+          "E1 (key effort)": 1.493596,
+          "M (Shift)": 0.277898,
+          "same finger": 0.04959,
+          "neighbour penalty": 0.007995,
+          "neighbour benefit": -0.020284
+        },
+        "ergonomics": {
+          "same-finger bigrams (% of key pairs)": 2.380637275753191,
+          "Shift presses (% of keystrokes)": 8.772451262622308,
+          "left / right hand (%)": [
+            54.506218435420166,
+            45.493781564579834
+          ],
+          "rows (% of keystrokes)": {
+            "number": 1.7738676490336198,
+            "top": 21.818252578328405,
+            "home": 54.695665978594846,
+            "bottom": 21.712213794043127
+          },
+          "fingers (% of keystrokes)": {
+            "left pinky": 5.761795335474581,
+            "left ring": 9.41369771616133,
+            "left middle": 15.087818398759108,
+            "left index": 24.242906985025144,
+            "right index": 20.043100274342788,
+            "right middle": 13.663304390357961,
+            "right ring": 9.913441000887808,
+            "right pinky": 1.8739358989912795
+          }
+        },
+        "held_out": {
+          "J1": {
+            "unseenNews": 1.783031,
+            "wikipedia": 1.834823,
+            "newspaper": 1.782223
+          },
+          "average": 1.800026,
+          "public_rank": 1,
+          "public_layouts": 8,
+          "ahead_of_you": []
+        }
+      },
+      "scores": [
+        {
+          "corpus": "bnwiki/train",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5471765030388527,
+            "J1": 1.8350547252590808,
+            "E1": 1.5118575892980184,
+            "E2": 0.03531891374083423,
+            "M": 0.2878782222202282,
+            "E2_same_finger": 0.04735789297507561,
+            "E2_neighbour_penalty": 0.007905054098991112,
+            "E2_neighbour_benefit": -0.019944033333232497
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 334032927,
+            "keystrokes_per_non_space_unit": 1.0019264456436434,
+            "escaped_unit_share": 0.0002251431287616566,
+            "escaped_units": 87894,
+            "outside_inventory_count": 1898416,
+            "shift_share_of_non_space_presses": 0.09183129721819311,
+            "non_space_pair_count": 275751211,
+            "same_physical_key_repeat_count": 2181733,
+            "same_finger_different_key_count": 5735393,
+            "cross_hand_pair_count": 147598018,
+            "same_finger_different_key_per_unit": 0.014691381945271623,
+            "same_finger_center_distance_u_per_unit": 0.01838096697748153,
+            "finger_presses_excluding_modifiers": {
+              "0": 19946061,
+              "1": 29881707,
+              "2": 50590013,
+              "3": 79330964,
+              "6": 66505298,
+              "7": 45641420,
+              "8": 36460361,
+              "9": 5677103
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5369058217303511,
+            "direction": "higher",
+            "supported_pair_count": 58428203,
+            "non_space_pair_count": 275751211,
+            "supported_pair_share": 0.21188738496600837,
+            "unsupported_pair_counts": {
+              "different_fingering": 29725603,
+              "no_source_pair": 140111880,
+              "unsupported_layer": 47485525
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bnwiki/train",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.7420560832967742,
+            "J1": 2.030339588960585,
+            "E1": 1.5973250261444032,
+            "E2": 0.1447310571523709,
+            "M": 0.2882835056638108,
+            "E2_same_finger": 0.14789399920097165,
+            "E2_neighbour_penalty": 0.012146205141405419,
+            "E2_neighbour_benefit": -0.015309147190006187
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 334032927,
+            "keystrokes_per_non_space_unit": 1.0019264456436434,
+            "escaped_unit_share": 0.0002251431287616566,
+            "escaped_units": 87894,
+            "outside_inventory_count": 1898416,
+            "shift_share_of_non_space_presses": 0.09183129721819311,
+            "non_space_pair_count": 275751211,
+            "same_physical_key_repeat_count": 2181733,
+            "same_finger_different_key_count": 18363223,
+            "cross_hand_pair_count": 145871644,
+            "same_finger_different_key_per_unit": 0.04703794889717176,
+            "same_finger_center_distance_u_per_unit": 0.059701148732693825,
+            "finger_presses_excluding_modifiers": {
+              "0": 24852654,
+              "1": 33699707,
+              "2": 66710911,
+              "3": 56966113,
+              "6": 64024658,
+              "7": 44301410,
+              "8": 36094264,
+              "9": 7383210
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6826287727265423,
+            "direction": "higher",
+            "supported_pair_count": 88153806,
+            "non_space_pair_count": 275751211,
+            "supported_pair_share": 0.31968601581227507,
+            "unsupported_pair_counts": {
+              "no_source_pair": 140111880,
+              "unsupported_layer": 47485525
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/train",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5146197892891986,
+            "J1": 1.7825370644799248,
+            "E1": 1.4753352340316932,
+            "E2": 0.03928455525750532,
+            "M": 0.2679172751907261,
+            "E2_same_finger": 0.051822009396702284,
+            "E2_neighbour_penalty": 0.008085923032297656,
+            "E2_neighbour_benefit": -0.020623377171494622
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 609333226,
+            "keystrokes_per_non_space_unit": 1.0025975898568746,
+            "escaped_unit_share": 0.00028239946314528896,
+            "escaped_units": 202634,
+            "outside_inventory_count": 1103520,
+            "shift_share_of_non_space_presses": 0.08547319722230279,
+            "non_space_pair_count": 498876338,
+            "same_physical_key_repeat_count": 4060357,
+            "same_finger_different_key_count": 11534344,
+            "cross_hand_pair_count": 260443949,
+            "same_finger_different_key_per_unit": 0.016074758201156197,
+            "same_finger_center_distance_u_per_unit": 0.02009005266079603,
+            "finger_presses_excluding_modifiers": {
+              "0": 34408766,
+              "1": 58923931,
+              "2": 91743359,
+              "3": 149368415,
+              "6": 122574526,
+              "7": 83253569,
+              "8": 57059686,
+              "9": 12000974
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5385138721135906,
+            "direction": "higher",
+            "supported_pair_count": 116297000,
+            "non_space_pair_count": 498876338,
+            "supported_pair_share": 0.23311789143224507,
+            "unsupported_pair_counts": {
+              "different_fingering": 49203082,
+              "no_source_pair": 249396991,
+              "unsupported_layer": 83979265
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/train",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.6797591496530166,
+            "J1": 1.9481737141398867,
+            "E1": 1.547390070782901,
+            "E2": 0.13236907887011568,
+            "M": 0.2684145644868701,
+            "E2_same_finger": 0.13745486152214387,
+            "E2_neighbour_penalty": 0.011335050980723535,
+            "E2_neighbour_benefit": -0.016420833632751732
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 609333226,
+            "keystrokes_per_non_space_unit": 1.0025975898568746,
+            "escaped_unit_share": 0.00028239946314528896,
+            "escaped_units": 202634,
+            "outside_inventory_count": 1103520,
+            "shift_share_of_non_space_presses": 0.08547319722230279,
+            "non_space_pair_count": 498876338,
+            "same_physical_key_repeat_count": 4060357,
+            "same_finger_different_key_count": 31492701,
+            "cross_hand_pair_count": 257041568,
+            "same_finger_different_key_per_unit": 0.04388958346277083,
+            "same_finger_center_distance_u_per_unit": 0.055825616656653795,
+            "finger_presses_excluding_modifiers": {
+              "0": 43449511,
+              "1": 67211648,
+              "2": 110946177,
+              "3": 118238173,
+              "6": 117173488,
+              "7": 82367666,
+              "8": 56350629,
+              "9": 13595934
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6661679556548644,
+            "direction": "higher",
+            "supported_pair_count": 165500082,
+            "non_space_pair_count": 498876338,
+            "supported_pair_share": 0.3317457040826819,
+            "unsupported_pair_counts": {
+              "no_source_pair": 249396991,
+              "unsupported_layer": 83979265
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bnwiki/heldout",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5470552672223614,
+            "J1": 1.8348230650448563,
+            "E1": 1.5116298841731177,
+            "E2": 0.035425383049243746,
+            "M": 0.2877677978224949,
+            "E2_same_finger": 0.04743348417818654,
+            "E2_neighbour_penalty": 0.007941510119371125,
+            "E2_neighbour_benefit": -0.019949611248313914
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 37987403,
+            "keystrokes_per_non_space_unit": 1.001979486582158,
+            "escaped_unit_share": 0.0002107960609499565,
+            "escaped_units": 9357,
+            "outside_inventory_count": 221005,
+            "shift_share_of_non_space_presses": 0.09180954012570956,
+            "non_space_pair_count": 31369404,
+            "same_physical_key_repeat_count": 247463,
+            "same_finger_different_key_count": 653816,
+            "cross_hand_pair_count": 16796602,
+            "same_finger_different_key_per_unit": 0.014729276198146495,
+            "same_finger_center_distance_u_per_unit": 0.018379381298286323,
+            "finger_presses_excluding_modifiers": {
+              "0": 2272155,
+              "1": 3396599,
+              "2": 5746904,
+              "3": 9018208,
+              "6": 7555016,
+              "7": 5184936,
+              "8": 4162581,
+              "9": 651004
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5370946464654961,
+            "direction": "higher",
+            "supported_pair_count": 6650403,
+            "non_space_pair_count": 31369404,
+            "supported_pair_share": 0.21200284838054304,
+            "unsupported_pair_counts": {
+              "different_fingering": 3381994,
+              "no_source_pair": 15939538,
+              "unsupported_layer": 5397469
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bnwiki/heldout",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.7416594357537556,
+            "J1": 2.0298366421312095,
+            "E1": 1.5970225171564718,
+            "E2": 0.14463691859728367,
+            "M": 0.2881772063774538,
+            "E2_same_finger": 0.14783252560467008,
+            "E2_neighbour_penalty": 0.012116966244357394,
+            "E2_neighbour_benefit": -0.015312573251743825
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 37987403,
+            "keystrokes_per_non_space_unit": 1.001979486582158,
+            "escaped_unit_share": 0.0002107960609499565,
+            "escaped_units": 9357,
+            "outside_inventory_count": 221005,
+            "shift_share_of_non_space_presses": 0.09180954012570956,
+            "non_space_pair_count": 31369404,
+            "same_physical_key_repeat_count": 247463,
+            "same_finger_different_key_count": 2087576,
+            "cross_hand_pair_count": 16605339,
+            "same_finger_different_key_per_unit": 0.047029261273235694,
+            "same_finger_center_distance_u_per_unit": 0.059624706836840936,
+            "finger_presses_excluding_modifiers": {
+              "0": 2829018,
+              "1": 3832580,
+              "2": 7577388,
+              "3": 6474823,
+              "6": 7275073,
+              "7": 5034065,
+              "8": 4118446,
+              "9": 846010
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6826768294847819,
+            "direction": "higher",
+            "supported_pair_count": 10032397,
+            "non_space_pair_count": 31369404,
+            "supported_pair_share": 0.319814715000642,
+            "unsupported_pair_counts": {
+              "no_source_pair": 15939538,
+              "unsupported_layer": 5397469
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/heldout",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5141367516190127,
+            "J1": 1.7822231857586557,
+            "E1": 1.4750212241449248,
+            "E2": 0.039115527474087974,
+            "M": 0.26808643413964284,
+            "E2_same_finger": 0.05167784114651535,
+            "E2_neighbour_penalty": 0.008050629250556265,
+            "E2_neighbour_benefit": -0.020612942922983647
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 67972578,
+            "keystrokes_per_non_space_unit": 1.002598426518547,
+            "escaped_unit_share": 0.00027817404582304274,
+            "escaped_units": 22265,
+            "outside_inventory_count": 125391,
+            "shift_share_of_non_space_presses": 0.0855249892096192,
+            "non_space_pair_count": 55655147,
+            "same_physical_key_repeat_count": 450432,
+            "same_finger_different_key_count": 1283505,
+            "cross_hand_pair_count": 29070509,
+            "same_finger_different_key_per_unit": 0.016035831065982685,
+            "same_finger_center_distance_u_per_unit": 0.020032034256522422,
+            "finger_presses_excluding_modifiers": {
+              "0": 3844004,
+              "1": 6572001,
+              "2": 10222273,
+              "3": 16667310,
+              "6": 13676763,
+              "7": 9288323,
+              "8": 6366115,
+              "9": 1335789
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5384007204762836,
+            "direction": "higher",
+            "supported_pair_count": 12963301,
+            "non_space_pair_count": 55655147,
+            "supported_pair_share": 0.2329218715386737,
+            "unsupported_pair_counts": {
+              "different_fingering": 5480831,
+              "no_source_pair": 27836767,
+              "unsupported_layer": 9374248
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/heldout",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.6795146877226528,
+            "J1": 1.9480950266056072,
+            "E1": 1.5470255034019187,
+            "E2": 0.13248918432073398,
+            "M": 0.26858033888295446,
+            "E2_same_finger": 0.13761468073303215,
+            "E2_neighbour_penalty": 0.011295006942669461,
+            "E2_neighbour_benefit": -0.016420503354967645
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 67972578,
+            "keystrokes_per_non_space_unit": 1.002598426518547,
+            "escaped_unit_share": 0.00027817404582304274,
+            "escaped_units": 22265,
+            "outside_inventory_count": 125391,
+            "shift_share_of_non_space_presses": 0.0855249892096192,
+            "non_space_pair_count": 55655147,
+            "same_physical_key_repeat_count": 450432,
+            "same_finger_different_key_count": 3516807,
+            "cross_hand_pair_count": 28689460,
+            "same_finger_different_key_per_unit": 0.04393821835027161,
+            "same_finger_center_distance_u_per_unit": 0.05591145568432835,
+            "finger_presses_excluding_modifiers": {
+              "0": 4851620,
+              "1": 7490015,
+              "2": 12378558,
+              "3": 13191259,
+              "6": 13070899,
+              "7": 9191319,
+              "8": 6289492,
+              "9": 1509416
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6659822851880992,
+            "direction": "higher",
+            "supported_pair_count": 18444132,
+            "non_space_pair_count": 55655147,
+            "supported_pair_share": 0.3314002925910878,
+            "unsupported_pair_counts": {
+              "no_source_pair": 27836767,
+              "unsupported_layer": 9374248
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bard-novel/heldout",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5204333522460243,
+            "J1": 1.7830314132595748,
+            "E1": 1.481814860533085,
+            "E2": 0.03861849171293939,
+            "M": 0.2625980610135505,
+            "E2_same_finger": 0.051494045636641034,
+            "E2_neighbour_penalty": 0.007957525684707057,
+            "E2_neighbour_benefit": -0.0208330796084087
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 6139623,
+            "keystrokes_per_non_space_unit": 1.002595804809718,
+            "escaped_unit_share": 0.00024232753166729802,
+            "escaped_units": 1747,
+            "outside_inventory_count": 4396,
+            "shift_share_of_non_space_presses": 0.08349926371700672,
+            "non_space_pair_count": 5038653,
+            "same_physical_key_repeat_count": 41094,
+            "same_finger_different_key_count": 114959,
+            "cross_hand_pair_count": 2625662,
+            "same_finger_different_key_per_unit": 0.01594603933196389,
+            "same_finger_center_distance_u_per_unit": 0.01992452802470849,
+            "finger_presses_excluding_modifiers": {
+              "0": 348447,
+              "1": 594935,
+              "2": 936478,
+              "3": 1500868,
+              "6": 1234176,
+              "7": 832819,
+              "8": 572883,
+              "9": 119017
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5404955315937553,
+            "direction": "higher",
+            "supported_pair_count": 1177368,
+            "non_space_pair_count": 5038653,
+            "supported_pair_share": 0.23366721224898798,
+            "unsupported_pair_counts": {
+              "different_fingering": 501218,
+              "no_source_pair": 2530268,
+              "unsupported_layer": 829799
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bard-novel/heldout",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.688091217369461,
+            "J1": 1.951118168858319,
+            "E1": 1.5550007756578326,
+            "E2": 0.1330904417116286,
+            "M": 0.2630269514888578,
+            "E2_same_finger": 0.13817739179839902,
+            "E2_neighbour_penalty": 0.01146819551712099,
+            "E2_neighbour_benefit": -0.01655514560389144
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 6139623,
+            "keystrokes_per_non_space_unit": 1.002595804809718,
+            "escaped_unit_share": 0.00024232753166729802,
+            "escaped_units": 1747,
+            "outside_inventory_count": 4396,
+            "shift_share_of_non_space_presses": 0.08349926371700672,
+            "non_space_pair_count": 5038653,
+            "same_physical_key_repeat_count": 41094,
+            "same_finger_different_key_count": 317803,
+            "cross_hand_pair_count": 2591485,
+            "same_finger_different_key_per_unit": 0.04408266545304082,
+            "same_finger_center_distance_u_per_unit": 0.0561308576679664,
+            "finger_presses_excluding_modifiers": {
+              "0": 440815,
+              "1": 677866,
+              "2": 1132451,
+              "3": 1183784,
+              "6": 1179988,
+              "7": 823173,
+              "8": 565151,
+              "9": 136395
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6685637232706163,
+            "direction": "higher",
+            "supported_pair_count": 1678586,
+            "non_space_pair_count": 5038653,
+            "supported_pair_share": 0.33314181389351477,
+            "unsupported_pair_counts": {
+              "no_source_pair": 2530268,
+              "unsupported_layer": 829799
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "style": "D",
+      "name": "Kala Jhor",
+      "scores": [
+        {
+          "corpus": "bnwiki/train",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5471765030388527,
+            "J1": 1.8350547252590808,
+            "E1": 1.5118575892980184,
+            "E2": 0.03531891374083423,
+            "M": 0.2878782222202282,
+            "E2_same_finger": 0.04735789297507561,
+            "E2_neighbour_penalty": 0.007905054098991112,
+            "E2_neighbour_benefit": -0.019944033333232497
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 334032927,
+            "keystrokes_per_non_space_unit": 1.0019264456436434,
+            "escaped_unit_share": 0.0002251431287616566,
+            "escaped_units": 87894,
+            "outside_inventory_count": 1898416,
+            "shift_share_of_non_space_presses": 0.09183129721819311,
+            "non_space_pair_count": 275751211,
+            "same_physical_key_repeat_count": 2181733,
+            "same_finger_different_key_count": 5735393,
+            "cross_hand_pair_count": 147598018,
+            "same_finger_different_key_per_unit": 0.014691381945271623,
+            "same_finger_center_distance_u_per_unit": 0.01838096697748153,
+            "finger_presses_excluding_modifiers": {
+              "0": 19946061,
+              "1": 29881707,
+              "2": 50590013,
+              "3": 79330964,
+              "6": 66505298,
+              "7": 45641420,
+              "8": 36460361,
+              "9": 5677103
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5369058217303511,
+            "direction": "higher",
+            "supported_pair_count": 58428203,
+            "non_space_pair_count": 275751211,
+            "supported_pair_share": 0.21188738496600837,
+            "unsupported_pair_counts": {
+              "different_fingering": 29725603,
+              "no_source_pair": 140111880,
+              "unsupported_layer": 47485525
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bnwiki/train",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.7420560832967742,
+            "J1": 2.030339588960585,
+            "E1": 1.5973250261444032,
+            "E2": 0.1447310571523709,
+            "M": 0.2882835056638108,
+            "E2_same_finger": 0.14789399920097165,
+            "E2_neighbour_penalty": 0.012146205141405419,
+            "E2_neighbour_benefit": -0.015309147190006187
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 334032927,
+            "keystrokes_per_non_space_unit": 1.0019264456436434,
+            "escaped_unit_share": 0.0002251431287616566,
+            "escaped_units": 87894,
+            "outside_inventory_count": 1898416,
+            "shift_share_of_non_space_presses": 0.09183129721819311,
+            "non_space_pair_count": 275751211,
+            "same_physical_key_repeat_count": 2181733,
+            "same_finger_different_key_count": 18363223,
+            "cross_hand_pair_count": 145871644,
+            "same_finger_different_key_per_unit": 0.04703794889717176,
+            "same_finger_center_distance_u_per_unit": 0.059701148732693825,
+            "finger_presses_excluding_modifiers": {
+              "0": 24852654,
+              "1": 33699707,
+              "2": 66710911,
+              "3": 56966113,
+              "6": 64024658,
+              "7": 44301410,
+              "8": 36094264,
+              "9": 7383210
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6826287727265423,
+            "direction": "higher",
+            "supported_pair_count": 88153806,
+            "non_space_pair_count": 275751211,
+            "supported_pair_share": 0.31968601581227507,
+            "unsupported_pair_counts": {
+              "no_source_pair": 140111880,
+              "unsupported_layer": 47485525
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/train",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5146197892891986,
+            "J1": 1.7825370644799248,
+            "E1": 1.4753352340316932,
+            "E2": 0.03928455525750532,
+            "M": 0.2679172751907261,
+            "E2_same_finger": 0.051822009396702284,
+            "E2_neighbour_penalty": 0.008085923032297656,
+            "E2_neighbour_benefit": -0.020623377171494622
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 609333226,
+            "keystrokes_per_non_space_unit": 1.0025975898568746,
+            "escaped_unit_share": 0.00028239946314528896,
+            "escaped_units": 202634,
+            "outside_inventory_count": 1103520,
+            "shift_share_of_non_space_presses": 0.08547319722230279,
+            "non_space_pair_count": 498876338,
+            "same_physical_key_repeat_count": 4060357,
+            "same_finger_different_key_count": 11534344,
+            "cross_hand_pair_count": 260443949,
+            "same_finger_different_key_per_unit": 0.016074758201156197,
+            "same_finger_center_distance_u_per_unit": 0.02009005266079603,
+            "finger_presses_excluding_modifiers": {
+              "0": 34408766,
+              "1": 58923931,
+              "2": 91743359,
+              "3": 149368415,
+              "6": 122574526,
+              "7": 83253569,
+              "8": 57059686,
+              "9": 12000974
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5385138721135906,
+            "direction": "higher",
+            "supported_pair_count": 116297000,
+            "non_space_pair_count": 498876338,
+            "supported_pair_share": 0.23311789143224507,
+            "unsupported_pair_counts": {
+              "different_fingering": 49203082,
+              "no_source_pair": 249396991,
+              "unsupported_layer": 83979265
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/train",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.6797591496530166,
+            "J1": 1.9481737141398867,
+            "E1": 1.547390070782901,
+            "E2": 0.13236907887011568,
+            "M": 0.2684145644868701,
+            "E2_same_finger": 0.13745486152214387,
+            "E2_neighbour_penalty": 0.011335050980723535,
+            "E2_neighbour_benefit": -0.016420833632751732
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 609333226,
+            "keystrokes_per_non_space_unit": 1.0025975898568746,
+            "escaped_unit_share": 0.00028239946314528896,
+            "escaped_units": 202634,
+            "outside_inventory_count": 1103520,
+            "shift_share_of_non_space_presses": 0.08547319722230279,
+            "non_space_pair_count": 498876338,
+            "same_physical_key_repeat_count": 4060357,
+            "same_finger_different_key_count": 31492701,
+            "cross_hand_pair_count": 257041568,
+            "same_finger_different_key_per_unit": 0.04388958346277083,
+            "same_finger_center_distance_u_per_unit": 0.055825616656653795,
+            "finger_presses_excluding_modifiers": {
+              "0": 43449511,
+              "1": 67211648,
+              "2": 110946177,
+              "3": 118238173,
+              "6": 117173488,
+              "7": 82367666,
+              "8": 56350629,
+              "9": 13595934
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6661679556548644,
+            "direction": "higher",
+            "supported_pair_count": 165500082,
+            "non_space_pair_count": 498876338,
+            "supported_pair_share": 0.3317457040826819,
+            "unsupported_pair_counts": {
+              "no_source_pair": 249396991,
+              "unsupported_layer": 83979265
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bnwiki/heldout",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5470552672223614,
+            "J1": 1.8348230650448563,
+            "E1": 1.5116298841731177,
+            "E2": 0.035425383049243746,
+            "M": 0.2877677978224949,
+            "E2_same_finger": 0.04743348417818654,
+            "E2_neighbour_penalty": 0.007941510119371125,
+            "E2_neighbour_benefit": -0.019949611248313914
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 37987403,
+            "keystrokes_per_non_space_unit": 1.001979486582158,
+            "escaped_unit_share": 0.0002107960609499565,
+            "escaped_units": 9357,
+            "outside_inventory_count": 221005,
+            "shift_share_of_non_space_presses": 0.09180954012570956,
+            "non_space_pair_count": 31369404,
+            "same_physical_key_repeat_count": 247463,
+            "same_finger_different_key_count": 653816,
+            "cross_hand_pair_count": 16796602,
+            "same_finger_different_key_per_unit": 0.014729276198146495,
+            "same_finger_center_distance_u_per_unit": 0.018379381298286323,
+            "finger_presses_excluding_modifiers": {
+              "0": 2272155,
+              "1": 3396599,
+              "2": 5746904,
+              "3": 9018208,
+              "6": 7555016,
+              "7": 5184936,
+              "8": 4162581,
+              "9": 651004
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5370946464654961,
+            "direction": "higher",
+            "supported_pair_count": 6650403,
+            "non_space_pair_count": 31369404,
+            "supported_pair_share": 0.21200284838054304,
+            "unsupported_pair_counts": {
+              "different_fingering": 3381994,
+              "no_source_pair": 15939538,
+              "unsupported_layer": 5397469
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bnwiki/heldout",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.7416594357537556,
+            "J1": 2.0298366421312095,
+            "E1": 1.5970225171564718,
+            "E2": 0.14463691859728367,
+            "M": 0.2881772063774538,
+            "E2_same_finger": 0.14783252560467008,
+            "E2_neighbour_penalty": 0.012116966244357394,
+            "E2_neighbour_benefit": -0.015312573251743825
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 37987403,
+            "keystrokes_per_non_space_unit": 1.001979486582158,
+            "escaped_unit_share": 0.0002107960609499565,
+            "escaped_units": 9357,
+            "outside_inventory_count": 221005,
+            "shift_share_of_non_space_presses": 0.09180954012570956,
+            "non_space_pair_count": 31369404,
+            "same_physical_key_repeat_count": 247463,
+            "same_finger_different_key_count": 2087576,
+            "cross_hand_pair_count": 16605339,
+            "same_finger_different_key_per_unit": 0.047029261273235694,
+            "same_finger_center_distance_u_per_unit": 0.059624706836840936,
+            "finger_presses_excluding_modifiers": {
+              "0": 2829018,
+              "1": 3832580,
+              "2": 7577388,
+              "3": 6474823,
+              "6": 7275073,
+              "7": 5034065,
+              "8": 4118446,
+              "9": 846010
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6826768294847819,
+            "direction": "higher",
+            "supported_pair_count": 10032397,
+            "non_space_pair_count": 31369404,
+            "supported_pair_share": 0.319814715000642,
+            "unsupported_pair_counts": {
+              "no_source_pair": 15939538,
+              "unsupported_layer": 5397469
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/heldout",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5141367516190127,
+            "J1": 1.7822231857586557,
+            "E1": 1.4750212241449248,
+            "E2": 0.039115527474087974,
+            "M": 0.26808643413964284,
+            "E2_same_finger": 0.05167784114651535,
+            "E2_neighbour_penalty": 0.008050629250556265,
+            "E2_neighbour_benefit": -0.020612942922983647
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 67972578,
+            "keystrokes_per_non_space_unit": 1.002598426518547,
+            "escaped_unit_share": 0.00027817404582304274,
+            "escaped_units": 22265,
+            "outside_inventory_count": 125391,
+            "shift_share_of_non_space_presses": 0.0855249892096192,
+            "non_space_pair_count": 55655147,
+            "same_physical_key_repeat_count": 450432,
+            "same_finger_different_key_count": 1283505,
+            "cross_hand_pair_count": 29070509,
+            "same_finger_different_key_per_unit": 0.016035831065982685,
+            "same_finger_center_distance_u_per_unit": 0.020032034256522422,
+            "finger_presses_excluding_modifiers": {
+              "0": 3844004,
+              "1": 6572001,
+              "2": 10222273,
+              "3": 16667310,
+              "6": 13676763,
+              "7": 9288323,
+              "8": 6366115,
+              "9": 1335789
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5384007204762836,
+            "direction": "higher",
+            "supported_pair_count": 12963301,
+            "non_space_pair_count": 55655147,
+            "supported_pair_share": 0.2329218715386737,
+            "unsupported_pair_counts": {
+              "different_fingering": 5480831,
+              "no_source_pair": 27836767,
+              "unsupported_layer": 9374248
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "newspaper/heldout",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.6795146877226528,
+            "J1": 1.9480950266056072,
+            "E1": 1.5470255034019187,
+            "E2": 0.13248918432073398,
+            "M": 0.26858033888295446,
+            "E2_same_finger": 0.13761468073303215,
+            "E2_neighbour_penalty": 0.011295006942669461,
+            "E2_neighbour_benefit": -0.016420503354967645
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 67972578,
+            "keystrokes_per_non_space_unit": 1.002598426518547,
+            "escaped_unit_share": 0.00027817404582304274,
+            "escaped_units": 22265,
+            "outside_inventory_count": 125391,
+            "shift_share_of_non_space_presses": 0.0855249892096192,
+            "non_space_pair_count": 55655147,
+            "same_physical_key_repeat_count": 450432,
+            "same_finger_different_key_count": 3516807,
+            "cross_hand_pair_count": 28689460,
+            "same_finger_different_key_per_unit": 0.04393821835027161,
+            "same_finger_center_distance_u_per_unit": 0.05591145568432835,
+            "finger_presses_excluding_modifiers": {
+              "0": 4851620,
+              "1": 7490015,
+              "2": 12378558,
+              "3": 13191259,
+              "6": 13070899,
+              "7": 9191319,
+              "8": 6289492,
+              "9": 1509416
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6659822851880992,
+            "direction": "higher",
+            "supported_pair_count": 18444132,
+            "non_space_pair_count": 55655147,
+            "supported_pair_share": 0.3314002925910878,
+            "unsupported_pair_counts": {
+              "no_source_pair": 27836767,
+              "unsupported_layer": 9374248
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bard-novel/heldout",
+          "scenario": "model-optimal",
+          "reference": {
+            "J0": 1.5204333522460243,
+            "J1": 1.7830314132595748,
+            "E1": 1.481814860533085,
+            "E2": 0.03861849171293939,
+            "M": 0.2625980610135505,
+            "E2_same_finger": 0.051494045636641034,
+            "E2_neighbour_penalty": 0.007957525684707057,
+            "E2_neighbour_benefit": -0.0208330796084087
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 6139623,
+            "keystrokes_per_non_space_unit": 1.002595804809718,
+            "escaped_unit_share": 0.00024232753166729802,
+            "escaped_units": 1747,
+            "outside_inventory_count": 4396,
+            "shift_share_of_non_space_presses": 0.08349926371700672,
+            "non_space_pair_count": 5038653,
+            "same_physical_key_repeat_count": 41094,
+            "same_finger_different_key_count": 114959,
+            "cross_hand_pair_count": 2625662,
+            "same_finger_different_key_per_unit": 0.01594603933196389,
+            "same_finger_center_distance_u_per_unit": 0.01992452802470849,
+            "finger_presses_excluding_modifiers": {
+              "0": 348447,
+              "1": 594935,
+              "2": 936478,
+              "3": 1500868,
+              "6": 1234176,
+              "7": 832819,
+              "8": 572883,
+              "9": 119017
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.5404955315937553,
+            "direction": "higher",
+            "supported_pair_count": 1177368,
+            "non_space_pair_count": 5038653,
+            "supported_pair_share": 0.23366721224898798,
+            "unsupported_pair_counts": {
+              "different_fingering": 501218,
+              "no_source_pair": 2530268,
+              "unsupported_layer": 829799
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        },
+        {
+          "corpus": "bard-novel/heldout",
+          "scenario": "traditional",
+          "reference": {
+            "J0": 1.688091217369461,
+            "J1": 1.951118168858319,
+            "E1": 1.5550007756578326,
+            "E2": 0.1330904417116286,
+            "M": 0.2630269514888578,
+            "E2_same_finger": 0.13817739179839902,
+            "E2_neighbour_penalty": 0.01146819551712099,
+            "E2_neighbour_benefit": -0.01655514560389144
+          },
+          "diagnostics": {
+            "keystrokes_excluding_space": 6139623,
+            "keystrokes_per_non_space_unit": 1.002595804809718,
+            "escaped_unit_share": 0.00024232753166729802,
+            "escaped_units": 1747,
+            "outside_inventory_count": 4396,
+            "shift_share_of_non_space_presses": 0.08349926371700672,
+            "non_space_pair_count": 5038653,
+            "same_physical_key_repeat_count": 41094,
+            "same_finger_different_key_count": 317803,
+            "cross_hand_pair_count": 2591485,
+            "same_finger_different_key_per_unit": 0.04408266545304082,
+            "same_finger_center_distance_u_per_unit": 0.0561308576679664,
+            "finger_presses_excluding_modifiers": {
+              "0": 440815,
+              "1": 677866,
+              "2": 1132451,
+              "3": 1183784,
+              "6": 1179988,
+              "7": 823173,
+              "8": 565151,
+              "9": 136395
+            },
+            "round_trip_token_types": 0
+          },
+          "preference": {
+            "status": "partial_supported_pair_diagnostic",
+            "full_layout_score": null,
+            "ranking_allowed": false,
+            "conditional_pair_preference": -0.6685637232706163,
+            "direction": "higher",
+            "supported_pair_count": 1678586,
+            "non_space_pair_count": 5038653,
+            "supported_pair_share": 0.33314181389351477,
+            "unsupported_pair_counts": {
+              "no_source_pair": 2530268,
+              "unsupported_layer": 829799
+            },
+            "joint_uncertainty": null,
+            "warning": "Conditional mean over a layout-dependent subset; not a comparable full-layout comfort score."
+          }
+        }
+      ]
+    }
+  ],
+  "problems": [],
+  "comfort_rank": null,
+  "ranking_effect": "none",
+  "checks": {
+    "source_lookup": true,
+    "evaluated_submission_count": 1,
+    "official_integer_and_action_scores_agree": true,
+    "scientific_inputs_outputs_byte_identical": true
+  }
+}

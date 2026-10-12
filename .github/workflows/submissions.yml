@@ -29,12 +29,42 @@ jobs:
       - uses: actions/setup-python@v6.0.0
         with:
           python-version: '3.12'
-      - name: Score the changed files
+      - name: Score the changed files and attach optional diagnostics
+        env:
+          CHALLENGE_BASE_REF: ${{ github.base_ref }}
         run: |
-          files=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD -- 'submissions/*.json' | grep -v 'leaderboard.json' || true)
-          if [ -z "$files" ]; then echo "No layout files changed."; exit 0; fi
-          python -m bangla_dh leaderboard --check $files | tee scores.txt
-          { echo '### Scores'; echo; echo '```text'; cat scores.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          python - <<'PY'
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          changed = subprocess.check_output([
+              "git", "diff", "--name-only", "-z", "--diff-filter=AM",
+              f"origin/{os.environ['CHALLENGE_BASE_REF']}...HEAD", "--", "submissions/*.json",
+          ]).decode("utf-8").split("\0")
+          files = [p for p in changed if p and Path(p).name != "leaderboard.json"]
+          if not files:
+              print("No layout files changed.")
+              raise SystemExit(0)
+          diagnostic_dir = "work/evaluator-experiments/pr-check"
+          checked = subprocess.run([
+              sys.executable, "-m", "bangla_dh", "leaderboard", "--check",
+              "--diagnostics", diagnostic_dir, *files,
+          ], capture_output=True, text=True)
+          print(checked.stdout, end="")
+          print(checked.stderr, end="", file=sys.stderr)
+          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          with summary.open("a", encoding="utf-8") as stream:
+              stream.write("### Official scores\n\n```text\n")
+              stream.write(checked.stdout.replace(chr(96) * 3, "[code fence]") + "\n```\n\n")
+              report = Path(diagnostic_dir) / "REPORT.md"
+              if report.is_file():
+                  stream.write(report.read_text(encoding="utf-8"))
+              else:
+                  stream.write("Optional diagnostics unavailable. Official scoring decides this check.\n")
+          raise SystemExit(checked.returncode)
+          PY
 
   leaderboard:
     # After a merge: rebuild the leaderboard files from everything in submissions/.

@@ -100,8 +100,15 @@ def render(board: dict) -> str:
     return "\n".join(L)
 
 
-def run(paths: list[str] | None = None, check: bool = False) -> int:
+def run(paths: list[str] | None = None, check: bool = False, diagnostics: str | Path | None = None) -> int:
     board = score_files(paths)
+    if diagnostics is not None:
+        try:
+            from .experimental.submissions import report_optional
+            accepted = {(e["file"], e["layout_sha256"]) for part in board["styles"].values() for e in part["entries"]}
+            report_optional([str(p) for p in _files(paths)], diagnostics, accepted_pairs=accepted)
+        except Exception as error:
+            print(f"Optional diagnostics unavailable: {error}. Official results are unchanged.")
     if check:
         for entry in (e for part in board["styles"].values() for e in part["entries"]):
             print(f"ok  {entry['file']}: style {entry['style']}, J1 {entry['J1']:.6f} "

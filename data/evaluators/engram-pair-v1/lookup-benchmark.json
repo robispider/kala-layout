@@ -1,0 +1,18 @@
+{
+  "description": "Independent decimal arithmetic over pinned source rows; verifies lookup/aggregation only.",
+  "pairs": [
+    [
+      "FF",
+      2
+    ],
+    [
+      "DF",
+      1
+    ],
+    [
+      "RF",
+      1
+    ]
+  ],
+  "weighted_mean": "-0.2553681574168317"
+}

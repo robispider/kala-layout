@@ -198,7 +198,7 @@ def run_build(leaderboard: str | None = None) -> list[Path]:
     return written
 
 
-def run_verify(paths: list[str]) -> int:
+def run_verify(paths: list[str], diagnostics: str | Path | None = None) -> int:
     """Re-check challenge layout files with the project's own scorers: the
     exact integer-model J1 (must equal the public scorer's) and J1 on the
     held-out texts no search has used."""
@@ -236,6 +236,12 @@ def run_verify(paths: list[str]) -> int:
             mine = score_style(style, placed, corpus, model, fixed)["J1"]
             ref = score_style(style, reference, corpus, model, fixed)["J1"]
             print(f"  held-out {corpus}: {mine:.6f} (reference {ref:.6f}, {(mine / ref - 1) * 100:+.4f} %)")
+    if diagnostics is not None:
+        try:
+            from .experimental.submissions import report_optional
+            report_optional(paths, diagnostics)
+        except Exception as error:
+            print(f"Optional diagnostics unavailable: {error}. Official results are unchanged.")
     return 0 if ok else 1
 
 

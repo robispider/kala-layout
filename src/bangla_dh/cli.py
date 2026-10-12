@@ -260,7 +260,7 @@ def _challenge_kit(args) -> int:
 def _challenge_verify(args) -> int:
     from .challenge import run_verify
 
-    return run_verify(args.files)
+    return run_verify(args.files, diagnostics=args.diagnostics)
 
 
 def _kala_export(args) -> int:
@@ -280,7 +280,7 @@ def _generate_layout(args) -> int:
 def _leaderboard(args) -> int:
     from .leaderboard import run
 
-    return run(args.files or None, check=args.check)
+    return run(args.files or None, check=args.check, diagnostics=args.diagnostics)
 
 
 def _check_results(args) -> int:
@@ -445,9 +445,11 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("leaderboard", help="score every layout file in submissions/ and write the leaderboard")
     p.add_argument("files", nargs="*", help="check these files instead of all of submissions/")
     p.add_argument("--check", action="store_true", help="only validate and score (used by pull requests)")
+    p.add_argument("--diagnostics", metavar="DIR", help="optional separate experimental report; no ranking effect")
     p.set_defaults(func=_leaderboard)
     p = sub.add_parser("challenge-verify", help="re-check challenge layout files with the project's scorers")
     p.add_argument("files", nargs="+")
+    p.add_argument("--diagnostics", metavar="DIR", help="optional separate experimental report; no scoring effect")
     p.set_defaults(func=_challenge_verify)
     p = sub.add_parser("kala-export", help="the A and D layouts as Kala layout files (Kala Goti, Kala Jhor)")
     p.add_argument("--top", type=int, default=200_000, help="held-out word types typed per text (default 200,000)")

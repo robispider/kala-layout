@@ -54,6 +54,11 @@ const board = JSON.parse(await readFile(path.join(siteRoot, 'src/generated/board
 const ranked = [...board.public.entries].sort((a, b) => a.average - b.average).map((entry) => entry.name);
 assert.deepEqual(ranked.slice(0, 2), ['Kala Jhor', 'Kala Goti']);
 const home = await readFile(path.join(root, 'en/index.html'), 'utf8');
-assert(home.includes('1.8000'), 'Home page lacks the Kala Jhor average');
+for (const value of ['1.8000', '1.8432', '2.1498']) assert(home.includes(value), `Home page lacks a published average: ${value}`);
+for (const locale of locales) {
+  const html = await readFile(path.join(root, locale, 'index.html'), 'utf8');
+  assert.equal([...html.matchAll(/<section\b[^>]*class="[^"\n]*\badditional-checks\b[^"\n]*"/g)].length, 1, `Missing/duplicate additional checks section: ${locale}`);
+  assert(html.includes('https://github.com/robispider/kala-layout/blob/main/results/evaluator-e1/run-v1/REPORT.md'), `Missing experimental report link: ${locale}`);
+}
 assert((await stat(path.join(root, 'en/index.html'))).size > 1000);
 console.log(`Site checks passed: ${locales.length * routes.length} pages; ${checkedLinks} local links/assets/anchors; language switching and search.`);
