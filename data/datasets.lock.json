@@ -1,0 +1,477 @@
+{
+ "source": "https://github.com/robispider/ban-dataset-collection",
+ "commit": "1ba43aab9984110d27e847633623ea5f3ea7fd0c",
+ "note": "Pinned by `python -m bangla_dh lock-datasets`; ZIP chunks are fetched from raw.githubusercontent.com at this commit and verified by SHA-256. `assembled` holds the SHA-256 of the assembled files' content (decompressed for .gz).",
+ "packages": {
+  "wikipedia": {
+   "folder": "wikidata",
+   "attribution": "wikidata/ATTRIBUTION.txt",
+   "files": [
+    {
+     "path": "bnwiki-heldout-00001.zip",
+     "bytes": 13031930,
+     "sha256": "15cc9584810a8a6481eb601d381ccc7fff3b50caad95ebacd3db002ac1305ebf"
+    },
+    {
+     "path": "bnwiki-heldout-00002.zip",
+     "bytes": 10859653,
+     "sha256": "dbfddeaa004c2b26eeea595f9eb5d5f619e5cebea8153af534bbd9001834f3c0"
+    },
+    {
+     "path": "bnwiki-heldout.tokens.tsv.zip",
+     "bytes": 2729507,
+     "sha256": "b879239b87fc28c4c79bd6925e194901da137eb9e2dce125622c4d06b906cf4e"
+    },
+    {
+     "path": "bnwiki-train-00001.zip",
+     "bytes": 12859085,
+     "sha256": "2619f701b7b32bea8cc6e7f927b69f47bdaebfef818127b9507cc899cb5a86eb"
+    },
+    {
+     "path": "bnwiki-train-00002.zip",
+     "bytes": 12796352,
+     "sha256": "cf45024f37daa1648908c1449b9a97ffd6f784cb32e6f817b88f847b53e1d38a"
+    },
+    {
+     "path": "bnwiki-train-00003.zip",
+     "bytes": 13070557,
+     "sha256": "43e8cdb4ed2fcc20b2cc4de7478ae076a9fd50c41323d67317e2c647629e8803"
+    },
+    {
+     "path": "bnwiki-train-00004.zip",
+     "bytes": 13049286,
+     "sha256": "06660ec20e78b06284bc2ad7344659cdaf41e093def0c406163f229eb47b2ac7"
+    },
+    {
+     "path": "bnwiki-train-00005.zip",
+     "bytes": 13071467,
+     "sha256": "74bc404fc81b4f857fc0e6429814d09f4125b0736ad2d044ab3d29e66399e5d0"
+    },
+    {
+     "path": "bnwiki-train-00006.zip",
+     "bytes": 12790564,
+     "sha256": "289918c43bcdeb3cbe03ff1fac22644c3417f37d300c1188d3ee7b6ee5868bbc"
+    },
+    {
+     "path": "bnwiki-train-00007.zip",
+     "bytes": 12446678,
+     "sha256": "7f237077d33c5869b4fe876a81dd37dbf16fd7137f87aa78f7ec7ce784cfe3a0"
+    },
+    {
+     "path": "bnwiki-train-00008.zip",
+     "bytes": 12927453,
+     "sha256": "5f11e0c6021411ccc460aee055b5c8c11cdb852857ccee606d3d17b805ecdd94"
+    },
+    {
+     "path": "bnwiki-train-00009.zip",
+     "bytes": 12895064,
+     "sha256": "77a85000e7d40e2d80e1b4390dc9d4f98c6bd583d299aa2be7b1f8553b782b2a"
+    },
+    {
+     "path": "bnwiki-train-00010.zip",
+     "bytes": 12951986,
+     "sha256": "612e2e48172d8bf14f0f7b93604a0f04befb7160e3f26d43e584c71212b779b0"
+    },
+    {
+     "path": "bnwiki-train-00011.zip",
+     "bytes": 12984173,
+     "sha256": "9332f1e4957d68b436dd769037abd5b2997258e319e40ffa1def939307b14782"
+    },
+    {
+     "path": "bnwiki-train-00012.zip",
+     "bytes": 12530316,
+     "sha256": "e1f9fefee983900f1cfd6620effd79b29f4ccd92fa13da142cfb1fbe6ab9fddd"
+    },
+    {
+     "path": "bnwiki-train-00013.zip",
+     "bytes": 12857836,
+     "sha256": "6f0789d31993d67ce1d289706ca57b18830fd3004074e1e8b83c8c7f4044591a"
+    },
+    {
+     "path": "bnwiki-train-00014.zip",
+     "bytes": 12547062,
+     "sha256": "e20b8ed70e9c3df210a89e9f6139d600a6ce5abdbb3357ae7995c8141dbf5c21"
+    },
+    {
+     "path": "bnwiki-train-00015.zip",
+     "bytes": 12474995,
+     "sha256": "fc44f9a702de976267b8dab7a9ed261b8740362426ec8e91e20ade38952b4d98"
+    },
+    {
+     "path": "bnwiki-train-00016.zip",
+     "bytes": 12633761,
+     "sha256": "57a605164b62f6c16454da12f10981b1d20b4bdb931a02858f8c7ddfddd159d9"
+    },
+    {
+     "path": "bnwiki-train-00017.zip",
+     "bytes": 3575012,
+     "sha256": "74e9ccab2e1b49e9422b9ee2123999dd5d82a19e2bb9f50b38ff0f7f4a91164c"
+    },
+    {
+     "path": "bnwiki-train.tokens.tsv.zip",
+     "bytes": 12847154,
+     "sha256": "ca4a833f3913e50b0f6444928d979738a6849abb6f5d181f778c309ba1b828d6"
+    }
+   ]
+  },
+  "newspaper": {
+   "folder": "bangla-newspaper",
+   "attribution": "bangla-newspaper/ATTRIBUTION.txt",
+   "files": [
+    {
+     "path": "newspaper-00001.zip",
+     "bytes": 12774410,
+     "sha256": "8f6b901a593c2ccdae908d7fb803c448996ddd03a60f97db1be44f90def67b19"
+    },
+    {
+     "path": "newspaper-00002.zip",
+     "bytes": 12770044,
+     "sha256": "1877c00abef82a3d3352e0836340f44ab43f38b6169def205bb4076a2e9bb652"
+    },
+    {
+     "path": "newspaper-00003.zip",
+     "bytes": 12806296,
+     "sha256": "af3884029cd151078fe45f450f5c8b4a18519668b9df2a2021537fc7d7e0f66d"
+    },
+    {
+     "path": "newspaper-00004.zip",
+     "bytes": 12771787,
+     "sha256": "64323fdd893aa80669f0cdc2d1230f7e7e9ec396a327c0ff195d5f8388d13ab4"
+    },
+    {
+     "path": "newspaper-00005.zip",
+     "bytes": 12780208,
+     "sha256": "5e9ecdf737e18b7840b61607c7bf9275fad28b83ecfabbbd8befaea4b7032ee2"
+    },
+    {
+     "path": "newspaper-00006.zip",
+     "bytes": 12868056,
+     "sha256": "692d2c1fb1c0b2b77a68ca8ff3ba21366c0ca51d5773a78781b292c3305d1f91"
+    },
+    {
+     "path": "newspaper-00007.zip",
+     "bytes": 12828220,
+     "sha256": "09b92c2aecc85d1f6c692f76fbe375327c6503caebd73aa038fd7f3582b34a79"
+    },
+    {
+     "path": "newspaper-00008.zip",
+     "bytes": 12784570,
+     "sha256": "aad44c45ea7e63df3d359e6b400d523ca1dbdf141585ac56e8d8d2d6462a864e"
+    },
+    {
+     "path": "newspaper-00009.zip",
+     "bytes": 12868743,
+     "sha256": "99c682f7632c556900483bd90041578958f9bebc691bcd482d4342d2d129246a"
+    },
+    {
+     "path": "newspaper-00010.zip",
+     "bytes": 12798943,
+     "sha256": "103d0ea4145850cff566c138a9976b498f123cd2302f1328a2daebd868207e15"
+    },
+    {
+     "path": "newspaper-00011.zip",
+     "bytes": 12856951,
+     "sha256": "1c2d6abc2c4cdbdcf5b89f37cd16bc99d89146d062aa49343376f91c32b53cb8"
+    },
+    {
+     "path": "newspaper-00012.zip",
+     "bytes": 12863936,
+     "sha256": "fb55c92ab981cd2b358603536910230579c8ef1637c073d6aac2e45ab4ad784c"
+    },
+    {
+     "path": "newspaper-00013.zip",
+     "bytes": 12827024,
+     "sha256": "24ef6a832124d62fec39911f8428e5e9647b088102a1ec01916d7be4b029d956"
+    },
+    {
+     "path": "newspaper-00014.zip",
+     "bytes": 12644529,
+     "sha256": "aa55e0fb5c306657e61a350337a91582e03dd33382a2b95dd41407863272f12b"
+    },
+    {
+     "path": "newspaper-00015.zip",
+     "bytes": 12742090,
+     "sha256": "41ffd77a8e98cd8fc8bc5ee00b9023ac25e2e42f269ee82c93b609bd02adff5b"
+    },
+    {
+     "path": "newspaper-00016.zip",
+     "bytes": 12718007,
+     "sha256": "83229f96fc48d5417c2824b21d82b4c06ac80b126cafdcbd44015187edc1913b"
+    },
+    {
+     "path": "newspaper-00017.zip",
+     "bytes": 12723661,
+     "sha256": "a73b1624d25a3cfc214aecfe12a6720421c0bd752a06448a5fb6a0133a10a91e"
+    },
+    {
+     "path": "newspaper-00018.zip",
+     "bytes": 12773978,
+     "sha256": "049b05a10a7af63d96952b605e083881d5c02ce0c725e4d47fafa5e32951f5fc"
+    },
+    {
+     "path": "newspaper-00019.zip",
+     "bytes": 12787689,
+     "sha256": "b7453717096f90870d104535d0ddb224122c9f37799ea78f5a54742596c00652"
+    },
+    {
+     "path": "newspaper-00020.zip",
+     "bytes": 12740776,
+     "sha256": "ee48aa40618dce2df3cbcf88bf5b8eeb4ef5cdb7b3ccacdeb5391390ad3c0d69"
+    },
+    {
+     "path": "newspaper-00021.zip",
+     "bytes": 12715170,
+     "sha256": "b06562affd52d7f9b55b376b9355ad341fba0b7669835c2df2333929103c9bbc"
+    },
+    {
+     "path": "newspaper-00022.zip",
+     "bytes": 12624828,
+     "sha256": "f4742e6744f355ef9a7a02b4f6082838ad22ebc52a3e5f944b0e8670c6c3ff15"
+    },
+    {
+     "path": "newspaper-00023.zip",
+     "bytes": 12661050,
+     "sha256": "68b0a25d522d446c34a4deac223f6179592fe4e7a482648932018d2511bb8e72"
+    },
+    {
+     "path": "newspaper-00024.zip",
+     "bytes": 12869090,
+     "sha256": "7453c2d73692c59603b9b2d7d9e8d7c2f8592c946e25611934181c6fda127537"
+    },
+    {
+     "path": "newspaper-00025.zip",
+     "bytes": 12978092,
+     "sha256": "029d968098afa5174a7d7a9fb63d8852a7d36a006b545a4568d55c08adb07861"
+    },
+    {
+     "path": "newspaper-00026.zip",
+     "bytes": 12953066,
+     "sha256": "a033283c936591dba068cbea2d78dcda401b8a3f80f67a88a0f6de75940fd9f3"
+    },
+    {
+     "path": "newspaper-00027.zip",
+     "bytes": 13177581,
+     "sha256": "9feff5fbc3d8a1c73f1a5fa89adbc121d2d8031de9b34e1c5674968547c0b142"
+    },
+    {
+     "path": "newspaper-00028.zip",
+     "bytes": 13157382,
+     "sha256": "2f3de18db4670f9b08418d346c65d4f3ed50b3ffed56573bee8e85539a6251a2"
+    },
+    {
+     "path": "newspaper-00029.zip",
+     "bytes": 13098790,
+     "sha256": "a4f9174f28d86ebd0e4a6faa266dd27d46d703e60bd1e248c4acf0cc25a712d2"
+    },
+    {
+     "path": "newspaper-00030.zip",
+     "bytes": 13227864,
+     "sha256": "9ab8d2c33584ba8fd22f4f0bcd097440691a5e0bf49da4841f2f4e1c8c02e2bf"
+    },
+    {
+     "path": "newspaper-00031.zip",
+     "bytes": 13209368,
+     "sha256": "0a9f22ecfb1642fba66d42a51a44e09353057294bcdab59e23e66f20cb7251ef"
+    },
+    {
+     "path": "newspaper-00032.zip",
+     "bytes": 13214133,
+     "sha256": "b8dfc0364fb1696cbc7ccda3acacd2f4c0f5a992b7c3c2b97b2ccb3c89bf2219"
+    },
+    {
+     "path": "newspaper-00033.zip",
+     "bytes": 13050186,
+     "sha256": "77b9730861ed5621ca25ebe4953ae121097c05b330922de71535a3ab1b5a3229"
+    },
+    {
+     "path": "newspaper-00034.zip",
+     "bytes": 13044414,
+     "sha256": "b9f47ab27e8826f9c824d7f2b5e38340b7302b220ffb6c60ef6e3582d173746f"
+    },
+    {
+     "path": "newspaper-00035.zip",
+     "bytes": 13176691,
+     "sha256": "885d2acfa6f0b0f7fe7ad785f90b34cd51d9fa54d62f36f40e41e8108997358f"
+    },
+    {
+     "path": "newspaper-00036.zip",
+     "bytes": 4138786,
+     "sha256": "f450fb40aa3b588f3e70f1f938f39f0fa2ffb2d696b2af01e4ed91050b91723e"
+    }
+   ]
+  },
+  "bard": {
+   "folder": "bard",
+   "attribution": "bard/ATTRIBUTION.txt",
+   "files": [
+    {
+     "path": "economy/economy-00001.zip",
+     "bytes": 12377817,
+     "sha256": "514c6e5141300b3b7c842348861c4c64f04af5dc5c198e0255221d0963afc40b"
+    },
+    {
+     "path": "economy/economy-00002.zip",
+     "bytes": 4704990,
+     "sha256": "7f6a1fce4d086448e113d4122631b804b76a698ab08d23ba27f037fdd9fa428a"
+    },
+    {
+     "path": "entertainment/entertainment-00001.zip",
+     "bytes": 13938225,
+     "sha256": "355c12e955661f321f27536528b266052c02b5ced2e8d2f794ab821be6a9094a"
+    },
+    {
+     "path": "entertainment/entertainment-00002.zip",
+     "bytes": 10875006,
+     "sha256": "997250959baebbd01c59eb1d7740102856e75e501783c9e349c9794274e49d3a"
+    },
+    {
+     "path": "international/international-00001.zip",
+     "bytes": 13058965,
+     "sha256": "ef7a0ca8990ac6b44a35fc8a1b3608d326932ddd2512986e0d8a1c96bdadbb0b"
+    },
+    {
+     "path": "international/international-00002.zip",
+     "bytes": 13045968,
+     "sha256": "639098c786dc247acdbe56df3b141784f0afa8053caba4d47517d9f8af7651be"
+    },
+    {
+     "path": "international/international-00003.zip",
+     "bytes": 114024,
+     "sha256": "e3bce60d1cc14b3db2e15d4a39c01dde93b8716e9dbf803e4d8f3e9c7b65cb11"
+    },
+    {
+     "path": "sports/sports-00001.zip",
+     "bytes": 13853644,
+     "sha256": "322e93e8bf4bcbae43b4882b25d840cc1a25e2185275ec8405025455734edc64"
+    },
+    {
+     "path": "sports/sports-00002.zip",
+     "bytes": 13861682,
+     "sha256": "e5d899fd3b49005881b77e554abe2c3d600a6843523ee3e5c54b365fafbe5fa4"
+    },
+    {
+     "path": "sports/sports-00003.zip",
+     "bytes": 13863250,
+     "sha256": "784f436988f6045f51b58ae10740064b3cd6880eb4969adc0e44a42c93b5083b"
+    },
+    {
+     "path": "sports/sports-00004.zip",
+     "bytes": 4564547,
+     "sha256": "626c9cf28399a8b95849656c9282f97c415f9e5096b63f447ad927843bc72eda"
+    },
+    {
+     "path": "state/state-00001.zip",
+     "bytes": 12754917,
+     "sha256": "566ce0c68150fbfb81b06dac1644c78b51f4551869f75bcf1d02f0a917e0ce74"
+    },
+    {
+     "path": "state/state-00002.zip",
+     "bytes": 12753438,
+     "sha256": "0ef6f2f9685e46c00eb255edfc426ae7df78cb64fcdc25050853d8f0d3171764"
+    },
+    {
+     "path": "state/state-00003.zip",
+     "bytes": 12763667,
+     "sha256": "357fb9888492de3ecdf2ae9056466e064eed9d979f9173142cf3f03a2e670129"
+    },
+    {
+     "path": "state/state-00004.zip",
+     "bytes": 12724112,
+     "sha256": "0c53a929c322f60723a0e41a8b7395291619ca0560585578bc66c1b12d2644d1"
+    },
+    {
+     "path": "state/state-00005.zip",
+     "bytes": 12759411,
+     "sha256": "d14793982fdead2d3aad34c514e0b6c8e8b93525cda3fa59d4bbb47c1eeb6801"
+    },
+    {
+     "path": "state/state-00006.zip",
+     "bytes": 12766765,
+     "sha256": "10eddd4ffc75e4c1879f2ab75967c0cc9702b2e750bfda666398bab9a484fab5"
+    },
+    {
+     "path": "state/state-00007.zip",
+     "bytes": 12743940,
+     "sha256": "967d0fd168bed1589dffd2ae06ded97a44b92753b29e5ace6bc250e3bc4b1ee8"
+    },
+    {
+     "path": "state/state-00008.zip",
+     "bytes": 12783049,
+     "sha256": "761d90b900960b2b0e94a03601d1b000f01a9e92af6c6a0758600c4983f8fd13"
+    },
+    {
+     "path": "state/state-00009.zip",
+     "bytes": 12779786,
+     "sha256": "3ed821ad2aef51b93cc8e1823fd677c8efed84007ae420cd56ce8feec8be666e"
+    },
+    {
+     "path": "state/state-00010.zip",
+     "bytes": 12732887,
+     "sha256": "36152b5d63a981312afd657f4f0faebedeb0cd2711598596d80e3b8bdf57a4b4"
+    },
+    {
+     "path": "state/state-00011.zip",
+     "bytes": 12788676,
+     "sha256": "4263322f6f8fed5113e0ea8f6335be8d1b1583d95888c0988096bfe2e9f79d1b"
+    },
+    {
+     "path": "state/state-00012.zip",
+     "bytes": 12751490,
+     "sha256": "ba870a5356831c1711b343d2a0098a30b14aa601d8c6fdd1c85ae6ea89a5d6a0"
+    },
+    {
+     "path": "state/state-00013.zip",
+     "bytes": 12795095,
+     "sha256": "38e971c4729e6fdc20dea04f118de981e0e728a381d9413908d95e590c0471a1"
+    },
+    {
+     "path": "state/state-00014.zip",
+     "bytes": 12774031,
+     "sha256": "4651dd058cd2df0eb545740b8f1b55bbef16308491718e467faefa606bbbb6ca"
+    },
+    {
+     "path": "state/state-00015.zip",
+     "bytes": 12760648,
+     "sha256": "ba55da70975e4f39bdb68e12f09cf870df96767d9f6c67918c943ffc96698b9c"
+    },
+    {
+     "path": "state/state-00016.zip",
+     "bytes": 7747044,
+     "sha256": "c416bb109e0ac0531164a3b0bad21fbc1f86fd0a2d19abb290f6d5e9d3372285"
+    }
+   ]
+  }
+ },
+ "assembled": {
+  "wikidata/train.jsonl.gz": {
+   "content_sha256": "c4ede027ac1bc4dbd08935369e2af9c97d3c641ead30399c28024464656d1dbf"
+  },
+  "wikidata/heldout.jsonl.gz": {
+   "content_sha256": "80cd693927f6d579edd51bb8eafe25ca848fcde07f4e2de65f06a0beb9bc463a"
+  },
+  "wikidata/bnwiki-train.tokens.tsv.gz": {
+   "content_sha256": "d13ee5432945199301fa742799c82698b1840033ca18c1536d9d21768a4dab49"
+  },
+  "wikidata/bnwiki-heldout.tokens.tsv.gz": {
+   "content_sha256": "2ae295dcbe1649f07c2950ad6e7ee783e3694527e1a31447daa6583c5a373d75"
+  },
+  "bangla-newspaper.jsonl": {
+   "content_sha256": "e91080ba37da4e82fc2005f9dac46360e02febc83c2dd5b947ce333e18554a0e"
+  },
+  "bard/economy.jsonl.gz": {
+   "content_sha256": "6b7a1c07d5deb1b05afd7986e9601f3e9948a337b70d20832fe2b19fa73be016"
+  },
+  "bard/entertainment.jsonl.gz": {
+   "content_sha256": "99b693845f0affd37b734a8ffcb482f7ac581ab02accf6ab01b209acb6cd3fba"
+  },
+  "bard/international.jsonl.gz": {
+   "content_sha256": "cd113435908ea382f2c65feca8b3c4860afe593f17a0ddc44357b90aa8089511"
+  },
+  "bard/sports.jsonl.gz": {
+   "content_sha256": "721660e92c94c522dd0913e5441e1fbe7f96692f5df2d94bd66caaaa2e3228e7"
+  },
+  "bard/state.jsonl.gz": {
+   "content_sha256": "c2bd947caf8050851938e9fbb6b35433a79f79435e2f14c0bd43b359288c1f86"
+  }
+ }
+}

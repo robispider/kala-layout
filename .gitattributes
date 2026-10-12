@@ -1,0 +1,11 @@
+# Vendored reference inputs are pinned by SHA-256; keep them byte-identical.
+reference/colemak-dh-resources/** -text
+results/** text eol=lf
+# Vendored Kala inputs and comparison layouts are pinned by SHA-256; keep them byte-identical.
+data/kala/** -text
+data/baselines/layouts/** -text
+# Generated files whose hashes are published: always LF.
+challenge/** text eol=lf
+submissions/** text eol=lf
+data/*.json text eol=lf
+data/baselines/*.json text eol=lf

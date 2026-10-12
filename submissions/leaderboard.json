@@ -1,0 +1,22 @@
+{
+ "data_version": "bangla-dh-challenge-v1",
+ "data_sha256": "2388d17bd9f375763eff19eac4dc2d4397d62c1f28d574d2597d414febb55b0a",
+ "script_version": "1.1.0",
+ "styles": {
+  "A": {
+   "reference": {
+    "name": "Kala Goti (style A)",
+    "J1": 1.849686031
+   },
+   "entries": []
+  },
+  "D": {
+   "reference": {
+    "name": "Kala Jhor (style D)",
+    "J1": 1.808795895
+   },
+   "entries": []
+  }
+ },
+ "problems": []
+}

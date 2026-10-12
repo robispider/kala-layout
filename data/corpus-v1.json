@@ -1,0 +1,32 @@
+{
+  "version": "bangla-corpus-v1",
+  "description": "Phase 2 corpus: the prepared Bangla Wikipedia of the public ban-dataset-collection (Kala bnwiki-prose-v1 cleaning, bangla-dh-text-v1 normalization, paragraph deduplication, document-level split). The BanLemma second-domain check of the original run is not public data and is not part of this repository; the news cross-check (data/crosscheck-v1.json) is the second domain.",
+  "output_directory": "data/corpus/bangla-corpus-v1",
+  "split": {
+    "unit": "document",
+    "rule": "held-out if int(sha256(salt + ':' + document_id)[:8], 16) % 100 < heldout_percent",
+    "salt": "bangla-dh-split-v1",
+    "heldout_percent": 10
+  },
+  "deduplication": "exact paragraph-level across the whole corpus in source order (the first occurrence is kept); documents left empty are dropped (done when the collection was prepared)",
+  "domains": [
+    {
+      "name": "bnwiki",
+      "label": "encyclopedic (Bangla Wikipedia)",
+      "kind": "prepared-jsonl",
+      "package": "wikipedia",
+      "assembled": {
+        "train": "wikidata/train.jsonl.gz",
+        "heldout": "wikidata/heldout.jsonl.gz"
+      },
+      "splits": [
+        "train",
+        "heldout"
+      ]
+    }
+  ],
+  "frequency_weights": {
+    "description": "alpha_d of RESEARCH_SPEC 5.2 for the optimization frequencies. D4 default: Wikipedia train only; BanLemma is a second-domain held-out check.",
+    "bnwiki/train": 1.0
+  }
+}

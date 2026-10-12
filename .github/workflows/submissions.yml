@@ -1,0 +1,62 @@
+name: Challenge submissions
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'submissions/*.json'
+  push:
+    branches: [main]
+    paths:
+      - 'submissions/*.json'
+      - 'challenge/**'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    # A pull request that adds layout files: every file must be valid; the scores go to the job summary.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6.0.0
+        with:
+          python-version: '3.12'
+      - name: Score the changed files
+        run: |
+          files=$(git diff --name-only --diff-filter=AM origin/${{ github.base_ref }}...HEAD -- 'submissions/*.json' | grep -v 'leaderboard.json' || true)
+          if [ -z "$files" ]; then echo "No layout files changed."; exit 0; fi
+          python -m bangla_dh leaderboard --check $files | tee scores.txt
+          { echo '### Scores'; echo; echo '```text'; cat scores.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+  leaderboard:
+    # After a merge: rebuild the leaderboard files from everything in submissions/.
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      PYTHONPATH: src
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v6.0.0
+        with:
+          python-version: '3.12'
+      - name: Rebuild the leaderboard
+        run: python -m bangla_dh leaderboard
+      - name: Commit the leaderboard when it changed
+        run: |
+          if git diff --quiet -- submissions/LEADERBOARD.md submissions/leaderboard.json; then echo "Leaderboard unchanged."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add submissions/LEADERBOARD.md submissions/leaderboard.json
+          git commit -m "Rebuild the challenge leaderboard"
+          git push

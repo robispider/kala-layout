@@ -1,0 +1,164 @@
+{
+  "version": "bangla-corpus-v1",
+  "config": "data/corpus-v1.json",
+  "config_sha256": "dc51d05b22a115315789300766ad24ac1422e0faf09d8739d0939d4c8f119c7d",
+  "normalization": {
+    "version": "bangla-dh-text-v1",
+    "unicode_normalization": "NFC",
+    "unicode_version": "14.0.0",
+    "character_map": {
+      "U+201C": "\"",
+      "U+201D": "\"",
+      "U+201E": "\"",
+      "U+201F": "\"",
+      "U+2018": "'",
+      "U+2019": "'",
+      "U+201A": "'",
+      "U+201B": "'",
+      "U+2010": "-",
+      "U+2011": "-",
+      "U+09F7": "।"
+    },
+    "removed": [
+      "U+00AD",
+      "U+200B",
+      "U+200E",
+      "U+200F",
+      "U+2060",
+      "U+FEFF",
+      "U+202A",
+      "U+202B",
+      "U+202C",
+      "U+202D",
+      "U+202E"
+    ],
+    "to_space": [
+      "U+0009",
+      "U+00A0",
+      "U+1680",
+      "U+2000",
+      "U+2001",
+      "U+2002",
+      "U+2003",
+      "U+2004",
+      "U+2005",
+      "U+2006",
+      "U+2007",
+      "U+2008",
+      "U+2009",
+      "U+200A",
+      "U+202F",
+      "U+205F",
+      "U+3000"
+    ],
+    "joiners": "ZWJ (U+200D) and ZWNJ (U+200C) are kept",
+    "lines": "space runs collapsed, lines stripped, empty lines dropped; a line break is not a typing unit"
+  },
+  "cleaning": {
+    "version": "bnwiki-prose-v1",
+    "min_tokens": 3,
+    "min_bengali_letter_share": 0.75,
+    "dropped_link_namespaces": [
+      "category",
+      "file",
+      "help",
+      "image",
+      "media",
+      "module",
+      "portal",
+      "special",
+      "template",
+      "user",
+      "wikipedia",
+      "wp",
+      "উইকিপিডিয়া",
+      "চিত্র",
+      "টেমপ্লেট",
+      "পোর্টাল",
+      "ফাইল",
+      "বিশেষ",
+      "বিষয়শ্রেণী",
+      "ব্যবহারকারী",
+      "মডিউল",
+      "মিডিয়া",
+      "সাহায্য"
+    ],
+    "line_skip_prefixes": [
+      "=",
+      "*",
+      "#",
+      ":",
+      ";",
+      "|",
+      "!",
+      "{",
+      "}",
+      "----",
+      "<"
+    ],
+    "markup_residue": [
+      "{{",
+      "}}",
+      "[[",
+      "]]",
+      "{|",
+      "|}",
+      "|",
+      "<",
+      ">",
+      "{",
+      "}",
+      "&lt;",
+      "&gt;"
+    ]
+  },
+  "split": {
+    "unit": "document",
+    "rule": "held-out if int(sha256(salt + ':' + document_id)[:8], 16) % 100 < heldout_percent",
+    "salt": "bangla-dh-split-v1",
+    "heldout_percent": 10
+  },
+  "deduplication": "exact paragraph-level across the whole corpus in source order (the first occurrence is kept); documents left empty are dropped (done when the collection was prepared)",
+  "domains": {
+    "bnwiki": {
+      "label": "encyclopedic (Bangla Wikipedia)",
+      "source": {
+        "path": "ban-dataset-collection/wikidata",
+        "repository": "https://github.com/robispider/ban-dataset-collection",
+        "commit": "1ba43aab9984110d27e847633623ea5f3ea7fd0c",
+        "parts": 21,
+        "bytes": 247929891,
+        "sha256": "690f6a8ce69f4f2cbf3cf2f1b81be2d25c039a671405df6a2e93c184f1c926d6",
+        "assembled_content_sha256": {
+          "wikidata/train.jsonl.gz": "c4ede027ac1bc4dbd08935369e2af9c97d3c641ead30399c28024464656d1dbf",
+          "wikidata/heldout.jsonl.gz": "80cd693927f6d579edd51bb8eafe25ca848fcde07f4e2de65f06a0beb9bc463a"
+        }
+      },
+      "source_counts": {
+        "documents": 190748
+      },
+      "paragraph_filter": {},
+      "duplicate_paragraphs_removed": 0,
+      "documents_without_new_paragraphs": 0,
+      "splits": {
+        "train": {
+          "documents": 171685,
+          "paragraphs": 1135187,
+          "characters": 399797343,
+          "path": "data/corpus/bangla-corpus-v1/bnwiki-train.jsonl.gz",
+          "sha256": "ec12f7268cda6a908c3ccb422173d95ae31fe350c2c6afe35a0f89955de28e64",
+          "content_sha256": "c4ede027ac1bc4dbd08935369e2af9c97d3c641ead30399c28024464656d1dbf"
+        },
+        "heldout": {
+          "documents": 19063,
+          "paragraphs": 128286,
+          "characters": 45461493,
+          "path": "data/corpus/bangla-corpus-v1/bnwiki-heldout.jsonl.gz",
+          "sha256": "f390e0f5380dd422f01e5d8fff383964078039bd06a12507a91e512b7eac3d87",
+          "content_sha256": "80cd693927f6d579edd51bb8eafe25ca848fcde07f4e2de65f06a0beb9bc463a"
+        }
+      },
+      "seconds": 290.6
+    }
+  }
+}

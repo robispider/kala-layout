@@ -1,0 +1,27 @@
+{
+  "command": "bangla-dh kala-export --top 200000 --fuzz 20000",
+  "version": "0.1.0",
+  "created": "2026-10-12T18:17:38+00:00",
+  "python": "3.11.9",
+  "parameters": {
+    "release_date": "2026-10-11"
+  },
+  "inputs": {
+    "results/mix-search/mix-search.json": "3fa61ddc8a56512de63c3f5c4d79eb36db9e805e4c7892a1ccda5487132743fd",
+    "results/mix-search/search/A.json": "13f7fafc033c442262739d71637780910a2bfd0c1f479283451aac45a53302f7",
+    "results/mix-search/search/D.json": "23ba86afb3ca4cba3f929c4f16d88172aaeab7d9dd70557d7267be79fe23cc1d",
+    "results/phase3-crosscheck/crosscheck.json": "9c53df1d15263a665ee5aba42090bd67954b732a4ba3b3d4cd89a67809b7ee0a",
+    "results/phase4/phase4.json": "4cb7ac157fff3e620206d79b37b17887f8fc568b3d3b6740c99a8ba005b666b2",
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "kala/layout/bn/Alphabet.json": "33e51ba8010b50fc456cf121d88c1597672d86ea58d87300ae2eb7d59a05c8f4",
+    "data/corpus/bangla-corpus-v1/bnwiki-heldout.tokens.tsv.gz": "df10fb8418bd2100a29abdd8c8c7392ca71f861eff1ea94073f40482bdac9a13",
+    "data/corpus/crosscheck-v1/newspaper-heldout.tokens.tsv.gz": "b9dc37e07e28746d6804461865e2bd597d6c03384c4a760fa41939a8b3d8bc18",
+    "data/corpus/crosscheck-v1/bard-novel-heldout.tokens.tsv.gz": "7bc0846d562428a41bed47bfd0efbcca99c2817b35fa9c6ed3ed020cb12eb28f"
+  },
+  "outputs": {
+    "results/kala-keyboards/kala-goti.json": "a2f7e17eb4e62eb4ce2c3999c9dbf7306120306a2e4a3b9e233e9da5c9dbd7a7",
+    "results/kala-keyboards/kala-jhor.json": "b688a66f630e6cbe7d6d914c081ec1fb67034a4e935b734d5d9b2e9c0257ddef",
+    "results/kala-keyboards/README.md": "3b8a7db2a4b564bfb772236c6cf572131575267a7c35401ab3e45bd685cfd840",
+    "results/kala-keyboards/verification.json": "a3dbf3d8f9a21c176e6aa52ad5d8c0e85941be01c7409bbf3829a8b59ffef85c"
+  }
+}

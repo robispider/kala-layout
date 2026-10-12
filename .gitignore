@@ -1,0 +1,23 @@
+__pycache__/
+*.egg-info/
+/build/
+/dist/
+/.venv/
+# Upstream analyzer source is fetched at the pinned commit, never committed (no license).
+/reference/upstream/
+# Generated corpora and token tables (hashes are in results/phase2/*.json); rebuild with build-corpus.
+/data/corpus/
+
+# Downloaded public datasets (rebuilt with fetch-data / prepare-data)
+/data/ban-dataset-collection/
+
+# Your own search runs
+/work/
+
+# Website build output
+/site/node_modules/
+/site/dist/
+/site/.astro/
+/site/src/content/docs/
+/site/src/generated/
+/site/public/robots.txt

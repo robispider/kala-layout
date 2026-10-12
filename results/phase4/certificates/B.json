@@ -1,0 +1,541 @@
+{
+ "style": "B",
+ "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+ "settings": {
+  "scale": 1000000,
+  "objective": "J1",
+  "frequencies": "bnwiki/train",
+  "exchange_k": 5,
+  "lp": {
+   "solver": "PDLP",
+   "time_limit": 3600,
+   "threads": 16,
+   "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+  },
+  "cpsat_full": {
+   "time_limit": 900,
+   "workers": 16,
+   "seed": 20261012
+  },
+  "subproblems": {
+   "sizes": [
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    40,
+    44,
+    48
+   ],
+   "time_limit": 600,
+   "workers": 16,
+   "order": "the k labels with the highest keystroke counts (ties by label), the others fixed"
+  },
+  "layers": {
+   "time_limit": 600,
+   "workers": 16
+  },
+  "exhaustive_check": {
+   "size": 9
+  }
+ },
+ "frequencies": "results/phase3/frequencies/B-bnwiki-train.json",
+ "frequencies_sha256": "90ec036c5d3b6ebf4cae18496fa5dd2e4594ba593ae78ee70d47a9e5eb13fde2",
+ "problem_sha256": "6ddd111aa93d95e4015b6ab3043e6d3213bf64c8e3f7cd87a170d13c04b00e44",
+ "N": 390391661,
+ "scale": 1000000,
+ "integer_model": {
+  "exact": true,
+  "UB_Z": 734205674968831,
+  "UB_J": 1.8806899540019402,
+  "float_search_J": 1.8806899540019397,
+  "float_vs_exact_difference": 4.440892098500626e-16,
+  "formula_rounding_bound_J": 8.736027599216572e-07,
+  "max_abs_coefficient": 258329869671970
+ },
+ "gilmore_lawler": {
+  "Z": 689484244541662,
+  "J": 1.7661346627525991,
+  "assignment_value_2Z": 1286119587792290,
+  "ortools_assignment_value_2Z": 1286119587792290,
+  "seconds": 0.02
+ },
+ "cpsat_full": {
+  "status": "FEASIBLE",
+  "radius": null,
+  "free": null,
+  "time_limit": 900,
+  "workers": 16,
+  "seed": 20261012,
+  "objective_divisor": 1,
+  "pair_literals": 148810,
+  "build_seconds": 4.2,
+  "seconds": 932.1,
+  "solver": "OR-Tools 9.14.6206 CP-SAT",
+  "best_bound_Z": 696096170303289,
+  "Z": 734205674968831,
+  "bound_J": 1.783071309771878,
+  "solution_J": 1.8806899540019402,
+  "proven_optimal_hint": false
+ },
+ "proofs": {
+  "exhaustive_check": {
+   "size": 9,
+   "free": [
+    "া",
+    "ে",
+    "র",
+    "ি",
+    "্",
+    "ন",
+    "ক",
+    "ত",
+    "ব"
+   ],
+   "arrangements": 362880,
+   "enumeration_Z_min": 734205674968831,
+   "cpsat_status": "OPTIMAL",
+   "cpsat_Z": 734205674968831,
+   "cpsat_bound_Z": 734205674968831,
+   "agree": true,
+   "hint_optimal": true,
+   "seconds": 9.3
+  },
+  "exchange": {
+   "k_max": 5,
+   "by_k": {
+    "2": {
+     "checked": 1326,
+     "best_delta": 3149107468,
+     "best_move": {
+      "ৈ": [
+       [
+        "V",
+        "shift"
+       ],
+       [
+        "R",
+        "shift"
+       ]
+      ],
+      "ৌ": [
+       [
+        "R",
+        "shift"
+       ],
+       [
+        "V",
+        "shift"
+       ]
+      ]
+     },
+     "best_delta_rechecked": 3149107468,
+     "layouts_checked_formula": "C(52,2) x derangements(2)"
+    },
+    "3": {
+     "checked": 44200,
+     "best_delta": 19133042905,
+     "best_move": {
+      "ঝ": [
+       [
+        "B",
+        "shift"
+       ],
+       [
+        "Z",
+        "shift"
+       ]
+      ],
+      "ঞ": [
+       [
+        "X",
+        "shift"
+       ],
+       [
+        "B",
+        "shift"
+       ]
+      ],
+      "ৎ": [
+       [
+        "Z",
+        "shift"
+       ],
+       [
+        "X",
+        "shift"
+       ]
+      ]
+     },
+     "best_delta_rechecked": 19133042905,
+     "layouts_checked_formula": "C(52,3) x derangements(3)"
+    },
+    "4": {
+     "checked": 2436525,
+     "best_delta": 15566787919,
+     "best_move": {
+      "খ": [
+       [
+        "A",
+        "shift"
+       ],
+       [
+        "N",
+        "shift"
+       ]
+      ],
+      "ড": [
+       [
+        "U",
+        "shift"
+       ],
+       [
+        "S",
+        "shift"
+       ]
+      ],
+      "ধ": [
+       [
+        "N",
+        "shift"
+       ],
+       [
+        "U",
+        "shift"
+       ]
+      ],
+      "ফ": [
+       [
+        "S",
+        "shift"
+       ],
+       [
+        "A",
+        "shift"
+       ]
+      ]
+     },
+     "best_delta_rechecked": 15566787919,
+     "layouts_checked_formula": "C(52,4) x derangements(4)"
+    },
+    "5": {
+     "checked": 114354240,
+     "best_delta": 22283150373,
+     "best_move": {
+      "ঝ": [
+       [
+        "B",
+        "shift"
+       ],
+       [
+        "Z",
+        "shift"
+       ]
+      ],
+      "ঞ": [
+       [
+        "X",
+        "shift"
+       ],
+       [
+        "B",
+        "shift"
+       ]
+      ],
+      "ৎ": [
+       [
+        "Z",
+        "shift"
+       ],
+       [
+        "X",
+        "shift"
+       ]
+      ],
+      "ৈ": [
+       [
+        "V",
+        "shift"
+       ],
+       [
+        "R",
+        "shift"
+       ]
+      ],
+      "ৌ": [
+       [
+        "R",
+        "shift"
+       ],
+       [
+        "V",
+        "shift"
+       ]
+      ]
+     },
+     "best_delta_rechecked": 22283150373,
+     "layouts_checked_formula": "C(52,5) x derangements(5)"
+    }
+   },
+   "proven": true,
+   "seconds": 62.3
+  },
+  "top_k": {
+   "order": "the k labels with the highest keystroke counts (ties by label), the others fixed",
+   "runs": [
+    {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      0,
+      17,
+      21,
+      24,
+      26,
+      29,
+      30,
+      33,
+      35,
+      42,
+      43,
+      48
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 3.5,
+     "seconds": 5.6,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 734205674968831,
+     "Z": 734205674968831,
+     "bound_J": 1.8806899540019402,
+     "solution_J": 1.8806899540019402,
+     "proven_optimal_hint": true,
+     "size": 12
+    },
+    {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      0,
+      17,
+      21,
+      22,
+      24,
+      26,
+      28,
+      29,
+      30,
+      33,
+      35,
+      42,
+      43,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 3.3,
+     "seconds": 8.9,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 734205674968831,
+     "Z": 734205674968831,
+     "bound_J": 1.8806899540019402,
+     "solution_J": 1.8806899540019402,
+     "proven_optimal_hint": true,
+     "size": 16
+    },
+    {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      0,
+      10,
+      17,
+      19,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      33,
+      34,
+      35,
+      42,
+      43,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 3.5,
+     "seconds": 28.6,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 734205674968831,
+     "Z": 734205674968831,
+     "bound_J": 1.8806899540019402,
+     "solution_J": 1.8806899540019402,
+     "proven_optimal_hint": true,
+     "size": 20
+    },
+    {
+     "status": "FEASIBLE",
+     "radius": null,
+     "free": [
+      0,
+      2,
+      7,
+      10,
+      17,
+      19,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      34,
+      35,
+      40,
+      42,
+      43,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 3.3,
+     "seconds": 614.6,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 729740832847143,
+     "Z": 734205674968831,
+     "bound_J": 1.869253126406158,
+     "solution_J": 1.8806899540019402,
+     "proven_optimal_hint": false,
+     "size": 24
+    }
+   ],
+   "largest_proven": 20
+  },
+  "base_layer": {
+   "status": "FEASIBLE",
+   "radius": null,
+   "free": [
+    0,
+    2,
+    5,
+    7,
+    10,
+    17,
+    19,
+    21,
+    22,
+    24,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    35,
+    40,
+    42,
+    43,
+    44,
+    45,
+    48,
+    50
+   ],
+   "time_limit": 600,
+   "workers": 16,
+   "seed": 20261012,
+   "objective_divisor": 1,
+   "pair_literals": 148810,
+   "build_seconds": 4.2,
+   "seconds": 618.3,
+   "solver": "OR-Tools 9.14.6206 CP-SAT",
+   "best_bound_Z": 723741939198906,
+   "Z": 734205674968831,
+   "bound_J": 1.8538867796126055,
+   "solution_J": 1.8806899540019402,
+   "proven_optimal_hint": false
+  },
+  "shift_layer": {
+   "status": "OPTIMAL",
+   "radius": null,
+   "free": [
+    1,
+    3,
+    4,
+    6,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    20,
+    23,
+    25,
+    32,
+    36,
+    37,
+    38,
+    39,
+    41,
+    46,
+    47,
+    49,
+    51
+   ],
+   "time_limit": 600,
+   "workers": 16,
+   "seed": 20261012,
+   "objective_divisor": 1,
+   "pair_literals": 148810,
+   "build_seconds": 3.9,
+   "seconds": 13.9,
+   "solver": "OR-Tools 9.14.6206 CP-SAT",
+   "best_bound_Z": 734205674968831,
+   "Z": 734205674968831,
+   "bound_J": 1.8806899540019402,
+   "solution_J": 1.8806899540019402,
+   "proven_optimal_hint": true
+  }
+ },
+ "lower_bounds_Z": {
+  "LB0": 655169597124530,
+  "Gilmore-Lawler": 689484244541662,
+  "CP-SAT": 696096170303289
+ },
+ "seconds": 2294.5
+}

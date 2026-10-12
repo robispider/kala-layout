@@ -1,0 +1,1067 @@
+{
+  "phase": 1,
+  "title": "Reproduction of the published Colemak Mod-DH model",
+  "manifest": {
+    "generated_utc": "2026-10-09T20:23:37+00:00",
+    "bangla_dh_version": "0.1.0",
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "kala_commit": "ca2a1f9befaaadff9bb0ed594eaba1f91927720d",
+    "working_tree_clean": false,
+    "inputs": {
+      "sources.lock.json": "65dcb07863f9852249155a71c5e1faf53e7a5e17e7d22ce46b3852c4531c5bec",
+      "colemak_dh_published.json": "930dffb2ad5e1321972bdb012a340968a97f770ef6cf89374b0c5c4a4b3542eb"
+    },
+    "parameters": {
+      "frequency_file": "freq/en_books.freq",
+      "layout_directory": "layout_full",
+      "distance_scale": 1.12,
+      "experience_curve_b": 0.8
+    }
+  },
+  "reference_integrity": {
+    "vendored_resources_ok": true,
+    "vendored_problems": [],
+    "upstream_source_ok": true,
+    "upstream_problems": []
+  },
+  "comparison_table": {
+    "rows": [
+      {
+        "label": "Colemak-DH",
+        "config": "matrix",
+        "published": [
+          "1.661",
+          "1.67%",
+          "0.065",
+          "1.726"
+        ],
+        "reproduced": [
+          "1.661",
+          "1.67%",
+          "0.065",
+          "1.726"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.661248433945681,
+          "same_finger_bigram_percent": 1.6689789953375112,
+          "bigram_penalty": 0.06497054275606189,
+          "total_effort": 1.7262189767017428
+        }
+      },
+      {
+        "label": "Colemak-DH",
+        "config": "ergonomic",
+        "published": [
+          "1.670",
+          "1.67%",
+          "0.065",
+          "1.735"
+        ],
+        "reproduced": [
+          "1.670",
+          "1.67%",
+          "0.065",
+          "1.735"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.6703060452172478,
+          "same_finger_bigram_percent": 1.6689789953375112,
+          "bigram_penalty": 0.06497054275606189,
+          "total_effort": 1.7352765879733099
+        }
+      },
+      {
+        "label": "Soul",
+        "config": "alternative",
+        "published": [
+          "1.681",
+          "1.82%",
+          "0.086",
+          "1.767"
+        ],
+        "reproduced": [
+          "1.681",
+          "1.82%",
+          "0.086",
+          "1.767"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.6814337404140218,
+          "same_finger_bigram_percent": 1.8152889543699757,
+          "bigram_penalty": 0.08563460556747486,
+          "total_effort": 1.7670683459814969
+        }
+      },
+      {
+        "label": "MTGAP",
+        "config": "traditional",
+        "published": [
+          "1.731",
+          "1.25%",
+          "0.056",
+          "1.787"
+        ],
+        "reproduced": [
+          "1.731",
+          "1.25%",
+          "0.056",
+          "1.787"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.7308049405742565,
+          "same_finger_bigram_percent": 1.2465747718579223,
+          "bigram_penalty": 0.056425596183376565,
+          "total_effort": 1.787230536757633
+        }
+      },
+      {
+        "label": "Colemak",
+        "config": "ergonomic",
+        "published": [
+          "1.739",
+          "1.67%",
+          "0.063",
+          "1.802"
+        ],
+        "reproduced": [
+          "1.739",
+          "1.67%",
+          "0.063",
+          "1.802"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.73929740696195,
+          "same_finger_bigram_percent": 1.6689789953375112,
+          "bigram_penalty": 0.06315021933783668,
+          "total_effort": 1.8024476262997866
+        }
+      },
+      {
+        "label": "Workman",
+        "config": "traditional",
+        "published": [
+          "1.710",
+          "3.15%",
+          "0.107",
+          "1.817"
+        ],
+        "reproduced": [
+          "1.710",
+          "3.15%",
+          "0.107",
+          "1.817"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.7101531668694634,
+          "same_finger_bigram_percent": 3.147067077921406,
+          "bigram_penalty": 0.10659043041769536,
+          "total_effort": 1.8167435972871588
+        }
+      },
+      {
+        "label": "Colemak",
+        "config": "traditional",
+        "published": [
+          "1.773",
+          "1.67%",
+          "0.063",
+          "1.836"
+        ],
+        "reproduced": [
+          "1.773",
+          "1.67%",
+          "0.063",
+          "1.836"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.7731265093328372,
+          "same_finger_bigram_percent": 1.6689789953375112,
+          "bigram_penalty": 0.06315021933783668,
+          "total_effort": 1.836276728670674
+        }
+      },
+      {
+        "label": "Halmak",
+        "config": "traditional",
+        "published": [
+          "1.760",
+          "2.96%",
+          "0.124",
+          "1.884"
+        ],
+        "reproduced": [
+          "1.760",
+          "2.96%",
+          "0.124",
+          "1.884"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.76022602477953,
+          "same_finger_bigram_percent": 2.9606598715616883,
+          "bigram_penalty": 0.12384556458994496,
+          "total_effort": 1.884071589369475
+        }
+      },
+      {
+        "label": "Asset",
+        "config": "traditional",
+        "published": [
+          "1.795",
+          "3.12%",
+          "0.117",
+          "1.911"
+        ],
+        "reproduced": [
+          "1.795",
+          "3.12%",
+          "0.117",
+          "1.911"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.7947350657207837,
+          "same_finger_bigram_percent": 3.1150661772187505,
+          "bigram_penalty": 0.11650410017050064,
+          "total_effort": 1.9112391658912844
+        }
+      },
+      {
+        "label": "Dvorak",
+        "config": "traditional",
+        "published": [
+          "1.843",
+          "2.63%",
+          "0.080",
+          "1.923"
+        ],
+        "reproduced": [
+          "1.843",
+          "2.63%",
+          "0.080",
+          "1.923"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.8429744172125169,
+          "same_finger_bigram_percent": 2.6251372303804033,
+          "bigram_penalty": 0.08048153768479978,
+          "total_effort": 1.9234559548973167
+        }
+      },
+      {
+        "label": "Norman",
+        "config": "traditional",
+        "published": [
+          "1.711",
+          "6.42%",
+          "0.215",
+          "1.926"
+        ],
+        "reproduced": [
+          "1.711",
+          "6.42%",
+          "0.215",
+          "1.926"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.7112284838350433,
+          "same_finger_bigram_percent": 6.416872558065734,
+          "bigram_penalty": 0.2146154565440895,
+          "total_effort": 1.925843940379133
+        }
+      },
+      {
+        "label": "qgmlwyfub",
+        "config": "traditional",
+        "published": [
+          "1.793",
+          "4.66%",
+          "0.143",
+          "1.936"
+        ],
+        "reproduced": [
+          "1.793",
+          "4.66%",
+          "0.143",
+          "1.936"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.7929706611333356,
+          "same_finger_bigram_percent": 4.66049960324284,
+          "bigram_penalty": 0.14291397701826442,
+          "total_effort": 1.9358846381516004
+        }
+      },
+      {
+        "label": "Qwpr",
+        "config": "traditional",
+        "published": [
+          "1.830",
+          "4.06%",
+          "0.157",
+          "1.987"
+        ],
+        "reproduced": [
+          "1.830",
+          "4.06%",
+          "0.157",
+          "1.987"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.8298965742940028,
+          "same_finger_bigram_percent": 4.055544239636788,
+          "bigram_penalty": 0.1572136922286475,
+          "total_effort": 1.9871102665226503
+        }
+      },
+      {
+        "label": "Minimak-8key",
+        "config": "traditional",
+        "published": [
+          "1.863",
+          "4.10%",
+          "0.142",
+          "2.005"
+        ],
+        "reproduced": [
+          "1.863",
+          "4.10%",
+          "0.142",
+          "2.005"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 1.8629291261209118,
+          "same_finger_bigram_percent": 4.098216360020501,
+          "bigram_penalty": 0.14218481044167391,
+          "total_effort": 2.005113936562586
+        }
+      },
+      {
+        "label": "Qwerty",
+        "config": "traditional",
+        "published": [
+          "2.169",
+          "6.58%",
+          "0.231",
+          "2.400"
+        ],
+        "reproduced": [
+          "2.169",
+          "6.58%",
+          "0.231",
+          "2.400"
+        ],
+        "match": true,
+        "full_precision": {
+          "base_effort": 2.1689782821701784,
+          "same_finger_bigram_percent": 6.575429472398753,
+          "bigram_penalty": 0.23117532036428087,
+          "total_effort": 2.400153602534459
+        }
+      }
+    ],
+    "rows_matched": 15,
+    "rows_total": 15,
+    "values_matched": 60,
+    "values_total": 60
+  },
+  "switching_difficulty_table": {
+    "rows": [
+      {
+        "label": "Minimak-8key",
+        "published": [
+          3,
+          8,
+          "3.50",
+          13
+        ],
+        "reproduced": [
+          3,
+          8,
+          "3.50",
+          13
+        ],
+        "match": true,
+        "switching_difficulty": 12.545875631223156,
+        "switching_difficulty_without_effort_ratio": 15.046076126397272,
+        "movement_counts": {
+          "unchanged": 37,
+          "same_finger": 5,
+          "same_hand": 1,
+          "equivalent_finger_other_hand": 1,
+          "other_finger_other_hand": 1,
+          "override": 0
+        }
+      },
+      {
+        "label": "Qwpr",
+        "published": [
+          2,
+          11,
+          "4.25",
+          18
+        ],
+        "reproduced": [
+          2,
+          11,
+          "4.25",
+          14
+        ],
+        "match": false,
+        "switching_difficulty": 14.413905523763162,
+        "switching_difficulty_without_effort_ratio": 17.583728723462265,
+        "movement_counts": {
+          "unchanged": 34,
+          "same_finger": 9,
+          "same_hand": 0,
+          "equivalent_finger_other_hand": 0,
+          "other_finger_other_hand": 2,
+          "override": 0
+        },
+        "explanation": "Published d equals the model without the S2/S1 effort ratio, i.e. this cell predates the 2021-03-27 model update that added the ratio."
+      },
+      {
+        "label": "Norman",
+        "published": [
+          4,
+          15,
+          "5.75",
+          19
+        ],
+        "reproduced": [
+          4,
+          15,
+          "5.75",
+          19
+        ],
+        "match": true,
+        "switching_difficulty": 18.90442785160552,
+        "switching_difficulty_without_effort_ratio": 20.336454428546613,
+        "movement_counts": {
+          "unchanged": 30,
+          "same_finger": 11,
+          "same_hand": 2,
+          "equivalent_finger_other_hand": 0,
+          "other_finger_other_hand": 2,
+          "override": 0
+        }
+      },
+      {
+        "label": "Asset",
+        "published": [
+          6,
+          15,
+          "6.25",
+          20
+        ],
+        "reproduced": [
+          6,
+          15,
+          "6.25",
+          20
+        ],
+        "match": true,
+        "switching_difficulty": 20.17776231424417,
+        "switching_difficulty_without_effort_ratio": 19.968303661905612,
+        "movement_counts": {
+          "unchanged": 30,
+          "same_finger": 9,
+          "same_hand": 4,
+          "equivalent_finger_other_hand": 0,
+          "other_finger_other_hand": 2,
+          "override": 0
+        }
+      },
+      {
+        "label": "Colemak",
+        "published": [
+          12,
+          17,
+          "8.00",
+          28
+        ],
+        "reproduced": [
+          12,
+          17,
+          "8.00",
+          28
+        ],
+        "match": true,
+        "switching_difficulty": 28.247366951997424,
+        "switching_difficulty_without_effort_ratio": 30.21296795010964,
+        "movement_counts": {
+          "unchanged": 28,
+          "same_finger": 5,
+          "same_hand": 10,
+          "equivalent_finger_other_hand": 1,
+          "other_finger_other_hand": 1,
+          "override": 0
+        }
+      },
+      {
+        "label": "Colemak-DH",
+        "published": [
+          12,
+          19,
+          "9.25",
+          29
+        ],
+        "reproduced": [
+          12,
+          19,
+          "9.25",
+          29
+        ],
+        "match": true,
+        "switching_difficulty": 28.70721927843264,
+        "switching_difficulty_without_effort_ratio": 32.85286144414639,
+        "movement_counts": {
+          "unchanged": 22,
+          "same_finger": 7,
+          "same_hand": 10,
+          "equivalent_finger_other_hand": 1,
+          "other_finger_other_hand": 1,
+          "override": 4
+        }
+      },
+      {
+        "label": "Workman",
+        "published": [
+          13,
+          21,
+          "10.00",
+          34
+        ],
+        "reproduced": [
+          13,
+          21,
+          "10.00",
+          34
+        ],
+        "match": true,
+        "switching_difficulty": 34.02896206545419,
+        "switching_difficulty_without_effort_ratio": 35.891950109684934,
+        "movement_counts": {
+          "unchanged": 24,
+          "same_finger": 8,
+          "same_hand": 9,
+          "equivalent_finger_other_hand": 2,
+          "other_finger_other_hand": 2,
+          "override": 0
+        }
+      },
+      {
+        "label": "qgmlwyfub",
+        "published": [
+          17,
+          20,
+          "12.25",
+          42
+        ],
+        "reproduced": [
+          17,
+          20,
+          "12.25",
+          42
+        ],
+        "match": true,
+        "switching_difficulty": 42.118677259354804,
+        "switching_difficulty_without_effort_ratio": 44.74942342252643,
+        "movement_counts": {
+          "unchanged": 25,
+          "same_finger": 3,
+          "same_hand": 9,
+          "equivalent_finger_other_hand": 4,
+          "other_finger_other_hand": 4,
+          "override": 0
+        }
+      },
+      {
+        "label": "Halmak",
+        "published": [
+          27,
+          30,
+          "19.50",
+          58
+        ],
+        "reproduced": [
+          27,
+          30,
+          "19.50",
+          58
+        ],
+        "match": true,
+        "switching_difficulty": 58.103532316536146,
+        "switching_difficulty_without_effort_ratio": 57.21637373083799,
+        "movement_counts": {
+          "unchanged": 15,
+          "same_finger": 3,
+          "same_hand": 15,
+          "equivalent_finger_other_hand": 3,
+          "other_finger_other_hand": 9,
+          "override": 0
+        }
+      },
+      {
+        "label": "Dvorak",
+        "published": [
+          26,
+          33,
+          "23.25",
+          68
+        ],
+        "reproduced": [
+          26,
+          33,
+          "23.25",
+          68
+        ],
+        "match": true,
+        "switching_difficulty": 68.20842134646946,
+        "switching_difficulty_without_effort_ratio": 60.986809188757306,
+        "movement_counts": {
+          "unchanged": 12,
+          "same_finger": 7,
+          "same_hand": 4,
+          "equivalent_finger_other_hand": 10,
+          "other_finger_other_hand": 12,
+          "override": 0
+        }
+      },
+      {
+        "label": "MTGAP",
+        "published": [
+          26,
+          30,
+          "23.75",
+          65
+        ],
+        "reproduced": [
+          26,
+          30,
+          "23.75",
+          65
+        ],
+        "match": true,
+        "switching_difficulty": 64.52953822784913,
+        "switching_difficulty_without_effort_ratio": 68.10095515985024,
+        "movement_counts": {
+          "unchanged": 15,
+          "same_finger": 4,
+          "same_hand": 4,
+          "equivalent_finger_other_hand": 5,
+          "other_finger_other_hand": 17,
+          "override": 0
+        }
+      }
+    ],
+    "rows_matched": 10,
+    "rows_total": 11,
+    "rows_explained": 1
+  },
+  "experience_curve": {
+    "p": -0.3219280948873623,
+    "rows": [
+      {
+        "f_percent": 1,
+        "published": "1.47",
+        "reproduced": "1.47",
+        "value": 1.4747698473569486,
+        "match": true
+      },
+      {
+        "f_percent": 2,
+        "published": "2.36",
+        "reproduced": "2.36",
+        "value": 2.359631755771118,
+        "match": true
+      },
+      {
+        "f_percent": 5,
+        "published": "4.39",
+        "reproduced": "4.39",
+        "value": 4.392139971599594,
+        "match": true
+      },
+      {
+        "f_percent": 10,
+        "published": "7.03",
+        "reproduced": "7.03",
+        "value": 7.02742395455935,
+        "match": true
+      }
+    ],
+    "rows_matched": 4,
+    "specification_example": {
+      "f": 5,
+      "m": 0.5,
+      "effort_ratio": 1.2,
+      "C_f_rounded_exponent": 4.392097465994994,
+      "D_i_rounded_exponent": 2.6352584795969967,
+      "C_f_exact_exponent": 4.392139971599594,
+      "D_i_exact_exponent": 2.635283982959756
+    }
+  },
+  "effort_grid": {
+    "frozen_distance_scale": 1.12,
+    "frozen_within_best_interval": true,
+    "scan": {
+      "range": [
+        0.9,
+        1.3
+      ],
+      "step": 0.0005,
+      "scored_keys": 142,
+      "best_matches": 138,
+      "best_intervals": [
+        [
+          1.1195,
+          1.122
+        ]
+      ],
+      "widest_best_interval": [
+        1.1195,
+        1.122
+      ]
+    },
+    "at_frozen_value": {
+      "iso_optimal_fingers": {
+        "keys": 55,
+        "one_unit_keys": 48,
+        "one_unit_matches": 46,
+        "all_matches": 51,
+        "max_abs_deviation_one_unit": 0.07268308487423925,
+        "max_abs_deviation_all": 0.07268308487423925,
+        "mismatches": [
+          {
+            "key": "BACKSPACE",
+            "published": 5.8,
+            "model": 5.855,
+            "finger": "R0",
+            "one_unit": false
+          },
+          {
+            "key": "]",
+            "published": 4.7,
+            "model": 4.7629,
+            "finger": "R0",
+            "one_unit": true
+          },
+          {
+            "key": "CAPS",
+            "published": 3.4,
+            "model": 3.4727,
+            "finger": "L0",
+            "one_unit": false
+          },
+          {
+            "key": "'",
+            "published": 3.4,
+            "model": 3.4727,
+            "finger": "R0",
+            "one_unit": true
+          }
+        ]
+      },
+      "iso_traditional_fingers": {
+        "keys": 55,
+        "one_unit_keys": 48,
+        "one_unit_matches": 46,
+        "all_matches": 51,
+        "max_abs_deviation_one_unit": 0.07268308487423925,
+        "max_abs_deviation_all": 0.07268308487423925,
+        "mismatches": [
+          {
+            "key": "BACKSPACE",
+            "published": 5.8,
+            "model": 5.855,
+            "finger": "R0",
+            "one_unit": false
+          },
+          {
+            "key": "]",
+            "published": 4.7,
+            "model": 4.7629,
+            "finger": "R0",
+            "one_unit": true
+          },
+          {
+            "key": "CAPS",
+            "published": 3.4,
+            "model": 3.4727,
+            "finger": "L0",
+            "one_unit": false
+          },
+          {
+            "key": "'",
+            "published": 3.4,
+            "model": 3.4727,
+            "finger": "R0",
+            "one_unit": true
+          }
+        ]
+      },
+      "matrix_optimal_fingers": {
+        "keys": 54,
+        "one_unit_keys": 46,
+        "one_unit_matches": 46,
+        "all_matches": 50,
+        "max_abs_deviation_one_unit": 0.04936867030504999,
+        "max_abs_deviation_all": 0.06291228182542818,
+        "mismatches": [
+          {
+            "key": "CAPS",
+            "published": 3.4,
+            "model": 3.4629,
+            "finger": "L0",
+            "one_unit": false
+          },
+          {
+            "key": "LSHIFT",
+            "published": 4.0,
+            "model": 4.0533,
+            "finger": "L0",
+            "one_unit": false
+          },
+          {
+            "key": "H_R0",
+            "published": 3.4,
+            "model": 3.4629,
+            "finger": "R0",
+            "one_unit": false
+          },
+          {
+            "key": "RSHIFT",
+            "published": 4.0,
+            "model": 4.0533,
+            "finger": "R0",
+            "one_unit": false
+          }
+        ]
+      }
+    },
+    "published_config_vs_image": [
+      {
+        "grid": "iso_traditional_fingers",
+        "config": "effort_traditional_config.dat",
+        "key": "]",
+        "config_value": 5.6,
+        "image_value": 4.7
+      }
+    ],
+    "alternative_choices": [
+      {
+        "choice": "frozen model",
+        "best_matches": 138,
+        "scored_keys": 142,
+        "best_intervals": [
+          [
+            1.12,
+            1.122
+          ]
+        ]
+      },
+      {
+        "choice": "activation box of half-width 0.3 (margin 0.2)",
+        "best_matches": 82,
+        "scored_keys": 142,
+        "best_intervals": [
+          [
+            1.225,
+            1.229
+          ],
+          [
+            1.263,
+            1.264
+          ]
+        ]
+      },
+      {
+        "choice": "right-hand resting offsets not mirrored",
+        "best_matches": 119,
+        "scored_keys": 142,
+        "best_intervals": [
+          [
+            1.122,
+            1.122
+          ]
+        ]
+      },
+      {
+        "choice": "no home-key rule",
+        "best_matches": 132,
+        "scored_keys": 142,
+        "best_intervals": [
+          [
+            1.12,
+            1.122
+          ]
+        ]
+      }
+    ]
+  },
+  "model_grid_sensitivity": {
+    "distance_scale": 1.12,
+    "rows": [
+      {
+        "label": "Colemak-DH",
+        "config": "ergonomic",
+        "published_total": "1.735",
+        "model_grid_total": "1.741",
+        "model_grid_base": "1.676"
+      },
+      {
+        "label": "MTGAP",
+        "config": "traditional",
+        "published_total": "1.787",
+        "model_grid_total": "1.790",
+        "model_grid_base": "1.734"
+      },
+      {
+        "label": "Colemak",
+        "config": "ergonomic",
+        "published_total": "1.802",
+        "model_grid_total": "1.805",
+        "model_grid_base": "1.742"
+      },
+      {
+        "label": "Workman",
+        "config": "traditional",
+        "published_total": "1.817",
+        "model_grid_total": "1.821",
+        "model_grid_base": "1.714"
+      },
+      {
+        "label": "Colemak",
+        "config": "traditional",
+        "published_total": "1.836",
+        "model_grid_total": "1.839",
+        "model_grid_base": "1.776"
+      },
+      {
+        "label": "Halmak",
+        "config": "traditional",
+        "published_total": "1.884",
+        "model_grid_total": "1.889",
+        "model_grid_base": "1.765"
+      },
+      {
+        "label": "Asset",
+        "config": "traditional",
+        "published_total": "1.911",
+        "model_grid_total": "1.914",
+        "model_grid_base": "1.797"
+      },
+      {
+        "label": "Dvorak",
+        "config": "traditional",
+        "published_total": "1.923",
+        "model_grid_total": "1.925",
+        "model_grid_base": "1.844"
+      },
+      {
+        "label": "Norman",
+        "config": "traditional",
+        "published_total": "1.926",
+        "model_grid_total": "1.930",
+        "model_grid_base": "1.715"
+      },
+      {
+        "label": "qgmlwyfub",
+        "config": "traditional",
+        "published_total": "1.936",
+        "model_grid_total": "1.937",
+        "model_grid_base": "1.794"
+      },
+      {
+        "label": "Qwpr",
+        "config": "traditional",
+        "published_total": "1.987",
+        "model_grid_total": "1.990",
+        "model_grid_base": "1.833"
+      },
+      {
+        "label": "Minimak-8key",
+        "config": "traditional",
+        "published_total": "2.005",
+        "model_grid_total": "2.007",
+        "model_grid_base": "1.865"
+      },
+      {
+        "label": "Qwerty",
+        "config": "traditional",
+        "published_total": "2.400",
+        "model_grid_total": "2.407",
+        "model_grid_base": "2.176"
+      }
+    ],
+    "published_order": [
+      "Colemak-DH/ergonomic",
+      "MTGAP/traditional",
+      "Colemak/ergonomic",
+      "Workman/traditional",
+      "Colemak/traditional",
+      "Halmak/traditional",
+      "Asset/traditional",
+      "Dvorak/traditional",
+      "Norman/traditional",
+      "qgmlwyfub/traditional",
+      "Qwpr/traditional",
+      "Minimak-8key/traditional",
+      "Qwerty/traditional"
+    ],
+    "model_grid_order": [
+      "Colemak-DH/ergonomic",
+      "MTGAP/traditional",
+      "Colemak/ergonomic",
+      "Workman/traditional",
+      "Colemak/traditional",
+      "Halmak/traditional",
+      "Asset/traditional",
+      "Dvorak/traditional",
+      "Norman/traditional",
+      "qgmlwyfub/traditional",
+      "Qwpr/traditional",
+      "Minimak-8key/traditional",
+      "Qwerty/traditional"
+    ],
+    "order_preserved": true
+  },
+  "caseless_script_check": {
+    "layout_alphabet": "ককাািি",
+    "key_chars": [
+      "কক",
+      "াা",
+      "িি"
+    ],
+    "duplicate_warnings": [
+      "Warning: letter ক appears more than once on layout. ",
+      "Warning: letter া appears more than once on layout. ",
+      "Warning: letter ি appears more than once on layout. "
+    ],
+    "base_effort_all_keys_effort_1": 2.0000000298023224,
+    "expected_without_quirk": 1.0,
+    "finding": "Character.isAlphabetic is true for Bangla letters and vowel signs, which are neither upper- nor lower-case, so Key.kt 'shifts' each to itself: every key holds its character twice and base effort is counted twice. The original tool cannot score Bangla unmodified; Phase 2 uses a Bangla-aware loader instead."
+  },
+  "acceptance": {
+    "vendored_resources_verified": true,
+    "comparison_table_exact": true,
+    "switching_table_exact_or_explained": true,
+    "experience_curve_exact": true,
+    "effort_grid_one_unit_keys_within_0_1": true
+  },
+  "accepted": true
+}

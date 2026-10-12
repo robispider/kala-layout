@@ -1,0 +1,1349 @@
+{
+  "version": "bangla-symbols-v1",
+  "decision": "D1 default: Kala alphabet + ং ঃ ঁ ৎ । + Bangla digits, validated (owner decision pending)",
+  "unit_rules": [
+    "A unit is one NFC code point, except ড় ঢ় য় (base + U+09BC), which are single units.",
+    "Space (U+0020) is an explicit unit that no layout places (thumb key, D2 default).",
+    "Placed symbols must each be reachable by exactly one key action on a Bangla-DH layout.",
+    "Tracked units are counted but not placed until D1 is decided.",
+    "Any other character is out of inventory: it is not a unit and breaks bigrams."
+  ],
+  "kala_sources": {
+    "data/bn/Alphabet.json": "83c4ee3517f73d6a35406f980a4c52f98545b6818725a7e324458f93607c1e85",
+    "kala/layout/bn/Alphabet.json": "33e51ba8010b50fc456cf121d88c1597672d86ea58d87300ae2eb7d59a05c8f4"
+  },
+  "unicode_version": "14.0.0",
+  "symbols": [
+    {
+      "symbol": "ক",
+      "code_points": [
+        "U+0995"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER KA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "খ",
+      "code_points": [
+        "U+0996"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER KHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "গ",
+      "code_points": [
+        "U+0997"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER GA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ঘ",
+      "code_points": [
+        "U+0998"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER GHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ঙ",
+      "code_points": [
+        "U+0999"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER NGA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "চ",
+      "code_points": [
+        "U+099A"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER CA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ছ",
+      "code_points": [
+        "U+099B"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER CHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "জ",
+      "code_points": [
+        "U+099C"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER JA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ঝ",
+      "code_points": [
+        "U+099D"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER JHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ঞ",
+      "code_points": [
+        "U+099E"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER NYA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ট",
+      "code_points": [
+        "U+099F"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER TTA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ঠ",
+      "code_points": [
+        "U+09A0"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER TTHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ড",
+      "code_points": [
+        "U+09A1"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER DDA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ঢ",
+      "code_points": [
+        "U+09A2"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER DDHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ণ",
+      "code_points": [
+        "U+09A3"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER NNA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ত",
+      "code_points": [
+        "U+09A4"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER TA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "থ",
+      "code_points": [
+        "U+09A5"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER THA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "দ",
+      "code_points": [
+        "U+09A6"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER DA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ধ",
+      "code_points": [
+        "U+09A7"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER DHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ন",
+      "code_points": [
+        "U+09A8"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER NA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "প",
+      "code_points": [
+        "U+09AA"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER PA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ফ",
+      "code_points": [
+        "U+09AB"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER PHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ব",
+      "code_points": [
+        "U+09AC"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER BA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ভ",
+      "code_points": [
+        "U+09AD"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER BHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ম",
+      "code_points": [
+        "U+09AE"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER MA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "য",
+      "code_points": [
+        "U+09AF"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER YA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "র",
+      "code_points": [
+        "U+09B0"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER RA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ল",
+      "code_points": [
+        "U+09B2"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER LA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "শ",
+      "code_points": [
+        "U+09B6"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER SHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ষ",
+      "code_points": [
+        "U+09B7"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER SSA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "স",
+      "code_points": [
+        "U+09B8"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER SA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "হ",
+      "code_points": [
+        "U+09B9"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER HA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ]
+    },
+    {
+      "symbol": "ড়",
+      "code_points": [
+        "U+09A1",
+        "U+09BC"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER DDA",
+        "BENGALI SIGN NUKTA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ],
+      "kala_form": [
+        "U+09DC"
+      ],
+      "note": "Kala stores the precomposed character; NFC decomposes it (composition exclusion)"
+    },
+    {
+      "symbol": "ঢ়",
+      "code_points": [
+        "U+09A2",
+        "U+09BC"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER DDHA",
+        "BENGALI SIGN NUKTA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ],
+      "kala_form": [
+        "U+09DD"
+      ],
+      "note": "Kala stores the precomposed character; NFC decomposes it (composition exclusion)"
+    },
+    {
+      "symbol": "য়",
+      "code_points": [
+        "U+09AF",
+        "U+09BC"
+      ],
+      "class": "consonant",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER YA",
+        "BENGALI SIGN NUKTA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#consonants",
+        "kala/layout/bn/Alphabet.json#consonants"
+      ],
+      "kala_form": [
+        "U+09DF"
+      ],
+      "note": "Kala stores the precomposed character; NFC decomposes it (composition exclusion)"
+    },
+    {
+      "symbol": "অ",
+      "code_points": [
+        "U+0985"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER A"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "আ",
+      "code_points": [
+        "U+0986"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER AA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ই",
+      "code_points": [
+        "U+0987"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER I"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ঈ",
+      "code_points": [
+        "U+0988"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER II"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "উ",
+      "code_points": [
+        "U+0989"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER U"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ঊ",
+      "code_points": [
+        "U+098A"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER UU"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ঋ",
+      "code_points": [
+        "U+098B"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER VOCALIC R"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "এ",
+      "code_points": [
+        "U+098F"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER E"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ঐ",
+      "code_points": [
+        "U+0990"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER AI"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ও",
+      "code_points": [
+        "U+0993"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER O"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "ঔ",
+      "code_points": [
+        "U+0994"
+      ],
+      "class": "vowel",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER AU"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#vowels",
+        "kala/layout/bn/Alphabet.json#vowels"
+      ]
+    },
+    {
+      "symbol": "া",
+      "code_points": [
+        "U+09BE"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN AA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ি",
+      "code_points": [
+        "U+09BF"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN I"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ী",
+      "code_points": [
+        "U+09C0"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN II"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ু",
+      "code_points": [
+        "U+09C1"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN U"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ূ",
+      "code_points": [
+        "U+09C2"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN UU"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ৃ",
+      "code_points": [
+        "U+09C3"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN VOCALIC R"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ে",
+      "code_points": [
+        "U+09C7"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN E"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ৈ",
+      "code_points": [
+        "U+09C8"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN AI"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ো",
+      "code_points": [
+        "U+09CB"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN O"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "ৌ",
+      "code_points": [
+        "U+09CC"
+      ],
+      "class": "vowel_sign",
+      "placed": true,
+      "names": [
+        "BENGALI VOWEL SIGN AU"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#matras",
+        "kala/layout/bn/Alphabet.json#matras"
+      ]
+    },
+    {
+      "symbol": "্",
+      "code_points": [
+        "U+09CD"
+      ],
+      "class": "hasant",
+      "placed": true,
+      "names": [
+        "BENGALI SIGN VIRAMA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#halant",
+        "kala/layout/bn/Alphabet.json#halant"
+      ]
+    },
+    {
+      "symbol": "০",
+      "code_points": [
+        "U+09E6"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT ZERO"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "১",
+      "code_points": [
+        "U+09E7"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT ONE"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "২",
+      "code_points": [
+        "U+09E8"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT TWO"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৩",
+      "code_points": [
+        "U+09E9"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT THREE"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৪",
+      "code_points": [
+        "U+09EA"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT FOUR"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৫",
+      "code_points": [
+        "U+09EB"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT FIVE"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৬",
+      "code_points": [
+        "U+09EC"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT SIX"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৭",
+      "code_points": [
+        "U+09ED"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT SEVEN"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৮",
+      "code_points": [
+        "U+09EE"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT EIGHT"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "৯",
+      "code_points": [
+        "U+09EF"
+      ],
+      "class": "digit",
+      "placed": true,
+      "names": [
+        "BENGALI DIGIT NINE"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#digits",
+        "kala/layout/bn/Alphabet.json#digits"
+      ]
+    },
+    {
+      "symbol": "।",
+      "code_points": [
+        "U+0964"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "DEVANAGARI DANDA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "॥",
+      "code_points": [
+        "U+0965"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "DEVANAGARI DOUBLE DANDA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": ",",
+      "code_points": [
+        "U+002C"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "COMMA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "?",
+      "code_points": [
+        "U+003F"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "QUESTION MARK"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "!",
+      "code_points": [
+        "U+0021"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "EXCLAMATION MARK"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": ";",
+      "code_points": [
+        "U+003B"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "SEMICOLON"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": ":",
+      "code_points": [
+        "U+003A"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "COLON"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "\"",
+      "code_points": [
+        "U+0022"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "QUOTATION MARK"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "'",
+      "code_points": [
+        "U+0027"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "APOSTROPHE"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "(",
+      "code_points": [
+        "U+0028"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "LEFT PARENTHESIS"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": ")",
+      "code_points": [
+        "U+0029"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "RIGHT PARENTHESIS"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#punctuation",
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "ং",
+      "code_points": [
+        "U+0982"
+      ],
+      "class": "sign",
+      "placed": true,
+      "names": [
+        "BENGALI SIGN ANUSVARA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#other",
+        "kala/layout/bn/Alphabet.json#other"
+      ]
+    },
+    {
+      "symbol": "ঃ",
+      "code_points": [
+        "U+0983"
+      ],
+      "class": "sign",
+      "placed": true,
+      "names": [
+        "BENGALI SIGN VISARGA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#other",
+        "kala/layout/bn/Alphabet.json#other"
+      ]
+    },
+    {
+      "symbol": "ঁ",
+      "code_points": [
+        "U+0981"
+      ],
+      "class": "sign",
+      "placed": true,
+      "names": [
+        "BENGALI SIGN CANDRABINDU"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#other",
+        "kala/layout/bn/Alphabet.json#other"
+      ]
+    },
+    {
+      "symbol": "ৎ",
+      "code_points": [
+        "U+09CE"
+      ],
+      "class": "sign",
+      "placed": true,
+      "names": [
+        "BENGALI LETTER KHANDA TA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#other",
+        "kala/layout/bn/Alphabet.json#other"
+      ]
+    },
+    {
+      "symbol": "ঽ",
+      "code_points": [
+        "U+09BD"
+      ],
+      "class": "sign",
+      "placed": true,
+      "names": [
+        "BENGALI SIGN AVAGRAHA"
+      ],
+      "sources": [
+        "data/bn/Alphabet.json#other",
+        "kala/layout/bn/Alphabet.json#other"
+      ]
+    },
+    {
+      "symbol": "-",
+      "code_points": [
+        "U+002D"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "HYPHEN-MINUS"
+      ],
+      "sources": [
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "—",
+      "code_points": [
+        "U+2014"
+      ],
+      "class": "punctuation",
+      "placed": true,
+      "names": [
+        "EM DASH"
+      ],
+      "sources": [
+        "kala/layout/bn/Alphabet.json#punctuation"
+      ]
+    },
+    {
+      "symbol": "‌",
+      "code_points": [
+        "U+200C"
+      ],
+      "class": "joiner",
+      "placed": false,
+      "names": [
+        "ZERO WIDTH NON-JOINER"
+      ],
+      "sources": [
+        "typing grammar (not in Kala's alphabet)"
+      ]
+    },
+    {
+      "symbol": "‍",
+      "code_points": [
+        "U+200D"
+      ],
+      "class": "joiner",
+      "placed": false,
+      "names": [
+        "ZERO WIDTH JOINER"
+      ],
+      "sources": [
+        "typing grammar (not in Kala's alphabet)"
+      ]
+    }
+  ],
+  "counts": {
+    "consonant": 35,
+    "vowel": 11,
+    "vowel_sign": 10,
+    "hasant": 1,
+    "digit": 10,
+    "punctuation": 13,
+    "sign": 5,
+    "placed": 85,
+    "tracked": 2
+  },
+  "symbol_list_sha256": "0b312c9b52c73b971f259925eec9c57b3712970c59e9e9e1e20edf0a2a7b5f21"
+}

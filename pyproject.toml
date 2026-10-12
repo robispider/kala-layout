@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bangla-dh"
+version = "0.1.0"
+description = "Bangla-DH Pure: reproducible Colemak-DH-based keyboard optimization for Bangla (Kala Jhor and Kala Goti)"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Phase 4 only (owner approval, 10 October 2026): CP-SAT, GLOP/PDLP, linear sum assignment.
+phase4 = ["ortools==9.14.6206"]
+
+[project.urls]
+Homepage = "https://robispider.github.io/kala-layout/en/"
+Repository = "https://github.com/robispider/kala-layout"
+Datasets = "https://github.com/robispider/ban-dataset-collection"
+
+[project.scripts]
+bangla-dh = "bangla_dh.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

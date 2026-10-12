@@ -1,0 +1,2263 @@
+{
+ "inventory": {
+  "file": "data/bangla-symbols-v1.json",
+  "counts": {
+   "consonant": 35,
+   "vowel": 11,
+   "vowel_sign": 10,
+   "hasant": 1,
+   "digit": 10,
+   "punctuation": 13,
+   "sign": 5,
+   "placed": 85,
+   "tracked": 2
+  },
+  "symbol_list_sha256": "0b312c9b52c73b971f259925eec9c57b3712970c59e9e9e1e20edf0a2a7b5f21"
+ },
+ "english_cross_check": {
+  "frequency": "freq/en_books.freq",
+  "rows": [
+   {
+    "label": "Colemak-DH",
+    "config": "effort_matrix_simple_config.dat",
+    "port_total": 1.7262189767017428,
+    "scorer_J0": 1.7262189669933925,
+    "max_abs_difference": 9.708350345860595e-09
+   },
+   {
+    "label": "Colemak-DH",
+    "config": "effort_ergonomic_config.dat",
+    "port_total": 1.7352765879733099,
+    "scorer_J0": 1.7352765787887783,
+    "max_abs_difference": 9.184531579720101e-09
+   },
+   {
+    "label": "Soul",
+    "config": "effort_alternative_config.dat",
+    "port_total": 1.7670683459814969,
+    "scorer_J0": 1.7670683375851866,
+    "max_abs_difference": 8.396310313685262e-09
+   },
+   {
+    "label": "MTGAP",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.787230536757633,
+    "scorer_J0": 1.787230529349742,
+    "max_abs_difference": 7.846613137019176e-09
+   },
+   {
+    "label": "Colemak",
+    "config": "effort_ergonomic_config.dat",
+    "port_total": 1.8024476262997866,
+    "scorer_J0": 1.802447618682198,
+    "max_abs_difference": 7.617588559938326e-09
+   },
+   {
+    "label": "Workman",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.8167435972871588,
+    "scorer_J0": 1.8167435904467422,
+    "max_abs_difference": 7.153835523965313e-09
+   },
+   {
+    "label": "Colemak",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.836276728670674,
+    "scorer_J0": 1.836276720664542,
+    "max_abs_difference": 8.006131979598763e-09
+   },
+   {
+    "label": "Halmak",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.884071589369475,
+    "scorer_J0": 1.8840715836041793,
+    "max_abs_difference": 6.718911427228136e-09
+   },
+   {
+    "label": "Asset",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.9112391658912844,
+    "scorer_J0": 1.9112391585705928,
+    "max_abs_difference": 7.320691608470042e-09
+   },
+   {
+    "label": "Dvorak",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.9234559548973167,
+    "scorer_J0": 1.9234559515361147,
+    "max_abs_difference": 3.666904335730692e-09
+   },
+   {
+    "label": "Norman",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.925843940379133,
+    "scorer_J0": 1.925843933631119,
+    "max_abs_difference": 7.741238317038324e-09
+   },
+   {
+    "label": "qgmlwyfub",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.9358846381516004,
+    "scorer_J0": 1.9358846378412191,
+    "max_abs_difference": 1.3321701519686258e-09
+   },
+   {
+    "label": "Qwpr",
+    "config": "effort_traditional_config.dat",
+    "port_total": 1.9871102665226503,
+    "scorer_J0": 1.987110258732766,
+    "max_abs_difference": 8.052810418490708e-09
+   },
+   {
+    "label": "Minimak-8key",
+    "config": "effort_traditional_config.dat",
+    "port_total": 2.005113936562586,
+    "scorer_J0": 2.00511393164974,
+    "max_abs_difference": 5.444226625073156e-09
+   },
+   {
+    "label": "Qwerty",
+    "config": "effort_traditional_config.dat",
+    "port_total": 2.400153602534459,
+    "scorer_J0": 2.4001535945695336,
+    "max_abs_difference": 9.75544045545007e-09
+   }
+  ],
+  "max_abs_difference": 9.75544045545007e-09,
+  "tolerance": 1e-06,
+  "pass": true
+ },
+ "round_trip": {
+  "UniJoy (Kala)": {
+   "tools/kala-eval/datasets/top20k.tsv": {
+    "texts": 20000,
+    "round_trip_ok": 20000,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_frequent_gold.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_inflected.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_rare_gold.tsv": {
+    "texts": 1000,
+    "round_trip_ok": 1000,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_usage_dev.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_usage_test.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "bnwiki/heldout token types (top 200000)": {
+    "texts": 200000,
+    "round_trip_ok": 200000,
+    "failures": 0,
+    "texts_with_unproducible_characters": 5249,
+    "failure_examples": []
+   }
+  },
+  "Bangla-DH reference (base-layer-first greedy)": {
+   "tools/kala-eval/datasets/top20k.tsv": {
+    "texts": 20000,
+    "round_trip_ok": 20000,
+    "failures": 0,
+    "texts_with_unproducible_characters": 7,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_frequent_gold.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_inflected.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_rare_gold.tsv": {
+    "texts": 1000,
+    "round_trip_ok": 1000,
+    "failures": 0,
+    "texts_with_unproducible_characters": 2,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_usage_dev.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 4,
+    "failure_examples": []
+   },
+   "tools/kala-eval/datasets/err_usage_test.tsv": {
+    "texts": 1500,
+    "round_trip_ok": 1500,
+    "failures": 0,
+    "texts_with_unproducible_characters": 0,
+    "failure_examples": []
+   },
+   "bnwiki/heldout token types (top 200000)": {
+    "texts": 200000,
+    "round_trip_ok": 200000,
+    "failures": 0,
+    "texts_with_unproducible_characters": 8077,
+    "failure_examples": []
+   }
+  }
+ },
+ "unijoy": {
+  "source": "kala/layout/bn/UniJoy.json",
+  "sha256": "f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4",
+  "bijoy_file_identical_to_unijoy": true,
+  "producible_units": [
+   "!",
+   "\"",
+   "'",
+   "(",
+   ")",
+   ",",
+   "-",
+   ":",
+   ";",
+   "?",
+   "।",
+   "ঁ",
+   "ং",
+   "ঃ",
+   "অ",
+   "আ",
+   "ই",
+   "ঈ",
+   "উ",
+   "ঊ",
+   "ঋ",
+   "এ",
+   "ঐ",
+   "ও",
+   "ঔ",
+   "ক",
+   "খ",
+   "গ",
+   "ঘ",
+   "ঙ",
+   "চ",
+   "ছ",
+   "জ",
+   "ঝ",
+   "ঞ",
+   "ট",
+   "ঠ",
+   "ড",
+   "ড়",
+   "ঢ",
+   "ঢ়",
+   "ণ",
+   "ত",
+   "থ",
+   "দ",
+   "ধ",
+   "ন",
+   "প",
+   "ফ",
+   "ব",
+   "ভ",
+   "ম",
+   "য",
+   "য়",
+   "র",
+   "ল",
+   "শ",
+   "ষ",
+   "স",
+   "হ",
+   "া",
+   "ি",
+   "ী",
+   "ু",
+   "ূ",
+   "ৃ",
+   "ে",
+   "ৈ",
+   "ো",
+   "ৌ",
+   "্",
+   "ৎ",
+   "০",
+   "১",
+   "২",
+   "৩",
+   "৪",
+   "৫",
+   "৬",
+   "৭",
+   "৮",
+   "৯"
+  ],
+  "placed_units_not_producible": [
+   "॥",
+   "ঽ",
+   "—"
+  ],
+  "scores": {
+   "bnwiki/train": {
+    "unrounded": {
+     "J0": 2.172927999599189,
+     "E1": 1.7717744101531545,
+     "E2": 0.4011535894460341,
+     "E2_same_finger": 0.4031420512335175,
+     "E2_neighbour_penalty": 0.005187084925975355,
+     "E2_neighbour_benefit": -0.007175546713458752,
+     "M": 0.6343034172460744,
+     "J1": 2.807231416845263,
+     "keystrokes_excluding_space": 334050860,
+     "escaped_characters": 1576705,
+     "escaped_top": [
+      [
+       "e",
+       96513
+      ],
+      [
+       "a",
+       91627
+      ],
+      [
+       "i",
+       79612
+      ],
+      [
+       "o",
+       67665
+      ],
+      [
+       "n",
+       67061
+      ],
+      [
+       "r",
+       65269
+      ],
+      [
+       "t",
+       59190
+      ],
+      [
+       "s",
+       55802
+      ],
+      [
+       "l",
+       46142
+      ],
+      [
+       "–",
+       40614
+      ],
+      [
+       "c",
+       34258
+      ],
+      [
+       "u",
+       32620
+      ],
+      [
+       "1",
+       30406
+      ],
+      [
+       "d",
+       28102
+      ],
+      [
+       "A",
+       27467
+      ],
+      [
+       "h",
+       27198
+      ],
+      [
+       "C",
+       27198
+      ],
+      [
+       "m",
+       27157
+      ],
+      [
+       "0",
+       26417
+      ],
+      [
+       "S",
+       24653
+      ]
+     ],
+     "top_penalty_pairs": [
+      {
+       "kind": "same_finger",
+       "keys": "F → V",
+       "outputs": "া → র",
+       "contribution": 0.04050875717860172
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → C",
+       "outputs": "্ → ে",
+       "contribution": 0.034031953874137696
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → V",
+       "outputs": "ে → র",
+       "contribution": 0.032368038978168645
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → F",
+       "outputs": "র → া",
+       "contribution": 0.017835872780079694
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → C",
+       "outputs": "র → ে",
+       "contribution": 0.01755922496510498
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → V+shift",
+       "outputs": "া → ল",
+       "contribution": 0.01676132882356829
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → C",
+       "outputs": "ল → ে",
+       "contribution": 0.014654962109961667
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → F",
+       "outputs": "্ → া",
+       "contribution": 0.012739898150642106
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → V",
+       "outputs": "প → র",
+       "contribution": 0.011073802111772054
+      },
+      {
+       "kind": "same_finger",
+       "keys": "U → B",
+       "outputs": "জ → ন",
+       "contribution": 0.010966873598255471
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → F",
+       "outputs": "ল → া",
+       "contribution": 0.010433191604469236
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → T",
+       "outputs": "্ → ট",
+       "contribution": 0.009938449991635451
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → F",
+       "outputs": "প → া",
+       "contribution": 0.009343954711163772
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → G",
+       "outputs": "া → ্",
+       "contribution": 0.008116521986877174
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → G",
+       "outputs": "ে → ্",
+       "contribution": 0.007498354325760047
+      }
+     ],
+     "keystrokes_per_non_space_unit": 1.0019802353915916,
+     "J0_per_non_space_unit": 2.544441258916505
+    },
+    "one_decimal": {
+     "J0": 2.1635487057698226,
+     "E1": 1.7623951163237885,
+     "E2": 0.4011535894460341,
+     "E2_same_finger": 0.4031420512335175,
+     "E2_neighbour_penalty": 0.005187084925975355,
+     "E2_neighbour_benefit": -0.007175546713458752,
+     "M": 0.6329000060245856,
+     "J1": 2.796448711794408,
+     "keystrokes_excluding_space": 334050860,
+     "escaped_characters": 1576705,
+     "escaped_top": [
+      [
+       "e",
+       96513
+      ],
+      [
+       "a",
+       91627
+      ],
+      [
+       "i",
+       79612
+      ],
+      [
+       "o",
+       67665
+      ],
+      [
+       "n",
+       67061
+      ],
+      [
+       "r",
+       65269
+      ],
+      [
+       "t",
+       59190
+      ],
+      [
+       "s",
+       55802
+      ],
+      [
+       "l",
+       46142
+      ],
+      [
+       "–",
+       40614
+      ],
+      [
+       "c",
+       34258
+      ],
+      [
+       "u",
+       32620
+      ],
+      [
+       "1",
+       30406
+      ],
+      [
+       "d",
+       28102
+      ],
+      [
+       "A",
+       27467
+      ],
+      [
+       "h",
+       27198
+      ],
+      [
+       "C",
+       27198
+      ],
+      [
+       "m",
+       27157
+      ],
+      [
+       "0",
+       26417
+      ],
+      [
+       "S",
+       24653
+      ]
+     ],
+     "top_penalty_pairs": [
+      {
+       "kind": "same_finger",
+       "keys": "F → V",
+       "outputs": "া → র",
+       "contribution": 0.04050875717860172
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → C",
+       "outputs": "্ → ে",
+       "contribution": 0.034031953874137696
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → V",
+       "outputs": "ে → র",
+       "contribution": 0.032368038978168645
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → F",
+       "outputs": "র → া",
+       "contribution": 0.017835872780079694
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → C",
+       "outputs": "র → ে",
+       "contribution": 0.01755922496510498
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → V+shift",
+       "outputs": "া → ল",
+       "contribution": 0.01676132882356829
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → C",
+       "outputs": "ল → ে",
+       "contribution": 0.014654962109961667
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → F",
+       "outputs": "্ → া",
+       "contribution": 0.012739898150642106
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → V",
+       "outputs": "প → র",
+       "contribution": 0.011073802111772054
+      },
+      {
+       "kind": "same_finger",
+       "keys": "U → B",
+       "outputs": "জ → ন",
+       "contribution": 0.010966873598255471
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → F",
+       "outputs": "ল → া",
+       "contribution": 0.010433191604469236
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → T",
+       "outputs": "্ → ট",
+       "contribution": 0.009938449991635451
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → F",
+       "outputs": "প → া",
+       "contribution": 0.009343954711163772
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → G",
+       "outputs": "া → ্",
+       "contribution": 0.008116521986877174
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → G",
+       "outputs": "ে → ্",
+       "contribution": 0.007498354325760047
+      }
+     ],
+     "keystrokes_per_non_space_unit": 1.0019802353915916,
+     "J0_per_non_space_unit": 2.533458353728969
+    },
+    "traditional_unrounded": {
+     "J0": 2.193397394342896,
+     "E1": 1.8685391858576568,
+     "E2": 0.3248582084852393,
+     "E2_same_finger": 0.33378481796003323,
+     "E2_neighbour_penalty": 0.007381992209124522,
+     "E2_neighbour_benefit": -0.016308601683918473,
+     "M": 0.6402490655666978,
+     "J1": 2.833646459909594,
+     "keystrokes_excluding_space": 334050860,
+     "escaped_characters": 1576705,
+     "escaped_top": [
+      [
+       "e",
+       96513
+      ],
+      [
+       "a",
+       91627
+      ],
+      [
+       "i",
+       79612
+      ],
+      [
+       "o",
+       67665
+      ],
+      [
+       "n",
+       67061
+      ],
+      [
+       "r",
+       65269
+      ],
+      [
+       "t",
+       59190
+      ],
+      [
+       "s",
+       55802
+      ],
+      [
+       "l",
+       46142
+      ],
+      [
+       "–",
+       40614
+      ],
+      [
+       "c",
+       34258
+      ],
+      [
+       "u",
+       32620
+      ],
+      [
+       "1",
+       30406
+      ],
+      [
+       "d",
+       28102
+      ],
+      [
+       "A",
+       27467
+      ],
+      [
+       "h",
+       27198
+      ],
+      [
+       "C",
+       27198
+      ],
+      [
+       "m",
+       27157
+      ],
+      [
+       "0",
+       26417
+      ],
+      [
+       "S",
+       24653
+      ]
+     ],
+     "top_penalty_pairs": [
+      {
+       "kind": "same_finger",
+       "keys": "F → V",
+       "outputs": "া → র",
+       "contribution": 0.04050875717860172
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → B",
+       "outputs": "া → ন",
+       "contribution": 0.025324075761956402
+      },
+      {
+       "kind": "same_finger",
+       "keys": "B → G",
+       "outputs": "ন → ্",
+       "contribution": 0.01933879422695968
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → F",
+       "outputs": "র → া",
+       "contribution": 0.017835872780079694
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → V+shift",
+       "outputs": "া → ল",
+       "contribution": 0.01676132882356829
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → F",
+       "outputs": "্ → া",
+       "contribution": 0.012739898150642106
+      },
+      {
+       "kind": "same_finger",
+       "keys": "B → F",
+       "outputs": "ন → া",
+       "contribution": 0.012325829367548913
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → V",
+       "outputs": "প → র",
+       "contribution": 0.011073802111772054
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → F",
+       "outputs": "ল → া",
+       "contribution": 0.010433191604469236
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → T",
+       "outputs": "্ → ট",
+       "contribution": 0.009938449991635451
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → F",
+       "outputs": "প → া",
+       "contribution": 0.009343954711163772
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → G",
+       "outputs": "া → ্",
+       "contribution": 0.008116521986877174
+      },
+      {
+       "kind": "same_finger",
+       "keys": "B → G+shift",
+       "outputs": "ন → ।",
+       "contribution": 0.007444823469218519
+      },
+      {
+       "kind": "same_finger",
+       "keys": "X → W+shift",
+       "outputs": "ো → য়",
+       "contribution": 0.006665839104590915
+      },
+      {
+       "kind": "same_finger",
+       "keys": "N → M",
+       "outputs": "স → ম",
+       "contribution": 0.005492477719702112
+      }
+     ],
+     "keystrokes_per_non_space_unit": 1.0019802353915916,
+     "J0_per_non_space_unit": 2.5684103791729265
+    }
+   },
+   "bnwiki/heldout": {
+    "unrounded": {
+     "J0": 2.174183382904136,
+     "E1": 1.771842098066421,
+     "E2": 0.40234128483771525,
+     "E2_same_finger": 0.4043414481669112,
+     "E2_neighbour_penalty": 0.005202618899445553,
+     "E2_neighbour_benefit": -0.007202782228641492,
+     "M": 0.6342443247743514,
+     "J1": 2.8084277076784874,
+     "keystrokes_excluding_space": 37988613,
+     "escaped_characters": 184672,
+     "escaped_top": [
+      [
+       "e",
+       11340
+      ],
+      [
+       "a",
+       10670
+      ],
+      [
+       "i",
+       9166
+      ],
+      [
+       "n",
+       7994
+      ],
+      [
+       "o",
+       7827
+      ],
+      [
+       "r",
+       7551
+      ],
+      [
+       "t",
+       6767
+      ],
+      [
+       "s",
+       6254
+      ],
+      [
+       "l",
+       5188
+      ],
+      [
+       "–",
+       5013
+      ],
+      [
+       "c",
+       3895
+      ],
+      [
+       "u",
+       3844
+      ],
+      [
+       "A",
+       3471
+      ],
+      [
+       "C",
+       3355
+      ],
+      [
+       "d",
+       3309
+      ],
+      [
+       "m",
+       3243
+      ],
+      [
+       "1",
+       3238
+      ],
+      [
+       "h",
+       3225
+      ],
+      [
+       "S",
+       3041
+      ],
+      [
+       "—",
+       2855
+      ]
+     ],
+     "top_penalty_pairs": [
+      {
+       "kind": "same_finger",
+       "keys": "F → V",
+       "outputs": "া → র",
+       "contribution": 0.0407523056171169
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → C",
+       "outputs": "্ → ে",
+       "contribution": 0.03409016335737276
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → V",
+       "outputs": "ে → র",
+       "contribution": 0.03217957202114269
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → F",
+       "outputs": "র → া",
+       "contribution": 0.01781709944214626
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → C",
+       "outputs": "র → ে",
+       "contribution": 0.017625474851525297
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → V+shift",
+       "outputs": "া → ল",
+       "contribution": 0.016740545913812865
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → C",
+       "outputs": "ল → ে",
+       "contribution": 0.014682169800428599
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → F",
+       "outputs": "্ → া",
+       "contribution": 0.01278231313589272
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → V",
+       "outputs": "প → র",
+       "contribution": 0.01112882450839315
+      },
+      {
+       "kind": "same_finger",
+       "keys": "U → B",
+       "outputs": "জ → ন",
+       "contribution": 0.010977975900493086
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → F",
+       "outputs": "ল → া",
+       "contribution": 0.010431329922193342
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → T",
+       "outputs": "্ → ট",
+       "contribution": 0.009917755293415298
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → F",
+       "outputs": "প → া",
+       "contribution": 0.009376200680913854
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → G",
+       "outputs": "া → ্",
+       "contribution": 0.008180259130243783
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → G",
+       "outputs": "ে → ্",
+       "contribution": 0.007552500485763607
+      }
+     ],
+     "keystrokes_per_non_space_unit": 1.0020114022985014,
+     "J0_per_non_space_unit": 2.54559633304796
+    },
+    "one_decimal": {
+     "J0": 2.164800853817834,
+     "E1": 1.7624595689801184,
+     "E2": 0.40234128483771525,
+     "E2_same_finger": 0.4043414481669112,
+     "E2_neighbour_penalty": 0.005202618899445553,
+     "E2_neighbour_benefit": -0.007202782228641492,
+     "M": 0.6328411702272227,
+     "J1": 2.7976420240450564,
+     "keystrokes_excluding_space": 37988613,
+     "escaped_characters": 184672,
+     "escaped_top": [
+      [
+       "e",
+       11340
+      ],
+      [
+       "a",
+       10670
+      ],
+      [
+       "i",
+       9166
+      ],
+      [
+       "n",
+       7994
+      ],
+      [
+       "o",
+       7827
+      ],
+      [
+       "r",
+       7551
+      ],
+      [
+       "t",
+       6767
+      ],
+      [
+       "s",
+       6254
+      ],
+      [
+       "l",
+       5188
+      ],
+      [
+       "–",
+       5013
+      ],
+      [
+       "c",
+       3895
+      ],
+      [
+       "u",
+       3844
+      ],
+      [
+       "A",
+       3471
+      ],
+      [
+       "C",
+       3355
+      ],
+      [
+       "d",
+       3309
+      ],
+      [
+       "m",
+       3243
+      ],
+      [
+       "1",
+       3238
+      ],
+      [
+       "h",
+       3225
+      ],
+      [
+       "S",
+       3041
+      ],
+      [
+       "—",
+       2855
+      ]
+     ],
+     "top_penalty_pairs": [
+      {
+       "kind": "same_finger",
+       "keys": "F → V",
+       "outputs": "া → র",
+       "contribution": 0.0407523056171169
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → C",
+       "outputs": "্ → ে",
+       "contribution": 0.03409016335737276
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → V",
+       "outputs": "ে → র",
+       "contribution": 0.03217957202114269
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → F",
+       "outputs": "র → া",
+       "contribution": 0.01781709944214626
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → C",
+       "outputs": "র → ে",
+       "contribution": 0.017625474851525297
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → V+shift",
+       "outputs": "া → ল",
+       "contribution": 0.016740545913812865
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → C",
+       "outputs": "ল → ে",
+       "contribution": 0.014682169800428599
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → F",
+       "outputs": "্ → া",
+       "contribution": 0.01278231313589272
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → V",
+       "outputs": "প → র",
+       "contribution": 0.01112882450839315
+      },
+      {
+       "kind": "same_finger",
+       "keys": "U → B",
+       "outputs": "জ → ন",
+       "contribution": 0.010977975900493086
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → F",
+       "outputs": "ল → া",
+       "contribution": 0.010431329922193342
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → T",
+       "outputs": "্ → ট",
+       "contribution": 0.009917755293415298
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → F",
+       "outputs": "প → া",
+       "contribution": 0.009376200680913854
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → G",
+       "outputs": "া → ্",
+       "contribution": 0.008180259130243783
+      },
+      {
+       "kind": "same_finger",
+       "keys": "C → G",
+       "outputs": "ে → ্",
+       "contribution": 0.007552500485763607
+      }
+     ],
+     "keystrokes_per_non_space_unit": 1.0020114022985014,
+     "J0_per_non_space_unit": 2.534610998588774
+    },
+    "traditional_unrounded": {
+     "J0": 2.194263185484566,
+     "E1": 1.8686575669596017,
+     "E2": 0.3256056185249642,
+     "E2_same_finger": 0.33450761029649884,
+     "E2_neighbour_penalty": 0.007428471660975229,
+     "E2_neighbour_benefit": -0.01633046343250981,
+     "M": 0.6402582476766157,
+     "J1": 2.834521433161181,
+     "keystrokes_excluding_space": 37988613,
+     "escaped_characters": 184672,
+     "escaped_top": [
+      [
+       "e",
+       11340
+      ],
+      [
+       "a",
+       10670
+      ],
+      [
+       "i",
+       9166
+      ],
+      [
+       "n",
+       7994
+      ],
+      [
+       "o",
+       7827
+      ],
+      [
+       "r",
+       7551
+      ],
+      [
+       "t",
+       6767
+      ],
+      [
+       "s",
+       6254
+      ],
+      [
+       "l",
+       5188
+      ],
+      [
+       "–",
+       5013
+      ],
+      [
+       "c",
+       3895
+      ],
+      [
+       "u",
+       3844
+      ],
+      [
+       "A",
+       3471
+      ],
+      [
+       "C",
+       3355
+      ],
+      [
+       "d",
+       3309
+      ],
+      [
+       "m",
+       3243
+      ],
+      [
+       "1",
+       3238
+      ],
+      [
+       "h",
+       3225
+      ],
+      [
+       "S",
+       3041
+      ],
+      [
+       "—",
+       2855
+      ]
+     ],
+     "top_penalty_pairs": [
+      {
+       "kind": "same_finger",
+       "keys": "F → V",
+       "outputs": "া → র",
+       "contribution": 0.0407523056171169
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → B",
+       "outputs": "া → ন",
+       "contribution": 0.025135014122344843
+      },
+      {
+       "kind": "same_finger",
+       "keys": "B → G",
+       "outputs": "ন → ্",
+       "contribution": 0.019338426576478905
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V → F",
+       "outputs": "র → া",
+       "contribution": 0.01781709944214626
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → V+shift",
+       "outputs": "া → ল",
+       "contribution": 0.016740545913812865
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → F",
+       "outputs": "্ → া",
+       "contribution": 0.01278231313589272
+      },
+      {
+       "kind": "same_finger",
+       "keys": "B → F",
+       "outputs": "ন → া",
+       "contribution": 0.012468259220356452
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → V",
+       "outputs": "প → র",
+       "contribution": 0.01112882450839315
+      },
+      {
+       "kind": "same_finger",
+       "keys": "V+shift → F",
+       "outputs": "ল → া",
+       "contribution": 0.010431329922193342
+      },
+      {
+       "kind": "same_finger",
+       "keys": "G → T",
+       "outputs": "্ → ট",
+       "contribution": 0.009917755293415298
+      },
+      {
+       "kind": "same_finger",
+       "keys": "R → F",
+       "outputs": "প → া",
+       "contribution": 0.009376200680913854
+      },
+      {
+       "kind": "same_finger",
+       "keys": "F → G",
+       "outputs": "া → ্",
+       "contribution": 0.008180259130243783
+      },
+      {
+       "kind": "same_finger",
+       "keys": "B → G+shift",
+       "outputs": "ন → ।",
+       "contribution": 0.007421116214366775
+      },
+      {
+       "kind": "same_finger",
+       "keys": "X → W+shift",
+       "outputs": "ো → য়",
+       "contribution": 0.006754124766622268
+      },
+      {
+       "kind": "same_finger",
+       "keys": "N → M",
+       "outputs": "স → ম",
+       "contribution": 0.005496309604602505
+      }
+     ],
+     "keystrokes_per_non_space_unit": 1.0020114022985014,
+     "J0_per_non_space_unit": 2.5691063424698855
+    }
+   }
+  }
+ },
+ "reference_layouts": {
+  "unigram-greedy (E1 minimum)": {
+   "assignment": {
+    "ঔ": "Q/base",
+    "ঞ": "W/base",
+    "থ": "E/base",
+    "২": "R/base",
+    "৩": "T/base",
+    "ঽ": "Y/base",
+    "আ": "U/base",
+    "ছ": "I/base",
+    "\"": "O/base",
+    "—": "P/base",
+    "এ": "A/base",
+    "য়": "S/base",
+    "ক": "D/base",
+    "া": "F/base",
+    ":": "G/base",
+    "ঝ": "H/base",
+    "র": "J/base",
+    "ত": "K/base",
+    "প": "L/base",
+    "হ": ";/base",
+    "ৈ": "Z/base",
+    "ৃ": "X/base",
+    "গ": "C/base",
+    "খ": "V/base",
+    "উ": "N/base",
+    "ী": "M/base",
+    "৯": ",/base",
+    "৬": "./base",
+    "?": "//base",
+    "ঢ়": "Q/shift",
+    "৫": "W/shift",
+    "ষ": "E/shift",
+    "-": "R/shift",
+    "৭": "T/shift",
+    "ও": "U/shift",
+    "ভ": "I/shift",
+    "ঙ": "O/shift",
+    "ঈ": "P/shift",
+    "শ": "A/shift",
+    "দ": "S/shift",
+    "ব": "D/shift",
+    "্": "F/shift",
+    ";": "G/shift",
+    "ঐ": "H/shift",
+    "ে": "J/shift",
+    "স": "K/shift",
+    "য": "L/shift",
+    "জ": ";/shift",
+    "ৌ": "Z/shift",
+    "ঠ": "X/shift",
+    "ই": "C/shift",
+    "১": "V/shift",
+    "ড": "N/shift",
+    "চ": "M/shift",
+    "ড়": ",/shift",
+    "ঁ": "./shift",
+    "!": "//shift",
+    "ঊ": "Q/altgr",
+    "ঘ": "W/altgr",
+    "ধ": "E/altgr",
+    "ূ": "R/altgr",
+    "৪": "T/altgr",
+    "ণ": "U/altgr",
+    ",": "I/altgr",
+    "৮": "O/altgr",
+    "ঋ": "P/altgr",
+    "।": "A/altgr",
+    "ট": "S/altgr",
+    "ল": "D/altgr",
+    "ি": "F/altgr",
+    "ঃ": "G/altgr",
+    "ঢ": "H/altgr",
+    "ন": "J/altgr",
+    "ম": "K/altgr",
+    "ু": "L/altgr",
+    "ো": ";/altgr",
+    "'": "Z/altgr",
+    "(": "X/altgr",
+    "ং": "C/altgr",
+    "০": "V/altgr",
+    "ফ": "N/altgr",
+    "অ": "M/altgr",
+    ")": ",/altgr",
+    "ৎ": "./altgr",
+    "॥": "//altgr"
+   },
+   "optimization_frequencies": {
+    "unrounded": {
+     "J0": 1.3115301439527745,
+     "E1": 1.1073583509492346,
+     "E2": 0.20417179300353983,
+     "E2_same_finger": 0.2198562304843906,
+     "E2_neighbour_penalty": 0.005004245211067672,
+     "E2_neighbour_benefit": -0.020688682691918463,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.0790652518574162,
+     "unassigned_unit_frequency": 0.14614697930240883
+    },
+    "one_decimal": {
+     "J0": 1.3090242145310576,
+     "E1": 1.1048524215275177,
+     "E2": 0.20417179300353983,
+     "E2_same_finger": 0.2198562304843906,
+     "E2_neighbour_penalty": 0.005004245211067672,
+     "E2_neighbour_benefit": -0.020688682691918463,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.0790652518574162,
+     "unassigned_unit_frequency": 0.14614697930240883
+    }
+   },
+   "by_corpus": {
+    "bnwiki/train": {
+     "J0": 1.3115301439527745,
+     "E1": 1.1073583509492346,
+     "E2": 0.20417179300353983,
+     "E2_same_finger": 0.2198562304843906,
+     "E2_neighbour_penalty": 0.005004245211067672,
+     "E2_neighbour_benefit": -0.020688682691918463,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.0790652518574162,
+     "unassigned_unit_frequency": 0.14614697930240883
+    },
+    "bnwiki/heldout": {
+     "J0": 1.3116416055349003,
+     "E1": 1.107275085770658,
+     "E2": 0.20436651976424225,
+     "E2_same_finger": 0.22006729163557262,
+     "E2_neighbour_penalty": 0.0050060606401941925,
+     "E2_neighbour_benefit": -0.020706832511524553,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.07911043025983391,
+     "unassigned_unit_frequency": 0.14601633855329743
+    }
+   }
+  },
+  "base-layer-first frequency greedy": {
+   "assignment": {
+    "ই": "Q/base",
+    "এ": "W/base",
+    "ম": "E/base",
+    "দ": "R/base",
+    "জ": "T/base",
+    "ং": "Y/base",
+    "প": "U/base",
+    "ল": "I/base",
+    "হ": "O/base",
+    "ী": "P/base",
+    "ত": "A/base",
+    "ন": "S/base",
+    "্": "D/base",
+    "া": "F/base",
+    "।": "G/base",
+    "গ": "H/base",
+    "র": "J/base",
+    "ে": "K/base",
+    "ি": "L/base",
+    "ক": ";/base",
+    "ো": "Z/base",
+    "ট": "X/base",
+    "ব": "C/base",
+    "য": "V/base",
+    "অ": "B/base",
+    "য়": "N/base",
+    "স": "M/base",
+    "ু": ",/base",
+    "শ": "./base",
+    "চ": "//base",
+    "৮": "Q/shift",
+    "ৃ": "W/shift",
+    "ড": "E/shift",
+    "২": "R/shift",
+    "ড়": "T/shift",
+    "৫": "Y/shift",
+    "১": "U/shift",
+    "খ": "I/shift",
+    "৯": "O/shift",
+    "ঙ": "P/shift",
+    "ও": "A/shift",
+    "ধ": "S/shift",
+    ",": "D/shift",
+    "ছ": "F/shift",
+    "(": "G/shift",
+    "\"": "H/shift",
+    "ভ": "J/shift",
+    "থ": "K/shift",
+    "ষ": "L/shift",
+    "আ": ";/shift",
+    ")": "Z/shift",
+    "ূ": "X/shift",
+    "ণ": "C/shift",
+    "০": "V/shift",
+    "ঘ": "B/shift",
+    "ফ": "N/shift",
+    "উ": "M/shift",
+    "-": ",/shift",
+    "ঠ": "./shift",
+    "ঞ": "//shift",
+    "ঢ়": "W/altgr",
+    ";": "E/altgr",
+    "—": "R/altgr",
+    "ঊ": "T/altgr",
+    "ঐ": "U/altgr",
+    "ঝ": "I/altgr",
+    "ঔ": "O/altgr",
+    "ৎ": "A/altgr",
+    "ঁ": "S/altgr",
+    "৪": "D/altgr",
+    "৩": "F/altgr",
+    "॥": "G/altgr",
+    "ঽ": "H/altgr",
+    "৭": "J/altgr",
+    "৬": "K/altgr",
+    "ৈ": "L/altgr",
+    "ৌ": ";/altgr",
+    "!": "Z/altgr",
+    "ঋ": "X/altgr",
+    "'": "C/altgr",
+    "ঢ": "V/altgr",
+    "ঃ": "N/altgr",
+    ":": "M/altgr",
+    "ঈ": ",/altgr",
+    "?": "./altgr"
+   },
+   "optimization_frequencies": {
+    "unrounded": {
+     "J0": 1.7081176778326483,
+     "E1": 1.441591827015359,
+     "E2": 0.26652585081728936,
+     "E2_same_finger": 0.26012051778944073,
+     "E2_neighbour_penalty": 0.017437468778309782,
+     "E2_neighbour_benefit": -0.011032135750461143,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.08469346890071007,
+     "unassigned_unit_frequency": 0.14614697930240883
+    },
+    "one_decimal": {
+     "J0": 1.704021149160765,
+     "E1": 1.4374952983434757,
+     "E2": 0.26652585081728936,
+     "E2_same_finger": 0.26012051778944073,
+     "E2_neighbour_penalty": 0.017437468778309782,
+     "E2_neighbour_benefit": -0.011032135750461143,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.08469346890071007,
+     "unassigned_unit_frequency": 0.14614697930240883
+    }
+   },
+   "by_corpus": {
+    "bnwiki/train": {
+     "J0": 1.7081176778326483,
+     "E1": 1.441591827015359,
+     "E2": 0.26652585081728936,
+     "E2_same_finger": 0.26012051778944073,
+     "E2_neighbour_penalty": 0.017437468778309782,
+     "E2_neighbour_benefit": -0.011032135750461143,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.08469346890071007,
+     "unassigned_unit_frequency": 0.14614697930240883
+    },
+    "bnwiki/heldout": {
+     "J0": 1.7077185393624417,
+     "E1": 1.4416726055558287,
+     "E2": 0.26604593380661307,
+     "E2_same_finger": 0.25958120137083945,
+     "E2_neighbour_penalty": 0.017464695827501805,
+     "E2_neighbour_benefit": -0.010999963391728198,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.08451739315312637,
+     "unassigned_unit_frequency": 0.14601633855329743
+    }
+   }
+  },
+  "random (seed 20261010)": {
+   "assignment": {
+    "১": "Q/base",
+    "(": "W/base",
+    "থ": "E/base",
+    "ঽ": "R/base",
+    "ড": "T/base",
+    ":": "U/base",
+    "ং": "I/base",
+    "ফ": "O/base",
+    "ঁ": "P/base",
+    "গ": "A/base",
+    "ি": "S/base",
+    "\"": "D/base",
+    "ী": "F/base",
+    "!": "G/base",
+    "ক": "H/base",
+    "উ": "J/base",
+    "স": "K/base",
+    "য়": "L/base",
+    "ঞ": ";/base",
+    "ষ": "Z/base",
+    "৪": "X/base",
+    "৫": "C/base",
+    "ঐ": "V/base",
+    "ে": "B/base",
+    "র": "N/base",
+    "ণ": "M/base",
+    "ঊ": ",/base",
+    ",": "./base",
+    "ই": "Q/shift",
+    ")": "W/shift",
+    "জ": "R/shift",
+    "দ": "T/shift",
+    "ধ": "Y/shift",
+    "-": "U/shift",
+    "্": "I/shift",
+    "ু": "O/shift",
+    "ছ": "P/shift",
+    "আ": "A/shift",
+    "৮": "S/shift",
+    "—": "D/shift",
+    "া": "F/shift",
+    "৭": "H/shift",
+    "ঠ": "J/shift",
+    "প": "K/shift",
+    "চ": "L/shift",
+    "এ": ";/shift",
+    "৩": "Z/shift",
+    "৯": "X/shift",
+    "ঘ": "C/shift",
+    "ঔ": "V/shift",
+    ";": "B/shift",
+    "ল": "N/shift",
+    "ো": "M/shift",
+    "ন": ",/shift",
+    "২": "./shift",
+    "ও": "//shift",
+    "ঋ": "Q/altgr",
+    "ম": "W/altgr",
+    "য": "E/altgr",
+    "ঢ়": "R/altgr",
+    "ড়": "T/altgr",
+    "ৎ": "Y/altgr",
+    "॥": "U/altgr",
+    "ঈ": "I/altgr",
+    "ব": "O/altgr",
+    "ট": "P/altgr",
+    "শ": "A/altgr",
+    "ঃ": "S/altgr",
+    "০": "D/altgr",
+    "ঢ": "F/altgr",
+    "ূ": "G/altgr",
+    "খ": "H/altgr",
+    "'": "J/altgr",
+    "অ": "K/altgr",
+    "ৈ": "L/altgr",
+    "।": ";/altgr",
+    "ঙ": "Z/altgr",
+    "ত": "X/altgr",
+    "ৌ": "C/altgr",
+    "?": "V/altgr",
+    "৬": "N/altgr",
+    "হ": "M/altgr",
+    "ঝ": ",/altgr",
+    "ভ": "./altgr",
+    "ৃ": "//altgr"
+   },
+   "optimization_frequencies": {
+    "unrounded": {
+     "J0": 2.151423732374094,
+     "E1": 1.8000892570201241,
+     "E2": 0.35133447535397005,
+     "E2_same_finger": 0.3406103172372832,
+     "E2_neighbour_penalty": 0.018947503850498527,
+     "E2_neighbour_benefit": -0.008223345733811683,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.11602894099728234,
+     "unassigned_unit_frequency": 0.14614697930240883
+    },
+    "one_decimal": {
+     "J0": 2.1444371817665435,
+     "E1": 1.7931027064125733,
+     "E2": 0.35133447535397005,
+     "E2_same_finger": 0.3406103172372832,
+     "E2_neighbour_penalty": 0.018947503850498527,
+     "E2_neighbour_benefit": -0.008223345733811683,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.11602894099728234,
+     "unassigned_unit_frequency": 0.14614697930240883
+    }
+   },
+   "by_corpus": {
+    "bnwiki/train": {
+     "J0": 2.151423732374094,
+     "E1": 1.8000892570201241,
+     "E2": 0.35133447535397005,
+     "E2_same_finger": 0.3406103172372832,
+     "E2_neighbour_penalty": 0.018947503850498527,
+     "E2_neighbour_benefit": -0.008223345733811683,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.11602894099728234,
+     "unassigned_unit_frequency": 0.14614697930240883
+    },
+    "bnwiki/heldout": {
+     "J0": 2.1518377660384282,
+     "E1": 1.8002017356141375,
+     "E2": 0.35163603042429076,
+     "E2_same_finger": 0.34095148840785083,
+     "E2_neighbour_penalty": 0.018929578638791786,
+     "E2_neighbour_benefit": -0.008245036622351867,
+     "M": null,
+     "J1": null,
+     "same_finger_bigram_frequency": 0.11613531543658162,
+     "unassigned_unit_frequency": 0.14601633855329743
+    }
+   }
+  }
+ },
+ "scorer_consistency": {
+  "corpus": "bnwiki/heldout",
+  "layout": "base-layer-first frequency greedy",
+  "J0_unit_tables": 1.7077185393624417,
+  "J0_token_table": 1.7077185393623209,
+  "J0_independent_verifier": 1.707718539482364,
+  "verifier_N": 44388875,
+  "table_N": 44388875,
+  "max_relative_difference": 7.022368824425391e-11,
+  "pass": true
+ },
+ "lower_bound_0": {
+  "scope": "85 placed symbols on 90 main-block slots (30 keys × base/Shift/AltGr), J0 with free layers",
+  "E1_min": 1.1073583509492346,
+  "min_B": -0.2,
+  "placed_pair_mass": 0.7019385642051278,
+  "LB0": 0.966970638108209
+ },
+ "clusters": {
+  "corpus": "bnwiki/train",
+  "cluster_tokens": 23235500,
+  "distinct_clusters": 1643,
+  "share_of_cluster_occurrences_in_kala_list": 0.9615203890598438,
+  "kala_valid_clusters_never_seen": 435,
+  "top": [
+   [
+    "প্র",
+    2027495
+   ],
+   [
+    "ক্ষ",
+    772656
+   ],
+   [
+    "ন্য",
+    723150
+   ],
+   [
+    "ত্র",
+    602008
+   ],
+   [
+    "ন্ত",
+    600161
+   ],
+   [
+    "ক্ত",
+    554534
+   ],
+   [
+    "স্থ",
+    547354
+   ],
+   [
+    "ব্য",
+    538868
+   ],
+   [
+    "গ্র",
+    496491
+   ],
+   [
+    "ধ্য",
+    493444
+   ],
+   [
+    "স্ট",
+    399880
+   ],
+   [
+    "র্ব",
+    386628
+   ],
+   [
+    "ক্র",
+    385867
+   ],
+   [
+    "স্ত",
+    358524
+   ],
+   [
+    "র্ত",
+    356019
+   ],
+   [
+    "দ্ধ",
+    339676
+   ],
+   [
+    "র্ম",
+    331678
+   ],
+   [
+    "ন্ড",
+    289044
+   ],
+   [
+    "র্য",
+    287583
+   ],
+   [
+    "ঙ্গ",
+    282348
+   ],
+   [
+    "ম্প",
+    281914
+   ],
+   [
+    "ত্ত",
+    281527
+   ],
+   [
+    "ষ্ঠ",
+    274883
+   ],
+   [
+    "ন্দ",
+    274154
+   ],
+   [
+    "ত্য",
+    264140
+   ],
+   [
+    "দ্ব",
+    261871
+   ],
+   [
+    "স্ক",
+    255067
+   ],
+   [
+    "ন্ট",
+    248730
+   ],
+   [
+    "র্থ",
+    248062
+   ],
+   [
+    "দ্য",
+    243803
+   ],
+   [
+    "স্ব",
+    243342
+   ],
+   [
+    "র্ক",
+    238523
+   ],
+   [
+    "ষ্ট",
+    238054
+   ],
+   [
+    "ন্ন",
+    237118
+   ],
+   [
+    "ত্ব",
+    224340
+   ],
+   [
+    "শ্ব",
+    216518
+   ],
+   [
+    "চ্চ",
+    199154
+   ],
+   [
+    "ব্র",
+    189832
+   ],
+   [
+    "র্ণ",
+    186577
+   ],
+   [
+    "ম্ব",
+    184204
+   ]
+  ],
+  "frequent_missing_from_kala": [
+   [
+    "ন্ত্র",
+    154170
+   ],
+   [
+    "ন্দ্র",
+    129998
+   ],
+   [
+    "ষ্ট্র",
+    96277
+   ],
+   [
+    "স্ট্র",
+    65306
+   ],
+   [
+    "ত্ত্ব",
+    58436
+   ],
+   [
+    "ম্প্র",
+    52750
+   ],
+   [
+    "ক্ষ্য",
+    30898
+   ],
+   [
+    "স্থ্য",
+    18938
+   ],
+   [
+    "ষ্ট্য",
+    17846
+   ],
+   [
+    "ন্দ্ব",
+    16932
+   ],
+   [
+    "র্ধ্ব",
+    16817
+   ],
+   [
+    "স্ট্য",
+    13790
+   ],
+   [
+    "র্শ্ব",
+    12142
+   ],
+   [
+    "র্ঘ্য",
+    11833
+   ],
+   [
+    "ন্ট্র",
+    10688
+   ],
+   [
+    "স্ক্র",
+    9667
+   ],
+   [
+    "ক্ষ্ম",
+    9511
+   ],
+   [
+    "প্ল্য",
+    9093
+   ],
+   [
+    "র্ল্ড",
+    7931
+   ],
+   [
+    "ব্র্য",
+    7393
+   ],
+   [
+    "ন্ড্র",
+    7114
+   ],
+   [
+    "ট্র্য",
+    6969
+   ],
+   [
+    "ত্র্য",
+    6149
+   ],
+   [
+    "গ্র্য",
+    6141
+   ],
+   [
+    "ব্ল্য",
+    6056
+   ]
+  ]
+ },
+ "models": {
+  "unrounded": {
+   "keys": "ansi-staggered optimal P_d=1.12, unrounded",
+   "same_finger": [
+    2.5,
+    3.0,
+    4.0
+   ],
+   "neighbour_by_outer_finger": {
+    "pinky-ring": [
+     0.5,
+     1.0,
+     1.5
+    ],
+    "ring-middle": [
+     0.1,
+     0.2,
+     0.3
+    ],
+    "middle-index": [
+     -0.2,
+     -0.1,
+     0.0
+    ]
+   },
+   "row_difference_cap": 2,
+   "space": "thumb, K = 0, no bigram penalty (D2 default)",
+   "layers": "J0: Shift and AltGr cost nothing (the original model). J1 adds M = the other hand's Shift key (K(LShift) = 3.308286, K(RShift) = 4.609624), lambda_m = 1, Q = 0 (D2, 10 October 2026)"
+  },
+  "one_decimal": {
+   "keys": "ansi-staggered optimal P_d=1.12, rounded to 1 decimal(s)",
+   "same_finger": [
+    2.5,
+    3.0,
+    4.0
+   ],
+   "neighbour_by_outer_finger": {
+    "pinky-ring": [
+     0.5,
+     1.0,
+     1.5
+    ],
+    "ring-middle": [
+     0.1,
+     0.2,
+     0.3
+    ],
+    "middle-index": [
+     -0.2,
+     -0.1,
+     0.0
+    ]
+   },
+   "row_difference_cap": 2,
+   "space": "thumb, K = 0, no bigram penalty (D2 default)",
+   "layers": "J0: Shift and AltGr cost nothing (the original model). J1 adds M = the other hand's Shift key (K(LShift) = 3.300000, K(RShift) = 4.600000), lambda_m = 1, Q = 0 (D2, 10 October 2026)"
+  },
+  "traditional_unrounded": {
+   "keys": "ansi-staggered traditional P_d=1.12, unrounded",
+   "same_finger": [
+    2.5,
+    3.0,
+    4.0
+   ],
+   "neighbour_by_outer_finger": {
+    "pinky-ring": [
+     0.5,
+     1.0,
+     1.5
+    ],
+    "ring-middle": [
+     0.1,
+     0.2,
+     0.3
+    ],
+    "middle-index": [
+     -0.2,
+     -0.1,
+     0.0
+    ]
+   },
+   "row_difference_cap": 2,
+   "space": "thumb, K = 0, no bigram penalty (D2 default)",
+   "layers": "J0: Shift and AltGr cost nothing (the original model). J1 adds M = the other hand's Shift key (K(LShift) = 3.308286, K(RShift) = 4.609624), lambda_m = 1, Q = 0 (D2, 10 October 2026)"
+  }
+ },
+ "seconds": 406.7
+}

@@ -1,0 +1,60 @@
+{
+  "settings": {
+    "top_word_types": 200000,
+    "random_sequences": 20000,
+    "alphabet": "kala/layout/bn/Alphabet.json"
+  },
+  "styles": {
+    "A": {
+      "kala_import_problems": [],
+      "key_map_problems": [],
+      "file_bytes": 17202,
+      "sequences": 10,
+      "heldout_words": {
+        "bnwiki/heldout": {
+          "word_types": 200000,
+          "typed_exactly": 191791,
+          "failures": 0,
+          "skipped_need_keys_outside_v1": 8209,
+          "running_words_typed_exactly_share": 0.9932655226657546,
+          "running_words_skipped_share": 0.006734477334245405,
+          "failure_examples": []
+        },
+        "newspaper/heldout": {
+          "word_types": 200000,
+          "typed_exactly": 195614,
+          "failures": 0,
+          "skipped_need_keys_outside_v1": 4386,
+          "running_words_typed_exactly_share": 0.9950164924803787,
+          "running_words_skipped_share": 0.0049835075196212565,
+          "failure_examples": []
+        },
+        "bard-novel/heldout": {
+          "word_types": 100254,
+          "typed_exactly": 97916,
+          "failures": 0,
+          "skipped_need_keys_outside_v1": 2338,
+          "running_words_typed_exactly_share": 0.995612333903302,
+          "running_words_skipped_share": 0.004387666096698006,
+          "failure_examples": []
+        }
+      },
+      "random_key_sequences": {
+        "sequences": 20000,
+        "seed": 20261111,
+        "agree": 20000,
+        "mismatches": 0,
+        "mismatch_examples": []
+      },
+      "pass": true
+    },
+    "D": {
+      "kala_import_problems": [],
+      "key_map_problems": [],
+      "file_bytes": 19100,
+      "sequences": 0,
+      "pass": true
+    }
+  },
+  "pass": true
+}

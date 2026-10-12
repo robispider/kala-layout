@@ -1,0 +1,114 @@
+{
+  "description": "Reference values published by the Colemak Mod-DH project, used as Phase 1 regression targets. Values are copied verbatim at their published precision.",
+  "source": {
+    "site": "https://colemakmods.github.io/mod-dh/",
+    "repository": "https://github.com/colemakmods/mod-dh",
+    "branch": "gh-pages",
+    "commit": "1d23c829c833b2c306bef273b182a486abc58f79",
+    "license": "CC0 1.0 (repository LICENSE)",
+    "retrieved": "2026-10-10"
+  },
+  "comparison_table": {
+    "page": "compare.html",
+    "frequency_file": "freq/en_books.freq",
+    "layout_directory": "layout_full",
+    "note": "Configuration per row as in analyzer/keyboard_analysis_all.sh of the analyzer repository. 'Colemak ergonomic' is colemak2.keyb there, which is byte-identical to colemak.keyb; 'Colemak-DH matrix' is colemak_dh2.keyb, identical to colemak_dh.keyb.",
+    "columns": ["base_effort", "same_finger_bigram_percent", "bigram_penalty", "total_effort"],
+    "rows": [
+      {"label": "Colemak-DH", "layout": "colemak_dh", "config": "effort_matrix_simple_config.dat", "published_config_name": "matrix", "values": ["1.661", "1.67%", "0.065", "1.726"]},
+      {"label": "Colemak-DH", "layout": "colemak_dh", "config": "effort_ergonomic_config.dat", "published_config_name": "ergonomic", "values": ["1.670", "1.67%", "0.065", "1.735"]},
+      {"label": "Soul", "layout": "soul", "config": "effort_alternative_config.dat", "published_config_name": "alternative", "values": ["1.681", "1.82%", "0.086", "1.767"]},
+      {"label": "MTGAP", "layout": "mtgap", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.731", "1.25%", "0.056", "1.787"]},
+      {"label": "Colemak", "layout": "colemak", "config": "effort_ergonomic_config.dat", "published_config_name": "ergonomic", "values": ["1.739", "1.67%", "0.063", "1.802"]},
+      {"label": "Workman", "layout": "workman", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.710", "3.15%", "0.107", "1.817"]},
+      {"label": "Colemak", "layout": "colemak", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.773", "1.67%", "0.063", "1.836"]},
+      {"label": "Halmak", "layout": "halmak", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.760", "2.96%", "0.124", "1.884"]},
+      {"label": "Asset", "layout": "asset", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.795", "3.12%", "0.117", "1.911"]},
+      {"label": "Dvorak", "layout": "dvorak", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.843", "2.63%", "0.080", "1.923"]},
+      {"label": "Norman", "layout": "norman", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.711", "6.42%", "0.215", "1.926"]},
+      {"label": "qgmlwyfub", "layout": "qgmlwyfub", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.793", "4.66%", "0.143", "1.936"]},
+      {"label": "Qwpr", "layout": "qwpr", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.830", "4.06%", "0.157", "1.987"]},
+      {"label": "Minimak-8key", "layout": "minimak8", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["1.863", "4.10%", "0.142", "2.005"]},
+      {"label": "Qwerty", "layout": "qwerty", "config": "effort_traditional_config.dat", "published_config_name": "traditional", "values": ["2.169", "6.58%", "0.231", "2.400"]}
+    ]
+  },
+  "switching_difficulty_table": {
+    "page": "learn.html",
+    "frequency_file": "freq/en_books.freq",
+    "layout_directory": "layout_full",
+    "base_layout": "qwerty",
+    "base_config": "effort_traditional_config.dat",
+    "note": "Configuration and position overrides as in analyzer/keyboard_compare_all.sh: Colemak-DH uses the ergonomic configuration and pos_override_colemak_dh.dat; all others the traditional one. d is published rounded to an integer.",
+    "columns": ["keys_moved_finger", "keys_moved_total", "keys_moved_index", "switching_difficulty"],
+    "rows": [
+      {"label": "Minimak-8key", "layout": "minimak8", "values": [3, 8, "3.50", 13]},
+      {"label": "Qwpr", "layout": "qwpr", "values": [2, 11, "4.25", 18]},
+      {"label": "Norman", "layout": "norman", "values": [4, 15, "5.75", 19]},
+      {"label": "Asset", "layout": "asset", "values": [6, 15, "6.25", 20]},
+      {"label": "Colemak", "layout": "colemak", "values": [12, 17, "8.00", 28]},
+      {"label": "Colemak-DH", "layout": "colemak_dh", "config": "effort_ergonomic_config.dat", "overrides": "pos_override_colemak_dh.dat", "values": [12, 19, "9.25", 29]},
+      {"label": "Workman", "layout": "workman", "values": [13, 21, "10.00", 34]},
+      {"label": "qgmlwyfub", "layout": "qgmlwyfub", "values": [17, 20, "12.25", 42]},
+      {"label": "Halmak", "layout": "halmak", "values": [27, 30, "19.50", 58]},
+      {"label": "Dvorak", "layout": "dvorak", "values": [26, 33, "23.25", 68]},
+      {"label": "MTGAP", "layout": "mtgap", "values": [26, 30, "23.75", 65]}
+    ]
+  },
+  "experience_curve_table": {
+    "page": "learn.html",
+    "b": 0.8,
+    "rows": [{"f_percent": 1, "C_f": "1.47"}, {"f_percent": 2, "C_f": "2.36"}, {"f_percent": 5, "C_f": "4.39"}, {"f_percent": 10, "C_f": "7.03"}]
+  },
+  "effort_model_constants": {
+    "page": "model.html",
+    "finger_effort_factor": {"index": 1.0, "middle": 1.1, "ring": 1.3, "pinky": 1.6},
+    "lateral_multiplier": 2.0,
+    "approach_angle_deg": {"staggered": 10, "split_matrix": 0},
+    "activation_margin_u": 0.3,
+    "home_displacement_u": {"index": [-0.04, -0.32], "middle": [0.03, 0.16], "ring": [0.0, 0.08], "pinky": [0.01, 0.09]},
+    "home_displacement_note": "x then y; y positive is upward (middle finger above, index below the home-row centre line).",
+    "distance_scale": null,
+    "distance_scale_note": "P_d is named but its value is not published; the grid generator is not part of the analyzer repository."
+  },
+  "effort_grids": {
+    "note": "Published at one decimal, transcribed from the model.html images (gfx/model/keyb_calc_*_scores.png) and cross-checked against the machine-readable analyzer configs (effort_*_config.dat). Key names follow src/bangla_dh/geometry/keyboards.py.",
+    "known_inconsistencies": [
+      {"key": "]", "grid": "iso_traditional_fingers", "image_value": 4.7, "config": "effort_traditional_config.dat", "config_value": 5.6,
+       "note": "The comparison table uses the config value. The reconstructed model gives about 4.76, consistent with the image."}
+    ],
+    "iso_optimal_fingers": {
+      "image": "gfx/model/keyb_calc_std_ergo_scores.png",
+      "config": "effort_ergonomic_config.dat",
+      "values": {
+        "`": 5.5, "1": 4.6, "2": 4.0, "3": 3.4, "4": 2.9, "5": 2.9, "6": 3.5, "7": 2.9, "8": 2.9, "9": 3.0, "0": 3.5, "-": 4.2, "=": 5.1, "BACKSPACE": 5.8,
+        "TAB": 4.2, "Q": 3.0, "W": 2.5, "E": 2.1, "R": 2.3, "T": 2.6, "Y": 3.4, "U": 2.2, "I": 2.0, "O": 2.4, "P": 3.0, "[": 3.6, "]": 4.7, "ENTER": 5.6,
+        "CAPS": 3.4, "A": 1.6, "S": 1.3, "D": 1.1, "F": 1.0, "G": 2.9, "H": 2.9, "J": 1.0, "K": 1.1, "L": 1.3, ";": 1.6, "'": 3.4, "#": 4.8, "ENTER_LOW": 5.8,
+        "LSHIFT": 4.6, "\\": 3.3, "Z": 2.7, "X": 2.4, "C": 1.8, "V": 2.2, "B": 3.7, "N": 2.2, "M": 1.8, ",": 2.4, ".": 2.7, "/": 3.3, "RSHIFT": 4.6
+      }
+    },
+    "iso_traditional_fingers": {
+      "image": "gfx/model/keyb_calc_std_trad_scores.png",
+      "config": "effort_traditional_config.dat",
+      "values": {
+        "`": 5.5, "1": 4.6, "2": 4.0, "3": 3.6, "4": 3.6, "5": 2.9, "6": 4.1, "7": 2.9, "8": 2.9, "9": 3.5, "0": 4.2, "-": 4.2, "=": 5.1, "BACKSPACE": 5.8,
+        "TAB": 4.2, "Q": 3.0, "W": 2.5, "E": 2.1, "R": 2.3, "T": 2.6, "Y": 3.4, "U": 2.2, "I": 2.0, "O": 2.4, "P": 3.0, "[": 3.6, "]": 4.7, "ENTER": 5.6,
+        "CAPS": 3.4, "A": 1.6, "S": 1.3, "D": 1.1, "F": 1.0, "G": 2.9, "H": 2.9, "J": 1.0, "K": 1.1, "L": 1.3, ";": 1.6, "'": 3.4, "#": 4.8, "ENTER_LOW": 5.8,
+        "LSHIFT": 4.6, "\\": 3.3, "Z": 3.5, "X": 3.0, "C": 2.7, "V": 2.2, "B": 3.7, "N": 2.2, "M": 1.8, ",": 2.4, ".": 2.7, "/": 3.3, "RSHIFT": 4.6
+      }
+    },
+    "matrix_optimal_fingers": {
+      "image": "gfx/model/keyb_calc_matrix_scores.png",
+      "config": "effort_matrix_simple_config.dat",
+      "values": {
+        "N_L0": 4.7, "1": 4.0, "2": 3.3, "3": 2.8, "4": 2.8, "5": 3.6, "N_L6": 4.7,
+        "TAB": 3.9, "Q": 3.0, "W": 2.4, "E": 2.0, "R": 2.2, "T": 3.2, "T_L6": 4.4,
+        "CAPS": 3.4, "A": 1.6, "S": 1.3, "D": 1.1, "F": 1.0, "G": 2.9, "H_L6": 4.2,
+        "LSHIFT": 4.0, "Z": 3.2, "X": 2.6, "C": 2.3, "V": 1.6, "B": 3.0,
+        "N_R6": 4.7, "6": 3.6, "7": 2.8, "8": 2.8, "9": 3.3, "0": 4.0, "N_R0": 4.7,
+        "T_R6": 4.4, "Y": 3.2, "U": 2.2, "I": 2.0, "O": 2.4, "P": 3.0, "T_R0": 3.9,
+        "H_R6": 4.2, "H": 2.9, "J": 1.0, "K": 1.1, "L": 1.3, ";": 1.6, "H_R0": 3.4,
+        "N": 3.0, "M": 1.6, ",": 2.3, ".": 2.6, "/": 3.2, "RSHIFT": 4.0
+      }
+    }
+  }
+}

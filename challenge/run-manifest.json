@@ -1,0 +1,44 @@
+{
+  "generated_utc": "2026-10-12T18:18:28+00:00",
+  "bangla_dh_version": "0.1.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "repo_commit": "a411bceefc80eb888d9594ca7e77fbafc2771db4",
+  "working_tree_clean": false,
+  "data_version": "bangla-dh-challenge-v1",
+  "data_sha256": "2388d17bd9f375763eff19eac4dc2d4397d62c1f28d574d2597d414febb55b0a",
+  "checks": {
+    "embedded data equals the built data": true,
+    "A mixed: valid and exactly the integer model's J1": true,
+    "A phase3 (bnwiki): valid and exactly the integer model's J1": true,
+    "A crosscheck (newspaper): valid and exactly the integer model's J1": true,
+    "A reference equals the mixed search's J1": true,
+    "D mixed: valid and exactly the integer model's J1": true,
+    "D phase3 (bnwiki): valid and exactly the integer model's J1": true,
+    "D crosscheck (newspaper): valid and exactly the integer model's J1": true,
+    "D reference equals the mixed search's J1": true,
+    "A held-out J1 equals the Kala Goti leaderboard row": true,
+    "D held-out J1 equals the Kala Jhor leaderboard row": true,
+    "an invalid layout is refused": true
+  },
+  "inputs": {
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "results/phase1/effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "src/bangla_dh/challenge_template.py": "99aeb26c20ea3300a38984a3b2a6e892f5dcb42bdd0d8474a3c683d14ad22aeb",
+    "results/mix-search/search/A.json": "13f7fafc033c442262739d71637780910a2bfd0c1f479283451aac45a53302f7",
+    "results/phase3/search/A.json": "fedebf30e76977e9e9245ddd133af6b9c7ace04e2f2af40f4fd5075c8b07fc03",
+    "results/phase3-crosscheck/search/A.json": "8a25be9ac64df499f56998ee13ae8266b9fb1e61dfcd3222eddbfa96eb156db4",
+    "results/mix-search/search/D.json": "23ba86afb3ca4cba3f929c4f16d88172aaeab7d9dd70557d7267be79fe23cc1d",
+    "results/phase3/search/D.json": "424858c80bd23a71a2aae40e9f2e818c88c00556ee715a693bf05a1bec339278",
+    "results/phase3-crosscheck/search/D.json": "d516321e66d7eae7f837613c2feed032a66d66d3f4920e52acf1af85f517477e",
+    "results/mix-search/run-manifest.json": "4d09bc0ebb200ad4b868d1064e4009f6cc89455bc56186acb6cc9ab8236fb6b5"
+  },
+  "outputs": {
+    "challenge/A-reference.json": "f9670ad83c6a1ffaf6d50eeaf41e7a82bb447867b345a981a24621ac09909150",
+    "challenge/bangla_dh_challenge.py": "189fd2f41183fa64ec6afa100fb4f6e79ecfde5ebc08099e0e1411e1cfa15a97",
+    "challenge/challenge-data.json": "cd6bb413fcca529e6012238ac018e9bf6e5f53df903fffc8a2eb2138d1212a38",
+    "challenge/D-reference.json": "ecf39756b11a459b2d4998e323daaa7cc61448a1717419f188e86c21c3905423",
+    "challenge/README.md": "0c90a1ac27d79f1e3dbc9147edf9b4ca78ecaa51e2704afe9768645b36cc2511",
+    "challenge/USER_GUIDE.md": "4b0b9d6681a53a5fd4b3d32b7b1e6fb859535b1f55dbd33a61e2c9eb8d287abf"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "description": "Small Kala application files vendored under data/kala/ and read by the research.",
+  "sources": [
+    {
+      "path": "data/bn/Alphabet.json",
+      "role": "character-inventory",
+      "description": "Consonants, vowels, vowel signs, hasant, digits used by Kala",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 21422,
+      "sha256": "83c4ee3517f73d6a35406f980a4c52f98545b6818725a7e324458f93607c1e85"
+    },
+    {
+      "path": "kala/layout/bn/Alphabet.json",
+      "role": "character-inventory",
+      "description": "Runtime copy of the Bangla alphabet",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 21543,
+      "sha256": "33e51ba8010b50fc456cf121d88c1597672d86ea58d87300ae2eb7d59a05c8f4"
+    },
+    {
+      "path": "kala/layout/bn/conjuncts.json",
+      "role": "character-inventory",
+      "description": "Conjunct inventory (consonant + hasant + consonant)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 30098,
+      "sha256": "34207d0879b9d3cf1229d8d050c7717b4a86a36ae1a0dabd248b3b52d420dcfb"
+    },
+    {
+      "path": "kala/layout/bn/UniJoy.json",
+      "role": "baseline-layout",
+      "description": "UniJoy fixed layout (normal/shift layers by virtual-key code)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 4795,
+      "sha256": "f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4"
+    },
+    {
+      "path": "kala/layout/bn/bn_bijoy_layout.json",
+      "role": "baseline-layout",
+      "description": "Bijoy fixed layout (a copy of UniJoy)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 1750,
+      "sha256": "87d8d932d98f4118053015877b1ad8274eb8514384a46a3682ad7da4a93b57e7"
+    },
+    {
+      "path": "tools/kala-eval/datasets/top20k.tsv",
+      "role": "word-list",
+      "description": "Top 20k Bangla words with corpus counts (round-trip checks)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 536333,
+      "sha256": "3db9d7a35150f81fc40d99efe103a55478492fa5bc78e165f20da4927d5290ee"
+    },
+    {
+      "path": "tools/kala-eval/datasets/err_frequent_gold.tsv",
+      "role": "word-list",
+      "description": "Frequent gold words (round-trip checks)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 80278,
+      "sha256": "a7c4e7b49fdf4653132039dd6b1cce071123bb1fee14fb014efd3d94bc1c11bf"
+    },
+    {
+      "path": "tools/kala-eval/datasets/err_inflected.tsv",
+      "role": "word-list",
+      "description": "Inflected word forms (round-trip checks)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 91358,
+      "sha256": "592e164ef568e3f2706c39895812d2b3581afb3fef838f93fe009b6cef0c07b2"
+    },
+    {
+      "path": "tools/kala-eval/datasets/err_rare_gold.tsv",
+      "role": "word-list",
+      "description": "Rare gold words (round-trip checks)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 61470,
+      "sha256": "62b2f526f4e522ce3755edd728e07579d9197a3c18924483d6b129954ea99613"
+    },
+    {
+      "path": "tools/kala-eval/datasets/err_usage_dev.tsv",
+      "role": "word-list",
+      "description": "Usage development words (round-trip checks)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 84447,
+      "sha256": "e920e1241b6d72cd32e510697696bd963af57497af0096241bae869dc4ff64c4"
+    },
+    {
+      "path": "tools/kala-eval/datasets/err_usage_test.tsv",
+      "role": "word-list",
+      "description": "Usage test words (round-trip checks)",
+      "location": "data/kala",
+      "present": true,
+      "bytes": 86693,
+      "sha256": "618779416d21f886bef4fb7640ac15a3e08b2decd9e492fa649b65905dd4d005"
+    }
+  ]
+}

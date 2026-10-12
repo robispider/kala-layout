@@ -1,0 +1,48 @@
+{
+  "version": "bangla-dh-baselines-v1",
+  "description": "Existing fixed Bangla layouts scored next to the Kala layouts. Every report that compares baselines scores every entry here. Phonetic layouts are never compared (owner decision, 10 October 2026). Format of new key-map files: README.md in this folder.",
+  "baselines": [
+    {
+      "name": "UniJoy",
+      "kind": "kala",
+      "file": "kala/layout/bn/UniJoy.json",
+      "fingering": "traditional",
+      "provenance": "Kala's UniJoy file (Kala's bn_bijoy_layout.json is identical). Independent vowels are typed as hasant + vowel sign (combinations.sequences)."
+    },
+    {
+      "name": "National (Jatiya)",
+      "kind": "avro-fixed",
+      "file": "data/baselines/layouts/national-jatiya.json",
+      "fingering": "traditional",
+      "provenance": "Avro fixed-layout package imported into Kala; developer Bangladesh Computer Council (BCC); options {\"BanglaKeypad\": true, \"FixChandrabindu\": true, \"MoveReph\": true, \"VowelFormatting\": true}. Typed with Kala's formatting rules (scoring/avro_fixed.py)."
+    },
+    {
+      "name": "Bornona",
+      "kind": "avro-fixed",
+      "file": "data/baselines/layouts/bornona.json",
+      "fingering": "traditional",
+      "provenance": "Avro fixed-layout package imported into Kala; developer The Safeworks; options {\"BanglaKeypad\": true, \"FixChandrabindu\": true, \"MoveReph\": true, \"VowelFormatting\": true}. Typed with Kala's formatting rules (scoring/avro_fixed.py)."
+    },
+    {
+      "name": "Probhat",
+      "kind": "avro-fixed",
+      "file": "data/baselines/layouts/probhat.json",
+      "fingering": "traditional",
+      "provenance": "Avro fixed-layout package imported into Kala; developer Shabab Mustafa; options {\"BanglaKeypad\": true, \"FixChandrabindu\": true, \"MoveReph\": true, \"VowelFormatting\": true}. Typed with Kala's formatting rules (scoring/avro_fixed.py)."
+    },
+    {
+      "name": "Windows Default",
+      "kind": "avro-fixed",
+      "file": "data/baselines/layouts/windows-default.json",
+      "fingering": "traditional",
+      "provenance": "Avro fixed-layout package imported into Kala; developer BrownVinci; options {\"BanglaKeypad\": true, \"FixChandrabindu\": true, \"MoveReph\": true, \"VowelFormatting\": true}. Typed with Kala's formatting rules (scoring/avro_fixed.py)."
+    },
+    {
+      "name": "Munir Optima (uni)",
+      "kind": "avro-fixed",
+      "file": "data/baselines/layouts/munir-optima-uni.json",
+      "fingering": "traditional",
+      "provenance": "Avro fixed-layout package imported into Kala; developer Shabab Mustafa; options {\"BanglaKeypad\": true, \"FixChandrabindu\": true, \"MoveReph\": true, \"VowelFormatting\": true}. Typed with Kala's formatting rules (scoring/avro_fixed.py)."
+    }
+  ]
+}

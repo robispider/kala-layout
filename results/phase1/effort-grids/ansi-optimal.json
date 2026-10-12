@@ -1,0 +1,431 @@
+{
+  "keyboard": "ansi-staggered",
+  "fingers": "optimal",
+  "distance_scale": 1.12,
+  "keys": [
+    {
+      "key": "`",
+      "x": 0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 5.494836,
+      "finger": "L0"
+    },
+    {
+      "key": "1",
+      "x": 1.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 4.645283,
+      "finger": "L0"
+    },
+    {
+      "key": "2",
+      "x": 2.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 4.014092,
+      "finger": "L1"
+    },
+    {
+      "key": "3",
+      "x": 3.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 3.423798,
+      "finger": "L1"
+    },
+    {
+      "key": "4",
+      "x": 4.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 2.904502,
+      "finger": "L2"
+    },
+    {
+      "key": "5",
+      "x": 5.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 2.915301,
+      "finger": "L3"
+    },
+    {
+      "key": "6",
+      "x": 6.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 3.482582,
+      "finger": "L3"
+    },
+    {
+      "key": "7",
+      "x": 7.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 2.891375,
+      "finger": "R3"
+    },
+    {
+      "key": "8",
+      "x": 8.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 2.917081,
+      "finger": "R2"
+    },
+    {
+      "key": "9",
+      "x": 9.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 3.004996,
+      "finger": "R2"
+    },
+    {
+      "key": "0",
+      "x": 10.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 3.503738,
+      "finger": "R1"
+    },
+    {
+      "key": "-",
+      "x": 11.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 4.222541,
+      "finger": "R0"
+    },
+    {
+      "key": "=",
+      "x": 12.0,
+      "y": 0,
+      "width": 1.0,
+      "effort": 5.089784,
+      "finger": "R0"
+    },
+    {
+      "key": "BACKSPACE",
+      "x": 13.0,
+      "y": 0,
+      "width": 2.0,
+      "effort": 5.855014,
+      "finger": "R0"
+    },
+    {
+      "key": "TAB",
+      "x": 0,
+      "y": 1,
+      "width": 1.5,
+      "effort": 4.231529,
+      "finger": "L0"
+    },
+    {
+      "key": "Q",
+      "x": 1.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 3.024686,
+      "finger": "L0"
+    },
+    {
+      "key": "W",
+      "x": 2.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.501777,
+      "finger": "L1"
+    },
+    {
+      "key": "E",
+      "x": 3.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.101818,
+      "finger": "L2"
+    },
+    {
+      "key": "R",
+      "x": 4.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.302851,
+      "finger": "L3"
+    },
+    {
+      "key": "T",
+      "x": 5.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.611499,
+      "finger": "L3"
+    },
+    {
+      "key": "Y",
+      "x": 6.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 3.361678,
+      "finger": "R3"
+    },
+    {
+      "key": "U",
+      "x": 7.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.215525,
+      "finger": "R3"
+    },
+    {
+      "key": "I",
+      "x": 8.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 1.996495,
+      "finger": "R2"
+    },
+    {
+      "key": "O",
+      "x": 9.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.431124,
+      "finger": "R1"
+    },
+    {
+      "key": "P",
+      "x": 10.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 2.969828,
+      "finger": "R0"
+    },
+    {
+      "key": "[",
+      "x": 11.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 3.613217,
+      "finger": "R0"
+    },
+    {
+      "key": "]",
+      "x": 12.5,
+      "y": 1,
+      "width": 1.0,
+      "effort": 4.762857,
+      "finger": "R0"
+    },
+    {
+      "key": "\\",
+      "x": 13.5,
+      "y": 1,
+      "width": 1.5,
+      "effort": 5.61427,
+      "finger": "R0"
+    },
+    {
+      "key": "CAPS",
+      "x": 0,
+      "y": 2,
+      "width": 1.75,
+      "effort": 3.472683,
+      "finger": "L0"
+    },
+    {
+      "key": "A",
+      "x": 1.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.6,
+      "finger": "L0"
+    },
+    {
+      "key": "S",
+      "x": 2.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.3,
+      "finger": "L1"
+    },
+    {
+      "key": "D",
+      "x": 3.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.1,
+      "finger": "L2"
+    },
+    {
+      "key": "F",
+      "x": 4.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.0,
+      "finger": "L3"
+    },
+    {
+      "key": "G",
+      "x": 5.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 2.894051,
+      "finger": "L3"
+    },
+    {
+      "key": "H",
+      "x": 6.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 2.894051,
+      "finger": "R3"
+    },
+    {
+      "key": "J",
+      "x": 7.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.0,
+      "finger": "R3"
+    },
+    {
+      "key": "K",
+      "x": 8.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.1,
+      "finger": "R2"
+    },
+    {
+      "key": "L",
+      "x": 9.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.3,
+      "finger": "R1"
+    },
+    {
+      "key": ";",
+      "x": 10.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 1.6,
+      "finger": "R0"
+    },
+    {
+      "key": "'",
+      "x": 11.75,
+      "y": 2,
+      "width": 1.0,
+      "effort": 3.472683,
+      "finger": "R0"
+    },
+    {
+      "key": "ENTER",
+      "x": 12.75,
+      "y": 2,
+      "width": 2.25,
+      "effort": 4.842092,
+      "finger": "R0"
+    },
+    {
+      "key": "LSHIFT",
+      "x": 0,
+      "y": 3,
+      "width": 2.25,
+      "effort": 3.308286,
+      "finger": "L0"
+    },
+    {
+      "key": "Z",
+      "x": 2.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 2.694174,
+      "finger": "L1"
+    },
+    {
+      "key": "X",
+      "x": 3.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 2.384205,
+      "finger": "L2"
+    },
+    {
+      "key": "C",
+      "x": 4.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 1.834155,
+      "finger": "L3"
+    },
+    {
+      "key": "V",
+      "x": 5.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 2.23704,
+      "finger": "L3"
+    },
+    {
+      "key": "B",
+      "x": 6.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 3.746618,
+      "finger": "R3"
+    },
+    {
+      "key": "N",
+      "x": 7.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 2.23704,
+      "finger": "R3"
+    },
+    {
+      "key": "M",
+      "x": 8.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 1.834155,
+      "finger": "R3"
+    },
+    {
+      "key": ",",
+      "x": 9.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 2.384205,
+      "finger": "R2"
+    },
+    {
+      "key": ".",
+      "x": 10.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 2.694174,
+      "finger": "R1"
+    },
+    {
+      "key": "/",
+      "x": 11.25,
+      "y": 3,
+      "width": 1.0,
+      "effort": 3.308286,
+      "finger": "R0"
+    },
+    {
+      "key": "RSHIFT",
+      "x": 12.25,
+      "y": 3,
+      "width": 2.75,
+      "effort": 4.609624,
+      "finger": "R0"
+    }
+  ]
+}

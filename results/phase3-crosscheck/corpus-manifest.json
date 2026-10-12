@@ -1,0 +1,166 @@
+{
+  "version": "bangla-crosscheck-v1",
+  "config": "data/crosscheck-v1.json",
+  "config_sha256": "2de96ef4184abd71f7586e03b69865e0c458777744320ecc0732a545d0abdcbb",
+  "normalization": {
+    "version": "bangla-dh-text-v1",
+    "unicode_normalization": "NFC",
+    "unicode_version": "14.0.0",
+    "character_map": {
+      "U+201C": "\"",
+      "U+201D": "\"",
+      "U+201E": "\"",
+      "U+201F": "\"",
+      "U+2018": "'",
+      "U+2019": "'",
+      "U+201A": "'",
+      "U+201B": "'",
+      "U+2010": "-",
+      "U+2011": "-",
+      "U+09F7": "।"
+    },
+    "removed": [
+      "U+00AD",
+      "U+200B",
+      "U+200E",
+      "U+200F",
+      "U+2060",
+      "U+FEFF",
+      "U+202A",
+      "U+202B",
+      "U+202C",
+      "U+202D",
+      "U+202E"
+    ],
+    "to_space": [
+      "U+0009",
+      "U+00A0",
+      "U+1680",
+      "U+2000",
+      "U+2001",
+      "U+2002",
+      "U+2003",
+      "U+2004",
+      "U+2005",
+      "U+2006",
+      "U+2007",
+      "U+2008",
+      "U+2009",
+      "U+200A",
+      "U+202F",
+      "U+205F",
+      "U+3000"
+    ],
+    "joiners": "ZWJ (U+200D) and ZWNJ (U+200C) are kept",
+    "lines": "space runs collapsed, lines stripped, empty lines dropped; a line break is not a typing unit"
+  },
+  "glued_sentence_repair": {
+    "pattern": "([।?!])(?=[ঀ-৿])",
+    "replacement": "the mark followed by one space"
+  },
+  "shared_sentence_rule": {
+    "split_after": "। ? !",
+    "min_characters": 20,
+    "digest": "blake2b-64 of the stripped sentence"
+  },
+  "split": {
+    "unit": "document",
+    "rule": "held-out if int(sha256(salt + ':' + dataset + ':' + document_id)[:8], 16) % 100 < heldout_percent",
+    "salt": "bangla-dh-split-v1",
+    "heldout_percent": 10
+  },
+  "datasets": {
+    "newspaper": {
+      "label": "newspaper articles (Prothom Alo, many sections)",
+      "sources": [
+        {
+          "file": "D:/git repo/kala-layout/data/ban-dataset-collection/assembled/bangla-newspaper.jsonl",
+          "bytes": 2369720737,
+          "sha256": "e91080ba37da4e82fc2005f9dac46360e02febc83c2dd5b947ce333e18554a0e"
+        }
+      ],
+      "documents_read": 429394,
+      "paragraphs_read": 429575,
+      "sentences_read": 9873039,
+      "glued_sentence_repairs": 1834470,
+      "exclusion": null,
+      "duplicate_paragraphs_removed": 167,
+      "documents_without_new_paragraphs": 167,
+      "splits": {
+        "train": {
+          "documents": 386205,
+          "paragraphs": 386368,
+          "characters": 734596662,
+          "path": "data/corpus/crosscheck-v1/newspaper-train.jsonl.gz",
+          "sha256": "5c6fcddd03c0a00f080a61369c32b9fda12459700b7008b596938f3f9604362a"
+        },
+        "heldout": {
+          "documents": 43022,
+          "paragraphs": 43040,
+          "characters": 81945534,
+          "path": "data/corpus/crosscheck-v1/newspaper-heldout.jsonl.gz",
+          "sha256": "8c8d83a28f96a604a19a17f5141f8a8fc589bc5f2432b592d3ec293bd53409f3"
+        }
+      },
+      "seconds": 930.0
+    },
+    "bard-novel": {
+      "label": "BARD news articles (economy, entertainment, international, sports, state) that share no sentence with the newspaper set",
+      "sources": [
+        {
+          "file": "D:/git repo/kala-layout/data/ban-dataset-collection/assembled/bard/economy.jsonl.gz",
+          "bytes": 17081879,
+          "sha256": "3c348787253be5d238f9ea12e32c9f510e683a47285418dfe3aecaa7351f6112"
+        },
+        {
+          "file": "D:/git repo/kala-layout/data/ban-dataset-collection/assembled/bard/entertainment.jsonl.gz",
+          "bytes": 24812284,
+          "sha256": "27c4af04e84036c1bb5d73de1bba58481a81455e984ceaa2d18b6aa8f7a8e20a"
+        },
+        {
+          "file": "D:/git repo/kala-layout/data/ban-dataset-collection/assembled/bard/international.jsonl.gz",
+          "bytes": 26217077,
+          "sha256": "76f1957c0914f36e62faf87e80faf1554b48f3af6d3ab2a9833f2e91be0921ad"
+        },
+        {
+          "file": "D:/git repo/kala-layout/data/ban-dataset-collection/assembled/bard/sports.jsonl.gz",
+          "bytes": 46140637,
+          "sha256": "f399b0463da053b1e2875c5008a33c1637ac41a99f292ccf188fae5bd0c36f03"
+        },
+        {
+          "file": "D:/git repo/kala-layout/data/ban-dataset-collection/assembled/bard/state.jsonl.gz",
+          "bytes": 199166528,
+          "sha256": "66689dbfdc9db53ee4decdf387233cec82f8ab701fc82123f6a5f7157b0620bf"
+        }
+      ],
+      "documents_read": 372445,
+      "paragraphs_read": 969939,
+      "sentences_read": 6951539,
+      "glued_sentence_repairs": 854659,
+      "exclusion": {
+        "dataset": "newspaper",
+        "sentences_shared": 5652762,
+        "documents_excluded": 320064
+      },
+      "duplicate_paragraphs_removed": 14,
+      "documents_without_new_paragraphs": 5,
+      "splits": {
+        "train": {
+          "documents": 47245,
+          "paragraphs": 116006,
+          "characters": 66876831,
+          "path": "data/corpus/crosscheck-v1/bard-novel-train.jsonl.gz",
+          "sha256": "bd520a90d3cb02f889e230ea896ab9915e92cce513ef79c79a375e34b9a89347"
+        },
+        "heldout": {
+          "documents": 5131,
+          "paragraphs": 12782,
+          "characters": 7375536,
+          "path": "data/corpus/crosscheck-v1/bard-novel-heldout.jsonl.gz",
+          "sha256": "29c85ac7f418f60d5fa83dd2350c58ec5faaec157379a77f828cfb121eee6b0d"
+        }
+      },
+      "seconds": 64.8
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "generated_utc": "2026-10-12T17:11:40+00:00",
+  "bangla_dh_version": "0.1.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "repo_commit": "a411bceefc80eb888d9594ca7e77fbafc2771db4",
+  "working_tree_clean": false,
+  "parameters": {
+    "objective": "J1 (M = other hand's Shift key from the model grid, lambda_m = 1, Q = 0; D2)",
+    "effort_grid": "results/phase1/effort-grids/ansi-optimal.json",
+    "fingering": "model-optimal (D3 default)",
+    "middle_index_benefit": "kept (D6 default)",
+    "corpus": "Bangla Wikipedia only (D4)",
+    "search": {
+      "seeds": 64,
+      "sa_steps": 1000000,
+      "t_ratio": 0.001,
+      "ils_iterations": 1000,
+      "ils_strength": [
+        2,
+        6
+      ],
+      "objective": "J1",
+      "frequencies": "bnwiki/train",
+      "confirmation": {
+        "seeds": 6,
+        "ils_iterations": 5000,
+        "strengths": [
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            8,
+            16
+          ]
+        ]
+      },
+      "starts": "the first seed starts from the frequency-sorted greedy layout, the others from random permutations"
+    },
+    "seed_range_per_style": {
+      "A": [
+        20261011,
+        20261074
+      ],
+      "B": [
+        20261011,
+        20261074
+      ],
+      "C": [
+        20261011,
+        20261074
+      ],
+      "D": [
+        20261011,
+        20261074
+      ]
+    }
+  },
+  "inputs": {
+    "data/bangla-symbols-v1.json": "a3e6b4b7d6214c308fbe38b418197816357df1073c6ec787d46b1772445f9651",
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "results/phase1/effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "results/phase1/effort-grids/ansi-traditional.json": "d536af149e6954af9928f096d8215248190544b7f8d6dfe2aa8b9bec5dff0bb7",
+    "kala:kala/layout/bn/UniJoy.json": "f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4",
+    "kala:tools/kala-eval/datasets/top20k.tsv": "3db9d7a35150f81fc40d99efe103a55478492fa5bc78e165f20da4927d5290ee",
+    "kala:tools/kala-eval/datasets/err_frequent_gold.tsv": "a7c4e7b49fdf4653132039dd6b1cce071123bb1fee14fb014efd3d94bc1c11bf",
+    "kala:tools/kala-eval/datasets/err_inflected.tsv": "592e164ef568e3f2706c39895812d2b3581afb3fef838f93fe009b6cef0c07b2",
+    "kala:tools/kala-eval/datasets/err_rare_gold.tsv": "62b2f526f4e522ce3755edd728e07579d9197a3c18924483d6b129954ea99613",
+    "kala:tools/kala-eval/datasets/err_usage_dev.tsv": "e920e1241b6d72cd32e510697696bd963af57497af0096241bae869dc4ff64c4",
+    "kala:tools/kala-eval/datasets/err_usage_test.tsv": "618779416d21f886bef4fb7640ac15a3e08b2decd9e492fa649b65905dd4d005",
+    "data/corpus/bangla-corpus-v1/bnwiki-train.tokens.tsv.gz": "0dc737688df0bca3181303c98667e4037d2c4ea71422567e9b4fd388142bb436",
+    "data/corpus/bangla-corpus-v1/bnwiki-train.jsonl.gz": "ec12f7268cda6a908c3ccb422173d95ae31fe350c2c6afe35a0f89955de28e64",
+    "data/corpus/bangla-corpus-v1/bnwiki-heldout.tokens.tsv.gz": "df10fb8418bd2100a29abdd8c8c7392ca71f861eff1ea94073f40482bdac9a13",
+    "data/corpus/bangla-corpus-v1/bnwiki-heldout.jsonl.gz": "f390e0f5380dd422f01e5d8fff383964078039bd06a12507a91e512b7eac3d87",
+    "results/phase2/phase2.json": "2dadc6b686f1893194f7d8e470e8ab9c2bea034efc7333c226741b89b224a8b7"
+  },
+  "outputs": {
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "results/phase3/frequencies/A-bnwiki-heldout.json": "f441803c48942456fe151630f205f3a4c00d82a789b5cfd675627cf2f60b253d",
+    "results/phase3/frequencies/A-bnwiki-train.json": "71108b065277a31d099efe53cb75ff997878ace1c0f1d9d79dae721cd0f27de7",
+    "results/phase3/frequencies/B-bnwiki-heldout.json": "547c2ea616165dae91f7bedbacba9050e68b26496e7d61f6c34cefb2c416f2c7",
+    "results/phase3/frequencies/B-bnwiki-train.json": "90ec036c5d3b6ebf4cae18496fa5dd2e4594ba593ae78ee70d47a9e5eb13fde2",
+    "results/phase3/frequencies/C-bnwiki-heldout.json": "9872b3972d4f6c169310f9faf596f18cdcd6296a7ed0e5ac92a9cbc3bb930d33",
+    "results/phase3/frequencies/C-bnwiki-train.json": "04473190cfa0d0eecc9d45e4183bd3029f65bbea5c369be38359ce916e6ce135",
+    "results/phase3/frequencies/D-bnwiki-heldout.json": "8bf00934f196f8970a072699a6e251ba9bcded0fef3ebd92d46f600f70fcfab5",
+    "results/phase3/frequencies/D-bnwiki-train.json": "13222d6cc16fed4408e718b329fb3088edc2af5a4acf1fab28f5a7646a1ea6e2",
+    "results/phase3/phase3.json": "e2b71f6d130fc0d75cd1bb374eabd50b0e12026eef1ed1f5fb47e6af284ea34e",
+    "results/phase3/REPORT.md": "75c6d2e93d7f53bf1bc1aef7e3cbc350814ef198c09b9fb656be7846a1e0a561",
+    "results/phase3/search/A.json": "fedebf30e76977e9e9245ddd133af6b9c7ace04e2f2af40f4fd5075c8b07fc03",
+    "results/phase3/search/B.json": "2fb63d48704572551813d185b7a2951757f16fb1fc569c7c9b8c91cd6f7bfc58",
+    "results/phase3/search/C.json": "6f84c5e2360deaea6678ef11e366d32a91d8fad20c9106d76e305a7f16036ae2",
+    "results/phase3/search/D.json": "424858c80bd23a71a2aae40e9f2e818c88c00556ee715a693bf05a1bec339278"
+  }
+}

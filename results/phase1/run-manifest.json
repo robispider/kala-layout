@@ -1,0 +1,32 @@
+{
+  "generated_utc": "2026-10-09T20:23:37+00:00",
+  "bangla_dh_version": "0.1.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "kala_commit": "ca2a1f9befaaadff9bb0ed594eaba1f91927720d",
+  "working_tree_clean": false,
+  "inputs": {
+    "sources.lock.json": "65dcb07863f9852249155a71c5e1faf53e7a5e17e7d22ce46b3852c4531c5bec",
+    "colemak_dh_published.json": "930dffb2ad5e1321972bdb012a340968a97f770ef6cf89374b0c5c4a4b3542eb"
+  },
+  "parameters": {
+    "frequency_file": "freq/en_books.freq",
+    "layout_directory": "layout_full",
+    "distance_scale": 1.12,
+    "experience_curve_b": 0.8
+  },
+  "outputs": {
+    "reproduction.json": "92fd4ab5bdf6b6a9d1edb7567267bd9986b03caf11c6cc3f39da7115105c194b",
+    "calibration-curve.json": "21e53d4bfb9b650588eac779e49bc243ae89d711547ca46829f0408c06d4e1d0",
+    "model-configs/model_iso_ergonomic_config.dat": "09b8040632851221b3e43eb004345d800f1c7eab0e28cfed43bf64b791c1bff2",
+    "model-configs/model_iso_traditional_config.dat": "1c9f9fdfbed665eb9791ab7c5c1d52419777df064c3955d712f93079aabf0994",
+    "model-configs/model_ansi_traditional_config.dat": "7b92e80aee52095e519e3e794e6757a567eff99a0eb1d1bc42858a924aabf4be",
+    "effort-grids/iso-optimal.json": "c960b87b8de97d039f3954000f8eb11894e722a5b171bf673a73c67ac47da93f",
+    "effort-grids/iso-traditional.json": "e926e9f4181fc102f3658a6a5e12f34c6d627db33bece769c23ace77b6bb6729",
+    "effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "effort-grids/ansi-traditional.json": "d536af149e6954af9928f096d8215248190544b7f8d6dfe2aa8b9bec5dff0bb7",
+    "effort-grids/matrix-optimal.json": "aafc5212db5d0bf498447d6293df0cb52e5e640d822cb488b7582e012af4ffad",
+    "kala-bangla-inventory.json": "e3d08a0b54f9e1118fa3b040cfb325ac3bccd24d876180c23325b4b74c673ad7",
+    "REPORT.md": "33f950bb7116d776ba34ec81f0ba5cbdadb9fdfc84f2edcbea0adcfbbfccaac8"
+  }
+}

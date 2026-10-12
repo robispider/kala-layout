@@ -1,0 +1,487 @@
+{
+  "rejected_kala_entries": [
+    {
+      "kala": [
+        "U+2011"
+      ],
+      "file": "kala/layout/bn/Alphabet.json",
+      "section": "punctuation",
+      "reason": "normalized to '-' (bangla-dh-text-v1)"
+    }
+  ],
+  "d1_default_missing": [],
+  "alphabet_copy_differences": {
+    "punctuation": {
+      "only_in_data/bn/Alphabet.json": [],
+      "only_in_kala/layout/bn/Alphabet.json": [
+        [
+          "U+002D"
+        ],
+        [
+          "U+2011"
+        ],
+        [
+          "U+2014"
+        ]
+      ]
+    },
+    "replace": {
+      "only_in_data/bn/Alphabet.json": [],
+      "only_in_kala/layout/bn/Alphabet.json": [
+        [
+          "U+09A1",
+          "U+09BC"
+        ],
+        [
+          "U+09A2",
+          "U+09BC"
+        ],
+        [
+          "U+09AF",
+          "U+09BC"
+        ]
+      ]
+    }
+  },
+  "conjuncts": {
+    "data/bn/Alphabet.json#conjuncts": {
+      "entries": 1126,
+      "valid_clusters": 1115,
+      "duplicates_after_nfc": [
+        "ক্য",
+        "ক্র",
+        "খ্য",
+        "খ্র",
+        "গ্য",
+        "গ্র",
+        "ঘ্য",
+        "ঘ্র",
+        "ঙ্য",
+        "ঙ্র",
+        "চ্য",
+        "চ্র",
+        "ছ্য",
+        "ছ্র",
+        "জ্য",
+        "জ্র",
+        "ঝ্য",
+        "ঝ্র",
+        "ঞ্য",
+        "ঞ্র",
+        "ট্য",
+        "ট্র",
+        "ঠ্য",
+        "ঠ্র",
+        "ড্য",
+        "ড্র",
+        "ঢ্য",
+        "ঢ্র",
+        "ণ্য",
+        "ণ্র",
+        "ত্য",
+        "ত্র",
+        "থ্য",
+        "থ্র",
+        "দ্য",
+        "দ্র",
+        "ধ্য",
+        "ধ্র",
+        "ন্য",
+        "ন্র",
+        "প্য",
+        "প্র",
+        "ফ্য",
+        "ফ্র",
+        "ব্য",
+        "ব্র",
+        "ভ্য",
+        "ভ্র",
+        "ম্য",
+        "ম্র",
+        "য়্য",
+        "য্র",
+        "র্ক",
+        "র্খ",
+        "র্গ",
+        "র্ঘ",
+        "র্ঙ",
+        "র্চ",
+        "র্ছ",
+        "র্জ",
+        "র্ঝ",
+        "র্ঞ",
+        "র্ত",
+        "র্থ",
+        "র্দ",
+        "র্ধ",
+        "র্ন",
+        "র্ব",
+        "র্ভ",
+        "র্ম",
+        "র্য",
+        "র্র",
+        "ল্য",
+        "ল্র",
+        "শ্য",
+        "শ্র",
+        "ষ্য",
+        "ষ্র",
+        "স্য",
+        "স্র",
+        "হ্য",
+        "হ্র"
+      ],
+      "problems": [
+        {
+          "entry": "ধ्ष",
+          "code_points": [
+            "U+09A7",
+            "U+094D",
+            "U+0937"
+          ],
+          "problem": "non-Bengali code point U+094D U+0937"
+        },
+        {
+          "entry": "ক্ক্",
+          "code_points": [
+            "U+0995",
+            "U+09CD",
+            "U+0995",
+            "U+09CD"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "স্ত্",
+          "code_points": [
+            "U+09B8",
+            "U+09CD",
+            "U+09A4",
+            "U+09CD"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "য়ার",
+          "code_points": [
+            "U+09DF",
+            "U+09BE",
+            "U+09B0"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "র্তি",
+          "code_points": [
+            "U+09B0",
+            "U+09CD",
+            "U+09A4",
+            "U+09BF"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "রল",
+          "code_points": [
+            "U+09B0",
+            "U+09B2"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "রশ",
+          "code_points": [
+            "U+09B0",
+            "U+09B6"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "রষ",
+          "code_points": [
+            "U+09B0",
+            "U+09B7"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "রত",
+          "code_points": [
+            "U+09B0",
+            "U+09A4"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "হ্",
+          "code_points": [
+            "U+09B9",
+            "U+09CD"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "রয়",
+          "code_points": [
+            "U+09B0",
+            "U+09DF"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        }
+      ]
+    },
+    "kala/layout/bn/conjuncts.json (keys)": {
+      "entries": 1039,
+      "valid_clusters": 1027,
+      "duplicates_after_nfc": [],
+      "problems": [
+        {
+          "entry": "্া",
+          "code_points": [
+            "U+09CD",
+            "U+09BE"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ি",
+          "code_points": [
+            "U+09CD",
+            "U+09BF"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ী",
+          "code_points": [
+            "U+09CD",
+            "U+09C0"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ু",
+          "code_points": [
+            "U+09CD",
+            "U+09C1"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ূ",
+          "code_points": [
+            "U+09CD",
+            "U+09C2"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ৃ",
+          "code_points": [
+            "U+09CD",
+            "U+09C3"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ে",
+          "code_points": [
+            "U+09CD",
+            "U+09C7"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ৈ",
+          "code_points": [
+            "U+09CD",
+            "U+09C8"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ো",
+          "code_points": [
+            "U+09CD",
+            "U+09CB"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "্ৌ",
+          "code_points": [
+            "U+09CD",
+            "U+09CC"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "ক্ক্",
+          "code_points": [
+            "U+0995",
+            "U+09CD",
+            "U+0995",
+            "U+09CD"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        },
+        {
+          "entry": "স্ত্",
+          "code_points": [
+            "U+09B8",
+            "U+09CD",
+            "U+09A4",
+            "U+09CD"
+          ],
+          "problem": "not consonant (+ hasant + consonant)+"
+        }
+      ]
+    },
+    "kala/layout/bn/conjuncts.json (non-identity mappings)": [
+      {
+        "from": "্া",
+        "to": "আ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09BE"
+        ],
+        "to_code_points": [
+          "U+0986"
+        ]
+      },
+      {
+        "from": "্ি",
+        "to": "ই",
+        "from_code_points": [
+          "U+09CD",
+          "U+09BF"
+        ],
+        "to_code_points": [
+          "U+0987"
+        ]
+      },
+      {
+        "from": "্ী",
+        "to": "ঈ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09C0"
+        ],
+        "to_code_points": [
+          "U+0988"
+        ]
+      },
+      {
+        "from": "্ু",
+        "to": "উ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09C1"
+        ],
+        "to_code_points": [
+          "U+0989"
+        ]
+      },
+      {
+        "from": "্ূ",
+        "to": "ঊ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09C2"
+        ],
+        "to_code_points": [
+          "U+098A"
+        ]
+      },
+      {
+        "from": "্ৃ",
+        "to": "ঋ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09C3"
+        ],
+        "to_code_points": [
+          "U+098B"
+        ]
+      },
+      {
+        "from": "্ে",
+        "to": "এ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09C7"
+        ],
+        "to_code_points": [
+          "U+098F"
+        ]
+      },
+      {
+        "from": "্ৈ",
+        "to": "ঐ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09C8"
+        ],
+        "to_code_points": [
+          "U+0990"
+        ]
+      },
+      {
+        "from": "্ো",
+        "to": "ও",
+        "from_code_points": [
+          "U+09CD",
+          "U+09CB"
+        ],
+        "to_code_points": [
+          "U+0993"
+        ]
+      },
+      {
+        "from": "্ৌ",
+        "to": "ঔ",
+        "from_code_points": [
+          "U+09CD",
+          "U+09CC"
+        ],
+        "to_code_points": [
+          "U+0994"
+        ]
+      },
+      {
+        "from": "ক্ক্",
+        "to": "ক্ক্ত",
+        "from_code_points": [
+          "U+0995",
+          "U+09CD",
+          "U+0995",
+          "U+09CD"
+        ],
+        "to_code_points": [
+          "U+0995",
+          "U+09CD",
+          "U+0995",
+          "U+09CD",
+          "U+09A4"
+        ]
+      },
+      {
+        "from": "স্ত্",
+        "to": "স্ত্র",
+        "from_code_points": [
+          "U+09B8",
+          "U+09CD",
+          "U+09A4",
+          "U+09CD"
+        ],
+        "to_code_points": [
+          "U+09B8",
+          "U+09CD",
+          "U+09A4",
+          "U+09CD",
+          "U+09B0"
+        ]
+      }
+    ]
+  }
+}

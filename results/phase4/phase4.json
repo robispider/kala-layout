@@ -1,0 +1,4316 @@
+{
+ "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+ "certificates": {
+  "A": {
+   "style": "A",
+   "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+   "settings": {
+    "scale": 1000000,
+    "objective": "J1",
+    "frequencies": "bnwiki/train",
+    "exchange_k": 5,
+    "lp": {
+     "solver": "PDLP",
+     "time_limit": 3600,
+     "threads": 16,
+     "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+    },
+    "cpsat_full": {
+     "time_limit": 900,
+     "workers": 16,
+     "seed": 20261012
+    },
+    "subproblems": {
+     "sizes": [
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed"
+    },
+    "layers": {
+     "time_limit": 600,
+     "workers": 16
+    },
+    "exhaustive_check": {
+     "size": 9
+    }
+   },
+   "frequencies": "results/phase3/frequencies/A-bnwiki-train.json",
+   "frequencies_sha256": "71108b065277a31d099efe53cb75ff997878ace1c0f1d9d79dae721cd0f27de7",
+   "problem_sha256": "6ddd111aa93d95e4015b6ab3043e6d3213bf64c8e3f7cd87a170d13c04b00e44",
+   "N": 390391661,
+   "scale": 1000000,
+   "integer_model": {
+    "exact": true,
+    "UB_Z": 729031193585032,
+    "UB_J": 1.867435364058742,
+    "float_search_J": 1.8674353640587416,
+    "float_vs_exact_difference": 4.440892098500626e-16,
+    "formula_rounding_bound_J": 8.736104573196814e-07,
+    "max_abs_coefficient": 284930329184570
+   },
+   "gilmore_lawler": {
+    "Z": 683838470029445,
+    "J": 1.7516728412634945,
+    "assignment_value_2Z": 1274828038767856,
+    "ortools_assignment_value_2Z": 1274828038767856,
+    "seconds": 0.02
+   },
+   "cpsat_full": {
+    "status": "FEASIBLE",
+    "radius": null,
+    "free": null,
+    "time_limit": 900,
+    "workers": 16,
+    "seed": 20261012,
+    "objective_divisor": 1,
+    "pair_literals": 148235,
+    "build_seconds": 2.6,
+    "seconds": 936.3,
+    "solver": "OR-Tools 9.14.6206 CP-SAT",
+    "best_bound_Z": 688736485735310,
+    "Z": 729031193585032,
+    "bound_J": 1.764219256044278,
+    "solution_J": 1.867435364058742,
+    "proven_optimal_hint": false
+   },
+   "proofs": {
+    "exhaustive_check": {
+     "size": 9,
+     "free": [
+      "্",
+      "া",
+      "র",
+      "ে",
+      "ি",
+      "ন",
+      "ক",
+      "ত",
+      "ব"
+     ],
+     "arrangements": 362880,
+     "enumeration_Z_min": 729031193585032,
+     "cpsat_status": "OPTIMAL",
+     "cpsat_Z": 729031193585032,
+     "cpsat_bound_Z": 729031193585032,
+     "agree": true,
+     "hint_optimal": true,
+     "seconds": 9.399999999999999
+    },
+    "exchange": {
+     "k_max": 5,
+     "by_k": {
+      "2": {
+       "checked": 1326,
+       "best_delta": 779720657,
+       "best_move": {
+        "ৈ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 779720657,
+       "layouts_checked_formula": "C(52,2) x derangements(2)"
+      },
+      "3": {
+       "checked": 44200,
+       "best_delta": 62010193818,
+       "best_move": {
+        "ঢ": [
+         [
+          "Q",
+          "shift"
+         ],
+         [
+          "G",
+          "shift"
+         ]
+        ],
+        "ঢ়": [
+         [
+          "G",
+          "shift"
+         ],
+         [
+          "T",
+          "shift"
+         ]
+        ],
+        "ঃ": [
+         [
+          "T",
+          "shift"
+         ],
+         [
+          "Q",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 62010193818,
+       "layouts_checked_formula": "C(52,3) x derangements(3)"
+      },
+      "4": {
+       "checked": 2436525,
+       "best_delta": 1543494505,
+       "best_move": {
+        "ঢ়": [
+         [
+          "G",
+          "shift"
+         ],
+         [
+          "T",
+          "shift"
+         ]
+        ],
+        "ঃ": [
+         [
+          "T",
+          "shift"
+         ],
+         [
+          "G",
+          "shift"
+         ]
+        ],
+        "ৈ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 1543494505,
+       "layouts_checked_formula": "C(52,4) x derangements(4)"
+      },
+      "5": {
+       "checked": 114354240,
+       "best_delta": 62612914475,
+       "best_move": {
+        "ঢ": [
+         [
+          "Q",
+          "shift"
+         ],
+         [
+          "G",
+          "shift"
+         ]
+        ],
+        "ঢ়": [
+         [
+          "G",
+          "shift"
+         ],
+         [
+          "T",
+          "shift"
+         ]
+        ],
+        "ঃ": [
+         [
+          "T",
+          "shift"
+         ],
+         [
+          "Q",
+          "shift"
+         ]
+        ],
+        "ৈ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 62612914475,
+       "layouts_checked_formula": "C(52,5) x derangements(5)"
+      }
+     },
+     "proven": true,
+     "seconds": 63.5
+    },
+    "top_k": {
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed",
+     "runs": [
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        24,
+        26,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        48
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148235,
+       "build_seconds": 3.3,
+       "seconds": 5.3,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 729031193585032,
+       "Z": 729031193585032,
+       "bound_J": 1.867435364058742,
+       "solution_J": 1.867435364058742,
+       "proven_optimal_hint": true,
+       "size": 12
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        45,
+        48
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148235,
+       "build_seconds": 3.3,
+       "seconds": 8.2,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 729031193585032,
+       "Z": 729031193585032,
+       "bound_J": 1.867435364058742,
+       "solution_J": 1.867435364058742,
+       "proven_optimal_hint": true,
+       "size": 16
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        34,
+        35,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148235,
+       "build_seconds": 3.2,
+       "seconds": 46.7,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 729031193585032,
+       "Z": 729031193585032,
+       "bound_J": 1.867435364058742,
+       "solution_J": 1.867435364058742,
+       "proven_optimal_hint": true,
+       "size": 20
+      },
+      {
+       "status": "FEASIBLE",
+       "radius": null,
+       "free": [
+        0,
+        2,
+        7,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        40,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148235,
+       "build_seconds": 3.4,
+       "seconds": 612.5,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 723545111452600,
+       "Z": 729031193585032,
+       "bound_J": 1.8533825994111077,
+       "solution_J": 1.867435364058742,
+       "proven_optimal_hint": false,
+       "size": 24
+      }
+     ],
+     "largest_proven": 20
+    },
+    "base_layer": {
+     "status": "FEASIBLE",
+     "radius": null,
+     "free": [
+      0,
+      2,
+      5,
+      7,
+      10,
+      17,
+      19,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      34,
+      35,
+      40,
+      42,
+      43,
+      44,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148235,
+     "build_seconds": 3.8,
+     "seconds": 616.5,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 718340960054564,
+     "Z": 729031193585032,
+     "bound_J": 1.8400520088326477,
+     "solution_J": 1.867435364058742,
+     "proven_optimal_hint": false
+    },
+    "shift_layer": {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      1,
+      3,
+      4,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      23,
+      25,
+      32,
+      36,
+      37,
+      38,
+      39,
+      41,
+      46,
+      47,
+      49,
+      51
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148235,
+     "build_seconds": 3.9,
+     "seconds": 13.6,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 729031193585032,
+     "Z": 729031193585032,
+     "bound_J": 1.867435364058742,
+     "solution_J": 1.867435364058742,
+     "proven_optimal_hint": true
+    }
+   },
+   "lower_bounds_Z": {
+    "LB0": 647248785272704,
+    "Gilmore-Lawler": 683838470029445,
+    "CP-SAT": 688736485735310
+   },
+   "seconds": 2313.3
+  },
+  "B": {
+   "style": "B",
+   "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+   "settings": {
+    "scale": 1000000,
+    "objective": "J1",
+    "frequencies": "bnwiki/train",
+    "exchange_k": 5,
+    "lp": {
+     "solver": "PDLP",
+     "time_limit": 3600,
+     "threads": 16,
+     "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+    },
+    "cpsat_full": {
+     "time_limit": 900,
+     "workers": 16,
+     "seed": 20261012
+    },
+    "subproblems": {
+     "sizes": [
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed"
+    },
+    "layers": {
+     "time_limit": 600,
+     "workers": 16
+    },
+    "exhaustive_check": {
+     "size": 9
+    }
+   },
+   "frequencies": "results/phase3/frequencies/B-bnwiki-train.json",
+   "frequencies_sha256": "90ec036c5d3b6ebf4cae18496fa5dd2e4594ba593ae78ee70d47a9e5eb13fde2",
+   "problem_sha256": "6ddd111aa93d95e4015b6ab3043e6d3213bf64c8e3f7cd87a170d13c04b00e44",
+   "N": 390391661,
+   "scale": 1000000,
+   "integer_model": {
+    "exact": true,
+    "UB_Z": 734205674968831,
+    "UB_J": 1.8806899540019402,
+    "float_search_J": 1.8806899540019397,
+    "float_vs_exact_difference": 4.440892098500626e-16,
+    "formula_rounding_bound_J": 8.736027599216572e-07,
+    "max_abs_coefficient": 258329869671970
+   },
+   "gilmore_lawler": {
+    "Z": 689484244541662,
+    "J": 1.7661346627525991,
+    "assignment_value_2Z": 1286119587792290,
+    "ortools_assignment_value_2Z": 1286119587792290,
+    "seconds": 0.02
+   },
+   "cpsat_full": {
+    "status": "FEASIBLE",
+    "radius": null,
+    "free": null,
+    "time_limit": 900,
+    "workers": 16,
+    "seed": 20261012,
+    "objective_divisor": 1,
+    "pair_literals": 148810,
+    "build_seconds": 4.2,
+    "seconds": 932.1,
+    "solver": "OR-Tools 9.14.6206 CP-SAT",
+    "best_bound_Z": 696096170303289,
+    "Z": 734205674968831,
+    "bound_J": 1.783071309771878,
+    "solution_J": 1.8806899540019402,
+    "proven_optimal_hint": false
+   },
+   "proofs": {
+    "exhaustive_check": {
+     "size": 9,
+     "free": [
+      "া",
+      "ে",
+      "র",
+      "ি",
+      "্",
+      "ন",
+      "ক",
+      "ত",
+      "ব"
+     ],
+     "arrangements": 362880,
+     "enumeration_Z_min": 734205674968831,
+     "cpsat_status": "OPTIMAL",
+     "cpsat_Z": 734205674968831,
+     "cpsat_bound_Z": 734205674968831,
+     "agree": true,
+     "hint_optimal": true,
+     "seconds": 9.3
+    },
+    "exchange": {
+     "k_max": 5,
+     "by_k": {
+      "2": {
+       "checked": 1326,
+       "best_delta": 3149107468,
+       "best_move": {
+        "ৈ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 3149107468,
+       "layouts_checked_formula": "C(52,2) x derangements(2)"
+      },
+      "3": {
+       "checked": 44200,
+       "best_delta": 19133042905,
+       "best_move": {
+        "ঝ": [
+         [
+          "B",
+          "shift"
+         ],
+         [
+          "Z",
+          "shift"
+         ]
+        ],
+        "ঞ": [
+         [
+          "X",
+          "shift"
+         ],
+         [
+          "B",
+          "shift"
+         ]
+        ],
+        "ৎ": [
+         [
+          "Z",
+          "shift"
+         ],
+         [
+          "X",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 19133042905,
+       "layouts_checked_formula": "C(52,3) x derangements(3)"
+      },
+      "4": {
+       "checked": 2436525,
+       "best_delta": 15566787919,
+       "best_move": {
+        "খ": [
+         [
+          "A",
+          "shift"
+         ],
+         [
+          "N",
+          "shift"
+         ]
+        ],
+        "ড": [
+         [
+          "U",
+          "shift"
+         ],
+         [
+          "S",
+          "shift"
+         ]
+        ],
+        "ধ": [
+         [
+          "N",
+          "shift"
+         ],
+         [
+          "U",
+          "shift"
+         ]
+        ],
+        "ফ": [
+         [
+          "S",
+          "shift"
+         ],
+         [
+          "A",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 15566787919,
+       "layouts_checked_formula": "C(52,4) x derangements(4)"
+      },
+      "5": {
+       "checked": 114354240,
+       "best_delta": 22283150373,
+       "best_move": {
+        "ঝ": [
+         [
+          "B",
+          "shift"
+         ],
+         [
+          "Z",
+          "shift"
+         ]
+        ],
+        "ঞ": [
+         [
+          "X",
+          "shift"
+         ],
+         [
+          "B",
+          "shift"
+         ]
+        ],
+        "ৎ": [
+         [
+          "Z",
+          "shift"
+         ],
+         [
+          "X",
+          "shift"
+         ]
+        ],
+        "ৈ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 22283150373,
+       "layouts_checked_formula": "C(52,5) x derangements(5)"
+      }
+     },
+     "proven": true,
+     "seconds": 62.3
+    },
+    "top_k": {
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed",
+     "runs": [
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        24,
+        26,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        48
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 3.5,
+       "seconds": 5.6,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 734205674968831,
+       "Z": 734205674968831,
+       "bound_J": 1.8806899540019402,
+       "solution_J": 1.8806899540019402,
+       "proven_optimal_hint": true,
+       "size": 12
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        22,
+        24,
+        26,
+        28,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 3.3,
+       "seconds": 8.9,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 734205674968831,
+       "Z": 734205674968831,
+       "bound_J": 1.8806899540019402,
+       "solution_J": 1.8806899540019402,
+       "proven_optimal_hint": true,
+       "size": 16
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        34,
+        35,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 3.5,
+       "seconds": 28.6,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 734205674968831,
+       "Z": 734205674968831,
+       "bound_J": 1.8806899540019402,
+       "solution_J": 1.8806899540019402,
+       "proven_optimal_hint": true,
+       "size": 20
+      },
+      {
+       "status": "FEASIBLE",
+       "radius": null,
+       "free": [
+        0,
+        2,
+        7,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        40,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 3.3,
+       "seconds": 614.6,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 729740832847143,
+       "Z": 734205674968831,
+       "bound_J": 1.869253126406158,
+       "solution_J": 1.8806899540019402,
+       "proven_optimal_hint": false,
+       "size": 24
+      }
+     ],
+     "largest_proven": 20
+    },
+    "base_layer": {
+     "status": "FEASIBLE",
+     "radius": null,
+     "free": [
+      0,
+      2,
+      5,
+      7,
+      10,
+      17,
+      19,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      34,
+      35,
+      40,
+      42,
+      43,
+      44,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 4.2,
+     "seconds": 618.3,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 723741939198906,
+     "Z": 734205674968831,
+     "bound_J": 1.8538867796126055,
+     "solution_J": 1.8806899540019402,
+     "proven_optimal_hint": false
+    },
+    "shift_layer": {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      1,
+      3,
+      4,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      23,
+      25,
+      32,
+      36,
+      37,
+      38,
+      39,
+      41,
+      46,
+      47,
+      49,
+      51
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 3.9,
+     "seconds": 13.9,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 734205674968831,
+     "Z": 734205674968831,
+     "bound_J": 1.8806899540019402,
+     "solution_J": 1.8806899540019402,
+     "proven_optimal_hint": true
+    }
+   },
+   "lower_bounds_Z": {
+    "LB0": 655169597124530,
+    "Gilmore-Lawler": 689484244541662,
+    "CP-SAT": 696096170303289
+   },
+   "seconds": 2294.5
+  },
+  "C": {
+   "style": "C",
+   "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+   "settings": {
+    "scale": 1000000,
+    "objective": "J1",
+    "frequencies": "bnwiki/train",
+    "exchange_k": 5,
+    "lp": {
+     "solver": "PDLP",
+     "time_limit": 3600,
+     "threads": 16,
+     "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+    },
+    "cpsat_full": {
+     "time_limit": 900,
+     "workers": 16,
+     "seed": 20261012
+    },
+    "subproblems": {
+     "sizes": [
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed"
+    },
+    "layers": {
+     "time_limit": 600,
+     "workers": 16
+    },
+    "exhaustive_check": {
+     "size": 9
+    }
+   },
+   "frequencies": "results/phase3/frequencies/C-bnwiki-train.json",
+   "frequencies_sha256": "04473190cfa0d0eecc9d45e4183bd3029f65bbea5c369be38359ce916e6ce135",
+   "problem_sha256": "6ddd111aa93d95e4015b6ab3043e6d3213bf64c8e3f7cd87a170d13c04b00e44",
+   "N": 390391661,
+   "scale": 1000000,
+   "integer_model": {
+    "exact": true,
+    "UB_Z": 840566664643308,
+    "UB_J": 2.153136833123359,
+    "float_search_J": 2.15313683312336,
+    "float_vs_exact_difference": 8.881784197001252e-16,
+    "formula_rounding_bound_J": 1.0684916384522876e-06,
+    "max_abs_coefficient": 471102051578860
+   },
+   "gilmore_lawler": {
+    "Z": 790496217780548,
+    "J": 2.024879875137876,
+    "assignment_value_2Z": 1488143534270062,
+    "ortools_assignment_value_2Z": 1488143534270062,
+    "seconds": 0.02
+   },
+   "cpsat_full": {
+    "status": "FEASIBLE",
+    "radius": null,
+    "free": null,
+    "time_limit": 900,
+    "workers": 16,
+    "seed": 20261012,
+    "objective_divisor": 1,
+    "pair_literals": 148810,
+    "build_seconds": 4.1,
+    "seconds": 954.7,
+    "solver": "OR-Tools 9.14.6206 CP-SAT",
+    "best_bound_Z": 800539332967846,
+    "Z": 840566664643308,
+    "bound_J": 2.050605617233832,
+    "solution_J": 2.153136833123359,
+    "proven_optimal_hint": false
+   },
+   "proofs": {
+    "exhaustive_check": {
+     "size": 9,
+     "free": [
+      "আ",
+      "এ",
+      "ই",
+      "র",
+      "্",
+      "ন",
+      "ক",
+      "ত",
+      "উ"
+     ],
+     "arrangements": 362880,
+     "enumeration_Z_min": 840566664643308,
+     "cpsat_status": "OPTIMAL",
+     "cpsat_Z": 840566664643308,
+     "cpsat_bound_Z": 840566664643308,
+     "agree": true,
+     "hint_optimal": true,
+     "seconds": 7.4
+    },
+    "exchange": {
+     "k_max": 5,
+     "by_k": {
+      "2": {
+       "checked": 1326,
+       "best_delta": 1886892041,
+       "best_move": {
+        "জ": [
+         [
+          "H",
+          "base"
+         ],
+         [
+          "Y",
+          "base"
+         ]
+        ],
+        "শ": [
+         [
+          "Y",
+          "base"
+         ],
+         [
+          "H",
+          "base"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 1886892041,
+       "layouts_checked_formula": "C(52,2) x derangements(2)"
+      },
+      "3": {
+       "checked": 44200,
+       "best_delta": 13920570851,
+       "best_move": {
+        "খ": [
+         [
+          "A",
+          "shift"
+         ],
+         [
+          "H",
+          "shift"
+         ]
+        ],
+        "ড": [
+         [
+          "H",
+          "shift"
+         ],
+         [
+          "S",
+          "shift"
+         ]
+        ],
+        "ফ": [
+         [
+          "S",
+          "shift"
+         ],
+         [
+          "A",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 13920570851,
+       "layouts_checked_formula": "C(52,3) x derangements(3)"
+      },
+      "4": {
+       "checked": 2436525,
+       "best_delta": 9780053537,
+       "best_move": {
+        "জ": [
+         [
+          "H",
+          "base"
+         ],
+         [
+          "Y",
+          "base"
+         ]
+        ],
+        "ঢ": [
+         [
+          "G",
+          "shift"
+         ],
+         [
+          "T",
+          "shift"
+         ]
+        ],
+        "ঢ়": [
+         [
+          "T",
+          "shift"
+         ],
+         [
+          "G",
+          "shift"
+         ]
+        ],
+        "শ": [
+         [
+          "Y",
+          "base"
+         ],
+         [
+          "H",
+          "base"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 9780053537,
+       "layouts_checked_formula": "C(52,4) x derangements(4)"
+      },
+      "5": {
+       "checked": 114354240,
+       "best_delta": 13297462892,
+       "best_move": {
+        "খ": [
+         [
+          "A",
+          "shift"
+         ],
+         [
+          "H",
+          "shift"
+         ]
+        ],
+        "জ": [
+         [
+          "H",
+          "base"
+         ],
+         [
+          "Y",
+          "base"
+         ]
+        ],
+        "ড": [
+         [
+          "H",
+          "shift"
+         ],
+         [
+          "S",
+          "shift"
+         ]
+        ],
+        "ফ": [
+         [
+          "S",
+          "shift"
+         ],
+         [
+          "A",
+          "shift"
+         ]
+        ],
+        "শ": [
+         [
+          "Y",
+          "base"
+         ],
+         [
+          "H",
+          "base"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 13297462892,
+       "layouts_checked_formula": "C(52,5) x derangements(5)"
+      }
+     },
+     "proven": true,
+     "seconds": 54.9
+    },
+    "top_k": {
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed",
+     "runs": [
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        24,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        45,
+        48
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 2.5,
+       "seconds": 4.1,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 840566664643308,
+       "Z": 840566664643308,
+       "bound_J": 2.153136833123359,
+       "solution_J": 2.153136833123359,
+       "proven_optimal_hint": true,
+       "size": 12
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        22,
+        24,
+        26,
+        28,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 2.4,
+       "seconds": 7.0,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 840566664643308,
+       "Z": 840566664643308,
+       "bound_J": 2.153136833123359,
+       "solution_J": 2.153136833123359,
+       "proven_optimal_hint": true,
+       "size": 16
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        44,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 2.5,
+       "seconds": 29.2,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 840566664643308,
+       "Z": 840566664643308,
+       "bound_J": 2.153136833123359,
+       "solution_J": 2.153136833123359,
+       "proven_optimal_hint": true,
+       "size": 20
+      },
+      {
+       "status": "FEASIBLE",
+       "radius": null,
+       "free": [
+        0,
+        7,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        40,
+        42,
+        43,
+        44,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148810,
+       "build_seconds": 2.6,
+       "seconds": 611.8,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 828878278088722,
+       "Z": 840566664643308,
+       "bound_J": 2.1231966788571386,
+       "solution_J": 2.153136833123359,
+       "proven_optimal_hint": false,
+       "size": 24
+      }
+     ],
+     "largest_proven": 20
+    },
+    "base_layer": {
+     "status": "FEASIBLE",
+     "radius": null,
+     "free": [
+      0,
+      2,
+      5,
+      7,
+      10,
+      17,
+      19,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      34,
+      35,
+      40,
+      42,
+      43,
+      44,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 6.9,
+     "seconds": 615.9,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 826867598018505,
+     "Z": 840566664643308,
+     "bound_J": 2.1180462612865725,
+     "solution_J": 2.153136833123359,
+     "proven_optimal_hint": false
+    },
+    "shift_layer": {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      1,
+      3,
+      4,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      23,
+      25,
+      32,
+      36,
+      37,
+      38,
+      39,
+      41,
+      46,
+      47,
+      49,
+      51
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148810,
+     "build_seconds": 2.5,
+     "seconds": 9.8,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 840566664643308,
+     "Z": 840566664643308,
+     "bound_J": 2.153136833123359,
+     "solution_J": 2.153136833123359,
+     "proven_optimal_hint": true
+    }
+   },
+   "lower_bounds_Z": {
+    "LB0": 756209059138648,
+    "Gilmore-Lawler": 790496217780548,
+    "CP-SAT": 800539332967846
+   },
+   "seconds": 2295.6
+  },
+  "D": {
+   "style": "D",
+   "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+   "settings": {
+    "scale": 1000000,
+    "objective": "J1",
+    "frequencies": "bnwiki/train",
+    "exchange_k": 5,
+    "lp": {
+     "solver": "PDLP",
+     "time_limit": 3600,
+     "threads": 16,
+     "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+    },
+    "cpsat_full": {
+     "time_limit": 900,
+     "workers": 16,
+     "seed": 20261012
+    },
+    "subproblems": {
+     "sizes": [
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed"
+    },
+    "layers": {
+     "time_limit": 600,
+     "workers": 16
+    },
+    "exhaustive_check": {
+     "size": 9
+    }
+   },
+   "frequencies": "results/phase3/frequencies/D-bnwiki-train.json",
+   "frequencies_sha256": "13222d6cc16fed4408e718b329fb3088edc2af5a4acf1fab28f5a7646a1ea6e2",
+   "problem_sha256": "6ddd111aa93d95e4015b6ab3043e6d3213bf64c8e3f7cd87a170d13c04b00e44",
+   "N": 390391661,
+   "scale": 1000000,
+   "integer_model": {
+    "exact": true,
+    "UB_Z": 716221754063417,
+    "UB_J": 1.8346235988463313,
+    "float_search_J": 1.834623598846331,
+    "float_vs_exact_difference": 2.220446049250313e-16,
+    "formula_rounding_bound_J": 8.424379446465687e-07,
+    "max_abs_coefficient": 243379482884320
+   },
+   "gilmore_lawler": {
+    "Z": 671716922659263,
+    "J": 1.7206231325193777,
+    "assignment_value_2Z": 1250584944027492,
+    "ortools_assignment_value_2Z": 1250584944027492,
+    "seconds": 0.02
+   },
+   "cpsat_full": {
+    "status": "FEASIBLE",
+    "radius": null,
+    "free": null,
+    "time_limit": 900,
+    "workers": 16,
+    "seed": 20261012,
+    "objective_divisor": 1,
+    "pair_literals": 148580,
+    "build_seconds": 2.5,
+    "seconds": 956.1,
+    "solver": "OR-Tools 9.14.6206 CP-SAT",
+    "best_bound_Z": 677837943244643,
+    "Z": 716221754063417,
+    "bound_J": 1.7363023111414335,
+    "solution_J": 1.8346235988463313,
+    "proven_optimal_hint": false
+   },
+   "proofs": {
+    "exhaustive_check": {
+     "size": 9,
+     "free": [
+      "া",
+      "র",
+      "ে",
+      "্",
+      "ি",
+      "ন",
+      "ক",
+      "ত",
+      "ব"
+     ],
+     "arrangements": 362880,
+     "enumeration_Z_min": 716221754063417,
+     "cpsat_status": "OPTIMAL",
+     "cpsat_Z": 716221754063417,
+     "cpsat_bound_Z": 716221754063417,
+     "agree": true,
+     "hint_optimal": true,
+     "seconds": 15.1
+    },
+    "exchange": {
+     "k_max": 5,
+     "by_k": {
+      "2": {
+       "checked": 1326,
+       "best_delta": 755648076,
+       "best_move": {
+        "ৈ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 755648076,
+       "layouts_checked_formula": "C(52,2) x derangements(2)"
+      },
+      "3": {
+       "checked": 44200,
+       "best_delta": 19137042905,
+       "best_move": {
+        "ঝ": [
+         [
+          "B",
+          "shift"
+         ],
+         [
+          "Z",
+          "shift"
+         ]
+        ],
+        "ঞ": [
+         [
+          "X",
+          "shift"
+         ],
+         [
+          "B",
+          "shift"
+         ]
+        ],
+        "ৎ": [
+         [
+          "Z",
+          "shift"
+         ],
+         [
+          "X",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 19137042905,
+       "layouts_checked_formula": "C(52,3) x derangements(3)"
+      },
+      "4": {
+       "checked": 2436525,
+       "best_delta": 15564287919,
+       "best_move": {
+        "খ": [
+         [
+          "A",
+          "shift"
+         ],
+         [
+          "N",
+          "shift"
+         ]
+        ],
+        "ড": [
+         [
+          "U",
+          "shift"
+         ],
+         [
+          "S",
+          "shift"
+         ]
+        ],
+        "ধ": [
+         [
+          "N",
+          "shift"
+         ],
+         [
+          "U",
+          "shift"
+         ]
+        ],
+        "ফ": [
+         [
+          "S",
+          "shift"
+         ],
+         [
+          "A",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 15564287919,
+       "layouts_checked_formula": "C(52,4) x derangements(4)"
+      },
+      "5": {
+       "checked": 114354240,
+       "best_delta": 19891690981,
+       "best_move": {
+        "ঝ": [
+         [
+          "B",
+          "shift"
+         ],
+         [
+          "Z",
+          "shift"
+         ]
+        ],
+        "ঞ": [
+         [
+          "X",
+          "shift"
+         ],
+         [
+          "B",
+          "shift"
+         ]
+        ],
+        "ৎ": [
+         [
+          "Z",
+          "shift"
+         ],
+         [
+          "X",
+          "shift"
+         ]
+        ],
+        "ৈ": [
+         [
+          "R",
+          "shift"
+         ],
+         [
+          "V",
+          "shift"
+         ]
+        ],
+        "ৌ": [
+         [
+          "V",
+          "shift"
+         ],
+         [
+          "R",
+          "shift"
+         ]
+        ]
+       },
+       "best_delta_rechecked": 19891690981,
+       "layouts_checked_formula": "C(52,5) x derangements(5)"
+      }
+     },
+     "proven": true,
+     "seconds": 62.2
+    },
+    "top_k": {
+     "order": "the k labels with the highest keystroke counts (ties by label), the others fixed",
+     "runs": [
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        24,
+        26,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        48
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148580,
+       "build_seconds": 7.0,
+       "seconds": 10.1,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 716221754063417,
+       "Z": 716221754063417,
+       "bound_J": 1.8346235988463313,
+       "solution_J": 1.8346235988463313,
+       "proven_optimal_hint": true,
+       "size": 12
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        17,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        35,
+        42,
+        43,
+        45,
+        48
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148580,
+       "build_seconds": 6.9,
+       "seconds": 13.4,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 716221754063417,
+       "Z": 716221754063417,
+       "bound_J": 1.8346235988463313,
+       "solution_J": 1.8346235988463313,
+       "proven_optimal_hint": true,
+       "size": 16
+      },
+      {
+       "status": "OPTIMAL",
+       "radius": null,
+       "free": [
+        0,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        34,
+        35,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148580,
+       "build_seconds": 7.1,
+       "seconds": 39.9,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 716221754063417,
+       "Z": 716221754063417,
+       "bound_J": 1.8346235988463313,
+       "solution_J": 1.8346235988463313,
+       "proven_optimal_hint": true,
+       "size": 20
+      },
+      {
+       "status": "FEASIBLE",
+       "radius": null,
+       "free": [
+        0,
+        2,
+        7,
+        10,
+        17,
+        19,
+        21,
+        22,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        40,
+        42,
+        43,
+        45,
+        48,
+        50
+       ],
+       "time_limit": 600,
+       "workers": 16,
+       "seed": 20261012,
+       "objective_divisor": 1,
+       "pair_literals": 148580,
+       "build_seconds": 7.0,
+       "seconds": 620.7,
+       "solver": "OR-Tools 9.14.6206 CP-SAT",
+       "best_bound_Z": 711831159321369,
+       "Z": 716221754063417,
+       "bound_J": 1.8233769581501613,
+       "solution_J": 1.8346235988463313,
+       "proven_optimal_hint": false,
+       "size": 24
+      }
+     ],
+     "largest_proven": 20
+    },
+    "base_layer": {
+     "status": "FEASIBLE",
+     "radius": null,
+     "free": [
+      0,
+      2,
+      5,
+      7,
+      10,
+      17,
+      19,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      33,
+      34,
+      35,
+      40,
+      42,
+      43,
+      44,
+      45,
+      48,
+      50
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148580,
+     "build_seconds": 7.8,
+     "seconds": 621.8,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 705930072006739,
+     "Z": 716221754063417,
+     "bound_J": 1.8082611452265087,
+     "solution_J": 1.8346235988463313,
+     "proven_optimal_hint": false
+    },
+    "shift_layer": {
+     "status": "OPTIMAL",
+     "radius": null,
+     "free": [
+      1,
+      3,
+      4,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      23,
+      25,
+      32,
+      36,
+      37,
+      38,
+      39,
+      41,
+      46,
+      47,
+      49,
+      51
+     ],
+     "time_limit": 600,
+     "workers": 16,
+     "seed": 20261012,
+     "objective_divisor": 1,
+     "pair_literals": 148580,
+     "build_seconds": 6.8,
+     "seconds": 18.8,
+     "solver": "OR-Tools 9.14.6206 CP-SAT",
+     "best_bound_Z": 716221754063417,
+     "Z": 716221754063417,
+     "bound_J": 1.8346235988463313,
+     "solution_J": 1.8346235988463313,
+     "proven_optimal_hint": true
+    }
+   },
+   "lower_bounds_Z": {
+    "LB0": 637906043009019,
+    "Gilmore-Lawler": 671716922659263,
+    "CP-SAT": 677837943244643
+   },
+   "seconds": 2359.4
+  }
+ },
+ "cell_lp": {
+  "A": {
+   "status": "OPTIMAL",
+   "solver_objective_J": 1.7869348722954037,
+   "rows": 69264,
+   "columns": 481390,
+   "build_seconds": 0.7,
+   "seconds": 1622.3,
+   "solver": "OR-Tools 9.14.6206 PDLP",
+   "style": "A",
+   "settings": {
+    "solver": "PDLP",
+    "time_limit": 3600,
+    "threads": 16,
+    "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+   },
+   "frequencies_sha256": "71108b065277a31d099efe53cb75ff997878ace1c0f1d9d79dae721cd0f27de7",
+   "UB_Z": 729031193585032,
+   "certified_Z": 697604377028756,
+   "certified_J": 1.7869346267331156,
+   "gap_percent": 4.310764317468189,
+   "duals_file": "results/phase4/certificates/A-lp-duals.json.gz"
+  },
+  "B": {
+   "status": "OPTIMAL",
+   "solver_objective_J": 1.8033683007567787,
+   "rows": 69264,
+   "columns": 481390,
+   "build_seconds": 1.2,
+   "seconds": 985.9,
+   "solver": "OR-Tools 9.14.6206 PDLP",
+   "style": "B",
+   "settings": {
+    "solver": "PDLP",
+    "time_limit": 3600,
+    "threads": 16,
+    "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+   },
+   "frequencies_sha256": "90ec036c5d3b6ebf4cae18496fa5dd2e4594ba593ae78ee70d47a9e5eb13fde2",
+   "UB_Z": 734205674968831,
+   "certified_Z": 704019830380087,
+   "certified_J": 1.8033680037547908,
+   "gap_percent": 4.111360837686997,
+   "duals_file": "results/phase4/certificates/B-lp-duals.json.gz"
+  },
+  "C": {
+   "status": "OPTIMAL",
+   "solver_objective_J": 2.066775881606822,
+   "rows": 69264,
+   "columns": 481390,
+   "build_seconds": 1.3,
+   "seconds": 1173.9,
+   "solver": "OR-Tools 9.14.6206 PDLP",
+   "style": "C",
+   "settings": {
+    "solver": "PDLP",
+    "time_limit": 3600,
+    "threads": 16,
+    "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+   },
+   "frequencies_sha256": "04473190cfa0d0eecc9d45e4183bd3029f65bbea5c369be38359ce916e6ce135",
+   "UB_Z": 840566664643308,
+   "certified_Z": 806852087936546,
+   "certified_J": 2.066775929254662,
+   "gap_percent": 4.0109343047845805,
+   "duals_file": "results/phase4/certificates/C-lp-duals.json.gz"
+  },
+  "D": {
+   "status": "OPTIMAL",
+   "solver_objective_J": 1.7578313679761146,
+   "rows": 69264,
+   "columns": 481390,
+   "build_seconds": 1.4,
+   "seconds": 1118.5,
+   "solver": "OR-Tools 9.14.6206 PDLP",
+   "style": "D",
+   "settings": {
+    "solver": "PDLP",
+    "time_limit": 3600,
+    "threads": 16,
+    "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+   },
+   "frequencies_sha256": "13222d6cc16fed4408e718b329fb3088edc2af5a4acf1fab28f5a7646a1ea6e2",
+   "UB_Z": 716221754063417,
+   "certified_Z": 686242705204589,
+   "certified_J": 1.7578313620909771,
+   "gap_percent": 4.185721627239703,
+   "duals_file": "results/phase4/certificates/D-lp-duals.json.gz"
+  }
+ },
+ "summaries": {
+  "A": {
+   "UB_J": 1.867435364058742,
+   "LB_J": 1.7869346267331156,
+   "LB_source": "cell LP",
+   "gap_percent": 4.310764317468189,
+   "proven_optimal": false,
+   "classification": "bounded near-optimum",
+   "improved_by_solver": false,
+   "bounds": {
+    "LB0": {
+     "Z": 647248785272704,
+     "J": 1.6579472615136213,
+     "gap_percent": 11.217957342834762
+    },
+    "Gilmore-Lawler": {
+     "Z": 683838470029445,
+     "J": 1.7516728412634945,
+     "gap_percent": 6.199010954984034
+    },
+    "CP-SAT": {
+     "Z": 688736485735310,
+     "J": 1.764219256044278,
+     "gap_percent": 5.527158262127524
+    },
+    "cell LP": {
+     "Z": 697604377028756,
+     "J": 1.7869346267331156,
+     "gap_percent": 4.310764317468189
+    }
+   }
+  },
+  "B": {
+   "UB_J": 1.8806899540019402,
+   "LB_J": 1.8033680037547908,
+   "LB_source": "cell LP",
+   "gap_percent": 4.111360837686997,
+   "proven_optimal": false,
+   "classification": "bounded near-optimum",
+   "improved_by_solver": false,
+   "bounds": {
+    "LB0": {
+     "Z": 655169597124530,
+     "J": 1.678236659682467,
+     "gap_percent": 10.76484158851759
+    },
+    "Gilmore-Lawler": {
+     "Z": 689484244541662,
+     "J": 1.7661346627525991,
+     "gap_percent": 6.091131130124749
+    },
+    "CP-SAT": {
+     "Z": 696096170303289,
+     "J": 1.783071309771878,
+     "gap_percent": 5.190576151179961
+    },
+    "cell LP": {
+     "Z": 704019830380087,
+     "J": 1.8033680037547908,
+     "gap_percent": 4.111360837686997
+    }
+   }
+  },
+  "C": {
+   "UB_J": 2.153136833123359,
+   "LB_J": 2.066775929254662,
+   "LB_source": "cell LP",
+   "gap_percent": 4.0109343047845805,
+   "proven_optimal": false,
+   "classification": "bounded near-optimum",
+   "improved_by_solver": false,
+   "bounds": {
+    "LB0": {
+     "Z": 756209059138648,
+     "J": 1.9370522853935859,
+     "gap_percent": 10.035801924224167
+    },
+    "Gilmore-Lawler": {
+     "Z": 790496217780548,
+     "J": 2.024879875137876,
+     "gap_percent": 5.956749056186667
+    },
+    "CP-SAT": {
+     "Z": 800539332967846,
+     "J": 2.050605617233832,
+     "gap_percent": 4.761946120293443
+    },
+    "cell LP": {
+     "Z": 806852087936546,
+     "J": 2.066775929254662,
+     "gap_percent": 4.0109343047845805
+    }
+   }
+  },
+  "D": {
+   "UB_J": 1.8346235988463313,
+   "LB_J": 1.7578313620909771,
+   "LB_source": "cell LP",
+   "gap_percent": 4.185721627239703,
+   "proven_optimal": false,
+   "classification": "bounded near-optimum",
+   "improved_by_solver": false,
+   "bounds": {
+    "LB0": {
+     "Z": 637906043009019,
+     "J": 1.6340155457598746,
+     "gap_percent": 10.934561902103804
+    },
+    "Gilmore-Lawler": {
+     "Z": 671716922659263,
+     "J": 1.7206231325193777,
+     "gap_percent": 6.213834074664726
+    },
+    "CP-SAT": {
+     "Z": 677837943244643,
+     "J": 1.7363023111414335,
+     "gap_percent": 5.35920761984777
+    },
+    "cell LP": {
+     "Z": 686242705204589,
+     "J": 1.7578313620909771,
+     "gap_percent": 4.185721627239703
+    }
+   }
+  }
+ },
+ "sensitivity": {
+  "settings": {
+   "samples": 1000,
+   "seed": 20261013,
+   "corpus": "bnwiki/heldout",
+   "ranges": {
+    "P_x": [
+     1.6,
+     2.4
+    ],
+    "P_d": [
+     0.9,
+     1.3
+    ],
+    "P_f_pinky": [
+     1.36,
+     1.8399999999999999
+    ],
+    "P_f_ring": [
+     1.105,
+     1.4949999999999999
+    ],
+    "P_f_middle": [
+     0.935,
+     1.265
+    ],
+    "lambda_m": [
+     0.5,
+     1.5
+    ]
+   },
+   "nominal": {
+    "P_x": 2.0,
+    "P_d": 1.12,
+    "P_f_pinky": 1.6,
+    "P_f_ring": 1.3,
+    "P_f_middle": 1.1,
+    "lambda_m": 1.0
+   },
+   "one_at_a_time_points": 5,
+   "regret": {
+    "thetas": "each parameter at the low and the high end of its range, the others nominal",
+    "frequencies": "bnwiki/train",
+    "ils_iterations": 1000,
+    "ils_strength": [
+     2,
+     6
+    ],
+    "seed": 20261014
+   }
+  },
+  "corpus": "bnwiki/heldout",
+  "token_table_sha256": "df10fb8418bd2100a29abdd8c8c7392ca71f861eff1ea94073f40482bdac9a13",
+  "layouts": [
+   "Bangla-DH A",
+   "Bangla-DH B",
+   "Bangla-DH C",
+   "Bangla-DH D",
+   "UniJoy",
+   "Probhat",
+   "National (Jatiya)",
+   "Windows Default",
+   "Bornona",
+   "Munir Optima (uni)"
+  ],
+  "baselines": [
+   "UniJoy",
+   "National (Jatiya)",
+   "Bornona",
+   "Probhat",
+   "Windows Default",
+   "Munir Optima (uni)"
+  ],
+  "nominal_check": {
+   "Bangla-DH A": {
+    "theta_J1": 1.8674641271648313,
+    "reference_J1": 1.867464127164836,
+    "difference": 4.6629367034256575e-15
+   },
+   "Bangla-DH B": {
+    "theta_J1": 1.8803609734715705,
+    "reference_J1": 1.880360973471574,
+    "difference": 3.552713678800501e-15
+   },
+   "Bangla-DH C": {
+    "theta_J1": 2.1529877151462347,
+    "reference_J1": 2.152987715146239,
+    "difference": 4.440892098500626e-15
+   },
+   "Bangla-DH D": {
+    "theta_J1": 1.8343098956702515,
+    "reference_J1": 1.8343098956702555,
+    "difference": 3.9968028886505635e-15
+   },
+   "UniJoy": {
+    "theta_J1": 2.8084277076811257,
+    "reference_J1": 2.8084277076784874,
+    "difference": 2.638333995719222e-12
+   },
+   "Probhat": {
+    "theta_J1": 2.6082522469435863,
+    "reference_J1": 2.608252246944955,
+    "difference": 1.368682944757893e-12
+   },
+   "National (Jatiya)": {
+    "theta_J1": 2.8912917644048863,
+    "reference_J1": 2.8912917644020637,
+    "difference": 2.822631017806998e-12
+   },
+   "Windows Default": {
+    "theta_J1": 2.1474466605402363,
+    "reference_J1": 2.1474466605394085,
+    "difference": 8.277822871605167e-13
+   },
+   "Bornona": {
+    "theta_J1": 2.659914378818632,
+    "reference_J1": 2.6599143788164543,
+    "difference": 2.177813485104707e-12
+   },
+   "Munir Optima (uni)": {
+    "theta_J1": 2.5910135770016476,
+    "reference_J1": 2.591013576999353,
+    "difference": 2.2946089472952735e-12
+   }
+  },
+  "samples": {
+   "count": 1000,
+   "summary": {
+    "Bangla-DH A": {
+     "J1": {
+      "min": 1.5710898976053005,
+      "p05": 1.6785157138291318,
+      "median": 1.8493578790318281,
+      "p95": 2.066712994455627,
+      "max": 2.2432706677789347
+     },
+     "R vs UniJoy": 1.0,
+     "ratio to UniJoy": {
+      "min": 0.6177106919413897,
+      "p05": 0.6373217532027324,
+      "median": 0.6685800158266452,
+      "p95": 0.7006355861997743,
+      "max": 0.7372443591682771
+     },
+     "R vs National (Jatiya)": 1.0,
+     "ratio to National (Jatiya)": {
+      "min": 0.6025259492199742,
+      "p05": 0.6199596131294829,
+      "median": 0.6480495229357792,
+      "p95": 0.6771794427936156,
+      "max": 0.7185088655965752
+     },
+     "R vs Bornona": 1.0,
+     "ratio to Bornona": {
+      "min": 0.6613677632267002,
+      "p05": 0.6758722911941099,
+      "median": 0.7043149916274987,
+      "p95": 0.7345269861349,
+      "max": 0.77154680822167
+     },
+     "R vs Probhat": 1.0,
+     "ratio to Probhat": {
+      "min": 0.6845474254762607,
+      "p05": 0.6969541807173342,
+      "median": 0.7207206584603068,
+      "p95": 0.7447856863740442,
+      "max": 0.7617442048796935
+     },
+     "R vs Windows Default": 1.0,
+     "ratio to Windows Default": {
+      "min": 0.8414488051370891,
+      "p05": 0.8516673211105795,
+      "median": 0.8729514512246273,
+      "p95": 0.8958912106829131,
+      "max": 0.92273888928889
+     },
+     "R vs Munir Optima (uni)": 1.0,
+     "ratio to Munir Optima (uni)": {
+      "min": 0.6917755942728795,
+      "p05": 0.7035022849579678,
+      "median": 0.7238832171593719,
+      "p95": 0.7474917796519538,
+      "max": 0.7777466864605741
+     }
+    },
+    "Bangla-DH B": {
+     "J1": {
+      "min": 1.5824765608526055,
+      "p05": 1.6894365694098579,
+      "median": 1.86285205631828,
+      "p95": 2.0785082379281996,
+      "max": 2.25756341938991
+     },
+     "R vs UniJoy": 1.0,
+     "ratio to UniJoy": {
+      "min": 0.621981027962581,
+      "p05": 0.6413971263243851,
+      "median": 0.6729788509845119,
+      "p95": 0.7054273565097273,
+      "max": 0.7356304927734264
+     },
+     "R vs National (Jatiya)": 1.0,
+     "ratio to National (Jatiya)": {
+      "min": 0.606865343765762,
+      "p05": 0.6244576653933126,
+      "median": 0.6526346007821887,
+      "p95": 0.6806722944131024,
+      "max": 0.7169360121753611
+     },
+     "R vs Bornona": 1.0,
+     "ratio to Bornona": {
+      "min": 0.665939907791149,
+      "p05": 0.6807882525801235,
+      "median": 0.7089582941595274,
+      "p95": 0.7386956054129773,
+      "max": 0.7698578519748591
+     },
+     "R vs Probhat": 1.0,
+     "ratio to Probhat": {
+      "min": 0.6900755342974725,
+      "p05": 0.7028499599324646,
+      "median": 0.725565052940177,
+      "p95": 0.748267912782111,
+      "max": 0.7653163875788656
+     },
+     "R vs Windows Default": 1.0,
+     "ratio to Windows Default": {
+      "min": 0.8475240206639605,
+      "p05": 0.8584835508262635,
+      "median": 0.878629384927268,
+      "p95": 0.8997061555409563,
+      "max": 0.9207189656826582
+     },
+     "R vs Munir Optima (uni)": 1.0,
+     "ratio to Munir Optima (uni)": {
+      "min": 0.6974714535848678,
+      "p05": 0.7091780621680248,
+      "median": 0.7290176890200952,
+      "p95": 0.7499779349826753,
+      "max": 0.7760441583565933
+     }
+    },
+    "Bangla-DH C": {
+     "J1": {
+      "min": 1.82358616227731,
+      "p05": 1.9455065516116052,
+      "median": 2.13446562808306,
+      "p95": 2.373562425253526,
+      "max": 2.560475858184952
+     },
+     "R vs UniJoy": 1.0,
+     "ratio to UniJoy": {
+      "min": 0.7075767444951615,
+      "p05": 0.7320534805316069,
+      "median": 0.7710287063997454,
+      "p95": 0.8119087500414307,
+      "max": 0.8495243550300006
+     },
+     "R vs National (Jatiya)": 1.0,
+     "ratio to National (Jatiya)": {
+      "min": 0.6910722117253171,
+      "p05": 0.7125965497474231,
+      "median": 0.7476730504981219,
+      "p95": 0.7831555214309398,
+      "max": 0.8279355047461887
+     },
+     "R vs Bornona": 1.0,
+     "ratio to Bornona": {
+      "min": 0.7573740355976897,
+      "p05": 0.7753417363322241,
+      "median": 0.8124583959985732,
+      "p95": 0.8514652398113941,
+      "max": 0.8890509591276001
+     },
+     "R vs Probhat": 1.0,
+     "ratio to Probhat": {
+      "min": 0.7884901310702865,
+      "p05": 0.8031503919727024,
+      "median": 0.8309194923469684,
+      "p95": 0.8599712494916785,
+      "max": 0.8828859556358354
+     },
+     "R vs Windows Default": 0.369,
+     "ratio to Windows Default": {
+      "min": 0.9621089381888226,
+      "p05": 0.9774016745026757,
+      "median": 1.0064581012302485,
+      "p95": 1.0355518915346467,
+      "max": 1.0632691183539045
+     },
+     "R vs Munir Optima (uni)": 1.0,
+     "ratio to Munir Optima (uni)": {
+      "min": 0.7930614604355325,
+      "p05": 0.808709140855262,
+      "median": 0.8347466670979793,
+      "p95": 0.8625202932642699,
+      "max": 0.8961950593118477
+     }
+    },
+    "Bangla-DH D": {
+     "J1": {
+      "min": 1.5421903830138752,
+      "p05": 1.6448284299204348,
+      "median": 1.8166837221300844,
+      "p95": 2.0286315663274843,
+      "max": 2.2073238660270187
+     },
+     "R vs UniJoy": 1.0,
+     "ratio to UniJoy": {
+      "min": 0.6079275788749204,
+      "p05": 0.6263845341180098,
+      "median": 0.6565205204579718,
+      "p95": 0.6874461060997429,
+      "max": 0.7162857917104757
+     },
+     "R vs National (Jatiya)": 1.0,
+     "ratio to National (Jatiya)": {
+      "min": 0.5927401926862679,
+      "p05": 0.6095971172379198,
+      "median": 0.6366870774626214,
+      "p95": 0.6629834547537272,
+      "max": 0.6980829154467186
+     },
+     "R vs Bornona": 1.0,
+     "ratio to Bornona": {
+      "min": 0.6508932228138906,
+      "p05": 0.665350974146129,
+      "median": 0.6917313962658577,
+      "p95": 0.7192696026498931,
+      "max": 0.7496130821431034
+     },
+     "R vs Probhat": 1.0,
+     "ratio to Probhat": {
+      "min": 0.673297362004335,
+      "p05": 0.6858625016860188,
+      "median": 0.7076997036062613,
+      "p95": 0.7293150645484292,
+      "max": 0.7453343270396035
+     },
+     "R vs Windows Default": 1.0,
+     "ratio to Windows Default": {
+      "min": 0.8283745046184535,
+      "p05": 0.8382732793531152,
+      "median": 0.8570518093839066,
+      "p95": 0.8765886585409143,
+      "max": 0.8965070368283088
+     },
+     "R vs Munir Optima (uni)": 1.0,
+     "ratio to Munir Optima (uni)": {
+      "min": 0.6814573625491446,
+      "p05": 0.692315881037002,
+      "median": 0.7110321760158994,
+      "p95": 0.7311451399154069,
+      "max": 0.7556367086892217
+     }
+    }
+   },
+   "best_style_share": {
+    "Bangla-DH A": 0.0,
+    "Bangla-DH B": 0.0,
+    "Bangla-DH C": 0.0,
+    "Bangla-DH D": 1.0
+   },
+   "pairwise": {
+    "Bangla-DH A ≤ Bangla-DH B": 0.962,
+    "Bangla-DH A ≤ Bangla-DH C": 1.0,
+    "Bangla-DH A ≤ Bangla-DH D": 0.0,
+    "Bangla-DH B ≤ Bangla-DH C": 1.0,
+    "Bangla-DH B ≤ Bangla-DH D": 0.0,
+    "Bangla-DH C ≤ Bangla-DH D": 0.0
+   }
+  },
+  "one_at_a_time": [
+   {
+    "parameter": "P_x",
+    "theta": {
+     "P_x": 1.6,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8194528953913083,
+     "Bangla-DH B": 1.8329930134902925,
+     "Bangla-DH C": 2.0998269452798453,
+     "Bangla-DH D": 1.7881380902326067,
+     "UniJoy": 2.666288128740255,
+     "Probhat": 2.4855925221119044,
+     "National (Jatiya)": 2.7206829357741773,
+     "Windows Default": 2.0712654488642017,
+     "Bornona": 2.552835739586844,
+     "Munir Optima (uni)": 2.463383237235435
+    }
+   },
+   {
+    "parameter": "P_x",
+    "theta": {
+     "P_x": 1.8,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8418670979187641,
+     "Bangla-DH B": 1.854550644063695,
+     "Bangla-DH C": 2.1244463367476394,
+     "Bangla-DH D": 1.8091089815484362,
+     "UniJoy": 2.7361647171897685,
+     "Probhat": 2.557921752861004,
+     "National (Jatiya)": 2.8048682867811343,
+     "Windows Default": 2.1088906944354853,
+     "Bornona": 2.6041778363953783,
+     "Munir Optima (uni)": 2.526958483833348
+    }
+   },
+   {
+    "parameter": "P_x",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8674641271648313,
+     "Bangla-DH B": 1.8803609734715705,
+     "Bangla-DH C": 2.1529877151462347,
+     "Bangla-DH D": 1.8343098956702515,
+     "UniJoy": 2.8084277076811257,
+     "Probhat": 2.6082522469435863,
+     "National (Jatiya)": 2.8912917644048863,
+     "Windows Default": 2.1474466605402363,
+     "Bornona": 2.659914378818632,
+     "Munir Optima (uni)": 2.5910135770016476
+    }
+   },
+   {
+    "parameter": "P_x",
+    "theta": {
+     "P_x": 2.2,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8940492510632854,
+     "Bangla-DH B": 1.9071761576870976,
+     "Bangla-DH C": 2.1826136821350803,
+     "Bangla-DH D": 1.8604968627649794,
+     "UniJoy": 2.8823941976211156,
+     "Probhat": 2.660160375954019,
+     "National (Jatiya)": 2.979593035502204,
+     "Windows Default": 2.1872341913652225,
+     "Bornona": 2.717245590974112,
+     "Munir Optima (uni)": 2.6507662045738263
+    }
+   },
+   {
+    "parameter": "P_x",
+    "theta": {
+     "P_x": 2.4,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.9214682966971308,
+     "Bangla-DH B": 1.9349640866930258,
+     "Bangla-DH C": 2.213281007747952,
+     "Bangla-DH D": 1.8876404839154828,
+     "UniJoy": 2.9574037250355647,
+     "Probhat": 2.7134538151261345,
+     "National (Jatiya)": 3.069485478531323,
+     "Windows Default": 2.228094398066835,
+     "Bornona": 2.7772845205501384,
+     "Munir Optima (uni)": 2.711482795253676
+    }
+   },
+   {
+    "parameter": "P_d",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 0.9,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.759895454323518,
+     "Bangla-DH B": 1.7706811803041842,
+     "Bangla-DH C": 2.035555162740637,
+     "Bangla-DH D": 1.7264354995954694,
+     "UniJoy": 2.6215152643385315,
+     "Probhat": 2.432771687042014,
+     "National (Jatiya)": 2.684050843710162,
+     "Windows Default": 2.011088564255864,
+     "Bornona": 2.480372445849753,
+     "Munir Optima (uni)": 2.4153014218717876
+    }
+   },
+   {
+    "parameter": "P_d",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.0,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8099994030123507,
+     "Bangla-DH B": 1.8217588911673903,
+     "Bangla-DH C": 2.0902452420276894,
+     "Bangla-DH D": 1.7766747801732494,
+     "UniJoy": 2.708716409520787,
+     "Probhat": 2.514654143972809,
+     "National (Jatiya)": 2.780718099261807,
+     "Windows Default": 2.0746296495991405,
+     "Bornona": 2.5641316356230694,
+     "Munir Optima (uni)": 2.497838682776125
+    }
+   },
+   {
+    "parameter": "P_d",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.1,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8580761035498847,
+     "Bangla-DH B": 1.8707856713747968,
+     "Bangla-DH C": 2.1427362046241294,
+     "Bangla-DH D": 1.824892947020799,
+     "UniJoy": 2.792159648105253,
+     "Probhat": 2.5929836330462996,
+     "National (Jatiya)": 2.873249101458258,
+     "Windows Default": 2.1355549309289996,
+     "Bornona": 2.6442865521914887,
+     "Munir Optima (uni)": 2.576363130015843
+    }
+   },
+   {
+    "parameter": "P_d",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.2000000000000002,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.9043014136915126,
+     "Bangla-DH B": 1.9179385118507035,
+     "Bangla-DH C": 2.193217869059284,
+     "Bangla-DH D": 1.8712646658245085,
+     "UniJoy": 2.8721807773188237,
+     "Probhat": 2.6680806887914614,
+     "National (Jatiya)": 2.9620071719913583,
+     "Windows Default": 2.1940913280471284,
+     "Bornona": 2.72116145070917,
+     "Munir Optima (uni)": 2.6484028820293384
+    }
+   },
+   {
+    "parameter": "P_d",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.3,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.9488284301307892,
+     "Bangla-DH B": 1.963371578343422,
+     "Bangla-DH C": 2.241855578600512,
+     "Bangla-DH D": 1.9159420521240476,
+     "UniJoy": 2.949071350254248,
+     "Probhat": 2.740223143172044,
+     "National (Jatiya)": 3.047308360111671,
+     "Windows Default": 2.2504361199817065,
+     "Bornona": 2.7950374199643027,
+     "Munir Optima (uni)": 2.7175669968942677
+    }
+   },
+   {
+    "parameter": "P_f_pinky",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.36,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8094784352383988,
+     "Bangla-DH B": 1.8215095445263458,
+     "Bangla-DH C": 2.0916371153519178,
+     "Bangla-DH D": 1.775561533726026,
+     "UniJoy": 2.730057099530458,
+     "Probhat": 2.4702993809618525,
+     "National (Jatiya)": 2.8200638201639916,
+     "Windows Default": 2.061246411433112,
+     "Bornona": 2.5488771886778383,
+     "Munir Optima (uni)": 2.4906976271134607
+    }
+   },
+   {
+    "parameter": "P_f_pinky",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.48,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8386618429839414,
+     "Bangla-DH B": 1.8511892637607026,
+     "Bangla-DH C": 2.1225598923827156,
+     "Bangla-DH D": 1.8051902746544897,
+     "UniJoy": 2.769198998869491,
+     "Probhat": 2.5393146824899695,
+     "National (Jatiya)": 2.8554485166607377,
+     "Windows Default": 2.104214558179453,
+     "Bornona": 2.605259469434198,
+     "Munir Optima (uni)": 2.5412283761752015
+    }
+   },
+   {
+    "parameter": "P_f_pinky",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8674641271648313,
+     "Bangla-DH B": 1.8803609734715705,
+     "Bangla-DH C": 2.1529877151462347,
+     "Bangla-DH D": 1.8343098956702515,
+     "UniJoy": 2.8084277076811257,
+     "Probhat": 2.6082522469435863,
+     "National (Jatiya)": 2.8912917644048863,
+     "Windows Default": 2.1474466605402363,
+     "Bornona": 2.659914378818632,
+     "Munir Optima (uni)": 2.5910135770016476
+    }
+   },
+   {
+    "parameter": "P_f_pinky",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.72,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8982124251422638,
+     "Bangla-DH B": 1.9122996971458697,
+     "Bangla-DH C": 2.185837677113304,
+     "Bangla-DH D": 1.8661951274302813,
+     "UniJoy": 2.847770743408636,
+     "Probhat": 2.6539411907243653,
+     "National (Jatiya)": 2.9275487121841643,
+     "Windows Default": 2.190595864536959,
+     "Bornona": 2.7190429164180867,
+     "Munir Optima (uni)": 2.643262358988711
+    }
+   },
+   {
+    "parameter": "P_f_pinky",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.8399999999999999,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.9251417917880733,
+     "Bangla-DH B": 1.9403968790768824,
+     "Bangla-DH C": 2.215145178199376,
+     "Bangla-DH D": 1.8942382577022698,
+     "UniJoy": 2.8871019763071266,
+     "Probhat": 2.719179869616969,
+     "National (Jatiya)": 2.9641797866625352,
+     "Windows Default": 2.2351401720654995,
+     "Bornona": 2.7690665581615868,
+     "Munir Optima (uni)": 2.694696156279992
+    }
+   },
+   {
+    "parameter": "P_f_ring",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.105,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.822444399291598,
+     "Bangla-DH B": 1.8387010285695438,
+     "Bangla-DH C": 2.10218529793636,
+     "Bangla-DH D": 1.7939429458035794,
+     "UniJoy": 2.776492459703293,
+     "Probhat": 2.54896554748344,
+     "National (Jatiya)": 2.8603231356471626,
+     "Windows Default": 2.115529186745801,
+     "Bornona": 2.635613396835714,
+     "Munir Optima (uni)": 2.5470339244374176
+    }
+   },
+   {
+    "parameter": "P_f_ring",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.2025,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.843999013348701,
+     "Bangla-DH B": 1.8578675944146563,
+     "Bangla-DH C": 2.126136031934777,
+     "Bangla-DH D": 1.8124631673225517,
+     "UniJoy": 2.7920430393974165,
+     "Probhat": 2.5904656469589282,
+     "National (Jatiya)": 2.8757566230065064,
+     "Windows Default": 2.1296081186999887,
+     "Bornona": 2.6464442994447794,
+     "Munir Optima (uni)": 2.5695029772726166
+    }
+   },
+   {
+    "parameter": "P_f_ring",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.2999999999999998,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8674641271648313,
+     "Bangla-DH B": 1.8803609734715705,
+     "Bangla-DH C": 2.1529877151462347,
+     "Bangla-DH D": 1.8343098956702515,
+     "UniJoy": 2.8084277076811257,
+     "Probhat": 2.6082522469435863,
+     "National (Jatiya)": 2.8912917644048863,
+     "Windows Default": 2.1474466605402363,
+     "Bornona": 2.659914378818632,
+     "Munir Optima (uni)": 2.5910135770016476
+    }
+   },
+   {
+    "parameter": "P_f_ring",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3975,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.890847725726183,
+     "Bangla-DH B": 1.9029482388290282,
+     "Bangla-DH C": 2.179933444942721,
+     "Bangla-DH D": 1.8562505103184939,
+     "UniJoy": 2.824454642405063,
+     "Probhat": 2.626064990023019,
+     "National (Jatiya)": 2.90691419312706,
+     "Windows Default": 2.165457216376423,
+     "Bornona": 2.674722271743877,
+     "Munir Optima (uni)": 2.6119853202825034
+    }
+   },
+   {
+    "parameter": "P_f_ring",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.4949999999999999,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.9136394775265835,
+     "Bangla-DH B": 1.9247663643509973,
+     "Bangla-DH C": 2.206109418380953,
+     "Bangla-DH D": 1.8774219851312481,
+     "UniJoy": 2.840010598448846,
+     "Probhat": 2.643179894525081,
+     "National (Jatiya)": 2.922611931939139,
+     "Windows Default": 2.180585946604864,
+     "Bornona": 2.687306123374155,
+     "Munir Optima (uni)": 2.631470203676552
+    }
+   },
+   {
+    "parameter": "P_f_middle",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 0.935,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8293510796148105,
+     "Bangla-DH B": 1.8422869130065336,
+     "Bangla-DH C": 2.105641939619214,
+     "Bangla-DH D": 1.7982967363477635,
+     "UniJoy": 2.741869324561592,
+     "Probhat": 2.5594024443986685,
+     "National (Jatiya)": 2.8459186083148973,
+     "Windows Default": 2.0907001563581864,
+     "Bornona": 2.642104173920197,
+     "Munir Optima (uni)": 2.5476134083485342
+    }
+   },
+   {
+    "parameter": "P_f_middle",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.0175,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8398957051151623,
+     "Bangla-DH B": 1.8530702466976663,
+     "Bangla-DH C": 2.121541499072815,
+     "Bangla-DH D": 1.8079393971066813,
+     "UniJoy": 2.7926591667554095,
+     "Probhat": 2.590506692070997,
+     "National (Jatiya)": 2.8685019044840616,
+     "Windows Default": 2.122704414675748,
+     "Bornona": 2.6321828052609106,
+     "Munir Optima (uni)": 2.570767944382956
+    }
+   },
+   {
+    "parameter": "P_f_middle",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8674641271648313,
+     "Bangla-DH B": 1.8803609734715705,
+     "Bangla-DH C": 2.1529877151462347,
+     "Bangla-DH D": 1.8343098956702515,
+     "UniJoy": 2.8084277076811257,
+     "Probhat": 2.6082522469435863,
+     "National (Jatiya)": 2.8912917644048863,
+     "Windows Default": 2.1474466605402363,
+     "Bornona": 2.659914378818632,
+     "Munir Optima (uni)": 2.5910135770016476
+    }
+   },
+   {
+    "parameter": "P_f_middle",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1824999999999999,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.894381509397678,
+     "Bangla-DH B": 1.9070254786711516,
+     "Bangla-DH C": 2.18380816758638,
+     "Bangla-DH D": 1.8600541794179477,
+     "UniJoy": 2.823526195658757,
+     "Probhat": 2.625555519951362,
+     "National (Jatiya)": 2.914265290373386,
+     "Windows Default": 2.1723088340459173,
+     "Bornona": 2.6870394824561323,
+     "Munir Optima (uni)": 2.6098668036162893
+    }
+   },
+   {
+    "parameter": "P_f_middle",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.265,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.9218800546475405,
+     "Bangla-DH B": 1.9342498412583535,
+     "Bangla-DH C": 2.215188782051198,
+     "Bangla-DH D": 1.8863583137948157,
+     "UniJoy": 2.83915285676454,
+     "Probhat": 2.6430884343951493,
+     "National (Jatiya)": 2.937402688563744,
+     "Windows Default": 2.1972216279496823,
+     "Bornona": 2.714816047649843,
+     "Munir Optima (uni)": 2.628300748937273
+    }
+   },
+   {
+    "parameter": "lambda_m",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 0.5
+    },
+    "J1": {
+     "Bangla-DH A": 1.720264030558577,
+     "Bangla-DH B": 1.7342328385655161,
+     "Bangla-DH C": 1.9963232868481764,
+     "Bangla-DH D": 1.6887703620484606,
+     "UniJoy": 2.4913055452925983,
+     "Probhat": 2.425817596076787,
+     "National (Jatiya)": 2.6055969073801912,
+     "Windows Default": 1.9454195058191948,
+     "Bornona": 2.360988191078259,
+     "Munir Optima (uni)": 2.3704616752860495
+    }
+   },
+   {
+    "parameter": "lambda_m",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 0.75
+    },
+    "J1": {
+     "Bangla-DH A": 1.7938640788617048,
+     "Bangla-DH B": 1.8072969060185438,
+     "Bangla-DH C": 2.0746555009972054,
+     "Bangla-DH D": 1.7615401288593557,
+     "UniJoy": 2.6498666264868618,
+     "Probhat": 2.517034921510187,
+     "National (Jatiya)": 2.7484443358925383,
+     "Windows Default": 2.0464330831797155,
+     "Bornona": 2.5104512849484446,
+     "Munir Optima (uni)": 2.480911409019164
+    }
+   },
+   {
+    "parameter": "lambda_m",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "J1": {
+     "Bangla-DH A": 1.8674641271648313,
+     "Bangla-DH B": 1.8803609734715705,
+     "Bangla-DH C": 2.1529877151462347,
+     "Bangla-DH D": 1.8343098956702515,
+     "UniJoy": 2.8084277076811257,
+     "Probhat": 2.6082522469435863,
+     "National (Jatiya)": 2.8912917644048863,
+     "Windows Default": 2.1474466605402363,
+     "Bornona": 2.659914378818632,
+     "Munir Optima (uni)": 2.5910135770016476
+    }
+   },
+   {
+    "parameter": "lambda_m",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.25
+    },
+    "J1": {
+     "Bangla-DH A": 1.9410641754679603,
+     "Bangla-DH B": 1.9534250409245981,
+     "Bangla-DH C": 2.231319929295264,
+     "Bangla-DH D": 1.907079662481147,
+     "UniJoy": 2.9669887888753883,
+     "Probhat": 2.6994695723769846,
+     "National (Jatiya)": 3.0341391929172343,
+     "Windows Default": 2.2484602379007574,
+     "Bornona": 2.809377472688819,
+     "Munir Optima (uni)": 2.7011157449841323
+    }
+   },
+   {
+    "parameter": "lambda_m",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.5
+    },
+    "J1": {
+     "Bangla-DH A": 2.0146642237710863,
+     "Bangla-DH B": 2.026489108377625,
+     "Bangla-DH C": 2.3096521434442927,
+     "Bangla-DH D": 1.9798494292920428,
+     "UniJoy": 3.1255498700696536,
+     "Probhat": 2.790686897810385,
+     "National (Jatiya)": 3.176986621429581,
+     "Windows Default": 2.3494738152612773,
+     "Bornona": 2.9588405665590063,
+     "Munir Optima (uni)": 2.8112179129666157
+    }
+   }
+  ],
+  "regret": [
+   {
+    "style": "A",
+    "theta_label": "P_x low",
+    "theta": {
+     "P_x": 1.6,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8193487750912358,
+    "reoptimized_J1": 1.817042020478906,
+    "regret_percent": 0.1267901264403906,
+    "labels_moved": 16
+   },
+   {
+    "style": "A",
+    "theta_label": "P_x high",
+    "theta": {
+     "P_x": 2.4,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9214938441308023,
+    "reoptimized_J1": 1.9210415738450577,
+    "regret_percent": 0.023537430896592767,
+    "labels_moved": 12
+   },
+   {
+    "style": "A",
+    "theta_label": "P_d low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 0.9,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.7598206602629227,
+    "reoptimized_J1": 1.7592607281445816,
+    "regret_percent": 0.03181756703876291,
+    "labels_moved": 24
+   },
+   {
+    "style": "A",
+    "theta_label": "P_d high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.3,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9488328661158152,
+    "reoptimized_J1": 1.9488328661158152,
+    "regret_percent": 0.0,
+    "labels_moved": 0
+   },
+   {
+    "style": "A",
+    "theta_label": "P_f_pinky low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.36,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8094845325666322,
+    "reoptimized_J1": 1.8072041124899818,
+    "regret_percent": 0.12602595024207203,
+    "labels_moved": 14
+   },
+   {
+    "style": "A",
+    "theta_label": "P_f_pinky high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.8399999999999999,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9250572437553217,
+    "reoptimized_J1": 1.9249523442286378,
+    "regret_percent": 0.0054491640196255514,
+    "labels_moved": 8
+   },
+   {
+    "style": "A",
+    "theta_label": "P_f_ring low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.105,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8224129282633497,
+    "reoptimized_J1": 1.8206558871981544,
+    "regret_percent": 0.09641289512084442,
+    "labels_moved": 18
+   },
+   {
+    "style": "A",
+    "theta_label": "P_f_ring high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.4949999999999999,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9135763182731942,
+    "reoptimized_J1": 1.9104181883065599,
+    "regret_percent": 0.16503809837510036,
+    "labels_moved": 16
+   },
+   {
+    "style": "A",
+    "theta_label": "P_f_middle low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 0.935,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8291367751844594,
+    "reoptimized_J1": 1.8073686695604163,
+    "regret_percent": 1.1900753360474026,
+    "labels_moved": 34
+   },
+   {
+    "style": "A",
+    "theta_label": "P_f_middle high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.265,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9218939136468618,
+    "reoptimized_J1": 1.9184377496392493,
+    "regret_percent": 0.1798311542105002,
+    "labels_moved": 34
+   },
+   {
+    "style": "A",
+    "theta_label": "lambda_m low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 0.5
+    },
+    "phase3_layout_J1": 1.7203123624532461,
+    "reoptimized_J1": 1.7139982220580336,
+    "regret_percent": 0.3670345300668674,
+    "labels_moved": 23
+   },
+   {
+    "style": "A",
+    "theta_label": "lambda_m high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.5
+    },
+    "phase3_layout_J1": 2.014558365664239,
+    "reoptimized_J1": 2.0110328261988495,
+    "regret_percent": 0.17500309375385273,
+    "labels_moved": 17
+   },
+   {
+    "style": "B",
+    "theta_label": "P_x low",
+    "theta": {
+     "P_x": 1.6,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8331566566169037,
+    "reoptimized_J1": 1.8310498917051925,
+    "regret_percent": 0.11492552500119037,
+    "labels_moved": 16
+   },
+   {
+    "style": "B",
+    "theta_label": "P_x high",
+    "theta": {
+     "P_x": 2.4,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.935448701425049,
+    "reoptimized_J1": 1.9344928188763577,
+    "regret_percent": 0.04938816244457797,
+    "labels_moved": 15
+   },
+   {
+    "style": "B",
+    "theta_label": "P_d low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 0.9,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.7709097390514699,
+    "reoptimized_J1": 1.7706680167883346,
+    "regret_percent": 0.013649609452410954,
+    "labels_moved": 2
+   },
+   {
+    "style": "B",
+    "theta_label": "P_d high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.3,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9637746127290632,
+    "reoptimized_J1": 1.963765011716769,
+    "regret_percent": 0.0004889060196545589,
+    "labels_moved": 4
+   },
+   {
+    "style": "B",
+    "theta_label": "P_f_pinky low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.36,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8218945304636562,
+    "reoptimized_J1": 1.8206794745530328,
+    "regret_percent": 0.06669189079316294,
+    "labels_moved": 15
+   },
+   {
+    "style": "B",
+    "theta_label": "P_f_pinky high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.8399999999999999,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9406671344459354,
+    "reoptimized_J1": 1.9402678400903834,
+    "regret_percent": 0.0205751078309455,
+    "labels_moved": 2
+   },
+   {
+    "style": "B",
+    "theta_label": "P_f_ring low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.105,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8390790817398093,
+    "reoptimized_J1": 1.8352320687706005,
+    "regret_percent": 0.2091814869412463,
+    "labels_moved": 15
+   },
+   {
+    "style": "B",
+    "theta_label": "P_f_ring high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.4949999999999999,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9249875899327566,
+    "reoptimized_J1": 1.9240473829081897,
+    "regret_percent": 0.048842238229693156,
+    "labels_moved": 11
+   },
+   {
+    "style": "B",
+    "theta_label": "P_f_middle low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 0.935,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.84239127549767,
+    "reoptimized_J1": 1.8240331004985404,
+    "regret_percent": 0.9964319329600909,
+    "labels_moved": 31
+   },
+   {
+    "style": "B",
+    "theta_label": "P_f_middle high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.265,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.9346340262511905,
+    "reoptimized_J1": 1.9323162328506454,
+    "regret_percent": 0.1198052638946104,
+    "labels_moved": 18
+   },
+   {
+    "style": "B",
+    "theta_label": "lambda_m low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 0.5
+    },
+    "phase3_layout_J1": 1.7344885999168518,
+    "reoptimized_J1": 1.7266001302532634,
+    "regret_percent": 0.45480089427895454,
+    "labels_moved": 18
+   },
+   {
+    "style": "B",
+    "theta_label": "lambda_m high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.5
+    },
+    "phase3_layout_J1": 2.0268913080870288,
+    "reoptimized_J1": 2.023451130193153,
+    "regret_percent": 0.16972680676808402,
+    "labels_moved": 11
+   },
+   {
+    "style": "C",
+    "theta_label": "P_x low",
+    "theta": {
+     "P_x": 1.6,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.099830564118151,
+    "reoptimized_J1": 2.09842385748153,
+    "regret_percent": 0.06699143543573367,
+    "labels_moved": 10
+   },
+   {
+    "style": "C",
+    "theta_label": "P_x high",
+    "theta": {
+     "P_x": 2.4,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.2135697420962392,
+    "reoptimized_J1": 2.2117766287553695,
+    "regret_percent": 0.08100550467281256,
+    "labels_moved": 21
+   },
+   {
+    "style": "C",
+    "theta_label": "P_d low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 0.9,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.035613375477163,
+    "reoptimized_J1": 2.0355931540220125,
+    "regret_percent": 0.0009933838809449132,
+    "labels_moved": 2
+   },
+   {
+    "style": "C",
+    "theta_label": "P_d high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.3,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.2420716126292337,
+    "reoptimized_J1": 2.2420716126292337,
+    "regret_percent": 0.0,
+    "labels_moved": 0
+   },
+   {
+    "style": "C",
+    "theta_label": "P_f_pinky low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.36,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.091824571187332,
+    "reoptimized_J1": 2.0902215381041773,
+    "regret_percent": 0.07663324665150052,
+    "labels_moved": 10
+   },
+   {
+    "style": "C",
+    "theta_label": "P_f_pinky high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.8399999999999999,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.2152586961026075,
+    "reoptimized_J1": 2.215053924405969,
+    "regret_percent": 0.009243692260364292,
+    "labels_moved": 5
+   },
+   {
+    "style": "C",
+    "theta_label": "P_f_ring low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.105,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.1023778773135553,
+    "reoptimized_J1": 2.0988938768582894,
+    "regret_percent": 0.1657171383347016,
+    "labels_moved": 15
+   },
+   {
+    "style": "C",
+    "theta_label": "P_f_ring high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.4949999999999999,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.2061629752201934,
+    "reoptimized_J1": 2.196512412658754,
+    "regret_percent": 0.43743652077545003,
+    "labels_moved": 42
+   },
+   {
+    "style": "C",
+    "theta_label": "P_f_middle low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 0.935,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.1055452610443215,
+    "reoptimized_J1": 2.0832166520632582,
+    "regret_percent": 1.0604668251105926,
+    "labels_moved": 31
+   },
+   {
+    "style": "C",
+    "theta_label": "P_f_middle high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.265,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 2.2153922171118428,
+    "reoptimized_J1": 2.2129611009629757,
+    "regret_percent": 0.1097375051735278,
+    "labels_moved": 18
+   },
+   {
+    "style": "C",
+    "theta_label": "lambda_m low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 0.5
+    },
+    "phase3_layout_J1": 1.996380471793157,
+    "reoptimized_J1": 1.9881552614973557,
+    "regret_percent": 0.41200614872842595,
+    "labels_moved": 22
+   },
+   {
+    "style": "C",
+    "theta_label": "lambda_m high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.5
+    },
+    "phase3_layout_J1": 2.309893194453562,
+    "reoptimized_J1": 2.307826665608533,
+    "regret_percent": 0.0894642596458945,
+    "labels_moved": 12
+   },
+   {
+    "style": "D",
+    "theta_label": "P_x low",
+    "theta": {
+     "P_x": 1.6,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.7882887458889003,
+    "reoptimized_J1": 1.7861372671454456,
+    "regret_percent": 0.12030935990626283,
+    "labels_moved": 18
+   },
+   {
+    "style": "D",
+    "theta_label": "P_x high",
+    "theta": {
+     "P_x": 2.4,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8881076248515485,
+    "reoptimized_J1": 1.8872341219220512,
+    "regret_percent": 0.04626340776341929,
+    "labels_moved": 13
+   },
+   {
+    "style": "D",
+    "theta_label": "P_d low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 0.9,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.7266518393425105,
+    "reoptimized_J1": 1.726408145424115,
+    "regret_percent": 0.01411366859507835,
+    "labels_moved": 4
+   },
+   {
+    "style": "D",
+    "theta_label": "P_d high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.3,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.916327497463822,
+    "reoptimized_J1": 1.9163178900477023,
+    "regret_percent": 0.0005013452101734878,
+    "labels_moved": 4
+   },
+   {
+    "style": "D",
+    "theta_label": "P_f_pinky low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.36,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.775931861601818,
+    "reoptimized_J1": 1.7748207332574588,
+    "regret_percent": 0.06256593332117101,
+    "labels_moved": 14
+   },
+   {
+    "style": "D",
+    "theta_label": "P_f_pinky high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.8399999999999999,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.894492815874225,
+    "reoptimized_J1": 1.8940935230555909,
+    "regret_percent": 0.021076502127023847,
+    "labels_moved": 2
+   },
+   {
+    "style": "D",
+    "theta_label": "P_f_ring low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.105,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.79430578007491,
+    "reoptimized_J1": 1.7904373176671997,
+    "regret_percent": 0.21559660848603093,
+    "labels_moved": 17
+   },
+   {
+    "style": "D",
+    "theta_label": "P_f_ring high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.4949999999999999,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8776280534660854,
+    "reoptimized_J1": 1.8766895870012374,
+    "regret_percent": 0.04998148931123837,
+    "labels_moved": 11
+   },
+   {
+    "style": "D",
+    "theta_label": "P_f_middle low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 0.935,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.7983518749840919,
+    "reoptimized_J1": 1.7798597409093198,
+    "regret_percent": 1.0282823029244879,
+    "labels_moved": 16
+   },
+   {
+    "style": "D",
+    "theta_label": "P_f_middle high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.265,
+     "lambda_m": 1.0
+    },
+    "phase3_layout_J1": 1.8867273003556952,
+    "reoptimized_J1": 1.8842526535485806,
+    "regret_percent": 0.13116080986627424,
+    "labels_moved": 20
+   },
+   {
+    "style": "D",
+    "theta_label": "lambda_m low",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 0.5
+    },
+    "phase3_layout_J1": 1.6890143827402453,
+    "reoptimized_J1": 1.6811159691498834,
+    "regret_percent": 0.46763447789873686,
+    "labels_moved": 18
+   },
+   {
+    "style": "D",
+    "theta_label": "lambda_m high",
+    "theta": {
+     "P_x": 2.0,
+     "P_d": 1.12,
+     "P_f_pinky": 1.6,
+     "P_f_ring": 1.3,
+     "P_f_middle": 1.1,
+     "lambda_m": 1.5
+    },
+    "phase3_layout_J1": 1.9802328149524173,
+    "reoptimized_J1": 1.9767882358374809,
+    "regret_percent": 0.1739481887648257,
+    "labels_moved": 11
+   }
+  ],
+  "seconds": 159.6
+ },
+ "checks": {
+  "A": {
+   "UB_Z_recomputed": 729031193585032,
+   "UB_matches_certificate": true,
+   "frequencies_unchanged": true,
+   "bounds_below_UB": true,
+   "gilmore_lawler_lsa_agrees": true,
+   "cell_lp_rechecked_Z": 697604377028756,
+   "cell_lp_recheck_agrees": true,
+   "verifier": {
+    "N": 390391661,
+    "keystrokes_excluding_space": 346202416,
+    "escaped_units": 77812,
+    "E1": 1.5402535026199804,
+    "E2": 0.032935858227770905,
+    "M": 0.2942460032109907,
+    "J0": 1.5731893608477514,
+    "J1": 1.867435364058742,
+    "J1_exact": "91128899198129/48798957625000"
+   },
+   "verifier_vs_integer_relative_difference": 0.0,
+   "verifier_equals_integer_exactly": true,
+   "verifier_counts_match": true
+  },
+  "B": {
+   "UB_Z_recomputed": 734205674968831,
+   "UB_matches_certificate": true,
+   "frequencies_unchanged": true,
+   "bounds_below_UB": true,
+   "gilmore_lawler_lsa_agrees": true,
+   "cell_lp_rechecked_Z": 704019830380087,
+   "cell_lp_recheck_agrees": true,
+   "verifier": {
+    "N": 390391661,
+    "keystrokes_excluding_space": 346199411,
+    "escaped_units": 80817,
+    "E1": 1.5532217189069952,
+    "E2": 0.03506552692476697,
+    "M": 0.2924027081701778,
+    "J0": 1.5882872458317623,
+    "J1": 1.8806899540019402,
+    "J1_exact": "734205674968831/390391661000000"
+   },
+   "verifier_vs_integer_relative_difference": 0.0,
+   "verifier_equals_integer_exactly": true,
+   "verifier_counts_match": true
+  },
+  "C": {
+   "UB_Z_recomputed": 840566664643308,
+   "UB_matches_certificate": true,
+   "frequencies_unchanged": true,
+   "bounds_below_UB": true,
+   "gilmore_lawler_lsa_agrees": true,
+   "cell_lp_rechecked_Z": 806852087936546,
+   "cell_lp_recheck_agrees": true,
+   "verifier": {
+    "N": 390391661,
+    "keystrokes_excluding_space": 422282404,
+    "escaped_units": 93981,
+    "E1": 1.8050712097543498,
+    "E2": 0.03455290070860402,
+    "M": 0.3135127226604054,
+    "J0": 1.8396241104629538,
+    "J1": 2.153136833123359,
+    "J1_exact": "210141666160827/97597915250000"
+   },
+   "verifier_vs_integer_relative_difference": 0.0,
+   "verifier_equals_integer_exactly": true,
+   "verifier_counts_match": true
+  },
+  "D": {
+   "UB_Z_recomputed": 716221754063417,
+   "UB_matches_certificate": true,
+   "frequencies_unchanged": true,
+   "bounds_below_UB": true,
+   "gilmore_lawler_lsa_agrees": true,
+   "cell_lp_rechecked_Z": 686242705204589,
+   "cell_lp_recheck_agrees": true,
+   "verifier": {
+    "N": 390391661,
+    "keystrokes_excluding_space": 334032927,
+    "escaped_units": 87894,
+    "E1": 1.5083677904131538,
+    "E2": 0.03503737622100488,
+    "M": 0.2912184322121727,
+    "J0": 1.5434051666341586,
+    "J1": 1.8346235988463313,
+    "J1_exact": "716221754063417/390391661000000"
+   },
+   "verifier_vs_integer_relative_difference": 0.0,
+   "verifier_equals_integer_exactly": true,
+   "verifier_counts_match": true
+  }
+ },
+ "seconds": 443.8
+}

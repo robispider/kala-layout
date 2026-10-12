@@ -1,0 +1,22 @@
+{
+ "status": "OPTIMAL",
+ "solver_objective_J": 1.7578313679761146,
+ "rows": 69264,
+ "columns": 481390,
+ "build_seconds": 1.4,
+ "seconds": 1118.5,
+ "solver": "OR-Tools 9.14.6206 PDLP",
+ "style": "D",
+ "settings": {
+  "solver": "PDLP",
+  "time_limit": 3600,
+  "threads": 16,
+  "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+ },
+ "frequencies_sha256": "13222d6cc16fed4408e718b329fb3088edc2af5a4acf1fab28f5a7646a1ea6e2",
+ "UB_Z": 716221754063417,
+ "certified_Z": 686242705204589,
+ "certified_J": 1.7578313620909771,
+ "gap_percent": 4.185721627239703,
+ "duals_file": "results/phase4/certificates/D-lp-duals.json.gz"
+}

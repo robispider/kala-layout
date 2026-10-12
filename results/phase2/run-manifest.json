@@ -1,0 +1,51 @@
+{
+  "generated_utc": "2026-10-12T16:58:43+00:00",
+  "bangla_dh_version": "0.1.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "repo_commit": "a411bceefc80eb888d9594ca7e77fbafc2771db4",
+  "working_tree_clean": false,
+  "parameters": {
+    "reference_seed": 20261010,
+    "effort_grid": "results/phase1/effort-grids/ansi-optimal.json",
+    "grids": [
+      "unrounded",
+      "one decimal (half-up)"
+    ],
+    "objective": "J0 (M, Q off: D2 default)",
+    "middle_index_benefit": "kept (D6 default)"
+  },
+  "inputs": {
+    "data/bangla-symbols-v1.json": "a3e6b4b7d6214c308fbe38b418197816357df1073c6ec787d46b1772445f9651",
+    "data/corpus-v1.json": "dc51d05b22a115315789300766ad24ac1422e0faf09d8739d0939d4c8f119c7d",
+    "results/phase1/effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "results/phase1/effort-grids/ansi-traditional.json": "d536af149e6954af9928f096d8215248190544b7f8d6dfe2aa8b9bec5dff0bb7",
+    "kala:data/bn/Alphabet.json": "83c4ee3517f73d6a35406f980a4c52f98545b6818725a7e324458f93607c1e85",
+    "kala:kala/layout/bn/Alphabet.json": "33e51ba8010b50fc456cf121d88c1597672d86ea58d87300ae2eb7d59a05c8f4",
+    "kala:kala/layout/bn/conjuncts.json": "34207d0879b9d3cf1229d8d050c7717b4a86a36ae1a0dabd248b3b52d420dcfb",
+    "kala:kala/layout/bn/UniJoy.json": "f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4",
+    "kala:kala/layout/bn/bn_bijoy_layout.json": "87d8d932d98f4118053015877b1ad8274eb8514384a46a3682ad7da4a93b57e7",
+    "kala:tools/kala-eval/datasets/top20k.tsv": "3db9d7a35150f81fc40d99efe103a55478492fa5bc78e165f20da4927d5290ee",
+    "kala:tools/kala-eval/datasets/err_frequent_gold.tsv": "a7c4e7b49fdf4653132039dd6b1cce071123bb1fee14fb014efd3d94bc1c11bf",
+    "kala:tools/kala-eval/datasets/err_inflected.tsv": "592e164ef568e3f2706c39895812d2b3581afb3fef838f93fe009b6cef0c07b2",
+    "kala:tools/kala-eval/datasets/err_rare_gold.tsv": "62b2f526f4e522ce3755edd728e07579d9197a3c18924483d6b129954ea99613",
+    "kala:tools/kala-eval/datasets/err_usage_dev.tsv": "e920e1241b6d72cd32e510697696bd963af57497af0096241bae869dc4ff64c4",
+    "kala:tools/kala-eval/datasets/err_usage_test.tsv": "618779416d21f886bef4fb7640ac15a3e08b2decd9e492fa649b65905dd4d005",
+    "ban-dataset-collection/wikidata@1ba43aab9984": "690f6a8ce69f4f2cbf3cf2f1b81be2d25c039a671405df6a2e93c184f1c926d6",
+    "data/corpus/bangla-corpus-v1/bnwiki-train.jsonl.gz": "ec12f7268cda6a908c3ccb422173d95ae31fe350c2c6afe35a0f89955de28e64",
+    "data/corpus/bangla-corpus-v1/bnwiki-heldout.jsonl.gz": "f390e0f5380dd422f01e5d8fff383964078039bd06a12507a91e512b7eac3d87",
+    "data/corpus/bangla-corpus-v1/banlemma-heldout.tokens.tsv.gz": "7af88c02f9162befacffca3fa80b520166c7eb2d32eafbf63c3780f74727ec40",
+    "data/corpus/bangla-corpus-v1/bnwiki-heldout.tokens.tsv.gz": "df10fb8418bd2100a29abdd8c8c7392ca71f861eff1ea94073f40482bdac9a13",
+    "data/corpus/bangla-corpus-v1/bnwiki-train.tokens.tsv.gz": "0dc737688df0bca3181303c98667e4037d2c4ea71422567e9b4fd388142bb436"
+  },
+  "outputs": {
+    "results/phase2/corpus-manifest.json": "f489f977515c6c5fe79b975ae5bbd7d07a3aab8749a1905772752e631e4ac17d",
+    "results/phase2/frequencies/banlemma-heldout.json": "031b1fabda3309c6d4b597d8ba6467fe9829c012edda852941e12a364b1a493e",
+    "results/phase2/frequencies/bnwiki-heldout.json": "2373bb7b1307101215743b05fac907b19a670fa18feabf507fff3df6a2cc63f5",
+    "results/phase2/frequencies/bnwiki-train.json": "47b1c92460626e4649fc3c6d12e1703da7f5788fb5711a72859e93a64fda1bd9",
+    "results/phase2/frequencies/optimization-frequencies.json": "69b773512a2598df206c7c91feacfa24d79cdfaae3bc7670a945d9a4433078fa",
+    "results/phase2/inventory-validation.json": "df2435d142550fd6aea8b064fc5b764c004c26daea189e7bd5662d8a0af624b2",
+    "results/phase2/phase2.json": "2dadc6b686f1893194f7d8e470e8ab9c2bea034efc7333c226741b89b224a8b7",
+    "results/phase2/REPORT.md": "850f82483fc12f53d6b9daee496ad4905aa1e6492ea385a96c3c7ef6f01feb9e"
+  }
+}

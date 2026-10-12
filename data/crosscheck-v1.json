@@ -1,0 +1,40 @@
+{
+  "version": "bangla-crosscheck-v1",
+  "description": "Out-of-domain check of the Phase 3 best layouts (D4 kept Wikipedia only for the search). Two news collections from the public ban-dataset-collection (fetch-data, prepare-data), read in place and never modified. Same normalization (bangla-dh-text-v1) and split rule as corpus-v1; paragraphs deduplicated within each dataset; titles are not used (as for Wikipedia). Both scrapes dropped line breaks between sentences, so a sentence mark glued to a Bangla letter gets a space. BARD shares most of its sentences with the newspaper collection, so only its documents that share no sentence with it are used (bard-novel).",
+  "output_directory": "data/corpus/crosscheck-v1",
+  "source_root": "data/ban-dataset-collection/assembled",
+  "split": {
+    "unit": "document",
+    "rule": "held-out if int(sha256(salt + ':' + dataset + ':' + document_id)[:8], 16) % 100 < heldout_percent",
+    "salt": "bangla-dh-split-v1",
+    "heldout_percent": 10
+  },
+  "datasets": [
+    {
+      "name": "newspaper",
+      "label": "newspaper articles (Prothom Alo, many sections)",
+      "files": [
+        "bangla-newspaper.jsonl"
+      ],
+      "repair_glued_sentences": true
+    },
+    {
+      "name": "bard-novel",
+      "label": "BARD news articles (economy, entertainment, international, sports, state) that share no sentence with the newspaper set",
+      "files": [
+        "bard/economy.jsonl.gz",
+        "bard/entertainment.jsonl.gz",
+        "bard/international.jsonl.gz",
+        "bard/sports.jsonl.gz",
+        "bard/state.jsonl.gz"
+      ],
+      "repair_glued_sentences": true,
+      "exclude_documents_sharing_sentences_with": "newspaper"
+    }
+  ],
+  "search": {
+    "frequencies": "newspaper/train",
+    "seeds": 32,
+    "note": "Same annealing + iterated local search settings as Phase 3, half the seeds, no confirmation runs; it measures how much a news-trained layout gains over the Wikipedia-trained one."
+  }
+}

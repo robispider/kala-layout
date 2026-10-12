@@ -1,0 +1,148 @@
+{
+  "generated_utc": "2026-10-10T13:50:10+00:00",
+  "bangla_dh_version": "0.1.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "ortools": "9.14.6206",
+  "kala_commit": "c55f21501a7f84f36b0aae44c52fab4caeb67fa4",
+  "working_tree_clean": false,
+  "parameters": {
+    "scope": "v1 problem of the style: 52 searched labels on the 52 v1 slots (26 letter keys × base/Shift), digits and US punctuation fixed as in data/problem-v1.json; objective J1 (D2); model-optimal ANSI grid (D3 default); middle-index benefit kept (D6 default); keystroke frequencies of bnwiki/train; integer scale 10^6 (D5 default)",
+    "certify": {
+      "scale": 1000000,
+      "objective": "J1",
+      "frequencies": "bnwiki/train",
+      "exchange_k": 5,
+      "lp": {
+        "solver": "PDLP",
+        "time_limit": 3600,
+        "threads": 16,
+        "note": "GLOP (simplex) did not solve the 481,390-column LP in 30 min; PDLP's duals are certified exactly"
+      },
+      "cpsat_full": {
+        "time_limit": 900,
+        "workers": 16,
+        "seed": 20261012
+      },
+      "subproblems": {
+        "sizes": [
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48
+        ],
+        "time_limit": 600,
+        "workers": 16,
+        "order": "the k labels with the highest keystroke counts (ties by label), the others fixed"
+      },
+      "layers": {
+        "time_limit": 600,
+        "workers": 16
+      },
+      "exhaustive_check": {
+        "size": 9
+      }
+    },
+    "sensitivity": {
+      "samples": 1000,
+      "seed": 20261013,
+      "corpus": "bnwiki/heldout",
+      "ranges": {
+        "P_x": [
+          1.6,
+          2.4
+        ],
+        "P_d": [
+          0.9,
+          1.3
+        ],
+        "P_f_pinky": [
+          1.36,
+          1.8399999999999999
+        ],
+        "P_f_ring": [
+          1.105,
+          1.4949999999999999
+        ],
+        "P_f_middle": [
+          0.935,
+          1.265
+        ],
+        "lambda_m": [
+          0.5,
+          1.5
+        ]
+      },
+      "nominal": {
+        "P_x": 2.0,
+        "P_d": 1.12,
+        "P_f_pinky": 1.6,
+        "P_f_ring": 1.3,
+        "P_f_middle": 1.1,
+        "lambda_m": 1.0
+      },
+      "one_at_a_time_points": 5,
+      "regret": {
+        "thetas": "each parameter at the low and the high end of its range, the others nominal",
+        "frequencies": "bnwiki/train",
+        "ils_iterations": 1000,
+        "ils_strength": [
+          2,
+          6
+        ],
+        "seed": 20261014
+      }
+    },
+    "decisions": "D5 default (scale 10^6), D3 default (model-optimal grid), D6 default (middle-index benefit kept); B/D repeated-press rule of 10 October 2026"
+  },
+  "inputs": {
+    "data/bangla-symbols-v1.json": "a3e6b4b7d6214c308fbe38b418197816357df1073c6ec787d46b1772445f9651",
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "results/phase1/effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "results/phase1/effort-grids/ansi-traditional.json": "d536af149e6954af9928f096d8215248190544b7f8d6dfe2aa8b9bec5dff0bb7",
+    "results/phase3/frequencies/A-bnwiki-train.json": "71108b065277a31d099efe53cb75ff997878ace1c0f1d9d79dae721cd0f27de7",
+    "results/phase3/frequencies/A-bnwiki-heldout.json": "f441803c48942456fe151630f205f3a4c00d82a789b5cfd675627cf2f60b253d",
+    "results/phase3/search/A.json": "415522fc96614795aedfc73288a7e81a6804b72666e982fa749a9fea2ab9aa0a",
+    "results/phase3/frequencies/B-bnwiki-train.json": "90ec036c5d3b6ebf4cae18496fa5dd2e4594ba593ae78ee70d47a9e5eb13fde2",
+    "results/phase3/frequencies/B-bnwiki-heldout.json": "547c2ea616165dae91f7bedbacba9050e68b26496e7d61f6c34cefb2c416f2c7",
+    "results/phase3/search/B.json": "2d90667b82da95696864a78c648c086a0aea0548da9b19baae216d750d7904b3",
+    "results/phase3/frequencies/C-bnwiki-train.json": "04473190cfa0d0eecc9d45e4183bd3029f65bbea5c369be38359ce916e6ce135",
+    "results/phase3/frequencies/C-bnwiki-heldout.json": "9872b3972d4f6c169310f9faf596f18cdcd6296a7ed0e5ac92a9cbc3bb930d33",
+    "results/phase3/search/C.json": "e41610bab9b05d8edb177cb7629a426a74afc217a9a199b425137d6b88c9d1a1",
+    "results/phase3/frequencies/D-bnwiki-train.json": "13222d6cc16fed4408e718b329fb3088edc2af5a4acf1fab28f5a7646a1ea6e2",
+    "results/phase3/frequencies/D-bnwiki-heldout.json": "8bf00934f196f8970a072699a6e251ba9bcded0fef3ebd92d46f600f70fcfab5",
+    "results/phase3/search/D.json": "0bf7068ddc92e87cd6ae9deb9ef27bba3673cafb9f811d7a9d16351550c7d139",
+    "data/corpus/bangla-corpus-v1/bnwiki-train.jsonl.gz": "ec12f7268cda6a908c3ccb422173d95ae31fe350c2c6afe35a0f89955de28e64",
+    "data/corpus/bangla-corpus-v1/bnwiki-heldout.tokens.tsv.gz": "df10fb8418bd2100a29abdd8c8c7392ca71f861eff1ea94073f40482bdac9a13",
+    "baseline:UniJoy": "f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4",
+    "baseline:National (Jatiya)": "e603d73981343c1087e8e2a956542ee6afcd9d5279cbafa9ea1fca7c4941e1f0",
+    "baseline:Bornona": "58ca3340c6fef7e711fffe112fc59b11e0ce84e6635212c556d47198ed07d0dc",
+    "baseline:Probhat": "77061f3a5a898a3206ea19519d4e22668b3419cfdd6b01bec39e5a1d06fa4402",
+    "baseline:Windows Default": "c75738148814614a781af86a18f9c65235e8f897e5812d4ee36acfc03dd19fad",
+    "baseline:Munir Optima (uni)": "ba54b7063707c7e1bd02237bf8006d8fdb204ed90628edc33c348cac958567f7",
+    "results/phase3-crosscheck/crosscheck.json": "105f48f3bb25f407ee906e4f8701d3aa8308b0e84da120a90bb847e3ce0e1c78"
+  },
+  "outputs": {
+    "results/phase4/certificates/A-lp-duals.json.gz": "2717f900d337ecca6e698c4f47f85c837681e769e79f8f85d28d541bb6949d22",
+    "results/phase4/certificates/A-lp.json": "0663e4beb8d256de23111105d06b5bbf1e2179b63238aaa656b3e6f1ca396152",
+    "results/phase4/certificates/A.json": "6006f6d228d3c0aa67e3f34326681bc6a1799068f88b1ac0dfa8b4025dbd99d6",
+    "results/phase4/certificates/B-lp-duals.json.gz": "8c70aaa569a5c1365a63d82652e1bfd833b3cbc19f03ae4b8f5928e058557930",
+    "results/phase4/certificates/B-lp.json": "16a5ee0aed8aaa3ae9799fd8b2e2abb5ca4a9789faa78470a5cd2f7b9c7e2418",
+    "results/phase4/certificates/B.json": "7a0163ee60b9ebafa9ab34e86759d86a635033324aaf216412efee801df1e9d1",
+    "results/phase4/certificates/C-lp-duals.json.gz": "674d83be141b2021f00211ec4fe35dccc8eee4ab875c0acf3b71ca0e791ecc05",
+    "results/phase4/certificates/C-lp.json": "1c9733c22af0b0ac419537b296fa75167d60c33562af1cc4ba5ce29a6eced883",
+    "results/phase4/certificates/C.json": "95e7a0c383236389348326efb3c3ce05871bf7d7d40c1aadee7b1505051ecd98",
+    "results/phase4/certificates/D-lp-duals.json.gz": "6d84dde9e4a1e8510456e49d7d5795b0baa2cfb656349d467c13a58d53a3dcc8",
+    "results/phase4/certificates/D-lp.json": "d3f88f7db16d710dcca45b756f81e02836faaa5548802716865ce3e96c4b13e0",
+    "results/phase4/certificates/D.json": "250ced8db3debce17599e983169e9f10541582846c0ad92777239bd2239687ba",
+    "results/phase4/phase4.json": "4cb7ac157fff3e620206d79b37b17887f8fc568b3d3b6740c99a8ba005b666b2",
+    "results/phase4/REPORT.md": "058efede29bcd642df1672303489320a07800caa1f43effd9215f8ea1edcb22f",
+    "results/phase4/sensitivity.json": "b1ac31165f0c9e581e523bdc264dfbb1e9c2034119f480d8ef4986561bc618fa"
+  }
+}
