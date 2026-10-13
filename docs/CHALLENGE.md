@@ -52,6 +52,24 @@ A pull request that adds a file to `submissions/` runs a workflow that re-scores
 
 If a submission beats the reference, the maintainers re-check it with the project's own scorers (`python -m bangla_dh challenge-verify FILE`), which compute the exact integer-model J1 and the held-out scores from the full pipeline. A winning layout does not replace Kala Jhor or Kala Goti automatically: the score is modeled effort, and comfort is decided by typing tests with people.
 
+## Optional diagnostic report
+
+With the full repository, you can request a separate report after official verification:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m bangla_dh challenge-verify my-layout.json --diagnostics work/evaluator-experiments/my-check
+python -m bangla_dh leaderboard --check my-layout.json --diagnostics work/evaluator-experiments/my-board-check
+```
+
+Choose a new output directory for each run. The report compares your layout with its style's reference: same-finger moves between different keys, repeated keys, Shift use, finger load and preference-table coverage. It also shows traditional fingering as a separate scenario. No corpus download is needed; the diagnostic counts are committed.
+
+The preference table covers only part of typing. Its partial values are not whole-layout comfort scores and never affect J1, acceptance, ties or leaderboard ordering. An optional-report failure is reported separately and does not change official verification. Submission pull-request checks include the diagnostic report in their job summary for accepted entries. The standalone scorer is unchanged.
+
+Further details: [experimental evaluation instructions](../src/bangla_dh/experimental/README.md). You can also run the diagnostic reader directly on a challenge-format file.
+
+The optional report also compares source-verified Dvorak-7 and Engram pair movement with your style's reference, including component bounds and frequent transitions that lose credit. Engram triple order is shown from committed counts. These project Shift actions onto physical keys and exclude modifier effort; unsupported events retain coverage bounds. They explain movement trade-offs and do not change the official score. [Read the model comparison](MECHANICS.md).
+
 ## Compare with other public layouts
 
 `--public` lists the held-out scores of Kala Jhor, Kala Goti, UniJoy, Windows Default, Probhat, Munir Optima, Bornona and National. To compare another layout under the same model, add its key map as described in [data/baselines/README.md](../data/baselines/README.md) and rerun the comparison.

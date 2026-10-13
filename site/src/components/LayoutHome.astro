@@ -1,7 +1,10 @@
 ---
 import board from '../generated/board.json';
+import { Content as AdditionalChecksEn } from '../generated/additional-checks-en.md';
+import { Content as AdditionalChecksBn } from '../generated/additional-checks-bn.md';
 const { locale = 'en' } = Astro.props;
 const bn = locale === 'bn';
+const AdditionalChecks = bn ? AdditionalChecksBn : AdditionalChecksEn;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = (route: string) => `${base}/${locale}/${route}/`;
 const digits = (value: string | number) => (bn ? String(value).replace(/[0-9]/g, (d) => '০১২৩৪৫৬৭৮৯'[Number(d)]) : String(value));
@@ -42,6 +45,9 @@ const steps = [
       </table>
     </div>
     <p class="small-note">{bn ? 'প্রতিটি ফিক্সড লেআউট Kala-তে ইনস্টল থাকা অবস্থায় গবেষণার সময় তুলনা করা হয়েছে। ফোনেটিক লেআউট তুলনায় নেই।' : 'Every fixed layout installed in Kala when the research ran. Phonetic layouts are not compared.'} <a href={href('leaderboard')}>{bn ? 'লিডারবোর্ড ও জমা দেওয়া লেআউট' : 'Leaderboard and submissions'} →</a></p>
+  </section>
+  <section class="home-section additional-checks" aria-label={bn ? 'লেআউটের আরও কিছু যাচাই' : 'Additional layout checks'}>
+    <AdditionalChecks />
   </section>
   <section class="home-section" aria-labelledby="do-title">
     <div class="section-heading">
@@ -90,6 +96,12 @@ const steps = [
   .board th:nth-child(-n+2), .board td:nth-child(-n+2) { text-align: left; }
   .board th { font-size: .75rem; color: var(--sl-color-gray-2); font-weight: 650; }
   .board tr.ours td { font-weight: 700; color: var(--sl-color-text-accent); background: var(--sl-color-accent-low); }
+  .additional-checks :global(h2) { font-size: clamp(1.65rem,3vw,2.2rem); line-height: 1.3; letter-spacing: -.035em; color: var(--sl-color-white); }
+  .additional-checks :global(p) { margin-top: 1rem; color: var(--sl-color-gray-2); }
+  .additional-checks :global(table) { display: block; width: max-content; max-width: 100%; overflow-x: auto; margin-block: 1.5rem; border-collapse: collapse; font-size: .92rem; font-variant-numeric: tabular-nums; }
+  .additional-checks :global(th), .additional-checks :global(td) { padding: .65rem .8rem; border-bottom: 1px solid var(--home-border); text-align: right; white-space: nowrap; }
+  .additional-checks :global(th:first-child), .additional-checks :global(td:first-child) { text-align: left; white-space: normal; min-width: 12rem; max-width: 24rem; }
+  .additional-checks :global(th) { font-size: .8rem; font-weight: 650; color: var(--sl-color-gray-2); }
   .guide-grid, .layout-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.7rem; }
   .guide-grid > *, .layout-grid > * { margin-top: 0 !important; }
   .layout-card, .guide-card { border: 1px solid var(--home-border); border-radius: 16px; padding: 1.3rem; display: flex; flex-direction: column; min-width: 0; }
@@ -110,6 +122,7 @@ const steps = [
   .research-note { grid-column: 1 / -1; padding: 1rem; border-left: 3px solid var(--sl-color-accent); border-radius: 0 8px 8px 0; background: var(--sl-color-gray-6); color: var(--sl-color-gray-2); font-size: .82rem; }
   .inline-links { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; font-size: .9rem; font-weight: 650; }
   .free-section { padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-radius: 16px; background: var(--sl-color-gray-6); }
+  :global(html[lang='bn']) .additional-checks :global(h2) { letter-spacing: 0; line-height: 1.5; }
   :global(html[lang='bn']) :is(h2,h3) { letter-spacing: 0; line-height: 1.5; }
   @media (max-width: 55rem) { .guide-grid, .layout-grid, .research-section { grid-template-columns: 1fr; } }
   @media (max-width: 45rem) { .home-section { padding-block: 2rem; } .release-note a { margin-left: 0; } .free-section { padding: 1.3rem; } }

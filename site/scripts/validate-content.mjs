@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { pages, locales, sourcePath, repoRoot, rewriteLinks } from './content-map.mjs';
+import { pages, homeSections, locales, sourcePath, repoRoot, rewriteLinks } from './content-map.mjs';
 
 const matches = (text, regex) => [...text.matchAll(regex)].map((match) => match[1]);
 const linkTargets = (text) => matches(text, /\[[^\]]*\]\(([^)]+)\)/g).sort();
@@ -32,7 +33,7 @@ const keyMaps = (text) => {
 
 export async function validateContent() {
   let links = 0;
-  for (const page of pages) {
+  for (const page of [...pages, ...homeSections]) {
     const english = await readFile(sourcePath(page, 'en'), 'utf8');
     const bangla = await readFile(sourcePath(page, 'bn'), 'utf8');
     assert(/[ঀ-৿]/.test(bangla), `Bangla text missing: ${page.source}`);
@@ -64,6 +65,59 @@ export async function validateContent() {
       await access(target).catch(() => assert.fail(`Broken repository link ${href} in ${page.source}`));
     }
   }
-  console.log(`Content checks passed: ${pages.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
+  await validateHomeDiagnostics();
+  await validateMechanics();
+  console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
+}
+async function validateMechanics() {
+  const source = 'results/evaluator-e2/run-v1/public-summary.json';
+  const raw = await readFile(path.join(repoRoot, source));
+  const manifest = JSON.parse(await readFile(path.join(repoRoot, 'results/evaluator-e2/run-v1/run-manifest.json'), 'utf8'));
+  assert.equal(createHash('sha256').update(raw).digest('hex'), manifest.output_sha256[source], 'Movement scores differ from their run manifest');
+  const run = JSON.parse(raw.toString('utf8'));
+  assert.equal(run.layout_count, 8);
+  assert.equal(run.candidate_count, 101);
+  assert.equal(run.source_fidelity.source_hashes_pass, true);
+  assert.equal(run.corpus_scores.length, 48);
+  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default', 'Probhat', 'Munir Optima (uni)', 'Bornona', 'UniJoy', 'National (Jatiya)'];
+  const expected = ['traditional', 'model-optimal'].map((scenario) => names.map((name) => {
+    const row = run.public_summary[scenario][name];
+    return [name, ...['dvorak7', 'engram_avg4', 'engram_order'].map((m) => `${row[m].lower.toFixed(6)}–${row[m].upper.toFixed(6)}`),
+      `${(100*row.coverage).toFixed(3)}%`, `${(100*row.escape_share).toFixed(3)}%`];
+  }));
+  for (const locale of locales) {
+    const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
+    const tables = rows(markdown);
+    assert.equal(tables.length, 20);
+    const actual = [tables.slice(2, 10), tables.slice(12, 20)].map((table) => table.map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim()))));
+    assert.deepEqual(actual, expected, `Movement result drift: ${locale}`);
+  }
+}
+// Homepage diagnostics must match the saved experimental run, not the J1 board.
+async function validateHomeDiagnostics() {
+  const source = 'results/evaluator-e1/run-v1/scores.json';
+  const raw = await readFile(path.join(repoRoot, source));
+  const manifest = JSON.parse(await readFile(path.join(repoRoot, 'results/evaluator-e1/run-v1/run-manifest.json'), 'utf8'));
+  assert.equal(createHash('sha256').update(raw).digest('hex'), manifest.output_sha256[source], 'Experimental scores differ from their run manifest');
+  const run = JSON.parse(raw.toString('utf8'));
+  assert.equal(run.evidence.full_layout_admitted, false, 'Review homepage comfort claims before admitting a new model');
+  assert.equal(run.candidates.length, 101);
+  assert.equal(new Set(run.scores.filter((row) => row.public).map((row) => row.name)).size, 8);
+  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default'];
+  const corpora = ['bard-novel/heldout', 'bnwiki/heldout', 'newspaper/heldout'];
+  const metrics = [
+    ['shift_share_of_non_space_presses', 1],
+    ['same_finger_different_key_per_unit', 2],
+  ];
+  const expected = metrics.map(([metric, precision]) => names.map((name) => {
+    const selected = run.scores.filter((row) => row.name === name && row.scenario === 'model-optimal');
+    assert.deepEqual(selected.map((row) => row.corpus).sort(), corpora);
+    return (100 * selected.reduce((sum, row) => sum + row.diagnostics[metric], 0) / selected.length).toFixed(precision);
+  }));
+  for (const locale of locales) {
+    const markdown = await readFile(sourcePath(homeSections[0], locale), 'utf8');
+    const actual = rows(markdown).slice(2).map((row) => row.split('|').slice(2, -1).map((cell) => normalizeDigits(cell.trim()).replace('%', '')));
+    assert.deepEqual(actual, expected, `Homepage diagnostic drift: ${locale}`);
+  }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await validateContent();

@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { base, siteRoot, repoRoot, repoUrl, pages, locales, sourcePath, rewriteLinks } from './content-map.mjs';
+import { base, siteRoot, repoRoot, repoUrl, pages, homeSections, locales, sourcePath, rewriteLinks } from './content-map.mjs';
 import { validateContent } from './validate-content.mjs';
 
 await validateContent();
@@ -20,6 +20,11 @@ try {
 const generated = path.join(siteRoot, 'src/generated');
 await mkdir(generated, { recursive: true });
 await writeFile(path.join(generated, 'board.json'), JSON.stringify({ public: challengeData.public_layouts, submissions, dataVersion: challengeData.version }));
+for (const locale of locales) {
+  const section = homeSections[0];
+  const markdown = await readFile(sourcePath(section, locale), 'utf8');
+  await writeFile(path.join(generated, `additional-checks-${locale}.md`), rewriteLinks(markdown, section.source, locale));
+}
 
 for (const locale of locales) {
   const contentRoot = path.join(siteRoot, 'src/content/docs', locale);

@@ -9,3 +9,7 @@ challenge/** text eol=lf
 submissions/** text eol=lf
 data/*.json text eol=lf
 data/baselines/*.json text eol=lf
+data/evaluators/mechanics-v1/upstream/** -text
+data/evaluators/mechanics-v1/LICENSE -text
+data/evaluators/mechanics-v1/source-lock.json text eol=lf
+src/bangla_dh/experimental/ports/*.py text eol=lf

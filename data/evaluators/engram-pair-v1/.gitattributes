@@ -1,0 +1,4 @@
+pair-scores.csv -text
+LICENSE -text
+source-lock.json text eol=lf
+lookup-benchmark.json text eol=lf

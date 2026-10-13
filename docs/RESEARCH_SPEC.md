@@ -795,6 +795,32 @@ and independently testable.
 
 ## 15. Changelog
 
+**Evaluation season e2 (13 October 2026)**, additional movement comparison:
+
+* Source-derived MIT Dvorak-7 and Engram functions are pinned at upstream commit
+  `179e1c08b220ae1b02f6c425a7d1cbd1150c1db2`. Exhaustive fidelity checks cover
+  1,764 pairs, 74,088 triples and all 49,152 distributed criterion-table rows.
+* Eight fixed layouts and 101 retained A/D maps are scored on the existing
+  benchmark sources. Primary traditional fingering preserves upstream;
+  model-optimal is a separately declared adaptation. Physical-key projection
+  excludes modifier effort. Missing events retain fixed-denominator 0..1
+  coverage bounds, with text escapes disclosed separately.
+* Dvorak-7 is the seven-criterion mean. Engram avg4 follows its pair generator's
+  four-criterion formula, rather than silently using the upstream unifier's
+  differently constructed composite. Triple order is separate; the partial
+  learned preference audit and its evidence restrictions are preserved.
+* Goti and Jhor exchange priority under traditional pair mechanics versus J1;
+  their model-optimal pair bounds overlap. Windows Default leads their triple
+  order diagnostic with substantial escaped-text and modifier limitations.
+  The report explains components, source-specific results and training-only
+  candidate trade-offs. These are modeled mechanics, not human validation.
+* Optional challenge reports and paired website pages show these diagnostics.
+  Published layouts, search, frozen J0/J1, challenge DATA_VERSION, reproduction
+  lock and official leaderboard are unchanged. This additional evaluation
+  season introduces no replacement layout season and inherits no certificates.
+* New Bangla explanatory copy requires native-speaker editorial review before
+  publication, as required by AGENTS.md.
+
 **1.8 (11 October 2026)**, Kala keyboards (`results/kala-keyboards/README.md`):
 
 * Owner: the mixed A and D layouts exported as Kala layouts, named

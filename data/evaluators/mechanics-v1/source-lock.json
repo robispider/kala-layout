@@ -1,0 +1,152 @@
+{
+  "version": "mechanics-source-v1",
+  "repository": "https://github.com/binarybottle/keyboard_layout_scorers",
+  "commit": "179e1c08b220ae1b02f6c425a7d1cbd1150c1db2",
+  "author": "Arno Klein",
+  "license": "MIT",
+  "files": [
+    {
+      "file": "LICENSE",
+      "upstream_path": "LICENSE",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/LICENSE",
+      "sha256": "b18be44d20a08a5acc1e1324438fab645ef0afaa94b8589a9ad489bef3f5256b"
+    },
+    {
+      "file": "upstream/prep/prep_keypair_dvorak7_scores.py",
+      "upstream_path": "prep/prep_keypair_dvorak7_scores.py",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/prep/prep_keypair_dvorak7_scores.py",
+      "sha256": "d004d802793834a3204905ebfa32ad00dcc8c96e4bde646efd5500ec2d27ae33"
+    },
+    {
+      "file": "upstream/prep/prep_keypair_engram_scores.py",
+      "upstream_path": "prep/prep_keypair_engram_scores.py",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/prep/prep_keypair_engram_scores.py",
+      "sha256": "65abc6f36daff2eebc2412c38199480a01b0817136085ecd750b488bb4c4ee66"
+    },
+    {
+      "file": "upstream/prep/prep_keytriple_engram_scores.py",
+      "upstream_path": "prep/prep_keytriple_engram_scores.py",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/prep/prep_keytriple_engram_scores.py",
+      "sha256": "1f7f9069dac5100832b014f43da96c167fe1a743e1ce4947be6d5a603f4109df"
+    },
+    {
+      "file": "upstream/prep/prep_all_keypair_scoring_tables.py",
+      "upstream_path": "prep/prep_all_keypair_scoring_tables.py",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/prep/prep_all_keypair_scoring_tables.py",
+      "sha256": "3c4e811ab4c2a6b9a0d5f1dd61caadb837bf4e1e192af8907e688a313bfa1d55"
+    },
+    {
+      "file": "upstream/score_layouts.py",
+      "upstream_path": "score_layouts.py",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/score_layouts.py",
+      "sha256": "a7d3f139b1cc59988a8a55faa1077356cec3b75230d406f7e0e75dec9437a1bb"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_distribution_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_distribution_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_distribution_scores.csv",
+      "sha256": "091cb1cc8d451df0049a9ece79b78927904cad3cd0f177c379793560a068590d"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_strength_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_strength_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_strength_scores.csv",
+      "sha256": "bc948e4d500391c719a7c4915ca15846e212298bc59b2f6539003bb6e1bdc3bd"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_home_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_home_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_home_scores.csv",
+      "sha256": "403afcc7223e1d9dadf3e1dcf00d66015ab5b3b8af9b2492b630eb7a98becc95"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_vspan_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_vspan_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_vspan_scores.csv",
+      "sha256": "1acb2318c53698bd4a09796dd092a4146df574c4da77c1510774f078de2af7b3"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_columns_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_columns_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_columns_scores.csv",
+      "sha256": "8cd79efefabedca6f086a0ba3a7c0949331f2d71b57d53c7d1a5b9e9ae8aa801"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_remote_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_remote_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_remote_scores.csv",
+      "sha256": "ac81b1c6296be70821f3f2f9f50564cd6ef3c8c1a65cff10005eaee4015da780"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_inward_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_inward_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_inward_scores.csv",
+      "sha256": "4472e34d94080630ec2d2cfdf0249a635420d4bd81b99c7f5fe11197f8b533e2"
+    },
+    {
+      "file": "upstream/tables/keypair_dvorak7_scores.csv",
+      "upstream_path": "tables/keypair_dvorak7_scores.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/keypair_dvorak7_scores.csv",
+      "sha256": "3f56baeda4c9331e845bf6e4583619c4e3cef443276618ae0bea3ca949201f95"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_avg4.csv",
+      "upstream_path": "tables/engram_2key_scores_avg4.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_avg4.csv",
+      "sha256": "c6783e5a704175a8b4cf3de3b405fb0bd68c3ae79f8c1eb3eaedcac6e3b9298a"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_key_preference.csv",
+      "upstream_path": "tables/engram_2key_scores_key_preference.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_key_preference.csv",
+      "sha256": "396a220522c60fff2557827ca9658ed03c258ba73c2da8c5625354a5a17c97ac"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_row_separation.csv",
+      "upstream_path": "tables/engram_2key_scores_row_separation.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_row_separation.csv",
+      "sha256": "40e2b6fed9eb5c26b1654fd8aa88eb15a75bbf34ba936c2df6b0d870d449ea7e"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_same_row.csv",
+      "upstream_path": "tables/engram_2key_scores_same_row.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_same_row.csv",
+      "sha256": "673bdded932ae70a3ebd7133c09b3a3b5bd70d8b3420401d74167cadbe356b13"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_same_finger.csv",
+      "upstream_path": "tables/engram_2key_scores_same_finger.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_same_finger.csv",
+      "sha256": "ee460dab924bcabcbd49798ae613bad9d68a2053bd15a355b508f0804f713244"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_outside.csv",
+      "upstream_path": "tables/engram_2key_scores_outside.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_outside.csv",
+      "sha256": "69d9ab901a55edc8d88792fd9300262d963a89e478720c168aa243670397e1ff"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_scissor.csv",
+      "upstream_path": "tables/engram_2key_scores_scissor.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_scissor.csv",
+      "sha256": "00c304421ff97e2f87055856eff8dc19dfbc1823408dfe524e42c171641f535f"
+    },
+    {
+      "file": "upstream/tables/engram_2key_scores_half_scissor.csv",
+      "upstream_path": "tables/engram_2key_scores_half_scissor.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_2key_scores_half_scissor.csv",
+      "sha256": "c5b476540017bd7b4ed25fe29d72bce3824c8f3fd8b2453d7b0f6fad64a79137"
+    },
+    {
+      "file": "upstream/tables/engram_3key_scores_order.csv",
+      "upstream_path": "tables/engram_3key_scores_order.csv",
+      "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/tables/engram_3key_scores_order.csv",
+      "sha256": "00b371ba2890c8e09f965b2938d237ec272daae2852ea378352d6be5911f6e53"
+    }
+  ],
+  "score_direction": "higher",
+  "engram_pair_formula": "mean(row_separation, same_row, same_finger, outside)",
+  "dvorak7_formula": "sum of seven criteria / 7",
+  "engram_order": "separate trigram-order diagnostic",
+  "composite_warning": "The upstream unifier averages more Engram columns under the avg4 name. We use the explicit four-criterion generator; no combined pair/triple comfort total is invented."
+}

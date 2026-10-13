@@ -6,6 +6,7 @@
 | The original Kala Jhor and Kala Goti layout maps and their vowel-entry rules (`results/kala-keyboards/`) | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) |
 | Documentation (`docs/`, `results/*/REPORT.md`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | The published Colemak Mod-DH resources in `reference/colemak-dh-resources/` | CC0, from the `colemakmods/mod-dh` project |
+| Source-derived Dvorak-7 and Engram ports, source snapshots and criterion tables (`data/evaluators/mechanics-v1/`) | Arno Klein, [MIT](../data/evaluators/mechanics-v1/LICENSE) |
 | Fonts on the website (Inter, Noto Sans Bengali) | SIL Open Font License; notices in `site/public/licenses/` |
 | Comparison layout key maps (`data/baselines/layouts/`, UniJoy and Bijoy in `data/kala/`) | Their authors' terms; benchmark data only |
 | Texts of the ban-dataset-collection | Not in this repository; see [DATASETS.md](DATASETS.md) |
