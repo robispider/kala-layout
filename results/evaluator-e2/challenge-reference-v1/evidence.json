@@ -1,0 +1,58 @@
+{
+  "model_id": "engram-learned-pairs-e1",
+  "source_hashes_verified": true,
+  "lookup_benchmark_pass": true,
+  "lookup_benchmark_actual": -0.2553681574168317,
+  "heldout_prediction_reproduced": false,
+  "bangla_human_validation": false,
+  "full_layout_admitted": false,
+  "stage2_comfort_selection": "withheld",
+  "status": "partial_supported_pair_diagnostic",
+  "reason": "Missing key/layer/hand conditions and independent predictive validation.",
+  "source": {
+    "version": "engram-pair-source-v1",
+    "model_id": "engram-learned-pairs-e1",
+    "repository": "https://github.com/binarybottle/keyboard_layout_scorers",
+    "commit": "179e1c08b220ae1b02f6c425a7d1cbd1150c1db2",
+    "author": "Arno Klein",
+    "license": "MIT",
+    "paper": "https://doi.org/10.1080/10447318.2026.2665409",
+    "learning_repository": "https://github.com/binarybottle/typing_preferences_to_comfort_scores",
+    "learning_commit": "d8978d4ba8f81cd39c96ac2f8f2b730ed608a148",
+    "files": [
+      {
+        "file": "pair-scores.csv",
+        "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/prep/input/comfort_keypair_scores_24keys.csv",
+        "sha256": "3451d01bbcdddd45e50565cacfaf763d1ba262bba31507942a0dace4d7753003"
+      },
+      {
+        "file": "LICENSE",
+        "source_url": "https://raw.githubusercontent.com/binarybottle/keyboard_layout_scorers/179e1c08b220ae1b02f6c425a7d1cbd1150c1db2/LICENSE",
+        "sha256": "b18be44d20a08a5acc1e1324438fab645ef0afaa94b8589a9ad489bef3f5256b"
+      },
+      {
+        "file": "lookup-benchmark.json",
+        "sha256": "10adf6ea882e609e270b4d3c166de6fd7769cca4ecc76c44d22a224f0cdbc0e4"
+      }
+    ],
+    "expected_pairs": 288,
+    "score_direction": "higher",
+    "score_meaning": "Source-distributed predicted key-pair preference latent scores; not milliseconds or comfort percentages.",
+    "supported_layers": [
+      "base"
+    ],
+    "fingering": "traditional ANSI",
+    "source_table_status": "Predicted-score input distributed with the scorer. Fit/derivation not independently replicated.",
+    "heldout_prediction_reproduced": false,
+    "bangla_human_validation": false,
+    "full_layout_admitted": false,
+    "limitations": [
+      "Only same-hand pairs in two 12-key blocks. Right-hand values reflect the source symmetry assumption.",
+      "Central keys T G B Y H N, cross-hand pairs, digits, Shift/chords and spaces lack table support.",
+      "Source rule-generated full tables are deliberately excluded.",
+      "Per-pair uncertainty lacks joint covariance; no layout confidence interval is inferred.",
+      "Exact estimated_bigram_scores.csv fitting output and held-out predictive results are not pinned here."
+    ],
+    "use": "Supported-pair diagnostic only; no comfort ranking, Pareto selection or replacement recommendation."
+  }
+}

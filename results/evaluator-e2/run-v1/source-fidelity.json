@@ -1,0 +1,15 @@
+{
+  "source_commit": "179e1c08b220ae1b02f6c425a7d1cbd1150c1db2",
+  "source_hashes_pass": true,
+  "port_extraction_pass": true,
+  "pair_function_cases": 1764,
+  "triple_function_cases": 74088,
+  "distributed_table_rows": 49152,
+  "distributed_triple_domain": 32768,
+  "distributed_table_max_absolute_error": 1.1102230246251565e-16,
+  "tolerance": 1e-06,
+  "engram_formula": "mean(row_separation, same_row, same_finger, outside)",
+  "composite_warning": "The upstream unifier averages more Engram columns under the avg4 name. We use the explicit four-criterion generator; no combined pair/triple comfort total is invented.",
+  "fidelity_scope": "unmodified traditional ANSI; model-optimal is an explicitly adapted sensitivity scenario",
+  "human_validation": false
+}

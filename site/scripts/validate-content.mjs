@@ -66,7 +66,32 @@ export async function validateContent() {
     }
   }
   await validateHomeDiagnostics();
+  await validateMechanics();
   console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
+}
+async function validateMechanics() {
+  const source = 'results/evaluator-e2/run-v1/public-summary.json';
+  const raw = await readFile(path.join(repoRoot, source));
+  const manifest = JSON.parse(await readFile(path.join(repoRoot, 'results/evaluator-e2/run-v1/run-manifest.json'), 'utf8'));
+  assert.equal(createHash('sha256').update(raw).digest('hex'), manifest.output_sha256[source], 'Movement scores differ from their run manifest');
+  const run = JSON.parse(raw.toString('utf8'));
+  assert.equal(run.layout_count, 8);
+  assert.equal(run.candidate_count, 101);
+  assert.equal(run.source_fidelity.source_hashes_pass, true);
+  assert.equal(run.corpus_scores.length, 48);
+  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default', 'Probhat', 'Munir Optima (uni)', 'Bornona', 'UniJoy', 'National (Jatiya)'];
+  const expected = ['traditional', 'model-optimal'].map((scenario) => names.map((name) => {
+    const row = run.public_summary[scenario][name];
+    return [name, ...['dvorak7', 'engram_avg4', 'engram_order'].map((m) => `${row[m].lower.toFixed(6)}–${row[m].upper.toFixed(6)}`),
+      `${(100*row.coverage).toFixed(3)}%`, `${(100*row.escape_share).toFixed(3)}%`];
+  }));
+  for (const locale of locales) {
+    const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
+    const tables = rows(markdown);
+    assert.equal(tables.length, 20);
+    const actual = [tables.slice(2, 10), tables.slice(12, 20)].map((table) => table.map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim()))));
+    assert.deepEqual(actual, expected, `Movement result drift: ${locale}`);
+  }
 }
 // Homepage diagnostics must match the saved experimental run, not the J1 board.
 async function validateHomeDiagnostics() {

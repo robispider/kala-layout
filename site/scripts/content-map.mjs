@@ -10,6 +10,7 @@ export const locales = ['en', 'bn'];
 export const pages = [
   { source: 'docs/HOW_WE_FOUND_THEM.md', route: 'how' },
   { source: 'docs/LAYOUTS.md', route: 'layouts' },
+  { source: 'docs/MECHANICS.md', route: 'mechanics' },
   { source: 'docs/DATASETS.md', route: 'data' },
   { source: 'docs/REPRODUCE.md', route: 'reproduce' },
   { source: 'docs/CHALLENGE.md', route: 'challenge' },

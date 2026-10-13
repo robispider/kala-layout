@@ -23,7 +23,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'The research', translations: { bn: 'গবেষণা' },
-          items: ['how', 'layouts', 'data'],
+          items: ['how', 'layouts', 'mechanics', 'data'],
         },
         {
           label: 'Do it yourself', translations: { bn: 'নিজে করে দেখুন' },

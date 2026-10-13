@@ -1,5 +1,29 @@
 # Experimental evaluation season e1
 
+## Source-derived movement checks (e2)
+
+`python -m bangla_dh.experimental.mechanics_run --out work/evaluator-experiments/mechanics-repeat --workers 4`
+evaluates all eight fixed layouts and all 101 retained maps from committed compressed counts.
+Use `--rebuild-counts` for independent extraction from hash-pinned local token tables.
+Reports and manifests are in `results/evaluator-e2/run-v1/`; source snapshots, license
+and hashes are in `data/evaluators/mechanics-v1/`. There are no new dependencies.
+
+Dvorak-7 and Engram avg4 preserve original scoring bodies and constants. All source
+pairs/triples and distributed tables are exhaustively checked. Engram triple order
+is separate. Traditional fingering is faithful upstream; model-optimal is an explicit
+finger/hand adaptation. Scores project base/Shift onto physical keys and omit modifier
+effort. Unknown keys and AltGr retain 0..1 bounds; escapes are disclosed. Pair means
+are movement diagnostics, not total comfort or speed. The learned preference table's
+e1 restrictions continue independently.
+
+Optional challenge reports automatically include the pair criteria and committed
+style triple order, without changing validity, official J1, DATA_VERSION or ordering.
+Their JSON includes component bounds and frequent pair deficits. Source/table or count
+integrity failures remain optional-report failures. Both website languages have a
+movement-comparison page with numbers verified against the saved run manifest.
+
+The Bangla meaning changes need native-speaker editorial review before publication.
+
 An isolated addition to Kala Layout research. Original source modules, layouts, J0/J1, challenge DATA_VERSION, reproduction lock and website numbers are preserved. This is a distinct diagnostic season; it does not promote a replacement published layout season.
 
 The added evaluator reads 288 source-distributed predicted key-pair preference scores from the Engram research ecosystem. It deliberately excludes generated values for unsupported keys. It reports a **conditional supported-pair diagnostic**, not a full-layout comfort score. Full comfort ranking and preference-based candidate selection are disabled: independent held-out prediction reproduction, complete condition coverage and Bangla human validation have not been established.

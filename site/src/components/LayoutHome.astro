@@ -1,7 +1,7 @@
 ---
 import board from '../generated/board.json';
-import { Content as AdditionalChecksEn } from '../../../docs/HOME_ADDITIONAL_CHECKS.md';
-import { Content as AdditionalChecksBn } from '../../../translations/bn/docs/HOME_ADDITIONAL_CHECKS.md';
+import { Content as AdditionalChecksEn } from '../generated/additional-checks-en.md';
+import { Content as AdditionalChecksBn } from '../generated/additional-checks-bn.md';
 const { locale = 'en' } = Astro.props;
 const bn = locale === 'bn';
 const AdditionalChecks = bn ? AdditionalChecksBn : AdditionalChecksEn;

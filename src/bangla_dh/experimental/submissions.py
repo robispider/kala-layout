@@ -22,6 +22,8 @@ from .inputs import TRAIN, HELDOUT, frequency_path, read_json, validate_layout
 from .preferences import PairPreferences, SOURCE
 from .report import csv_text
 from .safety import new_run_directory, protected_hashes
+from .mechanics import evaluator, SOURCE as MECHANICS_SOURCE, verify_sources
+from .mechanics_counts import committed_style_triples, map_triples
 
 MAX_BYTES = 64_000
 
@@ -42,6 +44,7 @@ def _score_map(style, placed, corpora, models, preference, public, data, public_
     for corpus in (*TRAIN, *HELDOUT):
         record = corpora[style, corpus]
         tables = from_style(record, assignment)
+        label_triples = committed_style_triples(style, corpus)
         source = data["styles"][style]["corpora" if corpus in TRAIN else "heldout"][corpus]
         expected = float(public.corpus_j1(source, official_actions, public_model))
         for scenario, model in models.items():
@@ -50,7 +53,10 @@ def _score_map(style, placed, corpora, models, preference, public, data, public_
                 raise ValueError("diagnostic action score disagrees with the official challenge corpus score")
             rows.append({"corpus": corpus, "scenario": scenario,
                          "reference": reference, "diagnostics": diagnostics(tables, model),
-                         "preference": preference.score(tables, model)})
+                         "preference": preference.score(tables, model),
+                         "mechanics": evaluator(scenario).score(tables),
+                         "engram_order": evaluator(scenario).score_triples(map_triples(label_triples, assignment))
+                             if label_triples is not None else None})
     return rows
 
 
@@ -87,6 +93,30 @@ def render(result):
                 f'{100*p["supported_pair_share"]:.2f}% |')
         lines += ["", "Detailed per-finger counts, coverage gaps and partial preference values are in submissions.json. "
                   "The partial values refer to different supported subsets and must not be compared as total comfort scores.", ""]
+        lines += ["### Source-derived movement diagnostics", "",
+                  "Dvorak-7 and Engram avg4 use pinned upstream scoring functions. Higher values award more credit "
+                  "for physical-key mechanics. Both project base/Shift layers onto their keys and exclude modifier "
+                  "effort; they are not whole-typing comfort scores. Bounds retain unsupported pair mass with values "
+                  "between 0 and 1; they are coverage bounds, not confidence intervals. The traditional scenario "
+                  "preserves upstream fingering; model-optimal is an explicitly adapted scenario. Engram order "
+                  "is a separate within-token triple diagnostic.", "",
+                  "| Text | Fingering | Dvorak-7 bounds | Change vs reference | Engram avg4 bounds | Change vs reference | Engram order bounds | Pair coverage |",
+                  "| --- | --- | --- | --- | --- | --- | --- | --- |"]
+        for row in item["scores"]:
+            base = lookup[row["corpus"], row["scenario"]]
+            cells = []
+            for metric in ("dvorak7", "engram_avg4"):
+                ours = row["mechanics"]["bounds"][metric]
+                ref = base["mechanics"]["bounds"][metric]
+                cells += [f"{ours['lower']:.6f}–{ours['upper']:.6f}",
+                          f"{ours['lower']-ref['upper']:+.6f} to {ours['upper']-ref['lower']:+.6f}"]
+            triple = row["engram_order"]
+            order = f"{triple['bounds']['lower']:.6f}–{triple['bounds']['upper']:.6f}" if triple and triple["bounds"] else "unavailable"
+            lines.append(f"| {row['corpus']} | {row['scenario']} | " + " | ".join(cells) +
+                         f" | {order} | {100*row['mechanics']['pair_coverage']:.3f}% |")
+        lines += ["", "Component bounds and the largest frequency-weighted pair deficits are in submissions.json. "
+                  "A positive change interval means more mechanics credit under that model; overlapping zero is "
+                  "unresolved by coverage. These diagnostics never change official challenge acceptance or ordering.", ""]
     if result["problems"]:
         lines += ["## Files not evaluated", ""]
         for problem in result["problems"]:
@@ -109,6 +139,7 @@ def run(paths, out, *, accepted_pairs=None, log=print):
     public_model = public.Model(data)
     preference = PairPreferences()
     evidence = preference.evidence()
+    mechanics_lock = verify_sources()
     before = protected_hashes()
     target = new_run_directory(out)
     problem = load_problem()
@@ -117,7 +148,8 @@ def run(paths, out, *, accepted_pairs=None, log=print):
         raise ValueError("experimental bridge expects the frozen Wikipedia/newspaper training mix")
     models = {k: KeyModel.from_grid(v) for k, v in MODELS.items()}
     corpora = {(s, c): read_json(frequency_path(s, c)) for s in ("A", "D") for c in (*TRAIN, *HELDOUT)}
-    result = {"season": "e1", "command": "submission-diagnostics", "evidence": evidence,
+    result = {"season": "e1+e2", "command": "submission-diagnostics", "evidence": evidence,
+              "mechanics_source_commit": mechanics_lock["commit"],
               "official_data_version": data["version"], "official_data_sha256": data_hash,
               "submissions": [], "references": [], "problems": [], "comfort_rank": None,
               "ranking_effect": "none", "checks": {"source_lookup": True}}
@@ -162,6 +194,7 @@ def run(paths, out, *, accepted_pairs=None, log=print):
     result["checks"]["official_integer_and_action_scores_agree"] = True
     if protected_hashes() != before:
         raise ValueError("a protected scientific input/output changed")
+    verify_sources()
     result["checks"]["scientific_inputs_outputs_byte_identical"] = True
     written = [write_json(target / "submissions.json", result),
                write_json(target / "evidence.json", evidence), write_text(target / "REPORT.md", render(result))]
@@ -176,14 +209,25 @@ def run(paths, out, *, accepted_pairs=None, log=print):
                 "shift_share": d["shift_share_of_non_space_presses"],
                 "pair_support": p["supported_pair_share"],
                 "partial_pair_preference": p["conditional_pair_preference"], "preference_ranking_allowed": False})
+            for metric in ("dvorak7", "engram_avg4"):
+                rows[-1].update({metric + "_" + side: row["mechanics"]["bounds"][metric][side]
+                                 for side in ("lower", "upper")})
+            rows[-1]["mechanics_pair_coverage"] = row["mechanics"]["pair_coverage"]
     if rows:
         written.append(write_text(target / "scores.csv", csv_text(rows, list(rows[0]))))
     inputs = [challenge.SCRIPT, SOURCE / "source-lock.json", *[SOURCE / f["file"] for f in preference.lock["files"]],
               PROJECT_ROOT / "data/problem-v1.json", PROJECT_ROOT / "data/bangla-symbols-v1.json",
               *MODELS.values(), *[frequency_path(s,c) for s,c in corpora],
               *[p for p in (PROJECT_ROOT / "src/bangla_dh").rglob("*.py")]]
+    inputs += [MECHANICS_SOURCE / "source-lock.json", *[MECHANICS_SOURCE / f["file"] for f in mechanics_lock["files"]]]
+    triple_root = PROJECT_ROOT / "results/evaluator-e2/run-v1"
+    triple_files = [triple_root / "counts" / f"style-{s.lower()}-{c.replace('/', '-')}.json.gz"
+                    for s in used_styles for c in (*TRAIN, *HELDOUT)]
+    inputs += [p for p in triple_files if p.exists() and (triple_root / "run-manifest.json").exists()]
+    if any(p.exists() for p in triple_files) and (triple_root / "run-manifest.json").exists():
+        inputs.append(triple_root / "run-manifest.json")
     revision, clean = repo_state()
-    write_json(target / "run-manifest.json", {"season": "e1", "command": "submission-diagnostics",
+    write_json(target / "run-manifest.json", {"season": "e1+e2", "command": "submission-diagnostics",
         "generated_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "git_revision": revision, "working_tree_clean": clean, "python": platform.python_version(),
         "official_data_version": data["version"], "official_data_sha256": data_hash,
@@ -191,7 +235,9 @@ def run(paths, out, *, accepted_pairs=None, log=print):
             "corpora": list((*TRAIN,*HELDOUT)), "scenarios": list(MODELS),
             "input_format": "official challenge parser: UTF-8/BOM or UTF-16, dotted circles and NFC accepted",
             "preference": "supported base-layer source pairs only; no imputation or comfort ranking",
-            "leaderboard_accepted_only": accepted_pairs is not None, "ranking_effect": "none"},
+            "leaderboard_accepted_only": accepted_pairs is not None, "ranking_effect": "none",
+            "mechanics": "upstream Dvorak-7 / 7 and Engram avg4; physical-key projection, modifiers excluded; unsupported mass bounded 0..1",
+            "triples": "committed within-token style triples if available; separate Engram order"},
         "submission_inputs": input_files, "input_sha256": hash_outputs(inputs),
         "output_sha256": hash_outputs(written), "protected_scientific_sha256": before,
         "checks": result["checks"], "evidence": evidence})

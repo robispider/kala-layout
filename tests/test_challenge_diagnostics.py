@@ -52,10 +52,16 @@ class DiagnosticIntegrationTests(unittest.TestCase):
         self.assertEqual(len(actual["scores"]), 10)
         self.assertEqual(len(result["references"][0]["scores"]), 10)
         self.assertTrue(all(not r["preference"]["ranking_allowed"] for r in actual["scores"]))
+        self.assertTrue(all(not r["mechanics"]["whole_typing_comfort"] for r in actual["scores"]))
+        self.assertTrue(all("dvorak7" in r["mechanics"]["bounds"] and "engram_avg4" in r["mechanics"]["bounds"]
+                            for r in actual["scores"]))
+        self.assertTrue(all(r["engram_order"] is not None for r in actual["scores"]))
         report = (self.root / "direct/REPORT.md").read_text(encoding="utf-8")
         self.assertNotIn("<script>", report)
         self.assertIn("&lt;script&gt;", report)
         self.assertIn("cannot rank", report)
+        self.assertIn("Source-derived movement diagnostics", report)
+        self.assertIn("Change vs reference", report)
         self.assertTrue(all(sha256_file(PROJECT_ROOT / p) == h for p,h in before.items()))
         manifest = json.loads((self.root / "direct/run-manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["official_data_version"], challenge.DATA_VERSION)
@@ -109,6 +115,16 @@ class DiagnosticIntegrationTests(unittest.TestCase):
             self.assertEqual(challenge.run_verify([bad], diagnostics=self.root / "failure2"), 1)
             self.assertEqual(leaderboard.run([good], check=True, diagnostics=self.root / "failure3"), 0)
             self.assertEqual(leaderboard.run([bad], check=True, diagnostics=self.root / "failure4"), 1)
+
+    def test_mechanics_integrity_failure_cannot_change_official_results(self):
+        good = self.write("good.json", self.changed())
+        bad = self.write("bad.json", {"style": "B", "layout": {}})
+        before = leaderboard.score_files([good])
+        with contextlib.redirect_stdout(io.StringIO()), patch.object(submissions, "verify_sources", side_effect=ValueError("mechanics hash mismatch")):
+            self.assertEqual(challenge.run_verify([good], diagnostics=self.root / "mechanics-failure"), 0)
+            self.assertEqual(challenge.run_verify([bad], diagnostics=self.root / "mechanics-bad"), 1)
+            self.assertEqual(leaderboard.run([good], check=True, diagnostics=self.root / "mechanics-board"), 0)
+        self.assertEqual(leaderboard.score_files([good]), before)
 
     def test_protected_destination_and_existing_run_do_not_affect_official_result(self):
         file = self.write("good.json", self.changed())

@@ -6,7 +6,8 @@ from ..reference import sha256_file
 
 def new_run_directory(path) -> Path:
     target = Path(path).resolve()
-    roots = [PROJECT_ROOT / "work" / "evaluator-experiments", PROJECT_ROOT / "results" / "evaluator-e1"]
+    roots = [PROJECT_ROOT / "work" / "evaluator-experiments", PROJECT_ROOT / "results" / "evaluator-e1",
+             PROJECT_ROOT / "results" / "evaluator-e2"]
     if not any(target.is_relative_to(root.resolve()) and target != root.resolve() for root in roots):
         raise ValueError("output must be a new child of work/evaluator-experiments or results/evaluator-e1")
     if target.exists():

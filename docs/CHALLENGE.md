@@ -68,6 +68,8 @@ The preference table covers only part of typing. Its partial values are not whol
 
 Further details: [experimental evaluation instructions](../src/bangla_dh/experimental/README.md). You can also run the diagnostic reader directly on a challenge-format file.
 
+The optional report also compares source-verified Dvorak-7 and Engram pair movement with your style's reference, including component bounds and frequent transitions that lose credit. Engram triple order is shown from committed counts. These project Shift actions onto physical keys and exclude modifier effort; unsupported events retain coverage bounds. They explain movement trade-offs and do not change the official score. [Read the model comparison](MECHANICS.md).
+
 ## Compare with other public layouts
 
 `--public` lists the held-out scores of Kala Jhor, Kala Goti, UniJoy, Windows Default, Probhat, Munir Optima, Bornona and National. To compare another layout under the same model, add its key map as described in [data/baselines/README.md](../data/baselines/README.md) and rerun the comparison.
