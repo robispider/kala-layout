@@ -1,6 +1,10 @@
 # Vendored reference inputs are pinned by SHA-256; keep them byte-identical.
 reference/colemak-dh-resources/** -text
 results/** text eol=lf
+# Compressed derived results must never undergo newline conversion.
+*.gz -text
+# CSV writers use CRLF; manifests pin those exact bytes too.
+results/**/*.csv -text whitespace=cr-at-eol
 # Vendored Kala inputs and comparison layouts are pinned by SHA-256; keep them byte-identical.
 data/kala/** -text
 data/baselines/layouts/** -text

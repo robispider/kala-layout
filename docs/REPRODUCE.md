@@ -109,3 +109,14 @@ The search is deterministic: the same seed on the same Python gives the same lay
 ## Running on a smaller computer
 
 Everything that takes long is parallel. Use `--workers` to limit processes, and `mix-optimize --seeds 64` or `generate-layout --seeds 16` to shorten a search. Keep in mind that fewer seeds find the best layout less often. The assembled texts need about 4 GB of disk space on top of the 1 GB download.
+
+## Continuous-text evaluation (e3)
+
+The [continuous-text report](../results/evaluator-e3/run-v1/REPORT.md) counts windows that touch spaces and reports endpoint movement across a space. It is an additional diagnostic season; it selects no layout and changes no official J1 score. Rescore the committed derived counts without downloading texts:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m bangla_dh.experimental.continuous_run --out work/evaluator-experiments/continuous-repeat --workers 4
+```
+
+Add `--rebuild-counts` to rebuild from pinned local corpus and token files. Use `--heldout-only` to run the smaller held-out stage first. Every output directory must be new. The full run includes A/D training diagnostics on the original 50/50 mix and all fixed-layout held-out comparisons under both fingerings. Exact counting checks and actual encoding/scanning/cache/memory measurements are in the report; rescoring retains the saved counting benchmarks.

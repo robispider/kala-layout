@@ -56,12 +56,17 @@ class DiagnosticIntegrationTests(unittest.TestCase):
         self.assertTrue(all("dvorak7" in r["mechanics"]["bounds"] and "engram_avg4" in r["mechanics"]["bounds"]
                             for r in actual["scores"]))
         self.assertTrue(all(r["engram_order"] is not None for r in actual["scores"]))
+        if (PROJECT_ROOT / "results/evaluator-e3/run-v1/run-manifest.json").exists():
+            self.assertTrue(all(r["continuous"]["available"] for r in actual["scores"]))
+            self.assertTrue(all(r["continuous"]["ranking_effect"] == "none" for r in actual["scores"]))
+            self.assertTrue(all("corpus_sha256" in r["continuous"] for r in actual["scores"]))
         report = (self.root / "direct/REPORT.md").read_text(encoding="utf-8")
         self.assertNotIn("<script>", report)
         self.assertIn("&lt;script&gt;", report)
         self.assertIn("cannot rank", report)
         self.assertIn("Source-derived movement diagnostics", report)
         self.assertIn("Change vs reference", report)
+        self.assertIn("Continuous-text movement across spaces", report)
         self.assertTrue(all(sha256_file(PROJECT_ROOT / p) == h for p,h in before.items()))
         manifest = json.loads((self.root / "direct/run-manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["official_data_version"], challenge.DATA_VERSION)
@@ -81,6 +86,20 @@ class DiagnosticIntegrationTests(unittest.TestCase):
         expected = self.scorer.evaluate(self.reference, self.data, self.data_hash)
         self.assertEqual(got["submissions"][0]["official"]["layout_sha256"], expected["layout_sha256"])
         self.assertEqual(got["submissions"][0]["official"]["J1_exact"], expected["J1_exact"])
+
+    @unittest.skipUnless((PROJECT_ROOT / "results/evaluator-e3/run-v1/run-manifest.json").exists(), "e3 not published yet")
+    def test_partial_continuous_caches_still_produce_optional_report(self):
+        file = self.write("partial.json", self.changed())
+        real_lookup = submissions.committed_style_boundaries
+        def heldout_only(style, corpus):
+            return None if corpus.endswith("/train") else real_lookup(style, corpus)
+        with patch.object(submissions, "committed_style_boundaries", side_effect=heldout_only), contextlib.redirect_stdout(io.StringIO()):
+            result = submissions.run([file], self.root / "partial")
+        self.assertEqual(result["problems"], [])
+        for row in result["submissions"][0]["scores"]:
+            self.assertEqual(row["continuous"]["available"], not row["corpus"].endswith("/train"))
+        self.assertIn("unavailable", (self.root / "partial/REPORT.md").read_text(encoding="utf-8"))
+        self.assertTrue((self.root / "partial/scores.csv").exists())
 
     def test_invalid_missing_oversized_files_never_receive_diagnostics(self):
         bad = json.loads(json.dumps(self.reference))

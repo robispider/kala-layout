@@ -795,6 +795,37 @@ and independently testable.
 
 ## 15. Changelog
 
+**Evaluation season e3 (13 October 2026)**, continuous-text diagnostics:
+
+* Each layout retains its own frozen word encoder. A running-paragraph pass
+  adds exact space-touching action triples: edge-space, key–space–key, and
+  multiple-space windows (including space–one-action-word–space). Escapes,
+  paragraph ends and document ends reset the stream. Supported punctuation
+  remains an action; modifier presses are excluded.
+* The word pass must reproduce e2 unigrams, pairs and within-word triples
+  exactly. Running token frequencies and first/last-paragraph counts must
+  reproduce the token table. Edge-space formulas, an independent sample
+  scanner and the full uninterrupted-run window identity are checked.
+* Key–space–key endpoint repeat, same-finger different-key, same-hand,
+  opposite-hand and distance diagnostics are separate, unweighted statistics
+  under both frozen fingerings. All spanning windows remain in denominators;
+  unsupported endpoint mass receives explicit coverage bounds. No thumb
+  assignment, changed Engram order formula or combined comfort score is added.
+* Eight fixed layouts use all three existing held-out sources. Retained A/D
+  maps reuse style-specific label counts, with training diagnostics on the
+  original 50/50 mix. Existing benchmarks support exploratory comparison;
+  there is no new candidate selection, search, layout or transferred proof.
+* Results, timings and input/code/output hashes live in
+  `results/evaluator-e3/run-v1/`. Optional challenge reports use committed
+  hashed counts. Original J0/J1, DATA_VERSION, reproduction lock and official
+  leaderboard remain unchanged. Paired explanatory copy needs native-speaker
+  editorial review before publication.
+* Pre-existing artifact packaging errors were found: `results/** text eol=lf`
+  normalized bytes inside e2 gzip files and removed the manifest-pinned CRLF
+  endings of evaluator CSV files. Gzip and result CSV files now have binary
+  exceptions. Affected artifacts are restored only at their existing published
+  SHA-256; scientific values and hashes are preserved.
+
 **Evaluation season e2 (13 October 2026)**, additional movement comparison:
 
 * Source-derived MIT Dvorak-7 and Engram functions are pinned at upstream commit

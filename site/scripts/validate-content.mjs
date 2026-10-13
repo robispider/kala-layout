@@ -67,6 +67,7 @@ export async function validateContent() {
   }
   await validateHomeDiagnostics();
   await validateMechanics();
+  await validateContinuous();
   console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
 }
 async function validateMechanics() {
@@ -87,10 +88,44 @@ async function validateMechanics() {
   }));
   for (const locale of locales) {
     const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
-    const tables = rows(markdown);
+    const tables = rows(markdown.split('<!-- continuous-e3 -->')[0]);
     assert.equal(tables.length, 20);
     const actual = [tables.slice(2, 10), tables.slice(12, 20)].map((table) => table.map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim()))));
     assert.deepEqual(actual, expected, `Movement result drift: ${locale}`);
+  }
+}
+async function validateContinuous() {
+  const source = 'results/evaluator-e3/run-v1/public-summary.json';
+  const raw = await readFile(path.join(repoRoot, source));
+  const manifest = JSON.parse(await readFile(path.join(repoRoot, 'results/evaluator-e3/run-v1/run-manifest.json'), 'utf8'));
+  assert.equal(createHash('sha256').update(raw).digest('hex'), manifest.output_sha256[source], 'Continuous scores differ from their manifest');
+  const run = JSON.parse(raw.toString('utf8'));
+  assert.equal(run.layout_count, 8);
+  assert.equal(run.candidate_count, 101);
+  assert.equal(run.corpus_scores.length, 48);
+  assert.equal(run.checks.published_and_prior_seasons_preserved, true);
+  for (const row of run.corpus_scores) {
+    const c = row.continuous;
+    assert.equal(Object.values(c.category_counts).reduce((a, b) => a + b, 0), c.total_valid_windows);
+    assert.equal(c.within_word_share, c.category_counts.within_word / c.total_valid_windows);
+    assert.equal(c.ranking_effect, 'none');
+  }
+  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default', 'Probhat', 'Munir Optima (uni)', 'Bornona', 'UniJoy', 'National (Jatiya)'];
+  const interval = (row, event) => row.bounds[event].lower === row.bounds[event].upper
+    ? `${(100*row.bounds[event].lower).toFixed(3)}%`
+    : `${(100*row.bounds[event].lower).toFixed(3)}–${(100*row.bounds[event].upper).toFixed(3)}%`;
+  const expected = names.map((name) => {
+    const t = run.public_summary.traditional[name];
+    const m = run.public_summary['model-optimal'][name];
+    return [name, `${(100*t.within_word_share).toFixed(3)}%`, interval(t, 'same_finger_different_key'),
+      interval(m, 'same_finger_different_key'), interval(t, 'opposite_hand'), `${(100*t.coverage).toFixed(3)}%`];
+  });
+  for (const locale of locales) {
+    const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
+    const section = markdown.split('<!-- continuous-e3 -->')[1];
+    assert(section, `Missing continuous-text explanation: ${locale}`);
+    const actual = rows(section).slice(2).map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim())));
+    assert.deepEqual(actual, expected, `Continuous result drift: ${locale}`);
   }
 }
 // Homepage diagnostics must match the saved experimental run, not the J1 board.

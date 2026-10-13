@@ -24,6 +24,8 @@ from .report import csv_text
 from .safety import new_run_directory, protected_hashes
 from .mechanics import evaluator, SOURCE as MECHANICS_SOURCE, verify_sources
 from .mechanics_counts import committed_style_triples, map_triples
+from .continuous_counts import committed_style_boundaries, DEFAULT as CONTINUOUS_ROOT, cache_name
+from .continuous import evaluate_cache
 
 MAX_BYTES = 64_000
 
@@ -45,6 +47,7 @@ def _score_map(style, placed, corpora, models, preference, public, data, public_
         record = corpora[style, corpus]
         tables = from_style(record, assignment)
         label_triples = committed_style_triples(style, corpus)
+        continuous_cache = committed_style_boundaries(style, corpus)
         source = data["styles"][style]["corpora" if corpus in TRAIN else "heldout"][corpus]
         expected = float(public.corpus_j1(source, official_actions, public_model))
         for scenario, model in models.items():
@@ -56,7 +59,12 @@ def _score_map(style, placed, corpora, models, preference, public, data, public_
                          "preference": preference.score(tables, model),
                          "mechanics": evaluator(scenario).score(tables),
                          "engram_order": evaluator(scenario).score_triples(map_triples(label_triples, assignment))
-                             if label_triples is not None else None})
+                             if label_triples is not None else None,
+                         "continuous": {"available": True, "season": "e3",
+                             "corpus_sha256": continuous_cache["corpus_sha256"],
+                             "cache": (CONTINUOUS_ROOT / "counts" / cache_name("style", style, corpus)).relative_to(PROJECT_ROOT).as_posix(),
+                             **evaluate_cache(continuous_cache, model, assignment)} if continuous_cache is not None else
+                             {"available": False, "season": "e3", "reason": "committed continuous-action counts unavailable"}})
     return rows
 
 
@@ -117,6 +125,27 @@ def render(result):
         lines += ["", "Component bounds and the largest frequency-weighted pair deficits are in submissions.json. "
                   "A positive change interval means more mechanics credit under that model; overlapping zero is "
                   "unresolved by coverage. These diagnostics never change official challenge acceptance or ordering.", ""]
+        lines += ["### Continuous-text movement across spaces", "",
+                  "Season e3 uses each style's own encoder and hashed running-text counts. Space stays in the "
+                  "stream; endpoint relationships refer to key–space–key windows only. Same-key repeats and "
+                  "same-finger moves between different keys are separate. Rates retain unsupported endpoint mass "
+                  "in 0..1 bounds. Modifier presses are excluded. No thumb model or comfort total is assigned.", "",
+                  "| Text | Fingering | Within-word share | Same-finger move bounds (yours / reference) | Opposite-hand bounds | Endpoint coverage |",
+                  "| --- | --- | --- | --- | --- | --- |"]
+        for row in item["scores"]:
+            c = row["continuous"]
+            base = lookup[row["corpus"], row["scenario"]]["continuous"]
+            if not c["available"] or not base["available"]:
+                lines.append(f"| {row['corpus']} | {row['scenario']} | unavailable | unavailable | unavailable | unavailable |")
+                continue
+            def interval(event, source=c):
+                b = source["bounds"][event]
+                return f"{100*b['lower']:.3f}–{100*b['upper']:.3f}%"
+            lines.append(f"| {row['corpus']} | {row['scenario']} | {100*c['within_word_share']:.3f}% | "
+                         f"{interval('same_finger_different_key')} / {interval('same_finger_different_key', base)} | "
+                         f"{interval('opposite_hand')} | {100*c['coverage']:.3f}% |")
+        lines += ["", "Category counts, repeat/hand rates, same-finger distances and count provenance are in submissions.json. "
+                  "These are exploratory movement diagnostics and do not affect official scoring or acceptance.", ""]
     if result["problems"]:
         lines += ["## Files not evaluated", ""]
         for problem in result["problems"]:
@@ -148,7 +177,7 @@ def run(paths, out, *, accepted_pairs=None, log=print):
         raise ValueError("experimental bridge expects the frozen Wikipedia/newspaper training mix")
     models = {k: KeyModel.from_grid(v) for k, v in MODELS.items()}
     corpora = {(s, c): read_json(frequency_path(s, c)) for s in ("A", "D") for c in (*TRAIN, *HELDOUT)}
-    result = {"season": "e1+e2", "command": "submission-diagnostics", "evidence": evidence,
+    result = {"season": "e1+e2+e3", "command": "submission-diagnostics", "evidence": evidence,
               "mechanics_source_commit": mechanics_lock["commit"],
               "official_data_version": data["version"], "official_data_sha256": data_hash,
               "submissions": [], "references": [], "problems": [], "comfort_rank": None,
@@ -213,6 +242,15 @@ def run(paths, out, *, accepted_pairs=None, log=print):
                 rows[-1].update({metric + "_" + side: row["mechanics"]["bounds"][metric][side]
                                  for side in ("lower", "upper")})
             rows[-1]["mechanics_pair_coverage"] = row["mechanics"]["pair_coverage"]
+            continuous = row["continuous"]
+            rows[-1]["continuous_available"] = continuous["available"]
+            rows[-1].update(within_word_share=None, spanning_same_finger_lower=None,
+                            spanning_same_finger_upper=None, spanning_endpoint_coverage=None)
+            if continuous["available"]:
+                rows[-1].update(within_word_share=continuous["within_word_share"],
+                    spanning_same_finger_lower=continuous["bounds"]["same_finger_different_key"]["lower"],
+                    spanning_same_finger_upper=continuous["bounds"]["same_finger_different_key"]["upper"],
+                    spanning_endpoint_coverage=continuous["coverage"])
     if rows:
         written.append(write_text(target / "scores.csv", csv_text(rows, list(rows[0]))))
     inputs = [challenge.SCRIPT, SOURCE / "source-lock.json", *[SOURCE / f["file"] for f in preference.lock["files"]],
@@ -226,8 +264,13 @@ def run(paths, out, *, accepted_pairs=None, log=print):
     inputs += [p for p in triple_files if p.exists() and (triple_root / "run-manifest.json").exists()]
     if any(p.exists() for p in triple_files) and (triple_root / "run-manifest.json").exists():
         inputs.append(triple_root / "run-manifest.json")
+    continuous_files = [CONTINUOUS_ROOT / "counts" / cache_name("style", s, c)
+                        for s in used_styles for c in (*TRAIN, *HELDOUT)]
+    inputs += [p for p in continuous_files if p.exists() and (CONTINUOUS_ROOT / "run-manifest.json").exists()]
+    if any(p.exists() for p in continuous_files) and (CONTINUOUS_ROOT / "run-manifest.json").exists():
+        inputs.append(CONTINUOUS_ROOT / "run-manifest.json")
     revision, clean = repo_state()
-    write_json(target / "run-manifest.json", {"season": "e1+e2", "command": "submission-diagnostics",
+    write_json(target / "run-manifest.json", {"season": "e1+e2+e3", "command": "submission-diagnostics",
         "generated_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "git_revision": revision, "working_tree_clean": clean, "python": platform.python_version(),
         "official_data_version": data["version"], "official_data_sha256": data_hash,
@@ -237,7 +280,8 @@ def run(paths, out, *, accepted_pairs=None, log=print):
             "preference": "supported base-layer source pairs only; no imputation or comfort ranking",
             "leaderboard_accepted_only": accepted_pairs is not None, "ranking_effect": "none",
             "mechanics": "upstream Dvorak-7 / 7 and Engram avg4; physical-key projection, modifiers excluded; unsupported mass bounded 0..1",
-            "triples": "committed within-token style triples if available; separate Engram order"},
+            "triples": "committed within-token style triples if available; separate Engram order",
+            "continuous": "hashed e3 style windows if available; spaces retained; unweighted endpoint diagnostics; no thumb model"},
         "submission_inputs": input_files, "input_sha256": hash_outputs(inputs),
         "output_sha256": hash_outputs(written), "protected_scientific_sha256": before,
         "checks": result["checks"], "evidence": evidence})

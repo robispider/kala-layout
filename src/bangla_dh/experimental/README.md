@@ -1,5 +1,26 @@
 # Experimental evaluation season e1
 
+## Continuous-text movement checks (e3)
+
+`python -m bangla_dh.experimental.continuous_run --out work/evaluator-experiments/continuous-repeat --workers 4`
+rescoring uses hashed committed action-window counts without downloading texts.
+Add `--rebuild-counts` for an exact running-paragraph pass over pinned local
+corpora; `--heldout-only` runs the held-out stage before the larger training passes.
+
+Results and manifests are in `results/evaluator-e3/run-v1/`. All valid triples
+are classified as within-word, edge-space, spanning-space or multiple-space.
+Each layout has its own encoder; escapes and paragraph/document ends break windows.
+For key–space–key, endpoint repeat, same-finger movement, hand relation and
+distance are descriptive diagnostics under both frozen fingerings. Spaces stay
+in the stream. No thumb assignment, new weights, comfort total, candidate
+selection or search is introduced. Original J1 and challenge ordering are preserved.
+
+Rebuilt action counts/within-word triples must equal e2. Word frequencies and
+paragraph boundaries, edge formulas, reference-sample counting and uninterrupted
+run totals are verified. Benchmarks include encoding, scanning, cache size and
+process-lifetime peak memory. All writers use the project guard. Gzip artifacts
+are binary in Git and deterministic; no corpus text is written to results.
+
 ## Source-derived movement checks (e2)
 
 `python -m bangla_dh.experimental.mechanics_run --out work/evaluator-experiments/mechanics-repeat --workers 4`
