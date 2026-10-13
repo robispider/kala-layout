@@ -30,6 +30,8 @@ const sourceRoutes = new Map(pages.map((page) => [page.source, page.route]));
 // the repository become GitHub links, so the Markdown works on GitHub and on the website.
 export function rewriteLinks(markdown, source, locale) {
   return markdown.replace(/(!?\[[^\]]*\])\(([^)]+)\)/g, (match, label, href) => {
+    // Canonical Markdown keeps one target in both languages; the website follows the reader's locale.
+    if (href.startsWith(`${releasesUrl}/en/`)) return `${label}(${href.replace(`${releasesUrl}/en/`, `${releasesUrl}/${locale}/`)})`;
     if (/^(?:https?:|mailto:|#)/.test(href)) return match;
     const [target, anchor] = href.split('#');
     const resolved = path.posix.normalize(path.posix.join(path.posix.dirname(source), decodeURIComponent(target)));

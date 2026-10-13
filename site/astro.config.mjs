@@ -20,6 +20,7 @@ export default defineConfig({
         { icon: 'github', label: 'kala-layout on GitHub', href: 'https://github.com/robispider/kala-layout' },
       ],
       customCss: ['./src/styles/kala.css'],
+      components: { Hero: './src/components/ResearchHero.astro' },
       sidebar: [
         {
           label: 'The research', translations: { bn: 'গবেষণা' },
@@ -37,7 +38,7 @@ export default defineConfig({
       pagination: true,
       lastUpdated: false,
       head: [
-        { tag: 'meta', attrs: { name: 'theme-color', content: '#31583e' } },
+        { tag: 'meta', attrs: { name: 'theme-color', content: '#245bc4' } },
       ],
     }),
   ],

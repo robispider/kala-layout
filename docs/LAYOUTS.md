@@ -2,6 +2,12 @@
 
 These are the two layouts found by the search ([how they were found](HOW_WE_FOUND_THEM.md)). The tables show where every symbol sits on a standard ANSI keyboard; in each table the upper row of a pair is the Shift layer and the lower row the base layer. The files for Kala are in [results/kala-keyboards/](../results/kala-keyboards), and Kala's own guides explain installing and using them.
 
+## Use and practise the layouts
+
+[Download Kala for Windows](https://robispider.github.io/kala-releases/en/) and follow the [installation guide](https://robispider.github.io/kala-releases/en/guide/installation/). Choose **Kala Jhor** or **Kala Goti** on Kala's **Layouts** page. The [Jhor typing guide](https://robispider.github.io/kala-releases/en/layouts/kala-jhor/) and [Goti typing guide](https://robispider.github.io/kala-releases/en/layouts/kala-goti/) explain the vowel rules and everyday typing.
+
+For practice, open **Learn** in Kala and follow the [learning guide](https://robispider.github.io/kala-releases/en/guide/learning/). Learn provides short daily sessions and practice for problem keys. Older installers may lack Learn; check the app site's [release status](https://robispider.github.io/kala-releases/en/release-status/) for availability. This website records the research; typing and practice happen in the Windows app.
+
 ## Kala Goti (কালা গতি): style A, UniJoy-style vowels
 
 * Every vowel sign (kar) has its own key: ক + ি = কি.

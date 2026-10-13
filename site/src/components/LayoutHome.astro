@@ -7,6 +7,7 @@ const bn = locale === 'bn';
 const AdditionalChecks = bn ? AdditionalChecksBn : AdditionalChecksEn;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = (route: string) => `${base}/${locale}/${route}/`;
+const appHref = (route: string = '') => `https://robispider.github.io/kala-releases/${locale}/${route ? route + '/' : ''}`;
 const digits = (value: string | number) => (bn ? String(value).replace(/[0-9]/g, (d) => '০১২৩৪৫৬৭৮৯'[Number(d)]) : String(value));
 const fmt = (n: number) => digits(n.toFixed(4));
 const columns = ['wikipedia', 'newspaper', 'unseenNews'];
@@ -27,14 +28,9 @@ const steps = [
 ];
 ---
 <div class="kala-home">
-  <div class="release-note">
-    <span class="status-dot" aria-hidden="true"></span>
-    <span>{bn ? 'কালা অ্যাপের গবেষণা-সহচর · টেক্সট এখানে রাখা হয় না, চালানোর সময় নামানো হয়' : 'The research behind the Kala app · texts are not stored here, they are fetched when you run it'}</span>
-    <a href="https://robispider.github.io/kala-releases/">{bn ? 'কালা অ্যাপ' : 'The Kala app'} ↗</a>
-  </div>
   <section class="home-section" aria-labelledby="result-title">
     <div class="section-heading">
-      <p class="eyebrow">{bn ? 'ফল' : 'THE RESULT'}</p>
+      <p class="eyebrow">{bn ? '০১ / ফল' : '01 / THE RESULTS'}</p>
       <h2 id="result-title">{bn ? 'দুটি লেআউট, কম্পিউটার সার্চে পাওয়া, অদেখা টেক্সটে যাচাই করা।' : 'Two layouts, found by search, checked on unseen text.'}</h2>
       <p>{bn ? 'প্রতি অক্ষরে আঙুলের মডেল করা পরিশ্রম (J1); কম হলে ভালো। এটি মাপা টাইপিং-গতি নয়।' : 'Modeled finger effort per character (J1); lower is better. This is not measured typing speed.'}</p>
     </div>
@@ -46,19 +42,23 @@ const steps = [
     </div>
     <p class="small-note">{bn ? 'প্রতিটি ফিক্সড লেআউট Kala-তে ইনস্টল থাকা অবস্থায় গবেষণার সময় তুলনা করা হয়েছে। ফোনেটিক লেআউট তুলনায় নেই।' : 'Every fixed layout installed in Kala when the research ran. Phonetic layouts are not compared.'} <a href={href('leaderboard')}>{bn ? 'লিডারবোর্ড ও জমা দেওয়া লেআউট' : 'Leaderboard and submissions'} →</a></p>
   </section>
+  <section class="home-section use-section" aria-labelledby="use-title">
+    <div><p class="eyebrow">{bn ? 'গবেষণা থেকে ব্যবহার' : 'FROM RESEARCH TO EVERYDAY TYPING'}</p><h2 id="use-title">{bn ? 'লেআউট দুটি ব্যবহার ও অনুশীলন করুন।' : 'Put the layouts in your hands.'}</h2><p class="section-body">{bn ? 'উইন্ডোজে কালা ইনস্টল করুন, কালা ঝড় বা কালা গতি বেছে নিন, তারপর Learn-এ ছোট দৈনিক সেশনে অনুশীলন করুন। ব্যবহার ও অনুশীলনের নির্দেশিকা কালা অ্যাপের ওয়েবসাইটে আছে।' : 'Install Kala on Windows, choose Kala Jhor or Kala Goti, and practise in short daily sessions with Learn. The app site has installation, typing, and practice guides.'}</p></div>
+    <div class="use-links"><a href={appHref()}><span>{bn ? 'কালা ডাউনলোড করুন' : 'Download Kala for Windows'}</span> ↗</a><a href={appHref('layouts/kala-jhor')}><span>{bn ? 'কালা ঝড় দিয়ে লিখুন' : 'Type with Kala Jhor'}</span> ↗</a><a href={appHref('layouts/kala-goti')}><span>{bn ? 'কালা গতি দিয়ে লিখুন' : 'Type with Kala Goti'}</span> ↗</a><a href={appHref('guide/learning')}><span>{bn ? 'Learn-এ অনুশীলন করুন' : 'Start practising with Learn'}</span> ↗</a></div>
+  </section>
   <section class="home-section additional-checks" aria-label={bn ? 'লেআউটের আরও কিছু যাচাই' : 'Additional layout checks'}>
     <AdditionalChecks />
   </section>
   <section class="home-section" aria-labelledby="do-title">
     <div class="section-heading">
-      <p class="eyebrow">{bn ? 'নিজে করে দেখুন' : 'DO IT YOURSELF'}</p>
+      <p class="eyebrow">{bn ? '০২ / নিজে করে দেখুন' : '02 / REPRODUCE & CHALLENGE'}</p>
       <h2 id="do-title">{bn ? 'বিশ্বাস করার দরকার নেই; চালিয়ে দেখুন।' : 'No need to trust us. Run it.'}</h2>
     </div>
     <div class="guide-grid">{actions.map((a) => <a class="guide-card" href={href(a.route)}><span class="guide-number">{a.number}</span><h3>{a.title}</h3><p>{a.body}</p><span class="text-link">{a.cta} →</span></a>)}</div>
   </section>
   <section class="home-section" aria-labelledby="chain-title">
     <div class="section-heading">
-      <p class="eyebrow">{bn ? 'টেক্সট থেকে লেআউট' : 'FROM TEXT TO LAYOUT'}</p>
+      <p class="eyebrow">{bn ? '০৩ / টেক্সট থেকে লেআউট' : '03 / THE METHOD'}</p>
       <h2 id="chain-title">{bn ? 'ছয়টি ধাপ, প্রতিটি নিজে যাচাই করে।' : 'Six steps, each one checks itself.'}</h2>
     </div>
     <div class="layout-grid">{steps.map((s, i) => <article class="layout-card"><span class="layout-kind">{digits(i + 1)} / {digits(steps.length)}</span><h3>{s.title}</h3><p>{s.body}</p></article>)}</div>
@@ -81,9 +81,6 @@ const steps = [
 <style>
   .kala-home { --home-border: var(--sl-color-gray-5); line-height: 1.7; }
   .kala-home :is(h2,h3,p) { margin: 0; }
-  .release-note { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; padding: 1rem 0; border-block: 1px solid var(--home-border); font-size: .83rem; color: var(--sl-color-gray-2); }
-  .release-note a { margin-left: auto; font-weight: 650; }
-  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sl-color-accent); }
   .home-section { padding-block: 3.2rem; border-bottom: 1px solid var(--home-border); }
   .eyebrow { font-size: .72rem; letter-spacing: .1em; color: var(--sl-color-text-accent); font-weight: 750; margin-bottom: .65rem !important; }
   h2 { font-size: clamp(1.65rem,3vw,2.2rem); line-height: 1.3; letter-spacing: -.035em; color: var(--sl-color-white); }
@@ -104,7 +101,14 @@ const steps = [
   .additional-checks :global(th) { font-size: .8rem; font-weight: 650; color: var(--sl-color-gray-2); }
   .guide-grid, .layout-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.7rem; }
   .guide-grid > *, .layout-grid > * { margin-top: 0 !important; }
-  .layout-card, .guide-card { border: 1px solid var(--home-border); border-radius: 16px; padding: 1.3rem; display: flex; flex-direction: column; min-width: 0; }
+  .layout-card, .guide-card { border: 1px solid var(--home-border); border-radius: 4px; padding: 1.3rem; display: flex; flex-direction: column; min-width: 0; }
+  .layout-card { border: 0; border-top: 1px solid var(--home-border); border-radius: 0; padding-inline: 0; }
+  .use-section { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-left: 3px solid var(--sl-color-accent); background: var(--sl-color-gray-6); }
+  .use-section h2 { font-size: 1.8rem; }
+  .use-section .section-body { font-size: .9rem; margin-bottom: 0 !important; }
+  .use-links { display: grid; }
+  .use-links a { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--home-border); font-size: .85rem; font-weight: 600; text-decoration: none; }
+  .use-links a:hover { text-decoration: underline; }
   .guide-number { font-size: .75rem; font-weight: 750; color: var(--sl-color-text-accent); margin-bottom: 1rem; }
   .layout-card p, .guide-card p { margin-top: .7rem; font-size: .9rem; color: var(--sl-color-gray-2); flex: 1; }
   .text-link { font-size: .86rem; font-weight: 650; color: var(--sl-color-text-accent); }
@@ -115,16 +119,16 @@ const steps = [
   .guide-card { text-decoration: none; color: var(--sl-color-text); transition: border-color .15s, background .15s; }
   .guide-card:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
   .research-section { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
-  .research-facts { border: 1px solid var(--home-border); border-radius: 16px; padding: 1.5rem; background: var(--sl-color-gray-6); }
+  .research-facts { border: 1px solid var(--home-border); border-radius: 4px; padding: 1.5rem; background: var(--sl-color-gray-6); }
   .research-facts > div + div { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--home-border); }
   .research-facts strong { display: block; font-size: clamp(1.6rem,3vw,2.2rem); letter-spacing: -.04em; color: var(--sl-color-text-accent); }
   .research-facts span { display: block; font-size: .83rem; color: var(--sl-color-gray-2); }
   .research-note { grid-column: 1 / -1; padding: 1rem; border-left: 3px solid var(--sl-color-accent); border-radius: 0 8px 8px 0; background: var(--sl-color-gray-6); color: var(--sl-color-gray-2); font-size: .82rem; }
   .inline-links { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; font-size: .9rem; font-weight: 650; }
-  .free-section { padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-radius: 16px; background: var(--sl-color-gray-6); }
+  .free-section { padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-radius: 4px; background: var(--sl-color-gray-6); }
   :global(html[lang='bn']) .additional-checks :global(h2) { letter-spacing: 0; line-height: 1.5; }
   :global(html[lang='bn']) :is(h2,h3) { letter-spacing: 0; line-height: 1.5; }
-  @media (max-width: 55rem) { .guide-grid, .layout-grid, .research-section { grid-template-columns: 1fr; } }
-  @media (max-width: 45rem) { .home-section { padding-block: 2rem; } .release-note a { margin-left: 0; } .free-section { padding: 1.3rem; } }
+  @media (max-width: 55rem) { .guide-grid, .layout-grid, .research-section, .use-section { grid-template-columns: 1fr; } }
+  @media (max-width: 45rem) { .home-section { padding-block: 2rem; } .free-section, .use-section { padding: 1.3rem; } }
   @media (prefers-reduced-motion: reduce) { .guide-card { transition: none; } }
 </style>

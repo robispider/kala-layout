@@ -2,6 +2,12 @@
 
 এই দুটি লেআউট সার্চে খুঁজে পাওয়া ([কীভাবে খুঁজে পাওয়া গেল](HOW_WE_FOUND_THEM.md))। টেবিলগুলোতে সাধারণ ANSI কিবোর্ডে প্রতিটি প্রতীক কোথায় বসেছে তা দেখানো হয়েছে; প্রতিটি টেবিলে জোড়ার ওপরের সারি Shift স্তর, নিচের সারি বেস স্তর। Kala-র জন্য ফাইলগুলো আছে [results/kala-keyboards/](../results/kala-keyboards) ফোল্ডারে, আর ইনস্টল ও ব্যবহারের ধাপ Kala-র নিজস্ব নির্দেশিকায়।
 
+## লেআউট ব্যবহার ও অনুশীলন করুন
+
+[উইন্ডোজের জন্য কালা ডাউনলোড করুন](https://robispider.github.io/kala-releases/en/) এবং [ইনস্টলের নির্দেশিকা](https://robispider.github.io/kala-releases/en/guide/installation/) অনুসরণ করুন। কালার **Layouts** পেজে **Kala Jhor** বা **Kala Goti** বেছে নিন। [ঝড়ের টাইপিং নির্দেশিকা](https://robispider.github.io/kala-releases/en/layouts/kala-jhor/) ও [গতির টাইপিং নির্দেশিকায়](https://robispider.github.io/kala-releases/en/layouts/kala-goti/) স্বরবর্ণ লেখার নিয়ম ও দৈনন্দিন টাইপিংয়ের ধাপ আছে।
+
+অনুশীলনের জন্য কালায় **Learn** খুলুন এবং [শেখার নির্দেশিকা](https://robispider.github.io/kala-releases/en/guide/learning/) অনুসরণ করুন। Learn-এ ছোট দৈনিক সেশন ও সমস্যা হচ্ছে এমন অক্ষরের অনুশীলন করা যায়। পুরোনো ইনস্টলারে Learn নাও থাকতে পারে; প্রাপ্যতা জানতে অ্যাপের ওয়েবসাইটে [রিলিজের অবস্থা](https://robispider.github.io/kala-releases/en/release-status/) দেখুন। এই ওয়েবসাইটে গবেষণার রেকর্ড আছে; টাইপিং ও অনুশীলন করতে উইন্ডোজ অ্যাপ ব্যবহার করুন।
+
 ## কালা গতি (Kala Goti): স্টাইল A, UniJoy-র মতো স্বরবর্ণ
 
 * প্রতিটি কারের (kar) নিজস্ব কি আছে: ক + ি = কি.

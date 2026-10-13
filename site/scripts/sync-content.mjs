@@ -85,21 +85,10 @@ for (const locale of locales) {
   await writeFile(path.join(contentRoot, 'leaderboard.md'),
     `---\ntitle: ${JSON.stringify(text(locale, 'Leaderboard', 'লিডারবোর্ড'))}\neditUrl: false\n---\n\n${L.join('\n')}\n`);
 
-  const hero = {
-    tagline: text(locale,
-      'Kala Jhor and Kala Goti were found by a computer search under an explicit model. See how, run the search yourself, and try to beat it.',
-      'কালা ঝড় ও কালা গতি একটি স্পষ্ট মডেলের অধীনে কম্পিউটার সার্চে খুঁজে পাওয়া গেছে। কীভাবে, দেখুন; নিজে সার্চ চালান; আর চাইলে এর চেয়ে ভালো লেআউট খুঁজে আনুন।'),
-    image: { file: '../../../assets/kala-mascot-520.png', alt: text(locale, 'Kala’s Black Bengal goat mascot', 'কালার ব্ল্যাক বেঙ্গল ছাগলের মাসকট') },
-    actions: [
-      { text: text(locale, 'Take the challenge', 'চ্যালেঞ্জ নিন'), link: `${base}/${locale}/challenge/`, icon: 'rocket' },
-      { text: text(locale, 'How they were found', 'কীভাবে খুঁজে পাওয়া গেল'), link: `${base}/${locale}/how/`, variant: 'secondary', icon: 'right-arrow' },
-      { text: text(locale, 'বাংলায় পড়ুন', 'Read in English'), link: `${base}/${isBn(locale) ? 'en' : 'bn'}/`, variant: 'minimal', icon: 'translate' },
-    ],
-  };
-  const title = text(locale, 'Where Kala’s layouts came from, and how to beat them.', 'কালার লেআউট কোথা থেকে এল, আর কীভাবে এর চেয়ে ভালো করা যায়।');
+  const title = text(locale, 'The research behind the keys.', 'বাংলা লেআউটের পেছনের গবেষণা।');
   const description = text(locale, 'The research behind Kala Jhor and Kala Goti: the model, the public datasets, a repeatable search and an open challenge.', 'কালা ঝড় ও কালা গতির পেছনের গবেষণা: মডেল, প্রকাশ্য ডেটাসেট, পুনরায় চালানো যায় এমন সার্চ এবং সবার জন্য খোলা চ্যালেঞ্জ।');
   await writeFile(path.join(contentRoot, 'index.mdx'),
-    `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\ntemplate: splash\nhero: ${JSON.stringify(hero)}\neditUrl: false\n---\n\nimport LayoutHome from '../../../components/LayoutHome.astro';\n\n<LayoutHome locale="${locale}" />\n`);
+    `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\ntemplate: splash\nhero: {}\neditUrl: false\n---\n\nimport LayoutHome from '../../../components/LayoutHome.astro';\n\n<LayoutHome locale="${locale}" />\n`);
 }
 await writeFile(path.join(siteRoot, 'src/content/docs/404.md'), `---\ntitle: "Page not found / পেজটি পাওয়া যায়নি"\neditUrl: false\n---\n\nThis address does not match a page. Return to the [English homepage](${base}/en/) or read [how the layouts were found](${base}/en/how/).\n\n<span lang="bn">এই ঠিকানায় কোনো পেজ নেই। [বাংলা হোমপেজে](${base}/bn/) ফিরুন অথবা [কীভাবে লেআউট খুঁজে পাওয়া গেল](${base}/bn/how/) পড়ুন।</span>\n`);
 await mkdir(path.join(siteRoot, 'public'), { recursive: true });

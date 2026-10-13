@@ -57,6 +57,12 @@ const home = await readFile(path.join(root, 'en/index.html'), 'utf8');
 for (const value of ['1.8000', '1.8432', '2.1498']) assert(home.includes(value), `Home page lacks a published average: ${value}`);
 for (const locale of locales) {
   const html = await readFile(path.join(root, locale, 'index.html'), 'utf8');
+  assert(html.includes('class="research-hero'), `Missing research hero: ${locale}`);
+  for (const route of ['', 'layouts/kala-jhor/', 'layouts/kala-goti/', 'guide/learning/']) {
+    assert(html.includes(`https://robispider.github.io/kala-releases/${locale}/${route}`), `Missing localized app link: ${locale}/${route}`);
+  }
+  const layouts = await readFile(path.join(root, locale, 'layouts/index.html'), 'utf8');
+  assert(layouts.includes(`https://robispider.github.io/kala-releases/${locale}/guide/learning/`), `Key maps lack localized practice guide: ${locale}`);
   assert.equal([...html.matchAll(/<section\b[^>]*class="[^"\n]*\badditional-checks\b[^"\n]*"/g)].length, 1, `Missing/duplicate additional checks section: ${locale}`);
   assert(html.includes('https://github.com/robispider/kala-layout/blob/main/results/evaluator-e1/run-v1/REPORT.md'), `Missing experimental report link: ${locale}`);
   assert(html.includes(`${base}/${locale}/mechanics/`), `Missing localized movement comparison link: ${locale}`);
