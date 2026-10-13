@@ -1,0 +1,37 @@
+{
+  "inventory": {
+    "rigorous_e4_distinct": 26892,
+    "rigorous_e4_by_style": {
+      "A": 12622,
+      "D": 14270
+    },
+    "all_saved_union": 27019,
+    "by_style": {
+      "A": 12704,
+      "D": 14315
+    },
+    "run_counts": {
+      "rigorous-v1": 1024,
+      "smoke-v1": 12
+    },
+    "earlier_inventory_counts": {
+      "e1": 101,
+      "e2": 101,
+      "e3": 101
+    }
+  },
+  "primary_fully_evaluated": 27019,
+  "all_requested_metrics_training_both_fingerings": 27019,
+  "shortlisted_heldout_both_fingerings": 177,
+  "formula_settings_outcomes": 2520,
+  "baseline_heldout_rows": 36,
+  "checks": {
+    "shortlist_official_exact_J1_and_independent_metrics": 177,
+    "deterministic_replay_candidates": 8,
+    "all_legacy_e4_exact_J1_rate_and_distance": 26892
+  },
+  "published_diagnostic_row_checks": {
+    "e2": 60,
+    "e3": 60
+  }
+}

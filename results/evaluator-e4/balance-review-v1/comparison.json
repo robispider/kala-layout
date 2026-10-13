@@ -1,0 +1,1795 @@
+{
+  "candidate": "D-072c558b633d1019",
+  "source_seed": "D-2026102252",
+  "comparison": "Kala Jhor, same style and fingering",
+  "selection": "minimum cross-space SF movement in the stored training frontier with a 0.2% J1-increase cap; analytical comparison only",
+  "J1_exact": "253811390594066082217533/140061569087288238500000",
+  "movement_exact": "21083868787693/246856147667250",
+  "reference_J1_exact": "20267423295525455061841/11204925526983059080000",
+  "reference_movement_exact": "51211703806423/493712295334500",
+  "strict_joint_success": false,
+  "mixed_changes": {
+    "model-optimal": {
+      "J1_percent": 0.18496654188944195,
+      "movement_percent": -17.659959655360467,
+      "distance_percent": -15.814375585557105,
+      "repeat_pp": -0.002575427439656386,
+      "shift_pp": 0.0,
+      "engram_pair_lower_change": -0.0024039324022496755,
+      "engram_order_lower_change": -0.022517813327301628
+    },
+    "traditional": {
+      "J1_percent": 0.043620985547643265,
+      "movement_percent": -5.2182845125498645,
+      "distance_percent": -4.736314304118505,
+      "repeat_pp": -0.002575427439656386,
+      "shift_pp": 0.0,
+      "engram_pair_lower_change": -0.0019495950716488242,
+      "engram_order_lower_change": -0.017636196250010228
+    }
+  },
+  "scores": [
+    {
+      "corpus": "bnwiki/train",
+      "scenario": "model-optimal",
+      "reference": {
+        "J0": 1.5473422925383085,
+        "J1": 1.8390472868883183,
+        "E1": 1.5082070047586855,
+        "E2": 0.03913528777962296,
+        "M": 0.2917049943500099,
+        "E2_same_finger": 0.05179772782083068,
+        "E2_neighbour_penalty": 0.008981566079097171,
+        "E2_neighbour_benefit": -0.021644006120304888
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 334032927,
+        "keystrokes_per_non_space_unit": 1.0019264456436434,
+        "escaped_unit_share": 0.0002251431287616566,
+        "escaped_units": 87894,
+        "outside_inventory_count": 1898416,
+        "shift_share_of_non_space_presses": 0.09183129721819311,
+        "non_space_pair_count": 275751211,
+        "same_physical_key_repeat_count": 2189240,
+        "same_finger_different_key_count": 6335124,
+        "cross_hand_pair_count": 139957714,
+        "same_finger_different_key_per_unit": 0.016227610968360312,
+        "same_finger_center_distance_u_per_unit": 0.019723010713278682,
+        "finger_presses_excluding_modifiers": {
+          "0": 18359932,
+          "1": 31493315,
+          "2": 48356680,
+          "3": 79330964,
+          "6": 66505298,
+          "7": 46206262,
+          "8": 36623905,
+          "9": 7156571
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 56483625,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03743426524058964,
+            "upper": 0.03743426524058964
+          },
+          "same_finger_different_key": {
+            "lower": 0.08757171658157563,
+            "upper": 0.08757171658157563
+          },
+          "same_hand": {
+            "lower": 0.4792131347802128,
+            "upper": 0.4792131347802128
+          },
+          "opposite_hand": {
+            "lower": 0.5207868652197871,
+            "upper": 0.5207868652197871
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.11594367150556624,
+        "space_touching_share": 0.4355097758597932,
+        "within_word_share": 0.5644902241402068
+      },
+      "mechanics": {
+        "pair_coverage": 0.9943302116631503,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7709330000264012,
+            "upper": 0.7766027883632509
+          },
+          "engram_avg4": {
+            "lower": 0.8909890998398,
+            "upper": 0.8966588881766498
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7343058268563687,
+            "upper": 0.7399756151932185
+          },
+          "dvorak7_strength": {
+            "lower": 0.7250565818911309,
+            "upper": 0.7307263702279806
+          },
+          "dvorak7_home": {
+            "lower": 0.536483799884382,
+            "upper": 0.5421535882212318
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8295692688725853,
+            "upper": 0.835239057209435
+          },
+          "dvorak7_columns": {
+            "lower": 0.8932134843824856,
+            "upper": 0.8988832727193354
+          },
+          "dvorak7_remote": {
+            "lower": 0.9542565018871304,
+            "upper": 0.9599262902239802
+          },
+          "dvorak7_inward": {
+            "lower": 0.7236455364107177,
+            "upper": 0.7293153247475674
+          },
+          "engram_key_preference": {
+            "lower": 0.5918913773945321,
+            "upper": 0.5975611657313818
+          },
+          "engram_row_separation": {
+            "lower": 0.8509705077741238,
+            "upper": 0.8566402961109736
+          },
+          "engram_same_row": {
+            "lower": 0.7856397338051944,
+            "upper": 0.7913095221420442
+          },
+          "engram_same_finger": {
+            "lower": 0.9635700602598622,
+            "upper": 0.9692398485967121
+          },
+          "engram_outside": {
+            "lower": 0.9637760975200182,
+            "upper": 0.9694458858568679
+          },
+          "engram_scissor": {
+            "lower": 0.9803801804518639,
+            "upper": 0.9860499687887136
+          },
+          "engram_half_scissor": {
+            "lower": 0.9212744672225573,
+            "upper": 0.9269442555594072
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7753289510704021,
+          "engram_avg4": 0.8960696249483374,
+          "dvorak7_distribution": 0.7384929254318282,
+          "dvorak7_strength": 0.7291909401790948,
+          "dvorak7_home": 0.5395428938913976,
+          "dvorak7_vspan": 0.8342995708488227,
+          "dvorak7_columns": 0.8983066931944738,
+          "dvorak7_remote": 0.9596977851965384,
+          "dvorak7_inward": 0.7277718487506517,
+          "engram_key_preference": 0.5952664119543494,
+          "engram_row_separation": 0.8558228421429154,
+          "engram_same_row": 0.7901195443826522,
+          "engram_same_finger": 0.9690644505794132,
+          "engram_outside": 0.9692716626883677,
+          "engram_scissor": 0.9859704240626934,
+          "engram_half_scissor": 0.9265276830738177
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9899423021422559,
+        "bounds": {
+          "lower": 0.7275164086308339,
+          "upper": 0.737574106488578
+        },
+        "conditional_mean": 0.7349078901431662
+      },
+      "changes": {
+        "J1_percent": 0.217571801771399,
+        "movement_percent": -16.907411740851717,
+        "movement_pp": -1.7818810318919867,
+        "repeat_pp": -0.030081284620100263,
+        "same_hand_pp": -2.47839263149276,
+        "shift_pp": 0.0,
+        "distance_percent": -14.747485208333488,
+        "engram_pair_lower_change": -0.0036787644955257326,
+        "engram_order_lower_change": -0.027205532421123446
+      }
+    },
+    {
+      "corpus": "bnwiki/train",
+      "scenario": "traditional",
+      "reference": {
+        "J0": 1.7433953316923616,
+        "J1": 2.0355056094859543,
+        "E1": 1.5915641405542906,
+        "E2": 0.15183119113807098,
+        "M": 0.2921102777935925,
+        "E2_same_finger": 0.15310065626632327,
+        "E2_neighbour_penalty": 0.014677166989998804,
+        "E2_neighbour_benefit": -0.01594663211825111
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 334032927,
+        "keystrokes_per_non_space_unit": 1.0019264456436434,
+        "escaped_unit_share": 0.0002251431287616566,
+        "escaped_units": 87894,
+        "outside_inventory_count": 1898416,
+        "shift_share_of_non_space_presses": 0.09183129721819311,
+        "non_space_pair_count": 275751211,
+        "same_physical_key_repeat_count": 2189240,
+        "same_finger_different_key_count": 19020018,
+        "cross_hand_pair_count": 138355292,
+        "same_finger_different_key_per_unit": 0.048720349075284164,
+        "same_finger_center_distance_u_per_unit": 0.061489263271503704,
+        "finger_presses_excluding_modifiers": {
+          "0": 23920394,
+          "1": 32424113,
+          "2": 66710911,
+          "3": 56966113,
+          "6": 64024658,
+          "7": 44866252,
+          "8": 36257808,
+          "9": 8862678
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 56483625,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03743426524058964,
+            "upper": 0.03743426524058964
+          },
+          "same_finger_different_key": {
+            "lower": 0.09036408339585145,
+            "upper": 0.09036408339585145
+          },
+          "same_hand": {
+            "lower": 0.4805119359814459,
+            "upper": 0.4805119359814459
+          },
+          "opposite_hand": {
+            "lower": 0.5194880640185541,
+            "upper": 0.5194880640185541
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.12088267582504973,
+        "space_touching_share": 0.4355097758597932,
+        "within_word_share": 0.5644902241402068
+      },
+      "mechanics": {
+        "pair_coverage": 0.9943302116631503,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.751113842926023,
+            "upper": 0.7567836312628727
+          },
+          "engram_avg4": {
+            "lower": 0.8728452783830197,
+            "upper": 0.8785150667198695
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7084987960397389,
+            "upper": 0.7141685843765887
+          },
+          "dvorak7_strength": {
+            "lower": 0.70213542779328,
+            "upper": 0.7078052161301297
+          },
+          "dvorak7_home": {
+            "lower": 0.536483799884382,
+            "upper": 0.5421535882212318
+          },
+          "dvorak7_vspan": {
+            "lower": 0.827779728227558,
+            "upper": 0.8334495165644078
+          },
+          "dvorak7_columns": {
+            "lower": 0.8932134843824856,
+            "upper": 0.8988832727193354
+          },
+          "dvorak7_remote": {
+            "lower": 0.8871583305576127,
+            "upper": 0.8928281188944625
+          },
+          "dvorak7_inward": {
+            "lower": 0.7025273335970953,
+            "upper": 0.708197121933945
+          },
+          "engram_key_preference": {
+            "lower": 0.5918913773945321,
+            "upper": 0.5975611657313818
+          },
+          "engram_row_separation": {
+            "lower": 0.8492213968481884,
+            "upper": 0.8548911851850384
+          },
+          "engram_same_row": {
+            "lower": 0.760614630653426,
+            "upper": 0.7662844189902759
+          },
+          "engram_same_finger": {
+            "lower": 0.917768988510444,
+            "upper": 0.9234387768472937
+          },
+          "engram_outside": {
+            "lower": 0.9637760975200182,
+            "upper": 0.9694458858568679
+          },
+          "engram_scissor": {
+            "lower": 0.9799739664606586,
+            "upper": 0.9856437547975084
+          },
+          "engram_half_scissor": {
+            "lower": 0.9200939501948371,
+            "upper": 0.9257637385316868
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7553967827948068,
+          "engram_avg4": 0.8778223452781037,
+          "dvorak7_distribution": 0.7125387398766451,
+          "dvorak7_strength": 0.706139086952678,
+          "dvorak7_home": 0.5395428938913976,
+          "dvorak7_vspan": 0.8324998260316215,
+          "dvorak7_columns": 0.8983066931944738,
+          "dvorak7_remote": 0.8922170121671369,
+          "dvorak7_inward": 0.7065332274496863,
+          "engram_key_preference": 0.5952664119543494,
+          "engram_row_separation": 0.8540637575798408,
+          "engram_same_row": 0.7649517451362525,
+          "engram_same_finger": 0.9230022157079514,
+          "engram_outside": 0.9692716626883677,
+          "engram_scissor": 0.9855618937913202,
+          "engram_half_scissor": 0.9253404345985393
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9899423021422559,
+        "bounds": {
+          "lower": 0.6559307168054678,
+          "upper": 0.6659884146632119
+        },
+        "conditional_mean": 0.6625948960722458
+      },
+      "changes": {
+        "J1_percent": 0.25444120547410964,
+        "movement_percent": -2.854511427238593,
+        "movement_pp": -0.26552474279050026,
+        "repeat_pp": -0.030081284620100263,
+        "same_hand_pp": -2.462837680832275,
+        "shift_pp": 0.0,
+        "distance_percent": -2.7760351374932046,
+        "engram_pair_lower_change": -0.0036224998559483135,
+        "engram_order_lower_change": -0.022513337860104454
+      }
+    },
+    {
+      "corpus": "newspaper/train",
+      "scenario": "model-optimal",
+      "reference": {
+        "J0": 1.5172271928927543,
+        "J1": 1.7852358372838442,
+        "E1": 1.474714715359273,
+        "E2": 0.042512477533481266,
+        "M": 0.26800864439108985,
+        "E2_same_finger": 0.05581516392244718,
+        "E2_neighbour_penalty": 0.008122077338054614,
+        "E2_neighbour_benefit": -0.021424763727020533
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 609333226,
+        "keystrokes_per_non_space_unit": 1.0025975898568746,
+        "escaped_unit_share": 0.00028239946314528896,
+        "escaped_units": 202634,
+        "outside_inventory_count": 1103520,
+        "shift_share_of_non_space_presses": 0.08547319722230279,
+        "non_space_pair_count": 498876338,
+        "same_physical_key_repeat_count": 4014074,
+        "same_finger_different_key_count": 12648914,
+        "cross_hand_pair_count": 253480657,
+        "same_finger_different_key_per_unit": 0.01762807092082735,
+        "same_finger_center_distance_u_per_unit": 0.021209708289291,
+        "finger_presses_excluding_modifiers": {
+          "0": 33186558,
+          "1": 58858402,
+          "2": 83833019,
+          "3": 149368415,
+          "6": 122574526,
+          "7": 85978097,
+          "8": 61607097,
+          "9": 13927112
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 109260050,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03570949308553309,
+            "upper": 0.03570949308553309
+          },
+          "same_finger_different_key": {
+            "lower": 0.08324735344711996,
+            "upper": 0.08324735344711996
+          },
+          "same_hand": {
+            "lower": 0.4683726394047962,
+            "upper": 0.4683726394047962
+          },
+          "opposite_hand": {
+            "lower": 0.5316273605952039,
+            "upper": 0.5316273605952039
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.10971847709845237,
+        "space_touching_share": 0.45420753388959234,
+        "within_word_share": 0.5457924661104077
+      },
+      "mechanics": {
+        "pair_coverage": 0.995813487550095,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7753945210022284,
+            "upper": 0.7795810334521333
+          },
+          "engram_avg4": {
+            "lower": 0.8922469944030771,
+            "upper": 0.8964335068529822
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7342267894854536,
+            "upper": 0.7384133019353586
+          },
+          "dvorak7_strength": {
+            "lower": 0.7300366238256022,
+            "upper": 0.7342231362755072
+          },
+          "dvorak7_home": {
+            "lower": 0.5530980004106749,
+            "upper": 0.5572845128605799
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8326955476890147,
+            "upper": 0.8368820601389196
+          },
+          "dvorak7_columns": {
+            "lower": 0.8987918224335587,
+            "upper": 0.9029783348834637
+          },
+          "dvorak7_remote": {
+            "lower": 0.9547722686338352,
+            "upper": 0.9589587810837402
+          },
+          "dvorak7_inward": {
+            "lower": 0.7241405945374784,
+            "upper": 0.7283271069873833
+          },
+          "engram_key_preference": {
+            "lower": 0.6074295531551156,
+            "upper": 0.6116160656050205
+          },
+          "engram_row_separation": {
+            "lower": 0.8542368073668773,
+            "upper": 0.8584233198167824
+          },
+          "engram_same_row": {
+            "lower": 0.7860041641446822,
+            "upper": 0.7901906765945872
+          },
+          "engram_same_finger": {
+            "lower": 0.9624855629051703,
+            "upper": 0.9666720753550753
+          },
+          "engram_outside": {
+            "lower": 0.9662614431955678,
+            "upper": 0.9704479556454728
+          },
+          "engram_scissor": {
+            "lower": 0.9833309392196509,
+            "upper": 0.9875174516695558
+          },
+          "engram_half_scissor": {
+            "lower": 0.9211673955961407,
+            "upper": 0.9253539080460457
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7786543672047037,
+          "engram_avg4": 0.8959981016105609,
+          "dvorak7_distribution": 0.7373135618917974,
+          "dvorak7_strength": 0.7331057803019336,
+          "dvorak7_home": 0.5554232869163173,
+          "dvorak7_vspan": 0.8361962938839241,
+          "dvorak7_columns": 0.9025704448377884,
+          "dvorak7_remote": 0.9587862391608799,
+          "dvorak7_inward": 0.7271849634403049,
+          "engram_key_preference": 0.6099832556491241,
+          "engram_row_separation": 0.857828115452096,
+          "engram_same_row": 0.7893086144860453,
+          "engram_same_finger": 0.966531960993099,
+          "engram_outside": 0.9703237155109926,
+          "engram_scissor": 0.9874649736255794,
+          "engram_half_scissor": 0.9250400874388647
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9924740807632203,
+        "bounds": {
+          "lower": 0.7265846765455286,
+          "upper": 0.7341105957823083
+        },
+        "conditional_mean": 0.7320943595693494
+      },
+      "changes": {
+        "J1_percent": 0.1514006557112868,
+        "movement_percent": -18.437026443014094,
+        "movement_pp": -1.8817774657800366,
+        "repeat_pp": 0.02493042974078749,
+        "same_hand_pp": -2.4681180358237076,
+        "shift_pp": 0.0,
+        "distance_percent": -16.913159072353857,
+        "engram_pair_lower_change": -0.0011291003089736185,
+        "engram_order_lower_change": -0.01783009423347992
+      }
+    },
+    {
+      "corpus": "newspaper/train",
+      "scenario": "traditional",
+      "reference": {
+        "J0": 1.6762372266402399,
+        "J1": 1.9447431603274739,
+        "E1": 1.5407986000644152,
+        "E2": 0.13543862657582476,
+        "M": 0.26850593368723386,
+        "E2_same_finger": 0.13937047613801815,
+        "E2_neighbour_penalty": 0.01301079677419633,
+        "E2_neighbour_benefit": -0.016942646336389727
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 609333226,
+        "keystrokes_per_non_space_unit": 1.0025975898568746,
+        "escaped_unit_share": 0.00028239946314528896,
+        "escaped_units": 202634,
+        "outside_inventory_count": 1103520,
+        "shift_share_of_non_space_presses": 0.08547319722230279,
+        "non_space_pair_count": 498876338,
+        "same_physical_key_repeat_count": 4014074,
+        "same_finger_different_key_count": 31956351,
+        "cross_hand_pair_count": 250693776,
+        "same_finger_different_key_per_unit": 0.04453574605684346,
+        "same_finger_center_distance_u_per_unit": 0.05650041339741346,
+        "finger_presses_excluding_modifiers": {
+          "0": 42855055,
+          "1": 58608027,
+          "2": 110946177,
+          "3": 118238173,
+          "6": 117173488,
+          "7": 85092194,
+          "8": 60898040,
+          "9": 15522072
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 109260050,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03570949308553309,
+            "upper": 0.03570949308553309
+          },
+          "same_finger_different_key": {
+            "lower": 0.08488549108297132,
+            "upper": 0.08488549108297132
+          },
+          "same_hand": {
+            "lower": 0.4697067500884358,
+            "upper": 0.4697067500884358
+          },
+          "opposite_hand": {
+            "lower": 0.5302932499115642,
+            "upper": 0.5302932499115642
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.1146003258211408,
+        "space_touching_share": 0.45420753388959234,
+        "within_word_share": 0.5457924661104077
+      },
+      "mechanics": {
+        "pair_coverage": 0.995813487550095,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.758889104555147,
+            "upper": 0.763075617005052
+          },
+          "engram_avg4": {
+            "lower": 0.8769107595460383,
+            "upper": 0.8810972719959431
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7121311193556749,
+            "upper": 0.7163176318055798
+          },
+          "dvorak7_strength": {
+            "lower": 0.7131239896569318,
+            "upper": 0.7173105021068368
+          },
+          "dvorak7_home": {
+            "lower": 0.5530980004106749,
+            "upper": 0.5572845128605799
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8314370714852385,
+            "upper": 0.8356235839351435
+          },
+          "dvorak7_columns": {
+            "lower": 0.8987918224335587,
+            "upper": 0.9029783348834637
+          },
+          "dvorak7_remote": {
+            "lower": 0.8988003455878478,
+            "upper": 0.9029868580377528
+          },
+          "dvorak7_inward": {
+            "lower": 0.7048413829561104,
+            "upper": 0.7090278954060154
+          },
+          "engram_key_preference": {
+            "lower": 0.6074295531551156,
+            "upper": 0.6116160656050205
+          },
+          "engram_row_separation": {
+            "lower": 0.8531413288637456,
+            "upper": 0.8573278413136506
+          },
+          "engram_same_row": {
+            "lower": 0.7643362725062739,
+            "upper": 0.7685227849561789
+          },
+          "engram_same_finger": {
+            "lower": 0.9239039936185548,
+            "upper": 0.9280905060684598
+          },
+          "engram_outside": {
+            "lower": 0.9662614431955678,
+            "upper": 0.9704479556454728
+          },
+          "engram_scissor": {
+            "lower": 0.9829030917076689,
+            "upper": 0.9870896041575739
+          },
+          "engram_half_scissor": {
+            "lower": 0.9197230516874103,
+            "upper": 0.9239095641373153
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7620795601214134,
+          "engram_avg4": 0.8805973914888602,
+          "dvorak7_distribution": 0.7151249990675093,
+          "dvorak7_strength": 0.7161220435077282,
+          "dvorak7_home": 0.5554232869163173,
+          "dvorak7_vspan": 0.8349325269039525,
+          "dvorak7_columns": 0.9025704448377884,
+          "dvorak7_remote": 0.9025790038243815,
+          "dvorak7_inward": 0.7078046157922248,
+          "engram_key_preference": 0.6099832556491241,
+          "engram_row_separation": 0.8567280314335246,
+          "engram_same_row": 0.7675496285822534,
+          "engram_same_finger": 0.9277881904286592,
+          "engram_outside": 0.9703237155109926,
+          "engram_scissor": 0.9870353273943011,
+          "engram_half_scissor": 0.9235896713451003
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9924740807632203,
+        "bounds": {
+          "lower": 0.6655380965032865,
+          "upper": 0.6730640157400662
+        },
+        "conditional_mean": 0.6705848640313937
+      },
+      "changes": {
+        "J1_percent": -0.17609075553755016,
+        "movement_percent": -7.611401382871474,
+        "movement_pp": -0.6993260574198898,
+        "repeat_pp": 0.02493042974078749,
+        "same_hand_pp": -2.489430491748812,
+        "shift_pp": 0.0,
+        "distance_percent": -6.720172129553625,
+        "engram_pair_lower_change": -0.0002766902873493349,
+        "engram_order_lower_change": -0.012759054639916223
+      }
+    },
+    {
+      "corpus": "bnwiki/heldout",
+      "scenario": "model-optimal",
+      "reference": {
+        "J0": 1.5470841202328518,
+        "J1": 1.8387753214275655,
+        "E1": 1.5078515174692089,
+        "E2": 0.03923260276364291,
+        "M": 0.29169120119471376,
+        "E2_same_finger": 0.05188117518184455,
+        "E2_neighbour_penalty": 0.008999784292798583,
+        "E2_neighbour_benefit": -0.021648356711000228
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 37987403,
+        "keystrokes_per_non_space_unit": 1.001979486582158,
+        "escaped_unit_share": 0.0002107960609499565,
+        "escaped_units": 9357,
+        "outside_inventory_count": 221005,
+        "shift_share_of_non_space_presses": 0.09180954012570956,
+        "non_space_pair_count": 31369404,
+        "same_physical_key_repeat_count": 248797,
+        "same_finger_different_key_count": 722082,
+        "cross_hand_pair_count": 15922613,
+        "same_finger_different_key_per_unit": 0.016267184063574486,
+        "same_finger_center_distance_u_per_unit": 0.01969431263402461,
+        "finger_presses_excluding_modifiers": {
+          "0": 2091868,
+          "1": 3586990,
+          "2": 5495050,
+          "3": 9018208,
+          "6": 7555016,
+          "7": 5248862,
+          "8": 4177493,
+          "9": 813916
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 6414145,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03742712395806456,
+            "upper": 0.03742712395806456
+          },
+          "same_finger_different_key": {
+            "lower": 0.08772595568076494,
+            "upper": 0.08772595568076494
+          },
+          "same_hand": {
+            "lower": 0.47915240456834074,
+            "upper": 0.47915240456834074
+          },
+          "opposite_hand": {
+            "lower": 0.5208475954316593,
+            "upper": 0.5208475954316593
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.11612108241331022,
+        "space_touching_share": 0.43505515605288003,
+        "within_word_share": 0.56494484394712
+      },
+      "mechanics": {
+        "pair_coverage": 0.9942559316715103,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7709113085385442,
+            "upper": 0.7766553768670339
+          },
+          "engram_avg4": {
+            "lower": 0.8909765392279232,
+            "upper": 0.8967206075564131
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7342624679767585,
+            "upper": 0.7400065363052483
+          },
+          "dvorak7_strength": {
+            "lower": 0.7244335435891609,
+            "upper": 0.7301776119176507
+          },
+          "dvorak7_home": {
+            "lower": 0.5366355223070225,
+            "upper": 0.5423795906355122
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8295834533547402,
+            "upper": 0.83532752168323
+          },
+          "dvorak7_columns": {
+            "lower": 0.8936806864421141,
+            "upper": 0.8994247547706039
+          },
+          "dvorak7_remote": {
+            "lower": 0.954154627866057,
+            "upper": 0.9598986961945467
+          },
+          "dvorak7_inward": {
+            "lower": 0.7236288582339658,
+            "upper": 0.7293729265624556
+          },
+          "engram_key_preference": {
+            "lower": 0.5921526842524635,
+            "upper": 0.5978967525809531
+          },
+          "engram_row_separation": {
+            "lower": 0.850977809970505,
+            "upper": 0.8567218782989947
+          },
+          "engram_same_row": {
+            "lower": 0.7856070780385245,
+            "upper": 0.7913511463670141
+          },
+          "engram_same_finger": {
+            "lower": 0.9634555696372172,
+            "upper": 0.969199637965707
+          },
+          "engram_outside": {
+            "lower": 0.9638656992654386,
+            "upper": 0.9696097675939283
+          },
+          "engram_scissor": {
+            "lower": 0.9803649122565414,
+            "upper": 0.9861089805850312
+          },
+          "engram_half_scissor": {
+            "lower": 0.9211963670078016,
+            "upper": 0.9269404353362913
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7753650584135954,
+          "engram_avg4": 0.8961239363491077,
+          "dvorak7_distribution": 0.738504488217979,
+          "dvorak7_strength": 0.7286187796448619,
+          "dvorak7_home": 0.5397358016309227,
+          "dvorak7_vspan": 0.8343761670700539,
+          "dvorak7_columns": 0.8988437061066236,
+          "dvorak7_remote": 0.9596670208061658,
+          "dvorak7_inward": 0.7278094454185703,
+          "engram_key_preference": 0.5955737002815321,
+          "engram_row_separation": 0.8558941243024512,
+          "engram_same_row": 0.7901457290959157,
+          "engram_same_finger": 0.9690216964735503,
+          "engram_outside": 0.9694341955245059,
+          "engram_scissor": 0.986028728647748,
+          "engram_half_scissor": 0.9265183517277253
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9898068165302117,
+        "bounds": {
+          "lower": 0.7275584309866991,
+          "upper": 0.7377516144564874
+        },
+        "conditional_mean": 0.7350509400785602
+      },
+      "changes": {
+        "J1_percent": 0.21540258883832042,
+        "movement_percent": -16.932222981680965,
+        "movement_pp": -1.7881728585805279,
+        "repeat_pp": -0.029840298278258764,
+        "same_hand_pp": -2.490557977719554,
+        "shift_pp": 0.0,
+        "distance_percent": -14.742564688243176,
+        "engram_pair_lower_change": -0.003700109215097558,
+        "engram_order_lower_change": -0.027279212419361487
+      }
+    },
+    {
+      "corpus": "bnwiki/heldout",
+      "scenario": "traditional",
+      "reference": {
+        "J0": 1.7430202180186365,
+        "J1": 2.035120827768309,
+        "E1": 1.59121684160957,
+        "E2": 0.15180337640906647,
+        "M": 0.2921006097496726,
+        "E2_same_finger": 0.15306726065934315,
+        "E2_neighbour_penalty": 0.014688340265438126,
+        "E2_neighbour_benefit": -0.01595222451571481
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 37987403,
+        "keystrokes_per_non_space_unit": 1.001979486582158,
+        "escaped_unit_share": 0.0002107960609499565,
+        "escaped_units": 9357,
+        "outside_inventory_count": 221005,
+        "shift_share_of_non_space_presses": 0.09180954012570956,
+        "non_space_pair_count": 31369404,
+        "same_physical_key_repeat_count": 248797,
+        "same_finger_different_key_count": 2162136,
+        "cross_hand_pair_count": 15746386,
+        "same_finger_different_key_per_unit": 0.04870896142332961,
+        "same_finger_center_distance_u_per_unit": 0.06141384699810271,
+        "finger_presses_excluding_modifiers": {
+          "0": 2726070,
+          "1": 3693778,
+          "2": 7577388,
+          "3": 6474823,
+          "6": 7275073,
+          "7": 5097991,
+          "8": 4133358,
+          "9": 1008922
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 6414145,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03742712395806456,
+            "upper": 0.03742712395806456
+          },
+          "same_finger_different_key": {
+            "lower": 0.09041485653972588,
+            "upper": 0.09041485653972588
+          },
+          "same_hand": {
+            "lower": 0.4803588007442925,
+            "upper": 0.4803588007442925
+          },
+          "opposite_hand": {
+            "lower": 0.5196411992557075,
+            "upper": 0.5196411992557075
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.12078484537866617,
+        "space_touching_share": 0.43505515605288003,
+        "within_word_share": 0.56494484394712
+      },
+      "mechanics": {
+        "pair_coverage": 0.9942559316715103,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.751186465458052,
+            "upper": 0.7569305337865417
+          },
+          "engram_avg4": {
+            "lower": 0.8729228450116574,
+            "upper": 0.8786669133401472
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7085997234757792,
+            "upper": 0.7143437918042689
+          },
+          "dvorak7_strength": {
+            "lower": 0.701529107789233,
+            "upper": 0.7072731761177229
+          },
+          "dvorak7_home": {
+            "lower": 0.5366355223070225,
+            "upper": 0.5423795906355122
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8279251655530337,
+            "upper": 0.8336692338815236
+          },
+          "dvorak7_columns": {
+            "lower": 0.8936806864421141,
+            "upper": 0.8994247547706039
+          },
+          "dvorak7_remote": {
+            "lower": 0.8872181632778232,
+            "upper": 0.8929622316063129
+          },
+          "dvorak7_inward": {
+            "lower": 0.7027168893613662,
+            "upper": 0.7084609576898561
+          },
+          "engram_key_preference": {
+            "lower": 0.5921526842524635,
+            "upper": 0.5978967525809531
+          },
+          "engram_row_separation": {
+            "lower": 0.8493504728365254,
+            "upper": 0.8550945411650152
+          },
+          "engram_same_row": {
+            "lower": 0.7607207297276033,
+            "upper": 0.766464798056093
+          },
+          "engram_same_finger": {
+            "lower": 0.917754478217055,
+            "upper": 0.9234985465455449
+          },
+          "engram_outside": {
+            "lower": 0.9638656992654386,
+            "upper": 0.9696097675939283
+          },
+          "engram_scissor": {
+            "lower": 0.9799673273996535,
+            "upper": 0.9857113957281433
+          },
+          "engram_half_scissor": {
+            "lower": 0.9200256083921773,
+            "upper": 0.925769676720667
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.755526259918995,
+          "engram_avg4": 0.8779659413689677,
+          "dvorak7_distribution": 0.7126934835425167,
+          "dvorak7_strength": 0.705582019118403,
+          "dvorak7_home": 0.5397358016309227,
+          "dvorak7_vspan": 0.8327082989197292,
+          "dvorak7_columns": 0.8988437061066236,
+          "dvorak7_remote": 0.8923438473092751,
+          "dvorak7_inward": 0.706776662805503,
+          "engram_key_preference": 0.5955737002815321,
+          "engram_row_separation": 0.8542573856296996,
+          "engram_same_row": 0.7651156060479365,
+          "engram_same_finger": 0.9230565782737212,
+          "engram_outside": 0.9694341955245059,
+          "engram_scissor": 0.9856288468424471,
+          "engram_half_scissor": 0.9253408293430653
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9898068165302117,
+        "bounds": {
+          "lower": 0.6562511916726348,
+          "upper": 0.666444375142423
+        },
+        "conditional_mean": 0.6630093678008169
+      },
+      "changes": {
+        "J1_percent": 0.2603256600763437,
+        "movement_percent": -3.1032218503709963,
+        "movement_pp": -0.2895631452048547,
+        "repeat_pp": -0.029840298278258764,
+        "same_hand_pp": -2.4773060166241923,
+        "shift_pp": 0.0,
+        "distance_percent": -3.0235483151998643,
+        "engram_pair_lower_change": -0.0036318486458181143,
+        "engram_order_lower_change": -0.022535868115708513
+      }
+    },
+    {
+      "corpus": "newspaper/heldout",
+      "scenario": "model-optimal",
+      "reference": {
+        "J0": 1.51675171243103,
+        "J1": 1.7849490629627616,
+        "E1": 1.4744151244093031,
+        "E2": 0.042336588021726886,
+        "M": 0.2681973505317316,
+        "E2_same_finger": 0.055683915972922375,
+        "E2_neighbour_penalty": 0.008091904956605469,
+        "E2_neighbour_benefit": -0.021439232907800965
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 67972578,
+        "keystrokes_per_non_space_unit": 1.002598426518547,
+        "escaped_unit_share": 0.00027817404582304274,
+        "escaped_units": 22265,
+        "outside_inventory_count": 125391,
+        "shift_share_of_non_space_presses": 0.0855249892096192,
+        "non_space_pair_count": 55655147,
+        "same_physical_key_repeat_count": 445103,
+        "same_finger_different_key_count": 1407909,
+        "cross_hand_pair_count": 28274297,
+        "same_finger_different_key_per_unit": 0.0175901074637626,
+        "same_finger_center_distance_u_per_unit": 0.021166363557099516,
+        "finger_presses_excluding_modifiers": {
+          "0": 3706472,
+          "1": 6566337,
+          "2": 9351651,
+          "3": 16667310,
+          "6": 13676763,
+          "7": 9582955,
+          "8": 6870881,
+          "9": 1550209
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 12182971,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03568677952200658,
+            "upper": 0.03568677952200658
+          },
+          "same_finger_different_key": {
+            "lower": 0.0831715022550739,
+            "upper": 0.0831715022550739
+          },
+          "same_hand": {
+            "lower": 0.4681702845718011,
+            "upper": 0.4681702845718011
+          },
+          "opposite_hand": {
+            "lower": 0.5318297154281989,
+            "upper": 0.5318297154281989
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.10964471357199632,
+        "space_touching_share": 0.45405396270631426,
+        "within_word_share": 0.5459460372936857
+      },
+      "mechanics": {
+        "pair_coverage": 0.9958660786575588,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7754986498758664,
+            "upper": 0.7796325712183073
+          },
+          "engram_avg4": {
+            "lower": 0.8923273696063032,
+            "upper": 0.8964612909487446
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7342803352940565,
+            "upper": 0.7384142566364976
+          },
+          "dvorak7_strength": {
+            "lower": 0.7301359477138745,
+            "upper": 0.7342698690563156
+          },
+          "dvorak7_home": {
+            "lower": 0.5532520289632871,
+            "upper": 0.5573859503057282
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8327272588104025,
+            "upper": 0.8368611801528437
+          },
+          "dvorak7_columns": {
+            "lower": 0.8988480077143629,
+            "upper": 0.9029819290568041
+          },
+          "dvorak7_remote": {
+            "lower": 0.9549461975188027,
+            "upper": 0.9590801188612439
+          },
+          "dvorak7_inward": {
+            "lower": 0.7243007731162762,
+            "upper": 0.7284346944587173
+          },
+          "engram_key_preference": {
+            "lower": 0.6074429878695682,
+            "upper": 0.6115769092120095
+          },
+          "engram_row_separation": {
+            "lower": 0.8542800755516807,
+            "upper": 0.8584139968941219
+          },
+          "engram_same_row": {
+            "lower": 0.7860727553958303,
+            "upper": 0.7902066767382717
+          },
+          "engram_same_finger": {
+            "lower": 0.9626441917402536,
+            "upper": 0.9667781130826948
+          },
+          "engram_outside": {
+            "lower": 0.9663124557374735,
+            "upper": 0.9704463770799145
+          },
+          "engram_scissor": {
+            "lower": 0.9834333561278708,
+            "upper": 0.9875672774703119
+          },
+          "engram_half_scissor": {
+            "lower": 0.9213760588935288,
+            "upper": 0.9255099802359699
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7787178080422713,
+          "engram_avg4": 0.8960314933200384,
+          "dvorak7_distribution": 0.7373283928737451,
+          "dvorak7_strength": 0.7331668016025887,
+          "dvorak7_home": 0.5555486232738025,
+          "dvorak7_vspan": 0.8361839776016172,
+          "dvorak7_columns": 0.9025791991288852,
+          "dvorak7_remote": 0.958910257096098,
+          "dvorak7_inward": 0.7273074047191602,
+          "engram_key_preference": 0.6099645332717926,
+          "engram_row_separation": 0.8578262618436225,
+          "engram_same_row": 0.7893358075369604,
+          "engram_same_finger": 0.96664020631962,
+          "engram_outside": 0.9703236975799758,
+          "engram_scissor": 0.9875156682247401,
+          "engram_half_scissor": 0.9252007660864966
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9925457618339046,
+        "bounds": {
+          "lower": 0.7267440123409947,
+          "upper": 0.7341982505070901
+        },
+        "conditional_mean": 0.7322020205881551
+      },
+      "changes": {
+        "J1_percent": 0.15294813948598662,
+        "movement_percent": -18.52402203192216,
+        "movement_pp": -1.8909509018777109,
+        "repeat_pp": 0.024197710065960304,
+        "same_hand_pp": -2.480019036407455,
+        "shift_pp": 0.0,
+        "distance_percent": -16.981169985255352,
+        "engram_pair_lower_change": -0.0012057162678055233,
+        "engram_order_lower_change": -0.01818730916530753
+      }
+    },
+    {
+      "corpus": "newspaper/heldout",
+      "scenario": "traditional",
+      "reference": {
+        "J0": 1.6760745461559767,
+        "J1": 1.94476580143102,
+        "E1": 1.5405345690410863,
+        "E2": 0.13553997711489052,
+        "M": 0.26869125527504323,
+        "E2_same_finger": 0.1395097937379118,
+        "E2_neighbour_penalty": 0.012975264386533217,
+        "E2_neighbour_benefit": -0.01694508100955452
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 67972578,
+        "keystrokes_per_non_space_unit": 1.002598426518547,
+        "escaped_unit_share": 0.00027817404582304274,
+        "escaped_units": 22265,
+        "outside_inventory_count": 125391,
+        "shift_share_of_non_space_presses": 0.0855249892096192,
+        "non_space_pair_count": 55655147,
+        "same_physical_key_repeat_count": 445103,
+        "same_finger_different_key_count": 3568256,
+        "cross_hand_pair_count": 27963374,
+        "same_finger_different_key_per_unit": 0.044581010916341667,
+        "same_finger_center_distance_u_per_unit": 0.056577607987096344,
+        "finger_presses_excluding_modifiers": {
+          "0": 4783831,
+          "1": 6543986,
+          "2": 12378558,
+          "3": 13191259,
+          "6": 13070899,
+          "7": 9485951,
+          "8": 6794258,
+          "9": 1723836
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 12182971,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03568677952200658,
+            "upper": 0.03568677952200658
+          },
+          "same_finger_different_key": {
+            "lower": 0.08494315549138219,
+            "upper": 0.08494315549138219
+          },
+          "same_hand": {
+            "lower": 0.46956969691547323,
+            "upper": 0.46956969691547323
+          },
+          "opposite_hand": {
+            "lower": 0.5304303030845268,
+            "upper": 0.5304303030845268
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.11471074410174142,
+        "space_touching_share": 0.45405396270631426,
+        "within_word_share": 0.5459460372936857
+      },
+      "mechanics": {
+        "pair_coverage": 0.9958660786575588,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7589536905595777,
+            "upper": 0.763087611902019
+          },
+          "engram_avg4": {
+            "lower": 0.8769504779057031,
+            "upper": 0.8810843992481444
+          },
+          "dvorak7_distribution": {
+            "lower": 0.712123866998321,
+            "upper": 0.716257788340762
+          },
+          "dvorak7_strength": {
+            "lower": 0.7131815319794232,
+            "upper": 0.7173154533218644
+          },
+          "dvorak7_home": {
+            "lower": 0.5532520289632871,
+            "upper": 0.5573859503057282
+          },
+          "dvorak7_vspan": {
+            "lower": 0.831488792941289,
+            "upper": 0.8356227142837301
+          },
+          "dvorak7_columns": {
+            "lower": 0.8988480077143629,
+            "upper": 0.9029819290568041
+          },
+          "dvorak7_remote": {
+            "lower": 0.8988665864093397,
+            "upper": 0.9030005077517808
+          },
+          "dvorak7_inward": {
+            "lower": 0.7049150189110093,
+            "upper": 0.7090489402534504
+          },
+          "engram_key_preference": {
+            "lower": 0.6074429878695682,
+            "upper": 0.6115769092120095
+          },
+          "engram_row_separation": {
+            "lower": 0.8532039163242151,
+            "upper": 0.8573378376666562
+          },
+          "engram_same_row": {
+            "lower": 0.7643437341428635,
+            "upper": 0.7684776554853046
+          },
+          "engram_same_finger": {
+            "lower": 0.9239418054182842,
+            "upper": 0.9280757267607253
+          },
+          "engram_outside": {
+            "lower": 0.9663124557374735,
+            "upper": 0.9704463770799145
+          },
+          "engram_scissor": {
+            "lower": 0.98300681875838,
+            "upper": 0.9871407401008212
+          },
+          "engram_half_scissor": {
+            "lower": 0.9199453017346266,
+            "upper": 0.9240792230770678
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7621041692500038,
+          "engram_avg4": 0.8805907708874313,
+          "dvorak7_distribution": 0.7150799512704296,
+          "dvorak7_strength": 0.7161420067051603,
+          "dvorak7_home": 0.5555486232738025,
+          "dvorak7_vspan": 0.834940370759638,
+          "dvorak7_columns": 0.9025791991288852,
+          "dvorak7_remote": 0.9025978549455406,
+          "dvorak7_inward": 0.7078411786665576,
+          "engram_key_preference": 0.6099645332717926,
+          "engram_row_separation": 0.8567456353914029,
+          "engram_same_row": 0.7675165873439623,
+          "engram_same_finger": 0.9277771632344084,
+          "engram_outside": 0.9703236975799758,
+          "engram_scissor": 0.9870873602638286,
+          "engram_half_scissor": 0.9237640697378964
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9925457618339046,
+        "bounds": {
+          "lower": 0.6654683421077425,
+          "upper": 0.6729225802738378
+        },
+        "conditional_mean": 0.6704661565207547
+      },
+      "changes": {
+        "J1_percent": -0.17089644648331515,
+        "movement_percent": -7.58346743729561,
+        "movement_pp": -0.6970220974834462,
+        "repeat_pp": 0.024197710065960304,
+        "same_hand_pp": -2.4988650141250455,
+        "shift_pp": 0.0,
+        "distance_percent": -6.697426994966782,
+        "engram_pair_lower_change": -0.00034531258627346073,
+        "engram_order_lower_change": -0.013070332012497854
+      }
+    },
+    {
+      "corpus": "bard-novel/heldout",
+      "scenario": "model-optimal",
+      "reference": {
+        "J0": 1.5228006442308644,
+        "J1": 1.7856115258969347,
+        "E1": 1.4810945640846744,
+        "E2": 0.04170608014618995,
+        "M": 0.2628108816660705,
+        "E2_same_finger": 0.055269472515244646,
+        "E2_neighbour_penalty": 0.008025174876003072,
+        "E2_neighbour_benefit": -0.02158856724505777
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 6139623,
+        "keystrokes_per_non_space_unit": 1.002595804809718,
+        "escaped_unit_share": 0.00024232753166729802,
+        "escaped_units": 1747,
+        "outside_inventory_count": 4396,
+        "shift_share_of_non_space_presses": 0.08349926371700672,
+        "non_space_pair_count": 5038653,
+        "same_physical_key_repeat_count": 40678,
+        "same_finger_different_key_count": 125611,
+        "cross_hand_pair_count": 2557739,
+        "same_finger_different_key_per_unit": 0.017423585335009144,
+        "same_finger_center_distance_u_per_unit": 0.02096395483225725,
+        "finger_presses_excluding_modifiers": {
+          "0": 336899,
+          "1": 593929,
+          "2": 852003,
+          "3": 1500868,
+          "6": 1234176,
+          "7": 860516,
+          "8": 623119,
+          "9": 138113
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 1083055,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03623823351538011,
+            "upper": 0.03623823351538011
+          },
+          "same_finger_different_key": {
+            "lower": 0.08312689567935147,
+            "upper": 0.08312689567935147
+          },
+          "same_hand": {
+            "lower": 0.46845174067798956,
+            "upper": 0.46845174067798956
+          },
+          "opposite_hand": {
+            "lower": 0.5315482593220104,
+            "upper": 0.5315482593220104
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.10998781930913705,
+        "space_touching_share": 0.44845197713708995,
+        "within_word_share": 0.55154802286291
+      },
+      "mechanics": {
+        "pair_coverage": 0.9959892058452924,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7753215421434491,
+            "upper": 0.7793323362981568
+          },
+          "engram_avg4": {
+            "lower": 0.8923717312816555,
+            "upper": 0.896382525436363
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7343048826740004,
+            "upper": 0.738315676828708
+          },
+          "dvorak7_strength": {
+            "lower": 0.7298338464665061,
+            "upper": 0.7338446406212137
+          },
+          "dvorak7_home": {
+            "lower": 0.5527776967376004,
+            "upper": 0.556788490892308
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8325863082851707,
+            "upper": 0.8365971024398783
+          },
+          "dvorak7_columns": {
+            "lower": 0.898345053727653,
+            "upper": 0.9023558478823607
+          },
+          "dvorak7_remote": {
+            "lower": 0.9550862105407933,
+            "upper": 0.959097004695501
+          },
+          "dvorak7_inward": {
+            "lower": 0.7243167965724173,
+            "upper": 0.7283275907271249
+          },
+          "engram_key_preference": {
+            "lower": 0.6071477630033273,
+            "upper": 0.611158557158035
+          },
+          "engram_row_separation": {
+            "lower": 0.8541556523142191,
+            "upper": 0.8581664464689268
+          },
+          "engram_same_row": {
+            "lower": 0.7860048095691444,
+            "upper": 0.790015603723852
+          },
+          "engram_same_finger": {
+            "lower": 0.963063144058541,
+            "upper": 0.9670739382132486
+          },
+          "engram_outside": {
+            "lower": 0.9662633191847074,
+            "upper": 0.970274113339415
+          },
+          "engram_scissor": {
+            "lower": 0.9833120081894903,
+            "upper": 0.9873228023441979
+          },
+          "engram_half_scissor": {
+            "lower": 0.92110411254754,
+            "upper": 0.9251149067022476
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7784437196640465,
+          "engram_avg4": 0.8959652635234163,
+          "dvorak7_distribution": 0.7372618883462683,
+          "dvorak7_strength": 0.732772847520068,
+          "dvorak7_home": 0.5550037023427978,
+          "dvorak7_vspan": 0.8359390878925819,
+          "dvorak7_columns": 0.901962640212783,
+          "dvorak7_remote": 0.958932290566558,
+          "dvorak7_inward": 0.7272335807672657,
+          "engram_key_preference": 0.6095927138969777,
+          "engram_row_separation": 0.8575952904924309,
+          "engram_same_row": 0.7891700080243992,
+          "engram_same_finger": 0.9669413467600715,
+          "engram_outside": 0.9701544088167535,
+          "engram_scissor": 0.987271751961365,
+          "engram_half_scissor": 0.9248133485199795
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9928301103589534,
+        "bounds": {
+          "lower": 0.7273742205257415,
+          "upper": 0.734544110166788
+        },
+        "conditional_mean": 0.7326270758073226
+      },
+      "changes": {
+        "J1_percent": 0.14470371178954,
+        "movement_percent": -17.533639269782817,
+        "movement_pp": -1.7674079340384368,
+        "repeat_pp": 0.022990522180314082,
+        "same_hand_pp": -2.5966363665741845,
+        "shift_pp": 0.0,
+        "distance_percent": -16.193176234583827,
+        "engram_pair_lower_change": -0.001000064402133627,
+        "engram_order_lower_change": -0.016352220607953938
+      }
+    },
+    {
+      "corpus": "bard-novel/heldout",
+      "scenario": "traditional",
+      "reference": {
+        "J0": 1.6837914885625436,
+        "J1": 1.9470312607039213,
+        "E1": 1.5477280889111789,
+        "E2": 0.1360633996513646,
+        "M": 0.2632397721413778,
+        "E2_same_finger": 0.1401909158108103,
+        "E2_neighbour_penalty": 0.01294271762767034,
+        "E2_neighbour_benefit": -0.017070233787116033
+      },
+      "diagnostics": {
+        "keystrokes_excluding_space": 6139623,
+        "keystrokes_per_non_space_unit": 1.002595804809718,
+        "escaped_unit_share": 0.00024232753166729802,
+        "escaped_units": 1747,
+        "outside_inventory_count": 4396,
+        "shift_share_of_non_space_presses": 0.08349926371700672,
+        "non_space_pair_count": 5038653,
+        "same_physical_key_repeat_count": 40678,
+        "same_finger_different_key_count": 322742,
+        "cross_hand_pair_count": 2529856,
+        "same_finger_different_key_per_unit": 0.044767757427227876,
+        "same_finger_center_distance_u_per_unit": 0.05682112216855246,
+        "finger_presses_excluding_modifiers": {
+          "0": 434137,
+          "1": 587515,
+          "2": 1132451,
+          "3": 1183784,
+          "6": 1179988,
+          "7": 850870,
+          "8": 615387,
+          "9": 155491
+        },
+        "round_trip_token_types": 0
+      },
+      "continuous": {
+        "coverage": 1.0,
+        "spanning_count": 1083055,
+        "bounds": {
+          "same_key": {
+            "lower": 0.03623823351538011,
+            "upper": 0.03623823351538011
+          },
+          "same_finger_different_key": {
+            "lower": 0.0847842445674504,
+            "upper": 0.0847842445674504
+          },
+          "same_hand": {
+            "lower": 0.4699844421566772,
+            "upper": 0.4699844421566772
+          },
+          "opposite_hand": {
+            "lower": 0.5300155578433228,
+            "upper": 0.5300155578433228
+          }
+        },
+        "same_finger_distance_u_per_spanning_window": 0.11509646896075586,
+        "space_touching_share": 0.44845197713708995,
+        "within_word_share": 0.55154802286291
+      },
+      "mechanics": {
+        "pair_coverage": 0.9959892058452924,
+        "bounds": {
+          "dvorak7": {
+            "lower": 0.7587921811642914,
+            "upper": 0.762802975318999
+          },
+          "engram_avg4": {
+            "lower": 0.8769017303582932,
+            "upper": 0.8809125245130007
+          },
+          "dvorak7_distribution": {
+            "lower": 0.7120271032754191,
+            "upper": 0.7160378974301267
+          },
+          "dvorak7_strength": {
+            "lower": 0.7132899407837769,
+            "upper": 0.7173007349384846
+          },
+          "dvorak7_home": {
+            "lower": 0.5527776967376004,
+            "upper": 0.556788490892308
+          },
+          "dvorak7_vspan": {
+            "lower": 0.8314052386619996,
+            "upper": 0.8354160328167072
+          },
+          "dvorak7_columns": {
+            "lower": 0.898345053727653,
+            "upper": 0.9023558478823607
+          },
+          "dvorak7_remote": {
+            "lower": 0.8987403974832162,
+            "upper": 0.9027511916379238
+          },
+          "dvorak7_inward": {
+            "lower": 0.7049598374803743,
+            "upper": 0.7089706316350818
+          },
+          "engram_key_preference": {
+            "lower": 0.6071477630033273,
+            "upper": 0.611158557158035
+          },
+          "engram_row_separation": {
+            "lower": 0.8531307895185472,
+            "upper": 0.8571415836732548
+          },
+          "engram_same_row": {
+            "lower": 0.7641567207545346,
+            "upper": 0.7681675149092423
+          },
+          "engram_same_finger": {
+            "lower": 0.9240560919753752,
+            "upper": 0.9280668861300828
+          },
+          "engram_outside": {
+            "lower": 0.9662633191847074,
+            "upper": 0.970274113339415
+          },
+          "engram_scissor": {
+            "lower": 0.9828317210968884,
+            "upper": 0.986842515251596
+          },
+          "engram_half_scissor": {
+            "lower": 0.9197249741151058,
+            "upper": 0.9237357682698134
+          }
+        },
+        "conditional_means": {
+          "dvorak7": 0.7618477958506661,
+          "engram_avg4": 0.880432965750939,
+          "dvorak7_distribution": 0.7148943975463311,
+          "dvorak7_strength": 0.716162320432389,
+          "dvorak7_home": 0.5550037023427978,
+          "dvorak7_vspan": 0.8347532621665201,
+          "dvorak7_columns": 0.901962640212783,
+          "dvorak7_remote": 0.9023595759960658,
+          "dvorak7_inward": 0.7077986722577755,
+          "engram_key_preference": 0.6095927138969777,
+          "engram_row_separation": 0.8565663006302344,
+          "engram_same_row": 0.7672339381489558,
+          "engram_same_finger": 0.9277772154078037,
+          "engram_outside": 0.9701544088167535,
+          "engram_scissor": 0.9867895307788629,
+          "engram_half_scissor": 0.9234286563723736
+        }
+      },
+      "engram_order": {
+        "coverage": 0.9928301103589534,
+        "bounds": {
+          "lower": 0.6658790068829024,
+          "upper": 0.673048896523949
+        },
+        "conditional_mean": 0.6706877641353531
+      },
+      "changes": {
+        "J1_percent": -0.20946492219838797,
+        "movement_percent": -6.753861307716525,
+        "movement_pp": -0.614096237033207,
+        "repeat_pp": 0.022990522180314082,
+        "same_hand_pp": -2.6163952892512388,
+        "shift_pp": 0.0,
+        "distance_percent": -5.900721789221608,
+        "engram_pair_lower_change": -0.00018676859172583882,
+        "engram_order_lower_change": -0.011931658703064785
+      }
+    }
+  ],
+  "symbol_moves": [
+    {
+      "symbol": "ঁ",
+      "from": "P/shift",
+      "to": "O/shift"
+    },
+    {
+      "symbol": "গ",
+      "from": "P/base",
+      "to": "Q/base"
+    },
+    {
+      "symbol": "ঙ",
+      "from": "W/shift",
+      "to": "Z/shift"
+    },
+    {
+      "symbol": "ট",
+      "from": "Q/base",
+      "to": "Z/base"
+    },
+    {
+      "symbol": "ড়",
+      "from": "S/shift",
+      "to": "P/shift"
+    },
+    {
+      "symbol": "ণ",
+      "from": "O/shift",
+      "to": "S/shift"
+    },
+    {
+      "symbol": "প",
+      "from": "I/base",
+      "to": "O/base"
+    },
+    {
+      "symbol": "ম",
+      "from": "X/base",
+      "to": "I/base"
+    },
+    {
+      "symbol": "য",
+      "from": "O/base",
+      "to": "X/base"
+    },
+    {
+      "symbol": "হ",
+      "from": "Z/base",
+      "to": "P/base"
+    },
+    {
+      "symbol": "ৎ",
+      "from": "Z/shift",
+      "to": "W/shift"
+    }
+  ],
+  "comparison_vs_Kala_Goti_primary": {
+    "J1_change_percent": -2.029775216204435,
+    "movement_change_percent": -10.055099567485835,
+    "different_vowel_style": true
+  }
+}

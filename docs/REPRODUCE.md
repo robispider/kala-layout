@@ -120,3 +120,16 @@ python -m bangla_dh.experimental.continuous_run --out work/evaluator-experiments
 ```
 
 Add `--rebuild-counts` to rebuild from pinned local corpus and token files. Use `--heldout-only` to run the smaller held-out stage first. Every output directory must be new. The full run includes A/D training diagnostics on the original 50/50 mix and all fixed-layout held-out comparisons under both fingerings. Exact counting checks and actual encoding/scanning/cache/memory measurements are in the report; rescoring retains the saved counting benchmarks.
+
+## Experimental joint search (e4)
+
+The [joint-search protocol](../results/evaluator-e4/README.md) searches for strictly lower J1 and fewer same-finger different-key endpoint moves across a space. Both must improve against the published layout of the same style on the original 50/50 training mix. Existing layouts and results are preserved; new candidates and comparisons go into a separate directory. Run a substantial search from the repository root:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m bangla_dh.experimental.joint_search --styles A D --seeds 512 --steps 1000000 --ils-iterations 1000 --archive-limit 64 --frontier-limit 32 --workers 28 --out results/evaluator-e4/rigorous-v1
+```
+
+This runs 512 seeds per style, 1,024 total, using committed derived counts without downloading texts. The full runtime has not been measured. Reduce `--workers` on smaller machines. Every fresh run requires a new `--out` directory. After interruption, repeat the command with `--resume`; it verifies code, inputs and settings before reusing completed seeds. Worker count may change. A completed run cannot be overwritten.
+
+Each candidate receives exact training checks against the official J1 scorer, separate movement scores and changes from the original map. The report includes all five sources and both fingerings; held-out data never guide search or selection. Higher-J1 trade-offs remain visible but do not count as successes. Archives are bounded and their frontier is not exhaustive. Results are best found, never proven optimal; finding no joint improvement does not prove none exists. The published reproduction lock, challenge version and website scores stay unchanged.

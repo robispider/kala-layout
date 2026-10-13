@@ -1,0 +1,22 @@
+{
+  "compressed_only_original_manifest_hashes": true,
+  "compressed_only_json_search_runs": 1024,
+  "compressed_only_candidate_count": 27019,
+  "full_balance_v1_reports_reproduced_without_plain_files": true,
+  "git_visible_files_at_least_100000000_bytes": [],
+  "original_local_files_retained": true,
+  "dependencies_added": false,
+  "scientific_report_artifacts_byte_identical": [
+    "balance-v1-config.json",
+    "candidate-rankings.csv",
+    "candidate-metrics.csv",
+    "public-baseline-metrics.csv",
+    "layout-difference-counts.csv",
+    "layout-differences.csv",
+    "candidate-provenance.json"
+  ],
+  "all_18_layout_maps_and_exports_byte_identical": true,
+  "unit_tests_passed": 187,
+  "unit_test_seconds": 96.404,
+  "reproduction_groups_passed": 8
+}

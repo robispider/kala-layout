@@ -9,13 +9,15 @@ from pathlib import Path
 from ..paths import PROJECT_ROOT, gzip_text_lines
 from ..phase3 import problem_fixed
 from ..search.problem import load_problem, parse_slot
+from .artifact_storage import open_text
 
 TRAIN = ("bnwiki/train", "newspaper/train")
 HELDOUT = ("bnwiki/heldout", "newspaper/heldout", "bard-novel/heldout")
 
 
 def read_json(path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    with open_text(path) as stream:
+        return json.load(stream)
 
 
 def frequency_path(style, corpus):

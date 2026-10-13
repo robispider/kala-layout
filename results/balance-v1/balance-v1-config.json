@@ -1,0 +1,2031 @@
+{
+  "name": "Balance v1",
+  "status": "experimental adopted formula; published Jhor/Goti retained",
+  "adoption_date": "2026-10-14",
+  "user_policy": "cross-space regression allowed when the overall compromise is worthwhile",
+  "scope": "A/D frozen symbol problem; original independently normalized 50/50 training mix; model-optimal fingering",
+  "eligibility": {
+    "J1_multiplier": "201/200",
+    "within_distance_multiplier": 1.05,
+    "within_numeric_tolerance": 1e-14
+  },
+  "formula": "R=max_theta max(0,B_plus-b_minus); B=(max(w*r)+rho*sum(w*r))/sum(w); r=(x-a)/t",
+  "order_policy": "credit [c_lower,c_upper] becomes deficit [1-c_upper,1-c_lower]; B_plus uses 1-c_lower",
+  "future_candidates": "retain numerical aspirations, scales, references, 81 settings and b_minus; never recalibrate automatically",
+  "ineligible": "no eligible R or rank; metrics may be displayed diagnostically",
+  "rankings": "separate A and D; R values must not be compared across styles",
+  "calibration_source": "results/balance-stability-v1/formula-sweep.csv best_score_lower",
+  "calibration_filter": {
+    "components": 4,
+    "effort_budget_percent": 0.5,
+    "within_budget_percent": 5,
+    "corpus": "mix",
+    "fingering": "model-optimal"
+  },
+  "calibration_provenance": "already examined saved archive; adoption after exploratory comparisons, not independent confirmation",
+  "precision": "J1 eligibility uses exact fractions; distances, balance costs and frozen baselines are binary64",
+  "styles": {
+    "A": {
+      "reference_id": "A-18fe73cb912ae3f1",
+      "reference": {
+        "J1": 1.8496860307151324,
+        "J1_exact": "1036279711123197914729669/560246276349152954000000",
+        "cross_distance": 0.1182908432657007,
+        "within_distance": 0.017924340340626045
+      },
+      "components": [
+        "J1",
+        "cross_distance",
+        "within_distance",
+        "order_deficit"
+      ],
+      "aspirations": [
+        1.8496860307151324,
+        0.046863869170024205,
+        0.009985573185672579,
+        0.14868876125617392
+      ],
+      "scales": [
+        0.009248430153575663,
+        0.023658168653140143,
+        0.0008962170170313023,
+        0.02
+      ],
+      "settings": [
+        {
+          "id": "A-01",
+          "weights": [
+            6,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.560513878531295,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-02",
+          "weights": [
+            6,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5975843304562032,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-03",
+          "weights": [
+            6,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6346547823811116,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-04",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5452063465048084,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-05",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5819247928776984,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-06",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6186432392505884,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-07",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5307492329242378,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-08",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5671352296091103,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-09",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6035212262939831,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-10",
+          "weights": [
+            6,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6597052224466022,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-11",
+          "weights": [
+            6,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.7015145438638412,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-12",
+          "weights": [
+            6,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7433238652810801,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-13",
+          "weights": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6439365876300057,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-14",
+          "weights": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6871410492592416,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-15",
+          "weights": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7303455108884774,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-16",
+          "weights": [
+            6,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6290203114521442,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-17",
+          "weights": [
+            6,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6735445003089447,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-18",
+          "weights": [
+            6,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7180686891657452,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-19",
+          "weights": [
+            6,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.7953176846663383,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-20",
+          "weights": [
+            6,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.8397202118317142,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-21",
+          "weights": [
+            6,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.8841227389970903,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-22",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.7763100274874948,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-23",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.8219999017308102,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-24",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.8676897759741253,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-25",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.7583027733180642,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-26",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.8052122395299534,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-27",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.8521217057418426,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-28",
+          "weights": [
+            8,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.47118709227989697,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-29",
+          "weights": [
+            8,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5039367397728365,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-30",
+          "weights": [
+            8,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5366863872657761,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-31",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4608048403106962,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-32",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4933684554806434,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-33",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5259320706505904,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-34",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4508945088855501,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-35",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4832805477471863,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-36",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5156665866088225,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-37",
+          "weights": [
+            8,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5872844070945301,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-38",
+          "weights": [
+            8,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6227214807125596,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-39",
+          "weights": [
+            8,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6581585543305891,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-40",
+          "weights": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5744995400606604,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-41",
+          "weights": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.609693731496559,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-42",
+          "weights": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6448879229324576,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-43",
+          "weights": [
+            8,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5622828893394073,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-44",
+          "weights": [
+            8,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.597244993356825,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-45",
+          "weights": [
+            8,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6322070973742429,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-46",
+          "weights": [
+            8,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6541276962470435,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-47",
+          "weights": [
+            8,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6938702636296631,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-48",
+          "weights": [
+            8,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7336128310122827,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-49",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.641636733420423,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-50",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6825413408400763,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-51",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7234459482597294,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-52",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6296888559340906,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-53",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6717049799109063,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-54",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.713721103887722,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-55",
+          "weights": [
+            10,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.45113282592661785,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-56",
+          "weights": [
+            10,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4813295254254549,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-57",
+          "weights": [
+            10,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5105727349645413,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-58",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4441144620528321,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-59",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4755502353121182,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-60",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5060493204449997,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-61",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.43736603525111506,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-62",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.469993225587756,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-63",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5016998834069791,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-64",
+          "weights": [
+            10,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4974180261631641,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-65",
+          "weights": [
+            10,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5295530064539846,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-66",
+          "weights": [
+            10,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5616879867448051,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-67",
+          "weights": [
+            10,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4883282613831853,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-68",
+          "weights": [
+            10,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5203212277761875,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-69",
+          "weights": [
+            10,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5523141941691896,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-70",
+          "weights": [
+            10,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.47958150659490384,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-71",
+          "weights": [
+            10,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5114378181050997,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-72",
+          "weights": [
+            10,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5432941296152954,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-73",
+          "weights": [
+            10,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.60478821423203,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-74",
+          "weights": [
+            10,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.639157309726331,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-75",
+          "weights": [
+            10,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6735264052206322,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-76",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5938441018428269,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-77",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6280317098297689,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-78",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6622193178167107,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-79",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5833053269495202,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-80",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6173181691886348,
+          "calibration_candidate_count": 681
+        },
+        {
+          "id": "A-81",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6513310114277494,
+          "calibration_candidate_count": 681
+        }
+      ]
+    },
+    "D": {
+      "reference_id": "D-e4a6be48881da590",
+      "reference": {
+        "J1": 1.8087958948695027,
+        "J1_exact": "20267423295525455061841/11204925526983059080000",
+        "cross_distance": 0.13402653373044526,
+        "within_distance": 0.01923550981913878
+      },
+      "components": [
+        "J1",
+        "cross_distance",
+        "within_distance",
+        "order_deficit"
+      ],
+      "aspirations": [
+        1.8087958948695027,
+        0.05435407059233421,
+        0.014627192548951033,
+        0.13540870566381774
+      ],
+      "scales": [
+        0.009043979474347513,
+        0.026805306746089053,
+        0.000961775490956939,
+        0.02
+      ],
+      "settings": [
+        {
+          "id": "D-01",
+          "weights": [
+            6,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.46046211392569136,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-02",
+          "weights": [
+            6,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4945460901213952,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-03",
+          "weights": [
+            6,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5286300663170991,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-04",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5888229878124818,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-05",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6253847686604083,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-06",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6619465495083348,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-07",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6521826875040144,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-08",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.7008461175284695,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-09",
+          "weights": [
+            6,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7495095475529245,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-10",
+          "weights": [
+            6,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.44955189923277206,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-11",
+          "weights": [
+            6,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.48490789324212763,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-12",
+          "weights": [
+            6,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5202638872514832,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-13",
+          "weights": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5746502548086216,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-14",
+          "weights": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6123798917350367,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-15",
+          "weights": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6501095286614517,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-16",
+          "weights": [
+            6,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6378236311834348,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-17",
+          "weights": [
+            6,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6884393361705416,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-18",
+          "weights": [
+            6,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7364759875232936,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-19",
+          "weights": [
+            6,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4634191508714614,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-20",
+          "weights": [
+            6,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.499625835731482,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-21",
+          "weights": [
+            6,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5358325205915027,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-22",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5612436154806457,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-23",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6000779811299555,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-24",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.638912346779265,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-25",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.6281143812680946,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-26",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6760483269551999,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-27",
+          "weights": [
+            6,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.7239822726423051,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-28",
+          "weights": [
+            8,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4025618094072072,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-29",
+          "weights": [
+            8,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4287496833055079,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-30",
+          "weights": [
+            8,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.45426666023166995,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-31",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4818127379058934,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-32",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5141105399104046,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-33",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5464083419149156,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-34",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5834327370435629,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-35",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.6177421148894147,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-36",
+          "weights": [
+            8,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6520514927352664,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-37",
+          "weights": [
+            8,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4064147438803777,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-38",
+          "weights": [
+            8,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4344132455060485,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-39",
+          "weights": [
+            8,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.46241174713171923,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-40",
+          "weights": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.47264891658243025,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-41",
+          "weights": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5059991458066915,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-42",
+          "weights": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5393493750309527,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-43",
+          "weights": [
+            8,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5722143339908952,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-44",
+          "weights": [
+            8,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.607508050099584,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-45",
+          "weights": [
+            8,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6428017662082727,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-46",
+          "weights": [
+            8,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4101276604536285,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-47",
+          "weights": [
+            8,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.44211469064189485,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-48",
+          "weights": [
+            8,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.47410172083016106,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-49",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.46389237620667656,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-50",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4982482581075879,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-51",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5326041400084992,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-52",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.5614836875926913,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-53",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5977189446484414,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-54",
+          "weights": [
+            8,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.6339542017041916,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-55",
+          "weights": [
+            10,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.33839041134239733,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-56",
+          "weights": [
+            10,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.36042709335062173,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-57",
+          "weights": [
+            10,
+            1,
+            0.75,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.38176331019894166,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-58",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.43705819082954916,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-59",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4620398567616978,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-60",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.4859072515440704,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-61",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4957727612775639,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-62",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5269026801570644,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-63",
+          "weights": [
+            10,
+            1,
+            0.75,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.558032599036565,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-64",
+          "weights": [
+            10,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.343315400122903,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-65",
+          "weights": [
+            10,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.36757396854085705,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-66",
+          "weights": [
+            10,
+            1,
+            1,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.3918325369588111,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-67",
+          "weights": [
+            10,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4300700397914621,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-68",
+          "weights": [
+            10,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.457832244578193,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-69",
+          "weights": [
+            10,
+            1,
+            1,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.48327775665676265,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-70",
+          "weights": [
+            10,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4879016638888083,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-71",
+          "weights": [
+            10,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5199273314625354,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-72",
+          "weights": [
+            10,
+            1,
+            1,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.5519529990362627,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-73",
+          "weights": [
+            10,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.025,
+          "b_minus": 0.3910909197096358,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-74",
+          "weights": [
+            10,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.05,
+          "b_minus": 0.4167103347199719,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-75",
+          "weights": [
+            10,
+            1,
+            1.25,
+            0.75
+          ],
+          "rho": 0.075,
+          "b_minus": 0.442329749730308,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-76",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4233455925661329,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-77",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.05,
+          "b_minus": 0.454281097121041,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-78",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1
+          ],
+          "rho": 0.075,
+          "b_minus": 0.48471601673760506,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-79",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.025,
+          "b_minus": 0.4803220886255621,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-80",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.05,
+          "b_minus": 0.5132103290159521,
+          "calibration_candidate_count": 466
+        },
+        {
+          "id": "D-81",
+          "weights": [
+            10,
+            1,
+            1.25,
+            1.25
+          ],
+          "rho": 0.075,
+          "b_minus": 0.546098569406342,
+          "calibration_candidate_count": 466
+        }
+      ]
+    }
+  }
+}

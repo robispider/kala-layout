@@ -1,0 +1,20 @@
+{
+  "new_focused_tests": {
+    "passed": 6,
+    "includes": "frozen calibration, exact cap, unit invariance, strict dominance at positive R and zero-floor ties"
+  },
+  "full_repository_tests": {
+    "passed": 181,
+    "seconds": 62.576
+  },
+  "reproduction_checks": {
+    "passed_groups": 8
+  },
+  "SVG_XML_checks": {
+    "passed": 18
+  },
+  "effort_components_sum": "all candidate/source/fingering rows agree within 1e-11",
+  "style_specific_calibration": "162 saved constants verified; 1147 eligible scores reproduced",
+  "published_outputs": "preserved",
+  "site": "unchanged; no site/doc pairs modified by this request"
+}

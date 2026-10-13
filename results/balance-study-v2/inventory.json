@@ -1,0 +1,21 @@
+{
+  "rigorous_e4_distinct": 26892,
+  "rigorous_e4_by_style": {
+    "A": 12622,
+    "D": 14270
+  },
+  "all_saved_union": 27019,
+  "by_style": {
+    "A": 12704,
+    "D": 14315
+  },
+  "run_counts": {
+    "rigorous-v1": 1024,
+    "smoke-v1": 12
+  },
+  "earlier_inventory_counts": {
+    "e1": 101,
+    "e2": 101,
+    "e3": 101
+  }
+}

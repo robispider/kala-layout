@@ -1,0 +1,7 @@
+{
+  "pair_seconds_8_candidates_6_scopes": 0.10472740000113845,
+  "order_first_source_seconds_including_table": 0.45232060000125784,
+  "order_warm_source_seconds": 0.03139780000492465,
+  "full_order_4_scopes_serial_estimate_seconds": 3393.348633332236,
+  "order_staging_rule": "union of top 10 from every three-component primary grid, all effort-budget winners under every guardrail and training scenario, earlier 101 maps, published references, mandatory candidate; training-only; no archive-wide order superiority claim"
+}

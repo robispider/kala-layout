@@ -21,3 +21,8 @@ __pycache__/
 /site/src/content/docs/
 /site/src/generated/
 /site/public/robots.txt
+
+# Large experimental artifacts are committed as lossless .gz copies.
+# Keep the original local files for inspection, but never add them to Git.
+/results/balance-study-v2/candidate-metrics.csv
+/results/evaluator-e4/rigorous-v1/results.json

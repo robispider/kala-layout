@@ -1,0 +1,128 @@
+{
+  "version": "balance-study-v1",
+  "discovery": {
+    "bnwiki/train": "1/2",
+    "newspaper/train": "1/2"
+  },
+  "primary_fingering": "model-optimal",
+  "heldout_role": "previously examined; exploratory only; never formula tuning",
+  "style_comparison": "separate A and D; no combined ranking",
+  "inclusion": "all saved e4 per-seed archives including smoke, all retained e1-e3 and phase best maps; deduplicate style+complete assignment",
+  "mandatory_candidate": "A-7c36e8f26e6c7142",
+  "below_1_9_subset": "descriptive only; mandatory included as labeled exception",
+  "coverage": "full denominators; unsupported credit 0..1; escapes disclosed outside movement domain; no imputation",
+  "primary_components": [
+    "J1",
+    "cross_distance",
+    "within_distance"
+  ],
+  "order_components": [
+    "J1",
+    "cross_distance",
+    "within_distance",
+    "order_deficit"
+  ],
+  "external_diagnostics": [
+    "Engram avg4 pair credit",
+    "Dvorak-7 credit",
+    "repeats",
+    "Shift",
+    "escapes"
+  ],
+  "aspirations": "per-style component minimum on model-optimal 50/50 training; order minimum deficit lower bound in frozen staged collection",
+  "scales": {
+    "acceptable-change": "J1 0.5% of same-style reference; cross distance 20%; within distance 5%; order deficit 0.02 absolute",
+    "percentile": "training q90-q10, nearest-index quantiles; constant component falls back to acceptable-change positive scale"
+  },
+  "frozen_anchor_policy": "primary-training anchors/scales reused for every corpus/fingering scenario; no negative-deviation clipping",
+  "grid": {
+    "effort_weights": [
+      2,
+      8,
+      16
+    ],
+    "cross_weights": [
+      1
+    ],
+    "within_weights": [
+      0.5,
+      2
+    ],
+    "order_weights": [
+      0.5,
+      2
+    ],
+    "rho": [
+      0.01,
+      0.1
+    ]
+  },
+  "formulas": {
+    "augmented": "max(w*r)+rho*sum(w*r)",
+    "weighted-sum": "sum(w*r)/sum(w)",
+    "r": "(x-a)/t"
+  },
+  "scenarios": [
+    {
+      "corpus": "bnwiki/train",
+      "fingering": "model-optimal"
+    },
+    {
+      "corpus": "newspaper/train",
+      "fingering": "model-optimal"
+    },
+    {
+      "corpus": "mix",
+      "fingering": "model-optimal"
+    },
+    {
+      "corpus": "bnwiki/train",
+      "fingering": "traditional"
+    },
+    {
+      "corpus": "newspaper/train",
+      "fingering": "traditional"
+    },
+    {
+      "corpus": "mix",
+      "fingering": "traditional"
+    }
+  ],
+  "worst_scenario": "maximum score across six declared training scenarios; separate ranking; no held-out input",
+  "bounds": [
+    "optimistic deficit=1-credit_upper",
+    "pessimistic deficit=1-credit_lower"
+  ],
+  "order_screen": "union of top 10 from every three-component primary grid, all effort-budget winners under every guardrail and training scenario, earlier 101 maps, published references, mandatory candidate; training-only; no archive-wide order superiority claim",
+  "shortlist": "all three/four-component primary and worst-scenario winners plus primary budget winners plus mandatory and published references",
+  "effort_caps_percent": [
+    0,
+    0.01,
+    0.03,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.5,
+    2,
+    3,
+    5,
+    10
+  ],
+  "within_distance_guardrail_percent": [
+    0,
+    5,
+    10,
+    null
+  ],
+  "knees": {
+    "chord": "maximum positive distance above normalized endpoint chord on unique budget-selected points",
+    "slope": "largest adjacent slope drop with both effort intervals >=0.03 percentage points; no forced knee",
+    "stability": "compare metric, guardrail, source and fingering; differing locations imply instability"
+  },
+  "precision": "J1/components and rates rational from integer counts; distances and pair credits binary64; formula comparison binary64, ties within 1e-12 reported",
+  "parameter_win_fraction": "descriptive fraction of finite tested settings, never probability or continuous-region certificate",
+  "dependencies": "Python standard library only",
+  "new_search": false
+}

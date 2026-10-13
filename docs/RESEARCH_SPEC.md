@@ -795,6 +795,33 @@ and independently testable.
 
 ## 15. Changelog
 
+**Experimental search season e4 (13 October 2026)**, joint J1/movement search:
+
+* Added an isolated search track under `results/evaluator-e4/`. Existing found
+  layouts, research phases and e1/e2/e3 results are hashed and preserved;
+  fresh runs require new output directories. The official reproduction lock,
+  challenge DATA_VERSION, leaderboard and website layout scores are unchanged.
+* Success requires both strictly lower exact J1 and strictly lower key–space–key
+  same-finger different-physical-key endpoint rate than the same-style published
+  map. Both objectives normalize each training source independently and use the
+  original 50/50 Wikipedia/newspaper mix and model-optimal fingering. Same-key
+  repeats remain separate; J1, Shift costs and frozen constants are unchanged.
+* Seeded annealing and ILS explore relative Chebyshev directions plus J1 alone,
+  with cached symmetric pair-swap deltas. Directions are search parameters,
+  not calibrated comfort weights. Bounded training archives preserve endpoints
+  and the best observed joint-goal candidate; pruning is explicit and does not
+  claim an exhaustive frontier. Candidate success uses exact fractions and an
+  independent check against the official challenge scorer.
+* Each run records code/input/output hashes, parameters, seeds and starts,
+  atomic checkpoints, separate J1 and movement scores, original-map changes,
+  and secondary Shift/repeat/Engram diagnostics on all five corpora under both
+  fingerings. Held-out scores never guide search or selection; these existing
+  benchmarks support exploratory checks. Resume rejects changed inputs,
+  settings, code or environment and never overwrites completed runs.
+* Claims remain best found; zero joint improvements is not an impossibility
+  proof, and existing certificates do not transfer. Paired explanatory copy
+  needs native-speaker editorial review before publication.
+
 **Evaluation season e3 (13 October 2026)**, continuous-text diagnostics:
 
 * Each layout retains its own frozen word encoder. A running-paragraph pass

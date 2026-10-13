@@ -1,5 +1,17 @@
 # Experimental evaluation season e1
 
+## Joint search for lower J1 and cross-space movement (e4)
+
+`python -m bangla_dh.experimental.joint_search --out results/evaluator-e4/rigorous-v1 --workers 28`
+runs 512 seeds per style A/D, with one million annealing steps and 1,000 ILS
+iterations per seed. See `results/evaluator-e4/README.md` for the full command
+and interruption recovery. All existing layouts remain intact; a new folder
+contains candidates, comparisons, bounded per-seed archives and a manifest.
+Strict success requires lower exact J1 AND lower cross-space same-finger
+different-key movement than the same-style published reference. Search uses
+only training counts; held-out scores and the e2 pair/triple criteria are
+secondary diagnostics. It changes no official objective, constants or layout.
+
 ## Continuous-text movement checks (e3)
 
 `python -m bangla_dh.experimental.continuous_run --out work/evaluator-experiments/continuous-repeat --workers 4`

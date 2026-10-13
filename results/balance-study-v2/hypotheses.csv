@@ -1,0 +1,3 @@
+style,candidate_count,cross_distance_improvers,cross_improvers_with_within_regression,cross_within_correlation,low_cost_compromise_count,selection,component_mean_key_delta,component_mean_pair_delta,component_mean_shift_delta,interpretation
+A,12703,12645,11415,-0.6362883104883905,426,"J1 +<=0.5%, cross distance - >=10%, within distance +<=5%, primary mix",0.003982856258807117,0.0007408874105299064,0.00014790574355498005,"archive-selected association, not causal or ergonomic validation"
+D,14314,14296,13228,-0.6654384308427627,200,"J1 +<=0.5%, cross distance - >=10%, within distance +<=5%, primary mix",0.004388113159079188,0.0006937529402898658,0.0013767588340834408,"archive-selected association, not causal or ergonomic validation"

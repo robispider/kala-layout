@@ -1,0 +1,27 @@
+{
+  "version": "balance-decision-v1",
+  "human_preference": "Allow cross-space regression when other components improve",
+  "confirmed_date": "2026-10-13",
+  "timing": "confirmed after exploratory results; not preregistered confirmation",
+  "source_analysis": "results/balance-stability-v1",
+  "effect": "existing eligible regions already permit this; no rescore or changed candidate ordering",
+  "cross_space_policy": "no additional hard cap; retain positive cross-space component in the score, so regressions remain penalized",
+  "other_improvements": "display actual within-word, effort and order benefits; overlapping order bounds do not establish superiority",
+  "limits_retained": {
+    "effort_budget_percent": [
+      0.5,
+      1
+    ],
+    "primary_within_distance_budget_percent": 5,
+    "within_sensitivity_percent": [
+      0,
+      10
+    ]
+  },
+  "anchors_and_scales": "unchanged fixed acceptable-change scales from balance-study-v2",
+  "priority_grid": "unchanged narrow grid from balance-stability-v1",
+  "comparison": "same-style references; primary ranking separate from six-training-scope sensitivity ranking",
+  "heldout": "already examined, exploratory only; no retuning",
+  "official_layout_selected": false,
+  "new_search": false
+}

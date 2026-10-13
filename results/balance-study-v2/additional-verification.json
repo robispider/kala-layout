@@ -1,0 +1,53 @@
+{
+  "published_rows_checked": {
+    "e2": 60,
+    "e3": 60
+  },
+  "maximum_absolute_error": 9.547918011776346e-15,
+  "all_training_rows_order_evaluated": true,
+  "winner_factors": [
+    {
+      "factor": "scheme",
+      "comparable_groups": 180,
+      "groups_changing_winner": 180,
+      "examples": "[{\"acceptable-change\":\"A-c591dab3efa45367\",\"percentile\":\"A-7cc7edbf8f9d26b6\"},{\"acceptable-change\":\"A-c591dab3efa45367\",\"percentile\":\"A-7cc7edbf8f9d26b6\"},{\"acceptable-change\":\"A-395f27544edab90b\",\"percentile\":\"A-7c36e8f26e6c7142\"},{\"acceptable-change\":\"A-395f27544edab90b\",\"percentile\":\"A-cc30f083c16ef025\"}]"
+    },
+    {
+      "factor": "family",
+      "comparable_groups": 120,
+      "groups_changing_winner": 107,
+      "examples": "[{\"augmented\":\"A-c591dab3efa45367\",\"weighted-sum\":\"A-395f27544edab90b\"},{\"augmented\":\"A-395f27544edab90b\",\"weighted-sum\":\"A-a2a4989bf8547dbe\"},{\"augmented\":\"A-b7c5bc49468ee014\",\"weighted-sum\":\"A-7d0b7f62b4127105\"},{\"augmented\":\"A-c591dab3efa45367\",\"weighted-sum\":\"A-395f27544edab90b\"}]"
+    },
+    {
+      "factor": "rho",
+      "comparable_groups": 120,
+      "groups_changing_winner": 17,
+      "examples": "[{\"0.01\":\"A-cc30f083c16ef025\",\"0.1\":\"A-7c36e8f26e6c7142\"},{\"0.01\":\"A-7a6ebda339437083\",\"0.1\":\"A-013e60b38d2caf28\"},{\"0.01\":\"A-7a6ebda339437083\",\"0.1\":\"A-013e60b38d2caf28\"},{\"0.01\":\"D-a3dd53ab7f9025b1\",\"0.1\":\"D-d1ebda3f04a06a1f\"}]"
+    },
+    {
+      "factor": "weights",
+      "comparable_groups": 36,
+      "groups_changing_winner": 36,
+      "examples": "[{\"[2, 1, 0.5]\":\"A-c591dab3efa45367\",\"[2, 1, 2]\":\"A-395f27544edab90b\",\"[8, 1, 0.5]\":\"A-b7c5bc49468ee014\",\"[8, 1, 2]\":\"A-c591dab3efa45367\",\"[16, 1, 0.5]\":\"A-06e789dfeb6a6bee\",\"[16, 1, 2]\":\"A-36f3428c3f344a54\"},{\"[2, 1, 0.5]\":\"A-c591dab3efa45367\",\"[2, 1, 2]\":\"A-395f27544edab90b\",\"[8, 1, 0.5]\":\"A-b7c5bc49468ee014\",\"[8, 1, 2]\":\"A-c591dab3efa45367\",\"[16, 1, 0.5]\":\"A-06e789dfeb6a6bee\",\"[16, 1, 2]\":\"A-36f3428c3f344a54\"},{\"[2, 1, 0.5]\":\"A-395f27544edab90b\",\"[2, 1, 2]\":\"A-a2a4989bf8547dbe\",\"[8, 1, 0.5]\":\"A-7d0b7f62b4127105\",\"[8, 1, 2]\":\"A-395f27544edab90b\",\"[16, 1, 0.5]\":\"A-18fe73cb912ae3f1\",\"[16, 1, 2]\":\"A-06e789dfeb6a6bee\"},{\"[2, 1, 0.5]\":\"A-7cc7edbf8f9d26b6\",\"[2, 1, 2]\":\"A-cc30f083c16ef025\",\"[8, 1, 0.5]\":\"A-7a6ebda339437083\",\"[8, 1, 2]\":\"A-7a6ebda339437083\",\"[16, 1, 0.5]\":\"A-80641c8ee1d9711a\",\"[16, 1, 2]\":\"A-80641c8ee1d9711a\"}]"
+    },
+    {
+      "factor": "corpus",
+      "comparable_groups": 720,
+      "groups_changing_winner": 557,
+      "examples": "[{\"bnwiki/train\":\"A-dc51115c7415babb\",\"newspaper/train\":\"A-e313c075cf1b2b4a\",\"mix\":\"A-c591dab3efa45367\"},{\"bnwiki/train\":\"A-dc51115c7415babb\",\"newspaper/train\":\"A-603d199d4583ec3d\",\"mix\":\"A-c591dab3efa45367\"},{\"bnwiki/train\":\"A-70dc91ce76c7391e\",\"newspaper/train\":\"A-a2a4989bf8547dbe\",\"mix\":\"A-395f27544edab90b\"},{\"bnwiki/train\":\"A-12818468787e34ea\",\"newspaper/train\":\"A-89d9917826fcb681\",\"mix\":\"A-89d9917826fcb681\"}]"
+    },
+    {
+      "factor": "fingering",
+      "comparable_groups": 1080,
+      "groups_changing_winner": 1073,
+      "examples": "[{\"model-optimal\":\"A-dc51115c7415babb\",\"traditional\":\"A-89d9917826fcb681\"},{\"model-optimal\":\"A-e313c075cf1b2b4a\",\"traditional\":\"A-89d9917826fcb681\"},{\"model-optimal\":\"A-c591dab3efa45367\",\"traditional\":\"A-89d9917826fcb681\"},{\"model-optimal\":\"A-dc51115c7415babb\",\"traditional\":\"A-89d9917826fcb681\"}]"
+    },
+    {
+      "factor": "bound",
+      "comparable_groups": 144,
+      "groups_changing_winner": 30,
+      "examples": "[{\"optimistic\":\"A-be9c1ddf0303e0ea\",\"pessimistic\":\"A-a280bdc4ca72c6c7\"},{\"optimistic\":\"A-4f0d726026d85e76\",\"pessimistic\":\"A-b32d2e0ac2816383\"},{\"optimistic\":\"A-4f0d726026d85e76\",\"pessimistic\":\"A-b32d2e0ac2816383\"},{\"optimistic\":\"A-e9127bc2d2303f06\",\"pessimistic\":\"A-f5c2b64b63e5d77b\"}]"
+    }
+  ],
+  "four_component_certified_outcomes": 1214
+}

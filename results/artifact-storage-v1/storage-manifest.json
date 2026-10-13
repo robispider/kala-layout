@@ -1,0 +1,26 @@
+{
+  "version": "artifact-storage-v1",
+  "format": "deterministic gzip; filename empty; mtime zero",
+  "artifacts": [
+    {
+      "logical_path": "results/balance-study-v2/candidate-metrics.csv",
+      "stored_path": "results/balance-study-v2/candidate-metrics.csv.gz",
+      "uncompressed_bytes": 135998939,
+      "stored_bytes": 46043278,
+      "uncompressed_sha256": "4f4e7f54c83d0b1d9ed63fc3df04339c22b0e32ccc50fa956a6b936b37bf0cac",
+      "stored_sha256": "b4aa86d5314181a139bd30c4914a67ca549fdf4f7f9ea2119387ed691c57ec85",
+      "original_local_copy_retained": true
+    },
+    {
+      "logical_path": "results/evaluator-e4/rigorous-v1/results.json",
+      "stored_path": "results/evaluator-e4/rigorous-v1/results.json.gz",
+      "uncompressed_bytes": 162940066,
+      "stored_bytes": 15899983,
+      "uncompressed_sha256": "b65d084243c8f35fb23da1f6722d45e18d08eb8f407c18c83ddf225eb497bb18",
+      "stored_sha256": "9bcc60106365763e1e99adf2a137e367ddb7af7c53816a5f8a15ae9c6f47b983",
+      "original_local_copy_retained": true
+    }
+  ],
+  "scientific_results_changed": false,
+  "original_manifests": "retain logical paths and SHA-256 of decompressed bytes; adapters verify them without changing official hash functions"
+}

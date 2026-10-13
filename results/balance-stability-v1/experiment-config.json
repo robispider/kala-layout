@@ -1,0 +1,206 @@
+{
+  "version": "balance-stability-v1",
+  "source_package": "results/balance-study-v2",
+  "purpose": "find small worst shortfalls within declared acceptable priorities; no official selection",
+  "primary": "50/50 independently normalized Wikipedia/newspaper training; model-optimal fingering",
+  "heldout": "already examined, exploratory diagnostics after selection only",
+  "eligibility": "same-style primary J1 cap and within-word-distance cap; exact effort fractions, distance tolerance 1e-14",
+  "effort_budget_percent": [
+    0.5,
+    1
+  ],
+  "within_distance_budget_percent": [
+    0,
+    5,
+    10
+  ],
+  "primary_guardrail_percent": 5,
+  "references": {
+    "A": "A-18fe73cb912ae3f1",
+    "D": "D-e4a6be48881da590"
+  },
+  "style_ranking": "separate, never combined",
+  "scales_and_aspirations": {
+    "3": {
+      "A": {
+        "aspirations": [
+          1.8496860307151324,
+          0.046863869170024205,
+          0.009985573185672579
+        ],
+        "scales": [
+          0.009248430153575663,
+          0.023658168653140143,
+          0.0008962170170313023
+        ],
+        "components": [
+          "J1",
+          "cross_distance",
+          "within_distance"
+        ]
+      },
+      "D": {
+        "aspirations": [
+          1.8087958948695027,
+          0.05435407059233421,
+          0.014627192548951033
+        ],
+        "scales": [
+          0.009043979474347513,
+          0.026805306746089053,
+          0.000961775490956939
+        ],
+        "components": [
+          "J1",
+          "cross_distance",
+          "within_distance"
+        ]
+      }
+    },
+    "4": {
+      "A": {
+        "aspirations": [
+          1.8496860307151324,
+          0.046863869170024205,
+          0.009985573185672579,
+          0.14868876125617392
+        ],
+        "scales": [
+          0.009248430153575663,
+          0.023658168653140143,
+          0.0008962170170313023,
+          0.02
+        ],
+        "components": [
+          "J1",
+          "cross_distance",
+          "within_distance",
+          "order_deficit"
+        ]
+      },
+      "D": {
+        "aspirations": [
+          1.8087958948695027,
+          0.05435407059233421,
+          0.014627192548951033,
+          0.13540870566381774
+        ],
+        "scales": [
+          0.009043979474347513,
+          0.026805306746089053,
+          0.000961775490956939,
+          0.02
+        ],
+        "components": [
+          "J1",
+          "cross_distance",
+          "within_distance",
+          "order_deficit"
+        ]
+      }
+    }
+  },
+  "scale_policy": "retain v2 acceptable-change anchors/scales; no percentile scaling or refitting",
+  "component_sets": {
+    "3": [
+      "J1",
+      "cross_distance",
+      "within_distance"
+    ],
+    "4": [
+      "J1",
+      "cross_distance",
+      "within_distance",
+      "Engram order deficit interval"
+    ]
+  },
+  "weights": {
+    "effort": [
+      6,
+      8,
+      10
+    ],
+    "cross_distance": [
+      1
+    ],
+    "within_distance": [
+      0.75,
+      1,
+      1.25
+    ],
+    "order_deficit": [
+      0.75,
+      1,
+      1.25
+    ]
+  },
+  "rho": [
+    0.025,
+    0.05,
+    0.075
+  ],
+  "central": {
+    "weights_3": [
+      8,
+      1,
+      1
+    ],
+    "weights_4": [
+      8,
+      1,
+      1,
+      1
+    ],
+    "rho": 0.05
+  },
+  "weight_policy": "divide all weights by their sum; preserves setting-wise ranking, fixes overall score scale for regret comparisons",
+  "formula": "(max(w*r)+rho*sum(w*r))/sum(w); r=(x-a)/t; no negative clipping",
+  "regret": "B(candidate)-min(B) over the same fixed eligible set in each setting/scenario",
+  "normalizer": {
+    "positive_fixed_score_tolerance": 0.05,
+    "report": "regret/.05; tolerance multiples, never comfort percentages",
+    "near_best": "worst upper regret <=.05 across declared finite settings"
+  },
+  "coverage_regret_bounds": "[max(0,B_lower-min(B_upper)), B_upper-min(B_lower)]; conservative unsupported-event envelope, not confidence interval",
+  "rankings": [
+    "primary grid minimax regret",
+    "six-training-scope grid minimax regret, separate sensitivity ranking"
+  ],
+  "scenario_policy": "freeze primary eligible set; apply same primary anchors to all training scenarios; disclose later guardrail violations separately",
+  "training_scopes": [
+    {
+      "corpus": "mix",
+      "fingering": "model-optimal"
+    },
+    {
+      "corpus": "bnwiki/train",
+      "fingering": "model-optimal"
+    },
+    {
+      "corpus": "newspaper/train",
+      "fingering": "model-optimal"
+    },
+    {
+      "corpus": "mix",
+      "fingering": "traditional"
+    },
+    {
+      "corpus": "bnwiki/train",
+      "fingering": "traditional"
+    },
+    {
+      "corpus": "newspaper/train",
+      "fingering": "traditional"
+    }
+  ],
+  "shortlist": "top five of each style/budget/guard/component/ranking plus references and critic-named maps",
+  "requested_candidate": {
+    "id": "A-7c36e8f26e6c7142",
+    "policy": "include diagnostics; never waive the explicit effort/within-word caps to make it eligible"
+  },
+  "parameters": "exploratory design priorities chosen after critic feedback, not calibrated ergonomic constants",
+  "continuous_regions": "finite grid only; no continuous parameter certificate",
+  "precision": "inherited exact effort fractions; distances, composites and regrets binary64",
+  "new_search": false,
+  "dependencies": "standard library only"
+}

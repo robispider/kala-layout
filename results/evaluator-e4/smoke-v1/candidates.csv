@@ -1,0 +1,9 @@
+id,style,training_J1,training_movement,training_J1_change_percent,training_movement_change_percent,lower_J1,lower_movement,joint_training_improvement,heldout_all_primary_improve,layout_file
+A-18fe73cb912ae3f1,A,1.8496860307151324,0.09495761805688,0.0,0.0,False,False,False,False,results/evaluator-e4/smoke-v1/layouts/A-18fe73cb912ae3f1.json
+A-bfe96c3b2907c43e,A,1.849759548072565,0.09495380993914071,0.003974585751942428,-0.004010334101889335,False,True,False,False,results/evaluator-e4/smoke-v1/layouts/A-bfe96c3b2907c43e.json
+A-44f9108b6803b121,A,3.4638567245871767,0.04751725924140566,87.26728034205718,-49.95950802710465,False,True,False,False,results/evaluator-e4/smoke-v1/layouts/A-44f9108b6803b121.json
+A-ce2afa6edf5c4d08,A,3.5145704209747892,0.04635134977187164,90.00902653819432,-51.18732891540414,False,True,False,False,results/evaluator-e4/smoke-v1/layouts/A-ce2afa6edf5c4d08.json
+D-e4a6be48881da590,D,1.8087958948695027,0.10372782750270791,0.0,0.0,False,False,False,False,results/evaluator-e4/smoke-v1/layouts/D-e4a6be48881da590.json
+D-841a9b84244e2457,D,1.8089541411379648,0.1037135837834539,0.00874870785094739,-0.013731820666584849,False,True,False,False,results/evaluator-e4/smoke-v1/layouts/D-841a9b84244e2457.json
+D-02b98dd44dba58ec,D,2.70120639858052,0.06095354935776521,49.337269409017615,-41.23703269869991,False,True,False,False,results/evaluator-e4/smoke-v1/layouts/D-02b98dd44dba58ec.json
+D-bf128e0d74dfe6a8,D,2.702232695152301,0.06086083317796664,49.39400862291632,-41.32641679362483,False,True,False,False,results/evaluator-e4/smoke-v1/layouts/D-bf128e0d74dfe6a8.json

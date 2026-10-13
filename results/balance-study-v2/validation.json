@@ -1,0 +1,26 @@
+{
+  "unit_tests": {
+    "status": "passed",
+    "tests": 169,
+    "seconds": 54.607
+  },
+  "reproduction": {
+    "status": "passed",
+    "groups": 8
+  },
+  "bilingual_site_build": {
+    "status": "passed",
+    "language_pairs": 8,
+    "pages": 18,
+    "local_links_assets_anchors": 764,
+    "warnings": [
+      "Astro /404 route conflict; build and site validation succeeded"
+    ]
+  },
+  "pilot_failure": {
+    "status": "fixed by full-order evaluation in fresh v2",
+    "error": "KeyError order_lower for scenario winner absent from primary screen"
+  },
+  "dependencies_added": false,
+  "manifest_verification": "every input/output hash checked; original files preserved"
+}

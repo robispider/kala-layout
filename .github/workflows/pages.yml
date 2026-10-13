@@ -13,6 +13,7 @@ on:
       - 'results/evaluator-e1/**'
       - 'results/evaluator-e2/**'
       - 'results/evaluator-e3/**'
+      - 'results/evaluator-e4/**'
       - '.github/workflows/pages.yml'
   pull_request:
     branches: [main]
@@ -26,6 +27,7 @@ on:
       - 'results/evaluator-e1/**'
       - 'results/evaluator-e2/**'
       - 'results/evaluator-e3/**'
+      - 'results/evaluator-e4/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 

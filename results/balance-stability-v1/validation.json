@@ -1,0 +1,16 @@
+{
+  "focused_tests": {
+    "passed": 6
+  },
+  "full_repository_tests": {
+    "passed": 175,
+    "seconds": 52.241
+  },
+  "reproduction_groups": {
+    "passed": 8
+  },
+  "source_and_original_hashes": "verified",
+  "new_dependencies": false,
+  "new_layout_search": false,
+  "site_build": "not repeated; no site or paired-document changes in this follow-up"
+}

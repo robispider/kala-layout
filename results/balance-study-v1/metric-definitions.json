@@ -1,0 +1,215 @@
+{
+  "J1": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "key + pair + Shift effort",
+    "units": "modeled effort/text unit",
+    "preferred_direction": "lower",
+    "denominator": "N, including space and escaped units",
+    "event_and_modifier_repeat_escape_policy": "Shift priced per shifted action; repeated identical actions have zero pair penalty; escapes break pairs",
+    "overlap": "frozen J1",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "key_effort": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "sum action count times frozen key effort",
+    "units": "effort/text unit",
+    "preferred_direction": "lower",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "includes repeated presses; excludes modifier presses here",
+    "overlap": "J1 E1",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "pair_effort": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "sum directed action pair counts times frozen penalty, including neighbor benefit",
+    "units": "effort/text unit",
+    "preferred_direction": "lower",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "same action free; same key differing layers penalized; spaces zero",
+    "overlap": "J1 E2; overlaps SF and Engram pair",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "shift_effort": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "sum Shift actions times other-hand Shift cost",
+    "units": "effort/text unit",
+    "preferred_direction": "lower",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "no Shift bigram penalty; no AltGr in A/D",
+    "overlap": "J1 M",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "cross_rate": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "same finger, different physical endpoint keys across exactly one space",
+    "units": "events/spanning window",
+    "preferred_direction": "lower",
+    "denominator": "all valid key-space-key windows",
+    "event_and_modifier_repeat_escape_policy": "modifiers excluded; repeats separate; escapes and paragraph/document ends reset",
+    "overlap": "e4 objective",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "cross_distance": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "SF different-key endpoint center distances summed; other windows zero",
+    "units": "key pitch/spanning window",
+    "preferred_direction": "lower",
+    "denominator": "all valid key-space-key windows",
+    "event_and_modifier_repeat_escape_policy": "binary64 Euclidean centers; excludes modifier travel and repeats",
+    "overlap": "cross rate times conditional SF distance",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "within_rate": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "within-word nonspace consecutive SF different-key count",
+    "units": "events/text unit",
+    "preferred_direction": "lower",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "repeats excluded; modifiers excluded; escapes reset",
+    "overlap": "J1 SF component but different event definition",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "within_distance": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "within-word SF different-key center distance sum",
+    "units": "key pitch/text unit",
+    "preferred_direction": "lower",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "binary64; repeats zero; modifier travel excluded; escapes reset",
+    "overlap": "J1 row penalties and within rate",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "engram_pair": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "source generator mean of row separation, same row, same finger, outside credit",
+    "units": "credit/nonspace pair",
+    "preferred_direction": "higher",
+    "denominator": "all within-word nonspace pairs",
+    "event_and_modifier_repeat_escape_policy": "layers projected; modifiers excluded; repeats retained and SF credit zero",
+    "overlap": "J1 geometry/fingers; Dvorak distribution/row/columns",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "order": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "upstream alternating hand or strictly monotonic three-finger sequence credit",
+    "units": "credit/within-word triple",
+    "preferred_direction": "higher",
+    "denominator": "all valid within-word triples",
+    "event_and_modifier_repeat_escape_policy": "layers projected; repeated fingers credit zero; unsupported keys retain 0..1 mass; escapes reset",
+    "overlap": "fingers/hand overlap; sequence direction adds information",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "order_deficit": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "1-credit; endpoints [1-credit_upper,1-credit_lower]",
+    "units": "deficit/triple",
+    "preferred_direction": "lower",
+    "denominator": "same as order",
+    "event_and_modifier_repeat_escape_policy": "same scope as order; do not reverse endpoints incorrectly",
+    "overlap": "order exactly complementary",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "dvorak": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "source seven-criterion sum/7",
+    "units": "credit/nonspace pair",
+    "preferred_direction": "higher",
+    "denominator": "all within-word nonspace pairs",
+    "event_and_modifier_repeat_escape_policy": "layers projected, modifier excluded; repeats kept; unsupported 0..1",
+    "overlap": "J1 key strength/home/rows; Engram pair",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "repeat_per_unit": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "same physical-key adjacent within-word pair count",
+    "units": "repeats/text unit",
+    "preferred_direction": "descriptive",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "base/Shift same physical key included; Shift presses excluded",
+    "overlap": "Engram same-finger penalizes repeats; J1 identical action free",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "repeat_share_pairs": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "same physical-key pair count/pair count",
+    "units": "fraction",
+    "preferred_direction": "descriptive",
+    "denominator": "all within-word nonspace pairs",
+    "event_and_modifier_repeat_escape_policy": "same scope as repeat_per_unit",
+    "overlap": "repeat_per_unit",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "cross_repeat": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "identical physical endpoints across space",
+    "units": "fraction",
+    "preferred_direction": "descriptive",
+    "denominator": "all spanning windows",
+    "event_and_modifier_repeat_escape_policy": "modifiers excluded",
+    "overlap": "excluded from cross SF movement",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "shift_share": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "shifted nonspace actions/nonspace presses",
+    "units": "fraction",
+    "preferred_direction": "descriptive",
+    "denominator": "nonspace presses",
+    "event_and_modifier_repeat_escape_policy": "counts Shift-marked actions, not separate modifier events",
+    "overlap": "J1 M",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "escaped_share": {
+    "training_counts_exist": true,
+    "source_weighting": "normalize each source with its own denominator then average 1/2 each",
+    "uncertainty": "deterministic corpus quantities; unsupported-credit bounds are not statistical confidence intervals",
+    "definition": "escaped typing units/N",
+    "units": "fraction",
+    "preferred_direction": "lower",
+    "denominator": "N",
+    "event_and_modifier_repeat_escape_policy": "escaped text not assigned invented movement; outside-inventory also reported by source cache",
+    "overlap": "domain-completeness diagnostic",
+    "coverage": "A/D physical SF movement complete; credit bounds sum known credit plus 0..1 unknown mass; missing/zero event denominator rejected"
+  },
+  "distance_combination": {
+    "policy": "never add cross_distance to within_distance; normalized components have separately declared scales; no common-denominator total used"
+  },
+  "mix_counts": {
+    "policy": "mixed count fields are average source counts for audit only; never divide them to reconstruct mixed rates"
+  },
+  "baseline_scope": {
+    "policy": "six fixed baselines use saved canonical encodings; training counts unavailable in e2/e3, exploratory held-out only; historical best-of-fingering J1 not mixed into scenario-specific comparisons"
+  }
+}

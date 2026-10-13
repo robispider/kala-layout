@@ -7,9 +7,10 @@ from ..reference import sha256_file
 def new_run_directory(path) -> Path:
     target = Path(path).resolve()
     roots = [PROJECT_ROOT / "work" / "evaluator-experiments", PROJECT_ROOT / "results" / "evaluator-e1",
-             PROJECT_ROOT / "results" / "evaluator-e2", PROJECT_ROOT / "results" / "evaluator-e3"]
+             PROJECT_ROOT / "results" / "evaluator-e2", PROJECT_ROOT / "results" / "evaluator-e3",
+             PROJECT_ROOT / "results" / "evaluator-e4"]
     if not any(target.is_relative_to(root.resolve()) and target != root.resolve() for root in roots):
-        raise ValueError("output must be a new child of work/evaluator-experiments or results/evaluator-e1/e2/e3")
+        raise ValueError("output must be a new child of work/evaluator-experiments or results/evaluator-e1/e2/e3/e4")
     if target.exists():
         raise FileExistsError("experimental run already exists; choose a new run name")
     output_path(target)
