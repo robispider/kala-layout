@@ -3,6 +3,9 @@ name: Tests
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'data/usage-metric-dataset/sessions/**'
+      - 'data/usage-metric-dataset/manifest.json'
   pull_request:
     branches: [main]
   workflow_dispatch:

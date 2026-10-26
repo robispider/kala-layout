@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Kala complete-session dataset manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "session_schema",
+    "sessions"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kala.usage-metric.dataset/1"
+    },
+    "session_schema": {
+      "const": "kala.typing-check.session/1"
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/session"
+      }
+    }
+  },
+  "$defs": {
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "contributor_id",
+        "path",
+        "package_sha256",
+        "size_bytes",
+        "git_blob_sha"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^s_[0-9A-Za-z]{20,40}$"
+        },
+        "contributor_id": {
+          "type": "string",
+          "pattern": "^c_[0-9a-f]{32}$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^sessions/c_[0-9a-f]{32}/s_[0-9A-Za-z]{20,40}\\.json\\.gz$"
+        },
+        "package_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2097152
+        },
+        "git_blob_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    }
+  }
+}

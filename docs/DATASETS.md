@@ -38,7 +38,7 @@ Everything under `data/ban-dataset-collection/` and `data/corpus/` is ignored by
 * The newspaper package is derived from the Kaggle dataset *Bangla Newspaper Dataset* by furcifer. The articles belong to their publishers. Check the dataset terms and the article rights before you redistribute any of it.
 * BARD is the dataset of the BARD Bangla Article Classifier project by Tanvir Alam and Md Mofijul Islam. The collection notes that clear redistribution terms were not found; check the source terms before you redistribute.
 
-This repository does not redistribute the texts. You download them from their public location yourself, subject to those terms.
+This repository does not redistribute these search-corpus texts. You download them from their public location yourself, subject to those terms.
 
 ## Third-party layout data
 
@@ -47,3 +47,13 @@ The comparison table includes UniJoy and five fixed layouts that Avro Keyboard p
 ## What is not used
 
 The original Phase 2 run also checked a small second text domain (BanLemma sentences). That text is not part of the public collection, so this repository does not rebuild it. Its archived result `results/phase2/frequencies/banlemma-heldout.json` is kept for the record and is not used by any later step.
+
+## Full typing-study sessions
+
+A separate live research dataset is published under
+[data/usage-metric-dataset/](../data/usage-metric-dataset/README.md). It retains the
+complete original predefined-prompt session packages, including text, key events,
+timing and research metadata, for analysis. This is an owner-authorized exception
+to the search-corpus text exclusion. It does not change the frozen search inputs
+or published layout scores. Withdrawal removes a contributor from the current
+dataset; earlier Git history, GitHub caches, forks and downloads may retain copies.
