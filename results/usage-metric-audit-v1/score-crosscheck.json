@@ -1,0 +1,134 @@
+{
+  "scope": "one-off current snapshot; independent Python alignment/word scoring with .NET 8.0.31 StringInfo segmentation",
+  "new_pipeline_dependency": false,
+  "portable_audit_verifies_these_fields": false,
+  "manifest_sha256": "403f469c9e7b2a59ded3cc86724ca19a1de99b02deac2f9893acaa90c6a14e42",
+  "all_match": true,
+  "input_sha256": {
+    "data/usage-metric-dataset/sessions/c_5caefcfea3054b4da931dde9ec95b498/s_961ab610458d4beaba4eb7dce149e7da.json.gz": "f99ec88f83c3494d606e8b34d9182e830bd0966d6b1277fcac6e5bb255e54a18",
+    "data/usage-metric-dataset/sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_430535cce30b49c1a06727e8bec55e16.json.gz": "ec26e18ab1984190c64845f402ea36a6b130b36886ede35aa271155c4ff70d42",
+    "data/usage-metric-dataset/sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_8c120ebaf18e4547885d0cf2b557ffa9.json.gz": "f3196bbc1127bafb840db09fba260cba2daba272e7dc9087c8a4b6e153dd457e",
+    "data/usage-metric-dataset/sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_d8dd557ac0f646569c6452a19c9ebe76.json.gz": "f56739f18a1864a4965212716f01e595902beb69f04c42d5c8460c83c996cead"
+  },
+  "source_sha256": {
+    "work/usage-score-probe/crosscheck.py": "a77ec2a9fbc4c19994494d770f9250ef95e8727c0e5be6476aaf2fb046ed63da",
+    "work/usage-score-probe/Segment.cs": "c37b41be3b920fd327a6f4925804262763f9ec83a58132f675f2753c1bc1b9f1",
+    "work/usage-score-probe/Segment.runtimeconfig.json": "ca45f185a0535122e42692d9c0e6028c965bb7735339f62ed6863ebc44263d93"
+  },
+  "segmenter_runtime": "Microsoft.NETCore.App 8.0.31, rollForward disabled; Windows",
+  "investigation_source_code": {
+    "crosscheck.py": "\"\"\"One-off current-snapshot investigation, not a pipeline dependency.\"\"\"\nimport gzip\nimport hashlib\nimport json\nimport math\nimport re\nimport subprocess\nimport unicodedata\nfrom pathlib import Path\nfrom bangla_dh.paths import PROJECT_ROOT, write_json, hash_outputs\nfrom bangla_dh.usage_metric import utf16_index\n\nroot = PROJECT_ROOT / \"data/usage-metric-dataset\"\npaths = sorted(root.glob(\"sessions/*/*\"))\npackages = [json.loads(gzip.decompress(p.read_bytes())) for p in paths]\nnormal = lambda s: unicodedata.normalize(\"NFC\", s)\nwords = lambda s: [w for w in re.split('[ \\n\\t]', s) if w]\n\ndef segment(values):\n    values = sorted(set(values))\n    dll = PROJECT_ROOT / 'work/usage-score-probe/Segment.dll'\n    r = subprocess.run(['dotnet', str(dll)], input=json.dumps(values), capture_output=True, text=True, encoding='utf-8', check=True)\n    return dict(zip(values, json.loads(r.stdout)))\n\nfull = segment(normal(s) for x in packages for p in x['prompts'] for s in (p['target_text'], p['final_text']))\nall_words = set()\nprepared = []\nfor x in packages:\n    prows = []\n    for p in x['prompts']:\n        if not p['measured']:\n            continue\n        target = normal(p['target_text'])\n        attempted = target if p['end_reason'] == 'enter' else ''.join(full[target][:p['attempted_units']])\n        final = normal(p['final_text'])\n        all_words.update(words(attempted))\n        all_words.update(words(final))\n        shown = next(b['seq'] for b in x['boundaries'] if b['kind']=='prompt-shown' and b.get('prompt_order')==p['order'])\n        end = next(b['seq'] for b in x['boundaries'] if b['kind']=='prompt-ended' and b.get('prompt_order')==p['order'])\n        firsts, edited, text = {}, set(), ''\n        for e in x['text_events']:\n            if not shown < e['seq'] < end or e['op']=='selection':\n                continue\n            a, b = utf16_index(text,e['start']), utf16_index(text,e['end'])\n            if e['removed'] and e['source'] in ('native-key','undo','mouse'):\n                current = text.split(' ')\n                for index in range(text[:a].count(' '),text[:b].count(' ')+1):\n                    edited.add(index)\n                    firsts.setdefault(index, current[index] if index<len(current) else '')\n            text = text[:a]+e['inserted']+text[b:]\n            for index,w in enumerate(text.split(' ')[:-1]):\n                firsts.setdefault(index,w)\n        all_words.update(normal(w) for w in firsts.values())\n        prows.append((p,attempted,final,firsts,edited))\n    prepared.append(prows)\nunits = segment(all_words | {''})\nunits.update(full)\n\ndef graphemes(text):\n    text = normal(text)\n    if text in units:\n        return units[text]\n    # Attempted strings are prefixes at an already established cluster boundary.\n    for whole, clusters in full.items():\n        if whole.startswith(text):\n            prefix, found = '', []\n            for cluster in clusters:\n                if len(prefix) == len(text):\n                    return found\n                prefix += cluster\n                found.append(cluster)\n            if prefix == text:\n                return found\n    raise ValueError('unsegmented value')\n\ndef align(a,b):\n    prior=[(i,0) for i in range(len(b)+1)]\n    for i,aa in enumerate(a,1):\n        row=[(i,0)]\n        for j,bb in enumerate(b,1):\n            candidates=[(prior[j-1][0]+(aa!=bb),prior[j-1][1]+(aa==bb)),(prior[j][0]+1,prior[j][1]),(row[-1][0]+1,row[-1][1])]\n            row.append(min(candidates,key=lambda x:(x[0],-x[1])))\n        prior=row\n    return prior[-1]\n\nresults=[]\nfor x,prows in zip(packages,prepared):\n    reference=response=distance=matches=word_count=first_count=0\n    attempted_units_ok=all(p['attempted_units']==min(len(full[normal(p['target_text'])]),len(full[normal(p['final_text'])])) for p in x['prompts'])\n    for p,attempted,final,firsts,edited in prows:\n        rg,tg=graphemes(attempted),graphemes(final)\n        d,m=align(rg,tg)\n        reference+=len(rg);response+=len(tg);distance+=d;matches+=m\n        attempted_units_ok &= p['attempted_units']==min(len(full[normal(p['target_text'])]),len(tg))\n        typed_words=words(final)\n        for i,target in enumerate(words(attempted)):\n            attempt=firsts.get(i,typed_words[i] if i<len(typed_words) else '')\n            word_count+=1\n            first_count+=i not in edited and align(graphemes(target),graphemes(attempt))[0]==0\n    secs=x['session']['active_seconds']\n    calculated={'accuracy':100*max(0,1-distance/max(reference,response)) if reference+response else None,\n                'correct_gpm':matches*60/secs if secs>=60 and reference>=100 else None,\n                'first_try_accuracy':100*first_count/word_count if word_count else None}\n    comparisons={k:{'reported':x['summary'][k],'recalculated':v,'matches':math.isclose(x['summary'][k],v,abs_tol=1e-8) if v is not None else x['summary'][k] is None} for k,v in calculated.items()}\n    results.append({'session_id':x['session']['session_id'],'reference_graphemes':reference,'response_graphemes':response,\n                    'distance':distance,'matched_graphemes':matches,'words':word_count,'first_try_words':first_count,\n                    'attempted_units_match':attempted_units_ok,'comparisons':comparisons})\n\nrecord={'scope':'one-off current snapshot; independent Python alignment/word scoring with .NET 8.0.31 StringInfo segmentation',\n        'new_pipeline_dependency':False,'portable_audit_verifies_these_fields':False,\n        'manifest_sha256':hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest(),\n        'all_match':all(r['attempted_units_match'] and all(c['matches'] for c in r['comparisons'].values()) for r in results),\n        'input_sha256':{p.relative_to(PROJECT_ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},\n        'source_sha256':hash_outputs([Path(__file__),PROJECT_ROOT/'work/usage-score-probe/Segment.cs',\n                                    PROJECT_ROOT/'work/usage-score-probe/Segment.runtimeconfig.json']),\n        'segmenter_runtime':'Microsoft.NETCore.App 8.0.31, rollForward disabled; Windows',\n        'investigation_source_code':{'crosscheck.py':Path(__file__).read_text(encoding='utf-8'),\n                                    'Segment.cs':(PROJECT_ROOT/'work/usage-score-probe/Segment.cs').read_text(encoding='utf-8'),\n                                    'Segment.runtimeconfig.json':(PROJECT_ROOT/'work/usage-score-probe/Segment.runtimeconfig.json').read_text(encoding='utf-8')},\n        'results':results}\nwrite_json(PROJECT_ROOT/'results/usage-metric-audit-v1/score-crosscheck.json',record)\nprint(json.dumps(record,indent=2))\n",
+    "Segment.cs": "using System; using System.Globalization; using System.Text.Json; using System.Collections.Generic;\nclass Probe { static void Main() { var values=JsonSerializer.Deserialize<string[]>(Console.In.ReadToEnd()); var all=new List<List<string>>(); foreach(var text in values) { var units=new List<string>(); var e=StringInfo.GetTextElementEnumerator(text); while(e.MoveNext()) units.Add((string)e.Current); all.Add(units); } Console.Write(JsonSerializer.Serialize(all)); } }",
+    "Segment.runtimeconfig.json": "{\n  \"runtimeOptions\": {\n    \"tfm\": \"net8.0\",\n    \"framework\": {\n      \"name\": \"Microsoft.NETCore.App\",\n      \"version\": \"8.0.31\"\n    },\n    \"rollForward\": \"Disable\"\n  }\n}\n"
+  },
+  "results": [
+    {
+      "session_id": "s_961ab610458d4beaba4eb7dce149e7da",
+      "reference_graphemes": 561,
+      "response_graphemes": 563,
+      "distance": 6,
+      "matched_graphemes": 557,
+      "words": 173,
+      "first_try_words": 145,
+      "attempted_units_match": true,
+      "comparisons": {
+        "accuracy": {
+          "reported": 98.93428063943162,
+          "recalculated": 98.93428063943162,
+          "matches": true
+        },
+        "correct_gpm": {
+          "reported": 128.53846153846155,
+          "recalculated": 128.53846153846155,
+          "matches": true
+        },
+        "first_try_accuracy": {
+          "reported": 83.81502890173411,
+          "recalculated": 83.81502890173411,
+          "matches": true
+        }
+      }
+    },
+    {
+      "session_id": "s_430535cce30b49c1a06727e8bec55e16",
+      "reference_graphemes": 351,
+      "response_graphemes": 351,
+      "distance": 5,
+      "matched_graphemes": 346,
+      "words": 89,
+      "first_try_words": 62,
+      "attempted_units_match": true,
+      "comparisons": {
+        "accuracy": {
+          "reported": 98.57549857549857,
+          "recalculated": 98.57549857549857,
+          "matches": true
+        },
+        "correct_gpm": {
+          "reported": 79.84615384615385,
+          "recalculated": 79.84615384615384,
+          "matches": true
+        },
+        "first_try_accuracy": {
+          "reported": 69.66292134831461,
+          "recalculated": 69.66292134831461,
+          "matches": true
+        }
+      }
+    },
+    {
+      "session_id": "s_8c120ebaf18e4547885d0cf2b557ffa9",
+      "reference_graphemes": 470,
+      "response_graphemes": 470,
+      "distance": 11,
+      "matched_graphemes": 462,
+      "words": 121,
+      "first_try_words": 89,
+      "attempted_units_match": true,
+      "comparisons": {
+        "accuracy": {
+          "reported": 97.65957446808511,
+          "recalculated": 97.65957446808511,
+          "matches": true
+        },
+        "correct_gpm": {
+          "reported": 106.61538461538463,
+          "recalculated": 106.61538461538461,
+          "matches": true
+        },
+        "first_try_accuracy": {
+          "reported": 73.55371900826447,
+          "recalculated": 73.55371900826447,
+          "matches": true
+        }
+      }
+    },
+    {
+      "session_id": "s_d8dd557ac0f646569c6452a19c9ebe76",
+      "reference_graphemes": 485,
+      "response_graphemes": 490,
+      "distance": 29,
+      "matched_graphemes": 464,
+      "words": 117,
+      "first_try_words": 90,
+      "attempted_units_match": true,
+      "comparisons": {
+        "accuracy": {
+          "reported": 94.08163265306122,
+          "recalculated": 94.08163265306122,
+          "matches": true
+        },
+        "correct_gpm": {
+          "reported": 107.07692307692308,
+          "recalculated": 107.07692307692308,
+          "matches": true
+        },
+        "first_try_accuracy": {
+          "reported": 76.92307692307692,
+          "recalculated": 76.92307692307692,
+          "matches": true
+        }
+      }
+    }
+  ]
+}

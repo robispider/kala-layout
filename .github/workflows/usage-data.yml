@@ -1,0 +1,43 @@
+name: Received typing-study data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/usage-metric-dataset/**'
+      - 'src/bangla_dh/usage_metric.py'
+      - 'tests/test_usage_metric.py'
+      - '.github/workflows/usage-data.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/usage-metric-dataset/**'
+      - 'src/bangla_dh/usage_metric.py'
+      - 'tests/test_usage_metric.py'
+      - '.github/workflows/usage-data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v6.0.0
+        with:
+          python-version: '3.10'
+      - name: Audit regression tests
+        run: python -m unittest discover -s tests -p test_usage_metric.py
+      - name: Check every currently published package
+        run: python -m bangla_dh audit-usage-data --out work/usage-audit
+      - name: Show audit findings
+        if: always()
+        run: |
+          if [ -f work/usage-audit/REPORT.md ]; then
+            cat work/usage-audit/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+          fi

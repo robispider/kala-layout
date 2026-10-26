@@ -5,8 +5,8 @@ This directory receives complete typing-study session packages from the
 after local receipt, with retries during outages. Historical sessions are
 backfilled when publication is first enabled. The live `manifest.json` is created
 and maintained by that publisher; an absent manifest means publication has not
-initialized this directory. No participant packages are included in this setup
-change.
+initialized this directory. The manifest, rather than this README, records the
+currently published sessions.
 
 ## Files and contents
 
@@ -59,6 +59,26 @@ quality/completion information as research variables. Do not silently combine
 incompatible protocols or equate client summary values with independently verified
 measurements. This directory makes no fixed-versus-phonetic comparison and adds no
 new performance claim.
+
+## Repeatable received-data audit
+
+From the repository root, run `PYTHONPATH=src python -m bangla_dh audit-usage-data`.
+In PowerShell set `$env:PYTHONPATH = "src"` first, then run
+`python -m bangla_dh audit-usage-data`. It reads original packages without changing
+them and writes checks, prompt metadata, candidate timing tables and hashes under
+`results/usage-metric-audit-v1/`. `--out work/usage-audit` keeps a later run separate
+from the initial investigation. Invalid measurements or transport corruption
+return a nonzero exit status; review warnings are retained separately. A passing
+audit is not recruitment approval or a fitted model.
+
+The [initial findings](../../results/usage-metric-audit-v1/FINDINGS.md) distinguish
+received-file evidence from live collection checks. The
+[recruitment and modeling plan](../../results/usage-metric-audit-v1/MODELING_PLAN.md)
+sets the remaining gates. A dedicated GitHub workflow runs this audit on dataset
+changes, including data-only pushes skipped by the main research CI. The portable
+command verifies scalar WPM and event-derived counts; its report explicitly marks
+grapheme-dependent scores as unverified. A separate, snapshot-specific score
+cross-check is recorded with the initial findings.
 
 ## Withdrawal and copies
 

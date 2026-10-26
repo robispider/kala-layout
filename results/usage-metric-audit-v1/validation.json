@@ -1,0 +1,51 @@
+{
+  "date_local": "2026-10-27",
+  "timezone": "Asia/Dhaka",
+  "python": "3.11.9",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m unittest discover -s tests",
+      "passed": 214,
+      "failed": 0,
+      "notes": "Optional installed OR-Tools emitted SWIG deprecation warnings. Final audit edits also passed the targeted suite."
+    },
+    {
+      "command": "PYTHONPATH=src python -m unittest discover -s tests -p test_usage_metric.py",
+      "passed": 27,
+      "failed": 0
+    },
+    {
+      "command": "PYTHONPATH=src python -m bangla_dh audit-usage-data",
+      "result": "pass_with_review",
+      "valid_packages": 4,
+      "contributors": 2
+    },
+    {
+      "command": "PYTHONPATH=src python -m bangla_dh check-results",
+      "result": "all 8 frozen result groups passed"
+    },
+    {
+      "check": "Snapshot-specific independent grapheme score cross-check",
+      "result": "all four sessions matched"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed; Git reported its existing LF/CRLF conversion notice for the dataset README"
+    }
+  ],
+  "not_executed": [
+    "Live study UI/capture or upload",
+    "Live retry/receipt/restart/withdrawal",
+    "GitHub Actions workflow execution"
+  ],
+  "source_sha256": {
+    ".github/workflows/usage-data.yml": "5a88cc788d8018f759ca01a34864a86f302016846567da635dff58449d1438e5",
+    "src/bangla_dh/cli.py": "8e223c02842e54e4b4dabd4a8eed74dd52ae51315f007f4cdc6dc520536d3c6a",
+    "src/bangla_dh/usage_metric.py": "3abb3a0638ca31fe7853ccfa2f3cbab6d8e5e3a7ff184b067d67cea137e423a6",
+    "tests/test_usage_metric.py": "a2d6638883307855d77c76c5bfe7a98e4de4cd8aedea6c9bc314faf8c2613de6"
+  },
+  "evidence_sha256": {
+    "results/usage-metric-audit-v1/audit.json": "8d2ac41f50fa89bdfd3b0a710685ea15003238ddc3d00888278ce804f3f66b96",
+    "results/usage-metric-audit-v1/score-crosscheck.json": "a12c4887bf9598a1425b3d75295d77de893c99140d3d4721267d58c77d92dc44"
+  }
+}

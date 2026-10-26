@@ -139,6 +139,23 @@ def _verify_data(args) -> int:
     return 0 if datasets.verify(args.package) else 1
 
 
+def _audit_usage_data(args) -> int:
+    from .usage_metric import InvalidData, run
+    from .paths import DATA, RESULTS_ROOT
+
+    try:
+        record, paths = run(Path(args.dataset) if args.dataset else DATA / "usage-metric-dataset",
+                            Path(args.out) if args.out else RESULTS_ROOT / "usage-metric-audit-v1")
+    except (InvalidData, OSError, ValueError, KeyError, TypeError):
+        print("Unable to audit: missing or malformed dataset manifest, or invalid output path.", file=sys.stderr)
+        return 1
+    for path in paths:
+        print(path)
+    print(f"{record['status']}: {record['valid_sessions']}/{record['manifest_entries']} packages; "
+          f"{record['contributors']} contributors; model_ready=False")
+    return 1 if record["errors"] else 0
+
+
 def _lock_datasets(args) -> int:
     from . import datasets
 
@@ -295,6 +312,10 @@ def _check_results(args) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="bangla-dh", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
+    p = sub.add_parser("audit-usage-data", help="independently audit received typing-study packages; no model fitting")
+    p.add_argument("--dataset", help="dataset directory (default data/usage-metric-dataset)")
+    p.add_argument("--out", help="report directory inside the repository (default results/usage-metric-audit-v1)")
+    p.set_defaults(func=_audit_usage_data)
 
     p = sub.add_parser("reproduce-colemak", help="Phase 1: reproduce the published Colemak Mod-DH results")
     p.add_argument("--out", help="output directory (default results/phase1)")

@@ -1,0 +1,39 @@
+{
+  "phase": "usage-audit-v1",
+  "commit": "0b2f73be464909a83f25e8d06d75e51492fc6fc6",
+  "working_tree_clean": false,
+  "input_sha256": {
+    "manifest.json": "403f469c9e7b2a59ded3cc86724ca19a1de99b02deac2f9893acaa90c6a14e42",
+    "sessions/c_5caefcfea3054b4da931dde9ec95b498/s_961ab610458d4beaba4eb7dce149e7da.json.gz": "f99ec88f83c3494d606e8b34d9182e830bd0966d6b1277fcac6e5bb255e54a18",
+    "sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_430535cce30b49c1a06727e8bec55e16.json.gz": "ec26e18ab1984190c64845f402ea36a6b130b36886ede35aa271155c4ff70d42",
+    "sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_8c120ebaf18e4547885d0cf2b557ffa9.json.gz": "f3196bbc1127bafb840db09fba260cba2daba272e7dc9087c8a4b6e153dd457e",
+    "sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_d8dd557ac0f646569c6452a19c9ebe76.json.gz": "f56739f18a1864a4965212716f01e595902beb69f04c42d5c8460c83c996cead"
+  },
+  "implementation_sha256": {
+    "src/bangla_dh/cli.py": "8e223c02842e54e4b4dabd4a8eed74dd52ae51315f007f4cdc6dc520536d3c6a",
+    "src/bangla_dh/paths.py": "b9e5cc466aa5bcd53d9fee02c005a2a524ce69179e5fb4d12d2c19cb42aa2c42",
+    "src/bangla_dh/usage_metric.py": "3abb3a0638ca31fe7853ccfa2f3cbab6d8e5e3a7ff184b067d67cea137e423a6"
+  },
+  "parameters": {
+    "max_compressed_and_expanded_bytes": 2097152,
+    "duration_tolerance_seconds": 0.5,
+    "clock_tolerance_seconds": 0.25,
+    "pair_max_seconds": 30,
+    "seeds": [],
+    "training": false
+  },
+  "output_sha256": {
+    "results/usage-metric-audit-v1/audit.json": "8d2ac41f50fa89bdfd3b0a710685ea15003238ddc3d00888278ce804f3f66b96",
+    "results/usage-metric-audit-v1/dwell.csv": "42dc678c3f27dc43fda20a868941d1c3d209bb0b9b1414da39c20098f2ea2a95",
+    "results/usage-metric-audit-v1/key-pairs.csv": "0fcc17d8fb0a0a2c7d5b754f226c22da075056327592ef406e336a2d6674e790",
+    "results/usage-metric-audit-v1/prompts.csv": "38a006c80bd10616674e5d349d745e55127f245fa4f707b60aa6e0355af2ff6f",
+    "results/usage-metric-audit-v1/REPORT.md": "4a548c3d975b9d922be8fdbad265925766a11b8b5149956900127b4f78bc3c9a"
+  },
+  "supplementary_snapshot_evidence_sha256": {
+    "results/usage-metric-audit-v1/FINDINGS.md": "461ca09ca3cbd29c19468240bcbc176194043b4db37f00d7bb0ad2e5c558b42f",
+    "results/usage-metric-audit-v1/MODELING_PLAN.md": "b8b851e4fc0a1231639c8d2d2348457193fc5eab4c15cf86fd7aa390f4fb2203",
+    "results/usage-metric-audit-v1/score-crosscheck.json": "a12c4887bf9598a1425b3d75295d77de893c99140d3d4721267d58c77d92dc44",
+    "results/usage-metric-audit-v1/validation.json": "86757dfdf5fde82f3bb677175ccd73ed3d98ab02fcf0d9e607c57579de591b12"
+  },
+  "supplementary_note": "These are dated investigation artifacts, not regenerated or reused for new datasets by audit-usage-data."
+}
