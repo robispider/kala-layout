@@ -1,0 +1,13 @@
+{
+  "snapshot_sha256": "dbe068b41a5d842cb6267d60d088431e6760af7a8111fd192453d3575ba9ba89",
+  "input_sha256": {
+    "data/usage-metric-registry/v1/registry.json": "90d90e5660927e383ddd48bbc40c66bf88c22727fb66f797af37672110617e12",
+    "data/usage-metric-registry/v1/mappings/f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4.json": "f594f330e5c5c4d17c23769a370b5f064bc37b2d754291dfa27c8dbb73960ee4",
+    "dataset/manifest.json": "403f469c9e7b2a59ded3cc86724ca19a1de99b02deac2f9893acaa90c6a14e42",
+    "dataset/sessions/c_5caefcfea3054b4da931dde9ec95b498/s_961ab610458d4beaba4eb7dce149e7da.json.gz": "f99ec88f83c3494d606e8b34d9182e830bd0966d6b1277fcac6e5bb255e54a18",
+    "dataset/sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_430535cce30b49c1a06727e8bec55e16.json.gz": "ec26e18ab1984190c64845f402ea36a6b130b36886ede35aa271155c4ff70d42",
+    "dataset/sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_8c120ebaf18e4547885d0cf2b557ffa9.json.gz": "f3196bbc1127bafb840db09fba260cba2daba272e7dc9087c8a4b6e153dd457e",
+    "dataset/sessions/c_63f1b783b2044cdfb8db9f03fec183df/s_d8dd557ac0f646569c6452a19c9ebe76.json.gz": "f56739f18a1864a4965212716f01e595902beb69f04c42d5c8460c83c996cead",
+    "data/usage-metric-policy-v1.json": "7c050cf3c5baf79bc01f3ec6a8eb259043f89a5ba178a39c415c4a33e6c839a3"
+  }
+}

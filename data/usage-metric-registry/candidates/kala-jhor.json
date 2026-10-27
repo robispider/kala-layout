@@ -1,0 +1,301 @@
+{
+  "schema": "kala.empirical.candidate/1",
+  "name": "kala-jhor",
+  "grammar": "style-D",
+  "geometry": "ansi",
+  "mapping": {
+    "ট": {
+      "key": "Q",
+      "layer": "base"
+    },
+    "দ": {
+      "key": "W",
+      "layer": "base"
+    },
+    "ল": {
+      "key": "E",
+      "layer": "base"
+    },
+    "ো": {
+      "key": "R",
+      "layer": "base"
+    },
+    "।": {
+      "key": "T",
+      "layer": "base"
+    },
+    "শ": {
+      "key": "Y",
+      "layer": "base"
+    },
+    "স": {
+      "key": "U",
+      "layer": "base"
+    },
+    "প": {
+      "key": "I",
+      "layer": "base"
+    },
+    "য": {
+      "key": "O",
+      "layer": "base"
+    },
+    "গ": {
+      "key": "P",
+      "layer": "base"
+    },
+    "ব": {
+      "key": "A",
+      "layer": "base"
+    },
+    "ন": {
+      "key": "S",
+      "layer": "base"
+    },
+    "র": {
+      "key": "D",
+      "layer": "base"
+    },
+    "া": {
+      "key": "F",
+      "layer": "base"
+    },
+    "ী": {
+      "key": "G",
+      "layer": "base"
+    },
+    "জ": {
+      "key": "H",
+      "layer": "base"
+    },
+    "ক": {
+      "key": "J",
+      "layer": "base"
+    },
+    "ে": {
+      "key": "K",
+      "layer": "base"
+    },
+    "ি": {
+      "key": "L",
+      "layer": "base"
+    },
+    "হ": {
+      "key": "Z",
+      "layer": "base"
+    },
+    "ম": {
+      "key": "X",
+      "layer": "base"
+    },
+    "্": {
+      "key": "C",
+      "layer": "base"
+    },
+    "ু": {
+      "key": "V",
+      "layer": "base"
+    },
+    "চ": {
+      "key": "B",
+      "layer": "base"
+    },
+    "য়": {
+      "key": "N",
+      "layer": "base"
+    },
+    "ত": {
+      "key": "M",
+      "layer": "base"
+    },
+    "ঢ": {
+      "key": "Q",
+      "layer": "shift"
+    },
+    "ঙ": {
+      "key": "W",
+      "layer": "shift"
+    },
+    "ঠ": {
+      "key": "E",
+      "layer": "shift"
+    },
+    "ৈ": {
+      "key": "R",
+      "layer": "shift"
+    },
+    "ঃ": {
+      "key": "T",
+      "layer": "shift"
+    },
+    "ঘ": {
+      "key": "Y",
+      "layer": "shift"
+    },
+    "ধ": {
+      "key": "U",
+      "layer": "shift"
+    },
+    "ং": {
+      "key": "I",
+      "layer": "shift"
+    },
+    "ণ": {
+      "key": "O",
+      "layer": "shift"
+    },
+    "ঁ": {
+      "key": "P",
+      "layer": "shift"
+    },
+    "ফ": {
+      "key": "A",
+      "layer": "shift"
+    },
+    "ড়": {
+      "key": "S",
+      "layer": "shift"
+    },
+    "ষ": {
+      "key": "D",
+      "layer": "shift"
+    },
+    "ূ": {
+      "key": "F",
+      "layer": "shift"
+    },
+    "ঢ়": {
+      "key": "G",
+      "layer": "shift"
+    },
+    "ড": {
+      "key": "H",
+      "layer": "shift"
+    },
+    "ছ": {
+      "key": "J",
+      "layer": "shift"
+    },
+    "ভ": {
+      "key": "K",
+      "layer": "shift"
+    },
+    "অ": {
+      "key": "L",
+      "layer": "shift"
+    },
+    "ৎ": {
+      "key": "Z",
+      "layer": "shift"
+    },
+    "ঞ": {
+      "key": "X",
+      "layer": "shift"
+    },
+    "ৃ": {
+      "key": "C",
+      "layer": "shift"
+    },
+    "ৌ": {
+      "key": "V",
+      "layer": "shift"
+    },
+    "ঝ": {
+      "key": "B",
+      "layer": "shift"
+    },
+    "খ": {
+      "key": "N",
+      "layer": "shift"
+    },
+    "থ": {
+      "key": "M",
+      "layer": "shift"
+    },
+    "০": {
+      "key": "0",
+      "layer": "base"
+    },
+    "১": {
+      "key": "1",
+      "layer": "base"
+    },
+    "২": {
+      "key": "2",
+      "layer": "base"
+    },
+    "৩": {
+      "key": "3",
+      "layer": "base"
+    },
+    "৪": {
+      "key": "4",
+      "layer": "base"
+    },
+    "৫": {
+      "key": "5",
+      "layer": "base"
+    },
+    "৬": {
+      "key": "6",
+      "layer": "base"
+    },
+    "৭": {
+      "key": "7",
+      "layer": "base"
+    },
+    "৮": {
+      "key": "8",
+      "layer": "base"
+    },
+    "৯": {
+      "key": "9",
+      "layer": "base"
+    },
+    ",": {
+      "key": ",",
+      "layer": "base"
+    },
+    ";": {
+      "key": ";",
+      "layer": "base"
+    },
+    ":": {
+      "key": ";",
+      "layer": "shift"
+    },
+    "'": {
+      "key": "'",
+      "layer": "base"
+    },
+    "\"": {
+      "key": "'",
+      "layer": "shift"
+    },
+    "(": {
+      "key": "9",
+      "layer": "shift"
+    },
+    ")": {
+      "key": "0",
+      "layer": "shift"
+    },
+    "-": {
+      "key": "-",
+      "layer": "base"
+    },
+    "!": {
+      "key": "1",
+      "layer": "shift"
+    },
+    "?": {
+      "key": "/",
+      "layer": "shift"
+    },
+    ".": {
+      "key": ".",
+      "layer": "base"
+    }
+  },
+  "grammar_scope": "frozen research style; current client engine replay validation remains required"
+}

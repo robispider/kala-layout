@@ -1,0 +1,42 @@
+{
+  "schema": "kala.usage-metric.pilot-freeze/1",
+  "date": "2026-10-27",
+  "timezone": "Asia/Dhaka",
+  "methodology": "capture-pilot-2026-10-27-v1",
+  "engine_capture_suffix": "capture-v2",
+  "protocol": "2026.10-literature-r5",
+  "prompt_bank": "1.4.0",
+  "build_configuration": "Release",
+  "build_kind": "local validation build; not an installed release sign-off",
+  "release_build_sha256": "c08ceb669ec369b5914f5dfeb63d5dd03bb12bfc732f779f6d705ca84ff0253b",
+  "kala_revision": "f18130c6204268f90e4675e83b1709d781c43438",
+  "capture_sources_sha256": {
+    "kala/Learning/ScanCodePositions.cs": "80dfc994b72c85492401b25120ab3fff442b572c5757a62d635f85e533f4f9a8",
+    "kala/Learning/Study/PromptBank.cs": "3f63cab2c2361b4788d9d886e628b1bd11b3083a632426bfd02cac4834e2fdc3",
+    "kala/Learning/Study/PromptCoverage.cs": "13b6a56c20a72100883b439578a7fc7b0afa6817fd2d8b23bc73d36b97963b12",
+    "kala/Learning/Study/ResearchOutbox.cs": "e13b2a95a5ce6aa05578fddbb06eb9735242f8ccf7cf32f9f36094fcfb763de2",
+    "kala/Learning/Study/ResearchPromptSequence.cs": "f3198d49176765a8df4aaf5725a5f0fe73e802b54943f5dc462b8fc090e4bfd5",
+    "kala/Learning/Study/ResearchStore.cs": "5ea394692621ebf28bbc44884521cda23053abc23da39d00ca93bf60f60f614d",
+    "kala/Learning/Study/ResearchUploader.cs": "2631960837f0b417b0d9a1bcfa94e17712d9f9544df6829399c7bee7b94534b7",
+    "kala/Learning/Study/SessionPackage.cs": "0b0afea2c3bde4a3495a0f1b45bc50a99044a4c524c28ad47b5f7596859cbd07",
+    "kala/Learning/Study/SessionPackageReader.cs": "1416bb4355321397fd4599bbced1e8d3e74cbf5f17087ef229335df6b9f2e6d1",
+    "kala/Learning/Study/SkillCheckScorer.cs": "0bf837aeb31a07efdadf3124338f74c58c01dd15e627bfec5deb6c70744663a1",
+    "kala/Learning/Study/StudyRecorder.cs": "a05c9c521c7c0a9d58573dc21c2f491fca302f9041140c6f9bbceb52cd19314b",
+    "kala/Learning/Study/StudyTap.cs": "293931761b9d5942046daedb03f8e91ed4aa843d1b6d6095e7c08c45289184c7",
+    "kala/Learning/Study/StudyTextRecorder.cs": "f9a16ebb3b1cd6fbf0d4cfb841c80265c5294b877c7afd597139bd8982f4bcde",
+    "kala/Learning/Study/TypingCheckController.cs": "22ee32b538f3a8a6910bc63ee709031886d303b5e29add5e425ccb109bd414fb",
+    "kala/MainForm.ProductUi.cs": "0579fafa6bbf5ef88463bbd8493c4ae0288bc7028a8fc18af0f657a7d6a28649"
+  },
+  "bank_sha256": "755c4f915928803ad37f02b6e165cc88f25afe7c8860ab46570131def6f5b7f9",
+  "comparison": "NFC; dotnet-8 Unicode 15.0; kala-grapheme-v1",
+  "selection_sources_sha256": {
+    "kala/Learning/Study/PromptBank.cs": "3f63cab2c2361b4788d9d886e628b1bd11b3083a632426bfd02cac4834e2fdc3",
+    "kala/Learning/Study/PromptCoverage.cs": "13b6a56c20a72100883b439578a7fc7b0afa6817fd2d8b23bc73d36b97963b12",
+    "kala/Learning/Study/ResearchPromptSequence.cs": "f3198d49176765a8df4aaf5725a5f0fe73e802b54943f5dc462b8fc090e4bfd5",
+    "kala/Learning/Study/TypingCheckController.cs": "22ee32b538f3a8a6910bc63ee709031886d303b5e29add5e425ccb109bd414fb",
+    "kala/Learning/Study/SkillCheckScorer.cs": "0bf837aeb31a07efdadf3124338f74c58c01dd15e627bfec5deb6c70744663a1"
+  },
+  "remaining": "Recheck the exact installed pilot release and all observed scenarios before wider recruitment.",
+  "client_product_version": "0.13.0-alpha.1+f18130c6204268f90e4675e83b1709d781c43438",
+  "working_tree_has_capture_fixes": true
+}

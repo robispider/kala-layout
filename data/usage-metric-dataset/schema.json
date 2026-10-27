@@ -1,16 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Kala complete-session dataset manifest v1",
+  "title": "Kala complete-session dataset manifests v1 and v2",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schema",
-    "session_schema",
     "sessions"
   ],
   "properties": {
     "schema": {
-      "const": "kala.usage-metric.dataset/1"
+      "enum": [
+        "kala.usage-metric.dataset/1",
+        "kala.usage-metric.dataset/2"
+      ]
     },
     "session_schema": {
       "const": "kala.typing-check.session/1"
@@ -19,6 +21,17 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/session"
+      }
+    },
+    "session_schemas": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "kala.typing-check.session/1",
+          "kala.typing-check.session/2"
+        ]
       }
     }
   },
@@ -59,8 +72,65 @@
         "git_blob_sha": {
           "type": "string",
           "pattern": "^[0-9a-f]{40}$"
+        },
+        "session_schema": {
+          "enum": [
+            "kala.typing-check.session/1",
+            "kala.typing-check.session/2"
+          ]
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema": {
+            "const": "kala.usage-metric.dataset/1"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "session_schema"
+        ],
+        "not": {
+          "required": [
+            "session_schemas"
+          ]
+        },
+        "properties": {
+          "sessions": {
+            "items": {
+              "properties": {
+                "session_schema": {
+                  "const": "kala.typing-check.session/1"
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "required": [
+          "session_schemas"
+        ],
+        "not": {
+          "required": [
+            "session_schema"
+          ]
+        },
+        "properties": {
+          "sessions": {
+            "items": {
+              "required": [
+                "session_schema"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
 }

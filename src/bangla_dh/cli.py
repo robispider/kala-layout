@@ -145,7 +145,7 @@ def _audit_usage_data(args) -> int:
 
     try:
         record, paths = run(Path(args.dataset) if args.dataset else DATA / "usage-metric-dataset",
-                            Path(args.out) if args.out else RESULTS_ROOT / "usage-metric-audit-v1")
+                            Path(args.out) if args.out else RESULTS_ROOT / "usage-metric-audit-v2")
     except (InvalidData, OSError, ValueError, KeyError, TypeError):
         print("Unable to audit: missing or malformed dataset manifest, or invalid output path.", file=sys.stderr)
         return 1
@@ -309,13 +309,88 @@ def _check_results(args) -> int:
     return 0 if check_results(args.group) else 1
 
 
+def _usage_pipeline(args) -> int:
+    from .paths import DATA, PROJECT_ROOT
+    from .usage_metric import InvalidData
+    from .usage_pipeline import build, verify_run, POLICY
+    from .usage_registry import build as register, DEFAULT
+    try:
+        dataset = Path(args.dataset) if args.dataset else DATA / "usage-metric-dataset"
+        if args.command == "register-usage-data":
+            _, paths = register(dataset, Path(args.kala_root), Path(args.out) if args.out else DEFAULT, args.mapping)
+            for path in paths: print(path)
+            return 0
+        if args.command == "verify-usage-run":
+            verify_run(Path(args.run), dataset)
+            print("Current dataset and derived artifact hashes match.")
+            return 0
+        from datetime import datetime, timezone
+        default_out = PROJECT_ROOT / "results/usage-metric-pipeline-v1" if args.command != "fit-usage-model" else (
+            PROJECT_ROOT / "results/usage-empirical-v1" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
+        record, paths = build(dataset, Path(args.out) if args.out else default_out,
+                              Path(args.registry) if args.registry else DEFAULT,
+                              POLICY, Path(args.pilot_evidence) if args.pilot_evidence else None,
+                              fit=args.command == "fit-usage-model")
+        for path in paths: print(path)
+        print(f"{record['status']}; training_performed={record['training_performed']}")
+        return 2 if args.command == "fit-usage-model" and record["status"] != "experimental_fit" else 0
+    except (InvalidData, OSError, ValueError, KeyError, TypeError, IndexError):
+        print("Usage pipeline failed: invalid/stale inputs, immutable registry collision, or invalid output path. See the registry and audit checks.", file=sys.stderr)
+        return 1
+
+
+def _usage_evaluator(args) -> int:
+    from .usage_evaluator import run
+    from .usage_metric import InvalidData
+    try:
+        record, paths = run(args.candidates, args.reference, args.benchmark, args.fit_run, args.out,
+                            args.limit, args.search_benchmark, args.locked_label, args.max_changed, args.steps)
+        for path in paths: print(path)
+        print(record["status"])
+        return 2 if record["status"] in {"insufficient_data", "unsupported_contexts"} else 0
+    except (InvalidData, OSError, ValueError, KeyError, TypeError):
+        print("Empirical evaluation refused: stale model, unsupported candidate/benchmark, or incompatible model strata.", file=sys.stderr)
+        return 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="bangla-dh", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("audit-usage-data", help="independently audit received typing-study packages; no model fitting")
     p.add_argument("--dataset", help="dataset directory (default data/usage-metric-dataset)")
-    p.add_argument("--out", help="report directory inside the repository (default results/usage-metric-audit-v1)")
+    p.add_argument("--out", help="report directory inside the repository (default results/usage-metric-audit-v2)")
     p.set_defaults(func=_audit_usage_data)
+
+    for command in ("register-usage-data", "build-usage-features", "fit-usage-model", "verify-usage-run"):
+        p = sub.add_parser(command, help={"register-usage-data": "snapshot mapping bytes and text-free protocol metadata",
+            "build-usage-features": "audit and build reason-coded empirical tables without training",
+            "fit-usage-model": "fit only after observed-pilot and contributor/family coverage gates pass (exit 2 if insufficient)",
+            "verify-usage-run": "reject withdrawn/stale input snapshots or modified derived artifacts"}[command])
+        p.add_argument("--dataset", help="current dataset directory")
+        if command == "verify-usage-run":
+            p.add_argument("run", help="existing empirical run directory")
+        else:
+            p.add_argument("--out", help="output directory; registry uses a JSON file path")
+            if command == "register-usage-data":
+                p.add_argument("--kala-root", required=True, help="Kala repository containing the research skill check")
+                p.add_argument("--mapping", action="append", default=[], help="additional exact imported runtime mapping JSON (repeatable)")
+            else:
+                p.add_argument("--registry", help="immutable mapping/protocol registry JSON")
+                p.add_argument("--pilot-evidence", help="observed pilot evidence JSON; omitted means pending")
+        p.set_defaults(func=_usage_pipeline)
+
+    p = sub.add_parser("evaluate-usage-layouts", help="round-trip candidate grammars, score only supported empirical contexts, optionally search swaps")
+    p.add_argument("candidates", nargs="+")
+    p.add_argument("--reference", required=True, help="reference candidate file stem")
+    p.add_argument("--fit-run", required=True, help="current verified empirical fit directory")
+    p.add_argument("--benchmark", required=True, help="untouched JSONL[.gz] texts; never copied into results")
+    p.add_argument("--out", required=True)
+    p.add_argument("--limit", type=int, default=25, help="fixed document prefix for adapter checks (default 25)")
+    p.add_argument("--search-benchmark", help="separate development benchmark; final benchmark is never used to choose swaps")
+    p.add_argument("--locked-label", action="append", default=[])
+    p.add_argument("--max-changed", type=int, default=4)
+    p.add_argument("--steps", type=int, default=10)
+    p.set_defaults(func=_usage_evaluator)
 
     p = sub.add_parser("reproduce-colemak", help="Phase 1: reproduce the published Colemak Mod-DH results")
     p.add_argument("--out", help="output directory (default results/phase1)")

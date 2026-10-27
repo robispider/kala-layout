@@ -1,0 +1,448 @@
+{
+  "schema": "kala.client-collection.execution/1",
+  "created": "2026-10-27T13:27:11.039346+06:00",
+  "plan_id": "KCC-v1-draft-2026-10-27",
+  "protocol_id": "BHE-v1.1-draft-2026-10-27",
+  "status": "provisional_client_implementation_partial_protocol",
+  "checkpoint_status": {
+    "C0": "client contract and synthetic parity implemented; production compatibility acceptance pending",
+    "C1": "implemented; unknown metadata and unverified lineage retained",
+    "C2": "runtime snapshots and active-style checks implemented; independent registry/semantic acceptance pending",
+    "C3": "bounded/scoped capture, continuity stop and initial-state wait implemented; granular loss spans and observed hardware/callback measurements pending",
+    "C4": "native rule/compact state plus engine/delivery records implemented; imported rules use family/state replay, independent semantic adapters pending",
+    "C5": "scheduler and task provenance implemented; existing bank reused as explicit pilot, reviewed broader/targeted bank pending",
+    "C6": "common-block physical probes and incomplete attempts implemented; geometry/cue assumptions and observed transfer remain unvalidated",
+    "C7": "task-aware summaries, preview/consent and bilingual UI implemented; native wording review pending",
+    "C8": "client/in-memory and local HTTP mock support verified for both formats; production receiver/publisher/index not implemented here",
+    "C9": "targeted automated and rendered-UI evidence passed; observed participant/deployment pilot pending",
+    "C10": "not released; collection-ready acceptance not achieved"
+  },
+  "source_repositories": {
+    "kala": {
+      "commit": "f18130c6204268f90e4675e83b1709d781c43438",
+      "status": "M kala.BaselineTests/TypingCheckUiTests.cs\n M kala.BaselineTests/TypingStudyCaptureTests.cs\n M kala.BaselineTests/TypingStudyServerTests.cs\n M kala/Keyboard/AvroFixedLayoutManager.cs\n M kala/Keyboard/FixedLayoutManager.cs\n M kala/KeyboardHook.cs\n M kala/Learning/ScanCodePositions.cs\n M kala/Learning/Study/ResearchStore.cs\n M kala/Learning/Study/ResearchUploader.cs\n M kala/Learning/Study/SessionPackage.cs\n M kala/Learning/Study/SessionPackageReader.cs\n M kala/Learning/Study/SkillCheckScorer.cs\n M kala/Learning/Study/StudyRecorder.cs\n M kala/Learning/Study/StudyTap.cs\n M kala/Learning/Study/TypingCheckController.cs\n M kala/MainForm.ProductUi.cs\n M kala/Resources/Localization/TypingCheckUiStrings.bn.resx\n M kala/Resources/Localization/TypingCheckUiStrings.resx\n M kala/TypingBundle.cs\n M kala/TypingSession.cs\n M kala/Ui/HostModels.cs\n M kala/Ui/TypingCheck/TypingCheckForm.Designer.cs\n M kala/Ui/TypingCheck/TypingCheckForm.cs\n M kala/Ui/TypingCheck/TypingCheckReference.cs\n M kala/WindowsInputRouting.cs\n M tools/typing-study-server/Program.cs\n?? kala.BaselineTests/CollectionV2Tests.cs\n?? kala/IStudyEngineObserver.cs\n?? kala/Learning/Study/StudyCollection.cs\n?? kala/Learning/Study/StudySchedule.cs\n?? kala/Ui/TypingCheck/StudyProbeView.cs\n?? plans/typing-collection-v2/"
+    },
+    "kala-layout": {
+      "commit": "10e47a74cb9e30409329c7b77f3289ff59ca50f1",
+      "status": "M .github/workflows/usage-data.yml\n M results/usage-metric-audit-v1/MODELING_PLAN.md\n M results/usage-metric-audit-v1/run-manifest.json\n M src/bangla_dh/cli.py\n M src/bangla_dh/usage_metric.py\n M tests/test_usage_metric.py\n?? data/unicode/\n?? data/usage-metric-policy-v1.json\n?? data/usage-metric-registry/\n?? results/empirical-layout-protocol-v1/\n?? results/usage-empirical-v1/\n?? results/usage-metric-audit-v2/\n?? results/usage-metric-evaluator-v1/\n?? results/usage-metric-pilot-v1/\n?? results/usage-metric-pipeline-v1/\n?? src/bangla_dh/usage_collection_v2.py\n?? src/bangla_dh/usage_evaluator.py\n?? src/bangla_dh/usage_features.py\n?? src/bangla_dh/usage_fit.py\n?? src/bangla_dh/usage_graphemes.py\n?? src/bangla_dh/usage_pipeline.py\n?? src/bangla_dh/usage_registry.py\n?? src/bangla_dh/usage_schema.py\n?? src/bangla_dh/usage_scores.py\n?? tests/test_usage_collection_v2.py\n?? tests/test_usage_evaluator.py\n?? tests/test_usage_pipeline.py"
+    }
+  },
+  "source_sha256": {
+    "kala/kala.BaselineTests/CollectionV2Tests.cs": "beb77127590ab6f24dbf6cff45f7c419543478b9819dc328edc6c0185ca4813d",
+    "kala/kala.BaselineTests/TypingCheckUiTests.cs": "72ac77d58a95f480a25acb8f59c64874fbbae7e830eb2faad6ab04d4640e5f38",
+    "kala/kala.BaselineTests/TypingStudyCaptureTests.cs": "80e2abe8b3d8d45133938d95e8dba28ea1e5642039f46e2e1dec2e4706734e48",
+    "kala/kala.BaselineTests/TypingStudyServerTests.cs": "ba0b42e4a70674dc9d59bca1557ee308420c5a7a9c094b0ee649a058ef829c06",
+    "kala/kala/IStudyEngineObserver.cs": "c998ac98d5b9e5d3082cf9a5c69d56051a08bec98ee8346d770e77cd84a34338",
+    "kala/kala/Keyboard/AvroFixedLayoutManager.cs": "68b888f71920104d673b6beda995f63c56c02bfa86d4d93357a473cd846e1358",
+    "kala/kala/Keyboard/FixedLayoutManager.cs": "d71fd81214e3d7b31fac7f6d67b7e90c1e9a007562c0f60f3e9c286f09089932",
+    "kala/kala/KeyboardHook.cs": "6fbbee0f07c66bd7d79b1ee02a8776317428eda23cb2936562c2657046268173",
+    "kala/kala/Learning/ScanCodePositions.cs": "80dfc994b72c85492401b25120ab3fff442b572c5757a62d635f85e533f4f9a8",
+    "kala/kala/Learning/Study/ResearchStore.cs": "ea705899a5d7a732e3523baddb9961647c0b9308b5ba94b315cb07dc36b32b3a",
+    "kala/kala/Learning/Study/ResearchUploader.cs": "c85c48f6ce8418385f46327cce0444f22c02e9a507d61d27a2d103e34f1df502",
+    "kala/kala/Learning/Study/SessionPackage.cs": "c4bda404abb6c3b1860bc581eda050e69f30ad34fd3fdbdb0764f098755d71fa",
+    "kala/kala/Learning/Study/SessionPackageReader.cs": "2e59b295e8479fb232ccfecae7f2a872ee1f33b3b7ddfd86f7ae3cdf80d83524",
+    "kala/kala/Learning/Study/SkillCheckScorer.cs": "5ca765dae5158c105afe2436a6bb2556c5159c7b14800aa6944fc90e8650e9f8",
+    "kala/kala/Learning/Study/StudyCollection.cs": "87d37b6dac5cf3de52a0e51f309deeb884a1f8fe3abb40bae8c768575e80322c",
+    "kala/kala/Learning/Study/StudyRecorder.cs": "d88797b66f43bd31d80f7b8620303a7b687eb7996028bd3d658d5db80899ecea",
+    "kala/kala/Learning/Study/StudySchedule.cs": "e8ff6e29c4182b8abe4c2c66f015589db660e84367d48ff6050174bf8f199f64",
+    "kala/kala/Learning/Study/StudyTap.cs": "a2a5be46edc0d903777362c41aa3235fa0b8da61d681b4a374891c6aa94c8b17",
+    "kala/kala/Learning/Study/TypingCheckController.cs": "4f1163186f20fd104059bacd1b31a840746d51239372306040a776d9f6771f05",
+    "kala/kala/MainForm.ProductUi.cs": "6a5a1916f2c584f772ecb40ffbd909c8528e87ddde316ed150e038fb83b03db5",
+    "kala/kala/Resources/Localization/TypingCheckUiStrings.bn.resx": "326fdbca6f125d26801e67f69fa9f048450bb6826d13152e372e56e0f6ffff68",
+    "kala/kala/Resources/Localization/TypingCheckUiStrings.resx": "da655a2827e8bc1fc1971f24b951fa5b546f7c24495b0df56b031add2c4fcef5",
+    "kala/kala/TypingBundle.cs": "3f821d05f2284d8a5d9daf7c8003f7fa12a79ab8c704e876f4853683ec003e86",
+    "kala/kala/TypingSession.cs": "7498e17c5bb0f5e727031cb6007f96350e912475b9b097af9be488e0513eca9a",
+    "kala/kala/Ui/HostModels.cs": "e3a82d3c14eda38c460c5a2d0271a921c2f472c1e37e7cfe40a4e72d9a35280f",
+    "kala/kala/Ui/TypingCheck/StudyProbeView.cs": "380b103f0cf6ad9df80ac96535d93838fc12a17dcf22e04336c834381033d002",
+    "kala/kala/Ui/TypingCheck/TypingCheckForm.Designer.cs": "05741bcb3e70a978c7f5b2c8481bdc3e7e1456d4098dd80fd0752dd11795962d",
+    "kala/kala/Ui/TypingCheck/TypingCheckForm.cs": "f3a5b5271e893505b58a3d0a5e6a34ca5f99847981c6668985505a756b83f0aa",
+    "kala/kala/Ui/TypingCheck/TypingCheckReference.cs": "75554d1b60c58073101e39974559d3b641f1a417b9d50e403f3db224ed38a266",
+    "kala/kala/WindowsInputRouting.cs": "a72e844150775eae5b36d9afe642fb536e54df2c40fff3bdb75720d15dd95df1",
+    "kala/tools/typing-study-server/Program.cs": "9d2988c19ee7efe42cc4d483e01c1f75ad8cd01d91d7e8e8eaaa94cae7570ed7",
+    "kala-layout/src/bangla_dh/usage_collection_v2.py": "e636a2d6d3a9034cf9d6069c27ed417b45a1bdc37d697053d9fd3fea7d69ccf2",
+    "kala-layout/src/bangla_dh/usage_schema.py": "43cbdfb17ef787858b5a59f2de94cc6c296729f5b7e85fefdf9f1b7b73580877",
+    "kala-layout/tests/test_usage_collection_v2.py": "d8be8ba07baa294257e9e3c435758a778ed7e0cda20ef03a3b83592af0f15e6a"
+  },
+  "release_assembly": {
+    "path": "D:\\git repo\\kala\\kala\\artifacts\\collection-v2\\bin\\Release\\net8.0-windows\\kala.dll",
+    "sha256": "e56b4bf6677c572e7fdb890f30a0ea68df01a86d48134f4534f7ab93dceb3042"
+  },
+  "test_runs": {
+    "baseline": {
+      "counts": {
+        "total": 84,
+        "executed": 84,
+        "passed": 84,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\baseline.trx",
+      "sha256": "c33f0294055ad102c37888e91207589e48bf449a5b4c9b72e169a6a99c80ded6"
+    },
+    "checkpoint": {
+      "counts": {
+        "total": 115,
+        "executed": 115,
+        "passed": 104,
+        "failed": 11,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\checkpoint.trx",
+      "sha256": "94562354e11a7fccdd3c39f4336ba423d96e24391cd596b26fb08eb2037108c6"
+    },
+    "checkpoint2": {
+      "counts": {
+        "total": 115,
+        "executed": 115,
+        "passed": 115,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\checkpoint2.trx",
+      "sha256": "500046eebff0b4130a1fe0f23e67730e3ae009ba30798a97a3dc29d1a2f4628d"
+    },
+    "collection-v2-final": {
+      "counts": {
+        "total": 635,
+        "executed": 635,
+        "passed": 635,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\collection-v2-final.trx",
+      "sha256": "06ce69e4a7fd7a0ced40e0cd1dc141b4bdd5d6f966083516ee8f8512b400c1b8"
+    },
+    "completion-scope": {
+      "counts": {
+        "total": 124,
+        "executed": 124,
+        "passed": 124,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\completion-scope.trx",
+      "sha256": "e95948e219be37d78d25361b5458c05953697f5dc148a70195ad082f5ffe6e55"
+    },
+    "engine-final": {
+      "counts": {
+        "total": 230,
+        "executed": 230,
+        "passed": 230,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\engine-final.trx",
+      "sha256": "6ccbf704948b383d2a500168bb6fe63428cbe4b74cb394a5633386daea8188f5"
+    },
+    "external-regression": {
+      "counts": {
+        "total": 496,
+        "executed": 496,
+        "passed": 496,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\external-regression.trx",
+      "sha256": "88dbbdf34f37d16c7bdc1075d9536816ae40a3e77372cd4e63f528965499d5fb"
+    },
+    "http-both-versions": {
+      "counts": {
+        "total": 2,
+        "executed": 2,
+        "passed": 2,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\http-both-versions.trx",
+      "sha256": "385369172f417a7e23d4324121bbe4634219295fa5d56eea37bf59e451617c6b"
+    },
+    "render-final": {
+      "counts": {
+        "total": 38,
+        "executed": 38,
+        "passed": 38,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\render-final.trx",
+      "sha256": "153a3522d4a86454691c2b6200796edb522f7a8857e2a49a69c2eb06af520444"
+    },
+    "scope-ui-final": {
+      "counts": {
+        "total": 132,
+        "executed": 132,
+        "passed": 132,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\scope-ui-final.trx",
+      "sha256": "d959d2672263dba716ff65e263743a35f128119e2a0aeb98171e8c7b9f87bb7b"
+    },
+    "state-evidence": {
+      "counts": {
+        "total": 16,
+        "executed": 16,
+        "passed": 16,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\state-evidence.trx",
+      "sha256": "7dd270a1e9a236f94eae94aeba6ccbb7d84a25e988cc386605a23ed2ef49fa2c"
+    },
+    "v2-new": {
+      "counts": {
+        "total": 12,
+        "executed": 12,
+        "passed": 12,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\v2-new.trx",
+      "sha256": "b179c548464e784f35b37b5ad8de2b2862e5170b472b12481f9eb0831dd7d842"
+    },
+    "validated-final": {
+      "counts": {
+        "total": 692,
+        "executed": 692,
+        "passed": 692,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\validated-final.trx",
+      "sha256": "a658a55188f8f3bd3fa059836895d7f5e64c3261a73f1c9835402d9e18a6acfa"
+    }
+  },
+  "research_checks": {
+    "usage_tests_passed": 68,
+    "failed": 0,
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -p 'test_usage*.py'"
+  },
+  "resource_validation": "passed; TypingCheck Bangla 98 translations, zero neutral fallbacks",
+  "synthetic_goldens": [
+    {
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\golden\\empty-v2.json.gz",
+      "sha256": "395055709b62d196777f6405986e15d9586f0c84f5aa4bce79381dfeca083c19",
+      "independent_audit": {
+        "status": "provisional_collection_audit",
+        "schema": "kala.typing-check.session/2",
+        "session_id": "s_22222222222222222222222222222222",
+        "keyboard_category": "unknown",
+        "geometry": "unknown",
+        "keys": 0,
+        "engine_events": 0,
+        "probe_attempts": 0,
+        "limitations": [
+          "runtime-unavailable",
+          "test-only"
+        ],
+        "engine_semantics_validated": false,
+        "model_eligible": false
+      }
+    },
+    {
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\golden\\physical-probe-v2.json.gz",
+      "sha256": "51a18ccdd2845a8aa9f3ffd6c278a55c4470d6b7a465f4c71432683ca5dd3403",
+      "independent_audit": {
+        "status": "provisional_collection_audit",
+        "schema": "kala.typing-check.session/2",
+        "session_id": "s_22222222222222222222222222222222",
+        "keyboard_category": "unknown",
+        "geometry": "unknown",
+        "keys": 4,
+        "engine_events": 0,
+        "probe_attempts": 1,
+        "limitations": [
+          "runtime-unavailable",
+          "test-only"
+        ],
+        "engine_semantics_validated": false,
+        "model_eligible": false
+      }
+    },
+    {
+      "path": "D:\\git repo\\kala\\artifacts\\collection-v2\\golden\\zero-output-v2.json.gz",
+      "sha256": "59dc857e526df0d050ce0807941869721fc70e36774741a73533b96b2017f262",
+      "independent_audit": {
+        "status": "provisional_collection_audit",
+        "schema": "kala.typing-check.session/2",
+        "session_id": "s_22222222222222222222222222222222",
+        "keyboard_category": "unknown",
+        "geometry": "unknown",
+        "keys": 1,
+        "engine_events": 1,
+        "probe_attempts": 0,
+        "limitations": [
+          "runtime-unavailable",
+          "test-only"
+        ],
+        "engine_semantics_validated": false,
+        "model_eligible": false
+      }
+    }
+  ],
+  "probe_render_sha256": {
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\ui\\typing-check-probe-bn-dark.png": "0285757a0a8d1d0e5bd20b89f20e2f44268b6fb5ea04371a63a27091d067dc82",
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\ui\\typing-check-probe-bn-light.png": "8555831480e6b5ca1df59a8095330fe130421c34d734773616abe564a93ccd2e",
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\ui\\typing-check-probe-en-dark.png": "f8498cd694ab0ad5587eef622a70e0f09455b1f06b35de1c0847c954f4619559",
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\ui\\typing-check-probe-en-light.png": "42eb75842b742888f7eee6e7e380d44cfc9eae601c553f55a437709715e0628b"
+  },
+  "observed_human_pilot": false,
+  "production_receiver_modified": false,
+  "production_deployed": false,
+  "full_kala_suite_run": false,
+  "model_fitted": false,
+  "dataset_or_frozen_scores_changed": false,
+  "test_counts_overlap": true,
+  "limitations": [
+    "reviewed multi-domain/targeted bank pending",
+    "native Bangla wording review pending",
+    "production schema/index/publication compatibility pending",
+    "independent engine semantic replay adapters pending",
+    "granular loss diagnostics and worst-case capacity/physical callback evidence pending",
+    "observed intended-build hardware and consent/retry/publication/withdrawal pilot pending"
+  ],
+  "preservation": "Existing dirty work retained; no original participant packages, user profiles, frozen search inputs/scores or official layouts were rewritten."
+}

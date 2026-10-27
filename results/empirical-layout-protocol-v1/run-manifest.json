@@ -1,0 +1,249 @@
+{
+  "schema": "kala.research-protocol.manifest/1",
+  "phase": "empirical-layout-protocol-v1",
+  "created": "2026-10-27T03:10:14.165288+06:00",
+  "protocol_status": "proposed",
+  "source_repositories": {
+    "kala-layout": {
+      "root": "D:\\git repo\\kala-layout",
+      "commit": "10e47a74cb9e30409329c7b77f3289ff59ca50f1",
+      "status_at_review_finalization": "M .github/workflows/usage-data.yml\n M results/usage-metric-audit-v1/MODELING_PLAN.md\n M results/usage-metric-audit-v1/run-manifest.json\n M src/bangla_dh/cli.py\n M src/bangla_dh/usage_metric.py\n M tests/test_usage_metric.py\n?? data/unicode/\n?? data/usage-metric-policy-v1.json\n?? data/usage-metric-registry/\n?? results/empirical-layout-protocol-v1/\n?? results/usage-empirical-v1/\n?? results/usage-metric-audit-v2/\n?? results/usage-metric-evaluator-v1/\n?? results/usage-metric-pilot-v1/\n?? results/usage-metric-pipeline-v1/\n?? src/bangla_dh/usage_evaluator.py\n?? src/bangla_dh/usage_features.py\n?? src/bangla_dh/usage_fit.py\n?? src/bangla_dh/usage_graphemes.py\n?? src/bangla_dh/usage_pipeline.py\n?? src/bangla_dh/usage_registry.py\n?? src/bangla_dh/usage_schema.py\n?? src/bangla_dh/usage_scores.py\n?? tests/test_usage_evaluator.py\n?? tests/test_usage_pipeline.py"
+    },
+    "kala": {
+      "root": "D:\\git repo\\kala",
+      "commit": "f18130c6204268f90e4675e83b1709d781c43438",
+      "status_at_review_finalization": "M kala.BaselineTests/TypingStudyCaptureTests.cs\n M kala/Learning/ScanCodePositions.cs\n M kala/Learning/Study/StudyRecorder.cs\n M kala/Learning/Study/StudyTap.cs\n M kala/MainForm.ProductUi.cs"
+    },
+    "kala-usage-metric": {
+      "root": "D:\\git repo\\kala-usage-metric",
+      "commit": "f7420d860260370da8fd258458ff507bcd48a187",
+      "status_at_review_finalization": "M .github/workflows/ci.yml\n M docs/GITHUB_DATASET.md\n M docs/UBUNTU_DEPLOYMENT.md\n M docs/VALIDATION.md"
+    }
+  },
+  "input_sha256": {
+    "kala-layout/AGENTS.md": "ece8fe51bd781a1b617e4ff4d382b2064e8613504a18bc2af6f720b02c0a72bb",
+    "kala-layout/README.md": "8e8731b941bddf6b1e9addef78b3a99b09fa98ca465803c860a114609f860ea9",
+    "kala-layout/docs/HOW_WE_FOUND_THEM.md": "2d51a210ac4b82eec3591d515c78bfdd7df1467b9bbd66b8dabcb451ae753cdf",
+    "kala-layout/docs/REPRODUCE.md": "ee6ae9974dbf9718ea7fa68ed844d62929c43cb88c5934bc6d9ce8de91ea1d98",
+    "kala-layout/docs/RESEARCH_SPEC.md": "65f90963c350fb34e0fc7ee7f14367c161d78cad911076e1f0fc3f4f17a5a3b4",
+    "kala-layout/docs/colemak-model-spec.md": "a919a86a1d83364187abba976d6127f9286026b87734835fc9e0966b2e8577aa",
+    "kala-layout/results/usage-metric-audit-v1/MODELING_PLAN.md": "80e45a196ff43c23ebd2225210c9d18e5f9400adc907bc9f346e954a54f36330",
+    "kala-layout/results/usage-metric-audit-v1/FINDINGS.md": "461ca09ca3cbd29c19468240bcbc176194043b4db37f00d7bb0ad2e5c558b42f",
+    "kala-layout/results/usage-metric-pilot-v1/EXECUTION.md": "2c4a4ae2db8c57fb157611491e1b20f74813a82e0405ab5587ae54387faf55b5",
+    "kala-layout/results/usage-metric-pilot-v1/validation.json": "bea79c264759206389205b83068aa9cc201ec7f54304e902ba420148c75ccdfc",
+    "kala-layout/results/usage-metric-pipeline-v1/REPORT.md": "07559971bf29f84ef4fcb8babe6d7d30f56a036975b8291d05f459940bcf75a6",
+    "kala-layout/data/usage-metric-policy-v1.json": "7c050cf3c5baf79bc01f3ec6a8eb259043f89a5ba178a39c415c4a33e6c839a3",
+    "kala-layout/data/usage-metric-registry/README.md": "15a11ec7bfcb19ed9b87ac18718aa57f1963d14fbc9649c119163044886cea0a",
+    "kala-layout/data/usage-metric-registry/v1/registry.json": "90d90e5660927e383ddd48bbc40c66bf88c22727fb66f797af37672110617e12",
+    "kala-layout/data/usage-metric-dataset/README.md": "2bc5d2f57b21d9f69aa4f4debbbea79ba7da8b17c75dd207b0801d4f34e7217e",
+    "kala-layout/data/usage-metric-dataset/manifest.json": "403f469c9e7b2a59ded3cc86724ca19a1de99b02deac2f9893acaa90c6a14e42",
+    "kala-layout/src/bangla_dh/usage_features.py": "2079f21c5bebfeae61f53c7e9f75bfbbee90a8d662722b7ac99eed0b84fc9df4",
+    "kala-layout/src/bangla_dh/usage_fit.py": "43ee6ebdbe3d706e14ef680e76502778866a70df0a50dfbd5e835902ca63080e",
+    "kala-layout/src/bangla_dh/usage_evaluator.py": "30c78829e36cc10234f4cb2da3cfbc02e1eade027a4ff2a227d8c0255f248429",
+    "kala-layout/src/bangla_dh/usage_pipeline.py": "fbd26e006d5a2a67a7728398a6183a45db3e201b36b678aa7ae884ef562e6374",
+    "kala-layout/src/bangla_dh/usage_schema.py": "c1040263593041b71ac2b8ea1aa3746c79e68f45c708f3c33018bc6ca21c1ebe",
+    "kala-layout/src/bangla_dh/usage_scores.py": "68387b95897f4469bb9a7f97b9cb6eadf280079e52aa453c8acd83005637a0f2",
+    "kala-layout/src/bangla_dh/paths.py": "b9e5cc466aa5bcd53d9fee02c005a2a524ce69179e5fb4d12d2c19cb42aa2c42",
+    "kala-layout/tests/test_usage_metric.py": "3273de9f9f858f03bc39df732ff857ee5a3146b2ee0ec3ad5c93bd682364873b",
+    "kala-layout/tests/test_usage_pipeline.py": "8b6e07aea7ee858a97096223c412d39883afec3d513f761ff338681992973aad",
+    "kala-layout/tests/test_usage_evaluator.py": "b57986104e5ae22a05f0a4d14421b6200f5cf6cca4937e70c0766c0de1610aec",
+    "kala/AGENTS.md": "c5977e09a93a21b6fde37a5dde0adf8e9c4b8482dc8d8a182adfc786804408a3",
+    "kala/kala/Learning/Study/SessionPackage.cs": "0b0afea2c3bde4a3495a0f1b45bc50a99044a4c524c28ad47b5f7596859cbd07",
+    "kala/kala/Learning/Study/ResearchPromptSequence.cs": "f3198d49176765a8df4aaf5725a5f0fe73e802b54943f5dc462b8fc090e4bfd5",
+    "kala/kala/Learning/Study/TypingCheckController.cs": "22ee32b538f3a8a6910bc63ee709031886d303b5e29add5e425ccb109bd414fb",
+    "kala/kala/Learning/Study/StudyTap.cs": "293931761b9d5942046daedb03f8e91ed4aa843d1b6d6095e7c08c45289184c7",
+    "kala/kala/Learning/Study/StudyRecorder.cs": "a05c9c521c7c0a9d58573dc21c2f491fca302f9041140c6f9bbceb52cd19314b",
+    "kala/kala/Learning/ScanCodePositions.cs": "80dfc994b72c85492401b25120ab3fff442b572c5757a62d635f85e533f4f9a8",
+    "kala-usage-metric/README.md": "5eae88f047f196df40b2fe27f449cb0ab12e3a62c4416996382c5e4f7dcb57dd",
+    "kala-usage-metric/docs/CLIENT_CONTRACT.md": "1f5fe8c2875b74ba6e1fe5c35f2a78658493faddb5fdbafa50b11cf56bfdfaef",
+    "kala-usage-metric/docs/CONTINUOUS_RESEARCH.md": "4c6f7bb67503f624bf12a6577f2a74febcfe0c13a6c1990613d019a502194258",
+    "kala-usage-metric/src/Kala.UsageMetric.Api/Contract.cs": "50606029ea043345110b5f3add9b32f8ce978b1fd3902ca3f9afb6fb8a589565",
+    "kala-usage-metric/src/Kala.UsageMetric.Api/PackageValidator.cs": "4cc925783381d08ccdcd1fb1186f86680544706340c153411908007e8ba1229a"
+  },
+  "parameters": {
+    "scope": "documentation-only assessment and proposed protocol",
+    "no_model_fitting": true,
+    "no_code_changes": true,
+    "human_subjects_observed": false,
+    "test_command": "PYTHONPATH=src python -m unittest discover -s tests -p 'test_usage*.py'",
+    "current_protocol_id": "BHE-v1.1-draft-2026-10-27"
+  },
+  "output_sha256": {
+    "results/empirical-layout-protocol-v1/AMENDMENT_NO_QUESTIONNAIRE.md": "287d6525655d9deee91ef624ab7dd64d3e7c291556b07eb6a404ec7b441ea2a4",
+    "results/empirical-layout-protocol-v1/RESEARCH_PROTOCOL.md": "891f7ff9028a2f628f279af1bec495bdfaf9f2a6ea4bfe3a1579bab84c3af1de",
+    "results/empirical-layout-protocol-v1/review.json": "041bd02a48722969ea8f9c97f1b18f1aafe4db2740a682bb22467d94ef9fc674",
+    "results/empirical-layout-protocol-v1/REVIEW.md": "c2e18eb6757028379aafd43a4708e7e88b5420cbd4d26587c8158992d88ae1c3",
+    "results/empirical-layout-protocol-v1/MITIGATION_PLAN.md": "9e65ce9ca132f68195dd36bbf27b7e29530937f6ca278dddcc68a483427d5dcb",
+    "results/empirical-layout-protocol-v1/KALA_CLIENT_COLLECTION_PLAN.md": "d6095d70d27d41295a51a783125ebf679e93e56532bfa9979bd9681650ce93fd",
+    "results/empirical-layout-protocol-v1/KALA_CLIENT_EXECUTION.md": "dfe31012d7e9d1bb56dae1363d65eb49ec39b8856bc36e357cd4ad6a41327574",
+    "results/empirical-layout-protocol-v1/client-execution.json": "19bf86647f0fe00fbd91178c83f9f566695ad2619ae922664610bf1c980517a4",
+    "results/empirical-layout-protocol-v1/STEP_TRANSITION_FIX.md": "19f7804b2f2341b4e20c96db03b6d26710a79362c5137ec14c07c88360e66256",
+    "results/empirical-layout-protocol-v1/step-transition-execution.json": "1f5de7952448feb7b2dbcb9b31f927b308537377d703dea5bb2a91f45aa0b7b1",
+    "results/empirical-layout-protocol-v1/KEYBOARD_TRANSITION_FIX.md": "46f7c9f368b3a6c78d57cad2319b05659a6528187deb5e714d973b0c5139b3d1",
+    "results/empirical-layout-protocol-v1/keyboard-transition-execution.json": "1634067a235c7db5376de9bb63ef7c50b6b462d2f6cf39ea2dab0934aa6e6e9b"
+  },
+  "web_sources": [
+    "https://userinterfaces.aalto.fi/136Mkeystrokes/",
+    "https://doi.org/10.1016/j.ergon.2015.04.006",
+    "https://ie.bogazici.edu.tr/content/estimation-digraph-costs-keyboard-layout-optimization",
+    "https://www.yorku.ca/mack/chi03.html",
+    "https://www.yorku.ca/mack/chi2004.html",
+    "https://arxiv.org/abs/1706.08205",
+    "https://www.nature.com/articles/s41746-019-0178-x"
+  ],
+  "web_access_note": "Consulted 27 October 2026; digraph study evidence from indexed publisher abstract and institutional record, not full-text review. External pages are cited, not archived/hash-pinned.",
+  "unperformed_checks": [
+    "full research suite rerun",
+    "Kala tests rerun",
+    "receiver tests rerun",
+    "observed physical/deployment pilot",
+    "human model fitting",
+    "empirical candidate ranking"
+  ],
+  "amendments": [
+    {
+      "id": "no-questionnaire-unverified-person-linkage",
+      "timestamp": "2026-10-27T12:15:47.570401+06:00",
+      "protocol_id": "BHE-v1.1-draft-2026-10-27",
+      "prior_artifact_sha256": {
+        "RESEARCH_PROTOCOL.md": "d986b7a9aa1a56de3f9c1b814736aa6ee1efd15f628ed4758604783a959fa96d",
+        "review.json": "c9d501b3ba5c54aa845f1cf340bcc4eaf1aba779782b370bebd434d937f7aa29",
+        "REVIEW.md": "df0edb328a454dafe6063e5211aad1aa6c59a461a9dfc0549de3d825f0170c15",
+        "run-manifest.json": "b0fbd5339aa16574e7ce73c6b098cf64e8bacf8a62e384b61f97e7e9bcb37096"
+      },
+      "input_sha256": {
+        "user_supplied_mitigation_plan": "99fb545a4fb0c062aebe9421e3d3a42fd1eebb9ff3a44caa9072864f4e2b7d0b",
+        "kala/kala/Learning/Study/ResearchStore.cs": "5ea394692621ebf28bbc44884521cda23053abc23da39d00ca93bf60f60f614d"
+      },
+      "scope": "documentation only; questionnaires removed and recording-level analysis/claim scope specified",
+      "tests_rerun": false
+    },
+    {
+      "id": "observable-recording-mitigation-plan",
+      "timestamp": "2026-10-27T12:19:56.991388+06:00",
+      "protocol_id": "BHE-v1.1-draft-2026-10-27",
+      "prior_artifact_sha256": {
+        "RESEARCH_PROTOCOL.md": "c9d2331532a548d9243b99763d2df720f31812a5de71f835bb14edf9f54d2606",
+        "AMENDMENT_NO_QUESTIONNAIRE.md": "e0eed1c387d512f7b5fa9e42fda7c6472183b9aa91b87e74447545d84c650b12",
+        "run-manifest.json": "e2805519419f572f2254477ac2e1f4d25b7ae48b460471dbcfda96496793705d"
+      },
+      "scope": "Documentation-only mitigation handoff aligned with the existing no-questionnaire amendment; no numerical gate changes",
+      "outputs": [
+        "results/empirical-layout-protocol-v1/MITIGATION_PLAN.md",
+        "results/empirical-layout-protocol-v1/RESEARCH_PROTOCOL.md",
+        "results/empirical-layout-protocol-v1/AMENDMENT_NO_QUESTIONNAIRE.md"
+      ],
+      "tests_rerun": false,
+      "software_changed": false,
+      "checks": [
+        "relative documentation links",
+        "revision 1.1 plan consistency",
+        "manifest output hashes"
+      ]
+    },
+    {
+      "id": "kala-client-collection-plan",
+      "timestamp": "2026-10-27T12:32:08.539514+06:00",
+      "plan_id": "KCC-v1-draft-2026-10-27",
+      "protocol_id": "BHE-v1.1-draft-2026-10-27",
+      "scope": "Separate documentation-only current Kala client implementation plan; no software, data or protocol gate changes",
+      "source_repository": {
+        "root": "D:\\git repo\\kala",
+        "commit": "f18130c6204268f90e4675e83b1709d781c43438",
+        "working_tree_status_at_plan": " M kala.BaselineTests/TypingStudyCaptureTests.cs\n M kala/Learning/ScanCodePositions.cs\n M kala/Learning/Study/StudyRecorder.cs\n M kala/Learning/Study/StudyTap.cs\n M kala/MainForm.ProductUi.cs\n"
+      },
+      "input_sha256": {
+        "kala/AGENTS.md": "c5977e09a93a21b6fde37a5dde0adf8e9c4b8482dc8d8a182adfc786804408a3",
+        "kala/plans/product-refactor/EXTERNAL_APP_CONTRACT.md": "d2a9165df5f61786a4e29d472e2798c8a6ad1741ec8fe7e611a82c7fba0fab86",
+        "kala/plans/fixed-layout-typing-style/IMPLEMENTATION_PLAN.md": "ae66465e744423bdbc7e747dbdf2eb6f418a11d38b52473dcaaac92fb957481f",
+        "kala/kala/Ui/README.md": "3468b2b13c98399c9e176c14b7f9538ae9ca1a127d21cf367453826f387446c9",
+        "kala/kala/Learning/Study/SessionPackage.cs": "0b0afea2c3bde4a3495a0f1b45bc50a99044a4c524c28ad47b5f7596859cbd07",
+        "kala/kala/Learning/Study/SessionPackageReader.cs": "1416bb4355321397fd4599bbced1e8d3e74cbf5f17087ef229335df6b9f2e6d1",
+        "kala/kala/Learning/Study/StudyTap.cs": "293931761b9d5942046daedb03f8e91ed4aa843d1b6d6095e7c08c45289184c7",
+        "kala/kala/Learning/Study/StudyRecorder.cs": "a05c9c521c7c0a9d58573dc21c2f491fca302f9041140c6f9bbceb52cd19314b",
+        "kala/kala/Learning/Study/StudyTextRecorder.cs": "f9a16ebb3b1cd6fbf0d4cfb841c80265c5294b877c7afd597139bd8982f4bcde",
+        "kala/kala/Learning/Study/TypingCheckController.cs": "22ee32b538f3a8a6910bc63ee709031886d303b5e29add5e425ccb109bd414fb",
+        "kala/kala/Learning/Study/PromptBank.cs": "3f63cab2c2361b4788d9d886e628b1bd11b3083a632426bfd02cac4834e2fdc3",
+        "kala/kala/Learning/Study/PromptCoverage.cs": "13b6a56c20a72100883b439578a7fc7b0afa6817fd2d8b23bc73d36b97963b12",
+        "kala/kala/Learning/Study/ResearchPromptSequence.cs": "f3198d49176765a8df4aaf5725a5f0fe73e802b54943f5dc462b8fc090e4bfd5",
+        "kala/kala/Learning/Study/ResearchStore.cs": "5ea394692621ebf28bbc44884521cda23053abc23da39d00ca93bf60f60f614d",
+        "kala/kala/Learning/Study/ResearchOutbox.cs": "e13b2a95a5ce6aa05578fddbb06eb9735242f8ccf7cf32f9f36094fcfb763de2",
+        "kala/kala/Learning/Study/ResearchUploader.cs": "2631960837f0b417b0d9a1bcfa94e17712d9f9544df6829399c7bee7b94534b7",
+        "kala/kala/Learning/Study/SkillCheckScorer.cs": "0bf837aeb31a07efdadf3124338f74c58c01dd15e627bfec5deb6c70744663a1",
+        "kala/kala/Ui/TypingCheck/TypingCheckForm.cs": "c9c4be8428c075b94a89319a54d3beab7ac6bbbda6c7ddccfd44bfc6fcb0f044",
+        "kala/kala/Ui/TypingCheck/TypingCheckForm.Designer.cs": "05f479af76db11eb010ba8af05c9e4eaeb256912a3988a62554819e799458660",
+        "kala/kala/MainForm.ProductUi.cs": "0579fafa6bbf5ef88463bbd8493c4ae0288bc7028a8fc18af0f657a7d6a28649",
+        "kala/kala/Learning/Kala/KalaLayoutSources.cs": "9689aafc11be19f0fa2a5d3cffbb059e2bea2d83d3b068cfe55061d683be9924",
+        "kala/kala/IDeliveryObserver.cs": "4b1e337005b8da1eaaa45b5d27f41b6dcc52123d08289154ab185251cf8746b3",
+        "kala/kala/TypingSession.cs": "ff94f342819eb4761ba5ab6e633235e1e14c344ba5a384a9c0556e1c70c41285",
+        "kala/kala.BaselineTests/kala.BaselineTests.csproj": "030404650c7feba475835701b0133fe31b5f11319c03ac77a5b22f5006036da5",
+        "kala-usage-metric/docs/CLIENT_CONTRACT.md": "1f5fe8c2875b74ba6e1fe5c35f2a78658493faddb5fdbafa50b11cf56bfdfaef",
+        "kala-usage-metric/src/Kala.UsageMetric.Api/Contract.cs": "50606029ea043345110b5f3add9b32f8ce978b1fd3902ca3f9afb6fb8a589565",
+        "kala-layout/results/empirical-layout-protocol-v1/RESEARCH_PROTOCOL.md": "891f7ff9028a2f628f279af1bec495bdfaf9f2a6ea4bfe3a1579bab84c3af1de",
+        "kala-layout/results/empirical-layout-protocol-v1/AMENDMENT_NO_QUESTIONNAIRE.md": "287d6525655d9deee91ef624ab7dd64d3e7c291556b07eb6a404ec7b441ea2a4",
+        "kala-layout/results/empirical-layout-protocol-v1/MITIGATION_PLAN.md": "355554261a8be05323032f4709c0931d0c3b0849b89f4b1dad5d1431208d6446"
+      },
+      "prior_artifact_sha256": {
+        "run-manifest.json": "16bc396a1069c1e59f6708a1871a10907736acb5c3f08275c8626bea04a1d33d",
+        "MITIGATION_PLAN.md": "355554261a8be05323032f4709c0931d0c3b0849b89f4b1dad5d1431208d6446"
+      },
+      "outputs": [
+        "results/empirical-layout-protocol-v1/KALA_CLIENT_COLLECTION_PLAN.md",
+        "results/empirical-layout-protocol-v1/MITIGATION_PLAN.md"
+      ],
+      "software_changed": false,
+      "tests_rerun": false,
+      "observed_pilot_performed": false,
+      "checks": [
+        "local documentation/source links",
+        "protocol 1.1 scope and checkpoint review",
+        "manifest output and plan source-input hashes"
+      ]
+    },
+    {
+      "id": "kala-client-provisional-implementation",
+      "timestamp": "2026-10-27T13:27:11.039346+06:00",
+      "plan_id": "KCC-v1-draft-2026-10-27",
+      "scope": "Application client implementation and audit-only research /2 adapter; full collection readiness not achieved",
+      "software_changed": true,
+      "production_deployed": false,
+      "observed_pilot_performed": false,
+      "prior_artifact_sha256": {
+        "run-manifest.json": "f6261b55bbcf16f1208682224dd72083a9ce605c403a2c9b010d75a4b2f78dbf",
+        "KALA_CLIENT_COLLECTION_PLAN.md": "2b02b7ed008948b143d7b0843d49dcbeb617c16c36b40c03361f3dac8af20592"
+      },
+      "evidence": "client-execution.json",
+      "status": "provisional_client_implementation_partial_protocol"
+    },
+    {
+      "id": "explicit-timed-step-readiness",
+      "timestamp": "2026-10-27T13:55:56.283806+06:00",
+      "scope": "Pause capture and active clock between timed tasks; explicit readiness, key release and replay-compatible /2 reason",
+      "software_changed": true,
+      "production_deployed": false,
+      "observed_pilot_performed": false,
+      "prior_artifact_sha256": {
+        "run-manifest.json": "be7bb7470292e91aa6da2200262e581e9d69edaad333166b7fad9c3dd61bc172",
+        "client-execution.json": "19bf86647f0fe00fbd91178c83f9f566695ad2619ae922664610bf1c980517a4"
+      },
+      "evidence": "step-transition-execution.json",
+      "status": "implemented-tested-not-deployed"
+    },
+    {
+      "id": "keyboard-and-prominent-step-transition",
+      "timestamp": "2026-10-27T14:25:52.255842+06:00",
+      "prior_artifact_sha256": {
+        "run-manifest.json": "26ec776d65e37814bbf559014609957d0c22c924e466d9876790b083f64ec0e6",
+        "KALA_CLIENT_EXECUTION.md": "7d29493ea5034c71430fc55ff07ea801620452cf570fe887c48cd6ba8b60397e",
+        "STEP_TRANSITION_FIX.md": "19f7804b2f2341b4e20c96db03b6d26710a79362c5137ec14c07c88360e66256",
+        "step-transition-execution.json": "1f5de7952448feb7b2dbcb9b31f927b308537377d703dea5bb2a91f45aa0b7b1"
+      },
+      "software_changed": true,
+      "production_deployed": false,
+      "observed_pilot_performed": false,
+      "evidence": "keyboard-transition-execution.json",
+      "scope": "Prominent timed-step pause/start notice, fresh Enter or mouse confirmation and accessible Stop; unchanged schema, schedule and eligibility",
+      "status": "built-verified-user-installation-pending"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "kala.usage-metric.pilot-evidence/1",
+  "methodology": "capture-pilot-2026-10-27-v1",
+  "status": "pending",
+  "observer": null,
+  "release_build_sha256": "c08ceb669ec369b5914f5dfeb63d5dd03bb12bfc732f779f6d705ca84ff0253b",
+  "scenarios": [
+    {
+      "scenario": "ordinary_check",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "pause_focus",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "fast_corrections_held_keys",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "timed_enter_boundary",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "stop_interruption",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "decline_sharing",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "offline_reconnect",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "retry_receiver_restart",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "withdrawal_queued_retry",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "ordinary_external_typing",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "physical_external_keys",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    },
+    {
+      "scenario": "physical_laptop_keys",
+      "status": "pending",
+      "observer": null,
+      "evidence_sha256": null,
+      "package_sha256": null,
+      "receipt_sha256": null,
+      "exclusion_reason": null
+    }
+  ]
+}

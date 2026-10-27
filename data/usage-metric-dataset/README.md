@@ -11,11 +11,12 @@ currently published sessions.
 ## Files and contents
 
 * `sessions/<contributor_id>/<session_id>.json.gz`: the **unchanged original gzip
-  upload**, using session schema `kala.typing-check.session/1`. Packages retain
+  upload**, using session schema `kala.typing-check.session/1` or `/2`. Packages retain
   predefined prompt text, final text, text edits, physical key events, timing,
   pseudonymous contributor/session IDs, layout and mapping information, protocol
   and text-bank versions, summary values, completion and quality flags.
-* `manifest.json`: index schema `kala.usage-metric.dataset/1`, identifying every
+* `manifest.json`: index schema `kala.usage-metric.dataset/1` (legacy-only) or `/2`
+  (per-entry `session_schema` and a top-level `session_schemas` array), identifying every
   currently published package by path, contributor/session IDs, byte count,
   SHA-256 of the original compressed bytes and Git blob SHA. See `schema.json`.
 * `schema.json`: JSON Schema for the public manifest. Session admission semantics
@@ -39,7 +40,7 @@ from pathlib import Path
 
 root = Path("data/usage-metric-dataset").resolve()
 index = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
-assert index["schema"] == "kala.usage-metric.dataset/1"
+assert index["schema"] in {"kala.usage-metric.dataset/1", "kala.usage-metric.dataset/2"}
 for entry in index["sessions"]:
     path = (root / entry["path"]).resolve()
     assert path.is_relative_to(root / "sessions")
@@ -47,7 +48,8 @@ for entry in index["sessions"]:
     assert len(raw) == entry["size_bytes"]
     assert hashlib.sha256(raw).hexdigest() == entry["package_sha256"]
     package = json.loads(gzip.decompress(raw))
-    assert package["schema"] == index["session_schema"]
+    expected_schema = entry["session_schema"] if index["schema"].endswith("/2") else index["session_schema"]
+    assert package["schema"] == expected_schema
     assert package["session"]["session_id"] == entry["session_id"]
     assert package["session"]["contributor_id"] == entry["contributor_id"]
     # Analyze package here, keeping protocol, bank, mapping and quality flags.
@@ -59,6 +61,14 @@ quality/completion information as research variables. Do not silently combine
 incompatible protocols or equate client summary values with independently verified
 measurements. This directory makes no fixed-versus-phonetic comparison and adds no
 new performance claim.
+
+The /2 format additionally preserves task provenance, runtime input snapshots,
+engine/delivery observations and physical-key probes, including incomplete attempts.
+The received-data audit handles both manifest formats and lists /2 findings in
+`collection_sessions`. These provisional records stay outside /1 measurement tables
+and model extraction; structural acceptance does not validate engine semantics.
+Publish the matching reader/schema changes before enabling /2 collection on the
+receiver so the dataset workflow can read the first mixed manifest.
 
 ## Repeatable received-data audit
 

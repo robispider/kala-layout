@@ -1,0 +1,92 @@
+{
+  "schema": "kala.client-step-transition-execution/1",
+  "created": "2026-10-27T13:55:56.283806+06:00",
+  "status": "implemented-tested-not-deployed",
+  "versions": {
+    "schema": "kala.typing-check.session/2",
+    "protocol": "2026.10-bhe-pilot-r2",
+    "schedule": "bhe-task-schedule-2",
+    "methodology": "capture-v4-step-ready"
+  },
+  "prior_artifact_sha256": {
+    "run-manifest.json": "be7bb7470292e91aa6da2200262e581e9d69edaad333166b7fad9c3dd61bc172",
+    "client-execution.json": "19bf86647f0fe00fbd91178c83f9f566695ad2619ae922664610bf1c980517a4"
+  },
+  "source_sha256": {
+    "kala/kala/Learning/Study/TypingCheckController.cs": "54135a3a7efdd15288ca869453886fa82020c838918d05bae63793b473d850a4",
+    "kala/kala/Ui/TypingCheck/TypingCheckForm.cs": "cedf5511cb082b1e91c55f9ac71cdfd583d77ad43afab199dddcc0be08ae39d4",
+    "kala/kala/Learning/Study/StudyRecorder.cs": "20b26ea162e7f24c3d2f54e585c1ee43cc5237588c8df64266e7735b4a275f92",
+    "kala/kala/Learning/Study/StudyCollection.cs": "e29ec174a4a6ac54b651bfe16bf4d9fe229a4b43b3c3ad851c3968d8624cfc79",
+    "kala/kala/Learning/Study/StudySchedule.cs": "fb6eb4dd60324b63cbc2f918b1f332b6381924851fddd5fe728aa436eeceb03e",
+    "kala/kala/Learning/Study/SessionPackage.cs": "72daefe22b9ac6f3164e7356a1b52a4540dc2e8887cc5e60c4e545084d956ea0",
+    "kala/kala/Resources/Localization/TypingCheckUiStrings.resx": "9e2b26dc282708c5445eb21e519c538c5c0aaf92a1897659b9eac8cb167e1fb9",
+    "kala/kala/Resources/Localization/TypingCheckUiStrings.bn.resx": "2785299bd2313ce89915a236babad20d03ce6582c720fe025ca070e73fe0fed9",
+    "kala/kala.BaselineTests/TypingCheckControllerTests.cs": "dd98236d287e8808289670bf766781d46bab484f281bbddcc55ddafcef9bdc04",
+    "kala/kala.BaselineTests/TypingCheckUiTests.cs": "1411a813d1e8d506284c7f67e600cad2599bc7a5834879dba45bc0a67d0f5da5",
+    "kala/plans/typing-collection-v2/CONTRACT.md": "5c9656209fac6c9b6a5f7b2a984cf94dc150b7f385459facbdc3386879b92927",
+    "kala/plans/typing-collection-v2/EXECUTION.md": "c34aba3dc1a38e31e9f6dd8192385aead03213a5d88b54e5489126d0558c3106",
+    "kala-layout/src/bangla_dh/usage_schema.py": "11e86a2cc5165c34ec86e56b427bfe3ea5623b4ebe243f21208209598e48e755",
+    "kala-layout/src/bangla_dh/usage_collection_v2.py": "413c323d59c3ef9dcd830e09cb7511eac6656d621326ce64983e711d53b488f7",
+    "kala-layout/tests/test_usage_collection_v2.py": "79caf6faf0c4919786fb953fd8682965350655315b9efd5be24b4af72ecb0a91"
+  },
+  "artifact_sha256": {
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\results\\step-ready.trx": "d7f4af917206a1bf3ffc3bb3ccc253f6e5da37a4d51d88fc00a97eb6c80402e5",
+    "D:\\git repo\\kala\\kala\\artifacts\\collection-v2\\bin\\Release\\net8.0-windows\\kala.dll": "3bd7d77e7b2bd88b815e2a00f57c8509f5afdc1f17a103eaef0c5c38b6af6752",
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\ui\\typing-check-step-ready-en-light.png": "297e40a0dad3e5786e038bf7c4212a6054402209e15f1408f2e17557db68651d",
+    "D:\\git repo\\kala\\artifacts\\collection-v2\\ui\\typing-check-step-ready-bn-dark.png": "06450a86aff487a0695011685fd9524b702f903df668d7572b8e60ab5e0115b2"
+  },
+  "client_tests": {
+    "filter": "TypingCheckControllerTests|TypingCheckUiTests|TypingStudyCaptureTests|CollectionV2Tests",
+    "configuration": "Release",
+    "counters": {
+      "total": "83",
+      "executed": "83",
+      "passed": "83",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "synthetic": true,
+    "full_suite": false
+  },
+  "research_tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -p 'test_usage*.py'",
+    "passed": 69,
+    "failed": 0
+  },
+  "ui_resources": {
+    "typing_check_bangla_translations": 100,
+    "neutral_fallbacks": 0,
+    "validated": true,
+    "visual_inspection": [
+      "English/light",
+      "Bangla/dark"
+    ],
+    "native_review": false
+  },
+  "behavior": [
+    "Pause capture and active clock at every timed boundary before previewing the next task",
+    "Require explicit next-step action and released keys; reject carryover typing and implicit resume",
+    "Exclude reading/waiting time, reset field/composer at restart, retain old partial text",
+    "Keep delayed timer delivery separate from the next step allocation; retain raw timestamps and observed overrun",
+    "Accept step-transition only on /2 pause; preserve /1 and original queued bytes"
+  ],
+  "observed_hardware_pilot": false,
+  "production_deployed": false,
+  "production_receiver_modified": false,
+  "frozen_scores_or_layouts_changed": false,
+  "limitations": [
+    "Existing reviewed-bank, native-review, production /2 admission, semantic-adapter and observed-pilot gates remain open",
+    "Historical client-execution.json refers to the preceding implementation, not current source hashes"
+  ]
+}

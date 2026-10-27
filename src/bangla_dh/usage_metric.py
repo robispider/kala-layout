@@ -1,8 +1,7 @@
 """Independent, standard-library audit of the live typing-study dataset.
 
 This is a measurement audit, not an effort model or the receiver's admission
-validator. Raw packages are read only. Grapheme-dependent client scores remain
-unverified here until a versioned segmenter is available.
+validator. Raw packages are read only. Grapheme scores use Unicode 15.0 tables.
 """
 from __future__ import annotations
 
@@ -18,7 +17,7 @@ from pathlib import Path
 
 from .paths import DATA, PROJECT_ROOT, hash_outputs, output_path, repo_state, write_json, write_text
 
-VERSION = "usage-audit-v1"
+VERSION = "usage-audit-v2"
 LIMIT = 2 * 1024 * 1024
 COLUMNS = "seq t vk sc ext up rep pos mods consumed hook_ms".split()
 STAGES = {"ready", "warmup", "natural-1", "coverage", "natural-2", "anchor-repeat"}
@@ -65,7 +64,17 @@ def strict_json(raw):
         require(math.isfinite(result), "non-finite JSON number")
         return result
 
-    return json.loads(raw, object_pairs_hook=pairs, parse_constant=reject, parse_float=finite_float)
+    try:
+        result = json.loads(raw, object_pairs_hook=pairs, parse_constant=reject, parse_float=finite_float)
+    except RecursionError:
+        raise InvalidData("JSON nesting exceeds limit") from None
+    stack = [(result, 0)]
+    while stack:
+        value, depth = stack.pop()
+        require(depth <= 32, "JSON nesting exceeds limit")
+        if isinstance(value, dict): stack.extend((v, depth+1) for v in value.values())
+        elif isinstance(value, list): stack.extend((v, depth+1) for v in value)
+    return result
 
 
 def utf16_length(text):
@@ -150,8 +159,11 @@ def audit_package(package):
     This deliberately does not assert complete JSON Schema admission parity.
     """
     import unicodedata
+    from .usage_schema import validate
+    from .usage_scores import calculate
 
     _strings(package)
+    validate(package)
     require(package["schema"] == "kala.typing-check.session/1", "unsupported session schema")
     session, inp, clock = package["session"], package["input"], package["clock"]
     frequency = clock["frequency"]
@@ -296,19 +308,21 @@ def audit_package(package):
     measured_seconds = sum(r["active_seconds"] for r in prompt_rows if r["measured"])
     duration_difference = measured_seconds - session["active_seconds"]
     require(abs(duration_difference) <= 0.5, "active duration differs by more than 0.5 seconds")
-    if any(r["key_downs"] == 0 and r["active_seconds"] > 30 for r in prompt_rows if r["measured"]):
+    if any(r["final_codepoints"] == 0 and r["active_seconds"] > 30 for r in prompt_rows if r["measured"]):
         warnings.append("empty_prompt_over_30s")
     summary = package.get("summary") or {}
     calculated = {"wpm5": wpm5(" ".join(p["final_text"] for p in measured), session["active_seconds"]),
                   "backspace_presses": backspaces, "correction_episodes": correction_episodes}
+    grapheme_scores, score_counts = calculate(package)
+    calculated.update(grapheme_scores)
+    if not score_counts["speed_qualifies"]:
+        calculated["wpm5"] = None
     for stage, label in (("natural-1", "anchor_first_wpm5"), ("anchor-repeat", "anchor_repeat_wpm5")):
         first = next((p for p in prompt_rows if p["stage"] == stage), None)
         calculated[label] = wpm5(prompts[first["order"]]["final_text"], first["active_seconds"]) if first else None
-    # WPM qualification also needs >=100 reference graphemes. Null session WPM is
-    # left unverified; a non-null value is checked, never inferred from scalars.
     verified = []
     for name, value in calculated.items():
-        if name not in summary or name == "wpm5" and summary[name] is None:
+        if name not in summary:
             continue
         reported = summary[name]
         if name in {"backspace_presses", "correction_episodes"}:
@@ -396,7 +410,7 @@ def audit_package(package):
                     unknown_source_edits=unknown_sources, inferred_links=inferred_links,
                     measured_prompt_seconds=measured_seconds, duration_difference_seconds=duration_difference,
                     independently_calculated=calculated, verified_summary_fields=verified,
-                    unverified_summary_fields=[k for k in ("correct_gpm", "accuracy", "first_try_accuracy") if k in summary],
+                    unverified_summary_fields=[], score_counts=score_counts,
                     timing_counts=dict(timing_counts))
     return metadata, prompt_rows, dwell, pairs
 
@@ -405,10 +419,17 @@ def audit_dataset(root):
     root = Path(root).resolve()
     raw_manifest = (root / "manifest.json").read_bytes()
     manifest = strict_json(raw_manifest)
-    require(manifest["schema"] == "kala.usage-metric.dataset/1" and
-            manifest["session_schema"] == "kala.typing-check.session/1", "unsupported manifest schema")
+    legacy_manifest = manifest["schema"] == "kala.usage-metric.dataset/1"
+    supported_schemas = {"kala.typing-check.session/1", "kala.typing-check.session/2"}
+    require((legacy_manifest and manifest.get("session_schema") == "kala.typing-check.session/1" and
+             "session_schemas" not in manifest) or
+            (manifest["schema"] == "kala.usage-metric.dataset/2" and "session_schema" not in manifest and
+             isinstance(manifest.get("session_schemas"), list) and bool(manifest["session_schemas"]) and
+             all(isinstance(s, str) and s in supported_schemas for s in manifest["session_schemas"]) and
+             len(set(manifest["session_schemas"])) == len(manifest["session_schemas"])), "unsupported manifest schema")
     require(isinstance(manifest["sessions"], list), "invalid manifest sessions")
     errors, sessions, prompt_rows, dwell, pairs = [], [], [], [], []
+    collection_sessions = []  # /2 remains audit-only; never feed it to the /1 scorer/extractor.
     seen_ids, seen_paths, seen_hashes, listed = set(), set(), set(), set()
     inputs = {"manifest.json": hashlib.sha256(raw_manifest).hexdigest()}
     for entry in manifest["sessions"]:
@@ -438,8 +459,21 @@ def audit_dataset(root):
                 expanded = stream.read(LIMIT + 1)
             require(len(expanded) <= LIMIT, "expanded package exceeds limit")
             package = strict_json(expanded)
+            schema = entry.get("session_schema", manifest.get("session_schema"))
+            require(schema in supported_schemas and
+                    (schema == manifest["session_schema"] if legacy_manifest else schema in manifest["session_schemas"]) and
+                    package["schema"] == schema, "manifest/package schema mismatch")
             require(package["session"]["session_id"] == sid and package["session"]["contributor_id"] == cid,
                     "manifest/package identity mismatch")
+            if schema == "kala.typing-check.session/2":
+                from .usage_collection_v2 import validate as audit_collection
+                row = audit_collection(package)
+                row.update({name: package["session"][name] for name in
+                            ("contributor_id", "session_number", "protocol_version", "prompt_bank_version", "build_configuration")})
+                row["mapping_hash"] = package["input"]["mapping_hash"]
+                row["package_sha256"] = digest
+                collection_sessions.append(row)
+                continue
             row, prows, drows, krows = audit_package(package)
             row["package_sha256"] = digest
             sessions.append(row)
@@ -455,21 +489,25 @@ def audit_dataset(root):
     if actual - listed:
         errors.append({"session_id": None, "reason": "unlisted packages present", "count": len(actual-listed)})
     require((root / "manifest.json").read_bytes() == raw_manifest, "manifest changed during audit; retry on a stable checkout")
-    duplicate_orders = Counter((s["contributor_id"], s["session_number"]) for s in sessions)
-    warnings = ["multiple_protocols" ] if len({s["protocol_version"] for s in sessions}) > 1 else []
+    all_sessions = sessions + collection_sessions
+    duplicate_orders = Counter((s["contributor_id"], s["session_number"]) for s in all_sessions)
+    warnings = ["multiple_protocols" ] if len({s["protocol_version"] for s in all_sessions}) > 1 else []
+    if collection_sessions:
+        warnings.append("collection_v2_audit_only")
     if any(n > 1 for n in duplicate_orders.values()):
         warnings.append("duplicate_contributor_session_number")
     result = {"schema": "kala.usage-metric.audit/1", "audit_version": VERSION,
-              "status": "fail" if errors else "no_data" if not sessions else
+              "status": "fail" if errors else "no_data" if not all_sessions else
                         "pass_with_review" if warnings or any(s["warnings"] for s in sessions) else "pass",
               "model_ready": False, "recruitment_ready": "controlled_pilot_only_pending_live_checks",
-              "manifest_entries": len(manifest["sessions"]), "valid_sessions": len(sessions),
-              "contributors": len({s["contributor_id"] for s in sessions}),
-              "protocol_counts": dict(Counter(s["protocol_version"] for s in sessions)),
-              "mapping_counts": dict(Counter(s["mapping_hash"] for s in sessions)),
+              "manifest_entries": len(manifest["sessions"]), "valid_sessions": len(all_sessions),
+              "contributors": len({s["contributor_id"] for s in all_sessions}),
+              "protocol_counts": dict(Counter(s["protocol_version"] for s in all_sessions)),
+              "mapping_counts": dict(Counter(s["mapping_hash"] for s in all_sessions)),
+              "collection_sessions": collection_sessions,
               "errors": errors, "warnings": warnings, "sessions": sessions,
               "limitations": ["Not a complete receiver admission validator.",
-                              "Grapheme accuracy, correct GPM, first-try accuracy and speed qualification are not verified by this command.",
+                              "Grapheme scoring supports the declared dotnet-8 / Unicode 15.0 contract; future segmenters require an adapter.",
                               "Down-down pairs include modifiers, spaces, corrections and non-text keys; they are diagnostic candidates, not training rows.",
                               "Physical position is recorded; actual finger identity and mapping content are not captured.",
                               "Local packages cannot verify consent UI, unsent data, receipt/retry, withdrawal or live server operation."],
@@ -487,7 +525,7 @@ def _csv(path, rows, fields):
     return target
 
 
-def run(root=DATA / "usage-metric-dataset", out=PROJECT_ROOT / "results/usage-metric-audit-v1"):
+def run(root=DATA / "usage-metric-dataset", out=PROJECT_ROOT / "results/usage-metric-audit-v2"):
     out = output_path(Path(out) / "audit.json").parent
     record, prompts, dwell, pairs = audit_dataset(root)
     paths = [write_json(out / "audit.json", record), _csv(out / "prompts.csv", prompts, PROMPT_COLUMNS),
@@ -502,6 +540,10 @@ def run(root=DATA / "usage-metric-dataset", out=PROJECT_ROOT / "results/usage-me
     for s in record["sessions"]:
         text += (f"| {s['session_id']} | {s['protocol_version']} | {s['build_configuration']} | "
                  f"{s['prompt_count']} | {s['key_events']} | {s['text_events']} | {', '.join(s['warnings']) or 'none'} |\n")
+    if record["collection_sessions"]:
+        text += (f"\n{len(record['collection_sessions'])} /2 packages passed the separate provisional collection audit. "
+                 "They are listed in audit.json under collection_sessions and excluded from /1 scores, timing tables and model extraction. "
+                 "Engine semantics and model eligibility remain unvalidated.\n")
     text += "\nChecks include compressed-byte and Git blob hashes, bounded gzip/strict JSON, IDs, event ordering, "
     text += "UTF-16 edit replay/selection ranges, NFC, first key, repeats, prompt clocks, disabled assistance, "
     text += "duration reconciliation, scalar WPM, backspaces, edit episodes, anchor WPM and two-clock key intervals.\n\n"
@@ -509,7 +551,7 @@ def run(root=DATA / "usage-metric-dataset", out=PROJECT_ROOT / "results/usage-me
     text += "(versioned audit tolerance for transitions); values are retained in audit.json. "
     text += "The key-clock comparison allows 250 ms, matching the existing client diagnostic. "
     text += "Pairs are consecutive non-repeat keydowns within one prompt and pause segment, "
-    text += "with 0 < interval <= 30 seconds; no winsorization. Grapheme scores are unverified by this command.\n\n"
+    text += "with 0 < interval <= 30 seconds; no winsorization. Grapheme scores use pinned Unicode 15.0 default extended clusters.\n\n"
     text += "Cross-boundary releases are matched globally for integrity but censored from dwell samples. "
     text += "Review candidate rows before training. No prompt or final text is copied to these outputs.\n"
     if record["errors"]:
@@ -519,7 +561,10 @@ def run(root=DATA / "usage-metric-dataset", out=PROJECT_ROOT / "results/usage-me
     manifest = {"phase": VERSION, "commit": commit, "working_tree_clean": clean,
                 "input_sha256": record["input_sha256"],
                 "implementation_sha256": hash_outputs([Path(__file__), PROJECT_ROOT / "src/bangla_dh/paths.py",
-                                                        PROJECT_ROOT / "src/bangla_dh/cli.py"]),
+                    PROJECT_ROOT / "src/bangla_dh/cli.py", PROJECT_ROOT / "src/bangla_dh/usage_schema.py",
+                    PROJECT_ROOT / "src/bangla_dh/usage_scores.py", PROJECT_ROOT / "src/bangla_dh/usage_graphemes.py",
+                    PROJECT_ROOT / "src/bangla_dh/usage_collection_v2.py",
+                    *sorted((DATA / "unicode/15.0.0").glob("*"))]),
                 "parameters": {"max_compressed_and_expanded_bytes": LIMIT, "duration_tolerance_seconds": 0.5,
                                "clock_tolerance_seconds": 0.25, "pair_max_seconds": 30,
                                "seeds": [], "training": False},

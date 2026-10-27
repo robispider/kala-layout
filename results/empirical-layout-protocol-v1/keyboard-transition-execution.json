@@ -1,0 +1,121 @@
+{
+  "schema": "kala.collection-keyboard-transition-handoff/1",
+  "created": "2026-10-27T14:29:40.660113+06:00",
+  "status": "built-verified-user-installation-pending",
+  "configurations": [
+    "Debug",
+    "Release"
+  ],
+  "actual_installer_payload_verified": true,
+  "user_profile_or_install_modified": false,
+  "production_deployed": false,
+  "full_suite_run": false,
+  "observed_hardware_pilot": false,
+  "test_counters": {
+    "keyboard-transition-debug.trx": {
+      "total": "85",
+      "executed": "85",
+      "passed": "85",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "keyboard-transition-release.trx": {
+      "total": "85",
+      "executed": "85",
+      "passed": "85",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "keyboard-transition-http.trx": {
+      "total": "2",
+      "executed": "2",
+      "passed": "2",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "research_tests": {
+    "passed": 69,
+    "failed": 0
+  },
+  "resource_validation": {
+    "typing_check_bangla_translations": 102,
+    "neutral_fallbacks": 0
+  },
+  "visual_checks": [
+    "English/light/740x720",
+    "Bangla/dark/740x720",
+    "English/dark/740x600",
+    "Bangla/light/740x600"
+  ],
+  "versions": {
+    "product": "0.13.0-alpha.1",
+    "protocol": "2026.10-bhe-pilot-r3",
+    "schedule": "bhe-task-schedule-2",
+    "methodology": "capture-v5-keyboard-step-ready",
+    "schema": "kala.typing-check.session/2"
+  },
+  "sha256": {
+    "artifacts/installers/KalaSetup.exe": "05da60f1be9c4b6e67b2166b4818017df2b3cede34a9d1b55793ca9f7a1df588",
+    "artifacts/installers/KalaSetup.payload.dll": "b3008bedd0a3cb6b469c2b796f19a5a96cef9088ff97e5954d3d680d6919ca6a",
+    "artifacts/collection-v2-keyboard-build-final/debug/kala.dll": "43dfdc6b383ebc09b2059d012047d68b4ad9ee4b077a13e83b2e906796fe6a37",
+    "artifacts/collection-v2-keyboard-build-final/publish/kala.dll": "e2658e81f00e2b943759a6c7fa2d3b09e887cc6a667d624492ef513b7c8b695b",
+    "artifacts/collection-v2-keyboard-build-final/RESULTS.json": "97ca2e6279dee1f365b0611228b43b0b134ff1ea4c3b3207d12ddfdc83e38662",
+    "artifacts/collection-v2/keyboard-installer-checks.log": "0014dd8116af692fff53208677fc9349575ef776e2d62d41c6ae1674bd749486",
+    "artifacts/collection-v2/keyboard-installer-build.log": "5080f35f6c96d25e0d43ebd7ae1c179596bc982a35ae128614b5919eeb07016c",
+    "scripts/check-release-boundary.ps1": "031add0d076e542045bd92018b04945e9a5f3239d0e873a44b7ec66514397fce",
+    "tools/installer-checks/Program.cs": "c3fb6fe14da0ab9d1149815c74f4d6cdd67bdba638af9f0b5bbdcb399342f085",
+    "kala/Ui/TypingCheck/TypingCheckForm.cs": "8ce03c7421b2ff27bce347fc649d41165b499e63e067af03efbca99c70ee46ea",
+    "kala/Ui/TypingCheck/TypingCheckForm.Designer.cs": "eb1a4bb7ab1c7fac2c6b27372ad9d7435e18bed327f146db46cda3cf83bda2a5",
+    "kala/Learning/Study/StudyCollection.cs": "f499594d37177dc06ce0086da8e5e89c87a87a9f296c483728864ad1f2528ab1",
+    "kala/Learning/Study/StudyRecorder.cs": "1c261aa8c14ad5f94139614b5f5988c99e1afeaba04eba1f1071a399c3762108",
+    "kala/Learning/Study/StudySchedule.cs": "fb6eb4dd60324b63cbc2f918b1f332b6381924851fddd5fe728aa436eeceb03e",
+    "kala/Resources/Localization/TypingCheckUiStrings.resx": "e2eb46889c5ecc8b0260aa22eb0e562996652a7c5573e8ac46c51470cb825fd8",
+    "kala/Resources/Localization/TypingCheckUiStrings.bn.resx": "b443e409e5e586f95efe0a7f0d3f5ebb6164d2a11fe2ffc9b9d2274ac798c11c",
+    "kala.BaselineTests/TypingCheckUiTests.cs": "3353578b1391ff7725362956fba3842637753e52108c1f4451739159d5e620d5",
+    "plans/typing-collection-v2/BUILD_HANDOFF.md": "0f6604ae1bedffd9f48858ac5c790f57b62b6ca776127b755da02632d2ad4152",
+    "plans/typing-collection-v2/CONTRACT.md": "ac537a5c7daaf2701ada62725e9089ddbda7f1cbd141bd109cd978114f59bee2",
+    "plans/typing-collection-v2/EXECUTION.md": "5301a77f48efcce6709cafcd8e604c2118bfefa835f1e5892c0f969f5f7199d0",
+    "artifacts/collection-v2/results/keyboard-transition-debug.trx": "7eac3002dad1cf1cb6ba98fdd522a8f9c4fa4d788e2bc08f6239aa5cabddcfd1",
+    "artifacts/collection-v2/results/keyboard-transition-release.trx": "878ad266cf3371ce729c8f7bec3719906236a16f29e6f24bf9e8bcb75db11af7",
+    "artifacts/collection-v2/ui/typing-check-step-ready-bn-dark-720.png": "9e90b8ad83f8231896c37084a25ad5b72c63f9d03115d3234fd3d3688beae228",
+    "artifacts/collection-v2/ui/typing-check-step-ready-bn-light-600.png": "173d45cab292d9356a9f04cc1da7124ebe5732831dcb109d3b175923f4d0a445",
+    "artifacts/collection-v2/ui/typing-check-step-ready-en-dark-600.png": "e9c7e6effdd8778abfa24359209c47ac16f34d0a6633eacf9e96b44c4cf5b92a",
+    "artifacts/collection-v2/ui/typing-check-step-ready-en-light-720.png": "67a30b4782772b4a5c324f7ef95d324cd131b96ffa2fd956ecedd7eec4fd2d3f",
+    "artifacts/collection-v2/results/keyboard-transition-http.trx": "5144887e3b3126a2c634c060d9077da4670fe4d972fb7e3ccaa091fee6309ec2"
+  },
+  "stop_confirmation_cancels_pending_start": true
+}

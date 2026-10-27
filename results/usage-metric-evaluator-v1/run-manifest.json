@@ -1,0 +1,40 @@
+{
+  "phase": "usage-layout-evaluator-v1",
+  "commit": "10e47a74cb9e30409329c7b77f3289ff59ca50f1",
+  "working_tree_clean": false,
+  "input_sha256": {
+    "D:\\git repo\\kala-layout\\data\\usage-metric-registry\\candidates\\kala-goti.json": "66df8836e38b175d71774e0bf37d051e12bedd0094ac030c0d5b613f55026853",
+    "D:\\git repo\\kala-layout\\data\\usage-metric-registry\\candidates\\kala-jhor.json": "973832b6a2a3a885f1e5fdb03d3235d83e1395bee3ec64fe7b6264ea89e922a4",
+    "D:\\git repo\\kala-layout\\data\\corpus\\bangla-corpus-v1\\bnwiki-heldout.jsonl.gz": "f390e0f5380dd422f01e5d8fff383964078039bd06a12507a91e512b7eac3d87",
+    "D:\\git repo\\kala-layout\\data\\corpus\\bangla-corpus-v1\\bnwiki-train.jsonl.gz": "ec12f7268cda6a908c3ccb422173d95ae31fe350c2c6afe35a0f89955de28e64"
+  },
+  "model_run_sha256": "92b4de3ccabd1c1aa5f9b2198cac8e5a4f2c4dbfa3459ae8154ab9e62aa8d5cd",
+  "parameters": {
+    "limit": 5,
+    "reference": "kala-jhor",
+    "search_steps": 10,
+    "locked_labels": [],
+    "max_changed": 4,
+    "minimum_transition_contributors": 3,
+    "reference_condition": {
+      "elapsed_active_seconds": 120,
+      "session_number": 1,
+      "target_codepoints": 200,
+      "previously_seen": false,
+      "repeat_of": null,
+      "stage": "natural-1"
+    },
+    "seeds": []
+  },
+  "implementation_sha256": {
+    "src/bangla_dh/bangla/grammar.py": "39b3cefedcbd0564c062571d323aeba6b19c72aaf00f651873698b99a1a26c87",
+    "src/bangla_dh/bangla/styles.py": "3e1530127a64ea3b88ef95b968a3b4e7c47832af4e1603b07f83ea15cdeb89c9",
+    "src/bangla_dh/usage_evaluator.py": "30c78829e36cc10234f4cb2da3cfbc02e1eade027a4ff2a227d8c0255f248429",
+    "src/bangla_dh/usage_features.py": "2079f21c5bebfeae61f53c7e9f75bfbbee90a8d662722b7ac99eed0b84fc9df4",
+    "src/bangla_dh/usage_fit.py": "43ee6ebdbe3d706e14ef680e76502778866a70df0a50dfbd5e835902ca63080e"
+  },
+  "output_sha256": {
+    "results/usage-metric-evaluator-v1/evaluation.json": "f54c5522ea7671e0e40894ad8280b569d37566701d78ac2a43fabd92f08f1386",
+    "results/usage-metric-evaluator-v1/REPORT.md": "ddee466120f93fc17306d2bf41476c4a48411586dc53bf7058483453499b7d5d"
+  }
+}

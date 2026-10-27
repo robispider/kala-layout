@@ -20,14 +20,16 @@ def fixture():
         "session": {"contributor_id": "c_" + "1"*32, "session_id": "s_" + "2"*32,
                     "session_number": 1, "protocol_version": "test-1", "prompt_bank_version": "1.0",
                     "variant_id": "v01", "started_utc": "2026-10-27T00:00Z", "kala_version": "test",
+                    "os_version": "10.0.0", "randomization_seed": 1,
                     "build_configuration": "Debug", "geometry": "ansi", "keyboard_category": "external",
                     "completion": "completed", "active_seconds": 2, "quality_flags": []},
         "input": {"layout_id": "test-fixed", "layout_name": "test", "mapping_hash": "sha256:" + "3"*64,
-                  "input_family": "fixed", "engine_version": "test", "composition_only": True,
+                  "input_family": "fixed", "origin": "bundled", "engine_version": "test", "composition_only": True,
                   "autocorrect_enabled": False, "spelling_correction_enabled": False,
                   "suggestions_enabled": False, "spelling_marks_enabled": False, "personal_rules_enabled": False},
         "clock": {"frequency": 1000, "origin_ticks": 0},
-        "prompts": [{"order": 0, "prompt_id": "synthetic", "target_text": "ক", "final_text": "ক",
+        "prompts": [{"order": 0, "prompt_id": "synthetic", "prompt_version": 1, "segmenter": "dotnet-8",
+                     "unicode_version": "15.0", "target_text": "ক", "final_text": "ক",
                      "final_text_nfc": "ক", "stage": "natural-1", "measured": True, "attempted_units": 1,
                      "shown_ticks": 0, "first_key_ticks": 500, "end_ticks": 2000, "end_reason": "enter"}],
         "key_events": {"columns": COLUMNS[:], "rows": [
@@ -211,6 +213,34 @@ class DatasetAuditTests(unittest.TestCase):
         self.assertEqual(first, audit_dataset(self.root))
         self.assertEqual(first[0]["valid_sessions"], 1)
         self.assertEqual(before, (self.root / self.entry["path"]).read_bytes())
+
+    def test_mixed_manifest_audits_collection_separately_without_legacy_scoring(self):
+        from test_usage_collection_v2 import collection_fixture
+        old_entry = copy.deepcopy(self.entry)
+        package = collection_fixture()
+        package["session"]["session_id"] = "s_" + "4" * 32
+        package["session"]["protocol_version"] = "2026.10-bhe-pilot-r3"
+        new_entry = self.store(package)
+        old_entry["session_schema"] = self.package["schema"]
+        new_entry["session_schema"] = package["schema"]
+        self.manifest = {"schema": "kala.usage-metric.dataset/2", "session_schemas": [self.package["schema"], package["schema"]],
+                         "sessions": [old_entry, new_entry]}
+        self.save()
+        record, prompts, _, _ = audit_dataset(self.root)
+        self.assertFalse(record["errors"])
+        self.assertEqual(record["valid_sessions"], 2)
+        self.assertEqual(len(record["sessions"]), 1)
+        self.assertEqual(len(record["collection_sessions"]), 1)
+        self.assertEqual(record["collection_sessions"][0]["keyboard_category"], "unknown")
+        self.assertFalse(record["collection_sessions"][0]["model_eligible"])
+        self.assertEqual({p["session_id"] for p in prompts}, {old_entry["session_id"]})
+        self.assertEqual(audit_dataset(self.root)[0], record)
+        new_entry["session_schema"] = self.package["schema"]
+        self.save()
+        self.assertTrue(audit_dataset(self.root)[0]["errors"])
+        del new_entry["session_schema"]
+        self.save()
+        self.assertTrue(audit_dataset(self.root)[0]["errors"])
 
     def test_size_hash_and_git_blob(self):
         for field, value in (("size_bytes", 1), ("package_sha256", "0"*64), ("git_blob_sha", "0"*40)):

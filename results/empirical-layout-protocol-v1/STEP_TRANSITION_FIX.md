@@ -1,0 +1,13 @@
+# Timed-step readiness correction
+
+27 October 2026. Implemented and tested in the current Kala source; not deployed or observed on participant hardware.
+
+The prior collector immediately changed the task at a deadline. A typist continuing the old passage could therefore enter errors into the new task. Each timed step now closes the old prompt, stops recording and the active clock, and previews the next task. The user must choose **Begin next step**. Continued typing, Enter and field/reference clicks cannot resume this pause. If keys are still held, capture waits for release; restart clears the field and composer.
+
+Reading/waiting time is excluded through the recorded pause/resume interval. Partial old text is preserved. Delayed timer delivery does not consume the next step's allocation or skip a step; observed overrun and raw event timestamps remain available. All seven intermediate deadlines (20, 100, 120, 140, 160, 180 and 240 active seconds) require readiness. The final step finishes at 260 active seconds. Ordinary within-step manual pauses retain their existing behavior.
+
+Current labels are protocol `2026.10-bhe-pilot-r2`, schedule `bhe-task-schedule-2`, methodology `capture-v4-step-ready`, schema `/2`. The new boundary reason `step-transition` is accepted only on a /2 pause. The /1 reader and original queued bytes remain unchanged. These labels distinguish the changed collection procedure; they do not establish comparability with prior sessions.
+
+Validation: **83 affected client Release tests passed**, including both UI languages, every timed boundary, delayed ticks, carried typing, explicit action while keys are held, waiting-time exclusion, final completion and stopping while paused. **69 research usage tests passed**, including collection-only boundary validation and continued exclusion from model fitting. Resource checks passed with 100 Bangla typing-check translations and no fallback; English/light and Bangla/dark readiness renders were visually checked. Source, assembly, test-result and render hashes are in [the evidence record](step-transition-execution.json). Runs overlap earlier gates and must not be summed.
+
+No full Kala suite, hardware/participant pilot, installed-client rollout, production upload or publication/withdrawal experiment was performed. Native wording review and the other [collection acceptance gates](KALA_CLIENT_EXECUTION.md) remain open. The existing bank, evaluator eligibility, frozen search scores and official layouts were not changed. The earlier [client evidence](client-execution.json) remains a historical checkpoint; current source hashes are in the new evidence record.

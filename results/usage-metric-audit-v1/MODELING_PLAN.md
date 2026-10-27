@@ -5,11 +5,20 @@ exports are implemented. This is separate from the frozen layout-search model.
 
 ## Objective and decision
 
-First prove that volunteers' time produces complete, recoverable, correctly
-interpreted measurements. Then build an empirical predictor of physical typing
-intervals and correction risk. A later research season may test whether those
-predictions improve an effort model. Neither short-term typing speed nor keyboard
-discomfort is identifiable from key positions alone.
+The owner's target is a **transferable empirical evaluator of Bangla fixed
+layouts**: learn costs from people typing Bangla, then apply those learned costs
+to the physical action sequences required by any compatible existing or new
+layout. Volunteers provide training observations; they are not required to type
+every layout the evaluator will score. Direct head-to-head layout experiments
+are an optional later validation method, not the collection design or primary
+deliverable.
+
+First verify that the measurements are complete and recoverable. Then learn
+physical-action/transition costs, build the layout-to-action scoring adapter, and
+use the evaluator to search for improvements. All three are required deliverables;
+an interval predictor alone does not complete the research objective. Actual
+long-term typing speed and discomfort remain separate outcomes, not quantities
+directly established by short recordings or physical key positions.
 
 The four existing packages are a useful integration fixture. They pass the
 implemented integrity checks and snapshot-specific score cross-check, with
@@ -54,9 +63,12 @@ drawn-glyph counts for grapheme counts.
 
 Use a few consenting internal testers first, then approximately 5–10 consenting
 pilot volunteers with varied skills across laptop/external and ANSI/ISO keyboards
-and bundled/imported **fixed** layouts. Include Kala Jhor and Kala Goti before any
-claim about them. This is a coverage target for the pilot, not a statistical
-sample-size justification. Use public prompts and observe the current shipping
+and bundled/imported **fixed** layouts. People should normally use a layout they
+already know, so unfamiliar-layout learning does not dominate the training
+observations. Aim for varied physical key, pair and Shift coverage; participants
+do not need to switch between Kala Jhor and Kala Goti. This is a coverage target
+for the pilot, not a statistical sample-size justification. Use public prompts
+and observe the current shipping
 Release build as well as diagnostic builds where needed.
 
 | Scenario | Evidence needed to pass |
@@ -96,7 +108,10 @@ current manifest + unchanged gzip packages + mapping/protocol registries
   -> eligible motor intervals and text/error outcomes
   -> coverage and split-readiness report
   -> contributor-grouped fit / calibration / held-out evaluation
-  -> model card, uncertainty, reproducible run manifest
+  -> transferable physical-action cost model
+  -> candidate layout + typing grammar + standard Bangla benchmark texts
+  -> round-trip-verified physical action sequences and predicted layout costs
+  -> improvement search, coverage/uncertainty report and reproducible run manifest
 ```
 
 Already implemented:
@@ -153,7 +168,7 @@ may include corrections and modifiers; they do not implement these clean trainin
 eligibility rules. In particular, pairs with null positions are omitted. Do not
 feed them directly into a fit.
 
-## Stage 3 — Fit simple predictors before a layout model
+## Stage 3 — Learn transferable physical-action costs
 
 Define the primary prediction as **log down-down interval for eligible consecutive
 physical text actions**, conditional on participant, prompt and context. Report
@@ -169,11 +184,28 @@ Keep participant/session/prompt effects or grouped residual summaries so one fas
 typist does not define the key costs. Use partial pooling when there is enough
 replication; any external fitting library remains a separate approval decision.
 
+For layout scoring, standardize participant, prompt length, stage, familiarity
+and other nuisance settings to a declared reference condition. Do not reward a
+candidate because its original contributors happened to type faster. The shared
+costs must use physical keys, geometry, transitions and modifier/composition
+context that can also be constructed for an untested layout. A table of average
+WPM by contributor or layout name cannot perform this task. Separate structural
+features from symbol/language context and test transfer rather than assuming
+that correlations observed on one mapping are causal motor costs.
+
 Before a more complex model, require enough independent contributors and varied
 prompts for the chosen features; report unsupported coefficients instead of
 pretending sparse key pairs are estimated. Later sample-size planning should use
 pilot variance, a chosen minimum useful effect and simulation at participant level.
 Do not choose a final volunteer count from the number of key events.
+
+Twenty contributors with at least two sessions each are a proposed initial
+training collection, with both sessions normally on their familiar layout.
+The repeats help assess measurement stability and day/session variation. This
+does not guarantee sufficient coverage or accuracy, but it does not require
+twenty people to learn each candidate layout. Missing key/pair/Shift contexts
+should guide later targeted collection. Model development can begin before
+precision or unseen-layout validation is sufficient for strong ranking claims.
 
 ## Stage 4 — Evaluate without leakage
 
@@ -190,11 +222,11 @@ Do not choose a final volunteer count from the number of key events.
   stage and participant-weighted performance. For error predictions report log
   loss/Brier score and calibration. Confidence intervals resample contributors,
   not individual keystrokes. Compare every candidate with the simple baseline.
-- For layout comparisons, recruit balanced experienced users or use a defined
-  counterbalanced longitudinal crossover with recorded practice/exposure. A
-  first session on an unfamiliar layout mixes learning with layout effects.
-  Experience is absent from current packages; add it only through an explicitly
-  versioned study decision. Keep all comparisons fixed-layout only.
+- An optional later direct comparison can test whether a model-proposed
+  improvement works in use. That separate experiment would need experienced
+  users or recorded learning/exposure; it is not required of every training
+  volunteer. Experience is absent from current packages; add it only through an
+  explicitly versioned study decision. Keep all comparisons fixed-layout only.
 
 With two contributor IDs and four protocols, the current data can test pipeline
 execution and leakage guards only. It cannot support credible validation folds,
@@ -202,7 +234,77 @@ population confidence intervals or causal layout comparisons. A production fit
 command should return `insufficient_data` until its preregistered coverage and
 split gates are met, rather than publish a misleading model.
 
-## Stage 5 — Release an empirical model separately
+## Stage 5 — Score existing and untested layouts
+
+Build a versioned evaluator with three inputs: the fitted cost model, a candidate
+fixed-layout mapping plus its actual composition/vowel-entry rules, and a common
+Bangla benchmark corpus. The candidate need not occur in the training dataset.
+
+For each benchmark text, produce a valid physical action sequence, including
+Shift, hasant and multi-action composition. Verify that replay yields the target
+NFC code points; report unreachable characters and never silently skip them.
+Specify an achievable typing strategy when several sequences can produce the
+same text. An idealized cheapest strategy must be labeled as such. Do not assume
+one code point, one glyph or one grapheme equals one keystroke.
+
+Extract the same structural action/transition features used during training and
+apply the standardized model. Sum interval predictions over a nonoverlapping
+definition of the sequence: do not add dwell and down-down predictions as though
+they were independent elapsed-time components. A model trained on log intervals
+must explicitly distinguish summed conditional medians from expected time and
+validate any log-to-mean correction. Reading pauses, novice learning and fatigue
+are not automatically predicted by a motor-interval sum.
+
+Required output for each candidate:
+
+- A normalized empirical keying-cost score on identical texts, with a declared
+  reference layout set to 100. Also report the underlying modeled time units,
+  such as predicted keying milliseconds per 1,000 NFC code points. Do not label
+  this as observed page completion time or mastered-layout WPM.
+- A breakdown by keys, transitions, Shift and composition recipes, plus stroke
+  count per output unit. Show which common Bangla sequences contribute most.
+- Input/round-trip coverage and model-support coverage. Distinguish observations
+  supported across contributors from feature-based extrapolation or fallback
+  assumptions. A numerical score alone must not conceal unsupported contexts.
+- Uncertainty in scores and candidate differences, propagated through the whole
+  scoring process by refitting/resampling contributors where feasible. Report
+  sensitivity to fingering assumptions and benchmark domains separately.
+- A separate correction-risk estimate only for targets/contexts whose transfer
+  has been validated. Do not manufacture a universal error or comfort score from
+  timing observations. Do not merge speed and error into one number without an
+  explicit objective and sensitivity report.
+
+Acceptance: the same physical sequence gets the same standardized cost regardless
+of layout display name; distinct vowel recipes can produce distinct action costs;
+round-trip failures and unsupported contexts are visible; benchmark inputs and
+parameters are identical for candidates; person and text holdouts beat a simple
+baseline, with additional layout holdouts when diverse mappings are available.
+Until transfer is tested, scores for unobserved layouts are experimental model
+predictions. This does not prevent evaluating them; it limits the strength of
+the resulting claims.
+
+## Stage 6 — Use the evaluator to improve layouts
+
+Run a constrained search over symbol swaps, Shift placements and explicitly
+supported typing recipes, minimizing the empirical benchmark score. Permit
+constraints that retain familiar positions or limit the number of changed keys.
+Report predicted improvement, changed mappings, driving text/action patterns,
+uncertainty and unsupported-context share for each retained candidate.
+
+Keep an untouched text benchmark for final candidate evaluation. Prevent the
+optimizer from exploiting gaps in the model: penalize or reject poorly supported
+contexts according to a predeclared policy, compare several plausible models
+and fingering assumptions, and retain candidates whose gains survive those
+checks. Model-only improvement remains a prediction; targeted human testing can
+subsequently validate the strongest changes. Volunteers need not type every
+candidate searched by the computer.
+
+Acceptance: reproducible candidate scores, valid round trips, a concrete set of
+proposed changes with explained gains, and an honest conclusion when uncertainty
+does not support an improvement. Publishing a replacement Kala layout is a new
+research season, not an automatic consequence of fitting this evaluator.
+
+## Stage 7 — Release an empirical evaluator separately
 
 Every fit writes a new `results/<empirical-phase>/<run>/` with input snapshot and
 hashes, code revision/hash, feature/schema/protocol versions, normalization and
@@ -211,19 +313,23 @@ uncertainty, limitations and a machine-readable model card. Include quality and
 coverage gates in the run result. Preserve an audit-only mode even when fitting
 cannot proceed. Do not train from withdrawn/currently unlisted packages.
 
-First deliver an experimental interval/error predictor. Only after independent
-validation consider an empirical layout objective and a **new research season**,
-with the required lock/challenge/docs/website updates together. Existing J0/J1,
-Kala layouts and published rankings remain frozen during this work.
+Deliver the cost model, layout-scoring adapter and candidate-improvement report
+together, with their validation status. Changing the published search objective
+or Kala layouts requires a **new research season**, with the required
+lock/challenge/docs/website updates together. Existing J0/J1, Kala layouts and
+published rankings remain frozen during experimental evaluator development.
 
 ## Recommended order of work
 
 1. Resolve Right Shift and delivery attribution; verify a fresh controlled package.
 2. Complete the observed upload/retry/withdrawal and physical-key pilot matrix.
 3. Add portable grapheme verification, registries, clean features and coverage gates.
-4. Recruit the larger balanced cohort using the frozen protocol, monitor audit
+4. Collect familiar-layout Bangla typing from the cohort using the frozen protocol, monitor audit
    failures on every batch, and stop a faulty collection batch promptly.
-5. Fit baselines, then validate an empirical model when independent coverage permits.
+5. Learn and validate transferable action costs as independent coverage permits.
+6. Score any compatible fixed layout through its verified action sequences on
+   common Bangla texts; report coverage, uncertainty and extrapolation.
+7. Search for concrete layout improvements and validate promising predictions.
 
 This sequence lets the existing small dataset exercise the machinery immediately
 while protecting new volunteers' time from untested collection assumptions.

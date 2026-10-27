@@ -1,0 +1,22 @@
+{
+  "unicode_version": "15.0.0",
+  "uax29_revision": 41,
+  "files": {
+    "GraphemeBreakProperty.txt": {
+      "url": "https://www.unicode.org/Public/15.0.0/ucd/auxiliary/GraphemeBreakProperty.txt",
+      "sha256": "5a0f8748575432f8ff95e1dd5bfaa27bda1a844809e17d6939ee912bba6568a1"
+    },
+    "emoji-data.txt": {
+      "url": "https://www.unicode.org/Public/15.0.0/ucd/emoji/emoji-data.txt",
+      "sha256": "29071dba22c72c27783a73016afb8ffaeb025866740791f9c2d0b55cc45a3470"
+    },
+    "GraphemeBreakTest.txt": {
+      "url": "https://www.unicode.org/Public/15.0.0/ucd/auxiliary/GraphemeBreakTest.txt",
+      "sha256": "0d2080d0def294a4b7660801cc03ddfe5866ff300c789c2cc1b50fd7802b2d97"
+    },
+    "LICENSE.txt": {
+      "url": "https://www.unicode.org/license.txt",
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  }
+}

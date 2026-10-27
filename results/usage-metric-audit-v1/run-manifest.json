@@ -31,9 +31,10 @@
   },
   "supplementary_snapshot_evidence_sha256": {
     "results/usage-metric-audit-v1/FINDINGS.md": "461ca09ca3cbd29c19468240bcbc176194043b4db37f00d7bb0ad2e5c558b42f",
-    "results/usage-metric-audit-v1/MODELING_PLAN.md": "b8b851e4fc0a1231639c8d2d2348457193fc5eab4c15cf86fd7aa390f4fb2203",
+    "results/usage-metric-audit-v1/MODELING_PLAN.md": "80e45a196ff43c23ebd2225210c9d18e5f9400adc907bc9f346e954a54f36330",
     "results/usage-metric-audit-v1/score-crosscheck.json": "a12c4887bf9598a1425b3d75295d77de893c99140d3d4721267d58c77d92dc44",
     "results/usage-metric-audit-v1/validation.json": "86757dfdf5fde82f3bb677175ccd73ed3d98ab02fcf0d9e607c57579de591b12"
   },
-  "supplementary_note": "These are dated investigation artifacts, not regenerated or reused for new datasets by audit-usage-data."
+  "supplementary_note": "These are dated investigation artifacts, not regenerated or reused for new datasets by audit-usage-data.",
+  "planning_clarification": "2026-10-27: primary deliverable is a transferable evaluator for any compatible Bangla fixed layout, trained from familiar-layout usage, followed by model-guided improvement search; head-to-head volunteer testing is optional validation."
 }

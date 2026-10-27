@@ -1,0 +1,130 @@
+{
+  "schema": "kala.empirical-protocol-review/1",
+  "date": "2026-10-27",
+  "timezone": "Asia/Dhaka",
+  "scope": "Local source and artifact review; documentation-only deliverable",
+  "protocol_id": "BHE-v1.1-draft-2026-10-27",
+  "protocol_status": "proposed_not_implemented",
+  "assessment": "Useful auditable prototype; full transferable empirical evaluator not yet validated",
+  "observed_test_run": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -p 'test_usage*.py'",
+    "passed": 63,
+    "failed": 0
+  },
+  "prior_record_only": {
+    "research_tests_passed": 250,
+    "full_kala_suite_run": false
+  },
+  "saved_pipeline": {
+    "sessions": 4,
+    "contributor_ids": 2,
+    "protocols": 4,
+    "repaired_shift_events": 547,
+    "primary_intervals": 1076,
+    "idle_sensitivity_intervals": 1320,
+    "status": "insufficient_data"
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "critical",
+      "finding": "Primary fitting/scoring excludes Shift-down, spaces and composition operations",
+      "required": "Complete action ledger and validated operation timing"
+    },
+    {
+      "id": "R2",
+      "priority": "critical",
+      "finding": "Equal contributor weighting does not implement participant or session effects",
+      "required": "Regularized nuisance effects and new-person validation"
+    },
+    {
+      "id": "R3",
+      "priority": "critical",
+      "finding": "Key-symbol and cohort-layout confounding threatens transfer",
+      "required": "Multiple mappings, common text, separate probes and mapping/rule holdouts"
+    },
+    {
+      "id": "R4",
+      "priority": "high",
+      "finding": "Current validation axes omit layout/rule transfer",
+      "required": "Joint splits, mapping/rule holdouts and independent confirmation"
+    },
+    {
+      "id": "R5",
+      "priority": "high",
+      "finding": "Attributable clean insertions are not necessarily target-correct",
+      "required": "Grammar-aware target alignment"
+    },
+    {
+      "id": "R6",
+      "priority": "high",
+      "finding": "Log-scale predictions do not automatically give expected time",
+      "required": "Separately validated retransformation or diagnostic-only scoring"
+    },
+    {
+      "id": "R7",
+      "priority": "high",
+      "finding": "Schema metadata cannot extend current receiver field/stage constraints",
+      "required": "Versioned client/receiver/research contract"
+    },
+    {
+      "id": "R8",
+      "priority": "high",
+      "finding": "Search can exploit model error and repeated held-out feedback",
+      "required": "Separate search, selection and independent confirmation"
+    }
+  ],
+  "changes": {
+    "application_code": false,
+    "research_code": false,
+    "datasets": false,
+    "frozen_scores": false,
+    "documentation_new_directory_only": true
+  },
+  "required_deliverables": [
+    "audited_human_dataset",
+    "transferable_action_model",
+    "candidate_compiler_and_scorer",
+    "style_A_search",
+    "style_D_search",
+    "open_style_challenge",
+    "independent_verification"
+  ],
+  "proposed_score": {
+    "name": "BHE index",
+    "direction": "lower_is_better",
+    "reference": "Frozen verified UniJoy mapping and grammar = 100, conditional on eligibility",
+    "base_unit": "predicted eligible keying milliseconds per 1000 NFC code points",
+    "not_claimed": [
+      "observed WPM",
+      "pure motor physiology",
+      "comfort",
+      "causal switching benefit"
+    ]
+  },
+  "implementation_authorized_this_turn": false,
+  "original_protocol_id": "BHE-v1-draft-2026-10-27",
+  "amendment": {
+    "id": "no-questionnaire-unverified-person-linkage",
+    "date": "2026-10-27",
+    "questionnaire_required": false,
+    "real_identity_required": false,
+    "person_independence_assumed": false,
+    "existing_contributor_id_interpretation": "local research-store lineage, not verified person or physical device",
+    "analysis_modes": [
+      "known_lineage",
+      "session_only"
+    ],
+    "validation_scope": "recording groups; unknown cross-group person overlap remains",
+    "new_tests_run": false,
+    "software_changed": false,
+    "supersedes": [
+      "questionnaire requirements",
+      "verified experience criteria",
+      "mandatory person recovery",
+      "independent-person sample counts",
+      "person-level interpretation of existing IDs and validation"
+    ],
+    "details": "AMENDMENT_NO_QUESTIONNAIRE.md"
+  }
+}

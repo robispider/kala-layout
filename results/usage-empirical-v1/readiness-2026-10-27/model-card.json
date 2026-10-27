@@ -1,0 +1,25 @@
+{
+  "schema": "kala.usage-metric.model-card/1",
+  "status": "insufficient_data",
+  "training_performed": false,
+  "snapshot_sha256": "dbe068b41a5d842cb6267d60d088431e6760af7a8111fd192453d3575ba9ba89",
+  "targets": [
+    "log down-down seconds",
+    "observed correction-action probability"
+  ],
+  "prohibited_claims": [
+    "typing speed ranking",
+    "causal layout effect",
+    "measured comfort",
+    "observed fingering"
+  ],
+  "evaluation_unit": "contributor",
+  "secondary_holdout": "reviewed prompt/source-work family",
+  "withdrawal": "Rebuild from current manifest; verify-usage-run rejects stale inputs. Earlier Git history can retain data.",
+  "limitations": [
+    "No layout comparison, population validation or comfort claim.",
+    "Observed pilot and historical mapping/engine recovery still require evidence.",
+    "Correction baseline predicts observed correction actions, not latent symbol errors.",
+    "Primary intervals exclude spaces and multi-codepoint composition; excluded strata remain in canonical tables."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "kala.usage-metric.execution-validation/1",
+  "date": "2026-10-27",
+  "timezone": "Asia/Dhaka",
+  "kala_targeted": {
+    "counts": {
+      "total": "148",
+      "executed": "148",
+      "passed": "148",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "trx_sha256": "91e3c72d93b7f1e7d176df16faebf5c14e84b1f6cacf309ac973e49c37d8d41f",
+    "configuration": "Release",
+    "classes": [
+      "TypingStudyCaptureTests",
+      "TypingCheckControllerTests",
+      "TypingCheckPromptTests",
+      "CompatibilityTypingTests",
+      "TypingSessionTests"
+    ],
+    "full_kala_suite_run": false
+  },
+  "receiver_targeted": {
+    "counts": {
+      "total": "45",
+      "executed": "45",
+      "passed": "45",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "trx_sha256": "3232d72e426b02bdbdac466216c903b0d2111a3d489ac33708480a3b74a7ccb0",
+    "classes": [
+      "FileSessionStoreTests",
+      "HttpContractTests",
+      "GitHubPublicationTests"
+    ]
+  },
+  "isolated_local_http": {
+    "status": "pass",
+    "transport": "real HTTP over loopback; disposable storage; publisher disabled; process stopped",
+    "outcomes": {
+      "upload": 201,
+      "identical_retry": 200,
+      "changed_package": 409,
+      "withdrawal": 202,
+      "late_retry": 410
+    },
+    "scope": "current serialization/uploader source with synthetic package; not participant UI, capture, score or public deployment validation"
+  },
+  "observed_pilot_status": "pending",
+  "automated_tests_do_not_clear_observed_scenarios": true,
+  "kala_targeted_final_followup": {
+    "counts": {
+      "total": "34",
+      "executed": "34",
+      "passed": "34",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "trx_sha256": "3995b8caccc087d8427c1652b72d59704aca5be9fcd17915308b7341be8c2fe7",
+    "classes": [
+      "TypingStudyCaptureTests"
+    ],
+    "reason": "Final empty-response policy includes prompts with only modifier presses; paused duration remains excluded."
+  },
+  "research_tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests",
+    "passed": 250,
+    "failed": 0,
+    "usage_tests": 63,
+    "source_sha256": {
+      "tests/test_usage_evaluator.py": "b57986104e5ae22a05f0a4d14421b6200f5cf6cca4937e70c0766c0de1610aec",
+      "tests/test_usage_metric.py": "3273de9f9f858f03bc39df732ff857ee5a3146b2ee0ec3ad5c93bd682364873b",
+      "tests/test_usage_pipeline.py": "8b6e07aea7ee858a97096223c412d39883afec3d513f761ff338681992973aad"
+    }
+  },
+  "release_build_sha256": "c08ceb669ec369b5914f5dfeb63d5dd03bb12bfc732f779f6d705ca84ff0253b",
+  "published_results_check": "passed; frozen score/model/layout/challenge groups identical"
+}

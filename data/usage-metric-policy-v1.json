@@ -1,0 +1,26 @@
+{
+  "schema": "kala.usage-metric.policy/1",
+  "version": "usage-policy-v1",
+  "methodology": "capture-pilot-2026-10-27-v1",
+  "idle_seconds": 30,
+  "primary_idle_policy": "exclude_affected_sessions_preserve_original_denominator",
+  "interval_policy": "consecutive_full_down_stream_exact_single_codepoint_no_correction_no_modifier_no_space_no_repeat",
+  "minimum_contributors": 20,
+  "minimum_sessions_per_contributor": 2,
+  "minimum_families": 5,
+  "minimum_intervals_per_contributor": 50,
+  "minimum_intervals_per_fold": 100,
+  "minimum_corrections": 20,
+  "folds": 5,
+  "seed": 20261027,
+  "ridge_penalty": 1.0,
+  "bootstrap_repetitions": 500,
+  "cost_model_bootstrap_repetitions": 50,
+  "minimum_transition_contributors": 3,
+  "threshold_interpretation": "Engineering floors for experimental execution; not power or layout-comparison sample-size justification.",
+  "required_scenarios": [
+    "ordinary_check", "pause_focus", "fast_corrections_held_keys", "timed_enter_boundary",
+    "stop_interruption", "decline_sharing", "offline_reconnect", "retry_receiver_restart",
+    "withdrawal_queued_retry", "ordinary_external_typing", "physical_external_keys", "physical_laptop_keys"
+  ]
+}

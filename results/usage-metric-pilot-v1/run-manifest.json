@@ -1,0 +1,28 @@
+{
+  "phase": "usage-metric-pilot-preparation-v1",
+  "date": "2026-10-27",
+  "timezone": "Asia/Dhaka",
+  "commit": "10e47a74cb9e30409329c7b77f3289ff59ca50f1",
+  "working_tree_clean": false,
+  "parameters": {
+    "observed_pilot_completed": false,
+    "full_kala_suite_run": false,
+    "seeds": []
+  },
+  "input_sha256": {
+    "data/usage-metric-dataset/manifest.json": "403f469c9e7b2a59ded3cc86724ca19a1de99b02deac2f9893acaa90c6a14e42",
+    "data/usage-metric-policy-v1.json": "7c050cf3c5baf79bc01f3ec6a8eb259043f89a5ba178a39c415c4a33e6c839a3",
+    "data/usage-metric-registry/v1/registry.json": "90d90e5660927e383ddd48bbc40c66bf88c22727fb66f797af37672110617e12",
+    "results/usage-metric-audit-v1/MODELING_PLAN.md": "80e45a196ff43c23ebd2225210c9d18e5f9400adc907bc9f346e954a54f36330",
+    "results/usage-metric-audit-v2/run-manifest.json": "8684031e10a1bc69d477d1d79693f917979de84806519b8b518bc798d9f70a9a",
+    "results/usage-metric-evaluator-v1/run-manifest.json": "6ce9a19c121980cc94750cdd72d0d7dbb84dcd654cf02b8739985abc97f9ea6e",
+    "results/usage-metric-pipeline-v1/run-manifest.json": "4851892fb17194b53949b2b1297caec54f3d239db4bb23b6164ad4c411f52551"
+  },
+  "output_sha256": {
+    "results/usage-metric-pilot-v1/EXECUTION.md": "2c4a4ae2db8c57fb157611491e1b20f74813a82e0405ab5587ae54387faf55b5",
+    "results/usage-metric-pilot-v1/pilot-evidence.template.json": "9b8ff7be9de3bd167163f2cd7cf519f675b661c15010c11acbc306f470e2f1d2",
+    "results/usage-metric-pilot-v1/pilot-freeze.json": "dde149eeeae4fb5ec6ba33cbd3bc5dbbbd36cc918da63f7c053c6b9111c114cc",
+    "results/usage-metric-pilot-v1/PILOT_CHECKLIST.md": "904169abfbaf17bd1a619f5d74665fd74ac2a96e62a5051094048dfaec8058b5",
+    "results/usage-metric-pilot-v1/validation.json": "bea79c264759206389205b83068aa9cc201ec7f54304e902ba420148c75ccdfc"
+  }
+}
