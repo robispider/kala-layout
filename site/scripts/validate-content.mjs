@@ -69,6 +69,7 @@ export async function validateContent() {
   await validateHomeDiagnostics();
   await validateSharedPublication();
   await validateSearchStory();
+  await validateSharedCertificate();
   await validateMechanics();
   await validateContinuous();
   console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
@@ -192,6 +193,35 @@ async function validateSearchStory() {
     }
     assert(markdown.includes(locale === 'en' ? spec.public_name : spec.public_name_bn));
     assert(markdown.includes('TYPING_STYLES.md'), `Missing input-method credit link: ${locale}`);
+  }
+}
+async function validateSharedCertificate() {
+  const prefix = 'results/shared-certification-v1';
+  const cert = JSON.parse(await readFile(path.join(repoRoot, prefix, 'certificate.json'), 'utf8'));
+  const manifest = JSON.parse(await readFile(path.join(repoRoot, prefix, 'run-manifest.json'), 'utf8'));
+  const { spec, challenge } = await loadPublication();
+  for (const [file, expected] of Object.entries(manifest.output_sha256)) {
+    const bytes = await readFile(path.join(repoRoot, file));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), expected, `Certificate artifact drift: ${file}`);
+  }
+  assert.equal(cert.arrangement_id, spec.arrangement_id);
+  assert.equal(cert.challenge_data_sha256, challenge.data_sha256);
+  assert.equal(cert.map_sha256, challenge.reference.layout_sha256);
+  assert.equal(cert.classification, 'certified neighbourhood non-dominance');
+  assert.equal(cert.global_optimality, false);
+  assert.equal(cert.scope.radius, 3);
+  assert.equal(cert.checked_alternatives, 45_526);
+  assert.equal(cert.expected_alternatives, cert.checked_alternatives);
+  assert.equal(cert.dominating_candidates.length, 0);
+  assert.equal(cert.unresolved_candidates.length, 0);
+  assert(Object.values(cert.reference_checks).every(v => v === true));
+  const expected = Object.entries(cert.counts).map(([radius, counts]) => [radius,
+    String(Object.values(counts).reduce((a,b) => a+b, 0)),
+    ...['effort_ineligible', 'within_ineligible', 'cannot_dominate', 'dominates', 'unresolved'].map(k => String(counts[k] || 0))]);
+  for (const locale of locales) {
+    const text = await readFile(sourcePath({source: 'docs/SHARED_CERTIFICATION.md'}, locale), 'utf8');
+    const actual = rows(text).slice(2).map(row => row.split('|').slice(1,-1).map(s => normalizeDigits(s.trim()).replaceAll(',', '')));
+    assert.deepEqual(actual, expected, `Certificate table drift: ${locale}`);
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await validateContent();

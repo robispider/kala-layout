@@ -74,6 +74,9 @@ for (const locale of locales) {
   assert(html.includes(`${base}/${locale}/mechanics/`), `Missing localized movement comparison link: ${locale}`);
   assert(html.includes(`${base}/${locale}/shared/`), `Missing transition rationale: ${locale}`);
   assert(html.includes(`${base}/${locale}/styles/`), `Missing typing-style credit link: ${locale}`);
+  assert(html.includes(`${base}/${locale}/certification/`), `Missing shared certificate link: ${locale}`);
+  const certificate = await readFile(path.join(root, locale, 'certification/index.html'), 'utf8');
+  for (const number of ['1,326', '44,200']) assert(certificate.includes(number), `Missing certificate scope ${number}: ${locale}`);
   const styles = await readFile(path.join(root, locale, 'styles/index.html'), 'utf8');
   for (const url of ['https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/', 'https://www.omicronlab.com/avro-keyboard.html']) {
     assert(styles.includes(url), `Missing primary-source credit ${url}: ${locale}`);

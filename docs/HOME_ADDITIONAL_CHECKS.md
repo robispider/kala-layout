@@ -10,4 +10,6 @@ Kala Layout keeps effort near the separate originals, while all positions stay t
 
 One arrangement to remember is the intended benefit. Goti's larger cross-space cost and the relearning needed from both original maps are real trade-offs. Learning, speed and comfort have not been measured. [Why we chose Kala Layout provisionally](SHARED_LAYOUT.md) and [movement checks](MECHANICS.md) explain the limits.
 
+The [shared local certificate](SHARED_CERTIFICATION.md) checks all 45,526 alternatives moving two or three symbols: none improves one style's R without worsening the other while meeting both styles' limits. This is a local result, not global optimality.
+
 The [original experimental report](../results/evaluator-e1/run-v1/REPORT.md) remains historical evidence about the original separate arrangements; its results are not Kala Layout's current diagnostics.

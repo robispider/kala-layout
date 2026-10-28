@@ -15,6 +15,8 @@ python challenge/shared-v1/score.py my-shared.json
 
 The [shared challenge](docs/CHALLENGE.md) accepts one map evaluated in both styles. Its joint eligibility and separate R values are a new season; the original J1 challenge remains legacy. [Shared board](submissions/shared-v1/LEADERBOARD.md). Research exports do not change the installed Kala app; existing installations may retain the original maps. The shared map/exports use MIT; original separate maps retain CC0.
 
+The [shared local certificate](docs/SHARED_CERTIFICATION.md) exhaustively checks all 45,526 alternatives moving two or three symbols. None is jointly eligible and improves one style's R without worsening the other. This is a local non-dominance result, not global optimality.
+
 ## Historical original separate-arrangement release
 
 The original description, numbers and commands below describe the original separate-arrangement season. For current reproduction and challenge commands use the links above. In historical commands, use `--season legacy-v1` for builders/verifiers/boards. The old maps, sources, reports and embedded scorer are preserved.

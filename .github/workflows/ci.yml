@@ -32,6 +32,8 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Published results are internally consistent
         run: python -m bangla_dh check-results
+      - name: Shared certificate witnesses independently reproduce
+        run: python -m bangla_dh verify-shared-certificate
       - name: The public scorer runs on its own
         run: |
           python challenge/bangla_dh_challenge.py --public

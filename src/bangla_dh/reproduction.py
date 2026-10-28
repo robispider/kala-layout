@@ -34,6 +34,7 @@ GROUPS = {
                               "results/shared-publication-v1/public-summary.json", "results/shared-publication-v1/examples.json",
                               "results/shared-publication-v1/relocations.json", "results/shared-publication-v1/kala-shared-*.json"],
     "shared challenge v1": ["challenge/shared-v1/challenge-data.json"],
+    "shared certification v1": ["results/shared-certification-v1/certificate.json"],
 }
 
 

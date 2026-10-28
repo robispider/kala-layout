@@ -72,6 +72,9 @@
     },
     "shared challenge v1": {
       "challenge/shared-v1/challenge-data.json": "a2387a07e0a16abfe21b3e227e8ffd95c922b9e7299a393a734cb8273757ac6f"
+    },
+    "shared certification v1": {
+      "results/shared-certification-v1/certificate.json": "33812cd44d636e9c847700a138444740abcbd70e865aa2cbf36f69ef83635925"
     }
   }
 }

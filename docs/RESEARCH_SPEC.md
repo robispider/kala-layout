@@ -1026,3 +1026,9 @@ The old model, text locks, problem, separate searches/exports and standalone leg
 ### Public naming and entry-method credit — 29 October 2026
 
 Owner request: **Kala Layout** is the public name; B01/P01 remain research labels for the unchanged map. The homepage explains the four-billion annealing-proposal scope (not unique combinations), the retained/full-score pools and provisional selection. [Typing-style heritage and credit](TYPING_STYLES.md) records Goti's modern fixed-layout lineage in Ekushey UniJoy and Avro/OmicronLab, and prior context-vowel automation in Avro. The exact Jhor repeat rule remains as specified; no global first-invention claim is supported. This is a naming, provenance and attribution update, not a new search, model, grammar or challenge season. Generated package wording advances the script version; locked scientific values remain unchanged.
+
+### Shared neighbourhood certification — 29 October 2026
+
+[Shared certification](SHARED_CERTIFICATION.md) adds exhaustive coverage of every two-symbol swap and three-symbol cycle around the unchanged selected B01 map: 1,326 + 44,200 alternatives. Exact effort and conservative enclosures of the existing binary64 movement/Balance scorer exclude all 45,526 as dominators, with no ambiguous comparisons. The independent full-sum/direct-scorer witness verifier and full replay accompany the machine-readable certificate and per-candidate decisions in `results/shared-certification-v1/`.
+
+The claim is local non-dominance under joint relaxed-policy eligibility and separate frozen R values; no combined objective, global optimum or global gap is claimed. This additive check changes no map, grammar, search inputs, scoring constants, calibration or challenge season. The original Phase 4 evidence is preserved. The reproduction lock adds a certificate group; future full shared solver bounds remain separate work.

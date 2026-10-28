@@ -1,0 +1,198 @@
+{
+  "version": "shared-certification-v1",
+  "arrangement_id": "shared-76c9b9dbfc689d0b",
+  "map_sha256": "c00c4dbef480c1a1096c0f93c906398aa469d57b8ccecb0cc06ef491d9ab0e9b",
+  "challenge_data_sha256": "87e9727bf9d529120d00eb7f75bcff93e2e70248769d90b58fad9ff52e87d162",
+  "scope": {
+    "radius": 3,
+    "symbols": [
+      "।",
+      "ঁ",
+      "ং",
+      "ঃ",
+      "অ",
+      "ক",
+      "খ",
+      "গ",
+      "ঘ",
+      "ঙ",
+      "চ",
+      "ছ",
+      "জ",
+      "ঝ",
+      "ঞ",
+      "ট",
+      "ঠ",
+      "ড",
+      "ড়",
+      "ঢ",
+      "ঢ়",
+      "ণ",
+      "ত",
+      "থ",
+      "দ",
+      "ধ",
+      "ন",
+      "প",
+      "ফ",
+      "ব",
+      "ভ",
+      "ম",
+      "য",
+      "য়",
+      "র",
+      "ল",
+      "শ",
+      "ষ",
+      "স",
+      "হ",
+      "া",
+      "ি",
+      "ী",
+      "ু",
+      "ূ",
+      "ৃ",
+      "ে",
+      "ৈ",
+      "ো",
+      "ৌ",
+      "্",
+      "ৎ"
+    ],
+    "variable_positions": 52,
+    "training": {
+      "bnwiki/train": 0.5,
+      "newspaper/train": 0.5
+    },
+    "fingering": "model-optimal",
+    "policy": {
+      "effort_cap_ratio": "403/400",
+      "heldout": "previously examined diagnostics only",
+      "ranking": "joint eligibility then (R_Goti, R_Jhor) Pareto dominance; no combined R",
+      "references": "original same-style arrangements",
+      "status": "provisional",
+      "training_weights": {
+        "bnwiki/train": 0.5,
+        "newspaper/train": 0.5
+      },
+      "within_absolute_tolerance": 1e-14,
+      "within_cap_ratio": 1.075
+    },
+    "objective": "joint eligibility then separate R Pareto dominance",
+    "numerics": "exact effort; conservative binary64 enclosures for movement, order and R; unresolved prevents proof"
+  },
+  "reference": {
+    "season": "bangla-dh-shared-challenge-v1",
+    "publication_id": "kala-shared-publication-v1",
+    "name": "Kala Layout certification candidate",
+    "author": "",
+    "layout_sha256": "c00c4dbef480c1a1096c0f93c906398aa469d57b8ccecb0cc06ef491d9ab0e9b",
+    "eligible": true,
+    "scores": {
+      "A": {
+        "training": {
+          "J1": 1.8624269057470442,
+          "key_effort": 1.538556823735438,
+          "pair_effort": 0.04458131761467161,
+          "shift_effort": 0.27928876439693456,
+          "within_rate": 0.014146562336500645,
+          "within_distance": 0.01878286932522745,
+          "cross_rate": 0.11189846620247718,
+          "cross_distance": 0.14855987040159757,
+          "cross_repeat": 0.021880113731701626,
+          "repeat_share_pairs": 0.005092479195802855,
+          "shift_share": 0.08502232471619298,
+          "escaped_share": 0.0002296725467600148,
+          "pair_coverage": 0.9952880282571475,
+          "engram_pair_lower": 0.9022531750911368,
+          "engram_pair_upper": 0.9069651468339893,
+          "dvorak_lower": 0.7818547631416934,
+          "dvorak_upper": 0.786566734884546,
+          "order_lower": 0.7750292955178569,
+          "order_upper": 0.783557671461881,
+          "order_coverage": 0.991471624055976,
+          "J1_exact": "208683547783451263552333/112049255269830590800000"
+        },
+        "balance": {
+          "eligible": true,
+          "effort_cap_pass": true,
+          "within_cap_pass": true,
+          "R": 0.7613122971332902,
+          "worst_setting": "A-57"
+        }
+      },
+      "D": {
+        "training": {
+          "J1": 1.816741213078735,
+          "key_effort": 1.4978571247281067,
+          "pair_effort": 0.0395932098813134,
+          "shift_effort": 0.2792908784693149,
+          "within_rate": 0.015140241547221102,
+          "within_distance": 0.019959860630276723,
+          "cross_rate": 0.10557187384467347,
+          "cross_distance": 0.1419252058798158,
+          "cross_repeat": 0.03608787439486919,
+          "repeat_share_pairs": 0.008664505873783788,
+          "shift_share": 0.08824494722238779,
+          "escaped_share": 0.0002537712959534728,
+          "pair_coverage": 0.9950718496066226,
+          "engram_pair_lower": 0.8984274108924658,
+          "engram_pair_upper": 0.903355561285843,
+          "dvorak_lower": 0.7826536115532804,
+          "dvorak_upper": 0.7875817619466579,
+          "order_lower": 0.7621523734853914,
+          "order_upper": 0.7709441820326534,
+          "order_coverage": 0.9912081914527381,
+          "J1_exact": "1017822499717404338577541/560246276349152954000000"
+        },
+        "balance": {
+          "eligible": true,
+          "effort_cap_pass": true,
+          "within_cap_pass": true,
+          "R": 0.4413651091319207,
+          "worst_setting": "D-57"
+        }
+      }
+    },
+    "R": [
+      0.7613122971332902,
+      0.4413651091319207
+    ],
+    "improves_reference": false,
+    "reference_copy": true
+  },
+  "reference_checks": {
+    "A exact effort": true,
+    "A J1 enclosure": true,
+    "A W enclosure": true,
+    "A C enclosure": true,
+    "A O enclosure": true,
+    "A R enclosure": true,
+    "D exact effort": true,
+    "D J1 enclosure": true,
+    "D W enclosure": true,
+    "D C enclosure": true,
+    "D O enclosure": true,
+    "D R enclosure": true,
+    "enumeration count": true
+  },
+  "expected_alternatives": 45526,
+  "checked_alternatives": 45526,
+  "counts": {
+    "2": {
+      "cannot_dominate": 55,
+      "effort_ineligible": 1268,
+      "within_ineligible": 3
+    },
+    "3": {
+      "cannot_dominate": 97,
+      "effort_ineligible": 44100,
+      "within_ineligible": 3
+    }
+  },
+  "dominating_candidates": [],
+  "unresolved_candidates": [],
+  "classification": "certified neighbourhood non-dominance",
+  "global_optimality": false,
+  "seconds": 4.03417850000551
+}

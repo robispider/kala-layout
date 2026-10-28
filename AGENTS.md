@@ -34,6 +34,7 @@ In PowerShell set `$env:PYTHONPATH = "src"` first; `pip install -e .` provides a
 | Challenge | `challenge-kit`, `challenge-verify FILE`, `leaderboard [--check FILES]` |
 | Run it yourself | `generate-layout --style D [--seeds N] [--reproduce]` |
 | Did it reproduce? | `check-results` (compares with `results/reproduction.lock.json`) |
+| Shared local certificate | `certify-shared --radius 3 --out EMPTY_DIR`, `verify-shared-certificate` (all 45,526 two/three-symbol alternatives; no global claim) |
 | Model check (optional) | `fetch-upstream`, `reproduce-colemak` |
 
 Timings on 32 cores are in [docs/REPRODUCE.md](docs/REPRODUCE.md). Everything is deterministic for its seeds.

@@ -37,6 +37,8 @@ B01 is `shared-76c9b9dbfc689d0b` (also P01). The four-billion search and enhance
 
 B01 favors Goti's score while retaining the leading Jhor trade-off. This is a practical preference, not a numerical overall winner. R is calibrated separately by style and must never be added, averaged or compared across styles. The pilot used shared starts, so matching its leaders is not independent rediscovery. Four billion means search proposals, not unique maps or full Balance evaluations.
 
+A [new exhaustive local certificate](SHARED_CERTIFICATION.md) rules out eligible Pareto improvements moving at most three symbols, covering 45,526 alternatives with no unresolved comparisons. It does not prove global optimality or resolve trade-offs such as B01 versus B02.
+
 ## Evidence and next checks
 
 The [transition report](../results/shared-publication-v1/REPORT.md) connects the [existing-map check](../results/shared-style-check-v1/REPORT.md), [strict search](../results/shared-layout-v1/run-v1/REPORT.md), [relaxed search](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) and [top-ten comparison](../results/shared-top10-comparison-v1/REPORT.md). The original results remain history; this is a new publication and [shared challenge season](CHALLENGE.md).

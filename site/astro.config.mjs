@@ -24,7 +24,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'The research', translations: { bn: 'গবেষণা' },
-          items: ['shared', 'layouts', 'styles', 'how', 'mechanics', 'data'],
+          items: ['shared', 'layouts', 'styles', 'how', 'certification', 'mechanics', 'data'],
         },
         {
           label: 'Do it yourself', translations: { bn: 'নিজে করে দেখুন' },

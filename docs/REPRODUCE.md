@@ -16,6 +16,14 @@ The shared scorer independently checks exact effort, mechanics and separate R ag
 
 For the complete shared search, use the frozen command/settings/seeds in the [four-billion run report](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) and its source revision. Historical run input hashes include source code: use the recorded original Git revision to reproduce old runs, not modified current source. Known held-out data are diagnostic reuse. A quick publication rebuild does not repeat four billion proposals.
 
+The [shared certificate](SHARED_CERTIFICATION.md) checks all 45,526 two/three-symbol alternatives. Repeat it in an empty directory, then independently verify the published evidence:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m bangla_dh certify-shared --radius 3 --out work/shared-certificate-repeat
+python -m bangla_dh verify-shared-certificate results/shared-certification-v1
+```
+
 ## Original separate-layout season
 
 The commands and timings below describe the original research. The original generate-layout command and its --reproduce option continue to reproduce the original separate maps, not B01. Explicit legacy season options keep old builders separate. Their expected old outputs remain locked, with new shared groups checked alongside them.

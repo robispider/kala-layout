@@ -10,6 +10,7 @@ export const locales = ['en', 'bn'];
 export const pages = [
   { source: 'docs/SHARED_LAYOUT.md', route: 'shared' },
   { source: 'docs/HOW_WE_FOUND_THEM.md', route: 'how' },
+  { source: 'docs/SHARED_CERTIFICATION.md', route: 'certification' },
   { source: 'docs/LAYOUTS.md', route: 'layouts' },
   { source: 'docs/TYPING_STYLES.md', route: 'styles' },
   { source: 'docs/MECHANICS.md', route: 'mechanics' },

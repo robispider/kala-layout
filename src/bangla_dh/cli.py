@@ -552,6 +552,21 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--reproduce", action="store_true",
                    help="repeat the published run exactly (512 seeds, published seeds, polish from the earlier layouts)")
     p.set_defaults(func=_generate_layout)
+    p = sub.add_parser("certify-shared", help="exhaustively check shared-map two/three-symbol neighbourhoods")
+    p.add_argument("--radius", type=int, choices=[2, 3], default=3)
+    p.add_argument("--out", default="results/shared-certification-v1", help="empty output directory inside the repository")
+    def certify_shared(args):
+        from .shared_certification import run
+        run(args.out, args.radius)
+        return 0
+    p.set_defaults(func=certify_shared)
+    p = sub.add_parser("verify-shared-certificate", help="check hashes and replay every shared certificate decision")
+    p.add_argument("folder", nargs="?", default="results/shared-certification-v1")
+    def verify_shared(args):
+        from .shared_certification import verify
+        verify(args.folder)
+        return 0
+    p.set_defaults(func=verify_shared)
     p = sub.add_parser("publish-shared", help="rebuild the provisional shared B01 publication from frozen counts")
     p.set_defaults(func=_publish_shared)
     p = sub.add_parser("challenge-kit", help="build the portable shared-arrangement challenge scorer")
