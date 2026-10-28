@@ -1,0 +1,28 @@
+{
+  "full_repository_tests": {
+    "passed": 287,
+    "seconds": 119.496
+  },
+  "fresh_staged_copy_storage_tests": {
+    "passed": 8,
+    "seconds": 0.082
+  },
+  "fresh_staged_copy_verified_references": 132327,
+  "archived_seed_files": 20952,
+  "archive_members_including_bookkeeping_snapshots": 20954,
+  "fresh_staged_copy_has_no_raw_4b_pool_or_seed_directory": true,
+  "fresh_staged_copy_large_pool_count": 113550,
+  "fresh_staged_copy_both_finalist_J1_and_R_match": true,
+  "published_reproduction_groups_passed": 8,
+  "legacy_mixed_newline_JSON_values_unchanged": [
+    "data/baselines/registry.json",
+    "data/corpus-v1.json",
+    "data/crosscheck-v1.json"
+  ],
+  "local_raw_evidence_retained": true,
+  "old_scientific_manifests_unchanged": true,
+  "raw_evidence_bytes": 254679610,
+  "stored_evidence_bytes": 34450112,
+  "fresh_staged_copy_all_three_pools_read_compressed_only": true,
+  "fresh_staged_copy_published_reproduction_groups_passed": 8
+}

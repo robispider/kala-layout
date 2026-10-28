@@ -1,0 +1,32 @@
+{
+  "source_run_manifest_sha256": "759dc0d9d16c44a2447dd4c98f246f162e5a457503dbdfe432c8180406c32787",
+  "interpreter_sha256": "77cfb75f9b5ff495e83484327d9717b7212557ab98997155967bd9a54f5ab8a3",
+  "findings_sha256": "d32e46977a44bcaa8d27cf30291435514376a821b1664ecccd0278f4d27d70e1",
+  "verified_hash_counts": {
+    "input_sha256": 188,
+    "output_sha256": 208,
+    "protected_sha256": 22978
+  },
+  "model_inputs_identical": true,
+  "per_start_settings_identical": true,
+  "prefix_runs_reproduced": 20,
+  "qualifying_ratio": 7.7272727272727275,
+  "aggregate_seed_time_increase_percent": -15.108988333146002,
+  "unbounded_evaluated_frontier_counts": {
+    "control": 2,
+    "enhanced": 2
+  },
+  "all_evaluated_points_covered_by_reported_frontier": {
+    "control": true,
+    "enhanced": true
+  },
+  "score_improvement_over_4b": {
+    "control": false,
+    "enhanced": false
+  },
+  "new_to_4b_saved_pool": {
+    "control": 46,
+    "enhanced": 394
+  },
+  "elapsed_seconds": 1000.2119411000022
+}

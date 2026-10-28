@@ -1,0 +1,568 @@
+{
+  "new_scientific_values": false,
+  "pins": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "attributes": "text eol=lf",
+      "working_sha256": "456f470e2e2ce17e6b54d749403a8243b450cb5454a7ab567a692e1f062aa748",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": ".github/workflows/usage-data.yml",
+      "attributes": "text eol=lf",
+      "working_sha256": "8e48f6907bf2b1dcd844686dddf5553e86bbebba61db57298de9ece683e647d9",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "AGENTS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "ece8fe51bd781a1b617e4ff4d382b2064e8613504a18bc2af6f720b02c0a72bb",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "LICENSE",
+      "attributes": "text eol=lf",
+      "working_sha256": "39b646a5ddc0cebb654fc023768d16163c3c98b2241ed10255d54a1343827484",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "README.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "8e8731b941bddf6b1e9addef78b3a99b09fa98ca465803c860a114609f860ea9",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/baselines/README.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "3a36341ce27f0a0fc00353d87b9ffde52f81f3d62242a1468917cfcafb050c2e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/baselines/registry.json",
+      "attributes": "-text -eol whitespace=cr-at-eol",
+      "working_sha256": "2263cd4156ec73ac46f6a34315e3154ca11c11a2596c9fd111d6f4a87dfaad39",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/corpus-v1.json",
+      "attributes": "-text -eol whitespace=cr-at-eol",
+      "working_sha256": "dc51d05b22a115315789300766ad24ac1422e0faf09d8739d0939d4c8f119c7d",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/crosscheck-v1.json",
+      "attributes": "-text -eol whitespace=cr-at-eol",
+      "working_sha256": "2de96ef4184abd71f7586e03b69865e0c458777744320ecc0732a545d0abdcbb",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/evaluators/engram-pair-v1/.gitattributes",
+      "attributes": "text eol=crlf",
+      "working_sha256": "c9205bf0f7120c1d7099fa07f6ab0d8256891541a3c6f2f17e3e08976e54368a",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/unicode/15.0.0/GraphemeBreakProperty.txt",
+      "attributes": "text eol=lf",
+      "working_sha256": "5a0f8748575432f8ff95e1dd5bfaa27bda1a844809e17d6939ee912bba6568a1",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/unicode/15.0.0/GraphemeBreakTest.txt",
+      "attributes": "text eol=lf",
+      "working_sha256": "0d2080d0def294a4b7660801cc03ddfe5866ff300c789c2cc1b50fd7802b2d97",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/unicode/15.0.0/LICENSE.txt",
+      "attributes": "text eol=lf",
+      "working_sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/unicode/15.0.0/SOURCES.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "c8c16f6540bbc4fbe7115a67be356e18c7a989eafa3604a23393006d908dab2e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/unicode/15.0.0/emoji-data.txt",
+      "attributes": "text eol=lf",
+      "working_sha256": "29071dba22c72c27783a73016afb8ffaeb025866740791f9c2d0b55cc45a3470",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/usage-metric-dataset/README.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "e9f0696560e465999c80d2e53e61452c0a8a425667af181c67fbea32118d2b70",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/usage-metric-registry/README.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "15a11ec7bfcb19ed9b87ac18718aa57f1963d14fbc9649c119163044886cea0a",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/usage-metric-registry/candidates/kala-goti.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "66df8836e38b175d71774e0bf37d051e12bedd0094ac030c0d5b613f55026853",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/usage-metric-registry/candidates/kala-jhor.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "973832b6a2a3a885f1e5fdb03d3235d83e1395bee3ec64fe7b6264ea89e922a4",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "data/usage-metric-registry/v1/registry.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "90d90e5660927e383ddd48bbc40c66bf88c22727fb66f797af37672110617e12",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "docs/DATASETS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "4947d7245fd60e0b246a13baf6e3a84fc6cae8c9de126a8247f739f84e90c961",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "docs/HOW_WE_FOUND_THEM.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "2d51a210ac4b82eec3591d515c78bfdd7df1467b9bbd66b8dabcb451ae753cdf",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "docs/LAYOUTS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "2ac30c7efac602d77102d9231453302fed052b1a9ba2db0c9427fa53d3e8940c",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "docs/MECHANICS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "efc9b3d315f94570132b3fbf51d4fa06f444a23fb79d395d9cffb8635946b428",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "docs/REPRODUCE.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "ee6ae9974dbf9718ea7fa68ed844d62929c43cb88c5934bc6d9ce8de91ea1d98",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "pyproject.toml",
+      "attributes": "text eol=lf",
+      "working_sha256": "364a21598fc003172c68fb12e69181e1da0dad73c2f99b2c431fc59715cfb903",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/README.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "d36c86627287e7c93e299c1f31e6fe4197cbcbd73459f50b713cf5445d04cd2e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/package-lock.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "764f17bbc16d439aa2823c4d74c16c051efba7ba8ace1686be2882fd56d4e656",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/package.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "007551373dc0fd0a9c866636300bebfab027b049b3c4e1a5eb6a94db0223a73b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/public/licenses/Inter-LICENSE.txt",
+      "attributes": "text eol=lf",
+      "working_sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/public/licenses/NotoSansBengali-LICENSE.txt",
+      "attributes": "text eol=lf",
+      "working_sha256": "c0d17a4a6f928d78749dbebfa9d2953b6086c2a1f64cdd1e450cc77fb8199b32",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/src/components/ResearchHero.astro",
+      "attributes": "text eol=lf",
+      "working_sha256": "fde0007ae816f257cd140eb4a361cb87e36a121b0666d8ee6420f35786def440",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/src/content.config.ts",
+      "attributes": "text eol=lf",
+      "working_sha256": "9bce46e72dd49a6e09a20dbc5386164cb5fdfed32c628dff22a447fd298e9d7e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/src/pages/index.astro",
+      "attributes": "text eol=lf",
+      "working_sha256": "7c478ef54b2a6c031b7ac46145f53b8ec7575a51622ebf8700082a17096c30e7",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/src/styles/kala.css",
+      "attributes": "text eol=lf",
+      "working_sha256": "cc9fc7e786a747a7087801070b700cfbce6412f1557948393fc2b6c14e75b4a2",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "site/tsconfig.json",
+      "attributes": "text eol=lf",
+      "working_sha256": "b5b0a5b04a14cddd7713c5e1c82e86c79c17c2f86b170e26e9b170b3d5e01cd9",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/challenge_guide.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "02eb9d3b0d70f3710f0d872fbfaa0968097e22bbd94d6e8d882b986d28be72e4",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/challenge_template.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "99aeb26c20ea3300a38984a3b2a6e892f5dcb42bdd0d8474a3c683d14ad22aeb",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/corpus/build.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "de658fa00b9374dc5d9dfdf1fef9b00e652de7847665668c5a9c6df0b227796c",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/crosscheck.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "6a3714151623e24413a361c8134e302ef989bdeee66eb8bfe68e4f3655b0739a",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/datasets.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "bf0a8d12a73abc79a5cbdefea6beab1abc8c6a506969bd8fc53187ee0873429c",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/artifact_storage.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "1b16f474a88c92350e9b11319402e11d502fcb2a6eef26f748acf5f561e8a4f5",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/balance_decision.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "0196c878b450458f469d304e69e93606271f722a3ddaea05004db7207a87aa9e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/balance_feedback.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "a663c9b3d772667d54984e1702ee8ad5a4ee0d74322ffb070e77010638f9697b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/balance_stability.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "fe1068424c271d1ec0888b02b1aa870f4d53a913cf15f828e444a5577467ad32",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/balance_study.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "b9cbce5cd647974ca791eb39d9a6507cfe08bddc7838d50518f1d4d26f8f310c",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/balance_v1.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "abdaeaf78cde5982c9c253355294bac66093121d6b416ae31add2e89f90f5fe9",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/balance_v1_reports.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "b425e108af0cf174692db30f580e0545978abd205a961ccc639e0aab2ad2db23",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/continuous.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "274192000b12cb64710abf3fb0259abf0672a5a70e4368d3201d6c7e5a977179",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/continuous_counts.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "e800e29ed04af2d3c202540637e07e3f33030d290b7bf6e69d0da543c1e0a781",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/continuous_run.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "95004766ef64a88bfe7f42a4a9b9286ae39c3e55dab61ef628205c35ccc1756b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/joint_engine.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "51646ca76c8d69c6d97173e7a5f5d09ffe43ed7706fc1c0db9331e341e3c5a47",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/joint_problem.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "d08a221d9afe981335227e6b097f3919f7847ad84766039ba433be94761b5203",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/experimental/joint_search.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "d7cf6b7fdb4e65df79b4b8a843af2249924ad23c7e2793c7ae3aad6be9de73bd",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/generate.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "3a4f135a25b5df942b77d1ecb11bdfda940053c8e13be795c7e246238afa13a2",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/kala_data.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "c4cdbe9bf757b66448e3d701b5a08786768259bba1044c0149630d4e18fa5ce8",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/mix.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "e395346c0977e349e14f3f760f394aac681ba0256f976bf5bd8dea5397878a6c",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/paths.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "b9e5cc466aa5bcd53d9fee02c005a2a524ce69179e5fb4d12d2c19cb42aa2c42",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/phase2.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "ed7cf8d20efa3887b5b8b94b39cf29cbd944c0aeb64f06dcd1e970bb592b5eca",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/phase2_report.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "7995d1cb275b81aca8bac32e4c2a61f3d441cdcab377201aa6c1cfe6a279033d",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/phase3.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "0ac3687f8b8bffb35c7fac27870ca1e0a0da4647edcf001a915dda54c5aa777b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/phase4.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "dcc8fc5430db6cd16ca16c5aece5e8774dc523cfe881f26e2628d4133e32de55",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/reproduction.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "c1543d896181ab615a2119fee56f9435f486b9c18632eafad21865d831c5c17e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/scoring/baselines.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "e2af801ae846a2cf087309c061034bdd1897113be62ea8dc855dc625b40e501b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_collection_v2.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "413c323d59c3ef9dcd830e09cb7511eac6656d621326ce64983e711d53b488f7",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_evaluator.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "30c78829e36cc10234f4cb2da3cfbc02e1eade027a4ff2a227d8c0255f248429",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_features.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "2079f21c5bebfeae61f53c7e9f75bfbbee90a8d662722b7ac99eed0b84fc9df4",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_fit.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "43ee6ebdbe3d706e14ef680e76502778866a70df0a50dfbd5e835902ca63080e",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_graphemes.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "45bd8f6ba71c21f88d7cf5d2edd67befca98da643d5404c9547976bd9fd7629d",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_metric.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "89c2c923b0623b6794d4669b87993f01768f375a7da97736502e77510ca7fd3b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_pipeline.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "8c1c08e0b53a87068db21a47f80315d8d6b68051d88d0d35b5fd5ffc89353fb2",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_registry.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "e6081a12c1da2aea3629817c0c95a915844ca035052029aeb40d01d3b2ad0503",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_schema.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "11e86a2cc5165c34ec86e56b427bfe3ea5623b4ebe243f21208209598e48e755",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "src/bangla_dh/usage_scores.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "68387b95897f4469bb9a7f97b9cb6eadf280079e52aa453c8acd83005637a0f2",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_artifact_storage.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "e9887ea4e6b549dfaf72e8a48fcae0173709c0c1ad77293631e0d4c0d7100e42",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_balance_stability.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "d47ffaf528902eb0010f3aed8f0d1aa26d7ddad25f7607467f3b2b527b23cb43",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_balance_study.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "64f558160656162a5abb33c474f4f8a9cdd3ec971103e0c3ff7a4907260de438",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_balance_v1.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "da6ab072716dc21fee6cc2f2acac2028f43e6094c14f7e89cac61ae77b132783",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_bangla_inputs.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "9a33ffbaeae430d78501e86ebf05c77758c4335b3ceb574ef12744bf78ce5f50",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_challenge_flow.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "b2961c333310a812987129d595da51141b3d56c96da73d4ad1935ece013cf03b",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_continuous.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "1d958ded06c6c059f47a06963987bc931d789bdfe9070e3725838c5e19f58a36",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_datasets.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "02c70b3c1f1f72db216b81c9fe4dcbcccb65d30b9cb3344c176489abbab9b3be",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_joint_search.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "c561cd2ef8b195889fb734d9e52da841a7a582a33db515ce14ff317ad775fb5f",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "4414689274496dbfe7d422f74c3a7f75562347688f684a647913fadad128ca37",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_usage_collection_v2.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "79caf6faf0c4919786fb953fd8682965350655315b9efd5be24b4af72ecb0a91",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_usage_evaluator.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "b57986104e5ae22a05f0a4d14421b6200f5cf6cca4937e70c0766c0de1610aec",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_usage_metric.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "35deee6b4426aee39be5e669d07d9915b4bd18bd6ec6bc8d59f57b0a488131e5",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "tests/test_usage_pipeline.py",
+      "attributes": "text eol=lf",
+      "working_sha256": "8663b346ce4d3443404c63e40a1e3419f8a4f96724ad6d3794f4b390f1adbb92",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "translations/bn/docs/DATASETS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "9675e555649782c963c0cdc04c4729ecb5aa80542d58b3d548de2c5287d40be4",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "translations/bn/docs/HOW_WE_FOUND_THEM.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "87df9f981ea564afc017d66f5391a5fbff29fa8b8cabdcdd8eb9733cc139e990",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "translations/bn/docs/LAYOUTS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "d66cf362189cc61bee82e4862287b25d94a02de5d78b66d3ee3df59f7b7e7a39",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "translations/bn/docs/MECHANICS.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "350b5fdf2521d5f26ac253c8fe835edaa9bd4e3c7b561eb5d1cfa1e0bdab90a2",
+      "newline_only_checkout_difference": true
+    },
+    {
+      "path": "translations/bn/docs/REPRODUCE.md",
+      "attributes": "text eol=lf",
+      "working_sha256": "65507f610cb5e874b60bb5c054413e411343dfed650345e800db872777924ba3",
+      "newline_only_checkout_difference": true
+    }
+  ],
+  "mixed_line_ending_inputs": [
+    "data/baselines/registry.json",
+    "data/corpus-v1.json",
+    "data/crosscheck-v1.json"
+  ]
+}

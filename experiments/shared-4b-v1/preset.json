@@ -1,0 +1,19 @@
+{
+  "version": "shared-layout-4b-preset-v1",
+  "engine": "bangla_dh.experimental.shared_relaxed",
+  "output": "results/shared-layout-relaxed-v1/run-4b-v1",
+  "proposal_total": 4000000000,
+  "track_count": 2,
+  "seeds_per_track": 10000,
+  "steps_per_seed": 200000,
+  "workers": 32,
+  "first_seed": 2026103082,
+  "ils_iterations": 30,
+  "archive_limit": 8,
+  "frontier_limit": 8,
+  "balance_refine_steps": 2048,
+  "effort_allowance_exact": "3/400",
+  "within_allowance": 0.075,
+  "scoring": "unchanged frozen Balance v1 expression with experimental relaxed eligibility",
+  "selection": "training only; full Balance evaluation/refinement after mechanical proposal search"
+}

@@ -1,0 +1,7 @@
+{
+  "reason": "User raised experiment eligibility limits to +0.75% effort and +7.5% within-word movement.",
+  "completed_seed_checkpoints": 168,
+  "preserved": true,
+  "status": "interrupted; not a completed 100-million run",
+  "replacement_experiment": "shared-layout-relaxed-v1"
+}

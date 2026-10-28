@@ -26,3 +26,14 @@ __pycache__/
 # Keep the original local files for inspection, but never add them to Git.
 /results/balance-study-v2/candidate-metrics.csv
 /results/evaluator-e4/rigorous-v1/results.json
+
+# Lossless shared-search evidence is stored in runs.zip / JSON.gz.
+/results/shared-layout-v1/run-100m-v1/runs/
+/results/shared-layout-v1/run-v1/runs/
+/results/shared-layout-relaxed-v1/run-100m-v1/runs/
+/results/shared-layout-relaxed-v1/run-4b-v1/runs/
+/results/shared-exploration-pilot-v1/run-100m-v1/runs/
+/results/shared-exploration-pilot-v1/run-v1/runs/
+/results/shared-layout-relaxed-v1/run-4b-v1/training-pool.json
+/results/shared-layout-v1/run-v1/training-pool.json
+/results/shared-layout-relaxed-v1/run-100m-v1/training-pool.json

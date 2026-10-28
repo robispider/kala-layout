@@ -1,0 +1,41 @@
+{
+  "run_manifest_sha256": "2f1dbfb4aa9e4d99e2c2c19325a3387f92b9fc35612c7bdacb563a0e6be125a2",
+  "findings_sha256": "1162dfdfdc97752d5fa3dab59457969e4a437a3ecce46709297bb52c1f7f9dfb",
+  "verified_hash_counts": {
+    "input_sha256": 180,
+    "output_sha256": 514,
+    "protected_sha256": 2395
+  },
+  "full_repository_tests": {
+    "passed": 273,
+    "seconds": 107.866
+  },
+  "published_reproduction_groups_passed": 8,
+  "elapsed_seconds": 635.8216845989227,
+  "benchmark": {
+    "effort": {
+      "seeds": 250,
+      "proposals": 50000000,
+      "summed_worker_wall_seconds": 4084.8180000000016
+    },
+    "balance": {
+      "seeds": 250,
+      "proposals": 50000000,
+      "summed_worker_wall_seconds": 12529.313
+    }
+  },
+  "proposals": 100000000,
+  "retained_candidates": 3371,
+  "frontier_count": 2,
+  "full_score_eligible_candidates": 65,
+  "heldout_mean_J1": {
+    "shared-65cdcd9b9364f827": {
+      "A": 1.8549163791652037,
+      "D": 1.8085779968538371
+    },
+    "shared-bd53cdb670b32e32": {
+      "A": 1.855063491962759,
+      "D": 1.808498548569829
+    }
+  }
+}

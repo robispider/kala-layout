@@ -1,0 +1,5 @@
+variant,id,R_A,R_D,not_a_common_start,dominates_any_other_frontier,dominated_by_other_frontier,dominates_any_4b_incumbent
+control,shared-76c9b9dbfc689d0b,0.7613122971332902,0.4413651091319207,False,False,False,False
+control,shared-7083b1ebfa5aa3a7,0.7858486623251064,0.43874660898639245,False,False,False,False
+enhanced,shared-76c9b9dbfc689d0b,0.7613122971332902,0.4413651091319207,False,False,False,False
+enhanced,shared-7083b1ebfa5aa3a7,0.7858486623251064,0.43874660898639245,False,False,False,False

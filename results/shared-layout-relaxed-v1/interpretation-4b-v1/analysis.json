@@ -1,0 +1,96 @@
+{
+  "verification": {
+    "input_sha256": 180,
+    "output_sha256": 20015,
+    "protected_sha256": 2916,
+    "seed_checkpoint_count": 20000,
+    "unique_retained_bijections": 113550,
+    "proposal_budget": 4000000000,
+    "independent_finalist_scoring": true,
+    "official_exact_finalist_J1": true,
+    "earlier_frontier_dominated_in_both_R": true,
+    "reported_run_checks": {
+      "official_exact_challenge_scores_agree": true,
+      "integer_and_independent_metrics_agree": true,
+      "original_balance_formula_preserved": true,
+      "published_artifacts_preserved": true,
+      "training_selection_frozen_before_heldout": true,
+      "inputs_and_code_preserved": true
+    }
+  },
+  "elapsed_seconds_by_file_timestamps": 23698.364914655685,
+  "seed_counts": {
+    "balance": 10000,
+    "effort": 10000
+  },
+  "summed_seed_wall_seconds": {
+    "balance": 565954.1519999991,
+    "effort": 180820.3199999993
+  },
+  "start_counts": {
+    "balance:A-18fe73cb912ae3f1": 1429,
+    "balance:D-e4a6be48881da590": 1429,
+    "balance:A-a280bdc4ca72c6c7": 1429,
+    "balance:D-9ad5412603069cd6": 1429,
+    "balance:shared-65cdcd9b9364f827": 1428,
+    "balance:perturbed-shared-65cdcd9b9364f827": 1428,
+    "balance:random": 1428,
+    "effort:A-18fe73cb912ae3f1": 1429,
+    "effort:D-e4a6be48881da590": 1429,
+    "effort:A-a280bdc4ca72c6c7": 1429,
+    "effort:D-9ad5412603069cd6": 1429,
+    "effort:shared-65cdcd9b9364f827": 1428,
+    "effort:perturbed-shared-65cdcd9b9364f827": 1428,
+    "effort:random": 1428
+  },
+  "seed_archive_occurrences": {
+    "shared-76c9b9dbfc689d0b": 15
+  },
+  "seed_endpoint_occurrences": {
+    "shared-76c9b9dbfc689d0b": 15
+  },
+  "finalist_pool_origins": {
+    "shared-76c9b9dbfc689d0b": [
+      "effort-2026104182",
+      "effort-2026104900",
+      "effort-2026105227",
+      "effort-2026106033",
+      "effort-2026106180",
+      "effort-2026106320",
+      "effort-2026107450",
+      "effort-2026107716",
+      "effort-2026107782",
+      "effort-2026107913",
+      "effort-2026108781",
+      "effort-2026110535",
+      "effort-2026111692",
+      "effort-2026112023",
+      "effort-2026112550"
+    ]
+  },
+  "prior_frontier_comparisons": [
+    {
+      "new": "shared-76c9b9dbfc689d0b",
+      "previous": "shared-65cdcd9b9364f827",
+      "strictly_lower_R_in_both_modes": true
+    },
+    {
+      "new": "shared-76c9b9dbfc689d0b",
+      "previous": "shared-bd53cdb670b32e32",
+      "strictly_lower_R_in_both_modes": true
+    },
+    {
+      "new": "shared-7083b1ebfa5aa3a7",
+      "previous": "shared-65cdcd9b9364f827",
+      "strictly_lower_R_in_both_modes": true
+    },
+    {
+      "new": "shared-7083b1ebfa5aa3a7",
+      "previous": "shared-bd53cdb670b32e32",
+      "strictly_lower_R_in_both_modes": true
+    }
+  ],
+  "primary_typing_test_candidate": "shared-76c9b9dbfc689d0b",
+  "alternative": "shared-7083b1ebfa5aa3a7",
+  "recommendation_scope": "exploratory testing priority; no combined R or replacement decision"
+}

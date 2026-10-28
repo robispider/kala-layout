@@ -1,0 +1,55 @@
+{
+  "version": "interpretation-shared-4b-v1",
+  "new_search": false,
+  "seeds": [],
+  "input_sha256": {
+    "experiments/shared-4b-v1/preset.json": "5338594b4271821a9996b56324a3e732f28b89a7b63de0cb63a561eef6c0f965",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/analyze.py": "3e9f39e3e97cfe7b0536bf734c7d513ebe7bf199798017b4cdac9306f2797264",
+    "results/shared-layout-relaxed-v1/run-100m-v1/results.json": "49b2c10fdc0e19fb82dbb9011485034dfad93f4d4391d66aaf35909748566e1c",
+    "results/shared-layout-relaxed-v1/run-100m-v1/run-manifest.json": "2f1dbfb4aa9e4d99e2c2c19325a3387f92b9fc35612c7bdacb563a0e6be125a2",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-39dccebe0bb8d6ca.json": "6081d589c08ae3523a699a4ca254b28aa40e2b6f1cd811fcbff2d007b38bcb88",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-65cdcd9b9364f827.json": "cc8a399a714b05157b74228520715b9d1c782e2071353849aa3363cb50736cdd",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-7083b1ebfa5aa3a7.json": "73f1d6f1aceb7835edaba2ba489e0f72ea64aef77e595ba1a2f01743ea8f60d7",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-76c9b9dbfc689d0b.json": "c4dae7270a0006b475db9eac9a817bbe5fe3660d69f12accfe9f930e1353aab2",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-8cab7309b3311430.json": "628d47f44aaf0116caabcec3ac2552493483ad16fe26c718da9456d02bcb9bd6",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-b2c5b3f8b2196605.json": "83b1009936a9f74167264918d45bbbc4b57bbededb81ca4ad907e7f253d718ae",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-de3178d2ceb5108b.json": "6b63d5671e8e7df7dea3fce5170e535b88125345b5d75190ae463113d75aa48d",
+    "results/shared-layout-relaxed-v1/run-4b-v1/layouts/shared-f9096b7bb25243ef.json": "edcf022e73d3055472542a7f10fb7a5182326f6ab0c198a4151979545824cac3",
+    "results/shared-layout-relaxed-v1/run-4b-v1/results.json": "8edc2b621ac543668113600c5ac7b244cd78a7e078480b60b4c2e8055706c595",
+    "results/shared-layout-relaxed-v1/run-4b-v1/run-manifest.json": "bed8f541e1838b9b8d8530e7e7e4eaa9a1bc40cfdda016bd45957f9648e659df",
+    "results/shared-layout-relaxed-v1/run-4b-v1/scores.csv": "74d04eb324f414202e112e9787358393b7a5bb02b0e8a46772897e3ebc4e0cc8",
+    "results/shared-layout-relaxed-v1/run-4b-v1/selection.json": "a08c8f48617344600c7a5e6be677c932c156d74a00825fef17b738b76fa960ff",
+    "results/shared-layout-relaxed-v1/run-4b-v1/training-pool.json": "539677bbcd97f06b4d1111a6c8eb416aa460bc627340f91c649f657bcfbb727c"
+  },
+  "output_sha256": {
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/analysis.json": "4dc6155902b82b94c9ac8c38e5fcb24a15f486999e7c6c9f248f846e84ae8f76",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/heldout-means.csv": "c37175727aec647630a656294fad2b83d1ed217a041353c08d11bd5c0cc73440",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/layout-differences.csv": "db5f776ba60a62f22db8040bb15dc7cba0fca8567909b618e10a7b8431f190a5",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/primary-comparison.csv": "1462c387aa558f72db884915c97140b00a62a5d16ea31eeedf45180b9eb73f47",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/REPORT.md": "cabd59165ff31f2947ad97a46f0defe3b38749e26f0f90d467acf73122a4b7fd",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/scenario-changes.csv": "a68c5be995faca99372f1eb8f3b8c57fcda8f2f5af8e748ec9cebd918029c5d3",
+    "results/shared-layout-relaxed-v1/interpretation-4b-v1/validation.json": "8a9827fef4d5e227a197e354751cf53e881a86c9996c733a637ffb752c178901"
+  },
+  "source_run_manifest_sha256": "bed8f541e1838b9b8d8530e7e7e4eaa9a1bc40cfdda016bd45957f9648e659df",
+  "checks": {
+    "input_sha256": 180,
+    "output_sha256": 20015,
+    "protected_sha256": 2916,
+    "seed_checkpoint_count": 20000,
+    "unique_retained_bijections": 113550,
+    "proposal_budget": 4000000000,
+    "independent_finalist_scoring": true,
+    "official_exact_finalist_J1": true,
+    "earlier_frontier_dominated_in_both_R": true,
+    "reported_run_checks": {
+      "official_exact_challenge_scores_agree": true,
+      "integer_and_independent_metrics_agree": true,
+      "original_balance_formula_preserved": true,
+      "published_artifacts_preserved": true,
+      "training_selection_frozen_before_heldout": true,
+      "inputs_and_code_preserved": true
+    }
+  },
+  "source_run_unmodified": true,
+  "report_selection_basis": "training metrics only"
+}

@@ -1,0 +1,25 @@
+{
+  "engine": "bangla_dh.experimental.shared_explore",
+  "output": "results/shared-exploration-pilot-v1/run-100m-v1",
+  "workers": 32,
+  "settings": {
+    "pairs": 100,
+    "steps": 500000,
+    "first_seed": 2026113082,
+    "ils_iterations": 30,
+    "t_ratio": 0.0001,
+    "control_archive": 8,
+    "diverse_archive": 64,
+    "frontier_limit": 16,
+    "early_full_budget": 256,
+    "full_interval": 50000,
+    "diversity_interval": 5000,
+    "early_score_batch": 8,
+    "early_neighbor_steps": 64,
+    "final_neighbor_steps": 2048,
+    "total_proposals": 100000000,
+    "version": "shared-exploration-pilot-v1"
+  },
+  "previous_run": "results/shared-exploration-pilot-v1/run-v1",
+  "seed_relationship": "nested: first 10 pairs repeated, 90 additional pairs"
+}

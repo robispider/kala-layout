@@ -1,0 +1,22 @@
+{
+  "run_manifest_sha256": "29afad69975e7f8f80b8fcb3b22ec6b9dea1ce02d769dd7d192d17fda06a8d96",
+  "findings_sha256": "993ea5f6c29ab3ce05c7e24d181b7bb700c1b4d2007ea1a471714bd84fb78276",
+  "verified_hash_counts": {
+    "input_sha256": 174,
+    "output_sha256": 76,
+    "protected_sha256": 2142
+  },
+  "full_repository_tests": {
+    "passed": 267,
+    "seconds": 104.648
+  },
+  "published_reproduction_groups_passed": 8,
+  "balance_arm_reproducible": true,
+  "completed_resume_refused": true,
+  "finalist": "shared-65cdcd9b9364f827",
+  "heldout_mean_J1": {
+    "A": 1.8549163791652037,
+    "D": 1.8085779968538371
+  },
+  "jointly_eligible_retained_maps": 0
+}

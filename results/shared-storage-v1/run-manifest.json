@@ -1,0 +1,33 @@
+{
+  "version": "shared-storage-v1",
+  "new_search": false,
+  "seeds": [],
+  "parameters": {
+    "compression": "deterministic ZIP deflate and gzip; exact original bytes",
+    "original_logical_manifests": "preserved",
+    "original_local_files": "retained, Git-ignored",
+    "checkout_normalization": "Exact historical working bytes pinned; no input values or working bytes changed"
+  },
+  "output_sha256": {
+    "results/shared-exploration-pilot-v1/run-100m-v1/runs.zip": "efa8e399cad859d940cbedb8e8f29480b1885e28cc39f57c21ca0fb2c4bb8939",
+    "results/shared-exploration-pilot-v1/run-v1/runs.zip": "e1d68efb1441e522dde29699e420d9ae330d15dc00ab1b9afa40f69b6e605715",
+    "results/shared-layout-relaxed-v1/run-100m-v1/runs.zip": "c12b1e5f112d5a5f4667b6dda82eafa23a6cde932493bfcfc808127e9ed1e07c",
+    "results/shared-layout-relaxed-v1/run-100m-v1/training-pool.json.gz": "fd418d781f3a58a7d38444a551b19f7c3820581bcef9c91bf00e926fe911fe8d",
+    "results/shared-layout-relaxed-v1/run-4b-v1/runs.zip": "26f10a685864e5f7e7498700595bf5d336a1919f6af5ca4665d9e015727824d9",
+    "results/shared-layout-relaxed-v1/run-4b-v1/training-pool.json.gz": "1cb73cca3d21f31f5c55ea64c259d030d7ccbfe1d7e1f703fe4be55b5aa8916f",
+    "results/shared-layout-v1/run-100m-v1/runs.zip": "1241b9053450c0b8d93a11c655f11e4119dbfda37e76e8bb4fb17ec76726cf05",
+    "results/shared-layout-v1/run-v1/runs.zip": "f04e3937feb5916f7329d3a2607c8a872d8c15c5000136cfacbdbdf0262a0c80",
+    "results/shared-layout-v1/run-v1/training-pool.json.gz": "914835fb04181f518ccb247ce64387b7eaa10656450fe29060fa70aeab0a7258",
+    "results/shared-storage-v1/bookkeeping-before.zip": "2cc3ac806bbfdb3b37427567147806ba5d972f3371a643003a5e93b7d363a295",
+    "results/shared-storage-v1/checkout-byte-pins.json": "eb8e7e2293ab74fbc9d544241431407fa5a4be298ace804f1fbb956308c96331",
+    "results/shared-storage-v1/README.md": "f772098775e3076bcc24b5f340a43884627f0ccd48a8aad6174f2cfed0e66f37",
+    "results/shared-storage-v1/storage-manifest.json": "a84ffa4c717766cb4970d7495079e4b2ca8741107413ec856d7b99606b9a428d",
+    "results/shared-storage-v1/validation.json": "98488e9b1c336e7a09b9053e40546966abcf0a44fa7c39ee605c01f39ece9a38"
+  },
+  "checks": {
+    "lossless_member_bytes_verified": true,
+    "fresh_staged_copy_verified": true,
+    "scientific_inputs_outputs_preserved": true,
+    "finalist_scores_reproduced_from_packed_copy": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source_run_manifest_sha256": "fe7ac104252ff2d74d23326afbfc0330dbb047cd21f46a8a8cd8972caa86c468",
+  "findings_sha256": "5f0d268a081fbca66f444baa2ad7c601edaa53ddaf544a8accfb5b8410030863",
+  "verified_hash_counts": {
+    "input_sha256": 188,
+    "output_sha256": 28,
+    "protected_sha256": 22944
+  },
+  "original_4b_model_input_hashes_verified": 180,
+  "full_repository_tests": {
+    "passed": 279,
+    "seconds": 137.871
+  },
+  "published_reproduction_groups_passed": 8,
+  "qualifying_full_score_ratio": 2.9148936170212765,
+  "aggregate_seed_time_increase_percent": 16.456350191886226,
+  "new_to_old_retained_pool": {
+    "control": 39,
+    "enhanced": 121
+  },
+  "same_final_frontier": true,
+  "model_unchanged": true,
+  "new_frontier_discoveries": 0,
+  "all_evaluated_qualifying_points_covered_by_existing_frontier": true
+}

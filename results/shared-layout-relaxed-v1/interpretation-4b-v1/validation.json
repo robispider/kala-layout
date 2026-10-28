@@ -1,0 +1,19 @@
+{
+  "input_sha256": 180,
+  "output_sha256": 20015,
+  "protected_sha256": 2916,
+  "seed_checkpoint_count": 20000,
+  "unique_retained_bijections": 113550,
+  "proposal_budget": 4000000000,
+  "independent_finalist_scoring": true,
+  "official_exact_finalist_J1": true,
+  "earlier_frontier_dominated_in_both_R": true,
+  "reported_run_checks": {
+    "official_exact_challenge_scores_agree": true,
+    "integer_and_independent_metrics_agree": true,
+    "original_balance_formula_preserved": true,
+    "published_artifacts_preserved": true,
+    "training_selection_frozen_before_heldout": true,
+    "inputs_and_code_preserved": true
+  }
+}
