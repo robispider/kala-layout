@@ -2,9 +2,10 @@
   "version": "bangla-dh-shared-challenge-v1",
   "publication_id": "kala-shared-publication-v1",
   "arrangement_id": "shared-76c9b9dbfc689d0b",
-  "data_sha256": "36be11511d89e2aecf1041418aa27f61abe97fa257f3cdcc44b2b8d1fe5bd757",
-  "scorer_sha256": "1c79cfef10c6f555f409beac9ddd1cd43464ca61d1598b91d249dfc008e01d9b",
+  "data_sha256": "87e9727bf9d529120d00eb7f75bcff93e2e70248769d90b58fad9ff52e87d162",
+  "scorer_sha256": "cb8369ebf906abc5fa362b0c7f68f1bfd63c9aecb6d2871b99692167d363d333",
   "reference": {
+    "name": "Kala Layout",
     "layout": {
       "Q": [
         "ী",

@@ -1,6 +1,6 @@
 # Challenge the shared arrangement
 
-Submit **one map used unchanged by both Goti and Jhor typing styles**. B01 is the provisional reference. The season is `bangla-dh-shared-challenge-v1`. [Why sharing?](SHARED_LAYOUT.md) explains the goal and its costs.
+Submit **one map used unchanged by both Goti and Jhor typing styles**. Kala Layout is the provisional reference. The season is `bangla-dh-shared-challenge-v1`. [Why sharing?](SHARED_LAYOUT.md) explains the goal and its costs.
 
 ## Run the scorer
 
@@ -21,15 +21,15 @@ Both styles must pass, on the original independently normalized 50/50 training m
 * Exact rational J1 at most 403/400 of that style's **original separate-arrangement** effort (+0.75%).
 * Within-word same-finger different-key distance at most 1.075 of that original reference (+7.5%), with the existing absolute allowance of 1e-14.
 
-These are the relaxed shared policy, not the original strict Balance policy. Limits are not rebased on B01. Cross-space movement can regress but remains positively penalized. The frozen four-component expression, all 81 priority settings per style, scales, aspirations, calibration minima and unsupported-order bounds are unchanged.
+These are the relaxed shared policy, not the original strict Balance policy. Limits are not rebased on Kala Layout. Cross-space movement can regress but remains positively penalized. The frozen four-component expression, all 81 priority settings per style, scales, aspirations, calibration minima and unsupported-order bounds are unchanged.
 
-Eligible maps receive separate Goti and Jhor R values; lower is better within each style. R values are never summed, averaged or compared across styles. An improvement on B01 is no worse in both R values and strictly better in at least one. A lower one-style J1 is insufficient. B02 is a trade-off, not a winner on both scores. Comparisons use unrounded results.
+Eligible maps receive separate Goti and Jhor R values; lower is better within each style. R values are never summed, averaged or compared across styles. An improvement on Kala Layout is no worse in both R values and strictly better in at least one. A lower one-style J1 is insufficient. B02 is a trade-off, not a winner on both scores. Comparisons use unrounded results.
 
-The [shared board](../submissions/shared-v1/LEADERBOARD.md) shows frontier entries first, then dominated and ineligible arrangements. Frontier status compares with B01 and all eligible submissions. Within groups, filenames determine display order, not an overall rank. The same normalized map counts once across both styles; the first processed filename keeps the entry. Equal score vectors remain tied. Reference copies and duplicate submissions are reported separately. Maintainers can use Git history to resolve authorship disputes without changing scores.
+The [shared board](../submissions/shared-v1/LEADERBOARD.md) shows frontier entries first, then dominated and ineligible arrangements. Frontier status compares with Kala Layout and all eligible submissions. Within groups, filenames determine display order, not an overall rank. The same normalized map counts once across both styles; the first processed filename keeps the entry. Equal score vectors remain tied. Reference copies and duplicate submissions are reported separately. Maintainers can use Git history to resolve authorship disputes without changing scores.
 
 ## Submit and verify
 
-Add the JSON file to [submissions/shared-v1/](../submissions/shared-v1/) in a pull request. The check recalculates scores; embedded score claims are ignored. Malformed or cross-season files fail validation. Valid but ineligible maps are visibly labeled and receive no joint rank. A valid submission never automatically replaces B01.
+Add the JSON file to [submissions/shared-v1/](../submissions/shared-v1/) in a pull request. The check recalculates scores; embedded score claims are ignored. Malformed or cross-season files fail validation. Valid but ineligible maps are visibly labeled and receive no joint rank. A valid submission never automatically replaces Kala Layout.
 
 ```powershell
 $env:PYTHONPATH = "src"

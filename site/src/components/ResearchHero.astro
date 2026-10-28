@@ -8,18 +8,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = (route: string) => `${base}/${locale}/${route}/`;
 const digits = (s: string) => bn ? s.replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[Number(d)]) : s;
 const entries = [board.public.entries.find(e => e.style === 'D'), board.public.entries.find(e => e.style === 'A'), ...['Windows Default', 'UniJoy'].map(name => board.public.entries.find(e => e.name === name))];
-const nameOf = (e) => e.kind === 'shared-style' && bn ? `B01 · ${e.style === 'A' ? 'গতি' : 'ঝড়'} স্টাইল` : e.name;
+const nameOf = (e) => e.kind === 'shared-style' && bn ? `${board.public.public_name_bn} · ${e.style === 'A' ? 'গতি' : 'ঝড়'} স্টাইল` : e.name;
 const max = Math.max(...entries.map(e => e!.average));
 ---
 <section class="research-hero" aria-labelledby="_top">
   <div class="journal-line"><span>{bn ? 'বাংলা কিবোর্ড · অভিন্ন বিন্যাসের গবেষণা' : 'BANGLA KEYBOARD / SHARED ARRANGEMENT RESEARCH'}</span><a href={`${base}/${bn ? 'en' : 'bn'}/`} lang={bn ? 'en' : 'bn'}>{bn ? 'English' : 'বাংলা'}</a></div>
   <div class="hero-grid">
     <div class="hero-copy">
-      <p class="hero-label">{bn ? 'B01 / আপাতত নির্বাচিত' : 'B01 / PROVISIONAL SHARED ARRANGEMENT'}</p>
-      <h1 id="_top" data-page-title>{bn ? 'এক বিন্যাস। দুই টাইপিং স্টাইল।' : 'One arrangement. Two typing styles.'}</h1>
-      <p class="hero-intro">{bn ? 'গতি ও ঝড় এখন একই প্রতীকের অবস্থান ব্যবহার করবে। স্টাইল বদলাবে স্বরবর্ণ লেখার নিয়ম; ম্যাপ একই থাকবে। কেন এই পরিবর্তন, কী খরচ হচ্ছে এবং কী এখনো যাচাই বাকি—দেখুন।' : 'Goti and Jhor will share the same symbol positions. Choose a vowel-entry style while keeping one map. Explore why we are transitioning, what it costs, and what still needs testing.'}</p>
+      <p class="hero-label">{bn ? 'চার বিলিয়ন সার্চ প্রস্তাব থেকে নির্বাচিত' : 'SELECTED THROUGH FOUR BILLION SEARCH PROPOSALS'}</p>
+      <h1 id="_top" data-page-title>{bn ? board.public.public_name_bn : board.public.public_name}</h1>
+      <p class="hero-tagline">{bn ? 'এক বিন্যাস। দুই টাইপিং স্টাইল।' : 'One arrangement. Two typing styles.'}</p>
+      <p class="hero-intro">{bn ? 'গতি ও ঝড় এখন একই প্রতীকের অবস্থান ব্যবহার করবে। স্টাইল বদলাবে স্বরবর্ণ লেখার নিয়ম; ম্যাপ একই থাকবে। কেন এই পরিবর্তন, কী খরচ হচ্ছে এবং কী এখনো যাচাই বাকি—দেখুন।' : 'Goti and Jhor share the same symbol positions. Choose a vowel-entry style while keeping one map. Explore why we are transitioning, what it costs, and what still needs testing.'}</p>
       <div class="hero-actions"><a class="primary-action" href={href('shared')}>{bn ? 'কেন অভিন্ন বিন্যাস' : 'Why a shared arrangement'} →</a><a href={href('layouts')}>{bn ? 'ম্যাপ ও দুই স্টাইল' : 'The map and both styles'} ↗</a></div>
-      <p class="hero-scope">{bn ? 'B01 আপাতত নির্বাচিত সমঝোতা। স্কোরে পরিশ্রম ও চলাচল মডেল করা হয়; শেখা, গতি বা আরাম মাপা হয়নি।' : 'B01 is a provisional compromise. Scores model effort and movement; learning, speed and comfort have not been measured.'}</p>
+      <p class="hero-scope">{bn ? 'কালা লেআউট আপাতত নির্বাচিত সমঝোতা। স্কোরে পরিশ্রম ও চলাচল মডেল করা হয়; শেখা, গতি বা আরাম মাপা হয়নি।' : 'Kala Layout is a provisional compromise. Scores model effort and movement; learning, speed and comfort have not been measured.'}</p>
     </div>
     <aside class="evidence-panel" aria-labelledby="evidence-title">
       <div class="panel-head"><div><p class="hero-label">{bn ? 'আগে পরীক্ষা করা আলাদা রাখা টেক্সট' : 'PREVIOUSLY EXAMINED HELD-OUT TEXT'}</p><h2 id="evidence-title">{bn ? 'এক ম্যাপের দুই স্টাইল। আলাদা স্কোর।' : 'One map. Two styles. Separate scores.'}</h2><p class="panel-caption">{bn ? 'তিন উৎসের সমান ওজনের গড় · J1 · কম ভালো' : 'Equal mean of three sources · J1 · lower is better'}</p></div><div class="mascot-frame"><Image src={mascot} width={300} height={520} alt={bn ? 'কালার ব্ল্যাক বেঙ্গল ছাগলের মাসকট' : 'Kala’s Black Bengal goat mascot'} loading="eager" /></div></div>
@@ -35,6 +36,7 @@ const max = Math.max(...entries.map(e => e!.average));
   .hero-grid { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:3rem; padding-block:3rem; }
   .hero-label { margin:0 0 .8rem; color:var(--sl-color-text-accent); font-size:.7rem; font-weight:750; letter-spacing:.1em; }
   h1 { margin:0; max-width:12ch; font-size:clamp(2.8rem,5vw,4.5rem); font-weight:650; letter-spacing:-.055em; line-height:1.08; color:var(--sl-color-white); }
+  .hero-tagline { margin:.8rem 0 0; font-size:1.25rem; font-weight:600; line-height:1.5; color:var(--sl-color-white); }
   .hero-intro { max-width:43ch; margin-block:1.4rem; font-size:1.08rem; line-height:1.75; color:var(--sl-color-gray-2); }
   .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:1rem 1.4rem; }
   .hero-actions a { font-size:.86rem; font-weight:650; text-decoration:none; }

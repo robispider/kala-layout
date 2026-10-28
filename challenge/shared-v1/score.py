@@ -18,9 +18,9 @@ from pathlib import Path
 import sys
 import unicodedata
 
-SCRIPT_VERSION = '2.0.0'
+SCRIPT_VERSION = '2.0.1'
 DATA_VERSION = 'bangla-dh-shared-challenge-v1'
-EXPECTED_SHA256 = '36be11511d89e2aecf1041418aa27f61abe97fa257f3cdcc44b2b8d1fe5bd757'
+EXPECTED_SHA256 = '87e9727bf9d529120d00eb7f75bcff93e2e70248769d90b58fad9ff52e87d162'
 LETTERS = 'QWERTYUIOPASDFGHJKLZXCVBNM'
 TRAIN = ('bnwiki/train', 'newspaper/train')
 HELDOUT = ('bnwiki/heldout', 'newspaper/heldout', 'bard-novel/heldout')

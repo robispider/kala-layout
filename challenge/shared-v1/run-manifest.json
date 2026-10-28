@@ -1,6 +1,6 @@
 {
   "version": "bangla-dh-shared-challenge-v1",
-  "data_sha256": "36be11511d89e2aecf1041418aa27f61abe97fa257f3cdcc44b2b8d1fe5bd757",
+  "data_sha256": "87e9727bf9d529120d00eb7f75bcff93e2e70248769d90b58fad9ff52e87d162",
   "parameters": {
     "effort_cap_ratio": "403/400",
     "within_cap_ratio": 1.075,
@@ -45,7 +45,7 @@
     "data/evaluators/mechanics-v1/upstream/tables/keypair_dvorak7_scores.csv": "3f56baeda4c9331e845bf6e4583619c4e3cef443276618ae0bea3ca949201f95",
     "data/evaluators/mechanics-v1/upstream/tables/keypair_dvorak7_strength_scores.csv": "bc948e4d500391c719a7c4915ca15846e212298bc59b2f6539003bb6e1bdc3bd",
     "data/evaluators/mechanics-v1/upstream/tables/keypair_dvorak7_vspan_scores.csv": "1acb2318c53698bd4a09796dd092a4146df574c4da77c1510774f078de2af7b3",
-    "data/layout-publications/shared-v1.json": "b1a3702e8df751ed57db1e3018bddf82fcb625ae071ba5e9c6980797c27a5632",
+    "data/layout-publications/shared-v1.json": "ccf2c0faa05784c6634e1785d4aed99317da5943cf2855d6c99e6f9e712f6184",
     "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
     "results/balance-v1/balance-v1-config.json": "9e2d13049fbb8fa53b254d05e6b082e81ae62f76552246f8d88102b21c79dc8b",
     "results/evaluator-e2/run-v1/counts/style-a-bard-novel-heldout.json.gz": "8089dde98a797da94120fc36053a105ddc236152ca637f7f3d81c17c78c5fc28",
@@ -164,7 +164,7 @@
     "src/bangla_dh/phase4.py": "dcc8fc5430db6cd16ca16c5aece5e8774dc523cfe881f26e2628d4133e32de55",
     "src/bangla_dh/phase4_report.py": "4558e5a368d56d5b589bad39759fca2052da8bdf625964849860507537455d45",
     "src/bangla_dh/publication.py": "ab573e1831b864ce7972e766f39b22c21fdabef5d0e407b61d4e9b3797b8d8ee",
-    "src/bangla_dh/publish_shared.py": "7c4f7fc27a2d672dd76c483984526d7a9f2c835c50bb4a039f1055e8b129cecf",
+    "src/bangla_dh/publish_shared.py": "05e5696d9946152efccfabcca532bdfb019f30157463206415a0d06b2facbc8b",
     "src/bangla_dh/reference.py": "49394a0e4481c54345e6a51a8ab89c981ad92f0fa4d07549f893ef574a2076e9",
     "src/bangla_dh/reproduce.py": "23961f17fefdf31c8a67bf7ef08232b79d2339f7fcbd622119e2cd0158e8fff4",
     "src/bangla_dh/reproduction.py": "32cb5b5f9da22a49c2352f70829a42d2a4efa39f814496747bd62a2daa3cc7ce",
@@ -184,9 +184,9 @@
     "src/bangla_dh/search/keystrokes.py": "5f28fe50f5a73713398866c8cead52889176a551c3f1f70f221f4874892e7289",
     "src/bangla_dh/search/lp_bound.py": "e27ea4e6f1fa49ba0eebf9e598898dcf7457a295315323db7912efcaa1dfb61f",
     "src/bangla_dh/search/problem.py": "49cdda38c3aa322a8a88e2f6074b6ad8365ed765c04d326a3797cbc764a520ef",
-    "src/bangla_dh/shared_challenge.py": "8444a37e63dd49fc7a3e95e940f65f59a7fc51b6ce9ffe13b69b564185c9ad21",
-    "src/bangla_dh/shared_challenge_template.py": "42081ffc0e9a43787f14c9358d2c4aa0fba3d6efb361a56dafb860eb77835d29",
-    "src/bangla_dh/shared_leaderboard.py": "a0cd4008b631aaa2d3b718a748ddcefa6ca4a8890481dee64e0e529bd0e26419",
+    "src/bangla_dh/shared_challenge.py": "b6c52d3e11ee61c3e4d79d623282381fb35b431da846bb74f1f6c82e48b57623",
+    "src/bangla_dh/shared_challenge_template.py": "9baae544ee5e1634232e66ff4e4074a100efcd929ef25685269761bb5eab3860",
+    "src/bangla_dh/shared_leaderboard.py": "139868f5f3fc84a22e3ef7779dd59f9a8e84100c1b693b3e895a2c75268390ed",
     "src/bangla_dh/usage_collection_v2.py": "413c323d59c3ef9dcd830e09cb7511eac6656d621326ce64983e711d53b488f7",
     "src/bangla_dh/usage_evaluator.py": "30c78829e36cc10234f4cb2da3cfbc02e1eade027a4ff2a227d8c0255f248429",
     "src/bangla_dh/usage_features.py": "2079f21c5bebfeae61f53c7e9f75bfbbee90a8d662722b7ac99eed0b84fc9df4",
@@ -199,12 +199,12 @@
     "src/bangla_dh/usage_scores.py": "68387b95897f4469bb9a7f97b9cb6eadf280079e52aa453c8acd83005637a0f2"
   },
   "output_sha256": {
-    "challenge/shared-v1/challenge-data.json": "5c832b4a49390fc5f1dd2efcf6b25c60585c9583d21b4b26bde8dab1a4283d30",
+    "challenge/shared-v1/challenge-data.json": "fa2c352cd9055e6caf0c096374573c0933f836b103974313036dd2490eee04bf",
     "challenge/shared-v1/LICENSE-mechanics.txt": "b18be44d20a08a5acc1e1324438fab645ef0afaa94b8589a9ad489bef3f5256b",
-    "challenge/shared-v1/README.md": "48d7a7951790e8451936ed5f9fa50d0cc2ea0dd429e3b61c8fd1666f44a0a6e4",
-    "challenge/shared-v1/reference.json": "5244584ae03eb46acda2ec6e03ce0337bb90c8a5cc271731dd3eca9eb3b970e2",
-    "challenge/shared-v1/score.py": "1c79cfef10c6f555f409beac9ddd1cd43464ca61d1598b91d249dfc008e01d9b",
-    "challenge/shared-v1/scoring-data.json.gz": "f69596fb34e9ede35e7471a3d06ffa01344ad256d9f674e575446778b3944a53"
+    "challenge/shared-v1/README.md": "8e6cecea7c80590317e53324b495f53e103cd5cc9f7f82e428f039db78f79580",
+    "challenge/shared-v1/reference.json": "3e0cfb66d34c1675852829e47ac3bf1b75fee601300e6163d7cb3ea5d203343e",
+    "challenge/shared-v1/score.py": "cb8369ebf906abc5fa362b0c7f68f1bfd63c9aecb6d2871b99692167d363d333",
+    "challenge/shared-v1/scoring-data.json.gz": "3f9c814b6e2f4737e51b3dea7a0bdf5301295769bda3c6e12203ee674527a328"
   },
   "checks": {
     "A exact training J1": true,
@@ -236,6 +236,6 @@
     "both styles eligible": true,
     "reference is not its own improvement": true
   },
-  "seconds": 23.272824799991213,
-  "bundle_bytes": 2896415
+  "seconds": 13.96862100000726,
+  "bundle_bytes": 2896509
 }

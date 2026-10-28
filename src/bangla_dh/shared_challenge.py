@@ -41,12 +41,13 @@ def build():
     calibration_path = ROOT / spec['calibration']
     calibration = read_json(calibration_path)['styles']
     data = {'version': DATA_VERSION, 'publication_id': spec['version'], 'arrangement_id': spec['arrangement_id'],
+            'public_name': spec['public_name'],
             'symbols': list(layout), 'calibration': calibration, 'models': {}, 'counts': {},
             'policy': {'effort_cap_ratio': '403/400', 'within_cap_ratio': 1.075, 'within_absolute_tolerance': 1e-14,
                        'references': 'original same-style arrangements', 'training_weights': dict.fromkeys(TRAIN, 0.5),
                        'ranking': 'joint eligibility then (R_Goti, R_Jhor) Pareto dominance; no combined R',
                        'heldout': 'previously examined diagnostics only', 'status': 'provisional'},
-            'reference': {'layout': key_layout(), 'training': {}},
+            'reference': {'name': spec['public_name'], 'layout': key_layout(), 'training': {}},
             'attribution': 'Order tables derive from Arno Klein, MIT; see LICENSE-mechanics.txt.'}
     inputs = [DESCRIPTOR, ROOT / spec['source_map'], calibration_path, TEMPLATE,
               ROOT/'data/problem-v1.json', ROOT/'data/evaluators/mechanics-v1/source-lock.json',
@@ -88,7 +89,7 @@ def build():
         stream.write(raw)
     written = [RESULTS/'scoring-data.json.gz', write_text(SCRIPT, TEMPLATE.read_text(encoding='utf-8').replace('@@SHA256@@', digest))]
     written.append(write_text(RESULTS/'LICENSE-mechanics.txt', (ROOT/'data/evaluators/mechanics-v1/LICENSE').read_text(encoding='utf-8')))
-    example = {'season': DATA_VERSION, 'name': 'B01 shared reference', 'layout': key_layout()}
+    example = {'season': DATA_VERSION, 'name': spec['public_name']+' reference', 'layout': key_layout()}
     written.append(write_json(RESULTS/'reference.json', example))
     scorer = load_scorer()
     loaded, _ = scorer.load_data()
@@ -117,7 +118,7 @@ def build():
     inputs = sorted({p for p in inputs if p.is_file()})
     written.append(write_text(RESULTS/'README.md', f'''# Shared arrangement challenge
 
-One map, both Goti (A) and Jhor (D). Season `{DATA_VERSION}`.
+Kala Layout: one map, both Goti (A) and Jhor (D). Research identifier B01. Season `{DATA_VERSION}`.
 Keep `score.py`, `scoring-data.json.gz` and `LICENSE-mechanics.txt` together. Python 3.10+, no dependencies or corpus download.
 
 ```bash
@@ -126,7 +127,7 @@ python challenge/shared-v1/score.py --template my-shared.json
 python challenge/shared-v1/score.py my-shared.json --diagnostics
 ```
 
-Submit one map to `submissions/shared-v1/`. Both styles must pass the frozen relaxed-policy effort/within limits against the originals. Ranking uses separate R values and Pareto dominance; never their sum. A strictly smaller same-style J1 alone is insufficient. B01 is provisional. Scores model mechanics, not speed or comfort. Known held-out texts are diagnostic only.
+Submit one map to `submissions/shared-v1/`. Both styles must pass the frozen relaxed-policy effort/within limits against the originals. Ranking uses separate R values and Pareto dominance; never their sum. A strictly smaller same-style J1 alone is insufficient. Kala Layout is provisional. Scores model mechanics, not speed or comfort. Known held-out texts are diagnostic only.
 
 The original independent-style J1 challenge remains in the parent directory; it is a different season. Rules: [docs/CHALLENGE.md](../../docs/CHALLENGE.md). Data SHA-256 `{digest}`. The package uses MIT-licensed source-derived mechanics tables; attribution is included.
 '''))

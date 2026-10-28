@@ -40,6 +40,19 @@ def build():
 
     started = time.perf_counter()
     spec, layout = descriptor(), shared_layout()
+    source_manifest_path = ROOT/spec['source_run']/'run-manifest.json'
+    source_results_path = ROOT/spec['source_run']/'results.json'
+    source_manifest = json.loads(source_manifest_path.read_text(encoding='utf-8'))
+    source_results = json.loads(source_results_path.read_text(encoding='utf-8'))
+    search_provenance = {
+        'source_run': spec['source_run'], 'starts': len(source_manifest['seeds']),
+        'tracks': len(source_manifest['seeds'])//source_manifest['settings']['seeds'],
+        'annealing_proposals_per_start': source_manifest['settings']['steps'],
+        'annealing_proposals': len(source_manifest['seeds'])*source_manifest['settings']['steps'],
+        'distinct_retained_arrangements': source_results['retained_pool_count'],
+        'full_qualifying_evaluations': source_results['refinement']['jointly_eligible_evaluations'],
+        'leading_tradeoffs': source_results['jointly_eligible_frontier_count'],
+        'scope': 'annealing proposals plus separate local search; proposals may revisit arrangements; finite bounded search'}
     scorer = shared_challenge.load_scorer()
     data, digest = scorer.load_data()
     result = scorer.evaluate({'season': shared_challenge.DATA_VERSION, 'layout': key_layout()}, data, True)
@@ -58,7 +71,7 @@ def build():
                 rows.append({'style': style, 'fingering': scenario, 'corpus': corpus, **metrics})
         heldout = own['diagnostics']['model-optimal']
         j1 = {col: heldout[c]['J1'] for c, col in columns.items()}
-        entries.append({'id': spec['arrangement_id']+'-'+style, 'name': f'B01 · {name} style', 'style': style,
+        entries.append({'id': spec['arrangement_id']+'-'+style, 'name': f"{spec['public_name']} · {name} style", 'style': style,
                         'kind': 'shared-style', 'j1': j1, 'average': sum(j1.values())/3,
                         'fingering': 'model-optimal', 'developer': 'Kala research'})
         old = mixed_best_layout(style)
@@ -76,6 +89,8 @@ def build():
     entries = [e for e in entries if e['kind'] == 'shared-style' or e['name'] not in ('Kala Goti', 'Kala Jhor')]
     entries.sort(key=lambda r: r['average'])
     summary = {'version': spec['version'], 'arrangement_id': spec['arrangement_id'], 'status': spec['status'],
+               'public_name': spec['public_name'], 'public_name_bn': spec['public_name_bn'],
+               'search_provenance': search_provenance,
                'challenge_version': shared_challenge.DATA_VERSION, 'challenge_data_sha256': digest,
                'metric': 'J1 per text unit; model-optimal shared styles, favorable recorded legacy fixed-layout benchmarks',
                'note': 'One shared arrangement with two typing styles. Equal means of three previously examined held-out sources. Modeled effort, not speed.',
@@ -83,13 +98,13 @@ def build():
                'physical_arrangements': 7, 'evaluation_configurations': 8,
                'map_license': spec['map_license'], 'heldout_changes_vs_original_percent': original_changes}
     checks['six distinct fixed baselines'] = len(entries) == 8
-    written = [write_json(RESULTS/'shared-map.json', {'id': spec['arrangement_id'], 'styles': STYLES, 'layout': key_layout()}),
+    written = [write_json(RESULTS/'shared-map.json', {'id': spec['arrangement_id'], 'public_name': spec['public_name'], 'styles': STYLES, 'layout': key_layout()}),
                write_json(RESULTS/'public-summary.json', summary), write_json(RESULTS/'examples.json', examples(layout)),
                write_json(RESULTS/'relocations.json', changes)]
-    lines = ['# From the original arrangements to shared B01', '',
-             'Both typing styles use the same B01 positions. These are symbol relocations, not measured learning difficulty.', '']
+    lines = ['# From the original arrangements to Kala Layout', '',
+             'Both typing styles use the same positions (research identifier B01). These are symbol relocations, not measured learning difficulty.', '']
     for style, name in STYLES.items():
-        lines += [f'## Original {name} arrangement → shared B01', '', '| Symbol | Original key/layer | Shared key/layer |', '| --- | --- | --- |']
+        lines += [f'## Original {name} arrangement → Kala Layout', '', '| Symbol | Original key/layer | Shared key/layer |', '| --- | --- | --- |']
         lines += [f"| {r['symbol']} | {r['original']} | {r['shared']} |" for r in changes if r['style'] == style]
         lines += ['']
     written.append(write_text(RESULTS/'RELOCATIONS.md', '\n'.join(lines)))
@@ -102,7 +117,8 @@ def build():
         full = {**layout, **problem_fixed(load_problem())}
         file = keyboard_file(Style(style), full, {'publication': spec['version'], 'arrangementId': spec['arrangement_id'],
             'status': 'provisional', 'style': {'code': style, 'name': name}, 'availability': spec['app_availability']})
-        file.update(name=f'Kala shared B01 — {name} style', comment='Shared B01 arrangement; '+name+' vowel-entry style. Research export; '+spec['app_availability'])
+        file.update(name=f"{spec['public_name']} — {name} style", comment='Kala Layout (research identifier B01); '+name+' vowel-entry style. Research export; '+spec['app_availability'])
+        file['about']['publicName'] = spec['public_name']
         from .kala_export import typing_rule
         file['about']['style']['typingRule'] = typing_rule(Style(style))
         checks[style+' import schema'] = not kala_import_problems(json.dumps(file, ensure_ascii=False).encode('utf-8'))
@@ -120,7 +136,9 @@ def build():
     checks['identical application key maps'] = maps[0] == maps[1]
     written.append(write_json(RESULTS/'verification.json', checks))
     table = '\n'.join(f"| {e['name']} | {e['j1']['wikipedia']:.6f} | {e['j1']['newspaper']:.6f} | {e['j1']['unseenNews']:.6f} | {e['average']:.6f} |" for e in entries)
-    written.append(write_text(RESULTS/'REPORT.md', f'''# Shared B01 publication: one arrangement, Goti and Jhor styles
+    written.append(write_text(RESULTS/'REPORT.md', f'''# Kala Layout: one arrangement, Goti and Jhor styles
+
+**Kala Layout** is the public name; **B01/P01** is its research shortlist identifier. The underlying map, encoders and scores are unchanged by this naming update of 29 October 2026.
 
 Owner decision, 28 October 2026: provisionally use `{spec['arrangement_id']}` (B01/P01), with Goti (A) and Jhor (D) as typing styles. Changing style preserves every symbol position. Selection is a practical compromise, not a new scalar-score optimum or a measured learning benefit.
 
@@ -129,6 +147,16 @@ Owner decision, 28 October 2026: provisionally use `{spec['arrangement_id']}` (B
 The original arrangements differ at 31/52 assignments. Using the original Goti arrangement for Jhor costs +1.218% training effort and +24.83% within-word distance; using original Jhor for Goti costs +4.421%/+159.56%. B01 instead costs +0.689%/+4.790% in Goti and +0.439%/+3.766% in Jhor. These pass the shared experiment's +0.75%/+7.5% limits against each original on the independently normalized 50/50 training mix and model-optimal fingering. B01 Goti fails the original strict +0.5% effort policy. Calibration is unchanged; the expanded eligible domain is explicitly a new shared challenge season.
 
 Sharing means one arrangement to remember and maintain across styles. It still requires learning a new arrangement: 43 Goti and 39 Jhor symbols move from the originals. Entry recipes remain different. Learning time, error rate, speed and comfort have not been measured.
+
+## Four-billion search provenance
+
+The source run completed 20,000 starts across two tracks, with 200,000 annealing proposals per start: 4,000,000,000 proposals, plus local search. It retained 113,550 distinct assignments; final screening/refinement fully scored 961 qualifying maps and retained two leading trade-offs. Proposals may revisit maps. This was not an exhaustive test of four billion unique combinations, and is not a proof of optimality. The selected B01 map became the provisional Kala Layout. See the original source-run and interpretation manifests for the exact saved scope.
+
+## Typing-style heritage and credit
+
+Goti preserves the modern fixed-layout consonant-then-sign and hasant-plus-sign core: the original Goti search explicitly used the UniJoy-style grammar. Credit [Ekushey's UniJoy contributors](https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/) and [Avro/OmicronLab's fixed-layout documentation](https://www.omicronlab.com/download/pdf/Bangla%20Typing%20with%20Fixed%20Keyboard%20Layouts.pdf), including Mehdi Hasan Khan and the Avro team. These entry conventions are not a Kala invention; the key arrangement was searched separately.
+
+Avro also documents Automatic Vowel Forming, so context-sensitive vowel entry predates Jhor. Jhor's exact timing-free repeated-key rule is specified by this project; the reviewed primary documentation did not establish an identical complete recipe or invention priority. [Typing-style credits and source-review scope](../../docs/TYPING_STYLES.md) explain the distinction. This attribution correction changes no grammar, benchmark or score.
 
 ## Trade-offs and alternatives
 
@@ -165,7 +193,7 @@ This rebuild reuses frozen derived counts; no new search/text download. Full sou
     inputs = [DESCRIPTOR, ROOT/spec['source_map'], ROOT/spec['calibration'], Path(__file__),
               ROOT/'src/bangla_dh/publication.py', shared_challenge.RESULTS/'run-manifest.json',
               shared_challenge.SCRIPT, shared_challenge.RESULTS/'scoring-data.json.gz',
-              ROOT/'results/shared-layout-relaxed-v1/run-4b-v1/run-manifest.json',
+              source_manifest_path, source_results_path,
               ROOT/'results/shared-top10-comparison-v1/run-manifest.json', ROOT/'challenge/challenge-data.json']
     run = json.loads((ROOT/'results/shared-layout-relaxed-v1/run-4b-v1/run-manifest.json').read_text(encoding='utf-8'))
     written.append(write_json(RESULTS/'run-manifest.json', {'version': spec['version'], 'new_search': False, 'seeds': [],

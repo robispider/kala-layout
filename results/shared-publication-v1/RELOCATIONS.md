@@ -1,8 +1,8 @@
-# From the original arrangements to shared B01
+# From the original arrangements to Kala Layout
 
-Both typing styles use the same B01 positions. These are symbol relocations, not measured learning difficulty.
+Both typing styles use the same positions (research identifier B01). These are symbol relocations, not measured learning difficulty.
 
-## Original Goti arrangement → shared B01
+## Original Goti arrangement → Kala Layout
 
 | Symbol | Original key/layer | Shared key/layer |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ Both typing styles use the same B01 positions. These are symbol relocations, not
 | ো | R/base | X/base |
 | ৌ | T/shift | W/shift |
 
-## Original Jhor arrangement → shared B01
+## Original Jhor arrangement → Kala Layout
 
 | Symbol | Original key/layer | Shared key/layer |
 | --- | --- | --- |

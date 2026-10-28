@@ -1,9 +1,9 @@
 {
   "data_version": "bangla-dh-shared-challenge-v1",
-  "data_sha256": "36be11511d89e2aecf1041418aa27f61abe97fa257f3cdcc44b2b8d1fe5bd757",
+  "data_sha256": "87e9727bf9d529120d00eb7f75bcff93e2e70248769d90b58fad9ff52e87d162",
   "publication_id": "kala-shared-publication-v1",
   "arrangement_id": "shared-76c9b9dbfc689d0b",
-  "script_version": "2.0.0",
+  "script_version": "2.0.1",
   "reference": {
     "layout": {
       "A": [
@@ -112,6 +112,7 @@
       ]
     },
     "layout_sha256": "c00c4dbef480c1a1096c0f93c906398aa469d57b8ccecb0cc06ef491d9ab0e9b",
+    "name": "Kala Layout",
     "training": {
       "A": {
         "balance": {

@@ -1,6 +1,8 @@
-# Kala: one shared arrangement, two typing styles
+# Kala Layout: one arrangement, two typing styles
 
-**B01 is the provisional shared key arrangement; Goti and Jhor are its typing styles.** Every symbol keeps its position when styles change. Goti uses hasant/sign vowel entry; Jhor uses context vowels. [Why transition?](docs/SHARED_LAYOUT.md) explains the intended benefit of one remembered map, the mechanical costs and the relearning required.
+**Kala Layout is the public name of the provisional shared key arrangement; Goti and Jhor are its typing styles.** B01 is its technical research identifier. Every symbol keeps its position when styles change. Goti uses hasant/sign vowel entry; Jhor uses context vowels. [Why transition?](docs/SHARED_LAYOUT.md) explains the intended benefit of one remembered map, the mechanical costs and the relearning required.
+
+**Found through four billion search proposals:** 20,000 starts, 200,000 proposals each, plus local search; 113,550 distinct retained arrangements, 961 full qualifying evaluations and two leading trade-offs. Proposals can revisit maps; this is not four billion unique combinations or a proof of optimality. [Search provenance](results/shared-layout-relaxed-v1/interpretation-4b-v1/REPORT.md). Goti builds on the modern fixed-layout tradition of Ekushey UniJoy and Avro/OmicronLab; see [typing-style heritage and credits](docs/TYPING_STYLES.md), including earlier Avro context-vowel automation and the limited scope of Jhor's originality claim.
 
 Previously examined held-out mean modeled effort is **1.854428 (Goti)** and **1.808080 (Jhor)**. Sharing adds about **0.61% / 0.45% effort** versus the original same-style arrangements, with **25.75% / 3.92% more cross-space same-finger distance**. These are model comparisons, not measured learning, speed or comfort. [Current map and rules](docs/LAYOUTS.md), [report](results/shared-publication-v1/REPORT.md), [reproduction](docs/REPRODUCE.md).
 

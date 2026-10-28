@@ -57,6 +57,9 @@ assert.equal(board.public.evaluation_configurations, 8);
 const home = await readFile(path.join(root, 'en/index.html'), 'utf8');
 for (const row of board.public.entries) assert(home.includes(row.average.toFixed(4)), `Home page lacks a current average: ${row.name}`);
 assert(home.includes('One arrangement. Two typing styles.'));
+assert(home.includes('SELECTED THROUGH FOUR BILLION SEARCH PROPOSALS'));
+assert(home.includes('How four billion search proposals led to Kala Layout'));
+assert(!home.includes('B01 ·'), 'Research code presented as the public chart name');
 assert(!home.includes('1.8000') && !home.includes('1.8432'), 'Historical averages presented as current');
 for (const locale of locales) {
   const html = await readFile(path.join(root, locale, 'index.html'), 'utf8');
@@ -70,6 +73,11 @@ for (const locale of locales) {
   assert(html.includes('https://github.com/robispider/kala-layout/blob/main/results/evaluator-e1/run-v1/REPORT.md'), `Missing experimental report link: ${locale}`);
   assert(html.includes(`${base}/${locale}/mechanics/`), `Missing localized movement comparison link: ${locale}`);
   assert(html.includes(`${base}/${locale}/shared/`), `Missing transition rationale: ${locale}`);
+  assert(html.includes(`${base}/${locale}/styles/`), `Missing typing-style credit link: ${locale}`);
+  const styles = await readFile(path.join(root, locale, 'styles/index.html'), 'utf8');
+  for (const url of ['https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/', 'https://www.omicronlab.com/avro-keyboard.html']) {
+    assert(styles.includes(url), `Missing primary-source credit ${url}: ${locale}`);
+  }
   const shared = await readFile(path.join(root, locale, 'shared/index.html'), 'utf8');
   for (const number of ['25.750', '43', '39']) assert(shared.includes(number), `Missing transition cost ${number}: ${locale}`);
 }

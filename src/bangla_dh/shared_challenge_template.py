@@ -18,7 +18,7 @@ from pathlib import Path
 import sys
 import unicodedata
 
-SCRIPT_VERSION = '2.0.0'
+SCRIPT_VERSION = '2.0.1'
 DATA_VERSION = 'bangla-dh-shared-challenge-v1'
 EXPECTED_SHA256 = '@@SHA256@@'
 LETTERS = 'QWERTYUIOPASDFGHJKLZXCVBNM'

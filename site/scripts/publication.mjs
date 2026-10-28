@@ -30,5 +30,8 @@ export async function loadPublication() {
   assert.equal(summary.challenge_version, spec.challenge_version);
   assert.equal(submissions.data_sha256, challenge.data_sha256, 'Stale leaderboard scores');
   assert.equal(summary.challenge_data_sha256, challenge.data_sha256, 'Stale publication scores');
+  assert.equal(summary.public_name, spec.public_name, 'Stale public name');
+  assert.equal(summary.public_name_bn, spec.public_name_bn, 'Stale Bangla public name');
+  assert.equal(challenge.reference.name, spec.public_name, 'Stale challenge reference name');
   return { spec, summary, submissions, challenge };
 }

@@ -2,8 +2,21 @@
   "version": "kala-shared-publication-v1",
   "arrangement_id": "shared-76c9b9dbfc689d0b",
   "status": "provisional",
+  "public_name": "Kala Layout",
+  "public_name_bn": "কালা লেআউট",
+  "search_provenance": {
+    "source_run": "results/shared-layout-relaxed-v1/run-4b-v1",
+    "starts": 20000,
+    "tracks": 2,
+    "annealing_proposals_per_start": 200000,
+    "annealing_proposals": 4000000000,
+    "distinct_retained_arrangements": 113550,
+    "full_qualifying_evaluations": 961,
+    "leading_tradeoffs": 2,
+    "scope": "annealing proposals plus separate local search; proposals may revisit arrangements; finite bounded search"
+  },
   "challenge_version": "bangla-dh-shared-challenge-v1",
-  "challenge_data_sha256": "36be11511d89e2aecf1041418aa27f61abe97fa257f3cdcc44b2b8d1fe5bd757",
+  "challenge_data_sha256": "87e9727bf9d529120d00eb7f75bcff93e2e70248769d90b58fad9ff52e87d162",
   "metric": "J1 per text unit; model-optimal shared styles, favorable recorded legacy fixed-layout benchmarks",
   "note": "One shared arrangement with two typing styles. Equal means of three previously examined held-out sources. Modeled effort, not speed.",
   "texts": {
@@ -14,7 +27,7 @@
   "entries": [
     {
       "id": "shared-76c9b9dbfc689d0b-D",
-      "name": "B01 · Jhor style",
+      "name": "Kala Layout · Jhor style",
       "style": "D",
       "kind": "shared-style",
       "j1": {
@@ -28,7 +41,7 @@
     },
     {
       "id": "shared-76c9b9dbfc689d0b-A",
-      "name": "B01 · Goti style",
+      "name": "Kala Layout · Goti style",
       "style": "A",
       "kind": "shared-style",
       "j1": {

@@ -1,6 +1,6 @@
 # From separate arrangements to one shared map
 
-The current provisional result is one B01 arrangement with Goti (A) and Jhor (D) typing styles. The positions are shared; the vowel-entry recipes differ. [Why the transition?](SHARED_LAYOUT.md) explains the practical rationale and mechanical costs; [current maps](LAYOUTS.md) and the [publication report](../results/shared-publication-v1/REPORT.md) carry the new results.
+The current provisional result is **Kala Layout** (research identifier B01), one arrangement with Goti (A) and Jhor (D) typing styles. The positions are shared; the vowel-entry recipes differ. [Why the transition?](SHARED_LAYOUT.md) explains the practical rationale and mechanical costs; [current maps](LAYOUTS.md) and the [publication report](../results/shared-publication-v1/REPORT.md) carry the new results.
 
 ## The shared-layout stage (28 October 2026)
 

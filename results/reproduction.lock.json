@@ -62,16 +62,16 @@
       "challenge/challenge-data.json": "2388d17bd9f375763eff19eac4dc2d4397d62c1f28d574d2597d414febb55b0a"
     },
     "shared publication v1": {
-      "data/layout-publications/shared-v1.json": "071d6ea397b57fac17f9d646b460ce55233c469fbdb7037d986b28187c725091",
+      "data/layout-publications/shared-v1.json": "a53b7a54f0d46d4f0337504acc2eabe3213d6154af373a4fb7f62da020ecc5b9",
       "results/shared-publication-v1/examples.json": "bb1653beaf965d23554202c65f0b16ce9a6679562e1e02ac4ca45413d9b488e6",
-      "results/shared-publication-v1/kala-shared-goti.json": "2fbe937825d81d5f3c0dc06c03177ed5a65545e5e02139ec6e6524118597ceb1",
-      "results/shared-publication-v1/kala-shared-jhor.json": "d9c36c2e0c2ea6f6bbe908b3312c78712348552f006a44a6e4be77c215f9c067",
-      "results/shared-publication-v1/public-summary.json": "9aef13ff6df2d63355b961c7f093ef94d6f9aebf1d8f6dc7372eadb86c87c39f",
+      "results/shared-publication-v1/kala-shared-goti.json": "9a3fec9c993182b2a3b6b5ff9d9ab1d97abcb866c32c0b0f8655775904f16807",
+      "results/shared-publication-v1/kala-shared-jhor.json": "1285b0be5cc140450e46e1b19404b502889eed39b4ffac9418e3593f0f4e4ae4",
+      "results/shared-publication-v1/public-summary.json": "2c174c06e03bc3a69e120acefff5fd175398a72ed22cad45ae28885aa557a848",
       "results/shared-publication-v1/relocations.json": "7820176e262404c2b440d9fed2d158427cae7f3efe4065389097a6663e1fe4ac",
-      "results/shared-publication-v1/shared-map.json": "2a122ddbcb0f3848436ad1d1c9c532c7107581d815738f19625ab646a99b25fd"
+      "results/shared-publication-v1/shared-map.json": "b2a9b0e0ed7ce111026eafc8edad63a9d7b90a4d227eb7b445f1528c7510949e"
     },
     "shared challenge v1": {
-      "challenge/shared-v1/challenge-data.json": "ebab1162666599cd5b5e0aab1143a4c5cd644a387dbf22c4c15c1c59331a08ae"
+      "challenge/shared-v1/challenge-data.json": "a2387a07e0a16abfe21b3e227e8ffd95c922b9e7299a393a734cb8273757ac6f"
     }
   }
 }

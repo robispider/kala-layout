@@ -29,11 +29,15 @@ class SharedPublicationTests(unittest.TestCase):
     def test_one_map_two_styles_and_historical_maps_unchanged(self):
         self.assertEqual(current_layout('A'), current_layout('D'))
         self.assertEqual(descriptor()['arrangement_id'], 'shared-76c9b9dbfc689d0b')
+        self.assertEqual(descriptor()['public_name'], 'Kala Layout')
+        self.assertEqual(self.data['reference']['name'], 'Kala Layout')
         for style, count in [('A', 43), ('D', 39)]:
             old, new = mixed_best_layout(style), shared_layout()
             self.assertEqual(sum(old[s] != a for s, a in new.items()), count)
         exports = [json.loads((ROOT/f'results/shared-publication-v1/kala-shared-{n}.json').read_text(encoding='utf-8')) for n in ('goti', 'jhor')]
         self.assertEqual(exports[0]['layers'], exports[1]['layers'])
+        for export in exports:
+            self.assertTrue(export['name'].startswith('Kala Layout — '))
         self.assertNotEqual(exports[0]['about']['style'], exports[1]['about']['style'])
 
     def test_portable_parity_for_finalists_originals_and_random_maps(self):

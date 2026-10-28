@@ -68,6 +68,7 @@ export async function validateContent() {
   }
   await validateHomeDiagnostics();
   await validateSharedPublication();
+  await validateSearchStory();
   await validateMechanics();
   await validateContinuous();
   console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
@@ -169,6 +170,28 @@ async function validateSharedPublication() {
       return [`${s === 'A' ? 'Goti' : 'Jhor'} (${s})`, f, ...['J1','within_distance','cross_distance'].map(k => avg(k).toFixed(6)), `${avg('order_lower').toFixed(6)}–${avg('order_upper').toFixed(6)}`, `${(100*avg('escaped_share')).toFixed(3)}%`];
     }));
     assert.deepEqual(rows(mechanics.split('<!-- historical-mechanics -->')[0]).slice(2).map(r => r.split('|').slice(1,-1).map(c => c.trim())), expected, `Shared movement drift: ${locale}`);
+  }
+}
+async function validateSearchStory() {
+  const { summary, spec } = await loadPublication();
+  const search = summary.search_provenance;
+  const manifest = JSON.parse(await readFile(path.join(repoRoot, search.source_run, 'run-manifest.json'), 'utf8'));
+  const results = JSON.parse(await readFile(path.join(repoRoot, search.source_run, 'results.json'), 'utf8'));
+  assert.equal(search.starts, manifest.seeds.length);
+  assert.equal(search.annealing_proposals_per_start, manifest.settings.steps);
+  assert.equal(search.annealing_proposals, search.starts * search.annealing_proposals_per_start);
+  assert.equal(search.annealing_proposals, 4_000_000_000);
+  assert.equal(search.distinct_retained_arrangements, results.retained_pool_count);
+  assert.equal(search.full_qualifying_evaluations, results.refinement.jointly_eligible_evaluations);
+  assert.equal(search.leading_tradeoffs, results.jointly_eligible_frontier_count);
+  for (const locale of locales) {
+    const markdown = await readFile(sourcePath({ source: 'docs/HOME_SEARCH_STORY.md' }, locale), 'utf8');
+    const normalized = normalizeDigits(markdown).replaceAll(',', '');
+    for (const value of [search.starts, search.annealing_proposals_per_start, search.distinct_retained_arrangements, search.full_qualifying_evaluations]) {
+      assert(normalized.includes(String(value)), `Homepage search provenance drift: ${value} (${locale})`);
+    }
+    assert(markdown.includes(locale === 'en' ? spec.public_name : spec.public_name_bn));
+    assert(markdown.includes('TYPING_STYLES.md'), `Missing input-method credit link: ${locale}`);
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await validateContent();

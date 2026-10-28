@@ -2,9 +2,9 @@
   "type": "fixed",
   "version": "1.0",
   "language": "bn",
-  "name": "Kala shared B01 — Goti style",
+  "name": "Kala Layout — Goti style",
   "developer": "Kala — Bangla-DH Pure research",
-  "comment": "Shared B01 arrangement; Goti vowel-entry style. Research export; Research export; verify context-vowel support before using Jhor. Existing installed maps may be the original arrangements.",
+  "comment": "Kala Layout (research identifier B01); Goti vowel-entry style. Research export; Research export; verify context-vowel support before using Jhor. Existing installed maps may be the original arrangements.",
   "layers": {
     "normal": {
       "32": " ",
@@ -152,6 +152,7 @@
         "independentVowel": "hasant then the sign (combinations.sequences)"
       }
     },
-    "availability": "Research export; verify context-vowel support before using Jhor. Existing installed maps may be the original arrangements."
+    "availability": "Research export; verify context-vowel support before using Jhor. Existing installed maps may be the original arrangements.",
+    "publicName": "Kala Layout"
   }
 }

@@ -17,7 +17,7 @@ def score_files(files=None):
     data, digest = scorer.load_data()
     paths = [Path(p) for p in files] if files is not None else sorted(
         p for p in RESULTS.glob('*.json') if p.name != 'leaderboard.json')
-    entries, problems, seen = [], [], {data['reference']['layout_sha256']: 'B01 reference'}
+    entries, problems, seen = [], [], {data['reference']['layout_sha256']: 'Kala Layout reference (B01)'}
     for path in paths:
         try:
             row = scorer.evaluate(scorer.read_submission(path), data)
@@ -45,9 +45,9 @@ def score_files(files=None):
 
 def render(board):
     lines = ['# Shared-arrangement challenge board', '',
-             f"Season `{board['data_version']}`; B01 is provisional. One map is evaluated in both styles.", '',
-             'Frontier status is relative to B01 and all eligible submissions. Display order is not an overall rank.', '',
-             '| Arrangement | Author | Status | Goti R | Jhor R | Improves B01 |',
+             f"Season `{board['data_version']}`; Kala Layout is provisional (research identifier B01). One map is evaluated in both styles.", '',
+             'Frontier status is relative to Kala Layout and all eligible submissions. Display order is not an overall rank.', '',
+             '| Arrangement | Author | Status | Goti R | Jhor R | Improves Kala Layout |',
              '| --- | --- | --- | --- | --- | --- |']
     def safe(value):
         value = html.escape(str(value)).replace('\n', ' ').replace('\r', ' ')
@@ -56,7 +56,7 @@ def render(board):
         scores = [f'{v:.9f}' if v is not None else 'ineligible' for v in r['R']]
         lines.append(f"| {safe(r['name'] or r['file'])} | {safe(r['author'])} | {r['status']} | {' | '.join(scores)} | {r['improves_reference']} |")
     if not board['entries']:
-        lines += ['', 'No submissions yet. B01 is the reference; B02 remains a documented trade-off.']
+        lines += ['', 'No submissions yet. Kala Layout is the reference; research candidate B02 remains a documented trade-off.']
     return '\n'.join(lines) + '\n'
 
 

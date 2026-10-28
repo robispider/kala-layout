@@ -1,6 +1,6 @@
 # Reproduce the current and original seasons
 
-## Current shared B01 publication
+## Current Kala Layout publication
 
 The current result is one arrangement with Goti/Jhor typing styles. Rebuild its portable scorer, report, scores, exports and examples from committed derived counts, without downloading text or running a new search:
 

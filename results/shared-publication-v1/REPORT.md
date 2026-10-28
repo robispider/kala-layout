@@ -1,4 +1,6 @@
-# Shared B01 publication: one arrangement, Goti and Jhor styles
+# Kala Layout: one arrangement, Goti and Jhor styles
+
+**Kala Layout** is the public name; **B01/P01** is its research shortlist identifier. The underlying map, encoders and scores are unchanged by this naming update of 29 October 2026.
 
 Owner decision, 28 October 2026: provisionally use `shared-76c9b9dbfc689d0b` (B01/P01), with Goti (A) and Jhor (D) as typing styles. Changing style preserves every symbol position. Selection is a practical compromise, not a new scalar-score optimum or a measured learning benefit.
 
@@ -7,6 +9,16 @@ Owner decision, 28 October 2026: provisionally use `shared-76c9b9dbfc689d0b` (B0
 The original arrangements differ at 31/52 assignments. Using the original Goti arrangement for Jhor costs +1.218% training effort and +24.83% within-word distance; using original Jhor for Goti costs +4.421%/+159.56%. B01 instead costs +0.689%/+4.790% in Goti and +0.439%/+3.766% in Jhor. These pass the shared experiment's +0.75%/+7.5% limits against each original on the independently normalized 50/50 training mix and model-optimal fingering. B01 Goti fails the original strict +0.5% effort policy. Calibration is unchanged; the expanded eligible domain is explicitly a new shared challenge season.
 
 Sharing means one arrangement to remember and maintain across styles. It still requires learning a new arrangement: 43 Goti and 39 Jhor symbols move from the originals. Entry recipes remain different. Learning time, error rate, speed and comfort have not been measured.
+
+## Four-billion search provenance
+
+The source run completed 20,000 starts across two tracks, with 200,000 annealing proposals per start: 4,000,000,000 proposals, plus local search. It retained 113,550 distinct assignments; final screening/refinement fully scored 961 qualifying maps and retained two leading trade-offs. Proposals may revisit maps. This was not an exhaustive test of four billion unique combinations, and is not a proof of optimality. The selected B01 map became the provisional Kala Layout. See the original source-run and interpretation manifests for the exact saved scope.
+
+## Typing-style heritage and credit
+
+Goti preserves the modern fixed-layout consonant-then-sign and hasant-plus-sign core: the original Goti search explicitly used the UniJoy-style grammar. Credit [Ekushey's UniJoy contributors](https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/) and [Avro/OmicronLab's fixed-layout documentation](https://www.omicronlab.com/download/pdf/Bangla%20Typing%20with%20Fixed%20Keyboard%20Layouts.pdf), including Mehdi Hasan Khan and the Avro team. These entry conventions are not a Kala invention; the key arrangement was searched separately.
+
+Avro also documents Automatic Vowel Forming, so context-sensitive vowel entry predates Jhor. Jhor's exact timing-free repeated-key rule is specified by this project; the reviewed primary documentation did not establish an identical complete recipe or invention priority. [Typing-style credits and source-review scope](../../docs/TYPING_STYLES.md) explain the distinction. This attribution correction changes no grammar, benchmark or score.
 
 ## Trade-offs and alternatives
 
@@ -18,8 +30,8 @@ B01 has Goti R 0.761312 and Jhor R 0.441365. These are separately calibrated; th
 
 | Configuration | Wikipedia | Newspaper | BARD news | Mean J1 |
 | --- | --- | --- | --- | --- |
-| B01 · Jhor style | 1.842057 | 1.790535 | 1.791648 | 1.808080 |
-| B01 · Goti style | 1.886133 | 1.837932 | 1.839221 | 1.854428 |
+| Kala Layout · Jhor style | 1.842057 | 1.790535 | 1.791648 | 1.808080 |
+| Kala Layout · Goti style | 1.886133 | 1.837932 | 1.839221 | 1.854428 |
 | Windows Default | 2.143500 | 2.151000 | 2.154900 | 2.149800 |
 | Probhat | 2.602200 | 2.533700 | 2.529900 | 2.555300 |
 | Munir Optima (uni) | 2.589800 | 2.578300 | 2.588500 | 2.585500 |

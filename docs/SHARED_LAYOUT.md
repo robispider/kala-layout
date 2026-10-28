@@ -1,6 +1,6 @@
 # Why one shared arrangement?
 
-We are moving from two independently positioned layouts to **one shared arrangement with two typing styles: Goti and Jhor**. B01 is the provisional choice, selected on 28 October 2026. Switching styles changes the vowel-entry recipe; every symbol stays on the same key and layer. See the [shared map and typing rules](LAYOUTS.md).
+We are moving from two independently positioned layouts to **one shared arrangement with two typing styles: Goti and Jhor**. The public name is **Kala Layout**; B01 is the technical research identifier of the arrangement provisionally selected on 28 October 2026. Switching styles changes the vowel-entry recipe; every symbol stays on the same key and layer. See the [shared map and typing rules](LAYOUTS.md).
 
 ## Why change?
 
@@ -12,7 +12,7 @@ Simply using one original arrangement for both styles is a poor compromise. On t
 | --- | --- | --- | --- | --- |
 | Original Goti | 0.000% | +1.218% | 0.00% | +24.83% |
 | Original Jhor | +4.421% | 0.000% | +159.56% | 0.00% |
-| Shared B01 | +0.689% | +0.439% | +4.79% | +3.77% |
+| Kala Layout | +0.689% | +0.439% | +4.79% | +3.77% |
 
 Each change compares with that style's own original arrangement. B01 satisfies the shared experiment's +0.75% effort and +7.5% within-word distance limits in both styles. These limits apply to that training mixture and fingering, not every source or person. The Goti result exceeds the earlier strict +0.5% effort limit; this is explicitly a relaxed shared policy, with unchanged scoring calibration.
 
@@ -20,7 +20,7 @@ Each change compares with that style's own original arrangement. B01 satisfies t
 
 Sharing has a mechanical cost. The following numbers are equal means of three previously examined held-out sources, using model-optimal fingering:
 
-| B01 versus original same-style arrangement | Goti style | Jhor style |
+| Kala Layout versus original same-style arrangement | Goti style | Jhor style |
 | --- | --- | --- |
 | Mean modeled effort J1 | 1.854428 | 1.808080 |
 | Effort change | +0.608% | +0.447% |
@@ -31,7 +31,7 @@ Goti's larger cross-space movement cost deserves attention. Both styles also hav
 
 Existing users must relearn positions: B01 moves 43 of 52 Goti symbols and 39 of 52 Jhor symbols from the originals. All change physical key; two Jhor symbols also change layer. These counts do not predict learning time. [Original maps and exports](../results/kala-keyboards/README.md) remain available, and [relocation data](../results/shared-publication-v1/RELOCATIONS.md) records every move.
 
-## Why B01 provisionally?
+## Why this arrangement provisionally?
 
 B01 is `shared-76c9b9dbfc689d0b` (also P01). The four-billion search and enhanced pilot have the same two leading non-dominated maps in their fully scored pools. B01 has Goti R 0.761312 and Jhor R 0.441365. B02 has Goti R 0.785849 and Jhor R 0.438747. Their only difference swaps ৈ and ৌ between Shift+X and Shift+W.
 

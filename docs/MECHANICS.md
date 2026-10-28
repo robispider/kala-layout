@@ -1,6 +1,6 @@
 # Shared arrangement: movement and trade-offs
 
-## Current B01 results
+## Current Kala Layout results
 
 One arrangement serves Goti (A) and Jhor (D). Below are equal means of the three previously examined held-out sources, normalized separately. Within-word same-finger different-key distance is per text unit; cross-space distance is per spanning window. They cannot be added as raw distances. Effort and distance are lower-is-better; order credit is higher-is-better. Order bounds retain unsupported mass and are not confidence intervals. Shift effort is part of J1; physical-key order projects layers and excludes modifier movement.
 
