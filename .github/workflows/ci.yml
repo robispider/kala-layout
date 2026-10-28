@@ -36,5 +36,7 @@ jobs:
         run: |
           python challenge/bangla_dh_challenge.py --public
           python challenge/bangla_dh_challenge.py challenge/D-reference.json challenge/A-reference.json
+          python challenge/shared-v1/score.py challenge/shared-v1/reference.json
+          python -m bangla_dh challenge-verify challenge/shared-v1/reference.json
       - name: The search reproduces the published Kala Jhor in a short run
         run: python -m bangla_dh generate-layout --style D --seeds 2 --workers 2 --out work/ci

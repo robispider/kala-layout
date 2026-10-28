@@ -8,6 +8,7 @@ export const repoUrl = 'https://github.com/robispider/kala-layout';
 export const releasesUrl = 'https://robispider.github.io/kala-releases';
 export const locales = ['en', 'bn'];
 export const pages = [
+  { source: 'docs/SHARED_LAYOUT.md', route: 'shared' },
   { source: 'docs/HOW_WE_FOUND_THEM.md', route: 'how' },
   { source: 'docs/LAYOUTS.md', route: 'layouts' },
   { source: 'docs/MECHANICS.md', route: 'mechanics' },

@@ -49,7 +49,8 @@ from .search.problem import PROBLEM_FILE, load_problem, slots
 RESULTS = PROJECT_ROOT / "challenge"  # user-facing, top level of the repository
 TEMPLATE = Path(__file__).with_name("challenge_template.py")
 SCRIPT = RESULTS / "bangla_dh_challenge.py"
-DATA_VERSION = "bangla-dh-challenge-v1"
+DATA_VERSION = "bangla-dh-shared-challenge-v1"
+LEGACY_DATA_VERSION = "bangla-dh-challenge-v1"
 STYLES = ("A", "D")
 
 
@@ -66,7 +67,7 @@ def build_data(problem: dict) -> dict:
     fixed = problem_fixed(problem)
     keys_used = sorted({k for k, _ in slots()} | {k for k, _ in fixed.values()})
     data = {
-        "version": DATA_VERSION,
+        "version": LEGACY_DATA_VERSION,
         "objective": {
             "name": "J1",
             "weights": {name: str(Fraction(w).limit_denominator(1000)) for name, w in weights.items()},
@@ -264,5 +265,5 @@ def manifest(outputs: list[Path], data_sha256: str, checks: dict) -> dict:
     inputs[relative_to_project(MIX / "run-manifest.json")] = sha256_file(MIX / "run-manifest.json")
     return {"generated_utc": _dt.datetime.now(_dt.timezone.utc).replace(microsecond=0).isoformat(),
             "bangla_dh_version": __version__, "python": platform.python_version(), "platform": platform.platform(),
-            "repo_commit": head, "working_tree_clean": clean, "data_version": DATA_VERSION, "data_sha256": data_sha256,
+            "repo_commit": head, "working_tree_clean": clean, "data_version": LEGACY_DATA_VERSION, "data_sha256": data_sha256,
             "checks": checks, "inputs": inputs, "outputs": hash_outputs(outputs)}

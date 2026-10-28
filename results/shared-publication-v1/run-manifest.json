@@ -1,0 +1,74 @@
+{
+  "version": "kala-shared-publication-v1",
+  "new_search": false,
+  "seeds": [],
+  "source_run_manifest": "results/shared-layout-relaxed-v1/run-4b-v1/run-manifest.json",
+  "source_parameters": {
+    "seeds": 10000,
+    "steps": 200000,
+    "ils_iterations": 30,
+    "first_seed": 2026103082,
+    "archive_limit": 8,
+    "frontier_limit": 8,
+    "balance_refine_steps": 2048,
+    "t_ratio": 0.0001,
+    "effort_allowance_exact": "3/400",
+    "within_allowance": 0.075,
+    "version": "shared-layout-relaxed-v1",
+    "prior_shared_start": "shared-65cdcd9b9364f827",
+    "calibration": "unchanged frozen Balance v1"
+  },
+  "parameters": {
+    "effort_cap_ratio": "403/400",
+    "heldout": "previously examined diagnostics only",
+    "ranking": "joint eligibility then (R_Goti, R_Jhor) Pareto dominance; no combined R",
+    "references": "original same-style arrangements",
+    "status": "provisional",
+    "training_weights": {
+      "bnwiki/train": 0.5,
+      "newspaper/train": 0.5
+    },
+    "within_absolute_tolerance": 1e-14,
+    "within_cap_ratio": 1.075
+  },
+  "input_sha256": {
+    "challenge/challenge-data.json": "cd6bb413fcca529e6012238ac018e9bf6e5f53df903fffc8a2eb2138d1212a38",
+    "challenge/shared-v1/run-manifest.json": "1cff350dfe0274f8f39392d277cee5be3cfdb48c658ac6137cf3bcfbdefeff42",
+    "challenge/shared-v1/score.py": "1c79cfef10c6f555f409beac9ddd1cd43464ca61d1598b91d249dfc008e01d9b",
+    "challenge/shared-v1/scoring-data.json.gz": "f69596fb34e9ede35e7471a3d06ffa01344ad256d9f674e575446778b3944a53",
+    "data/layout-publications/shared-v1.json": "b1a3702e8df751ed57db1e3018bddf82fcb625ae071ba5e9c6980797c27a5632",
+    "results/balance-v1/balance-v1-config.json": "9e2d13049fbb8fa53b254d05e6b082e81ae62f76552246f8d88102b21c79dc8b",
+    "results/shared-layout-relaxed-v1/run-4b-v1/run-manifest.json": "bed8f541e1838b9b8d8530e7e7e4eaa9a1bc40cfdda016bd45957f9648e659df",
+    "results/shared-top10-comparison-v1/layouts/shared-76c9b9dbfc689d0b.json": "0570b0ca0f0e72f69920a91c8cd9b04ac6ce5f936becb8b076eb103c3fc5afe0",
+    "results/shared-top10-comparison-v1/run-manifest.json": "d12357d25697fa64740a2cf04210b9315e589702340d39a1e074a25ca2e0c60d",
+    "src/bangla_dh/publication.py": "ab573e1831b864ce7972e766f39b22c21fdabef5d0e407b61d4e9b3797b8d8ee",
+    "src/bangla_dh/publish_shared.py": "7c4f7fc27a2d672dd76c483984526d7a9f2c835c50bb4a039f1055e8b129cecf"
+  },
+  "output_sha256": {
+    "results/shared-publication-v1/examples.json": "746412a889215e9b337c3418495e18f7fb1ec0e7bbedd7794fff9d54d496412e",
+    "results/shared-publication-v1/kala-shared-goti.json": "65c830ee2c85af163a305d60a21db2a8ffc30fc96b96dca02b99635b04a94625",
+    "results/shared-publication-v1/kala-shared-jhor.json": "5d5562d79b8578cb95701be1b4c080adfd6bb0ea3db0c17d4abeb3241e3cc020",
+    "results/shared-publication-v1/public-summary.json": "2abcee352fe5cf118820283f2cbcf3faecead900308e1757b46769883fa42250",
+    "results/shared-publication-v1/relocations.json": "7c21e9db46ec8877da403835a96fa3ed96c81ae331a0d7e2de20c7f14a4e25a3",
+    "results/shared-publication-v1/RELOCATIONS.md": "6862d067ac5b914e5ce9861810be81e8e89982936cfebfe47ea5fbf5e5125720",
+    "results/shared-publication-v1/REPORT.md": "5900e2076ddaf88787dca269f3ebe14ded6d23def4ce557c95ce2b407218cc39",
+    "results/shared-publication-v1/scores.csv": "b106a695cea6ec7302b643a36dc205a11add726093d2d972773cdc0709025a72",
+    "results/shared-publication-v1/shared-map.json": "06851ec3323a542621f0007e84ad8a65c4d3460f181e92007f370c55948a7314",
+    "results/shared-publication-v1/verification.json": "47e3cc4a66d92f549c47a30393a32407f580b56bfe6a4ad3413ee8000effd9e7"
+  },
+  "checks": {
+    "both styles eligible": true,
+    "A saved exact effort": true,
+    "A saved R": true,
+    "D saved exact effort": true,
+    "D saved R": true,
+    "six distinct fixed baselines": true,
+    "A import schema": true,
+    "A key map": true,
+    "Goti export engine round trips": true,
+    "D import schema": true,
+    "D key map": true,
+    "identical application key maps": true
+  },
+  "seconds": 1.3530047999956878
+}

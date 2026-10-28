@@ -30,6 +30,10 @@ GROUPS = {
     "mixed search (Kala Goti, Kala Jhor)": ["results/mix-search/search/*.json"],
     "Kala layout files": ["results/kala-keyboards/kala-goti.json", "results/kala-keyboards/kala-jhor.json"],
     "challenge data": ["challenge/challenge-data.json"],
+    "shared publication v1": ["data/layout-publications/shared-v1.json", "results/shared-publication-v1/shared-map.json",
+                              "results/shared-publication-v1/public-summary.json", "results/shared-publication-v1/examples.json",
+                              "results/shared-publication-v1/relocations.json", "results/shared-publication-v1/kala-shared-*.json"],
+    "shared challenge v1": ["challenge/shared-v1/challenge-data.json"],
 }
 
 

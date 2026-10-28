@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Kala Layout',
-      description: 'How the Kala Jhor and Kala Goti Bangla keyboard layouts were found, how to repeat the search, and how to challenge them.',
+      description: 'One shared Bangla key arrangement with Goti and Jhor typing styles: rationale, evidence, reproducibility and challenge.',
       defaultLocale: 'en',
       locales: {
         en: { label: 'English', lang: 'en' },
@@ -24,7 +24,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'The research', translations: { bn: 'গবেষণা' },
-          items: ['how', 'layouts', 'mechanics', 'data'],
+          items: ['shared', 'layouts', 'how', 'mechanics', 'data'],
         },
         {
           label: 'Do it yourself', translations: { bn: 'নিজে করে দেখুন' },

@@ -1,0 +1,65 @@
+{
+  "note": "SHA-256 of the canonical JSON of the artefacts that carry the results; check with `python -m bangla_dh check-results`.",
+  "groups": {
+    "phase2 frequency tables": {
+      "results/phase2/frequencies/bnwiki-heldout.json": "c9c2af9f32636949ba829f25f8a9229897cb75c21c95097cf133405c9891fbcc",
+      "results/phase2/frequencies/bnwiki-train.json": "ffeb0ba06f57704f9d468631643c2ab3ee55e89ff01fc55721c3b6c1c3564396",
+      "results/phase2/frequencies/optimization-frequencies.json": "4c52867bcf32c9e1a57d1b1ab553f0e6c0a698c252531565fdec4b8b10d52e57"
+    },
+    "phase3 keystroke tables": {
+      "results/phase3/frequencies/A-bnwiki-heldout.json": "aa8843215d71dd28fd2e5f8c62395b9f3378b4390ea9b4974a672b455e5c3bea",
+      "results/phase3/frequencies/A-bnwiki-train.json": "53d354211fcde11dd7506c7ae59ae5c1c6d5f045620b50890d89c176a8749f1b",
+      "results/phase3/frequencies/B-bnwiki-heldout.json": "567800b44add25a09f695a10a048cffa07944e4c7c433379de144c0641685226",
+      "results/phase3/frequencies/B-bnwiki-train.json": "6cf6f46d9796675da30b94fabee59ebdbed4a7d3b656fe53cb26206eb89982fb",
+      "results/phase3/frequencies/C-bnwiki-heldout.json": "ec5b0571461ccdd587c8e4d5315fc0e468383f81c8ebe705695b91b42cffe3b9",
+      "results/phase3/frequencies/C-bnwiki-train.json": "c61e28e2a1962825d088ef574e99b59f9930e928c5343b45ff52877b033acc9f",
+      "results/phase3/frequencies/D-bnwiki-heldout.json": "9c7cdc0b57b440dfdd89ccaa3ba3025fcc16ac9d8c7c6ce558ea38a380d1493f",
+      "results/phase3/frequencies/D-bnwiki-train.json": "3f9e4e0bdc4b5df6448eb440ce3d10db0f84accd60b3325d53db9cccfd49444c"
+    },
+    "news frequency and keystroke tables": {
+      "results/phase3-crosscheck/frequencies/A-bard-novel-heldout.json": "a1b0317bbe98a3c6a3cb6cc97d439eb674fb346efd72524eff6e0d0172bf1406",
+      "results/phase3-crosscheck/frequencies/A-bard-novel-train.json": "6e2d23c66da995c1fd76d174c27c4350388167a4c873f5bbb02ca5d18c5731b7",
+      "results/phase3-crosscheck/frequencies/A-newspaper-heldout.json": "f016c59631037d3b314967c278a75685726b088b83be9d8806265ffd74ad3b79",
+      "results/phase3-crosscheck/frequencies/A-newspaper-train.json": "a067d5bf50ae2dc56655cef5c17db702a05cd590621567a8d4fd84b8cb07089a",
+      "results/phase3-crosscheck/frequencies/B-bard-novel-heldout.json": "44aba727bb0d06c4171417c1eb12ae63f0430e5b7c52ae47e5c13a7d5fecfd74",
+      "results/phase3-crosscheck/frequencies/B-bard-novel-train.json": "90014bacb45115862f43e916ee2cbd4df9f7a991d6f380c721766ead76d3f5e5",
+      "results/phase3-crosscheck/frequencies/B-newspaper-heldout.json": "5b13b6181743be1dd2fb8cb5aff58248928f55da1cb0baeee1b6820d24466193",
+      "results/phase3-crosscheck/frequencies/B-newspaper-train.json": "efaf781286475197343081000712611df1d10f8149fb3540c49c5b6b0e9273aa",
+      "results/phase3-crosscheck/frequencies/bard-novel-heldout.json": "15027ad7a4d90ad587bb5c679abb1dec01c51bf5ed46b28b5a786418b09c0ef9",
+      "results/phase3-crosscheck/frequencies/bard-novel-train.json": "c951d7d3cb81108c4e2f2ebb9972aa5a8e2057269e84a6d5d4aa04159d04242e",
+      "results/phase3-crosscheck/frequencies/C-bard-novel-heldout.json": "b1d9c8e64fe22dbc930f8e64f7403351b90f13e0268156aa23194872e77aa4fc",
+      "results/phase3-crosscheck/frequencies/C-bard-novel-train.json": "7fb56d74fc971303620b58697f195067ff5a32baedae9d6bbdf4c864d7041bda",
+      "results/phase3-crosscheck/frequencies/C-newspaper-heldout.json": "e7ab1e53c0eceeb8234f6aca1266cc1b25ccfb5cdf2b0bdc226602e57dc8b812",
+      "results/phase3-crosscheck/frequencies/C-newspaper-train.json": "312dec075a3fd6994ed144e675231e421e53d548e046bc6c738f90af1b9c92b3",
+      "results/phase3-crosscheck/frequencies/D-bard-novel-heldout.json": "86d6b1bd587c86d45dd2d5d8da63c3abe1edc462f347f28c2cbfbb6392365743",
+      "results/phase3-crosscheck/frequencies/D-bard-novel-train.json": "c37af888efa0721c81f0bd8940091a44d495832c9a56364edd7f15fdcda9fd86",
+      "results/phase3-crosscheck/frequencies/D-newspaper-heldout.json": "da6795e60fd4b6d90cc1afabc2b48725aa27dfb359ff8be6c30320596de418b7",
+      "results/phase3-crosscheck/frequencies/D-newspaper-train.json": "5180d415d871857a4c500baf8ec349be320694b5335fb45d3522ebf0da550f35",
+      "results/phase3-crosscheck/frequencies/newspaper-heldout.json": "cf44fb5a433d3d1dd84738181998cea1d0ab7a6fd79f35f2d7b027162aded7e9",
+      "results/phase3-crosscheck/frequencies/newspaper-train.json": "ab2635dd3c254840cf8020cc92b82c06bba353b0c95eb096e981ba620df9f6ea"
+    },
+    "phase3 search": {
+      "results/phase3/search/A.json": "7744906b6a951de86fe1695ee3a634e75b6c94e2cbb78ccb7437c1899b71dbc5",
+      "results/phase3/search/B.json": "23646c6980192086da0b20a3ff158855314a3b46491e33f2ab4c83a54705a648",
+      "results/phase3/search/C.json": "a37f0d3565178169b42d2d719eaa9a17004fc2281f4ad7c38170ac9ede9eed28",
+      "results/phase3/search/D.json": "77f3e6cce6ed7fb434956116716bfbe35d64ed9e9b21b3eb2906606cf646212c"
+    },
+    "news search": {
+      "results/phase3-crosscheck/search/A.json": "1315152b6037efbb913e594a2c90372718e8de7bdf703a3173aa674ae2740457",
+      "results/phase3-crosscheck/search/B.json": "e66914c90559d6b56e2f8d87b1508e36afdf70163b6c35adac3a16d97de35050",
+      "results/phase3-crosscheck/search/C.json": "97024427c8313d72f3ebfabef8b08eae9fa9905745f56e4d3bbf547556ae650b",
+      "results/phase3-crosscheck/search/D.json": "4016d17fabc813886e9bc14eab7e3d1cbe1c2efa81b36e08388d3aae1bf1a830"
+    },
+    "mixed search (Kala Goti, Kala Jhor)": {
+      "results/mix-search/search/A.json": "54e1fe11150b38ad93af57a696401f44e67fbd27ceb63db736b80863a24b338a",
+      "results/mix-search/search/D.json": "c33c45ed8909b4b55c8b0a59e5f5ae629eff76023ba39c35fcbcea41aa038c21"
+    },
+    "Kala layout files": {
+      "results/kala-keyboards/kala-goti.json": "76979ce77c6fe573223f69aeb91cc6a2df83a261898e5265d1624bf3778fd607",
+      "results/kala-keyboards/kala-jhor.json": "fa40294b36f8b2df80b329bf90c704c4ac1bad3aa86ac6e96a7e21352dafb76d"
+    },
+    "challenge data": {
+      "challenge/challenge-data.json": "2388d17bd9f375763eff19eac4dc2d4397d62c1f28d574d2597d414febb55b0a"
+    }
+  }
+}

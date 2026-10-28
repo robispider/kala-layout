@@ -4,6 +4,7 @@ import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pages, homeSections, locales, sourcePath, repoRoot, rewriteLinks } from './content-map.mjs';
+import { loadPublication } from './publication.mjs';
 
 const matches = (text, regex) => [...text.matchAll(regex)].map((match) => match[1]);
 const linkTargets = (text) => matches(text, /\[[^\]]*\]\(([^)]+)\)/g).sort();
@@ -66,6 +67,7 @@ export async function validateContent() {
     }
   }
   await validateHomeDiagnostics();
+  await validateSharedPublication();
   await validateMechanics();
   await validateContinuous();
   console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
@@ -88,7 +90,7 @@ async function validateMechanics() {
   }));
   for (const locale of locales) {
     const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
-    const tables = rows(markdown.split('<!-- continuous-e3 -->')[0]);
+    const tables = rows(markdown.split('<!-- historical-mechanics -->')[1].split('<!-- continuous-e3 -->')[0]);
     assert.equal(tables.length, 20);
     const actual = [tables.slice(2, 10), tables.slice(12, 20)].map((table) => table.map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim()))));
     assert.deepEqual(actual, expected, `Movement result drift: ${locale}`);
@@ -128,7 +130,7 @@ async function validateContinuous() {
     assert.deepEqual(actual, expected, `Continuous result drift: ${locale}`);
   }
 }
-// Homepage diagnostics must match the saved experimental run, not the J1 board.
+// Retain historical e1 evidence checks and validate current deltas independently.
 async function validateHomeDiagnostics() {
   const source = 'results/evaluator-e1/run-v1/scores.json';
   const raw = await readFile(path.join(repoRoot, source));
@@ -138,21 +140,35 @@ async function validateHomeDiagnostics() {
   assert.equal(run.evidence.full_layout_admitted, false, 'Review homepage comfort claims before admitting a new model');
   assert.equal(run.candidates.length, 101);
   assert.equal(new Set(run.scores.filter((row) => row.public).map((row) => row.name)).size, 8);
-  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default'];
-  const corpora = ['bard-novel/heldout', 'bnwiki/heldout', 'newspaper/heldout'];
-  const metrics = [
-    ['shift_share_of_non_space_presses', 1],
-    ['same_finger_different_key_per_unit', 2],
-  ];
-  const expected = metrics.map(([metric, precision]) => names.map((name) => {
-    const selected = run.scores.filter((row) => row.name === name && row.scenario === 'model-optimal');
-    assert.deepEqual(selected.map((row) => row.corpus).sort(), corpora);
-    return (100 * selected.reduce((sum, row) => sum + row.diagnostics[metric], 0) / selected.length).toFixed(precision);
+  const { summary } = await loadPublication();
+  const expected = ['J1', 'within_distance', 'cross_distance'].map(k => ['A', 'D'].map(s => {
+    const v = summary.heldout_changes_vs_original_percent[s]['model-optimal'][k];
+    return `${v >= 0 ? '+' : ''}${v.toFixed(3)}`;
   }));
   for (const locale of locales) {
     const markdown = await readFile(sourcePath(homeSections[0], locale), 'utf8');
     const actual = rows(markdown).slice(2).map((row) => row.split('|').slice(2, -1).map((cell) => normalizeDigits(cell.trim()).replace('%', '')));
     assert.deepEqual(actual, expected, `Homepage diagnostic drift: ${locale}`);
+  }
+}
+async function validateSharedPublication() {
+  const { summary } = await loadPublication();
+  const map = JSON.parse(await readFile(path.join(repoRoot, 'results/shared-publication-v1/shared-map.json'), 'utf8'));
+  const examples = JSON.parse(await readFile(path.join(repoRoot, 'results/shared-publication-v1/examples.json'), 'utf8'));
+  const expectedMaps = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].flatMap(keys => [1,0].map(layer => [...keys].map(k => map.layout[k][layer].normalize('NFC'))));
+  for (const locale of locales) {
+    const layouts = await readFile(sourcePath({ source: 'docs/LAYOUTS.md' }, locale), 'utf8');
+    assert.deepEqual(keyMaps(layouts), expectedMaps, `Current shared map drift: ${locale}`);
+    const exampleRows = rows(layouts).filter(r => r.split('|').length === 5 && (r.includes('Shift+') || /\| [A-Z](?: [A-Z])* \|/.test(r)));
+    const expectedExamples = examples.filter(r => ['আমি','কী','বই','এবং','তিনিই','আকাশ'].includes(r.text));
+    assert.deepEqual(exampleRows.map(r => r.split('|').slice(1,-1).map(c => c.trim())), expectedExamples.map(r => [r.text,r.keys,r.labels]), `Typing example drift: ${locale}`);
+    const mechanics = await readFile(sourcePath({ source: 'docs/MECHANICS.md' }, locale), 'utf8');
+    const expected = ['A','D'].flatMap(s => ['model-optimal','traditional'].map(f => {
+      const source = ['bnwiki/heldout','newspaper/heldout','bard-novel/heldout'].map(c => summary.scores[s].diagnostics[f][c]);
+      const avg = k => source.reduce((sum,r) => sum+r[k],0)/3;
+      return [`${s === 'A' ? 'Goti' : 'Jhor'} (${s})`, f, ...['J1','within_distance','cross_distance'].map(k => avg(k).toFixed(6)), `${avg('order_lower').toFixed(6)}–${avg('order_upper').toFixed(6)}`, `${(100*avg('escaped_share')).toFixed(3)}%`];
+    }));
+    assert.deepEqual(rows(mechanics.split('<!-- historical-mechanics -->')[0]).slice(2).map(r => r.split('|').slice(1,-1).map(c => c.trim())), expected, `Shared movement drift: ${locale}`);
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await validateContent();

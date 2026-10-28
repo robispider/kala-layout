@@ -1,0 +1,146 @@
+[
+  {
+    "style": "A",
+    "text": "আমি",
+    "keys": "S D O A",
+    "labels": "্ া ম ি"
+  },
+  {
+    "style": "A",
+    "text": "কী",
+    "keys": "J Q",
+    "labels": "ক ী"
+  },
+  {
+    "style": "A",
+    "text": "বই",
+    "keys": "L S A",
+    "labels": "ব ্ ি"
+  },
+  {
+    "style": "A",
+    "text": "এবং",
+    "keys": "S K L Shift+I",
+    "labels": "্ ে ব ং"
+  },
+  {
+    "style": "A",
+    "text": "তিনিই",
+    "keys": "M A C A S A",
+    "labels": "ত ি ন ি ্ ি"
+  },
+  {
+    "style": "A",
+    "text": "আকাশ",
+    "keys": "S D J D Y",
+    "labels": "্ া ক া শ"
+  },
+  {
+    "style": "A",
+    "text": "ক্ষেত্রে",
+    "keys": "J S Shift+F K M S F K",
+    "labels": "ক ্ ষ ে ত ্ র ে"
+  },
+  {
+    "style": "A",
+    "text": "গাই",
+    "keys": "G D S A",
+    "labels": "গ া ্ ি"
+  },
+  {
+    "style": "A",
+    "text": "ইই",
+    "keys": "S A S A",
+    "labels": "্ ি ্ ি"
+  },
+  {
+    "style": "A",
+    "text": "ড়",
+    "keys": "Shift+C",
+    "labels": "ড়"
+  },
+  {
+    "style": "A",
+    "text": "ঢ়",
+    "keys": "Shift+Q",
+    "labels": "ঢ়"
+  },
+  {
+    "style": "A",
+    "text": "য়",
+    "keys": "N",
+    "labels": "য়"
+  },
+  {
+    "style": "D",
+    "text": "আমি",
+    "keys": "D O A",
+    "labels": "া ম ি"
+  },
+  {
+    "style": "D",
+    "text": "কী",
+    "keys": "J Q",
+    "labels": "ক ী"
+  },
+  {
+    "style": "D",
+    "text": "বই",
+    "keys": "L A A",
+    "labels": "ব ি ি"
+  },
+  {
+    "style": "D",
+    "text": "এবং",
+    "keys": "K L Shift+I",
+    "labels": "ে ব ং"
+  },
+  {
+    "style": "D",
+    "text": "তিনিই",
+    "keys": "M A C A A A",
+    "labels": "ত ি ন ি ি ি"
+  },
+  {
+    "style": "D",
+    "text": "আকাশ",
+    "keys": "D J D Y",
+    "labels": "া ক া শ"
+  },
+  {
+    "style": "D",
+    "text": "ক্ষেত্রে",
+    "keys": "J S Shift+F K M S F K",
+    "labels": "ক ্ ষ ে ত ্ র ে"
+  },
+  {
+    "style": "D",
+    "text": "গাই",
+    "keys": "G D A",
+    "labels": "গ া ি"
+  },
+  {
+    "style": "D",
+    "text": "ইই",
+    "keys": "A A",
+    "labels": "ি ি"
+  },
+  {
+    "style": "D",
+    "text": "ড়",
+    "keys": "Shift+C",
+    "labels": "ড়"
+  },
+  {
+    "style": "D",
+    "text": "ঢ়",
+    "keys": "Shift+Q",
+    "labels": "ঢ়"
+  },
+  {
+    "style": "D",
+    "text": "য়",
+    "keys": "N",
+    "labels": "য়"
+  }
+]

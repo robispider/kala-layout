@@ -1,0 +1,21 @@
+pool,label,id,layer,moved_symbols_vs_B01,origins
+4b,B01,shared-76c9b9dbfc689d0b,1,0,4b retained training pool
+4b,B02,shared-7083b1ebfa5aa3a7,1,2,4b original final refinement
+4b,B03,shared-1c797d59289ce714,2,2,4b retained training pool
+4b,B04,shared-cf127cbaa5e759a4,3,2,4b retained training pool
+4b,B05,shared-e53aefc6bbbdd4d3,3,4,4b original final refinement
+4b,B06,shared-4575308306443d09,4,3,4b retained training pool
+4b,B07,shared-01af8ede4511bd23,5,3,4b retained training pool
+4b,B08,shared-29bdf903c92fbbba,5,7,4b retained training pool
+4b,B09,shared-bfff27b14751bd04,5,3,4b retained training pool
+4b,B10,shared-a9b744054e24213b,6,2,4b retained training pool
+pilot100m,P01,shared-76c9b9dbfc689d0b,1,0,pilot control; pilot enhanced
+pilot100m,P02,shared-7083b1ebfa5aa3a7,1,2,pilot control; pilot enhanced
+pilot100m,P03,shared-1c797d59289ce714,2,2,pilot control; pilot enhanced
+pilot100m,P04,shared-51a8e6183208a069,2,4,pilot control; pilot enhanced
+pilot100m,P05,shared-cf127cbaa5e759a4,3,2,pilot enhanced
+pilot100m,P06,shared-84290f3dbadf04fb,3,4,pilot enhanced
+pilot100m,P07,shared-4575308306443d09,4,3,pilot enhanced
+pilot100m,P08,shared-e53aefc6bbbdd4d3,4,4,pilot control; pilot enhanced
+pilot100m,P09,shared-e47e49a39082ae28,4,4,pilot enhanced
+pilot100m,P10,shared-8f1adf7385fb8290,4,5,pilot enhanced

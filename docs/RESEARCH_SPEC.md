@@ -1012,3 +1012,12 @@ and independently testable.
 * Added open decisions D1–D6 and a concrete Phase 2 task list.
 
 **1.0**: original research and engineering plan.
+
+
+## Shared publication transition — 28 October 2026
+
+Owner decision: adopt one provisional shared arrangement B01 (`shared-76c9b9dbfc689d0b`), with Goti (A) and Jhor (D) as typing styles. Physical/layer positions are identical; frozen vowel-entry rules differ. [Rationale](SHARED_LAYOUT.md), [publication report](../results/shared-publication-v1/REPORT.md), descriptor `data/layout-publications/shared-v1.json`.
+
+This is a new publication/challenge season `bangla-dh-shared-challenge-v1`. It adopts the separately recorded shared experiment's +0.75% exact effort/+7.5% within-distance limits against the original same-style references on the original training mix. Frozen four-component calibration and both separately calibrated R values remain unchanged; no R sum or universal winner is introduced. B01 Goti exceeds original strict Balance v1 eligibility. Sharing's learning benefit is an intended product rationale, not an observed mechanical improvement or measured learning/speed/comfort result. Preserve cross-space regressions and relearning costs. The known held-out benchmarks remain exploratory reuse.
+
+The old model, text locks, problem, separate searches/exports and standalone legacy J1 challenge remain intact. New release output, shared scoring bundle and lock groups are additive. Existing Phase 4 certificates do not transfer. The token bard-novel denotes non-overlapping BARD news, not literary novels; the latter wording in recent exploratory prose is a non-numerical naming error. New shared map/exports use repository MIT, while original maps retain CC0. No companion app or practice lessons are changed.

@@ -49,16 +49,19 @@ for (const file of generated.filter((name) => name.endsWith('.html'))) {
   }
 }
 assert(existing.has(path.join(root, 'pagefind/pagefind.js').replaceAll('\\', '/')), 'Missing built search index');
-// The published numbers on the pages come from the challenge data: Kala Jhor first, Kala Goti second.
+// Current numbers and identity come from the versioned shared publication.
 const board = JSON.parse(await readFile(path.join(siteRoot, 'src/generated/board.json'), 'utf8'));
-const ranked = [...board.public.entries].sort((a, b) => a.average - b.average).map((entry) => entry.name);
-assert.deepEqual(ranked.slice(0, 2), ['Kala Jhor', 'Kala Goti']);
+assert.equal(board.public.arrangement_id, 'shared-76c9b9dbfc689d0b');
+assert.equal(board.public.physical_arrangements, 7);
+assert.equal(board.public.evaluation_configurations, 8);
 const home = await readFile(path.join(root, 'en/index.html'), 'utf8');
-for (const value of ['1.8000', '1.8432', '2.1498']) assert(home.includes(value), `Home page lacks a published average: ${value}`);
+for (const row of board.public.entries) assert(home.includes(row.average.toFixed(4)), `Home page lacks a current average: ${row.name}`);
+assert(home.includes('One arrangement. Two typing styles.'));
+assert(!home.includes('1.8000') && !home.includes('1.8432'), 'Historical averages presented as current');
 for (const locale of locales) {
   const html = await readFile(path.join(root, locale, 'index.html'), 'utf8');
   assert(html.includes('class="research-hero'), `Missing research hero: ${locale}`);
-  for (const route of ['', 'layouts/kala-jhor/', 'layouts/kala-goti/', 'guide/learning/']) {
+  for (const route of ['release-status/', 'guide/installation/', 'guide/learning/']) {
     assert(html.includes(`https://robispider.github.io/kala-releases/${locale}/${route}`), `Missing localized app link: ${locale}/${route}`);
   }
   const layouts = await readFile(path.join(root, locale, 'layouts/index.html'), 'utf8');
@@ -66,6 +69,9 @@ for (const locale of locales) {
   assert.equal([...html.matchAll(/<section\b[^>]*class="[^"\n]*\badditional-checks\b[^"\n]*"/g)].length, 1, `Missing/duplicate additional checks section: ${locale}`);
   assert(html.includes('https://github.com/robispider/kala-layout/blob/main/results/evaluator-e1/run-v1/REPORT.md'), `Missing experimental report link: ${locale}`);
   assert(html.includes(`${base}/${locale}/mechanics/`), `Missing localized movement comparison link: ${locale}`);
+  assert(html.includes(`${base}/${locale}/shared/`), `Missing transition rationale: ${locale}`);
+  const shared = await readFile(path.join(root, locale, 'shared/index.html'), 'utf8');
+  for (const number of ['25.750', '43', '39']) assert(shared.includes(number), `Missing transition cost ${number}: ${locale}`);
 }
 assert((await stat(path.join(root, 'en/index.html'))).size > 1000);
 console.log(`Site checks passed: ${locales.length * routes.length} pages; ${checkedLinks} local links/assets/anchors; language switching and search.`);

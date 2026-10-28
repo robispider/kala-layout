@@ -1,4 +1,24 @@
-# Comparing typing movement models
+# Shared arrangement: movement and trade-offs
+
+## Current B01 results
+
+One arrangement serves Goti (A) and Jhor (D). Below are equal means of the three previously examined held-out sources, normalized separately. Within-word same-finger different-key distance is per text unit; cross-space distance is per spanning window. They cannot be added as raw distances. Effort and distance are lower-is-better; order credit is higher-is-better. Order bounds retain unsupported mass and are not confidence intervals. Shift effort is part of J1; physical-key order projects layers and excludes modifier movement.
+
+| Style | Fingering | J1 | Within distance | Cross-space distance | Order bounds | Escaped share |
+| --- | --- | --- | --- | --- | --- | --- |
+| Goti (A) | model-optimal | 1.854428 | 0.018499 | 0.145923 | 0.777256–0.785263 | 0.021% |
+| Goti (A) | traditional | 2.003928 | 0.050533 | 0.120883 | 0.743621–0.751629 | 0.021% |
+| Jhor (D) | model-optimal | 1.808080 | 0.019708 | 0.138395 | 0.764513–0.772786 | 0.024% |
+| Jhor (D) | traditional | 1.938823 | 0.043834 | 0.126911 | 0.740875–0.749147 | 0.024% |
+
+The main cost of sharing is Goti's cross-space regression; [the transition rationale](SHARED_LAYOUT.md) compares with the original separate maps. Traditional fingering is a separate scenario, not an eligibility guarantee. All five source scopes, both fingerings, repeated keys, Shift and coverage are in the [publication summary](../results/shared-publication-v1/public-summary.json) and [score table](../results/shared-publication-v1/scores.csv). [The full fixed-baseline comparison](../results/shared-top10-comparison-v1/REPORT.md) retains favorable canonical mechanical envelopes; it is not a single overall ranking. Bornona/Probhat win some cross-space comparisons and Windows Default has stronger order credit with more escapes. No measured comfort or speed is established.
+
+## Original separate-arrangement diagnostics (historical)
+
+The tables below retain the original e2/e3 results and original names. They do not score B01. Their numerical provenance continues to be checked separately.
+
+<!-- historical-mechanics -->
+
 
 Dvorak-7 and Engram criteria add a useful check of which priorities favor Kala Jhor or Kala Goti. We adapted the original upstream scoring code, verified its calculations, and evaluated all eight fixed layouts and 101 retained search maps. The results describe modeled movement, not measured comfort or speed.
 

@@ -1,4 +1,25 @@
-# নিজে চালিয়ে দেখুন
+# বর্তমান ও আগের সিজন পুনরুৎপাদন
+
+## বর্তমান অভিন্ন B01 প্রকাশনা
+
+বর্তমান ফল একটি বিন্যাস, যার গতি/ঝড় টাইপিং স্টাইল। সংরক্ষিত গণনার তথ্য থেকে এর পোর্টেবল স্কোরার, রিপোর্ট, স্কোর, এক্সপোর্ট ও উদাহরণ আবার তৈরি করুন; টেক্সট নামানো বা নতুন সার্চ লাগে না:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m bangla_dh challenge-kit
+python -m bangla_dh publish-shared
+python -m bangla_dh challenge-verify challenge/shared-v1/reference.json
+python -m bangla_dh check-results
+```
+
+অভিন্ন স্কোরার মূল যাচাইকারীর সঙ্গে নির্ভুল পরিশ্রম, চলাচল ও আলাদা R স্বাধীনভাবে মেলায়। প্রায় 3 MB প্যাকেজে পাঁচটি উৎস ও দুই আঙুল-বিন্যাস আছে। বর্তমান চ্যালেঞ্জ নতুন অভিন্ন সিজন; মূল প্যাকেজ অক্ষত। দেখুন [সিদ্ধান্তের কারণ](SHARED_LAYOUT.md) ও [রিপোর্ট/ম্যানিফেস্ট](../results/shared-publication-v1/REPORT.md)।
+
+পূর্ণ অভিন্ন সার্চের জন্য [চার-বিলিয়ন রানের রিপোর্টে](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) স্থির কমান্ড/সেটিং/সিড ও তার সোর্স সংস্করণ ব্যবহার করুন। পুরোনো রানের ইনপুট হ্যাশে সোর্স কোড আছে: পুরোনো রান পুনরুৎপাদনে নথিভুক্ত মূল Git সংস্করণ ব্যবহার করুন, বদলানো বর্তমান সোর্স নয়। পরিচিত আলাদা রাখা ডেটা আবার দেখা তথ্য। দ্রুত প্রকাশনা তৈরি করা চার বিলিয়ন প্রস্তাব আবার চালানো নয়।
+
+## আগের আলাদা লেআউটের সিজন
+
+নিচের কমান্ড ও সময় মূল গবেষণার। মূল generate-layout কমান্ড ও তার --reproduce বিকল্প এখনো আগের আলাদা ম্যাপ পুনরুৎপাদন করে, B01 নয়। স্পষ্ট legacy season বিকল্প পুরোনো বিল্ডার আলাদা রাখে। পুরোনো প্রত্যাশিত আউটপুট লকে থাকে, পাশাপাশি নতুন অভিন্ন গ্রুপ যাচাই হয়।
+
 
 গবেষণাটি তিনটি গভীরতায় আবার চালানো যায়। প্রতিটি গভীরতা নিজেকে যাচাই করে `PASS` বলে, অথবা কোথায় ভিন্নতা তা দেখায়। সবকিছু Python 3.10 বা নতুন সংস্করণ ও স্ট্যান্ডার্ড লাইব্রেরিতে চলে; OR-Tools লাগে শুধু ঐচ্ছিক প্রমাণের জন্য।
 
@@ -65,8 +86,8 @@ PYTHONPATH=src python -m bangla_dh evaluate-phase3
 PYTHONPATH=src python -m bangla_dh crosscheck-optimize
 PYTHONPATH=src python -m bangla_dh evaluate-crosscheck
 PYTHONPATH=src python -m bangla_dh mix-optimize --styles A D --seeds 512 --workers 28
-PYTHONPATH=src python -m bangla_dh kala-export
-PYTHONPATH=src python -m bangla_dh challenge-kit
+PYTHONPATH=src python -m bangla_dh kala-export --season legacy-v1
+PYTHONPATH=src python -m bangla_dh challenge-kit --season legacy-v1
 PYTHONPATH=src python -m bangla_dh check-results
 ```
 

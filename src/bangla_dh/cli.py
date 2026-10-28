@@ -269,18 +269,32 @@ def _mix_optimize(args) -> int:
 
 
 def _challenge_kit(args) -> int:
+    if args.season == 'shared-v1':
+        from .shared_challenge import build
+        return _print_paths(build())
     from .challenge import run_build
 
     return _print_paths(run_build(leaderboard=args.leaderboard))
 
 
+def _publish_shared(args) -> int:
+    from .publish_shared import build
+    return _print_paths(build())
+
+
 def _challenge_verify(args) -> int:
+    if args.season == 'shared-v1':
+        from .shared_challenge import verify
+        return verify(args.files, diagnostics=args.diagnostics)
     from .challenge import run_verify
 
     return run_verify(args.files, diagnostics=args.diagnostics)
 
 
 def _kala_export(args) -> int:
+    if args.season == 'shared-v1':
+        from .publish_shared import build
+        return _print_paths(build())
     from .kala_export import run_export
 
     return _print_paths(run_export(top=args.top, fuzz_count=args.fuzz))
@@ -295,6 +309,9 @@ def _generate_layout(args) -> int:
 
 
 def _leaderboard(args) -> int:
+    if args.season == 'shared-v1':
+        from .shared_leaderboard import run
+        return run(args.files or None, check=args.check, diagnostics=args.diagnostics)
     from .leaderboard import run
 
     return run(args.files or None, check=args.check, diagnostics=args.diagnostics)
@@ -535,19 +552,25 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--reproduce", action="store_true",
                    help="repeat the published run exactly (512 seeds, published seeds, polish from the earlier layouts)")
     p.set_defaults(func=_generate_layout)
-    p = sub.add_parser("challenge-kit", help="standalone scorer for people to challenge the A and D layouts")
+    p = sub.add_parser("publish-shared", help="rebuild the provisional shared B01 publication from frozen counts")
+    p.set_defaults(func=_publish_shared)
+    p = sub.add_parser("challenge-kit", help="build the portable shared-arrangement challenge scorer")
+    p.add_argument("--season", choices=['shared-v1', 'legacy-v1'], default='shared-v1')
     p.add_argument("--leaderboard", help="URL of the leaderboard / submission page, written into the guides")
     p.set_defaults(func=_challenge_kit)
     p = sub.add_parser("leaderboard", help="score every layout file in submissions/ and write the leaderboard")
+    p.add_argument("--season", choices=['shared-v1', 'legacy-v1'], default='shared-v1')
     p.add_argument("files", nargs="*", help="check these files instead of all of submissions/")
     p.add_argument("--check", action="store_true", help="only validate and score (used by pull requests)")
     p.add_argument("--diagnostics", metavar="DIR", help="optional separate experimental report; no ranking effect")
     p.set_defaults(func=_leaderboard)
     p = sub.add_parser("challenge-verify", help="re-check challenge layout files with the project's scorers")
+    p.add_argument("--season", choices=['shared-v1', 'legacy-v1'], default='shared-v1')
     p.add_argument("files", nargs="+")
     p.add_argument("--diagnostics", metavar="DIR", help="optional separate experimental report; no scoring effect")
     p.set_defaults(func=_challenge_verify)
     p = sub.add_parser("kala-export", help="the A and D layouts as Kala layout files (Kala Goti, Kala Jhor)")
+    p.add_argument("--season", choices=['shared-v1', 'legacy-v1'], default='shared-v1')
     p.add_argument("--top", type=int, default=200_000, help="held-out word types typed per text (default 200,000)")
     p.add_argument("--fuzz", type=int, default=20_000, help="random key sequences per layout (default 20,000)")
     p.set_defaults(func=_kala_export)

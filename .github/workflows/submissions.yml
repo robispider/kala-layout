@@ -4,11 +4,11 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'submissions/*.json'
+      - 'submissions/**/*.json'
   push:
     branches: [main]
     paths:
-      - 'submissions/*.json'
+      - 'submissions/**/*.json'
       - 'challenge/**'
 
 permissions:
@@ -41,29 +41,40 @@ jobs:
 
           changed = subprocess.check_output([
               "git", "diff", "--name-only", "-z", "--diff-filter=AM",
-              f"origin/{os.environ['CHALLENGE_BASE_REF']}...HEAD", "--", "submissions/*.json",
+              f"origin/{os.environ['CHALLENGE_BASE_REF']}...HEAD", "--", "submissions/",
           ]).decode("utf-8").split("\0")
-          files = [p for p in changed if p and Path(p).name != "leaderboard.json"]
+          files = [p for p in changed if p and p.endswith('.json') and Path(p).name != "leaderboard.json"]
           if not files:
               print("No layout files changed.")
               raise SystemExit(0)
-          diagnostic_dir = "work/evaluator-experiments/pr-check"
-          checked = subprocess.run([
-              sys.executable, "-m", "bangla_dh", "leaderboard", "--check",
-              "--diagnostics", diagnostic_dir, *files,
-          ], capture_output=True, text=True)
-          print(checked.stdout, end="")
-          print(checked.stderr, end="", file=sys.stderr)
           summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
-          with summary.open("a", encoding="utf-8") as stream:
-              stream.write("### Official scores\n\n```text\n")
-              stream.write(checked.stdout.replace(chr(96) * 3, "[code fence]") + "\n```\n\n")
-              report = Path(diagnostic_dir) / "REPORT.md"
-              if report.is_file():
-                  stream.write(report.read_text(encoding="utf-8"))
-              else:
-                  stream.write("Optional diagnostics unavailable. Official scoring decides this check.\n")
-          raise SystemExit(checked.returncode)
+          code = 0
+          for season in ('shared-v1', 'legacy-v1'):
+              selected = [p for p in files if (p.startswith('submissions/shared-v1/')) == (season == 'shared-v1')]
+              if not selected:
+                  continue
+              diagnostic_dir = "work/evaluator-experiments/pr-check-" + season
+              command = [sys.executable, "-m", "bangla_dh", "leaderboard", "--season", season, "--check"]
+              if season == 'legacy-v1':
+                  command += ['--diagnostics', diagnostic_dir]
+              checked = subprocess.run([*command, *selected], capture_output=True, text=True)
+              print(checked.stdout, end='')
+              print(checked.stderr, end='', file=sys.stderr)
+              code |= checked.returncode
+              with summary.open('a', encoding='utf-8') as stream:
+                  stream.write('### ' + season + '\n\n```text\n')
+                  stream.write(checked.stdout.replace(chr(96)*3, '[code fence]') + '\n```\n\n')
+                  report = Path(diagnostic_dir) / 'REPORT.md'
+                  if report.is_file():
+                      stream.write(report.read_text(encoding='utf-8'))
+                  elif season == 'legacy-v1':
+                      stream.write('Optional diagnostics unavailable. Official scoring decides this check.\n')
+              if season == 'shared-v1' and checked.returncode == 0:
+                  verified = subprocess.run([sys.executable, '-m', 'bangla_dh', 'challenge-verify', *selected], capture_output=True, text=True)
+                  print(verified.stdout, end='')
+                  print(verified.stderr, end='', file=sys.stderr)
+                  code |= verified.returncode
+          raise SystemExit(code)
           PY
 
   leaderboard:
@@ -81,12 +92,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Rebuild the leaderboard
-        run: python -m bangla_dh leaderboard
+        run: |
+          python -m bangla_dh leaderboard
+          python -m bangla_dh leaderboard --season legacy-v1
       - name: Commit the leaderboard when it changed
         run: |
-          if git diff --quiet -- submissions/LEADERBOARD.md submissions/leaderboard.json; then echo "Leaderboard unchanged."; exit 0; fi
+          if git diff --quiet -- submissions/LEADERBOARD.md submissions/leaderboard.json submissions/shared-v1/LEADERBOARD.md submissions/shared-v1/leaderboard.json; then echo "Leaderboard unchanged."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add submissions/LEADERBOARD.md submissions/leaderboard.json
+          git add submissions/LEADERBOARD.md submissions/leaderboard.json submissions/shared-v1/LEADERBOARD.md submissions/shared-v1/leaderboard.json
           git commit -m "Rebuild the challenge leaderboard"
           git push

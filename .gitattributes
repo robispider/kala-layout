@@ -118,3 +118,11 @@ experiments/** text eol=lf
 /translations/bn/docs/LAYOUTS.md text eol=lf
 /translations/bn/docs/MECHANICS.md text eol=lf
 /translations/bn/docs/REPRODUCE.md text eol=lf
+# Shared publication outputs and portable compressed counts must survive checkout exactly.
+/data/layout-publications/*.json text eol=lf
+/challenge/shared-v1/*.gz -text -eol
+/src/bangla_dh/publication.py text eol=lf
+/src/bangla_dh/publish_shared.py text eol=lf
+/src/bangla_dh/shared_*.py text eol=lf
+/docs/SHARED_LAYOUT.md text eol=lf
+/translations/bn/docs/SHARED_LAYOUT.md text eol=lf

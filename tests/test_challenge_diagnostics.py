@@ -69,7 +69,7 @@ class DiagnosticIntegrationTests(unittest.TestCase):
         self.assertIn("Continuous-text movement across spaces", report)
         self.assertTrue(all(sha256_file(PROJECT_ROOT / p) == h for p,h in before.items()))
         manifest = json.loads((self.root / "direct/run-manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual(manifest["official_data_version"], challenge.DATA_VERSION)
+        self.assertEqual(manifest["official_data_version"], challenge.LEGACY_DATA_VERSION)
         self.assertEqual(manifest["submission_inputs"][0]["sha256"], sha256_file(Path(file)))
         for path, digest in manifest["output_sha256"].items():
             self.assertEqual(sha256_file(PROJECT_ROOT / path), digest)
@@ -121,7 +121,7 @@ class DiagnosticIntegrationTests(unittest.TestCase):
             self.assertEqual(challenge.run_verify([file]), 0)
             report.assert_not_called()
         with contextlib.redirect_stdout(io.StringIO()):
-            self.assertEqual(cli.main(["challenge-verify", file, "--diagnostics", str(self.root / "verify")]), 0)
+            self.assertEqual(cli.main(["challenge-verify", "--season", "legacy-v1", file, "--diagnostics", str(self.root / "verify")]), 0)
         result = json.loads((self.root / "verify/submissions.json").read_text(encoding="utf-8"))
         self.assertEqual(result["submissions"][0]["official"]["J1_exact"],
                          self.scorer.evaluate(self.changed(), self.data, self.data_hash)["J1_exact"])

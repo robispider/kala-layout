@@ -1,0 +1,14 @@
+{
+  "both styles eligible": true,
+  "A saved exact effort": true,
+  "A saved R": true,
+  "D saved exact effort": true,
+  "D saved R": true,
+  "six distinct fixed baselines": true,
+  "A import schema": true,
+  "A key map": true,
+  "Goti export engine round trips": true,
+  "D import schema": true,
+  "D key map": true,
+  "identical application key maps": true
+}

@@ -1,0 +1,494 @@
+[
+  {
+    "style": "A",
+    "symbol": "খ",
+    "original": "D/shift",
+    "shared": "N/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "গ",
+    "original": "Q/base",
+    "shared": "G/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ঙ",
+    "original": "P/shift",
+    "shared": "V/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "চ",
+    "original": "J/shift",
+    "shared": "L/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ঝ",
+    "original": "W/shift",
+    "shared": "G/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ট",
+    "original": "Z/base",
+    "shared": "T/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ঠ",
+    "original": "E/shift",
+    "shared": "P/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ড়",
+    "original": "I/shift",
+    "shared": "C/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ঢ",
+    "original": "Z/shift",
+    "shared": "T/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ঢ়",
+    "original": "G/shift",
+    "shared": "Q/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ণ",
+    "original": "S/shift",
+    "shared": "U/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "থ",
+    "original": "M/shift",
+    "shared": "J/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "দ",
+    "original": "W/base",
+    "shared": "P/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ধ",
+    "original": "N/shift",
+    "shared": "M/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ন",
+    "original": "S/base",
+    "shared": "C/base"
+  },
+  {
+    "style": "A",
+    "symbol": "প",
+    "original": "O/base",
+    "shared": "I/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ফ",
+    "original": "A/shift",
+    "shared": "O/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ব",
+    "original": "A/base",
+    "shared": "L/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ভ",
+    "original": "L/shift",
+    "shared": "K/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ম",
+    "original": "X/base",
+    "shared": "O/base"
+  },
+  {
+    "style": "A",
+    "symbol": "য",
+    "original": "N/base",
+    "shared": "R/base"
+  },
+  {
+    "style": "A",
+    "symbol": "য়",
+    "original": "I/base",
+    "shared": "N/base"
+  },
+  {
+    "style": "A",
+    "symbol": "র",
+    "original": "D/base",
+    "shared": "F/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ল",
+    "original": "E/base",
+    "shared": "V/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ষ",
+    "original": "U/shift",
+    "shared": "F/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "হ",
+    "original": "P/base",
+    "shared": "W/base"
+  },
+  {
+    "style": "A",
+    "symbol": "্",
+    "original": "K/base",
+    "shared": "S/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ং",
+    "original": "K/shift",
+    "shared": "I/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ঃ",
+    "original": "Q/shift",
+    "shared": "Z/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ঁ",
+    "original": "O/shift",
+    "shared": "A/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ৎ",
+    "original": "X/shift",
+    "shared": "R/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "।",
+    "original": "G/base",
+    "shared": "Z/base"
+  },
+  {
+    "style": "A",
+    "symbol": "অ",
+    "original": "F/shift",
+    "shared": "D/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "া",
+    "original": "F/base",
+    "shared": "D/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ি",
+    "original": "C/base",
+    "shared": "A/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ী",
+    "original": "T/base",
+    "shared": "Q/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ু",
+    "original": "V/base",
+    "shared": "E/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ূ",
+    "original": "C/shift",
+    "shared": "S/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ৃ",
+    "original": "V/shift",
+    "shared": "E/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ে",
+    "original": "L/base",
+    "shared": "K/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ৈ",
+    "original": "R/shift",
+    "shared": "X/shift"
+  },
+  {
+    "style": "A",
+    "symbol": "ো",
+    "original": "R/base",
+    "shared": "X/base"
+  },
+  {
+    "style": "A",
+    "symbol": "ৌ",
+    "original": "T/shift",
+    "shared": "W/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "গ",
+    "original": "P/base",
+    "shared": "G/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ঙ",
+    "original": "W/shift",
+    "shared": "V/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "চ",
+    "original": "B/base",
+    "shared": "L/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ছ",
+    "original": "J/shift",
+    "shared": "B/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ঝ",
+    "original": "B/shift",
+    "shared": "G/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ঞ",
+    "original": "X/shift",
+    "shared": "B/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ট",
+    "original": "Q/base",
+    "shared": "T/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ঠ",
+    "original": "E/shift",
+    "shared": "P/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ড়",
+    "original": "S/shift",
+    "shared": "C/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ঢ",
+    "original": "Q/shift",
+    "shared": "T/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ঢ়",
+    "original": "G/shift",
+    "shared": "Q/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ণ",
+    "original": "O/shift",
+    "shared": "U/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "থ",
+    "original": "M/shift",
+    "shared": "J/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "দ",
+    "original": "W/base",
+    "shared": "P/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ধ",
+    "original": "U/shift",
+    "shared": "M/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ন",
+    "original": "S/base",
+    "shared": "C/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ফ",
+    "original": "A/shift",
+    "shared": "O/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ব",
+    "original": "A/base",
+    "shared": "L/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ম",
+    "original": "X/base",
+    "shared": "O/base"
+  },
+  {
+    "style": "D",
+    "symbol": "য",
+    "original": "O/base",
+    "shared": "R/base"
+  },
+  {
+    "style": "D",
+    "symbol": "র",
+    "original": "D/base",
+    "shared": "F/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ল",
+    "original": "E/base",
+    "shared": "V/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ষ",
+    "original": "D/shift",
+    "shared": "F/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "হ",
+    "original": "Z/base",
+    "shared": "W/base"
+  },
+  {
+    "style": "D",
+    "symbol": "্",
+    "original": "C/base",
+    "shared": "S/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ঃ",
+    "original": "T/shift",
+    "shared": "Z/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ঁ",
+    "original": "P/shift",
+    "shared": "A/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ৎ",
+    "original": "Z/shift",
+    "shared": "R/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "।",
+    "original": "T/base",
+    "shared": "Z/base"
+  },
+  {
+    "style": "D",
+    "symbol": "অ",
+    "original": "L/shift",
+    "shared": "D/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "া",
+    "original": "F/base",
+    "shared": "D/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ি",
+    "original": "L/base",
+    "shared": "A/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ী",
+    "original": "G/base",
+    "shared": "Q/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ু",
+    "original": "V/base",
+    "shared": "E/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ূ",
+    "original": "F/shift",
+    "shared": "S/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ৃ",
+    "original": "C/shift",
+    "shared": "E/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ৈ",
+    "original": "R/shift",
+    "shared": "X/shift"
+  },
+  {
+    "style": "D",
+    "symbol": "ো",
+    "original": "R/base",
+    "shared": "X/base"
+  },
+  {
+    "style": "D",
+    "symbol": "ৌ",
+    "original": "V/shift",
+    "shared": "W/shift"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "run_manifest_sha256": "d12357d25697fa64740a2cf04210b9315e589702340d39a1e074a25ca2e0c60d",
+  "verified_hash_counts": {
+    "input_sha256": 198,
+    "output_sha256": 39
+  },
+  "unit_tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests",
+    "passed": 294,
+    "failed": 0
+  },
+  "published_reproduction_groups_passed": 8,
+  "independent_quadratic_frontier_check": {
+    "4b": [
+      "shared-7083b1ebfa5aa3a7",
+      "shared-76c9b9dbfc689d0b"
+    ],
+    "pilot100m": [
+      "shared-7083b1ebfa5aa3a7",
+      "shared-76c9b9dbfc689d0b"
+    ]
+  },
+  "row_counts": {
+    "per_source": 520,
+    "baseline_source": 36,
+    "heldout_means": 116,
+    "pairwise_comparisons": 240
+  },
+  "independent_checks": {
+    "equal_source_means_and_exact_J1": true,
+    "legacy_baseline_csv_values_equal": true,
+    "all_shortlist_effort_and_within_wins_on_aggregate": true,
+    "probhat_bornona_cross_space_losses_retained": true,
+    "windows_order_loss_retained": true,
+    "scientific_tables_match_preliminary_run_byte_for_byte": true
+  },
+  "largest_result_file_bytes": 1051285,
+  "total_result_bytes": 2269611
+}

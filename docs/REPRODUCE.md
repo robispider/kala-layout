@@ -1,4 +1,25 @@
-# Run it yourself
+# Reproduce the current and original seasons
+
+## Current shared B01 publication
+
+The current result is one arrangement with Goti/Jhor typing styles. Rebuild its portable scorer, report, scores, exports and examples from committed derived counts, without downloading text or running a new search:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m bangla_dh challenge-kit
+python -m bangla_dh publish-shared
+python -m bangla_dh challenge-verify challenge/shared-v1/reference.json
+python -m bangla_dh check-results
+```
+
+The shared scorer independently checks exact effort, mechanics and separate R against the original evaluators. Its approximately 3 MB bundle includes all five source scopes and both fingerings. The active challenge is a new shared season; the original bundle remains intact. See [the rationale](SHARED_LAYOUT.md) and [report/manifest](../results/shared-publication-v1/REPORT.md).
+
+For the complete shared search, use the frozen command/settings/seeds in the [four-billion run report](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) and its source revision. Historical run input hashes include source code: use the recorded original Git revision to reproduce old runs, not modified current source. Known held-out data are diagnostic reuse. A quick publication rebuild does not repeat four billion proposals.
+
+## Original separate-layout season
+
+The commands and timings below describe the original research. The original generate-layout command and its --reproduce option continue to reproduce the original separate maps, not B01. Explicit legacy season options keep old builders separate. Their expected old outputs remain locked, with new shared groups checked alongside them.
+
 
 You can repeat the research at three depths. Each depth checks itself and says `PASS` or names what differs. Everything uses Python 3.10 or newer and the standard library; OR-Tools is needed only for the optional proofs.
 
@@ -65,8 +86,8 @@ PYTHONPATH=src python -m bangla_dh evaluate-phase3
 PYTHONPATH=src python -m bangla_dh crosscheck-optimize
 PYTHONPATH=src python -m bangla_dh evaluate-crosscheck
 PYTHONPATH=src python -m bangla_dh mix-optimize --styles A D --seeds 512 --workers 28
-PYTHONPATH=src python -m bangla_dh kala-export
-PYTHONPATH=src python -m bangla_dh challenge-kit
+PYTHONPATH=src python -m bangla_dh kala-export --season legacy-v1
+PYTHONPATH=src python -m bangla_dh challenge-kit --season legacy-v1
 PYTHONPATH=src python -m bangla_dh check-results
 ```
 
