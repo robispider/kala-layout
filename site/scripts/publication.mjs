@@ -6,7 +6,33 @@ import { gunzipSync } from 'node:zlib';
 import { repoRoot } from './content-map.mjs';
 
 const read = async (file) => JSON.parse(await readFile(path.join(repoRoot, file), 'utf8'));
-export async function loadPublication() {
+export async function loadPublication(season) {
+  const selector = await read('data/layout-publications/current.json');
+  const current = await read(selector.descriptor);
+  if (season !== 'shared-v1') {
+    assert.equal(current.season, 'legacy-v1');
+    for (const [style, data] of Object.entries(current.styles)) {
+      const bytes = await readFile(path.join(repoRoot, data.export));
+      assert.equal(createHash('sha256').update(bytes).digest('hex'), data.export_sha256);
+      assert.equal(createHash('sha256').update(await readFile(path.join(repoRoot, data.source))).digest('hex'), data.source_sha256);
+      const original = await read(data.source);
+      const exported = JSON.parse(bytes);
+      for (const [symbol, slot] of Object.entries(original.best.layout)) {
+        const [key, layer] = slot.split('/');
+        assert.equal(exported.layers[layer === 'base' ? 'normal' : 'shift'][key.charCodeAt(0)].normalize('NFC'), symbol.normalize('NFC'));
+      }
+    }
+    const challenge = await read(current.challenge_data);
+    const submissions = await read(current.leaderboard);
+    assert.equal(challenge.version, current.challenge_version);
+    assert.equal(submissions.data_version, challenge.version);
+    const manifest = await read('challenge/run-manifest.json');
+    assert.equal(submissions.data_sha256, manifest.data_sha256);
+    for (const [file, expected] of Object.entries(manifest.outputs ?? {})) {
+      assert.equal(createHash('sha256').update(await readFile(path.join(repoRoot, file))).digest('hex'), expected);
+    }
+    return {spec: current, summary: challenge.public_layouts, submissions, challenge};
+  }
   const spec = await read('data/layout-publications/shared-v1.json');
   const summary = await read(spec.summary);
   const submissions = await read(spec.leaderboard);

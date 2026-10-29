@@ -1,0 +1,9 @@
+Style A (Kala Goti)
+
+                                 your search     published  difference
+  training J1 (0.5 wiki + 0.5 news)      1.849686      1.849686    +0.0000%
+  held-out bnwiki                   1.868918      1.868918    +0.0000%
+  held-out newspaper                1.830018      1.830018    +0.0000%
+  held-out bard-novel               1.830752      1.830752    +0.0000%
+
+  Result: the same layout as Kala Goti.

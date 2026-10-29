@@ -27,7 +27,9 @@ class SharedPublicationTests(unittest.TestCase):
         return {'season': shared_challenge.DATA_VERSION, 'layout': key_layout(layout)}
 
     def test_one_map_two_styles_and_historical_maps_unchanged(self):
-        self.assertEqual(current_layout('A'), current_layout('D'))
+        self.assertNotEqual(current_layout('A'), current_layout('D'))
+        for style in ('A', 'D'):
+            self.assertEqual(current_layout(style), mixed_best_layout(style))
         self.assertEqual(descriptor()['arrangement_id'], 'shared-76c9b9dbfc689d0b')
         self.assertEqual(descriptor()['public_name'], 'Kala Layout')
         self.assertEqual(self.data['reference']['name'], 'Kala Layout')

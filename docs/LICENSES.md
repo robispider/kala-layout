@@ -1,6 +1,6 @@
 # Licences
 
-The new shared B01 map and its research exports use the repository [MIT licence](../LICENSE). The earlier CC0 dedication remains scoped to the original separate maps and their rules. [Shared publication and availability](../results/shared-publication-v1/REPORT.md).
+The published separate Goti/Jhor maps and original typing rules are CC0. The historical shared B01 map and its research exports use the repository [MIT licence](../LICENSE). [Historical shared publication](../results/shared-publication-v1/REPORT.md).
 
 | Part | Licence |
 | --- | --- |

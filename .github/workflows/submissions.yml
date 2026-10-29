@@ -70,7 +70,7 @@ jobs:
                   elif season == 'legacy-v1':
                       stream.write('Optional diagnostics unavailable. Official scoring decides this check.\n')
               if season == 'shared-v1' and checked.returncode == 0:
-                  verified = subprocess.run([sys.executable, '-m', 'bangla_dh', 'challenge-verify', *selected], capture_output=True, text=True)
+                  verified = subprocess.run([sys.executable, '-m', 'bangla_dh', 'challenge-verify', '--season', season, *selected], capture_output=True, text=True)
                   print(verified.stdout, end='')
                   print(verified.stderr, end='', file=sys.stderr)
                   code |= verified.returncode
@@ -93,7 +93,7 @@ jobs:
           python-version: '3.12'
       - name: Rebuild the leaderboard
         run: |
-          python -m bangla_dh leaderboard
+          python -m bangla_dh leaderboard --season shared-v1
           python -m bangla_dh leaderboard --season legacy-v1
       - name: Commit the leaderboard when it changed
         run: |

@@ -126,3 +126,6 @@ experiments/** text eol=lf
 /src/bangla_dh/shared_*.py text eol=lf
 /docs/SHARED_LAYOUT.md text eol=lf
 /translations/bn/docs/SHARED_LAYOUT.md text eol=lf
+
+# Immutable eight-billion source archive includes original Windows bytes.
+/results/goti-j1-8b-v1/** -text -eol whitespace=cr-at-eol

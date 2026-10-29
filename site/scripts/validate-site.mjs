@@ -49,40 +49,24 @@ for (const file of generated.filter((name) => name.endsWith('.html'))) {
   }
 }
 assert(existing.has(path.join(root, 'pagefind/pagefind.js').replaceAll('\\', '/')), 'Missing built search index');
-// Current numbers and identity come from the versioned shared publication.
+// Current publication and historical routes are independently checked.
 const board = JSON.parse(await readFile(path.join(siteRoot, 'src/generated/board.json'), 'utf8'));
-assert.equal(board.public.arrangement_id, 'shared-76c9b9dbfc689d0b');
-assert.equal(board.public.physical_arrangements, 7);
-assert.equal(board.public.evaluation_configurations, 8);
-const home = await readFile(path.join(root, 'en/index.html'), 'utf8');
-for (const row of board.public.entries) assert(home.includes(row.average.toFixed(4)), `Home page lacks a current average: ${row.name}`);
-assert(home.includes('One arrangement. Two typing styles.'));
-assert(home.includes('SELECTED THROUGH FOUR BILLION SEARCH PROPOSALS'));
-assert(home.includes('How four billion search proposals led to Kala Layout'));
-assert(!home.includes('B01 ·'), 'Research code presented as the public chart name');
-assert(!home.includes('1.8000') && !home.includes('1.8432'), 'Historical averages presented as current');
+assert.equal(board.dataVersion, 'bangla-dh-challenge-v1');
+assert.equal(board.public.entries.length, 8);
 for (const locale of locales) {
   const html = await readFile(path.join(root, locale, 'index.html'), 'utf8');
   assert(html.includes('class="research-hero'), `Missing research hero: ${locale}`);
-  for (const route of ['release-status/', 'guide/installation/', 'guide/learning/']) {
-    assert(html.includes(`https://robispider.github.io/kala-releases/${locale}/${route}`), `Missing localized app link: ${locale}/${route}`);
-  }
-  const layouts = await readFile(path.join(root, locale, 'layouts/index.html'), 'utf8');
-  assert(layouts.includes(`https://robispider.github.io/kala-releases/${locale}/guide/learning/`), `Key maps lack localized practice guide: ${locale}`);
-  assert.equal([...html.matchAll(/<section\b[^>]*class="[^"\n]*\badditional-checks\b[^"\n]*"/g)].length, 1, `Missing/duplicate additional checks section: ${locale}`);
-  assert(html.includes('https://github.com/robispider/kala-layout/blob/main/results/evaluator-e1/run-v1/REPORT.md'), `Missing experimental report link: ${locale}`);
-  assert(html.includes(`${base}/${locale}/mechanics/`), `Missing localized movement comparison link: ${locale}`);
-  assert(html.includes(`${base}/${locale}/shared/`), `Missing transition rationale: ${locale}`);
-  assert(html.includes(`${base}/${locale}/styles/`), `Missing typing-style credit link: ${locale}`);
-  assert(html.includes(`${base}/${locale}/certification/`), `Missing shared certificate link: ${locale}`);
+  for (const route of ['publication', 'goti-evidence', 'shared', 'certification', 'layouts', 'styles'])
+    assert(html.includes(`${base}/${locale}/${route}/`), `Missing current/history route: ${locale}/${route}`);
   const certificate = await readFile(path.join(root, locale, 'certification/index.html'), 'utf8');
   for (const number of ['1,326', '44,200']) assert(certificate.includes(number), `Missing certificate scope ${number}: ${locale}`);
   const styles = await readFile(path.join(root, locale, 'styles/index.html'), 'utf8');
-  for (const url of ['https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/', 'https://www.omicronlab.com/avro-keyboard.html']) {
+  for (const url of ['https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/', 'https://www.omicronlab.com/avro-keyboard.html'])
     assert(styles.includes(url), `Missing primary-source credit ${url}: ${locale}`);
-  }
-  const shared = await readFile(path.join(root, locale, 'shared/index.html'), 'utf8');
-  for (const number of ['25.750', '43', '39']) assert(shared.includes(number), `Missing transition cost ${number}: ${locale}`);
 }
+const englishHome = await readFile(path.join(root, 'en/index.html'), 'utf8');
+for (const row of board.public.entries) assert(englishHome.includes(row.average.toFixed(4)), `Missing current average: ${row.name}`);
+assert(englishHome.includes('Two maps. Native typing rules.'));
+assert(englishHome.includes('eight billion proposals plus local search'));
 assert((await stat(path.join(root, 'en/index.html'))).size > 1000);
 console.log(`Site checks passed: ${locales.length * routes.length} pages; ${checkedLinks} local links/assets/anchors; language switching and search.`);

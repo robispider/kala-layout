@@ -1,0 +1,73 @@
+{
+  "kind": "Publication archive; no source manifests rewritten",
+  "date": "2026-10-29",
+  "files": {
+    "work/goti-j1-8b-v1/A-layout.json": {
+      "archive": "results/goti-j1-8b-v1/A-layout.json",
+      "sha256": "4fc1760d545fe5ef9b95a3c7fb334664cb7656b06add241c1c5fdd845a8d16f5",
+      "source_sha256": "4fc1760d545fe5ef9b95a3c7fb334664cb7656b06add241c1c5fdd845a8d16f5",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/build_report.py": {
+      "archive": "results/goti-j1-8b-v1/build_report.py",
+      "sha256": "3dc1bd7cc5f2c3998faedfb061e0c5e0d5fa82c77add5bd18165cc31d4ba2d4d",
+      "source_sha256": "3dc1bd7cc5f2c3998faedfb061e0c5e0d5fa82c77add5bd18165cc31d4ba2d4d",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/comparison.json": {
+      "archive": "results/goti-j1-8b-v1/comparison.json",
+      "sha256": "bc344c75be051c57363aef794d524166ddd27f0c74337a3044576875dd0654cc",
+      "source_sha256": "bc344c75be051c57363aef794d524166ddd27f0c74337a3044576875dd0654cc",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/COMPARISON.txt": {
+      "archive": "results/goti-j1-8b-v1/COMPARISON.txt",
+      "sha256": "82796439fca1071b93da19032b0c4cf0665994b320832d19834fe92563ff5b07",
+      "source_sha256": "82796439fca1071b93da19032b0c4cf0665994b320832d19834fe92563ff5b07",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/mix-search.json": {
+      "archive": "results/goti-j1-8b-v1/mix-search.json",
+      "sha256": "3f9561fcf41d65b2f446eed682a773971435b9960207bf5c747a1585cf32b054",
+      "source_sha256": "3f9561fcf41d65b2f446eed682a773971435b9960207bf5c747a1585cf32b054",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/report-data.json": {
+      "archive": "results/goti-j1-8b-v1/report-data.json",
+      "sha256": "2bf30ba1210314272e5d155da31895e09127698ed5264b177035c9af5768b332",
+      "source_sha256": "2bf30ba1210314272e5d155da31895e09127698ed5264b177035c9af5768b332",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/report-manifest.json": {
+      "archive": "results/goti-j1-8b-v1/report-manifest.json",
+      "sha256": "c99b4cdc74de466e960017aba907b367bea3a0b98a0320ef8b5281efe090da52",
+      "source_sha256": "c99b4cdc74de466e960017aba907b367bea3a0b98a0320ef8b5281efe090da52",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/REPORT.md": {
+      "archive": "results/goti-j1-8b-v1/source-REPORT.md",
+      "sha256": "7c20d3cd724854c6da3c16c82ae736a2d409bb11624cc78f8e7427552d044cf9",
+      "source_sha256": "7c20d3cd724854c6da3c16c82ae736a2d409bb11624cc78f8e7427552d044cf9",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/run-manifest.json": {
+      "archive": "results/goti-j1-8b-v1/source-run-manifest.json",
+      "sha256": "536d14e2d95ee88013c9b4bda79fbac0322956bb3c46b46dd10b880365197ecb",
+      "source_sha256": "536d14e2d95ee88013c9b4bda79fbac0322956bb3c46b46dd10b880365197ecb",
+      "encoding": "identity"
+    },
+    "work/goti-j1-8b-v1/search/A.json": {
+      "archive": "results/goti-j1-8b-v1/search/A.json.gz",
+      "sha256": "9361d2804e81ff22782c675e0cc66dca170977ad09b2d2a6df0ad99f4df8a10c",
+      "source_sha256": "83fb2c4323027953ca6a61bb27df451f5b29f90429f6bcb5d90031f828a486a3",
+      "encoding": "gzip"
+    },
+    "work/goti-j1-8b-v1-performance-adjustment.json": {
+      "archive": "results/goti-j1-8b-v1/goti-j1-8b-v1-performance-adjustment.json",
+      "sha256": "59599a786d9ae53e77064e0749c7d504f365fc3b64536cb2a847334489b0c771",
+      "source_sha256": "59599a786d9ae53e77064e0749c7d504f365fc3b64536cb2a847334489b0c771",
+      "encoding": "identity"
+    }
+  },
+  "publication_report_sha256": "25543eae910619e448e2d9c4ef895929087eab4a9c94a1465b4a3e069c928f76"
+}

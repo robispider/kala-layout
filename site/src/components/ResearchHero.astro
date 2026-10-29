@@ -1,34 +1,19 @@
 ---
-import { Image } from 'astro:assets';
-import mascot from '../assets/kala-mascot-520.png';
 import board from '../generated/board.json';
-const bn = Astro.locals.starlightRoute.locale === 'bn';
-const locale = bn ? 'bn' : 'en';
+const bn = Astro.url.pathname.includes('/bn/');
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const href = (route: string) => `${base}/${locale}/${route}/`;
-const digits = (s: string) => bn ? s.replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[Number(d)]) : s;
-const entries = [board.public.entries.find(e => e.style === 'D'), board.public.entries.find(e => e.style === 'A'), ...['Windows Default', 'UniJoy'].map(name => board.public.entries.find(e => e.name === name))];
-const nameOf = (e) => e.kind === 'shared-style' && bn ? `${board.public.public_name_bn} · ${e.style === 'A' ? 'গতি' : 'ঝড়'} স্টাইল` : e.name;
-const max = Math.max(...entries.map(e => e!.average));
+const href = (route: string) => `${base}/${bn ? 'bn' : 'en'}/${route}/`;
 ---
 <section class="research-hero" aria-labelledby="_top">
-  <div class="journal-line"><span>{bn ? 'বাংলা কিবোর্ড · অভিন্ন বিন্যাসের গবেষণা' : 'BANGLA KEYBOARD / SHARED ARRANGEMENT RESEARCH'}</span><a href={`${base}/${bn ? 'en' : 'bn'}/`} lang={bn ? 'en' : 'bn'}>{bn ? 'English' : 'বাংলা'}</a></div>
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <p class="hero-label">{bn ? 'চার বিলিয়ন সার্চ প্রস্তাব থেকে নির্বাচিত' : 'SELECTED THROUGH FOUR BILLION SEARCH PROPOSALS'}</p>
-      <h1 id="_top" data-page-title>{bn ? board.public.public_name_bn : board.public.public_name}</h1>
-      <p class="hero-tagline">{bn ? 'এক বিন্যাস। দুই টাইপিং স্টাইল।' : 'One arrangement. Two typing styles.'}</p>
-      <p class="hero-intro">{bn ? 'গতি ও ঝড় এখন একই প্রতীকের অবস্থান ব্যবহার করবে। স্টাইল বদলাবে স্বরবর্ণ লেখার নিয়ম; ম্যাপ একই থাকবে। কেন এই পরিবর্তন, কী খরচ হচ্ছে এবং কী এখনো যাচাই বাকি—দেখুন।' : 'Goti and Jhor share the same symbol positions. Choose a vowel-entry style while keeping one map. Explore why we are transitioning, what it costs, and what still needs testing.'}</p>
-      <div class="hero-actions"><a class="primary-action" href={href('shared')}>{bn ? 'কেন অভিন্ন বিন্যাস' : 'Why a shared arrangement'} →</a><a href={href('layouts')}>{bn ? 'ম্যাপ ও দুই স্টাইল' : 'The map and both styles'} ↗</a></div>
-      <p class="hero-scope">{bn ? 'কালা লেআউট আপাতত নির্বাচিত সমঝোতা। স্কোরে পরিশ্রম ও চলাচল মডেল করা হয়; শেখা, গতি বা আরাম মাপা হয়নি।' : 'Kala Layout is a provisional compromise. Scores model effort and movement; learning, speed and comfort have not been measured.'}</p>
-    </div>
-    <aside class="evidence-panel" aria-labelledby="evidence-title">
-      <div class="panel-head"><div><p class="hero-label">{bn ? 'আগে পরীক্ষা করা আলাদা রাখা টেক্সট' : 'PREVIOUSLY EXAMINED HELD-OUT TEXT'}</p><h2 id="evidence-title">{bn ? 'এক ম্যাপের দুই স্টাইল। আলাদা স্কোর।' : 'One map. Two styles. Separate scores.'}</h2><p class="panel-caption">{bn ? 'তিন উৎসের সমান ওজনের গড় · J1 · কম ভালো' : 'Equal mean of three sources · J1 · lower is better'}</p></div><div class="mascot-frame"><Image src={mascot} width={300} height={520} alt={bn ? 'কালার ব্ল্যাক বেঙ্গল ছাগলের মাসকট' : 'Kala’s Black Bengal goat mascot'} loading="eager" /></div></div>
-      <div class="effort-chart">{entries.map(entry => <div class:list={['chart-row', { 'kala-row': entry!.kind === 'shared-style' }]}><div class="chart-label"><span>{nameOf(entry)}</span><strong>{digits(entry!.average.toFixed(4))}</strong></div><div class="bar-track" aria-hidden="true"><span style={`width:${100 * entry!.average / max}%`}></span></div></div>)}</div>
-      <a class="panel-source" href="#result-title">{bn ? 'সম্পূর্ণ তুলনা ও সীমা' : 'Full comparison and its limits'} ↓</a>
-    </aside>
-  </div>
-  <nav class="research-nav" aria-label={bn ? 'গবেষণার বিষয়' : 'Explore the evidence'}><a href={href('shared')}>{bn ? 'পরিবর্তনের কারণ' : 'Why transition'}</a><a href={href('layouts')}>{bn ? 'অভিন্ন ম্যাপ' : 'Shared map'}</a><a href={href('mechanics')}>{bn ? 'চলাচল' : 'Movement'}</a><a href={href('challenge')}>{bn ? 'চ্যালেঞ্জ' : 'Shared challenge'}</a><a href={href('reproduce')}>{bn ? 'পুনরুৎপাদন' : 'Reproduce'} ↗</a></nav>
+  <div class="journal-line"><span>{bn ? 'বাংলা কিবোর্ড / প্রকাশিত গবেষণা' : 'BANGLA KEYBOARD / PUBLISHED RESEARCH'}</span><a href={`${base}/${bn ? 'en' : 'bn'}/`}>{bn ? 'English' : 'বাংলা'}</a></div>
+  <div class="hero-grid"><div class="hero-copy">
+    <p class="hero-label">{bn ? 'Frozen mixed-training J1 / best found' : 'FROZEN MIXED-TRAINING J1 / BEST FOUND'}</p>
+    <h1 id="_top" data-page-title>{bn ? 'কালা গতি ও কালা ঝড়' : 'Kala Goti and Kala Jhor'}</h1>
+    <p class="hero-tagline">{bn ? 'দুটি ম্যাপ। নিজস্ব টাইপিং নিয়ম।' : 'Two maps. Native typing rules.'}</p>
+    <p class="hero-intro">{bn ? 'আঙুলের পরিশ্রমের নির্দিষ্ট মডেলে সার্চ থেকে নির্বাচিত আলাদা লেআউট। গতির নতুন ৮০০ কোটি প্রস্তাব ও লোকাল সার্চে কোনো উন্নতি পাওয়া যায়নি; ৮,০০০ শুরুর ৫১৪টি একই প্রকাশিত ম্যাপে পৌঁছেছে। ঝড়ের আগের প্রমাণ বহাল আছে।' : 'Separate layouts selected by search under an explicit finger-effort model. A new Goti run found no improvement in eight billion proposals plus local search; 514 of 8,000 starts returned its published map. Jhor retains its original evidence.'}</p>
+    <div class="hero-actions"><a class="primary-action" href={href('layouts')}>{bn ? 'ম্যাপ ও নিয়ম' : 'Maps and rules'} →</a><a href={href('goti-evidence')}>{bn ? 'গতির প্রমাণ' : 'Goti evidence'} →</a><a href={href('publication')}>{bn ? 'নির্বাচনের মানদণ্ড' : 'Selection criterion'} →</a></div>
+    <p>{bn ? 'মডেলের স্কোর; মানুষের টাইপিং গতি বা স্বাচ্ছন্দ্যের পরিমাপ নয়। Global optimum প্রমাণিত নয়।' : 'Modeled effort, with no measurement of human speed or comfort and no proof of global optimality.'}</p>
+  </div></div>
 </section>
 <style>
   .research-hero { padding-block: 1.5rem 0; }

@@ -1,4 +1,6 @@
-# Why one shared arrangement?
+# Historical research: shared Kala Layout
+
+**Historical shared-map research.** This record retains the decision and scope at the time. See the current [selection criterion](PUBLICATION_DECISION.md) and [maps](LAYOUTS.md). Select shared CLI operations explicitly with `--season shared-v1`.
 
 We are moving from two independently positioned layouts to **one shared arrangement with two typing styles: Goti and Jhor**. The public name is **Kala Layout**; B01 is the technical research identifier of the arrangement provisionally selected on 28 October 2026. Switching styles changes the vowel-entry recipe; every symbol stays on the same key and layer. See the [shared map and typing rules](LAYOUTS.md).
 
@@ -41,6 +43,6 @@ A [new exhaustive local certificate](SHARED_CERTIFICATION.md) rules out eligible
 
 ## Evidence and next checks
 
-The [transition report](../results/shared-publication-v1/REPORT.md) connects the [existing-map check](../results/shared-style-check-v1/REPORT.md), [strict search](../results/shared-layout-v1/run-v1/REPORT.md), [relaxed search](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) and [top-ten comparison](../results/shared-top10-comparison-v1/REPORT.md). The original results remain history; this is a new publication and [shared challenge season](CHALLENGE.md).
+The [transition report](../results/shared-publication-v1/REPORT.md) connects the [existing-map check](../results/shared-style-check-v1/REPORT.md), [strict search](../results/shared-layout-v1/run-v1/REPORT.md), [relaxed search](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) and [top-ten comparison](../results/shared-top10-comparison-v1/REPORT.md). The original results remain history; this is a new publication and [shared challenge season](SHARED_CHALLENGE.md).
 
 The searches are finite and bounded; no old optimality certificate transfers. Known held-out sources are exploratory reuse, not fresh confirmation. New independent text and typing studies should test learning, errors and sustained performance before stronger claims. B01 is provisional. Research exports do not update the installed Kala application; check [availability](LAYOUTS.md).

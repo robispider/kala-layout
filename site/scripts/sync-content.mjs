@@ -1,55 +1,121 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { base, siteRoot, repoUrl, pages, homeSections, locales, sourcePath, rewriteLinks } from './content-map.mjs';
+import { base, siteRoot, repoRoot, repoUrl, pages, homeSections, locales, sourcePath, rewriteLinks } from './content-map.mjs';
 import { validateContent } from './validate-content.mjs';
 import { loadPublication } from './publication.mjs';
 
 await validateContent();
-const { spec, summary, submissions, challenge } = await loadPublication();
+const { spec, challenge: challengeData, submissions } = await loadPublication();
+
+const isBn = (locale) => locale === 'bn';
+const text = (locale, en, bangla) => (isBn(locale) ? bangla : en);
+const digits = (value, locale) => (isBn(locale) ? String(value).replace(/[0-9]/g, (d) => '০১২৩৪৫৬৭৮৯'[Number(d)]) : String(value));
+
+// Generated data for the home and leaderboard pages.
 const generated = path.join(siteRoot, 'src/generated');
 await mkdir(generated, { recursive: true });
-await writeFile(path.join(generated, 'board.json'), JSON.stringify({ public: summary, submissions, dataVersion: spec.challenge_version }));
-const safe = (s) => String(s).replace(/[&<>|\[\]`*_\\]/g, c => `&#${c.charCodeAt(0)};`).replace(/[\r\n]/g, ' ');
+await writeFile(path.join(generated, 'board.json'), JSON.stringify({ public: challengeData.public_layouts, submissions, dataVersion: challengeData.version }));
 for (const locale of locales) {
-  const bn = locale === 'bn';
-  const t = (en, bangla) => bn ? bangla : en;
-  const digits = (s) => bn ? String(s).replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[Number(d)]) : String(s);
-  const fmt = (n, precision = 4) => digits(Number(n).toFixed(precision));
-  const entryName = e => e.kind === 'shared-style' ? t(e.name, `${spec.public_name_bn} · ${e.style === 'A' ? 'গতি' : 'ঝড়'} স্টাইল`) : e.name;
-  for (const section of homeSections) {
-    await writeFile(path.join(generated, `${section.key}-${locale}.md`), rewriteLinks(await readFile(sourcePath(section, locale), 'utf8'), section.source, locale));
-  }
+  const section = homeSections[0];
+  const markdown = await readFile(sourcePath(section, locale), 'utf8');
+  await writeFile(path.join(generated, `additional-checks-${locale}.md`), rewriteLinks(markdown, section.source, locale));
+}
+
+for (const locale of locales) {
   const contentRoot = path.join(siteRoot, 'src/content/docs', locale);
   await mkdir(contentRoot, { recursive: true });
   for (const page of pages) {
     const source = await readFile(sourcePath(page, locale), 'utf8');
     const heading = source.match(/^# (.+)\r?$/m);
     if (!heading) throw new Error(`Missing title: ${page.source} (${locale})`);
+    const title = heading[1];
     const body = rewriteLinks(source.replace(/^# .+\r?\n/, '').trim(), page.source, locale);
     const sourceInRepo = locale === 'en' ? page.source : `translations/${locale}/${page.source}`;
+    const frontmatter = `---\ntitle: ${JSON.stringify(title)}\neditUrl: ${JSON.stringify(`${repoUrl}/edit/main/${sourceInRepo}`)}\n---\n\n`;
     const destination = path.join(contentRoot, `${page.route}.md`);
     await mkdir(path.dirname(destination), { recursive: true });
-    await writeFile(destination, `---\ntitle: ${JSON.stringify(heading[1])}\neditUrl: ${JSON.stringify(`${repoUrl}/edit/main/${sourceInRepo}`)}\n---\n\n${body}\n`);
+    await writeFile(destination, frontmatter + body + '\n');
   }
-  const L = [t('Kala Layout: one shared arrangement, two typing styles. The arrangement is provisional; the original separate arrangements remain in the research history.', 'কালা লেআউট: একটি অভিন্ন বিন্যাস, দুটি টাইপিং স্টাইল। বিন্যাসটি আপাতত নির্বাচিত; আগের আলাদা বিন্যাস গবেষণার ইতিহাসে সংরক্ষিত।'), '',
-    `## ${t('Previously examined held-out effort', 'আগে পরীক্ষা করা আলাদা রাখা টেক্সটে পরিশ্রম')}`, '',
-    t('J1 is modeled effort per text unit, lower is better. Shared styles use model-optimal fingering; fixed baselines retain favorable recorded original effort benchmarks. Seven arrangements, eight configurations. This table does not rank the shared challenge.', 'J1 প্রতি টেক্সট এককে মডেলের পরিশ্রম; কম হলে ভালো। অভিন্ন বিন্যাসের স্টাইল মডেল-অপটিমাল আঙুল-বিন্যাসে হিসাব করা; ফিক্সড বেসলাইনের আগের অনুকূল পরিশ্রম-স্কোর রাখা হয়েছে। সাতটি বিন্যাস, আটটি কনফিগারেশন। এই সারণি অভিন্ন বিন্যাসের চ্যালেঞ্জের ক্রম নয়।'), '',
-    `| ${t('Configuration', 'কনফিগারেশন')} | ${t('Wikipedia', 'উইকিপিডিয়া')} | ${t('Newspaper', 'সংবাদপত্র')} | BARD | ${t('Mean', 'গড়')} |`, '| --- | --- | --- | --- | --- |'];
-  for (const e of summary.entries) L.push(`| ${entryName(e)} | ${['wikipedia', 'newspaper', 'unseenNews'].map(c => fmt(e.j1[c])).join(' | ')} | ${fmt(e.average)} |`);
-  L.push('', `## ${t('Shared challenge', 'অভিন্ন বিন্যাসের চ্যালেঞ্জ')}`, '',
-    t('One submitted map is scored in both Goti and Jhor. Joint eligibility comes before the two separately calibrated R values. Frontier entries are non-dominated against Kala Layout and all eligible submissions; display order is not a combined rank.', 'একটি জমা দেওয়া ম্যাপ গতি ও ঝড় দুই স্টাইলেই হিসাব করা হয়। দুই স্টাইলে যোগ্যতা যাচাইয়ের পরে আলাদাভাবে ক্যালিব্রেট করা R দেখা হয়। ফ্রন্টিয়ারের বিন্যাস কালা লেআউট ও সব যোগ্য জমার তুলনায় অপ্রভাবিত; প্রদর্শনের ক্রম কোনো সম্মিলিত র‍্যাঙ্ক নয়।'), '',
-    `${t('Season', 'সিজন')}: \`${spec.challenge_version}\`.`, '',
-    `| ${t('Reference', 'রেফারেন্স')} | ${t('Goti R', 'গতি R')} | ${t('Jhor R', 'ঝড় R')} |`, '| --- | --- | --- |',
-    `| ${t(spec.public_name, spec.public_name_bn)} | ${fmt(challenge.reference.training.A.balance.R, 6)} | ${fmt(challenge.reference.training.D.balance.R, 6)} |`, '',
-    `| ${t('Arrangement', 'বিন্যাস')} | ${t('Author', 'জমাদাতা')} | ${t('Status', 'অবস্থা')} | ${t('Goti R', 'গতি R')} | ${t('Jhor R', 'ঝড় R')} |`, '| --- | --- | --- | --- | --- |');
-  const statuses = { frontier: t('frontier', 'ফ্রন্টিয়ার'), dominated: t('dominated', 'প্রভাবিত'), ineligible: t('ineligible', 'অযোগ্য') };
-  for (const e of submissions.entries) L.push(`| ${safe(e.name || e.file)} | ${safe(e.author || '—')} | ${statuses[e.status]} | ${e.R.map(v => v === null ? '—' : fmt(v, 6)).join(' | ')} |`);
-  if (!submissions.entries.length) L.push('', t('No submissions yet. B02 remains a documented trade-off, not an improvement on both Kala Layout reference scores.', 'এখনো কোনো জমা নেই। B02 নথিভুক্ত বিকল্প সমঝোতা; কালা লেআউটের দুই রেফারেন্স স্কোরেই উন্নতি নয়।'));
-  L.push('', `[${t('Rules and submission instructions', 'নিয়ম ও জমা দেওয়ার নির্দেশনা')}](${base}/${locale}/challenge/)`, '',
-    `[${t('Original separate-style J1 board (legacy)', 'আগের আলাদা স্টাইলের J1 তালিকা (পুরোনো সিজন)')}](${repoUrl}/blob/main/submissions/LEADERBOARD.md)`);
-  await writeFile(path.join(contentRoot, 'leaderboard.md'), `---\ntitle: ${JSON.stringify(t('Comparisons and shared challenge', 'তুলনা ও অভিন্ন বিন্যাসের চ্যালেঞ্জ'))}\neditUrl: false\n---\n\n${L.join('\n')}\n`);
-  await writeFile(path.join(contentRoot, 'index.mdx'), `---\ntitle: ${JSON.stringify(t('Kala Layout — Goti and Jhor typing styles', 'কালা লেআউট — গতি ও ঝড় টাইপিং স্টাইল'))}\ndescription: ${JSON.stringify(t('Kala Layout, selected through four billion search proposals, with Goti and Jhor typing styles: evidence, trade-offs, reproduction and an open challenge.', 'চার বিলিয়ন সার্চ প্রস্তাব থেকে নির্বাচিত কালা লেআউট, গতি ও ঝড় টাইপিং স্টাইলসহ: সিদ্ধান্তের কারণ, প্রমাণ, সমঝোতা, পুনরুৎপাদন ও উন্মুক্ত চ্যালেঞ্জ।'))}\ntemplate: splash\nhero: {}\neditUrl: false\n---\n\nimport LayoutHome from '../../../components/LayoutHome.astro';\n\n<LayoutHome locale="${locale}" />\n`);
+
+  // Leaderboard page.
+  const columns = ['wikipedia', 'newspaper', 'unseenNews'];
+  const heads = text(locale, ['Wikipedia', 'Newspaper', 'Unseen news'], ['উইকিপিডিয়া', 'সংবাদপত্র', 'নতুন সংবাদ']);
+  const fmt = (n) => digits(Number(n).toFixed(4), locale);
+  const L = [];
+  L.push(text(locale,
+    'Two boards. The first lists the layouts that were compared in the research, scored on previously examined held-out text. The second lists layouts submitted to the challenge, re-scored with the public scorer.',
+    'দুটি তালিকা। প্রথমটিতে গবেষণায় তুলনা করা লেআউট আছে, যেগুলোর স্কোর আগে পরীক্ষা করা আলাদা রাখা টেক্সটে হিসাব করা হয়েছে। দ্বিতীয়টিতে চ্যালেঞ্জে জমা দেওয়া লেআউট আছে, যেগুলো প্রকাশিত স্কোরার দিয়ে আবার হিসাব করা হয়েছে।'), '');
+  L.push(`## ${text(locale, 'Public layouts: held-out effort', 'প্রকাশ্য লেআউট: আলাদা রাখা টেক্সটে পরিশ্রম')}`, '');
+  L.push(text(locale,
+    'Modeled finger effort per character (J1); lower is better. Fixed layouts only. Existing layouts are scored at the better of two fingering grids.',
+    'প্রতি অক্ষরে আঙুলের মডেল করা পরিশ্রম (J1); কম হলে ভালো। শুধু ফিক্সড লেআউট। বিদ্যমান লেআউট দুটি আঙুল-বিন্যাসের মধ্যে ভালোটিতে হিসাব করা হয়েছে।'), '');
+  L.push(`| ${text(locale, 'Rank', 'অবস্থান')} | ${text(locale, 'Layout', 'লেআউট')} | ${heads.join(' | ')} | ${text(locale, 'Average', 'গড়')} |`);
+  L.push(`| --- | --- | ${heads.map(() => '---').join(' | ')} | --- |`);
+  [...challengeData.public_layouts.entries].sort((a, b) => a.average - b.average).forEach((e, i) => {
+    L.push(`| ${digits(i + 1, locale)} | ${e.name} | ${columns.map((c) => fmt(e.j1[c])).join(' | ')} | ${fmt(e.average)} |`);
+  });
+  L.push('', `## ${text(locale, 'Challenge submissions', 'চ্যালেঞ্জে জমা দেওয়া লেআউট')}`, '');
+  for (const style of ['D', 'A']) {
+    const part = submissions?.styles?.[style];
+    const ref = challengeData.styles[style].reference;
+    const [numerator, denominator] = ref.J1_exact.split('/').map(Number);
+    const refJ1 = (numerator / denominator).toFixed(6);
+    const name = style === 'D' ? text(locale, 'Style D (Kala Jhor)', 'স্টাইল D (কালা ঝড়)') : text(locale, 'Style A (Kala Goti)', 'স্টাইল A (কালা গতি)');
+    L.push(`### ${name}`, '');
+    L.push(text(locale, `Reference J1: ${refJ1}.`, `রেফারেন্স J1: ${digits(refJ1, locale)}।`), '');
+    if (!part || part.entries.length === 0) {
+      L.push(text(locale, 'No submissions yet. The first valid layout takes the first place on this board.', 'এখনো কোনো জমা পড়েনি। প্রথম বৈধ লেআউট এই তালিকার প্রথম স্থান পাবে।'), '');
+      continue;
+    }
+    L.push(`| ${text(locale, 'Rank', 'অবস্থান')} | ${text(locale, 'Layout', 'লেআউট')} | ${text(locale, 'Author', 'জমাদাতা')} | J1 | ${text(locale, 'Against reference', 'রেফারেন্সের তুলনায়')} | ${text(locale, 'Held-out average', 'আলাদা রাখা টেক্সটের গড়')} |`);
+    L.push('| --- | --- | --- | --- | --- | --- |');
+    part.entries.forEach((e, i) => {
+      L.push(`| ${digits(i + 1, locale)} | ${e.name} | ${e.author || '-'} | ${digits(e.J1.toFixed(6), locale)} | ${digits(e.vs_reference_percent.toFixed(4), locale)} % | ${fmt(e.held_out_average)} |`);
+    });
+    L.push('');
+  }
+  L.push(text(locale,
+    `To enter, follow the [challenge rules](${base}/${locale}/challenge/). The board is rebuilt from the files in [submissions/](${repoUrl}/tree/main/submissions).`,
+    `অংশ নিতে [চ্যালেঞ্জের নিয়ম](${base}/${locale}/challenge/) অনুসরণ করুন। তালিকাটি [submissions/](${repoUrl}/tree/main/submissions) ফোল্ডারের ফাইল থেকে নতুন করে তৈরি হয়।`));
+  await writeFile(path.join(contentRoot, 'leaderboard.md'),
+    `---\ntitle: ${JSON.stringify(text(locale, 'Leaderboard', 'লিডারবোর্ড'))}\neditUrl: false\n---\n\n${L.join('\n')}\n`);
+
+  const hero = {
+    tagline: text(locale,
+      'Kala Jhor and Kala Goti were found by a computer search under an explicit model. See how, run the search yourself, and try to beat it.',
+      'কালা ঝড় ও কালা গতি একটি স্পষ্ট মডেলের অধীনে কম্পিউটার সার্চে খুঁজে পাওয়া গেছে। কীভাবে, দেখুন; নিজে সার্চ চালান; আর চাইলে এর চেয়ে ভালো লেআউট খুঁজে আনুন।'),
+    image: { file: '../../../assets/kala-mascot-520.png', alt: text(locale, 'Kala’s Black Bengal goat mascot', 'কালার ব্ল্যাক বেঙ্গল ছাগলের মাসকট') },
+    actions: [
+      { text: text(locale, 'Take the challenge', 'চ্যালেঞ্জ নিন'), link: `${base}/${locale}/challenge/`, icon: 'rocket' },
+      { text: text(locale, 'How they were found', 'কীভাবে খুঁজে পাওয়া গেল'), link: `${base}/${locale}/how/`, variant: 'secondary', icon: 'right-arrow' },
+      { text: text(locale, 'বাংলায় পড়ুন', 'Read in English'), link: `${base}/${isBn(locale) ? 'en' : 'bn'}/`, variant: 'minimal', icon: 'translate' },
+    ],
+  };
+  const title = text(locale, 'Where Kala’s layouts came from, and how to beat them.', 'কালার লেআউট কোথা থেকে এল, আর কীভাবে এর চেয়ে ভালো করা যায়।');
+  const description = text(locale, 'The research behind Kala Jhor and Kala Goti: the model, the public datasets, a repeatable search and an open challenge.', 'কালা ঝড় ও কালা গতির পেছনের গবেষণা: মডেল, প্রকাশ্য ডেটাসেট, পুনরায় চালানো যায় এমন সার্চ এবং সবার জন্য খোলা চ্যালেঞ্জ।');
+  await writeFile(path.join(contentRoot, 'index.mdx'),
+    `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\ntemplate: splash\nhero: ${JSON.stringify(hero)}\neditUrl: false\n---\n\nimport LayoutHome from '../../../components/LayoutHome.astro';\n\n<LayoutHome locale="${locale}" />\n`);
 }
-await writeFile(path.join(siteRoot, 'src/content/docs/404.md'), `---\ntitle: "Page not found / পেজটি পাওয়া যায়নি"\neditUrl: false\n---\n\n[English homepage](${base}/en/) · [বাংলা হোমপেজ](${base}/bn/)\n`);
+await writeFile(path.join(siteRoot, 'src/content/docs/404.md'), `---\ntitle: "Page not found / পেজটি পাওয়া যায়নি"\neditUrl: false\n---\n\nThis address does not match a page. Return to the [English homepage](${base}/en/) or read [how the layouts were found](${base}/en/how/).\n\n<span lang="bn">এই ঠিকানায় কোনো পেজ নেই। [বাংলা হোমপেজে](${base}/bn/) ফিরুন অথবা [কীভাবে লেআউট খুঁজে পাওয়া গেল](${base}/bn/how/) পড়ুন।</span>\n`);
+await mkdir(path.join(siteRoot, 'public'), { recursive: true });
 await writeFile(path.join(siteRoot, 'public/robots.txt'), 'User-agent: *\nAllow: /\n');
-console.log(`Generated bilingual shared publication: ${spec.arrangement_id}.`);
+console.log(`Generated ${(pages.length + 2) * locales.length + 1} bilingual pages for ${base}/.`);
+
+// Explicit historical shared board: its eligibility and two R values stay separate.
+const historical = await loadPublication('shared-v1');
+for (const locale of locales) {
+  const bn = locale === 'bn';
+  const t = (en, bangla) => bn ? bangla : en;
+  const ref = historical.challenge.reference;
+  const lines = [t('Historical shared-map challenge. B01 remains provisional under the relaxed shared eligibility policy; R is calibrated separately for each style and must not be combined.', 'ঐতিহাসিক অভিন্ন ম্যাপের চ্যালেঞ্জ। শিথিল shared eligibility policy-তে B01 আপাতত নির্বাচিত ছিল; প্রতি স্টাইলের R আলাদা ক্যালিব্রেশনে হিসাব করা, এগুলো একত্র করা যাবে না।'), '',
+    '| Map | Goti R | Jhor R |', '| --- | --- | --- |',
+    `| B01 | ${ref.training.A.balance.R.toFixed(6)} | ${ref.training.D.balance.R.toFixed(6)} |`, '',
+    '| Entry | Status | Goti R | Jhor R |', '| --- | --- | --- | --- |'];
+  for (const entry of historical.submissions.entries) {
+    const safeName = String(entry.name || entry.file).replace(/[|<>\n\r]/g, ' ');
+    lines.push(`| ${safeName} | ${entry.status} | ${entry.R.map(v => v == null ? '—' : v.toFixed(6)).join(' | ')} |`);
+  }
+  if (!historical.submissions.entries.length) lines.push(t('No historical submissions.', 'এই সিজনে কোনো জমা নেই।'));
+  lines.push('', `[${t('Historical rules', 'ঐতিহাসিক নিয়ম')}](${base}/${locale}/shared-challenge/)`);
+  await writeFile(path.join(siteRoot, 'src/content/docs', locale, 'shared-leaderboard.md'), `---\ntitle: ${JSON.stringify(t('Historical shared challenge board', 'ঐতিহাসিক অভিন্ন চ্যালেঞ্জের তালিকা'))}\neditUrl: false\n---\n\n${lines.join('\n')}\n`);
+}

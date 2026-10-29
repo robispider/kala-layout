@@ -1,51 +1,89 @@
-# Challenge the shared arrangement
+# The layout challenge
 
-Submit **one map used unchanged by both Goti and Jhor typing styles**. Kala Layout is the provisional reference. The season is `bangla-dh-shared-challenge-v1`. [Why sharing?](SHARED_LAYOUT.md) explains the goal and its costs.
+Current publication: the original separate Goti and Jhor arrangements. [Selection criterion](PUBLICATION_DECISION.md) · [Additional Goti evidence](GOTI_8B.md).
 
-## Run the scorer
+Can you place the Bangla symbols on the keyboard so that they need less modeled effort than Kala Jhor or Kala Goti? This page gives the rules, the steps and the way to enter.
 
-Python 3.10 or newer, standard library only. Keep the [scoring bundle](../challenge/shared-v1/) together: script, compressed derived counts and mechanics licence. No corpus download or package installation is needed. The package is about 3 MB; scoring both training styles normally takes less than a second on the development machine, not a performance guarantee.
+## The rules
+
+* Choose a style. **Style D** (Kala Jhor's): one key for each vowel, and Kala picks the vowel sign or the full vowel from the letter before it. **Style A** (Kala Goti's): every vowel sign has its own key, and a full vowel is hasant followed by its sign, as in UniJoy.
+* The style fixes the 52 symbols you place. Place each exactly once on the 26 letter keys Q to M, base and Shift layer. Digits and punctuation keep their places.
+* Your score is **J1**, the modeled effort per typed character, averaged over 50 % Wikipedia and 50 % newspaper training text. Lower is better.
+* You beat Kala only with a strictly lower J1. Scores are compared exactly as fractions, so there is no rounding.
+* As a second check the scorer also types texts that were held out from every search and shows where your layout stands among the public layouts. A real improvement should be lower there too; a win only on the training score may mean fitting to the training counts.
+
+## Enter in five steps
+
+1. Get the scorer. It is one file with no dependencies besides Python 3.10: [challenge/bangla_dh_challenge.py](../challenge/bangla_dh_challenge.py).
+2. Start from a reference layout.
+3. Change it, or find a layout by running your own search.
+4. Score it and read the held-out check.
+5. Add the file to [submissions/](../submissions) and open a pull request.
 
 ```bash
-python challenge/shared-v1/score.py --reference
-python challenge/shared-v1/score.py --template my-shared.json
-python challenge/shared-v1/score.py my-shared.json --diagnostics
+python challenge/bangla_dh_challenge.py --reference
+python challenge/bangla_dh_challenge.py --template D --out my-layout.json
+python challenge/bangla_dh_challenge.py my-layout.json
+python challenge/bangla_dh_challenge.py --public
 ```
 
-Edit the template's 26 letter keys, each with base and Shift symbols. Keep its season; do not supply a style or alternative per-style maps. Every frozen symbol must appear once. Digits, punctuation, encoders and model constants stay fixed. Dotted-circle marks and canonically equivalent Bangla labels are normalized to NFC.
+The layout file is JSON. Each of the 26 letter keys maps to its two symbols, `[base, shift]`:
 
-## Eligibility and comparison
+```json
+{
+  "style": "D",
+  "name": "my layout",
+  "author": "your GitHub name",
+  "layout": { "Q": ["ট", "ঢ"], "W": ["দ", "ঙ"] }
+}
+```
 
-Both styles must pass, on the original independently normalized 50/50 training mixture with model-optimal fingering:
+The example shows two keys; a real file lists all 26. Vowel signs may be written on a dotted circle (◌া) or alone; the scorer cleans both.
 
-* Exact rational J1 at most 403/400 of that style's **original separate-arrangement** effort (+0.75%).
-* Within-word same-finger different-key distance at most 1.075 of that original reference (+7.5%), with the existing absolute allowance of 1e-14.
+## Find a layout by search
 
-These are the relaxed shared policy, not the original strict Balance policy. Limits are not rebased on Kala Layout. Cross-space movement can regress but remains positively penalized. The frozen four-component expression, all 81 priority settings per style, scales, aspirations, calibration minima and unsupported-order bounds are unchanged.
+```bash
+PYTHONPATH=src python -m bangla_dh generate-layout --style D --seeds 64 --first-seed 7
+```
 
-Eligible maps receive separate Goti and Jhor R values; lower is better within each style. R values are never summed, averaged or compared across styles. An improvement on Kala Layout is no worse in both R values and strictly better in at least one. A lower one-style J1 is insufficient. B02 is a trade-off, not a winner on both scores. Comparisons use unrounded results.
+The search starts from random layouts in your seed range, compares its best layout with the published one, and writes `work/generate-D/D-layout.json`, ready to score. Different seeds explore different regions. The published layouts were reached from 24 of 512 starts (Kala Jhor) and 36 of 512 starts (Kala Goti), so a short run often ends on a slightly worse layout. See [REPRODUCE.md](REPRODUCE.md).
 
-The [shared board](../submissions/shared-v1/LEADERBOARD.md) shows frontier entries first, then dominated and ineligible arrangements. Frontier status compares with Kala Layout and all eligible submissions. Within groups, filenames determine display order, not an overall rank. The same normalized map counts once across both styles; the first processed filename keeps the entry. Equal score vectors remain tied. Reference copies and duplicate submissions are reported separately. Maintainers can use Git history to resolve authorship disputes without changing scores.
+## What happens after you submit
 
-## Submit and verify
+A pull request that adds a file to `submissions/` runs a workflow that re-scores the file with the public scorer and fails if it is invalid. The score inside your file is never trusted: only the layout counts. Maintainers merge valid submissions and the [leaderboard](../submissions/LEADERBOARD.md) is rebuilt with `python -m bangla_dh leaderboard`. Two files with the same layout count once; on equal scores the earlier submission keeps its place.
 
-Add the JSON file to [submissions/shared-v1/](../submissions/shared-v1/) in a pull request. The check recalculates scores; embedded score claims are ignored. Malformed or cross-season files fail validation. Valid but ineligible maps are visibly labeled and receive no joint rank. A valid submission never automatically replaces Kala Layout.
+If a submission beats the reference, the maintainers re-check it with the project's own scorers (`python -m bangla_dh challenge-verify FILE`), which compute the exact integer-model J1 and the held-out scores from the full pipeline. A winning layout does not replace Kala Jhor or Kala Goti automatically: the score is modeled effort, and comfort is decided by typing tests with people.
+
+## Optional diagnostic report
+
+With the full repository, you can request a separate report after official verification:
 
 ```powershell
 $env:PYTHONPATH = "src"
-python -m bangla_dh challenge-verify my-shared.json
-python -m bangla_dh leaderboard --check my-shared.json
+python -m bangla_dh challenge-verify my-layout.json --diagnostics work/evaluator-experiments/my-check
+python -m bangla_dh leaderboard --check my-layout.json --diagnostics work/evaluator-experiments/my-board-check
 ```
 
-The first command checks the portable score against the independent integer/direct evaluators. The standalone diagnostics option reports five source scopes under both fingerings, including effort, within/cross movement, order bounds, Shift, repeated keys and escapes. Only training controls eligibility and ranking; already examined held-out results are exploratory diagnostics. Unsupported order mass is bounded, not imputed. Scores are modeled mechanics, not measured speed or comfort.
+Choose a new output directory for each run. The report compares your layout with its style's reference: same-finger moves between different keys, repeated keys, Shift use, finger load and preference-table coverage. It also shows traditional fingering as a separate scenario. No corpus download is needed; the diagnostic counts are committed.
 
-## Original effort challenge
+The preference table covers only part of typing. Its partial values are not whole-layout comfort scores and never affect J1, acceptance, ties or leaderboard ordering. An optional-report failure is reported separately and does not change official verification. Submission pull-request checks include the diagnostic report in their job summary for accepted entries. The standalone scorer is unchanged.
 
-The [original independent-style J1 scorer](../challenge/bangla_dh_challenge.py), [guide](../challenge/USER_GUIDE.md) and [board](../submissions/LEADERBOARD.md) remain a separate legacy season. They compare the original separate arrangements and do not solve the shared task.
+Further details: [experimental evaluation instructions](../src/bangla_dh/experimental/README.md). You can also run the diagnostic reader directly on a challenge-format file.
 
-```powershell
-python -m bangla_dh challenge-verify --season legacy-v1 challenge/D-reference.json
-python -m bangla_dh leaderboard --season legacy-v1 --check challenge/D-reference.json
-```
+The optional report also compares source-verified Dvorak-7 and Engram pair movement with your style's reference, including component bounds and frequent transitions that lose credit. Engram triple order is shown from committed counts. These project Shift actions onto physical keys and exclude modifier effort; unsupported events retain coverage bounds. They explain movement trade-offs and do not change the official score. [Read the model comparison](MECHANICS.md).
 
-The legacy board refuses a reference copy as a submission; the independent verifier accepts it as a scoring check. [Reproduction instructions](REPRODUCE.md) distinguish both seasons. Changing inputs, policy or calibration requires a new season; never mix boards.
+## Compare with other public layouts
+
+`--public` lists the held-out scores of Kala Jhor, Kala Goti, UniJoy, Windows Default, Probhat, Munir Optima, Bornona and National. To compare another layout under the same model, add its key map as described in [data/baselines/README.md](../data/baselines/README.md) and rerun the comparison.
+
+## How the score is computed
+
+For each training text, every keystroke costs the effort of its key, a Shift-layer symbol adds a press of the other hand's Shift key, and every pair of consecutive keys adds a penalty or a bonus by finger and row. The total is divided by the number of characters. The model is the Colemak Mod-DH effort model on an ANSI keyboard with model-optimal fingering. The keystroke and pair counts for each style are fixed and are built into the scorer, so only the placement changes the score. The generated guide [challenge/USER_GUIDE.md](../challenge/USER_GUIDE.md) lists the effort of every key and the exact penalties.
+
+## For maintainers
+
+* Rebuild the scorer with `python -m bangla_dh challenge-kit`. It refuses to finish unless the standalone scorer reproduces the integer model's J1 exactly for the reference and earlier layouts.
+* A change to the guides or the scorer's wording is a new script version. A change to the data, the model or the texts is a new season (raise `DATA_VERSION` in `src/bangla_dh/challenge.py`) with new boards, because old scores are no longer comparable.
+
+
+[Historical shared-map challenge](SHARED_CHALLENGE.md).

@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Kala Layout',
-      description: 'One shared Bangla key arrangement with Goti and Jhor typing styles: rationale, evidence, reproducibility and challenge.',
+      description: 'Published Kala Goti and Kala Jhor: separate maps, frozen J1 evidence, reproducibility and challenge.',
       defaultLocale: 'en',
       locales: {
         en: { label: 'English', lang: 'en' },
@@ -24,7 +24,11 @@ export default defineConfig({
       sidebar: [
         {
           label: 'The research', translations: { bn: 'গবেষণা' },
-          items: ['shared', 'layouts', 'styles', 'how', 'certification', 'mechanics', 'data'],
+          items: ['publication', 'goti-evidence', 'layouts', 'styles', 'how', 'mechanics', 'data'],
+        },
+        {
+          label: 'Historical experiments', translations: { bn: 'ঐতিহাসিক পরীক্ষা' },
+          items: ['shared', 'shared-search', 'shared-mechanics', 'certification', 'shared-challenge', 'shared-leaderboard'],
         },
         {
           label: 'Do it yourself', translations: { bn: 'নিজে করে দেখুন' },

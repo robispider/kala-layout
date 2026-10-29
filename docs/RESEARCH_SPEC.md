@@ -1032,3 +1032,8 @@ Owner request: **Kala Layout** is the public name; B01/P01 remain research label
 [Shared certification](SHARED_CERTIFICATION.md) adds exhaustive coverage of every two-symbol swap and three-symbol cycle around the unchanged selected B01 map: 1,326 + 44,200 alternatives. Exact effort and conservative enclosures of the existing binary64 movement/Balance scorer exclude all 45,526 as dominators, with no ambiguous comparisons. The independent full-sum/direct-scorer witness verifier and full replay accompany the machine-readable certificate and per-candidate decisions in `results/shared-certification-v1/`.
 
 The claim is local non-dominance under joint relaxed-policy eligibility and separate frozen R values; no combined objective, global optimum or global gap is claimed. This additive check changes no map, grammar, search inputs, scoring constants, calibration or challenge season. The original Phase 4 evidence is preserved. The reproduction lock adds a certificate group; future full shared solver bounds remain separate work.
+
+
+## 29 October 2026 — published separate arrangements
+
+The owner selects original Goti and Jhor under unchanged mixed-training J1. The active selector and CLI defaults use the original scoring season; shared/Balance experiments and certificates remain historical evidence. New Goti evidence is additive: eight billion proposals plus local search, 514/8,000 exact reproductions, no improvement. See [decision](PUBLICATION_DECISION.md) and [durable evidence](GOTI_8B.md). No objective, constants, corpus, symbol problem or native grammar changed.
