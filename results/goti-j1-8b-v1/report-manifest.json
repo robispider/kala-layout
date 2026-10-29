@@ -1,0 +1,35 @@
+{
+  "kind": "Post-run report and independent saved-endpoint verification",
+  "generated_utc": "2026-10-29T09:56:44.040850+00:00",
+  "input_sha256": {
+    "work/goti-j1-8b-v1/search/A.json": "83fb2c4323027953ca6a61bb27df451f5b29f90429f6bcb5d90031f828a486a3",
+    "work/goti-j1-8b-v1/run-manifest.json": "536d14e2d95ee88013c9b4bda79fbac0322956bb3c46b46dd10b880365197ecb",
+    "work/goti-j1-8b-v1/comparison.json": "bc344c75be051c57363aef794d524166ddd27f0c74337a3044576875dd0654cc",
+    "work/goti-j1-8b-v1/mix-search.json": "3f9561fcf41d65b2f446eed682a773971435b9960207bf5c747a1585cf32b054",
+    "work/goti-j1-8b-v1/A-layout.json": "4fc1760d545fe5ef9b95a3c7fb334664cb7656b06add241c1c5fdd845a8d16f5",
+    "work/goti-j1-8b-v1/build_report.py": "3dc1bd7cc5f2c3998faedfb061e0c5e0d5fa82c77add5bd18165cc31d4ba2d4d",
+    "results/mix-search/search/A.json": "13f7fafc033c442262739d71637780910a2bfd0c1f479283451aac45a53302f7",
+    "results/mix-search/run-manifest.json": "4d09bc0ebb200ad4b868d1064e4009f6cc89455bc56186acb6cc9ab8236fb6b5",
+    "results/phase3-crosscheck/REPORT.md": "74f57bc0552597166f3cc43cda8bf2f1ff42f853ad4c80653396f89024c1592a",
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "results/phase1/effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "results/phase3/frequencies/A-bnwiki-train.json": "71108b065277a31d099efe53cb75ff997878ace1c0f1d9d79dae721cd0f27de7",
+    "results/phase3-crosscheck/frequencies/A-newspaper-train.json": "cdee7e949385fdbf163b58b7ed1e379e6a999d964d6d0590513a4791e72b40a4",
+    "results/phase3/frequencies/A-bnwiki-heldout.json": "f441803c48942456fe151630f205f3a4c00d82a789b5cfd675627cf2f60b253d",
+    "results/phase3-crosscheck/frequencies/A-newspaper-heldout.json": "4e30a9eb4c43c3286f42ae6f1c68cd23de9a0e94d38c060ed0a0374e71160a66",
+    "results/phase3-crosscheck/frequencies/A-bard-novel-heldout.json": "7a28d2f2655af6aa99d99d76f096abe6dd31a1a71dec4404f7d5b3534574b508",
+    "results/phase3/search/A.json": "fedebf30e76977e9e9245ddd133af6b9c7ace04e2f2af40f4fd5075c8b07fc03",
+    "results/phase3-crosscheck/search/A.json": "8a25be9ac64df499f56998ee13ae8266b9fb1e61dfcd3222eddbfa96eb156db4",
+    "src/bangla_dh/search/integer.py": "8283cccda66dd7f74b7d7c20a9915404fbbea8d4013511b6f2813532ed96de0b",
+    "src/bangla_dh/scoring/model.py": "ba1d51fdc265bebe4199f839c210d2d694921ff2f41d50c6b8c7a59630298195",
+    "src/bangla_dh/mix.py": "e395346c0977e349e14f3f760f394aac681ba0256f976bf5bd8dea5397878a6c",
+    "work/goti-j1-8b-v1-performance-adjustment.json": "59599a786d9ae53e77064e0749c7d504f365fc3b64536cb2a847334489b0c771"
+  },
+  "output_sha256": {
+    "work/goti-j1-8b-v1/REPORT.md": "7c20d3cd724854c6da3c16c82ae736a2d409bb11624cc78f8e7427552d044cf9",
+    "work/goti-j1-8b-v1/report-data.json": "2bf30ba1210314272e5d155da31895e09127698ed5264b177035c9af5768b332"
+  },
+  "reported_wall_seconds_source": "User-provided terminal output: search done, 12746 s",
+  "reported_workers_source": "User-provided executed command: --workers 28",
+  "original_search_artifacts_modified": false
+}

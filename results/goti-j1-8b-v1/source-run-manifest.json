@@ -1,0 +1,90 @@
+{
+  "generated_utc": "2026-10-29T09:46:19+00:00",
+  "bangla_dh_version": "0.1.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "repo_commit": "010ee328d92f8a0f066b89dadfeb89090b0ab877",
+  "working_tree_clean": true,
+  "parameters": {
+    "objective": "J1 as Phase 3, on the weighted mix of training splits",
+    "weights": {
+      "bnwiki/train": 0.5,
+      "newspaper/train": 0.5
+    },
+    "styles": [
+      "A"
+    ],
+    "effort_grid": "results/phase1/effort-grids/ansi-optimal.json",
+    "fingering": "model-optimal (D3 default)",
+    "middle_index_benefit": "kept (D6 default)",
+    "search": {
+      "seeds": 8000,
+      "sa_steps": 1000000,
+      "t_ratio": 0.001,
+      "ils_iterations": 1000,
+      "ils_strength": [
+        2,
+        6
+      ],
+      "objective": "J1",
+      "starts": "the first seed starts from the frequency-sorted greedy layout, the others from random permutations",
+      "frequencies": {
+        "bnwiki/train": 0.5,
+        "newspaper/train": 0.5
+      },
+      "polish": {
+        "ils_iterations": 5000,
+        "strengths": [
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            8,
+            16
+          ]
+        ]
+      },
+      "confirmation": {
+        "ils_iterations": 5000,
+        "strengths": [
+          [
+            2,
+            6
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            8,
+            16
+          ]
+        ]
+      }
+    },
+    "seed_range": [
+      20270001,
+      20278000
+    ]
+  },
+  "inputs": {
+    "data/problem-v1.json": "ed4fcaa8d6ec47c94af92a2f9df2d5f4931a91a2f7fc7669e35bbe8f974c09bf",
+    "results/phase1/effort-grids/ansi-optimal.json": "b60961d4e1058d4aa9667edbb4b48dae429bf20db4686025f6c33c349a17f214",
+    "results/phase3/frequencies/A-bnwiki-train.json": "71108b065277a31d099efe53cb75ff997878ace1c0f1d9d79dae721cd0f27de7",
+    "results/phase3-crosscheck/frequencies/A-newspaper-train.json": "cdee7e949385fdbf163b58b7ed1e379e6a999d964d6d0590513a4791e72b40a4",
+    "results/phase3/frequencies/A-bnwiki-heldout.json": "f441803c48942456fe151630f205f3a4c00d82a789b5cfd675627cf2f60b253d",
+    "results/phase3-crosscheck/frequencies/A-newspaper-heldout.json": "4e30a9eb4c43c3286f42ae6f1c68cd23de9a0e94d38c060ed0a0374e71160a66",
+    "results/phase3-crosscheck/frequencies/A-bard-novel-heldout.json": "7a28d2f2655af6aa99d99d76f096abe6dd31a1a71dec4404f7d5b3534574b508",
+    "results/phase3/search/A.json": "fedebf30e76977e9e9245ddd133af6b9c7ace04e2f2af40f4fd5075c8b07fc03",
+    "results/phase3-crosscheck/search/A.json": "8a25be9ac64df499f56998ee13ae8266b9fb1e61dfcd3222eddbfa96eb156db4"
+  },
+  "outputs": {
+    "work/goti-j1-8b-v1/mix-search.json": "3f9561fcf41d65b2f446eed682a773971435b9960207bf5c747a1585cf32b054",
+    "work/goti-j1-8b-v1/search/A.json": "83fb2c4323027953ca6a61bb27df451f5b29f90429f6bcb5d90031f828a486a3"
+  }
+}

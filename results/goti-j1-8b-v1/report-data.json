@@ -1,0 +1,2028 @@
+{
+  "title": "Kala Goti: eight-billion-proposal J1 search",
+  "style": "A",
+  "objective": "0.5 bnwiki/train J1 + 0.5 newspaper/train J1",
+  "classification": "best found; exact reproduction of the original separate Goti arrangement",
+  "reference_id": "A-18fe73cb912ae3f1",
+  "same_layout": true,
+  "proposal_count": 8000000000,
+  "starts": 8000,
+  "greedy_starts": 1,
+  "random_starts": 7999,
+  "seed_range": [
+    20270001,
+    20278000
+  ],
+  "workers": 28,
+  "worker_count_source": "User-provided executed command; original run manifest does not record workers",
+  "elapsed_wall_seconds": 12746,
+  "elapsed_source": "User-provided completed-search terminal output",
+  "run_manifest_generated_time_dhaka": "2026-10-29T15:46:19+06:00",
+  "best_score": 1.8496860307151324,
+  "best_score_exact": "1036279711123197914729669/560246276349152954000000",
+  "best_hits": 514,
+  "best_hit_percent": 6.425,
+  "distinct_best_retained_layouts": 1,
+  "distinct_retained_search_endpoints": 241,
+  "unique_visited_layouts": null,
+  "median_final_J1": 1.8550080319514644,
+  "worst_final_J1": 1.871338577481984,
+  "nearest_distinct_endpoint": {
+    "id": "A-4e1cd3423a58a451",
+    "retained_search_runs": 40,
+    "training_J1_exact": "23552017121645840271281/12732869917026203500000",
+    "training_J1": 1.8497021704551018,
+    "change_percent": 0.0008725664627030629,
+    "assignments_different_from_published": 7
+  },
+  "retained_candidate_summary": [
+    {
+      "id": "A-18fe73cb912ae3f1",
+      "retained_search_runs": 514,
+      "training_J1_exact": "1036279711123197914729669/560246276349152954000000",
+      "training_J1": 1.8496860307151324,
+      "change_percent": 0.0,
+      "assignments_different_from_published": 0
+    },
+    {
+      "id": "A-4e1cd3423a58a451",
+      "retained_search_runs": 40,
+      "training_J1_exact": "23552017121645840271281/12732869917026203500000",
+      "training_J1": 1.8497021704551018,
+      "change_percent": 0.0008725664627030629,
+      "assignments_different_from_published": 7
+    },
+    {
+      "id": "A-3e662797b599457a",
+      "retained_search_runs": 2,
+      "training_J1_exact": "18842672511734459566639/10186295933620962800000",
+      "training_J1": 1.8498061154440053,
+      "change_percent": 0.0064921682317259245,
+      "assignments_different_from_published": 12
+    },
+    {
+      "id": "A-699f547d9ee6d551",
+      "retained_search_runs": 1,
+      "training_J1_exact": "518222931089513268599159/280123138174576477000000",
+      "training_J1": 1.8499825986047245,
+      "change_percent": 0.01603341781617392,
+      "assignments_different_from_published": 12
+    },
+    {
+      "id": "A-edc1ed137d208156",
+      "retained_search_runs": 1,
+      "training_J1_exact": "259118766152557964665597/140061569087288238500000",
+      "training_J1": 1.8500347228801335,
+      "change_percent": 0.018851424469384346,
+      "assignments_different_from_published": 5
+    },
+    {
+      "id": "A-44969124f5a18faa",
+      "retained_search_runs": 1,
+      "training_J1_exact": "518271399773557551913347/280123138174576477000000",
+      "training_J1": 1.850155624954351,
+      "change_percent": 0.025387781029895303,
+      "assignments_different_from_published": 8
+    },
+    {
+      "id": "A-958d51adad195692",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1036581311261672875802713/560246276349152954000000",
+      "training_J1": 1.8502243656424797,
+      "change_percent": 0.0291041246140064,
+      "assignments_different_from_published": 11
+    },
+    {
+      "id": "A-a3c5a5babf48c0dd",
+      "retained_search_runs": 4,
+      "training_J1_exact": "259151863696929402763409/140061569087288238500000",
+      "training_J1": 1.8502710299884082,
+      "change_percent": 0.03162694984778416,
+      "assignments_different_from_published": 14
+    },
+    {
+      "id": "A-b80684ffcffa53d9",
+      "retained_search_runs": 10,
+      "training_J1_exact": "129577753800529846011903/70030784543644119250000",
+      "training_J1": 1.8502970464335617,
+      "change_percent": 0.03303348288753255,
+      "assignments_different_from_published": 9
+    },
+    {
+      "id": "A-8d84fff46f3ffcc7",
+      "retained_search_runs": 3,
+      "training_J1_exact": "64789693005509066500999/35015392271822059625000",
+      "training_J1": 1.850320353476299,
+      "change_percent": 0.03429353688319971,
+      "assignments_different_from_published": 7
+    },
+    {
+      "id": "A-aad3b5496f62216c",
+      "retained_search_runs": 5,
+      "training_J1_exact": "1036652766877217157154551/560246276349152954000000",
+      "training_J1": 1.850351908865096,
+      "change_percent": 0.0359995231031684,
+      "assignments_different_from_published": 21
+    },
+    {
+      "id": "A-23afacaa87a94a01",
+      "retained_search_runs": 2,
+      "training_J1_exact": "1036682253457379955711273/560246276349152954000000",
+      "training_J1": 1.8504045403263079,
+      "change_percent": 0.038844949858734115,
+      "assignments_different_from_published": 20
+    },
+    {
+      "id": "A-802b0fa840b7a9b5",
+      "retained_search_runs": 1,
+      "training_J1_exact": "259185418339463755187489/140061569087288238500000",
+      "training_J1": 1.8505106006483187,
+      "change_percent": 0.04457891336658484,
+      "assignments_different_from_published": 12
+    },
+    {
+      "id": "A-a028fca0df43133e",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1036791995845619108929649/560246276349152954000000",
+      "training_J1": 1.8506004227317283,
+      "change_percent": 0.04943498525759435,
+      "assignments_different_from_published": 14
+    },
+    {
+      "id": "A-98703f04f20cdd56",
+      "retained_search_runs": 152,
+      "training_J1_exact": "1036892922487263785379077/560246276349152954000000",
+      "training_J1": 1.8507805696526545,
+      "change_percent": 0.05917430955019143,
+      "assignments_different_from_published": 31
+    },
+    {
+      "id": "A-064c671c602fc0c7",
+      "retained_search_runs": 1,
+      "training_J1_exact": "94268579889384430775391/50931479668104814000000",
+      "training_J1": 1.850890264796664,
+      "change_percent": 0.06510478327319255,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-c2831b4fc5d055c6",
+      "retained_search_runs": 20,
+      "training_J1_exact": "51849647287393880494093/28012313817457647700000",
+      "training_J1": 1.8509591041022997,
+      "change_percent": 0.06882645843819887,
+      "assignments_different_from_published": 15
+    },
+    {
+      "id": "A-a8632d5db4903f64",
+      "retained_search_runs": 4,
+      "training_J1_exact": "207401557251317264637641/112049255269830590800000",
+      "training_J1": 1.850985593361283,
+      "change_percent": 0.07025855332044144,
+      "assignments_different_from_published": 9
+    },
+    {
+      "id": "A-09b512a3c9c76257",
+      "retained_search_runs": 11,
+      "training_J1_exact": "94273897303287997469839/50931479668104814000000",
+      "training_J1": 1.8509946680839475,
+      "change_percent": 0.07074916213262579,
+      "assignments_different_from_published": 30
+    },
+    {
+      "id": "A-19b4960010ba5717",
+      "retained_search_runs": 1,
+      "training_J1_exact": "518514493066981366927849/280123138174576477000000",
+      "training_J1": 1.8510234336438007,
+      "change_percent": 0.07230432119072354,
+      "assignments_different_from_published": 32
+    },
+    {
+      "id": "A-ea5a44b3ac3e9e4a",
+      "retained_search_runs": 5,
+      "training_J1_exact": "259259451207492004827939/140061569087288238500000",
+      "training_J1": 1.8510391743927848,
+      "change_percent": 0.073155316912306,
+      "assignments_different_from_published": 31
+    },
+    {
+      "id": "A-5353476a7e132fce",
+      "retained_search_runs": 1,
+      "training_J1_exact": "94276757614587727371157/50931479668104814000000",
+      "training_J1": 1.851050828072198,
+      "change_percent": 0.07378535245453477,
+      "assignments_different_from_published": 30
+    },
+    {
+      "id": "A-323bf9888bb3ecdb",
+      "retained_search_runs": 15,
+      "training_J1_exact": "51852827518969626242267/28012313817457647700000",
+      "training_J1": 1.8510726338734023,
+      "change_percent": 0.07496424448497725,
+      "assignments_different_from_published": 33
+    },
+    {
+      "id": "A-4b61276dbd0a9a52",
+      "retained_search_runs": 1,
+      "training_J1_exact": "64816626329316638744867/35015392271822059625000",
+      "training_J1": 1.8510895387419815,
+      "change_percent": 0.07587817627115782,
+      "assignments_different_from_published": 21
+    },
+    {
+      "id": "A-109a193ccc30fee1",
+      "retained_search_runs": 21,
+      "training_J1_exact": "1037080787851407319053327/560246276349152954000000",
+      "training_J1": 1.8511158960476244,
+      "change_percent": 0.07730313732970195,
+      "assignments_different_from_published": 32
+    },
+    {
+      "id": "A-06e789dfeb6a6bee",
+      "retained_search_runs": 13,
+      "training_J1_exact": "23570251884358948946907/12732869917026203500000",
+      "training_J1": 1.8511342720026662,
+      "change_percent": 0.07829660080060943,
+      "assignments_different_from_published": 34
+    },
+    {
+      "id": "A-89f0399ae18e0f66",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1037153837409617715843277/560246276349152954000000",
+      "training_J1": 1.8512462843452253,
+      "change_percent": 0.08435234976012,
+      "assignments_different_from_published": 33
+    },
+    {
+      "id": "A-12731822bf626489",
+      "retained_search_runs": 37,
+      "training_J1_exact": "1037170420831696512430627/560246276349152954000000",
+      "training_J1": 1.8512758845813695,
+      "change_percent": 0.08595263411392852,
+      "assignments_different_from_published": 32
+    },
+    {
+      "id": "A-b366b5a460d481ad",
+      "retained_search_runs": 1,
+      "training_J1_exact": "41488478719337296559811/22409851053966118160000",
+      "training_J1": 1.851350043310289,
+      "change_percent": 0.08996189447963322,
+      "assignments_different_from_published": 8
+    },
+    {
+      "id": "A-6104b8bd1cec9480",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1037220754001242027726907/560246276349152954000000",
+      "training_J1": 1.8513657257310037,
+      "change_percent": 0.09080973678661912,
+      "assignments_different_from_published": 30
+    },
+    {
+      "id": "A-8970b31eb6d74d94",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1037237722101140276959667/560246276349152954000000",
+      "training_J1": 1.851396012589863,
+      "change_percent": 0.09244714218171828,
+      "assignments_different_from_published": 32
+    },
+    {
+      "id": "A-1c6039ece6c825ff",
+      "retained_search_runs": 2,
+      "training_J1_exact": "64829818849929265397821/35015392271822059625000",
+      "training_J1": 1.8514663022096078,
+      "change_percent": 0.09624722601094687,
+      "assignments_different_from_published": 34
+    },
+    {
+      "id": "A-3ae052bbae770d13",
+      "retained_search_runs": 4,
+      "training_J1_exact": "1037392643006809425411921/560246276349152954000000",
+      "training_J1": 1.8516725354552692,
+      "change_percent": 0.1073968612591316,
+      "assignments_different_from_published": 28
+    },
+    {
+      "id": "A-126bea6b0db90a8a",
+      "retained_search_runs": 14,
+      "training_J1_exact": "518742101105296196470359/280123138174576477000000",
+      "training_J1": 1.8518359621617875,
+      "change_percent": 0.1162322367663611,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-0951dc0dbcfea06f",
+      "retained_search_runs": 31,
+      "training_J1_exact": "1037506305310841320325333/560246276349152954000000",
+      "training_J1": 1.8518754146332845,
+      "change_percent": 0.11836516477910491,
+      "assignments_different_from_published": 31
+    },
+    {
+      "id": "A-c2ee9770fb970e1c",
+      "retained_search_runs": 1,
+      "training_J1_exact": "518756890712933013197437/280123138174576477000000",
+      "training_J1": 1.851888758970124,
+      "change_percent": 0.1190866027214345,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-e401c1a93176444a",
+      "retained_search_runs": 2,
+      "training_J1_exact": "518772387858895342288403/280123138174576477000000",
+      "training_J1": 1.8519440815902521,
+      "change_percent": 0.12207752221855214,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-e41a630644a77caa",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1037685105710539545210867/560246276349152954000000",
+      "training_J1": 1.8521945607075134,
+      "change_percent": 0.13561923216834557,
+      "assignments_different_from_published": 30
+    },
+    {
+      "id": "A-7846d3b58a970974",
+      "retained_search_runs": 1,
+      "training_J1_exact": "207540633684152781746047/112049255269830590800000",
+      "training_J1": 1.852226801368428,
+      "change_percent": 0.13736226641194624,
+      "assignments_different_from_published": 29
+    },
+    {
+      "id": "A-5f703d1dbb933718",
+      "retained_search_runs": 20,
+      "training_J1_exact": "103773100273892766065119/56024627634915295400000",
+      "training_J1": 1.8522764836587684,
+      "change_percent": 0.14004825146646235,
+      "assignments_different_from_published": 34
+    },
+    {
+      "id": "A-b2171a35327307db",
+      "retained_search_runs": 4,
+      "training_J1_exact": "1037785082111575188348503/560246276349152954000000",
+      "training_J1": 1.852373011516124,
+      "change_percent": 0.14526685915192136,
+      "assignments_different_from_published": 32
+    },
+    {
+      "id": "A-01e159971779c133",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1037789802587447416792347/560246276349152954000000",
+      "training_J1": 1.85238143723187,
+      "change_percent": 0.14572238055425704,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-ec5314c3df6eee9a",
+      "retained_search_runs": 21,
+      "training_J1_exact": "45122562997841947655011/24358533754310998000000",
+      "training_J1": 1.8524334614293485,
+      "change_percent": 0.14853497667136023,
+      "assignments_different_from_published": 31
+    },
+    {
+      "id": "A-59629c0df5d2f784",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1037839368503316914012107/560246276349152954000000",
+      "training_J1": 1.852469908887929,
+      "change_percent": 0.15050544398177257,
+      "assignments_different_from_published": 31
+    },
+    {
+      "id": "A-2416aabdf81537d7",
+      "retained_search_runs": 1,
+      "training_J1_exact": "47174616719487141772883/25465739834052407000000",
+      "training_J1": 1.8524738345283003,
+      "change_percent": 0.15071767677728115,
+      "assignments_different_from_published": 28
+    },
+    {
+      "id": "A-e3f7b5a2f9dc968c",
+      "retained_search_runs": 2,
+      "training_J1_exact": "518936183771435567628411/280123138174576477000000",
+      "training_J1": 1.8525288098408623,
+      "change_percent": 0.15368981970581858,
+      "assignments_different_from_published": 29
+    },
+    {
+      "id": "A-7b37beac6a78f36a",
+      "retained_search_runs": 3,
+      "training_J1_exact": "518948359960661046241443/280123138174576477000000",
+      "training_J1": 1.8525722771149504,
+      "change_percent": 0.15603980091162278,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-ae2fa8e5017c6245",
+      "retained_search_runs": 1,
+      "training_J1_exact": "259476389158378942158141/140061569087288238500000",
+      "training_J1": 1.8525880500215572,
+      "change_percent": 0.15689253517813642,
+      "assignments_different_from_published": 27
+    },
+    {
+      "id": "A-92ef55d341f8fc93",
+      "retained_search_runs": 15,
+      "training_J1_exact": "1037913634541832743913651/560246276349152954000000",
+      "training_J1": 1.8526024685168834,
+      "change_percent": 0.15767204559701936,
+      "assignments_different_from_published": 33
+    },
+    {
+      "id": "A-7fc87741f1afe9a8",
+      "retained_search_runs": 1,
+      "training_J1_exact": "64875939072180898896109/35015392271822059625000",
+      "training_J1": 1.8527834435939912,
+      "change_percent": 0.1674561426871519,
+      "assignments_different_from_published": 26
+    },
+    {
+      "id": "A-5e774eae9724de34",
+      "retained_search_runs": 2174,
+      "training_J1_exact": "1038128603742739938317039/560246276349152954000000",
+      "training_J1": 1.8529861733445316,
+      "change_percent": 0.17841636767529248,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-af13a05744d4bf7f",
+      "retained_search_runs": 237,
+      "training_J1_exact": "1038171096902554916497077/560246276349152954000000",
+      "training_J1": 1.8530620206309998,
+      "change_percent": 0.1825169169149298,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-ce69351ed1a1d0a4",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1038177951993848358863909/560246276349152954000000",
+      "training_J1": 1.8530742564843787,
+      "change_percent": 0.18317842666175407,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-17d4e852eb4c7390",
+      "retained_search_runs": 24,
+      "training_J1_exact": "1038185623856489317366323/560246276349152954000000",
+      "training_J1": 1.853087950216876,
+      "change_percent": 0.1839187540616453,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-5b3f3bbb34d62de5",
+      "retained_search_runs": 6,
+      "training_J1_exact": "25954884771928528866149/14006156908728823850000",
+      "training_J1": 1.853105383658318,
+      "change_percent": 0.18486126220370386,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-a3c293f051b02668",
+      "retained_search_runs": 13,
+      "training_J1_exact": "1038221947342470257755373/560246276349152954000000",
+      "training_J1": 1.853152785071679,
+      "change_percent": 0.18742393568307936,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-89f9d9bc080fa8a3",
+      "retained_search_runs": 3,
+      "training_J1_exact": "94386477229570532358651/50931479668104814000000",
+      "training_J1": 1.853205087396643,
+      "change_percent": 0.19025156827021533,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-e6713b3e747df007",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1038256033532934904816849/560246276349152954000000",
+      "training_J1": 1.8532136265121375,
+      "change_percent": 0.1907132204291545,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-71a69e425d36c202",
+      "retained_search_runs": 1,
+      "training_J1_exact": "207653054858247015957453/112049255269830590800000",
+      "training_J1": 1.8532301206124828,
+      "change_percent": 0.19160494475811576,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-3db61dada799a3ed",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519144571394047934481879/280123138174576477000000",
+      "training_J1": 1.8532727241921376,
+      "change_percent": 0.19390823185373193,
+      "assignments_different_from_published": 30
+    },
+    {
+      "id": "A-25ca8060ae78022e",
+      "retained_search_runs": 2,
+      "training_J1_exact": "1038401553917766001966601/560246276349152954000000",
+      "training_J1": 1.8534733701123616,
+      "change_percent": 0.2047557982456565,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-df79570b5dd6d4d5",
+      "retained_search_runs": 10,
+      "training_J1_exact": "259626993823253924135097/140061569087288238500000",
+      "training_J1": 1.8536633247443552,
+      "change_percent": 0.2150253590705372,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-31123750aef5f5e5",
+      "retained_search_runs": 5,
+      "training_J1_exact": "47207966577909182494739/25465739834052407000000",
+      "training_J1": 1.85378343160419,
+      "change_percent": 0.221518723773527,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-a528e4983f778694",
+      "retained_search_runs": 1,
+      "training_J1_exact": "451557069381350744591/243585337543109980000",
+      "training_J1": 1.8537941320110605,
+      "change_percent": 0.2220972223237109,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-eb0e45dd2529bc87",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1038588675432688318855583/560246276349152954000000",
+      "training_J1": 1.8538073687890537,
+      "change_percent": 0.2228128452874731,
+      "assignments_different_from_published": 38
+    },
+    {
+      "id": "A-be597dfb2a5cb336",
+      "retained_search_runs": 5,
+      "training_J1_exact": "1038647109365355188861863/560246276349152954000000",
+      "training_J1": 1.8539116692282243,
+      "change_percent": 0.2284516638457883,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-6b65c04863ebb810",
+      "retained_search_runs": 1,
+      "training_J1_exact": "259682060805687628532349/140061569087288238500000",
+      "training_J1": 1.8540564874283987,
+      "change_percent": 0.23628100340772823,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-0e20fe7d09fcbbc5",
+      "retained_search_runs": 2,
+      "training_J1_exact": "103888927575304567727307/56024627634915295400000",
+      "training_J1": 1.8543439191117372,
+      "change_percent": 0.25182048841034627,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-4f112d69ec917603",
+      "retained_search_runs": 3,
+      "training_J1_exact": "259729008008242725201121/140061569087288238500000",
+      "training_J1": 1.8543916771800275,
+      "change_percent": 0.254402443806947,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-694680caec37a281",
+      "retained_search_runs": 150,
+      "training_J1_exact": "12986585625561074494783/7003078454364411925000",
+      "training_J1": 1.8544109865665808,
+      "change_percent": 0.25544637159969835,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-8aff9e9a51e25405",
+      "retained_search_runs": 10,
+      "training_J1_exact": "129866200310896535622677/70030784543644119250000",
+      "training_J1": 1.8544158994814943,
+      "change_percent": 0.25571197964516923,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-c1ae8e116384c842",
+      "retained_search_runs": 121,
+      "training_J1_exact": "259738472777185129795821/140061569087288238500000",
+      "training_J1": 1.8544592529540538,
+      "change_percent": 0.2580558083728308,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-c267de3430aa677a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519492257026074387621409/280123138174576477000000",
+      "training_J1": 1.8545139127433303,
+      "change_percent": 0.2610108930936409,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-8349cadc800b7ff7",
+      "retained_search_runs": 15,
+      "training_J1_exact": "1039003135629348662293187/560246276349152954000000",
+      "training_J1": 1.8545471509422904,
+      "change_percent": 0.26280785746532614,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-51115709427e59e8",
+      "retained_search_runs": 9,
+      "training_J1_exact": "11806964802840914767873/6366434958513101750000",
+      "training_J1": 1.8545645843837324,
+      "change_percent": 0.26375036560738474,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-5f61e21f4a76b10e",
+      "retained_search_runs": 4,
+      "training_J1_exact": "94456194510454401423513/50931479668104814000000",
+      "training_J1": 1.8545739319960575,
+      "change_percent": 0.26425572771586797,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-4b0f5ca72b86710e",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519539911914839014612271/280123138174576477000000",
+      "training_J1": 1.8546840339588613,
+      "change_percent": 0.2702081953766268,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-d7957b8210300811",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519548265726618630857781/280123138174576477000000",
+      "training_J1": 1.8547138558858685,
+      "change_percent": 0.27182046505438817,
+      "assignments_different_from_published": 26
+    },
+    {
+      "id": "A-e9b18700ece3d21c",
+      "retained_search_runs": 40,
+      "training_J1_exact": "519552401597815645588877/280123138174576477000000",
+      "training_J1": 1.85472862036132,
+      "change_percent": 0.2726186802761321,
+      "assignments_different_from_published": 38
+    },
+    {
+      "id": "A-8f806e3db4dd2355",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519560815628121355042261/280123138174576477000000",
+      "training_J1": 1.8547586572599517,
+      "change_percent": 0.27424257201412433,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-85b8774cac99c099",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039168197441446925991429/560246276349152954000000",
+      "training_J1": 1.8548417746088213,
+      "change_percent": 0.27873616430435105,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-3e9d76944eb60094",
+      "retained_search_runs": 2,
+      "training_J1_exact": "3247476929324723996181/1750769613591102981250",
+      "training_J1": 1.854885362479898,
+      "change_percent": 0.2810926653728014,
+      "assignments_different_from_published": 38
+    },
+    {
+      "id": "A-13d21bd572dd9015",
+      "retained_search_runs": 1,
+      "training_J1_exact": "207841665042585262712527/112049255269830590800000",
+      "training_J1": 1.8549133998443175,
+      "change_percent": 0.282608455834202,
+      "assignments_different_from_published": 21
+    },
+    {
+      "id": "A-7c40184fc1f387cb",
+      "retained_search_runs": 2,
+      "training_J1_exact": "1039224835267401281341929/560246276349152954000000",
+      "training_J1": 1.854942869124475,
+      "change_percent": 0.2842016602844824,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-cc081e1f722011a5",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039232029139140494541901/560246276349152954000000",
+      "training_J1": 1.8549557096770015,
+      "change_percent": 0.2848958620199787,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-a280bdc4ca72c6c7",
+      "retained_search_runs": 185,
+      "training_J1_exact": "519630671249289200605877/280123138174576477000000",
+      "training_J1": 1.8550080319514644,
+      "change_percent": 0.28772457314143207,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-75a1e36265873775",
+      "retained_search_runs": 5,
+      "training_J1_exact": "1039263004509061844022127/560246276349152954000000",
+      "training_J1": 1.8550109985226912,
+      "change_percent": 0.2878849555618928,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-51c7976d0082032e",
+      "retained_search_runs": 2,
+      "training_J1_exact": "1039271100139946072796173/560246276349152954000000",
+      "training_J1": 1.855025448651547,
+      "change_percent": 0.2886661761915483,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-f5fec3101fcbe54c",
+      "retained_search_runs": 3,
+      "training_J1_exact": "519635956416306779825493/280123138174576477000000",
+      "training_J1": 1.8550268992505101,
+      "change_percent": 0.28874460025589727,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-8d389bea97125809",
+      "retained_search_runs": 148,
+      "training_J1_exact": "519641242290755569660817/280123138174576477000000",
+      "training_J1": 1.8550457690749853,
+      "change_percent": 0.2897647639032316,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-616b1adfe7307d26",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039317188120273780903573/560246276349152954000000",
+      "training_J1": 1.855107712438516,
+      "change_percent": 0.29311362216902037,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-538d9206fc0d2c2e",
+      "retained_search_runs": 2,
+      "training_J1_exact": "11296956903175343023471/6089633438577749500000",
+      "training_J1": 1.8551127940820322,
+      "change_percent": 0.2933883522276347,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-6b24007211af44bd",
+      "retained_search_runs": 1,
+      "training_J1_exact": "129915104218287399809257/70030784543644119250000",
+      "training_J1": 1.8551142196232655,
+      "change_percent": 0.29346542159018885,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-4ef0e6d507ac6934",
+      "retained_search_runs": 3,
+      "training_J1_exact": "207868281100733042085269/112049255269830590800000",
+      "training_J1": 1.8551509387559655,
+      "change_percent": 0.295450576480823,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-6c2caf4694c7f482",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039350399152423150756319/560246276349152954000000",
+      "training_J1": 1.8551669917832458,
+      "change_percent": 0.2963184549755387,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-b1b31ec5f786cdbd",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039379539773131848829531/560246276349152954000000",
+      "training_J1": 1.8552190057312878,
+      "change_percent": 0.2991304969750017,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-58a473f1abe65331",
+      "retained_search_runs": 3,
+      "training_J1_exact": "1039380083680644706161877/560246276349152954000000",
+      "training_J1": 1.85521997656775,
+      "change_percent": 0.2991829835292611,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-7942efeebd856f36",
+      "retained_search_runs": 2,
+      "training_J1_exact": "23622837183316702595009/12732869917026203500000",
+      "training_J1": 1.85526415782577,
+      "change_percent": 0.3015715650120906,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-44c822a6e9c963ec",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039495529512117755887367/560246276349152954000000",
+      "training_J1": 1.8554260392161719,
+      "change_percent": 0.31032339573977524,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-e6e720a775ccfb2d",
+      "retained_search_runs": 2,
+      "training_J1_exact": "207899693573292612664123/112049255269830590800000",
+      "training_J1": 1.8554312839709688,
+      "change_percent": 0.3106069441209476,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-34bbf5a159230f86",
+      "retained_search_runs": 1800,
+      "training_J1_exact": "519829604409323306423987/280123138174576477000000",
+      "training_J1": 1.8557181952079895,
+      "change_percent": 0.3261182921149488,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-1d5a68316dfe93d4",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039663213977324270456093/560246276349152954000000",
+      "training_J1": 1.855725344133108,
+      "change_percent": 0.3265047860928456,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-be9c1ddf0303e0ea",
+      "retained_search_runs": 2,
+      "training_J1_exact": "129959123678792269922713/70030784543644119250000",
+      "training_J1": 1.8557427926257204,
+      "change_percent": 0.32744810794976914,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-3dc21f6cf21dcbc3",
+      "retained_search_runs": 6,
+      "training_J1_exact": "1039687511559705467147041/560246276349152954000000",
+      "training_J1": 1.8557687136000853,
+      "change_percent": 0.32884947953037913,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-9e85a32085d18f22",
+      "retained_search_runs": 1,
+      "training_J1_exact": "45204339064133505265819/24358533754310998000000",
+      "training_J1": 1.8557906448754615,
+      "change_percent": 0.33003515509975184,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-c36f43f30b0e45e3",
+      "retained_search_runs": 12,
+      "training_J1_exact": "103972666008707638888043/56024627634915295400000",
+      "training_J1": 1.8558385909540698,
+      "change_percent": 0.3326272749412812,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-ed62c192297f74d2",
+      "retained_search_runs": 385,
+      "training_J1_exact": "259936692703548703272281/140061569087288238500000",
+      "training_J1": 1.8558744871803676,
+      "change_percent": 0.3345679408544087,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-2d2df4ff51cba631",
+      "retained_search_runs": 1,
+      "training_J1_exact": "129968652321266938604477/70030784543644119250000",
+      "training_J1": 1.8558788562516924,
+      "change_percent": 0.33480414695922983,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-8d724b95b219aecf",
+      "retained_search_runs": 274,
+      "training_J1_exact": "519883017632829981697477/280123138174576477000000",
+      "training_J1": 1.855908872864447,
+      "change_percent": 0.3364269419772108,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-4b7adc197f6ea52a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519884229911093440713997/280123138174576477000000",
+      "training_J1": 1.855913200526458,
+      "change_percent": 0.3366609093608132,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-a4546977d110db90",
+      "retained_search_runs": 8,
+      "training_J1_exact": "25994434646651119533699/14006156908728823850000",
+      "training_J1": 1.8559291328837706,
+      "change_percent": 0.33752226404739927,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-b97c9cd9ae9f0ea0",
+      "retained_search_runs": 1,
+      "training_J1_exact": "103978929445585768838169/56024627634915295400000",
+      "training_J1": 1.8559503888747797,
+      "change_percent": 0.33867143156318513,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-ae6417afa5ae89ef",
+      "retained_search_runs": 1,
+      "training_J1_exact": "519907402074542803503663/280123138174576477000000",
+      "training_J1": 1.8559959218739353,
+      "change_percent": 0.341133092536965,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-465be5f1b1eb2aa3",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039834140100812630266127/560246276349152954000000",
+      "training_J1": 1.8560304351809276,
+      "change_percent": 0.3429989933665842,
+      "assignments_different_from_published": 32
+    },
+    {
+      "id": "A-f2ba4e6a28477edc",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039852307486084191491849/560246276349152954000000",
+      "training_J1": 1.856062862679402,
+      "change_percent": 0.34475212865202465,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-9892d431df6fcbb3",
+      "retained_search_runs": 1,
+      "training_J1_exact": "64991797581866453657219/35015392271822059625000",
+      "training_J1": 1.8560922315917423,
+      "change_percent": 0.3463399068939853,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-804b07a480634a9f",
+      "retained_search_runs": 3,
+      "training_J1_exact": "519943031862803805582991/280123138174576477000000",
+      "training_J1": 1.8561231151807545,
+      "change_percent": 0.34800957344816297,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-366e35a424be0dff",
+      "retained_search_runs": 3,
+      "training_J1_exact": "1039900051361701100458879/560246276349152954000000",
+      "training_J1": 1.8561480821224086,
+      "change_percent": 0.34935936693956776,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-4eece5be10a8ef22",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039908825341334706354491/560246276349152954000000",
+      "training_J1": 1.85616374305583,
+      "change_percent": 0.3502060475740941,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-1d1e1d10ff6792b4",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039910098576042178939769/560246276349152954000000",
+      "training_J1": 1.8561660156897792,
+      "change_percent": 0.3503289135043836,
+      "assignments_different_from_published": 48
+    },
+    {
+      "id": "A-39266033fde7f37a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1039963334143674877463897/560246276349152954000000",
+      "training_J1": 1.8562610374148312,
+      "change_percent": 0.35546609481376173,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-88f554375a032392",
+      "retained_search_runs": 2,
+      "training_J1_exact": "1039981599643076126492609/560246276349152954000000",
+      "training_J1": 1.8562936400400913,
+      "change_percent": 0.3572286980187836,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-058dd40dee093fa4",
+      "retained_search_runs": 3,
+      "training_J1_exact": "259997315459279546497203/140061569087288238500000",
+      "training_J1": 1.8563073165148232,
+      "change_percent": 0.35796809240813765,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-15092ea600596415",
+      "retained_search_runs": 11,
+      "training_J1_exact": "1039998306835828906136547/560246276349152954000000",
+      "training_J1": 1.8563234611981394,
+      "change_percent": 0.3588409261241347,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-cac41846473e18b9",
+      "retained_search_runs": 1,
+      "training_J1_exact": "94546352413681485747453/50931479668104814000000",
+      "training_J1": 1.8563441123209685,
+      "change_percent": 0.3599573925128182,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-e6898b658bd354ac",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1571029915634804517709/846293468805367000000",
+      "training_J1": 1.856365402243361,
+      "change_percent": 0.3611083944687785,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-9b02e8ac76c979da",
+      "retained_search_runs": 3,
+      "training_J1_exact": "1040026277280225898828499/560246276349152954000000",
+      "training_J1": 1.8563733864641836,
+      "change_percent": 0.36154004722983274,
+      "assignments_different_from_published": 36
+    },
+    {
+      "id": "A-8506130382b1a924",
+      "retained_search_runs": 2,
+      "training_J1_exact": "130009004764969746451423/70030784543644119250000",
+      "training_J1": 1.8564550663279575,
+      "change_percent": 0.3659559244337272,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-0f6b7557808b788d",
+      "retained_search_runs": 1,
+      "training_J1_exact": "520042909365724759072557/280123138174576477000000",
+      "training_J1": 1.8564796637456884,
+      "change_percent": 0.36728574026854754,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-349f36076a91c258",
+      "retained_search_runs": 183,
+      "training_J1_exact": "1040143377961763203456469/560246276349152954000000",
+      "training_J1": 1.8565824029029905,
+      "change_percent": 0.37284015088721134,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-a6aee815b48826c9",
+      "retained_search_runs": 65,
+      "training_J1_exact": "1040147580458019054157811/560246276349152954000000",
+      "training_J1": 1.8565899040617366,
+      "change_percent": 0.37324568775247485,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-ac1de1c2154ddf1d",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040174546162623159927937/560246276349152954000000",
+      "training_J1": 1.8566380359382746,
+      "change_percent": 0.37584785243008667,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-9acf547201f6d128",
+      "retained_search_runs": 4,
+      "training_J1_exact": "260046741578328128081751/140061569087288238500000",
+      "training_J1": 1.8566602050292862,
+      "change_percent": 0.37704638508068644,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-88fe3cf6feb85484",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040197484374302394346313/560246276349152954000000",
+      "training_J1": 1.8566789790246414,
+      "change_percent": 0.3780613678963281,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-bf53dfb6828a7096",
+      "retained_search_runs": 7,
+      "training_J1_exact": "1040207397929264498040203/560246276349152954000000",
+      "training_J1": 1.8566966740194688,
+      "change_percent": 0.379018016459037,
+      "assignments_different_from_published": 36
+    },
+    {
+      "id": "A-c627329b37926979",
+      "retained_search_runs": 5,
+      "training_J1_exact": "520112643966843925786249/280123138174576477000000",
+      "training_J1": 1.8567286064127368,
+      "change_percent": 0.38074438475818695,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-9d5be2a407a1a9e1",
+      "retained_search_runs": 3,
+      "training_J1_exact": "260059767136344849526557/140061569087288238500000",
+      "training_J1": 1.8567532038304677,
+      "change_percent": 0.3820742005930073,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-98da4c34b64cdae1",
+      "retained_search_runs": 4,
+      "training_J1_exact": "252673641686768210969/136081194158162000000",
+      "training_J1": 1.8567858935239445,
+      "change_percent": 0.3838415109869815,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-302ad54f956602d7",
+      "retained_search_runs": 1,
+      "training_J1_exact": "208052708763294490143369/112049255269830590800000",
+      "training_J1": 1.856796890459235,
+      "change_percent": 0.38443604082111754,
+      "assignments_different_from_published": 37
+    },
+    {
+      "id": "A-09c57befe3d96466",
+      "retained_search_runs": 5,
+      "training_J1_exact": "47286456100695454537167/25465739834052407000000",
+      "training_J1": 1.856865593100292,
+      "change_percent": 0.3881503274576696,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-207ef140049dca86",
+      "retained_search_runs": 1,
+      "training_J1_exact": "94575126247897637675387/50931479668104814000000",
+      "training_J1": 1.856909064181854,
+      "change_percent": 0.3905005145078066,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-5c51338000f71544",
+      "retained_search_runs": 1,
+      "training_J1_exact": "260084853551510746505727/140061569087288238500000",
+      "training_J1": 1.8569323137414118,
+      "change_percent": 0.39175746077715445,
+      "assignments_different_from_published": 37
+    },
+    {
+      "id": "A-600df9f102d312f3",
+      "retained_search_runs": 1,
+      "training_J1_exact": "22616121647302611853737/12179266877155499000000",
+      "training_J1": 1.8569362076894294,
+      "change_percent": 0.39196798018168805,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-56cff56af2af2571",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040349991897883283168127/560246276349152954000000",
+      "training_J1": 1.8569511941736196,
+      "change_percent": 0.39277819791277124,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-18ab67d2f4ddbdf5",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040353473394527782200449/560246276349152954000000",
+      "training_J1": 1.8569574083990263,
+      "change_percent": 0.3931141590058168,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-0a8dc53baa4fda24",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040411832286768178165197/560246276349152954000000",
+      "training_J1": 1.8570615748963402,
+      "change_percent": 0.3987457362348202,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-89d9917826fcb681",
+      "retained_search_runs": 64,
+      "training_J1_exact": "1040478102629420861003861/560246276349152954000000",
+      "training_J1": 1.8571798627733869,
+      "change_percent": 0.40514076085426914,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-b803b111af4bb106",
+      "retained_search_runs": 15,
+      "training_J1_exact": "520243523070094954587489/280123138174576477000000",
+      "training_J1": 1.8571958263079011,
+      "change_percent": 0.4060038010810583,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-4ace6e047162a4de",
+      "retained_search_runs": 10,
+      "training_J1_exact": "1040491643730496420000367/560246276349152954000000",
+      "training_J1": 1.857204032681599,
+      "change_percent": 0.4064474641439516,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-47d2cc5ac4ea491b",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040501642586935841977119/560246276349152954000000",
+      "training_J1": 1.8572218799335336,
+      "change_percent": 0.40741234421755496,
+      "assignments_different_from_published": 36
+    },
+    {
+      "id": "A-0c41af4954780fff",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040518098427462962970131/560246276349152954000000",
+      "training_J1": 1.8572512524456266,
+      "change_percent": 0.40900031707377205,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-11bda2794d244723",
+      "retained_search_runs": 1,
+      "training_J1_exact": "104052631952009182534493/56024627634915295400000",
+      "training_J1": 1.857265926514828,
+      "change_percent": 0.4097936446416689,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-485c8484b01cde5b",
+      "retained_search_runs": 1,
+      "training_J1_exact": "52028068888487051907727/28012313817457647700000",
+      "training_J1": 1.8573285030122169,
+      "change_percent": 0.41317673216841533,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-dff37ce72972dd96",
+      "retained_search_runs": 20,
+      "training_J1_exact": "1040592322664917979814343/560246276349152954000000",
+      "training_J1": 1.857383737462642,
+      "change_percent": 0.41616288492667025,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-03712dca098f20a0",
+      "retained_search_runs": 2,
+      "training_J1_exact": "520300444496379682204019/280123138174576477000000",
+      "training_J1": 1.8573990277522934,
+      "change_percent": 0.4169895273620509,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-8466343b7aa67faa",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040604061173830274697711/560246276349152954000000",
+      "training_J1": 1.8574046898712664,
+      "change_percent": 0.4172956397983807,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-6c6ae8e30831af1a",
+      "retained_search_runs": 2,
+      "training_J1_exact": "52031767210712716401059/28012313817457647700000",
+      "training_J1": 1.8574605278870546,
+      "change_percent": 0.4203144232492452,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-f5388ae993b5688a",
+      "retained_search_runs": 165,
+      "training_J1_exact": "260160053445503663271497/140061569087288238500000",
+      "training_J1": 1.8574692197212817,
+      "change_percent": 0.42078433187604314,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-90b6520b34a1903c",
+      "retained_search_runs": 5,
+      "training_J1_exact": "26016378046043507735817/14006156908728823850000",
+      "training_J1": 1.8574958295540551,
+      "change_percent": 0.4222229453667481,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-619b66684de08824",
+      "retained_search_runs": 3,
+      "training_J1_exact": "26016701668302565793373/14006156908728823850000",
+      "training_J1": 1.8575189352682897,
+      "change_percent": 0.42347211489340914,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-fd7804a9e398b705",
+      "retained_search_runs": 68,
+      "training_J1_exact": "520341780492707786107457/280123138174576477000000",
+      "training_J1": 1.8575465914151792,
+      "change_percent": 0.42496729550407136,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-d3ed934b07d9dd10",
+      "retained_search_runs": 1,
+      "training_J1_exact": "208148840669381258518739/112049255269830590800000",
+      "training_J1": 1.8576548337436884,
+      "change_percent": 0.4308192253295614,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-2bdffe8b54ef164a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "8130835282767750771044/4376924033977757453125",
+      "training_J1": 1.857659675984468,
+      "change_percent": 0.43108101250310993,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-66f28bfc968afbb7",
+      "retained_search_runs": 2,
+      "training_J1_exact": "104076320435301226671193/56024627634915295400000",
+      "training_J1": 1.8576887491964245,
+      "change_percent": 0.4326528042274228,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-3e22a9bb8321f967",
+      "retained_search_runs": 1,
+      "training_J1_exact": "94617413368387342867883/50931479668104814000000",
+      "training_J1": 1.8577393389110641,
+      "change_percent": 0.43538784756989884,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-7fc03a9b3c8d8532",
+      "retained_search_runs": 1,
+      "training_J1_exact": "130099704564587549365311/70030784543644119250000",
+      "training_J1": 1.8577502081746304,
+      "change_percent": 0.43597547505833273,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-18d71d5043ae03ad",
+      "retained_search_runs": 5,
+      "training_J1_exact": "1040808989128517994626741/560246276349152954000000",
+      "training_J1": 1.8577704717842194,
+      "change_percent": 0.43707099122985893,
+      "assignments_different_from_published": 38
+    },
+    {
+      "id": "A-5cee02009b66c15a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1040815813099652100204083/560246276349152954000000",
+      "training_J1": 1.8577826520903136,
+      "change_percent": 0.43772949791110133,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-a042ed9dbdc27497",
+      "retained_search_runs": 1,
+      "training_J1_exact": "4113973117946270581701/2214412159482818000000",
+      "training_J1": 1.8578172542672002,
+      "change_percent": 0.43960020333419075,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-5b5b1f28df76af1c",
+      "retained_search_runs": 2,
+      "training_J1_exact": "130104556795234103118979/70030784543644119250000",
+      "training_J1": 1.8578194952842662,
+      "change_percent": 0.43972135995367206,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-92f5a803e23791a4",
+      "retained_search_runs": 15,
+      "training_J1_exact": "130115463877446835950707/70030784543644119250000",
+      "training_J1": 1.8579752422501727,
+      "change_percent": 0.4481415438832877,
+      "assignments_different_from_published": 48
+    },
+    {
+      "id": "A-1a2b1c7b0f652054",
+      "retained_search_runs": 2,
+      "training_J1_exact": "208187050881740660426557/112049255269830590800000",
+      "training_J1": 1.857995846383776,
+      "change_percent": 0.4492554698826786,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-29b9fbb2b2b83ef9",
+      "retained_search_runs": 31,
+      "training_J1_exact": "208189816104705846885209/112049255269830590800000",
+      "training_J1": 1.8580205250213853,
+      "change_percent": 0.45058967672640293,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-770f619a5f991a11",
+      "retained_search_runs": 2,
+      "training_J1_exact": "47316392192756700671969/25465739834052407000000",
+      "training_J1": 1.858041136880144,
+      "change_percent": 0.4517040203726434,
+      "assignments_different_from_published": 48
+    },
+    {
+      "id": "A-4c517a7b4138612c",
+      "retained_search_runs": 4,
+      "training_J1_exact": "1040978739813595830354597/560246276349152954000000",
+      "training_J1": 1.8580734647575667,
+      "change_percent": 0.4534517698223344,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-71cfcaf2a1df2bdc",
+      "retained_search_runs": 1,
+      "training_J1_exact": "260245589634809018862933/140061569087288238500000",
+      "training_J1": 1.8580799239270303,
+      "change_percent": 0.4538009733820879,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-4d9798ad3f09f3a0",
+      "retained_search_runs": 2,
+      "training_J1_exact": "65062132240933381129121/35015392271822059625000",
+      "training_J1": 1.8581009099044377,
+      "change_percent": 0.4549355430906156,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-73a473aa62887ecb",
+      "retained_search_runs": 1,
+      "training_J1_exact": "104101312655600628255791/56024627634915295400000",
+      "training_J1": 1.8581348426620028,
+      "change_percent": 0.45677005754343447,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-0d6c5ca7a7260b8f",
+      "retained_search_runs": 3,
+      "training_J1_exact": "208207203833451569550959/112049255269830590800000",
+      "training_J1": 1.8581757043548297,
+      "change_percent": 0.4589791726120633,
+      "assignments_different_from_published": 48
+    },
+    {
+      "id": "A-239e464601411f73",
+      "retained_search_runs": 52,
+      "training_J1_exact": "1041042270974518452658523/560246276349152954000000",
+      "training_J1": 1.8581868633888554,
+      "change_percent": 0.4595824660272966,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-ff4936c958944a27",
+      "retained_search_runs": 4,
+      "training_J1_exact": "1041044263870713341652659/560246276349152954000000",
+      "training_J1": 1.8581904205676874,
+      "change_percent": 0.4597747786021253,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-ff056c771d2f20fe",
+      "retained_search_runs": 2,
+      "training_J1_exact": "520543801293453022228731/280123138174576477000000",
+      "training_J1": 1.8582677771125182,
+      "change_percent": 0.4639569232226862,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-de4d43a67def32c5",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1041094112124687102588463/560246276349152954000000",
+      "training_J1": 1.8582793961773043,
+      "change_percent": 0.4645850873863947,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-3f3e5d304a473080",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1041123794208006159961039/560246276349152954000000",
+      "training_J1": 1.8583323765978301,
+      "change_percent": 0.46744938000936676,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-49401b47bf29deb6",
+      "retained_search_runs": 2,
+      "training_J1_exact": "520573691671688345790261/280123138174576477000000",
+      "training_J1": 1.8583744815369727,
+      "change_percent": 0.4697257089886308,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-dee28cad318c56f1",
+      "retained_search_runs": 1,
+      "training_J1_exact": "104115586867470725176229/56024627634915295400000",
+      "training_J1": 1.8583896272535778,
+      "change_percent": 0.4705445353382622,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-d252bbc656df2340",
+      "retained_search_runs": 1,
+      "training_J1_exact": "130145178002622497033871/70030784543644119250000",
+      "training_J1": 1.8583995431539724,
+      "change_percent": 0.4710806209349495,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-3199623c7b6c16e5",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1041196356171169366906417/560246276349152954000000",
+      "training_J1": 1.8584618945727396,
+      "change_percent": 0.47445153998454936,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-99e82850fc69fa50",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1041197969904176715847539/560246276349152954000000",
+      "training_J1": 1.8584647749720844,
+      "change_percent": 0.4746072636747874,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-144590f7e0067b97",
+      "retained_search_runs": 1,
+      "training_J1_exact": "520608295937127698081519/280123138174576477000000",
+      "training_J1": 1.8584980138723053,
+      "change_percent": 0.4764042659589001,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-c5e9c755ed2b0222",
+      "retained_search_runs": 46,
+      "training_J1_exact": "130158196120065070455259/70030784543644119250000",
+      "training_J1": 1.8585854345091444,
+      "change_percent": 0.4811305078933371,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-39b0ca0cbeaf27b1",
+      "retained_search_runs": 1,
+      "training_J1_exact": "26031789053540173936881/14006156908728823850000",
+      "training_J1": 1.8585961319137312,
+      "change_percent": 0.4817088441303651,
+      "assignments_different_from_published": 40
+    },
+    {
+      "id": "A-bf6dd5c91692e407",
+      "retained_search_runs": 1,
+      "training_J1_exact": "520646386053700403331101/280123138174576477000000",
+      "training_J1": 1.8586339902033606,
+      "change_percent": 0.48375558552327147,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-c37d086eabfde28b",
+      "retained_search_runs": 3,
+      "training_J1_exact": "1041352005818062514503773/560246276349152954000000",
+      "training_J1": 1.8587397181897163,
+      "change_percent": 0.4894715818923894,
+      "assignments_different_from_published": 38
+    },
+    {
+      "id": "A-ff4bd74f00e97ed2",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1041358522367967263070573/560246276349152954000000",
+      "training_J1": 1.8587513497706476,
+      "change_percent": 0.4901004227193207,
+      "assignments_different_from_published": 38
+    },
+    {
+      "id": "A-6ce07864f66a3980",
+      "retained_search_runs": 31,
+      "training_J1_exact": "1041368718297137732500639/560246276349152954000000",
+      "training_J1": 1.858769548783476,
+      "change_percent": 0.49108432012279474,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-61ae1ca035a74370",
+      "retained_search_runs": 2,
+      "training_J1_exact": "1041377568959150560364439/560246276349152954000000",
+      "training_J1": 1.858785346589524,
+      "change_percent": 0.49193840053350113,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-488682edafc0f99f",
+      "retained_search_runs": 11,
+      "training_J1_exact": "520696228024322450801419/280123138174576477000000",
+      "training_J1": 1.858811918991917,
+      "change_percent": 0.4933749904169608,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-f61fd00066d6abf8",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1041567289026292643243781/560246276349152954000000",
+      "training_J1": 1.8591239834982394,
+      "change_percent": 0.5102462053766983,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-3b6d5704540904c2",
+      "retained_search_runs": 7,
+      "training_J1_exact": "65100500639485311250703/35015392271822059625000",
+      "training_J1": 1.8591966679714635,
+      "change_percent": 0.5141757627187213,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-094ebbca5fe18d4b",
+      "retained_search_runs": 4,
+      "training_J1_exact": "260403328745944665564321/140061569087288238500000",
+      "training_J1": 1.8592061365788202,
+      "change_percent": 0.5146876662093275,
+      "assignments_different_from_published": 48
+    },
+    {
+      "id": "A-672b76a1690a61a9",
+      "retained_search_runs": 176,
+      "training_J1_exact": "41669641007181481359701/22409851053966118160000",
+      "training_J1": 1.859434090250535,
+      "change_percent": 0.5270115778316007,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-de0fcb10911e908a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "9059008316427827482023/4871706750862199600000",
+      "training_J1": 1.8595142892836387,
+      "change_percent": 0.5313473965474208,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-199cca61d2551173",
+      "retained_search_runs": 11,
+      "training_J1_exact": "41676600814061303805553/22409851053966118160000",
+      "training_J1": 1.8597446593329918,
+      "change_percent": 0.5438019453480092,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-5a573407e1435dd8",
+      "retained_search_runs": 3,
+      "training_J1_exact": "32562382653206564414969/17507696135911029812500",
+      "training_J1": 1.8598896394149778,
+      "change_percent": 0.5516400367634465,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-09e61d3f085e9fc5",
+      "retained_search_runs": 3,
+      "training_J1_exact": "1042171062026666017205853/560246276349152954000000",
+      "training_J1": 1.8602016756237594,
+      "change_percent": 0.5685097218667547,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-68ab54009c52983b",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042194796567773264095687/560246276349152954000000",
+      "training_J1": 1.8602440401018632,
+      "change_percent": 0.570800082360402,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-98769a8ac01a6eb7",
+      "retained_search_runs": 1,
+      "training_J1_exact": "521098052364164963739653/280123138174576477000000",
+      "training_J1": 1.8602463750759843,
+      "change_percent": 0.5709263186017007,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-6a2eb402f1e72546",
+      "retained_search_runs": 4,
+      "training_J1_exact": "208465576775628050116467/112049255269830590800000",
+      "training_J1": 1.8604815915430513,
+      "change_percent": 0.5836428803944131,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-b2d03b81ed77fc64",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042348727508938407103333/560246276349152954000000",
+      "training_J1": 1.8605187959506093,
+      "change_percent": 0.5856542708109604,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-6628a14c46aa5e4f",
+      "retained_search_runs": 4,
+      "training_J1_exact": "1042371131787860714734519/560246276349152954000000",
+      "training_J1": 1.8605587860047483,
+      "change_percent": 0.5878162622773402,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-b94561983d2a9650",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042377896673622646242669/560246276349152954000000",
+      "training_J1": 1.86057086084763,
+      "change_percent": 0.5884690672767354,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-65da28a4769051ab",
+      "retained_search_runs": 6,
+      "training_J1_exact": "52119697972149592696579/28012313817457647700000",
+      "training_J1": 1.8605995317554918,
+      "change_percent": 0.5900191091425361,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-fcfdfbaeb0c3b0ac",
+      "retained_search_runs": 2,
+      "training_J1_exact": "208500017611694533883113/112049255269830590800000",
+      "training_J1": 1.860788963831993,
+      "change_percent": 0.6002604189300051,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-cdbcde38c1043e25",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042522349405853643357879/560246276349152954000000",
+      "training_J1": 1.8608286987634342,
+      "change_percent": 0.6024086176394873,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-15858e67960e0b30",
+      "retained_search_runs": 1,
+      "training_J1_exact": "521265654910248884463841/280123138174576477000000",
+      "training_J1": 1.8608446924701707,
+      "change_percent": 0.6032732890740379,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-0a3077adad54b837",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042553429585237764523257/560246276349152954000000",
+      "training_J1": 1.860884174686606,
+      "change_percent": 0.6054078251942153,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-2edbc42def6143ff",
+      "retained_search_runs": 3,
+      "training_J1_exact": "1042601681479612843565531/560246276349152954000000",
+      "training_J1": 1.8609703009071845,
+      "change_percent": 0.61006408680555,
+      "assignments_different_from_published": 49
+    },
+    {
+      "id": "A-193b48bd1a52a066",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042613902748679960481427/560246276349152954000000",
+      "training_J1": 1.8609921150085593,
+      "change_percent": 0.6112434275700113,
+      "assignments_different_from_published": 49
+    },
+    {
+      "id": "A-0316ab832e429487",
+      "retained_search_runs": 16,
+      "training_J1_exact": "47392503227579107144001/25465739834052407000000",
+      "training_J1": 1.8610298988528329,
+      "change_percent": 0.61328614420657,
+      "assignments_different_from_published": 46
+    },
+    {
+      "id": "A-d2d171ef4533770e",
+      "retained_search_runs": 12,
+      "training_J1_exact": "1042692190070072533726569/560246276349152954000000",
+      "training_J1": 1.861131852343188,
+      "change_percent": 0.6187980791329295,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-d0b4b12ba59abc74",
+      "retained_search_runs": 12,
+      "training_J1_exact": "32584998641789661854211/17507696135911029812500",
+      "training_J1": 1.8611814135243483,
+      "change_percent": 0.6214775166340796,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-be509125342b1df1",
+      "retained_search_runs": 1,
+      "training_J1_exact": "104278970225063738109637/56024627634915295400000",
+      "training_J1": 1.8613059046924516,
+      "change_percent": 0.6282079112002925,
+      "assignments_different_from_published": 41
+    },
+    {
+      "id": "A-7d1102357759790a",
+      "retained_search_runs": 1,
+      "training_J1_exact": "130349788241224190151781/70030784543644119250000",
+      "training_J1": 1.8613212616515593,
+      "change_percent": 0.6290381580017873,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-8c206bb0e979e48e",
+      "retained_search_runs": 8,
+      "training_J1_exact": "1042817783449644739685769/560246276349152954000000",
+      "training_J1": 1.8613560276476462,
+      "change_percent": 0.6309177200198555,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-f0a6c3809193fc1a",
+      "retained_search_runs": 17,
+      "training_J1_exact": "521410096088943430157219/280123138174576477000000",
+      "training_J1": 1.8613603270572876,
+      "change_percent": 0.6311501599891288,
+      "assignments_different_from_published": 39
+    },
+    {
+      "id": "A-4c9fc942f66a3dbc",
+      "retained_search_runs": 2,
+      "training_J1_exact": "208567504137973268249853/112049255269830590800000",
+      "training_J1": 1.8613912572262348,
+      "change_percent": 0.6328223448050121,
+      "assignments_different_from_published": 37
+    },
+    {
+      "id": "A-576a3cdafeb503ed",
+      "retained_search_runs": 14,
+      "training_J1_exact": "1042858561410439899841917/560246276349152954000000",
+      "training_J1": 1.8614288134251098,
+      "change_percent": 0.634852754196194,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-db0d02a479d2ab83",
+      "retained_search_runs": 15,
+      "training_J1_exact": "9068418163016310537691/4871706750862199600000",
+      "training_J1": 1.8614458190471692,
+      "change_percent": 0.6357721330408773,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-077cfc1bf82dfae8",
+      "retained_search_runs": 2,
+      "training_J1_exact": "10429191682343101755591/5602462763491529540000",
+      "training_J1": 1.8615369923214786,
+      "change_percent": 0.6407012546753345,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-5a807405ea908063",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1042992274122464623795071/560246276349152954000000",
+      "training_J1": 1.861667481164048,
+      "change_percent": 0.6477559028914238,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-d8ce3380a0a37896",
+      "retained_search_runs": 22,
+      "training_J1_exact": "104299971452179817706651/56024627634915295400000",
+      "training_J1": 1.8616807617509032,
+      "change_percent": 0.648473894303751,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-cc67828e137718bc",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1043038545724615206465959/560246276349152954000000",
+      "training_J1": 1.8617500727029905,
+      "change_percent": 0.6522210681990057,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-b5a4d0eaf7d68117",
+      "retained_search_runs": 1,
+      "training_J1_exact": "208612355381139309862539/112049255269830590800000",
+      "training_J1": 1.8617915387190302,
+      "change_percent": 0.6544628549320648,
+      "assignments_different_from_published": 43
+    },
+    {
+      "id": "A-2650ac7bff1195cf",
+      "retained_search_runs": 1,
+      "training_J1_exact": "22675879351469364646767/12179266877155499000000",
+      "training_J1": 1.8618427184646256,
+      "change_percent": 0.6572297972533755,
+      "assignments_different_from_published": 44
+    },
+    {
+      "id": "A-bcde020c06f0e5cc",
+      "retained_search_runs": 1,
+      "training_J1_exact": "208661539000083020431787/112049255269830590800000",
+      "training_J1": 1.8622304851343836,
+      "change_percent": 0.6781937156329858,
+      "assignments_different_from_published": 45
+    },
+    {
+      "id": "A-b4d2abd671493b26",
+      "retained_search_runs": 8,
+      "training_J1_exact": "1043484221689392446856591/560246276349152954000000",
+      "training_J1": 1.8625455727957023,
+      "change_percent": 0.6952283721144884,
+      "assignments_different_from_published": 42
+    },
+    {
+      "id": "A-1773ecdfd0ea68a2",
+      "retained_search_runs": 8,
+      "training_J1_exact": "65221092625206007769613/35015392271822059625000",
+      "training_J1": 1.8626406386910987,
+      "change_percent": 0.7003679414153242,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-54b08ddb663a5514",
+      "retained_search_runs": 1,
+      "training_J1_exact": "1043770825464850702431111/560246276349152954000000",
+      "training_J1": 1.8630571402751435,
+      "change_percent": 0.7228853620547443,
+      "assignments_different_from_published": 48
+    },
+    {
+      "id": "A-8db6df15f5afa8e8",
+      "retained_search_runs": 1,
+      "training_J1_exact": "45490680091257357506431/24358533754310998000000",
+      "training_J1": 1.8675459101969292,
+      "change_percent": 0.9655627595831368,
+      "assignments_different_from_published": 47
+    },
+    {
+      "id": "A-c75913b84d354f98",
+      "retained_search_runs": 1,
+      "training_J1_exact": "262102617455700588168973/140061569087288238500000",
+      "training_J1": 1.871338577481984,
+      "change_percent": 1.1706066006499547,
+      "assignments_different_from_published": 45
+    }
+  ],
+  "source_scores": [
+    {
+      "scope": "bnwiki/train",
+      "J1": 1.8690209593105473,
+      "J1_exact": "364825098374529/195195830500000",
+      "difference": 0
+    },
+    {
+      "scope": "newspaper/train",
+      "J1": 1.8303511021197176,
+      "J1_exact": "1313357189479183/717543857000000",
+      "difference": 0
+    },
+    {
+      "scope": "bnwiki/heldout",
+      "J1": 1.8689183637981814,
+      "J1_exact": "41479591817921/22194437500000",
+      "difference": 0
+    },
+    {
+      "scope": "newspaper/heldout",
+      "J1": 1.830017579481715,
+      "J1_exact": "146474273998517/80039818000000",
+      "difference": 0
+    },
+    {
+      "scope": "bard-novel/heldout",
+      "J1": 1.8307517389541577,
+      "J1_exact": "13198348804807/7209251000000",
+      "difference": 0
+    }
+  ],
+  "certification": "No new optimality certificate or global bound produced by this run",
+  "validation": {
+    "original_run_input_hashes_verified": {
+      "data/problem-v1.json": true,
+      "results/phase1/effort-grids/ansi-optimal.json": true,
+      "results/phase3/frequencies/A-bnwiki-train.json": true,
+      "results/phase3-crosscheck/frequencies/A-newspaper-train.json": true,
+      "results/phase3/frequencies/A-bnwiki-heldout.json": true,
+      "results/phase3-crosscheck/frequencies/A-newspaper-heldout.json": true,
+      "results/phase3-crosscheck/frequencies/A-bard-novel-heldout.json": true,
+      "results/phase3/search/A.json": true,
+      "results/phase3-crosscheck/search/A.json": true
+    },
+    "original_run_output_hashes_verified": {
+      "work/goti-j1-8b-v1/mix-search.json": true,
+      "work/goti-j1-8b-v1/search/A.json": true
+    },
+    "all_9_recorded_inputs_identical_to_original_publication_manifest": true,
+    "all_8000_seed_records_and_proposal_counts_verified": true,
+    "all_241_distinct_search_endpoints_independently_rescored_with_integer_coefficients": true,
+    "all_8000_saved_scores_match_integer_rescoring_within_1e_minus_12": true,
+    "maximum_float_score_difference": 1.5543122344752192e-15,
+    "all_52_symbol_assignments_identical_to_published": true,
+    "exported_layout_verified": true,
+    "all_3_confirmation_endpoints_exactly_equal_to_published_score": true,
+    "all_5_source_scores_independently_verified": true,
+    "published_check_passed": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "A": {
+    "style": "A",
+    "name": "Kala Goti",
+    "same_layout": true,
+    "training_J1": {
+      "yours": 1.8496860307151324,
+      "published": 1.8496860307151324
+    },
+    "by_text": {
+      "bnwiki/train": {
+        "yours": 1.8690209593105476,
+        "published": 1.8690209593105476
+      },
+      "newspaper/train": {
+        "yours": 1.8303511021197174,
+        "published": 1.8303511021197174
+      },
+      "bnwiki/heldout": {
+        "yours": 1.8689183637981814,
+        "published": 1.8689183637981814
+      },
+      "newspaper/heldout": {
+        "yours": 1.8300175794817153,
+        "published": 1.8300175794817153
+      },
+      "bard-novel/heldout": {
+        "yours": 1.8307517389541572,
+        "published": 1.8307517389541572
+      }
+    },
+    "keys_that_differ": 0,
+    "differences": [],
+    "verdict": "the same layout as Kala Goti"
+  }
+}
