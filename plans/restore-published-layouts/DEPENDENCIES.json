@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-29",
+  "status": "local implementation and automated gates complete; manual/release gates pending",
+  "repositories": {
+    "kala-layout": {
+      "root": "D:\\git repo\\kala-layout",
+      "implementation_revision": "8766faedc4d0fd2ebe889152e51b1075d02ee651",
+      "branch": "codex/published-layouts"
+    },
+    "kala": {
+      "root": "D:\\git repo\\kala",
+      "implementation_revision": "19fc64b01385aceac02ba1e338bb99059534ac0a",
+      "branch": "codex/published-layouts"
+    },
+    "kala-typing-master": {
+      "root": "D:\\git repo\\kala-typing-master",
+      "implementation_revision": "d64532612df329b2cda394f39c6fa789035c0abe",
+      "branch": "codex/published-layouts"
+    },
+    "kala-releases": {
+      "root": "D:\\git repo\\kala-releases",
+      "implementation_revision": "500a3447dfb7104ecbfe9ac225ab6f810630bba7",
+      "branch": "codex/published-layouts"
+    }
+  },
+  "evidence_commit": "354ce67",
+  "publication": "kala-separate-publication-v1",
+  "arrangements": {
+    "A": "A-18fe73cb912ae3f1",
+    "D": "D-e4a6be48881da590"
+  },
+  "scoring_season": "legacy-v1 (unchanged bangla-dh-challenge-v1)",
+  "literature_version": "1.1.2",
+  "typing_check_version": "1.4.2",
+  "file_sha256": {
+    "D:\\git repo\\kala\\kala\\layout\\bn\\KalaGoti.json": "1ad678fb3c6af22441728639da2366e74f8674cfcb1dd7090c226b55cd36ab2c",
+    "D:\\git repo\\kala\\kala\\layout\\bn\\KalaJhor.json": "102aed1fba37172252a7bd12ad2128571e1851445be25e9cd7951d491c6f3047",
+    "D:\\git repo\\kala\\kala\\learning-packs\\kala.bn-literature\\1.1.2\\manifest.json": "e46efc3f36e45c893729c41537ff9fc74e3e21f23da9a68d8c1f5982ad2e9a6d",
+    "D:\\git repo\\kala\\kala\\learning-packs\\kala.bn-typing-check\\1.4.2\\prompts.json": "0ef8ca055a2ab06d58cd715e874d5300fdfefd4f3b4d816e519ac03c10af6a4b",
+    "D:\\git repo\\kala-typing-master\\src\\data\\layouts.json": "253f70e1926b9c36770f690f67dc724e439ae154b57d139ceee885a59db6c81f",
+    "D:\\git repo\\kala-typing-master\\src\\data\\paths.json": "06181c1a9fb8edc26e61bf2cd7b8f05c1db23a8df2ddec99feae491b099f1832",
+    "D:\\git repo\\kala-typing-master\\public\\data\\bn\\check.json": "d9f7130e66b43d56716d0f9be696ab1891888bf85dfa60f3d6c0a5c71adf1397",
+    "D:\\git repo\\kala-releases\\docs\\reference\\published-layout-snapshot-v1.json": "6ada3f84438aaf76ea781eac32dfa52dd65515924a4976aa022b27c2657842e3",
+    "D:\\git repo\\kala-layout\\data\\layout-publications\\current.json": "2ab18971cd06b2506602cff94b0772ab4ae299e398f623ffe8e3fce2a2b65ba7",
+    "D:\\git repo\\kala-layout\\data\\layout-publications\\separate-restored-v1.json": "e006942caff7ef819ef48f746eec1252bb6301954d021d582a52d413c2aa246d"
+  },
+  "site_builds": {
+    "kala-layout": {
+      "files": 120,
+      "tree_sha256": "cd38be798805e6aef4ef773e400609b2496f97b1d215f4ce747598df07190ee7"
+    },
+    "kala-typing-master": {
+      "files": 122,
+      "tree_sha256": "e39baafabe8fac1ed4effcbbfddacda6cb84fe60407b17b187b86f36fca1875c"
+    },
+    "kala-releases": {
+      "files": 130,
+      "tree_sha256": "caddecbc02af6ecd498330fa715d55d4177c9c7a283784c24ef69898ab901259"
+    }
+  },
+  "installer": {
+    "path": "D:\\git repo\\kala\\artifacts\\published-layouts\\installer-final\\KalaSetup.exe",
+    "sha256": "8f31e05783a43a19cffcb3d1f1c8b00a48b9e9861b306e130d29c2f5c959cdd9",
+    "source_revision": "19fc64b01385aceac02ba1e338bb99059534ac0a",
+    "public_release": false,
+    "installed": false
+  },
+  "release_gates_pending": [
+    "controlled isolated live external-app checks",
+    "native-speaker Bangla meaning review",
+    "normal release CI and final publishing authorization",
+    "deployed and installed smoke checks"
+  ],
+  "canonical_working_directory": "D:\\git repo\\kala-layout"
+}
