@@ -1,33 +1,6 @@
-# Reproduce the current and original seasons
+# Run it yourself
 
-## Current Kala Layout publication
-
-The current result is one arrangement with Goti/Jhor typing styles. Rebuild its portable scorer, report, scores, exports and examples from committed derived counts, without downloading text or running a new search:
-
-```powershell
-$env:PYTHONPATH = "src"
-python -m bangla_dh challenge-kit
-python -m bangla_dh publish-shared
-python -m bangla_dh challenge-verify challenge/shared-v1/reference.json
-python -m bangla_dh check-results
-```
-
-The shared scorer independently checks exact effort, mechanics and separate R against the original evaluators. Its approximately 3 MB bundle includes all five source scopes and both fingerings. The active challenge is a new shared season; the original bundle remains intact. See [the rationale](SHARED_LAYOUT.md) and [report/manifest](../results/shared-publication-v1/REPORT.md).
-
-For the complete shared search, use the frozen command/settings/seeds in the [four-billion run report](../results/shared-layout-relaxed-v1/run-4b-v1/REPORT.md) and its source revision. Historical run input hashes include source code: use the recorded original Git revision to reproduce old runs, not modified current source. Known held-out data are diagnostic reuse. A quick publication rebuild does not repeat four billion proposals.
-
-The [shared certificate](SHARED_CERTIFICATION.md) checks all 45,526 two/three-symbol alternatives. Repeat it in an empty directory, then independently verify the published evidence:
-
-```powershell
-$env:PYTHONPATH = "src"
-python -m bangla_dh certify-shared --radius 3 --out work/shared-certificate-repeat
-python -m bangla_dh verify-shared-certificate results/shared-certification-v1
-```
-
-## Original separate-layout season
-
-The commands and timings below describe the original research. The original generate-layout command and its --reproduce option continue to reproduce the original separate maps, not B01. Explicit legacy season options keep old builders separate. Their expected old outputs remain locked, with new shared groups checked alongside them.
-
+Current publication: the original separate Goti and Jhor arrangements. [Selection criterion](PUBLICATION_DECISION.md) · [Additional Goti evidence](GOTI_8B.md).
 
 You can repeat the research at three depths. Each depth checks itself and says `PASS` or names what differs. Everything uses Python 3.10 or newer and the standard library; OR-Tools is needed only for the optional proofs.
 
@@ -94,8 +67,8 @@ PYTHONPATH=src python -m bangla_dh evaluate-phase3
 PYTHONPATH=src python -m bangla_dh crosscheck-optimize
 PYTHONPATH=src python -m bangla_dh evaluate-crosscheck
 PYTHONPATH=src python -m bangla_dh mix-optimize --styles A D --seeds 512 --workers 28
-PYTHONPATH=src python -m bangla_dh kala-export --season legacy-v1
-PYTHONPATH=src python -m bangla_dh challenge-kit --season legacy-v1
+PYTHONPATH=src python -m bangla_dh kala-export
+PYTHONPATH=src python -m bangla_dh challenge-kit
 PYTHONPATH=src python -m bangla_dh check-results
 ```
 
@@ -138,27 +111,3 @@ The search is deterministic: the same seed on the same Python gives the same lay
 ## Running on a smaller computer
 
 Everything that takes long is parallel. Use `--workers` to limit processes, and `mix-optimize --seeds 64` or `generate-layout --seeds 16` to shorten a search. Keep in mind that fewer seeds find the best layout less often. The assembled texts need about 4 GB of disk space on top of the 1 GB download.
-
-## Continuous-text evaluation (e3)
-
-The [continuous-text report](../results/evaluator-e3/run-v1/REPORT.md) counts windows that touch spaces and reports endpoint movement across a space. It is an additional diagnostic season; it selects no layout and changes no official J1 score. Rescore the committed derived counts without downloading texts:
-
-```powershell
-$env:PYTHONPATH = "src"
-python -m bangla_dh.experimental.continuous_run --out work/evaluator-experiments/continuous-repeat --workers 4
-```
-
-Add `--rebuild-counts` to rebuild from pinned local corpus and token files. Use `--heldout-only` to run the smaller held-out stage first. Every output directory must be new. The full run includes A/D training diagnostics on the original 50/50 mix and all fixed-layout held-out comparisons under both fingerings. Exact counting checks and actual encoding/scanning/cache/memory measurements are in the report; rescoring retains the saved counting benchmarks.
-
-## Experimental joint search (e4)
-
-The [joint-search protocol](../results/evaluator-e4/README.md) searches for strictly lower J1 and fewer same-finger different-key endpoint moves across a space. Both must improve against the published layout of the same style on the original 50/50 training mix. Existing layouts and results are preserved; new candidates and comparisons go into a separate directory. Run a substantial search from the repository root:
-
-```powershell
-$env:PYTHONPATH = "src"
-python -m bangla_dh.experimental.joint_search --styles A D --seeds 512 --steps 1000000 --ils-iterations 1000 --archive-limit 64 --frontier-limit 32 --workers 28 --out results/evaluator-e4/rigorous-v1
-```
-
-This runs 512 seeds per style, 1,024 total, using committed derived counts without downloading texts. The full runtime has not been measured. Reduce `--workers` on smaller machines. Every fresh run requires a new `--out` directory. After interruption, repeat the command with `--resume`; it verifies code, inputs and settings before reusing completed seeds. Worker count may change. A completed run cannot be overwritten.
-
-Each candidate receives exact training checks against the official J1 scorer, separate movement scores and changes from the original map. The report includes all five sources and both fingerings; held-out data never guide search or selection. Higher-J1 trade-offs remain visible but do not count as successes. Archives are bounded and their frontier is not exhaustive. Results are best found, never proven optimal; finding no joint improvement does not prove none exists. The published reproduction lock, challenge version and website scores stay unchanged.

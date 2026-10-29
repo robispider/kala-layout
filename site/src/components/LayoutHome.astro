@@ -2,42 +2,88 @@
 import board from '../generated/board.json';
 import { Content as AdditionalChecksEn } from '../generated/additional-checks-en.md';
 import { Content as AdditionalChecksBn } from '../generated/additional-checks-bn.md';
-import { Content as SearchStoryEn } from '../generated/search-story-en.md';
-import { Content as SearchStoryBn } from '../generated/search-story-bn.md';
 const { locale = 'en' } = Astro.props;
 const bn = locale === 'bn';
 const AdditionalChecks = bn ? AdditionalChecksBn : AdditionalChecksEn;
-const SearchStory = bn ? SearchStoryBn : SearchStoryEn;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = (route: string) => `${base}/${locale}/${route}/`;
-const appHref = (route: string = '') => `https://robispider.github.io/kala-releases/${locale}/${route ? route + '/' : ''}`;
-const digits = (s) => bn ? String(s).replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[Number(d)]) : String(s);
-const fmt = (n) => digits(n.toFixed(4));
-const entries = board.public.entries;
-const heads = bn ? ['উইকিপিডিয়া', 'সংবাদপত্র', 'BARD সংবাদ'] : ['Wikipedia', 'Newspaper', 'BARD news'];
+const digits = (value: string | number) => (bn ? String(value).replace(/[0-9]/g, (d) => '০১২৩৪৫৬৭৮৯'[Number(d)]) : String(value));
+const fmt = (n: number) => digits(n.toFixed(4));
 const columns = ['wikipedia', 'newspaper', 'unseenNews'];
-const nameOf = e => e.kind === 'shared-style' && bn ? `${board.public.public_name_bn} · ${e.style === 'A' ? 'গতি' : 'ঝড়'} স্টাইল` : e.name;
-const cards = [
- { route: 'layouts', title: bn ? 'একটি ম্যাপ, দুটি নিয়ম' : 'One map, two entry recipes', body: bn ? 'একই কীতে একই প্রতীক। গতিতে একুশে/অভ্রের আধুনিক ফিক্সড-লেআউট ধারা, ঝড়ে নির্ধারিত প্রসঙ্গ/পুনরাবৃত্তির নিয়ম।' : 'The same symbols stay on the same keys. Goti follows the modern Ekushey/Avro fixed-layout tradition; Jhor uses the specified context/repeat rule.' },
- { route: 'reproduce', title: bn ? 'নিজে ফল যাচাই করুন' : 'Rebuild the evidence', body: bn ? 'সংরক্ষিত গণনা থেকে স্কোরার, রিপোর্ট ও এক্সপোর্ট তৈরি করুন। মূল আলাদা সার্চও সংরক্ষিত।' : 'Build the scorer, report and exports from saved counts. The original separate searches remain reproducible.' },
- { route: 'challenge', title: bn ? 'ভালো অভিন্ন ম্যাপ খুঁজুন' : 'Challenge the shared arrangement', body: bn ? 'একটি ম্যাপ জমা দিন; দুই স্টাইলেই যোগ্যতা ও আলাদা Balance স্কোর যাচাই হবে।' : 'Submit one map. Both styles must qualify, with separate Balance scores and no combined R.' },
+const heads = bn ? ['উইকিপিডিয়া', 'সংবাদপত্র', 'নতুন সংবাদ'] : ['Wikipedia', 'Newspaper', 'Unseen news'];
+const entries = [...board.public.entries].sort((a, b) => a.average - b.average);
+const actions = [
+  { number: '01', title: bn ? 'নিজে সার্চ চালান' : 'Run the search yourself', body: bn ? 'একটি কমান্ডে নিজের সার্চ চালান। কালা ঝড়ের সঙ্গে একই লেআউট পেলেন, নাকি ভিন্ন কিছু—পাশাপাশি দেখুন। কোনো ডাউনলোড লাগে না।' : 'One command runs your own search and sets its best layout beside Kala Jhor: the same layout, a different one, or a better one. No download needed.', route: 'reproduce', cta: bn ? 'কীভাবে চালাবেন' : 'How to run it' },
+  { number: '02', title: bn ? 'নিজের লেআউট স্কোর করুন' : 'Score your own layout', body: bn ? 'একটি পাইথন ফাইলই পুরো স্কোরার। আপনার লেআউটের পরিশ্রম, আলাদা রাখা টেক্সটের ফল এবং প্রকাশ্য লেআউটগুলোর মধ্যে অবস্থান দেখুন।' : 'One Python file is the whole scorer. See your layout’s effort, its held-out results and its place among the public layouts.', route: 'challenge', cta: bn ? 'চ্যালেঞ্জের নিয়ম' : 'Challenge rules' },
+  { number: '03', title: bn ? 'শুরু থেকে আবার তৈরি করুন' : 'Rebuild it from the texts', body: bn ? 'ban-dataset-collection থেকে টেক্সট নামিয়ে প্রতিটি হিসাব-সারণি আবার তৈরি করুন এবং প্রকাশিত সারণির সঙ্গে হুবহু মিলিয়ে দেখুন।' : 'Download the texts from ban-dataset-collection, rebuild every table and check that it equals the published one, bit for bit.', route: 'data', cta: bn ? 'ডেটাসেট ও যাচাই' : 'Datasets and checks' },
+];
+const steps = [
+  { title: bn ? 'আঙুলের পরিশ্রমের মডেল' : 'An effort model', body: bn ? 'Colemak Mod-DH-এর মডেল প্রকাশিত ফলের সঙ্গে হুবহু মিলিয়ে নেওয়া হয়েছে, তারপর বাংলার জন্য অপরিবর্তিত ব্যবহার করা হয়েছে।' : 'The Colemak Mod-DH model, reproduced exactly against its published results and then reused unchanged for Bangla.' },
+  { title: bn ? 'বাংলা প্রতীক ও টেক্সট' : 'Bangla symbols and texts', body: bn ? '৮৫টি প্রতীক, ইউনিকোড-যাচাই করা টাইপিং নিয়ম, এবং উইকিপিডিয়া, সংবাদপত্র ও BARD থেকে প্রকাশ্য টেক্সট।' : '85 symbols, Unicode-checked typing rules, and public text from Wikipedia, newspapers and BARD.' },
+  { title: bn ? 'চার ধরনের স্বরবর্ণ লেখা' : 'Four vowel-entry styles', body: bn ? 'স্বরবর্ণ কীভাবে লেখা হবে তার চারটি পদ্ধতি সমান শর্তে তুলনা করা হয়েছে। প্রতিটির টাইপিং-মেশিন প্রতিটি পরীক্ষার শব্দ হুবহু লেখে।' : 'Four ways to type vowels compared on equal terms; each typing machine reproduces every test word exactly.' },
+  { title: bn ? '৫১২ স্বতন্ত্র সার্চ' : '512 independent searches', body: bn ? '৫২টি প্রতীক ৫২টি স্থানে বসানোর প্রায় ৮.০৭ × ১০^৬৭ উপায়ের মধ্যে প্রতি স্টাইলে ৫১২টি আলাদা সার্চ।' : '512 independent searches per style through the 8.07 × 10^67 ways to place 52 symbols on 52 slots.' },
+  { title: bn ? 'স্বাধীন যাচাই ও সীমা' : 'Independent checks and bounds', body: bn ? 'আলাদা একটি যাচাইকারী একই ফল দেয়। উইকিপিডিয়া-প্রশিক্ষিত সংস্করণ প্রমাণিত সীমার ৪.০–৪.৩ % ভেতরে।' : 'A separate verifier agrees. The Wikipedia-trained versions are certified within 4.0 to 4.3 % of the best possible.' },
+  { title: bn ? 'আলাদা রাখা টেক্সটে পরীক্ষা' : 'Tested on unseen text', body: bn ? 'কোনো সার্চ যা দেখেনি এমন উইকিপিডিয়া, সংবাদপত্র ও নতুন সংবাদে স্কোর, আটটি ফিক্সড লেআউটের সঙ্গে তুলনা।' : 'Scores on Wikipedia, newspaper and unseen news that no search used, against eight fixed layouts.' },
 ];
 ---
 <div class="kala-home">
- <section class="home-section search-story" aria-label={bn ? 'সার্চ থেকে কালা লেআউট' : 'How the search found Kala Layout'}><SearchStory /></section>
- <section class="home-section" aria-labelledby="result-title">
-  <div class="section-heading"><p class="eyebrow">{bn ? 'ফল / কালা লেআউট' : 'RESULTS / KALA LAYOUT'}</p><h2 id="result-title">{bn ? 'অভিন্ন বিন্যাস। দুই স্টাইলের ফল।' : 'A shared arrangement, evaluated in both styles.'}</h2><p>{bn ? 'প্রতি টেক্সট এককে মডেলের পরিশ্রম (J1); কম ভালো। মাপা টাইপিং-গতি নয়।' : 'Modeled effort per text unit (J1); lower is better. This is not measured typing speed.'}</p></div>
-  <div class="board-wrap"><table class="board"><thead><tr><th>#</th><th>{bn ? 'কনফিগারেশন' : 'Configuration'}</th>{heads.map(h => <th>{h}</th>)}<th>{bn ? 'গড়' : 'Mean'}</th></tr></thead><tbody>{entries.map((e, i) => <tr class={e.kind === 'shared-style' ? 'ours' : ''}><td>{digits(i+1)}</td><td>{nameOf(e)}</td>{columns.map(c => <td>{fmt(e.j1[c])}</td>)}<td>{fmt(e.average)}</td></tr>)}</tbody></table></div>
-  <p class="small-note">{bn ? 'সাতটি বাস্তব বিন্যাস, আটটি কনফিগারেশন: একই কালা লেআউটের দুই স্টাইল ও ছয়টি ফিক্সড বেসলাইন। পরিচিত আলাদা রাখা উৎসের সমান গড়। কালা লেআউট মডেল-অপটিমাল আঙুল-বিন্যাসে; বেসলাইনে আগের অনুকূল স্কোর রাখা হয়েছে। ফোনেটিক তুলনা নেই। এই J1 সারণি চ্যালেঞ্জের ক্রম নয়।' : 'Seven physical arrangements, eight configurations: two styles on Kala Layout and six fixed baselines. Equal means of known held-out sources. Kala Layout uses model-optimal fingering; baselines retain favorable recorded original scores. No phonetic comparisons. This J1 table is not the challenge ranking.'} <a href={href('leaderboard')}>{bn ? 'পূর্ণ তুলনা ও চ্যালেঞ্জ' : 'Comparisons and shared challenge'} →</a></p>
- </section>
- <section class="home-section additional-checks" aria-label={bn ? 'অভিন্ন বিন্যাসের খরচ' : 'The costs of sharing'}><AdditionalChecks /></section>
- <section class="home-section" aria-labelledby="do-title"><div class="section-heading"><p class="eyebrow">{bn ? 'বুঝুন / যাচাই করুন / চ্যালেঞ্জ করুন' : 'UNDERSTAND / VERIFY / CHALLENGE'}</p><h2 id="do-title">{bn ? 'ম্যাপ থেকে প্রমাণে।' : 'From the map to the evidence.'}</h2></div><div class="guide-grid">{cards.map((c,i) => <a class="guide-card" href={href(c.route)}><span class="guide-number">{digits(i+1)}</span><h3>{c.title}</h3><p>{c.body}</p><span class="text-link">{bn ? 'আরও পড়ুন' : 'Read more'} →</span></a>)}</div></section>
- <section class="home-section use-section" aria-labelledby="use-title"><div><p class="eyebrow">{bn ? 'গবেষণা / অ্যাপের প্রাপ্যতা' : 'RESEARCH / APP AVAILABILITY'}</p><h2 id="use-title">{bn ? 'বর্তমান পছন্দ, নিশ্চিত ইনস্টল নয়।' : 'A research choice, with availability made clear.'}</h2><p class="section-body">{bn ? 'কালা লেআউট গবেষণার এক্সপোর্ট। এই ওয়েবসাইট আপডেটে কালা অ্যাপ বা Learn অনুশীলন বদলায় না। পুরোনো ইনস্টলেশনে আগের ম্যাপ থাকতে পারে; ঝড়ে সামঞ্জস্যপূর্ণ প্রসঙ্গভিত্তিক ইঞ্জিন দরকার। ব্যবহারের আগে ম্যাপ ও সংস্করণ মিলিয়ে নিন।' : 'Kala Layout is available as research exports. This website update does not change Kala or its Learn exercises. Existing installations may use the original maps; Jhor needs a compatible context-vowel engine. Check the map and version before use.'}</p></div><div class="use-links"><a href={href('layouts')}>{bn ? 'ম্যাপ, নিয়ম ও গবেষণার এক্সপোর্ট' : 'Map, style rules and research exports'} →</a><a href={appHref('release-status')}>{bn ? 'কালার রিলিজের অবস্থা' : 'Kala release status'} ↗</a><a href={appHref('guide/installation')}>{bn ? 'অ্যাপ ইনস্টলেশনের নির্দেশনা' : 'App installation guide'} ↗</a><a href={appHref('guide/learning')}>{bn ? 'অ্যাপে শেখার নির্দেশনা' : 'App learning guide'} ↗</a></div></section>
- <section class="home-section"><h2>{bn ? 'মূল গবেষণা সংরক্ষিত আছে।' : 'The original research remains available.'}</h2><p>{bn ? 'মূল পরিশ্রমের মডেল, আলাদা বিন্যাসের সার্চ ও সীমা ইতিহাসে অক্ষত। নতুন অভিন্ন সিদ্ধান্তের কারণ, শিথিল সীমা, চলাচলের খরচ ও অসম্পূর্ণ প্রমাণ আলাদাভাবে নথিভুক্ত।' : 'The original effort model, separate searches and scoped bounds remain intact. The new shared decision records its rationale, relaxed limits, movement costs and evidence gaps separately.'}</p><div class="inline-links"><a href={href('how')}>{bn ? 'গবেষণার ইতিহাস' : 'Research history'} →</a><a href={href('shared')}>{bn ? 'পরিবর্তনের যুক্তি' : 'Transition rationale'} →</a><a href={href('data')}>{bn ? 'ডেটাসেট' : 'Datasets'} →</a></div></section>
+  <div class="release-note">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span>{bn ? 'কালা অ্যাপের গবেষণা-সহচর · টেক্সট এখানে রাখা হয় না, চালানোর সময় নামানো হয়' : 'The research behind the Kala app · texts are not stored here, they are fetched when you run it'}</span>
+    <a href="https://robispider.github.io/kala-releases/">{bn ? 'কালা অ্যাপ' : 'The Kala app'} ↗</a>
+  </div>
+  <section class="home-section" aria-labelledby="result-title">
+    <div class="section-heading">
+      <p class="eyebrow">{bn ? 'ফল' : 'THE RESULT'}</p>
+      <h2 id="result-title">{bn ? 'দুটি লেআউট, কম্পিউটার সার্চে পাওয়া, আলাদা রাখা টেক্সটে যাচাই করা।' : 'Two layouts, found by search, checked on held-out text.'}</h2>
+      <p>{bn ? 'প্রতি অক্ষরে আঙুলের মডেল করা পরিশ্রম (J1); কম হলে ভালো। এটি মাপা টাইপিং-গতি নয়।' : 'Modeled finger effort per character (J1); lower is better. This is not measured typing speed.'}</p>
+    </div>
+    <div class="board-wrap">
+      <table class="board">
+        <thead><tr><th>#</th><th>{bn ? 'লেআউট' : 'Layout'}</th>{heads.map((h) => <th>{h}</th>)}<th>{bn ? 'গড়' : 'Average'}</th></tr></thead>
+        <tbody>{entries.map((e, i) => <tr class={i < 2 ? 'ours' : ''}><td>{digits(i + 1)}</td><td>{e.name}</td>{columns.map((c) => <td>{fmt(e.j1[c])}</td>)}<td>{fmt(e.average)}</td></tr>)}</tbody>
+      </table>
+    </div>
+    <p class="small-note">{bn ? 'প্রতিটি ফিক্সড লেআউট Kala-তে ইনস্টল থাকা অবস্থায় গবেষণার সময় তুলনা করা হয়েছে। ফোনেটিক লেআউট তুলনায় নেই।' : 'Every fixed layout installed in Kala when the research ran. Phonetic layouts are not compared.'} <a href={href('leaderboard')}>{bn ? 'লিডারবোর্ড ও জমা দেওয়া লেআউট' : 'Leaderboard and submissions'} →</a></p>
+  </section>
+  <section class="home-section additional-checks" aria-label={bn ? 'লেআউটের আরও কিছু যাচাই' : 'Additional layout checks'}>
+    <AdditionalChecks />
+  </section>
+  <section class="home-section" aria-labelledby="do-title">
+    <div class="section-heading">
+      <p class="eyebrow">{bn ? 'নিজে করে দেখুন' : 'DO IT YOURSELF'}</p>
+      <h2 id="do-title">{bn ? 'বিশ্বাস করার দরকার নেই; চালিয়ে দেখুন।' : 'No need to trust us. Run it.'}</h2>
+    </div>
+    <div class="guide-grid">{actions.map((a) => <a class="guide-card" href={href(a.route)}><span class="guide-number">{a.number}</span><h3>{a.title}</h3><p>{a.body}</p><span class="text-link">{a.cta} →</span></a>)}</div>
+  </section>
+  <section class="home-section" aria-labelledby="chain-title">
+    <div class="section-heading">
+      <p class="eyebrow">{bn ? 'টেক্সট থেকে লেআউট' : 'FROM TEXT TO LAYOUT'}</p>
+      <h2 id="chain-title">{bn ? 'ছয়টি ধাপ, প্রতিটি নিজে যাচাই করে।' : 'Six steps, each one checks itself.'}</h2>
+    </div>
+    <div class="layout-grid">{steps.map((s, i) => <article class="layout-card"><span class="layout-kind">{digits(i + 1)} / {digits(steps.length)}</span><h3>{s.title}</h3><p>{s.body}</p></article>)}</div>
+    <p class="small-note"><a href={href('how')}>{bn ? 'পুরো ধারাটি সহজ ভাষায় পড়ুন' : 'Read the whole chain in plain language'} →</a></p>
+  </section>
+  <section class="home-section research-section" aria-labelledby="scale-title">
+    <div><p class="eyebrow">BANGLA-DH PURE</p><h2 id="scale-title">{bn ? 'পরিসর এবং সীমা।' : 'The scale, and the limits.'}</h2>
+      <p class="section-body">{bn ? 'সার্চ ৫,৫৭,৮৯০টি উইকিপিডিয়া ও সংবাদপত্রের নিবন্ধ (১৬.৮৩ কোটি শব্দ) থেকে শিখেছে এবং ৬৭,২১৬টি অদেখা নিবন্ধে (২ কোটি শব্দ) পরীক্ষিত হয়েছে।' : 'The search learned from 557,890 Wikipedia and newspaper articles (168.3 million words) and was tested on 67,216 articles it had never seen (20.0 million words).'}</p>
+      <a class="text-link" href={href('data')}>{bn ? 'ডেটাসেট ও তাদের উৎস' : 'The datasets and their sources'} →</a>
+    </div>
+    <div class="research-facts"><div><strong>{digits('512')}</strong><span>{bn ? 'প্রতি স্টাইলে স্বতন্ত্র সার্চ রান' : 'Independent search runs per style'}</span></div><div><strong>{digits('8.07')} × 10<sup>{digits('67')}</sup></strong><span>{bn ? 'সম্ভাব্য লেআউটের সংখ্যা' : 'Possible layouts for 52 symbols'}</span></div><div><strong>{digits('4.0')}–{digits('4.3')} %</strong><span>{bn ? 'উইকিপিডিয়া-প্রশিক্ষিত সংস্করণের প্রমাণিত সীমা থেকে দূরত্ব' : 'Certified gap of the Wikipedia-trained versions'}</span></div></div>
+    <p class="research-note">{bn ? 'কম মডেল-পরিশ্রম মানে মাপা বেশি গতি বা স্বাচ্ছন্দ্য নয়; মানুষের টাইপিং-পরীক্ষা এখনো বাকি। কালা ঝড় ও কালা গতি সার্চে পাওয়া সেরা লেআউট; মিশ্র টেক্সটের জন্য সেরা হওয়ার বৈশ্বিক প্রমাণ নেই।' : 'Lower modeled effort is not measured speed or comfort; typing tests with people are still to come. Kala Jhor and Kala Goti are the best found by the search, with no global proof of optimality for the mixed texts.'}</p>
+  </section>
+  <section class="home-section free-section" aria-labelledby="open-title">
+    <p class="eyebrow">{bn ? 'সবার জন্য খোলা' : 'OPEN FOR EVERYONE'}</p><h2 id="open-title">{bn ? 'এর চেয়ে ভালো লেআউট পেলে জানান।' : 'Found a better layout? Show us.'}</h2>
+    <p class="section-body">{bn ? 'কালা ঝড় ও কালা গতির লেআউট-ম্যাপ CC0—ব্যবহার করুন, বদলান, শেয়ার করুন। কোড MIT লাইসেন্সে।' : 'The Kala Jhor and Kala Goti layout maps are CC0: use them, adapt them, share them. The code is MIT.'}</p>
+    <div class="inline-links"><a href={href('publication')}>{bn ? 'নির্বাচনের মানদণ্ড' : 'Selection criterion'} →</a><a href={href('goti-evidence')}>{bn ? 'গতির প্রমাণ' : 'Goti evidence'} →</a><a href={href('shared')}>{bn ? 'অভিন্ন ম্যাপের ইতিহাস' : 'Historical shared research'} →</a><a href={href('styles')}>{bn ? 'টাইপিংয়ের পূর্বসূরি' : 'Typing-style credits'} →</a><a href={href('certification')}>{bn ? 'ঐতিহাসিক সার্টিফিকেট' : 'Historical certificate'} →</a><a href={href('challenge')}>{bn ? 'চ্যালেঞ্জ নিন' : 'Take the challenge'} →</a><a href={href('layouts')}>{bn ? 'লেআউটের অক্ষর-ম্যাপ' : 'Key maps'} →</a><a href={href('licenses')}>{bn ? 'লাইসেন্স' : 'Licences'} →</a><a href="https://github.com/robispider/kala-layout">GitHub ↗</a></div>
+  </section>
 </div>
 <style>
   .kala-home { --home-border: var(--sl-color-gray-5); line-height: 1.7; }
   .kala-home :is(h2,h3,p) { margin: 0; }
+  .release-note { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; padding: 1rem 0; border-block: 1px solid var(--home-border); font-size: .83rem; color: var(--sl-color-gray-2); }
+  .release-note a { margin-left: auto; font-weight: 650; }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sl-color-accent); }
   .home-section { padding-block: 3.2rem; border-bottom: 1px solid var(--home-border); }
   .eyebrow { font-size: .72rem; letter-spacing: .1em; color: var(--sl-color-text-accent); font-weight: 750; margin-bottom: .65rem !important; }
   h2 { font-size: clamp(1.65rem,3vw,2.2rem); line-height: 1.3; letter-spacing: -.035em; color: var(--sl-color-white); }
@@ -50,7 +96,7 @@ const cards = [
   .board th:nth-child(-n+2), .board td:nth-child(-n+2) { text-align: left; }
   .board th { font-size: .75rem; color: var(--sl-color-gray-2); font-weight: 650; }
   .board tr.ours td { font-weight: 700; color: var(--sl-color-text-accent); background: var(--sl-color-accent-low); }
-  .search-story :global(h2), .additional-checks :global(h2) { font-size: clamp(1.65rem,3vw,2.2rem); line-height: 1.3; letter-spacing: -.035em; color: var(--sl-color-white); }
+  .additional-checks :global(h2) { font-size: clamp(1.65rem,3vw,2.2rem); line-height: 1.3; letter-spacing: -.035em; color: var(--sl-color-white); }
   .additional-checks :global(p) { margin-top: 1rem; color: var(--sl-color-gray-2); }
   .additional-checks :global(table) { display: block; width: max-content; max-width: 100%; overflow-x: auto; margin-block: 1.5rem; border-collapse: collapse; font-size: .92rem; font-variant-numeric: tabular-nums; }
   .additional-checks :global(th), .additional-checks :global(td) { padding: .65rem .8rem; border-bottom: 1px solid var(--home-border); text-align: right; white-space: nowrap; }
@@ -58,14 +104,7 @@ const cards = [
   .additional-checks :global(th) { font-size: .8rem; font-weight: 650; color: var(--sl-color-gray-2); }
   .guide-grid, .layout-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.7rem; }
   .guide-grid > *, .layout-grid > * { margin-top: 0 !important; }
-  .layout-card, .guide-card { border: 1px solid var(--home-border); border-radius: 4px; padding: 1.3rem; display: flex; flex-direction: column; min-width: 0; }
-  .layout-card { border: 0; border-top: 1px solid var(--home-border); border-radius: 0; padding-inline: 0; }
-  .use-section { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-left: 3px solid var(--sl-color-accent); background: var(--sl-color-gray-6); }
-  .use-section h2 { font-size: 1.8rem; }
-  .use-section .section-body { font-size: .9rem; margin-bottom: 0 !important; }
-  .use-links { display: grid; }
-  .use-links a { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--home-border); font-size: .85rem; font-weight: 600; text-decoration: none; }
-  .use-links a:hover { text-decoration: underline; }
+  .layout-card, .guide-card { border: 1px solid var(--home-border); border-radius: 16px; padding: 1.3rem; display: flex; flex-direction: column; min-width: 0; }
   .guide-number { font-size: .75rem; font-weight: 750; color: var(--sl-color-text-accent); margin-bottom: 1rem; }
   .layout-card p, .guide-card p { margin-top: .7rem; font-size: .9rem; color: var(--sl-color-gray-2); flex: 1; }
   .text-link { font-size: .86rem; font-weight: 650; color: var(--sl-color-text-accent); }
@@ -76,16 +115,16 @@ const cards = [
   .guide-card { text-decoration: none; color: var(--sl-color-text); transition: border-color .15s, background .15s; }
   .guide-card:hover { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
   .research-section { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
-  .research-facts { border: 1px solid var(--home-border); border-radius: 4px; padding: 1.5rem; background: var(--sl-color-gray-6); }
+  .research-facts { border: 1px solid var(--home-border); border-radius: 16px; padding: 1.5rem; background: var(--sl-color-gray-6); }
   .research-facts > div + div { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--home-border); }
   .research-facts strong { display: block; font-size: clamp(1.6rem,3vw,2.2rem); letter-spacing: -.04em; color: var(--sl-color-text-accent); }
   .research-facts span { display: block; font-size: .83rem; color: var(--sl-color-gray-2); }
   .research-note { grid-column: 1 / -1; padding: 1rem; border-left: 3px solid var(--sl-color-accent); border-radius: 0 8px 8px 0; background: var(--sl-color-gray-6); color: var(--sl-color-gray-2); font-size: .82rem; }
   .inline-links { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; font-size: .9rem; font-weight: 650; }
-  .free-section { padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-radius: 4px; background: var(--sl-color-gray-6); }
+  .free-section { padding: 2rem; margin-top: 2rem; border: 1px solid var(--home-border); border-radius: 16px; background: var(--sl-color-gray-6); }
   :global(html[lang='bn']) .additional-checks :global(h2) { letter-spacing: 0; line-height: 1.5; }
   :global(html[lang='bn']) :is(h2,h3) { letter-spacing: 0; line-height: 1.5; }
-  @media (max-width: 55rem) { .guide-grid, .layout-grid, .research-section, .use-section { grid-template-columns: 1fr; } }
-  @media (max-width: 45rem) { .home-section { padding-block: 2rem; } .free-section, .use-section { padding: 1.3rem; } }
+  @media (max-width: 55rem) { .guide-grid, .layout-grid, .research-section { grid-template-columns: 1fr; } }
+  @media (max-width: 45rem) { .home-section { padding-block: 2rem; } .release-note a { margin-left: 0; } .free-section { padding: 1.3rem; } }
   @media (prefers-reduced-motion: reduce) { .guide-card { transition: none; } }
 </style>

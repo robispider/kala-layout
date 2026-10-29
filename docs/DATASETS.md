@@ -1,6 +1,6 @@
 # Datasets
 
-The shared publication reuses the frozen search inputs. The known held-out benchmarks have already been examined and remain exploratory diagnostics, not fresh confirmation. The source key `bard-novel` identifies BARD news documents sharing no sentence with the newspaper set; it does not mean literary novels. The recent top-ten report's “BARD novels” wording is a naming error, without any change to counts or scores. [Current publication](../results/shared-publication-v1/REPORT.md).
+The current separate publication and historical shared experiment reuse the same frozen search inputs. The known held-out benchmarks have already been examined and remain exploratory diagnostics, not fresh confirmation. The source key `bard-novel` identifies BARD news documents sharing no sentence with the newspaper set; it does not mean literary novels. The recent top-ten report's “BARD novels” wording is a naming error, without any change to counts or scores. [Current publication](../results/separate-publication-v1/REPORT.md).
 
 The layout search learns from Bangla text, but **this repository contains no text**. The texts are the public [ban-dataset-collection](https://github.com/robispider/ban-dataset-collection), and the scripts in this repository download them to your computer when you ask for them.
 

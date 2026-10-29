@@ -1,0 +1,73 @@
+
+> kala-layout-site@1.0.0 build
+> npm run sync && astro build && node scripts/validate-site.mjs
+
+
+> kala-layout-site@1.0.0 sync
+> node scripts/sync-content.mjs
+
+Content checks passed: 17 complete language pairs; 282 links; table numbers, key maps, steps, commands and paths preserved.
+Generated 35 bilingual pages for /kala-layout/.
+16:52:05 [content] Syncing content
+16:52:05 [content] Synced content
+16:52:05 [types] Generated 474ms
+16:52:05 [build] output: "static"
+16:52:05 [build] mode: "static"
+16:52:05 [build] directory: D:\git repo\kala-layout\site\dist\
+16:52:05 [build] Collecting build info...
+16:52:05 [build] ✓ Completed in 613ms.
+16:52:05 [build] Building static entrypoints...
+16:52:05 [vite] ✓ built in 216ms
+16:52:05 [vite] ✓ built in 35ms
+16:52:05 [build] Rearranging server assets...
+
+ generating static routes
+16:52:05 [WARN] [build] Could not render `/404` from route `/[...slug]` as it conflicts with higher priority route `/404`.
+16:52:05   ├─ /404.html (+14ms)
+16:52:05   ├─ /index.html (+2ms)
+16:52:05   ├─ /bn/index.html (+7ms)
+16:52:05   ├─ /bn/certification/index.html (+3ms)
+16:52:05   ├─ /bn/challenge/index.html (+3ms)
+16:52:05   ├─ /bn/data/index.html (+3ms)
+16:52:06   ├─ /bn/goti-evidence/index.html (+2ms)
+16:52:06   ├─ /bn/how/index.html (+2ms)
+16:52:06   ├─ /bn/layouts/index.html (+2ms)
+16:52:06   ├─ /bn/leaderboard/index.html (+2ms)
+16:52:06   ├─ /bn/licenses/index.html (+2ms)
+16:52:06   ├─ /bn/mechanics/index.html (+2ms)
+16:52:06   ├─ /bn/publication/index.html (+2ms)
+16:52:06   ├─ /bn/reproduce/index.html (+2ms)
+16:52:06   ├─ /bn/shared/index.html (+2ms)
+16:52:06   ├─ /bn/shared-challenge/index.html (+2ms)
+16:52:06   ├─ /bn/shared-leaderboard/index.html (+2ms)
+16:52:06   ├─ /bn/shared-mechanics/index.html (+2ms)
+16:52:06   ├─ /bn/shared-search/index.html (+8ms)
+16:52:06   ├─ /bn/styles/index.html (+2ms)
+16:52:06   ├─ /en/index.html (+3ms)
+16:52:06   ├─ /en/certification/index.html (+2ms)
+16:52:06   ├─ /en/challenge/index.html (+2ms)
+16:52:06   ├─ /en/data/index.html (+2ms)
+16:52:06   ├─ /en/goti-evidence/index.html (+1ms)
+16:52:06   ├─ /en/how/index.html (+2ms)
+16:52:06   ├─ /en/layouts/index.html (+2ms)
+16:52:06   ├─ /en/leaderboard/index.html (+2ms)
+16:52:06   ├─ /en/licenses/index.html (+1ms)
+16:52:06   ├─ /en/mechanics/index.html (+1ms)
+16:52:06   ├─ /en/publication/index.html (+1ms)
+16:52:06   ├─ /en/reproduce/index.html (+2ms)
+16:52:06   ├─ /en/shared/index.html (+1ms)
+16:52:06   ├─ /en/shared-challenge/index.html (+1ms)
+16:52:06   ├─ /en/shared-leaderboard/index.html (+1ms)
+16:52:06   ├─ /en/shared-mechanics/index.html (+2ms)
+16:52:06   ├─ /en/shared-search/index.html (+2ms)
+16:52:06   ├─ /en/styles/index.html (+2ms)
+16:52:06 ✓ Completed in 136ms.
+
+16:52:06 [build] ✓ Completed in 518ms.
+16:52:06 [starlight:pagefind] Building search index with Pagefind...
+16:52:06 [starlight:pagefind] Found 38 HTML files.
+16:52:06 [starlight:pagefind] Finished building search index in 235ms.
+16:52:06 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+16:52:06 [build] 38 page(s) built in 1.39s
+16:52:06 [build] Complete!
+Site checks passed: 36 pages; 1739 local links/assets/anchors; language switching and search.

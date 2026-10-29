@@ -1,0 +1,101 @@
+{
+  "created_utc": "2026-10-29T10:18:46.222737+00:00",
+  "purpose": "Planning baseline only; original-map restoration is not implemented by this snapshot",
+  "handoff_sha256": "8c56b2d18332486a7ba02708c01837781af46a5f4c36c379c7349a704155fc0b",
+  "repositories": {
+    "kala-layout": {
+      "root": "D:\\git repo\\kala-layout",
+      "head": "010ee328d92f8a0f066b89dadfeb89090b0ab877",
+      "status_at_snapshot": "?? plans/",
+      "source_sha256": {
+        "AGENTS.md": "91e67ea135d75b1ba1aa8bc87f86dd9396e6bea80ce9a68bc7a0132e062bf676",
+        "results/mix-search/search/A.json": "13f7fafc033c442262739d71637780910a2bfd0c1f479283451aac45a53302f7",
+        "results/mix-search/search/D.json": "23ba86afb3ca4cba3f929c4f16d88172aaeab7d9dd70557d7267be79fe23cc1d",
+        "results/kala-keyboards/kala-goti.json": "a2f7e17eb4e62eb4ce2c3999c9dbf7306120306a2e4a3b9e233e9da5c9dbd7a7",
+        "results/kala-keyboards/kala-jhor.json": "b688a66f630e6cbe7d6d914c081ec1fb67034a4e935b734d5d9b2e9c0257ddef",
+        "data/layout-publications/shared-v1.json": "ccf2c0faa05784c6634e1785d4aed99317da5943cf2855d6c99e6f9e712f6184",
+        "src/bangla_dh/cli.py": "26b08feeaa26bf87f6e3647992ece9e4e193cae74941ec11f9615fc3543709ca",
+        "site/scripts/publication.mjs": "29960ba72a621e3538f360eaa3fa88ac4dc8526f7ad9832e79323262822befaf",
+        "site/scripts/sync-content.mjs": "69c244aec546951c53b829bd3ff5ff83470adcb868ed0e8ac9745b43eee2b719",
+        ".github/workflows/submissions.yml": "03fd0c10384b4f96614ca884ff60ebd65547ea9a6d67716e92e5012fe5af6f09",
+        "work/goti-j1-8b-v1/REPORT.md": "7c20d3cd724854c6da3c16c82ae736a2d409bb11624cc78f8e7427552d044cf9",
+        "work/goti-j1-8b-v1/search/A.json": "83fb2c4323027953ca6a61bb27df451f5b29f90429f6bcb5d90031f828a486a3",
+        "work/goti-j1-8b-v1/run-manifest.json": "536d14e2d95ee88013c9b4bda79fbac0322956bb3c46b46dd10b880365197ecb",
+        "work/goti-j1-8b-v1/report-data.json": "2bf30ba1210314272e5d155da31895e09127698ed5264b177035c9af5768b332",
+        "results/shared-publication-v1/REPORT.md": "afce7a9c72c5b03e660462354a93fe84f8b81125c1a7ba91e9c86b5a30cbc2a8",
+        "results/balance-v1/CANDIDATE_ANALYSIS.md": "66a8a9c18da47cbf2297b68f0f3bfbf4b514a7d21adff22409a20cfabf5a4229"
+      }
+    },
+    "kala": {
+      "root": "D:\\git repo\\kala",
+      "head": "1d7a622a02f74aa49b5366887e86b3c7f3f1c6ae",
+      "status_at_snapshot": "",
+      "source_sha256": {
+        "AGENTS.md": "1850758e6a40c809e27604c21dc711e2c235ec83d5e17ab4c74eb0e60772cba1",
+        "plans/shared-layout/VALIDATION.md": "fa811c4b4ffc9eff392d9d17a28298cc3f259d5dd6087168d896b0f639830e28",
+        "plans/shared-layout/migration.json": "96a188feda49b4717887e945efa1cf818eaaff61c9771fa9fec940e64ea1f3f1",
+        "plans/product-refactor/EXTERNAL_APP_CONTRACT.md": "d2a9165df5f61786a4e29d472e2798c8a6ad1741ec8fe7e611a82c7fba0fab86",
+        "plans/fixed-layout-typing-style/IMPLEMENTATION_PLAN.md": "ae66465e744423bdbc7e747dbdf2eb6f418a11d38b52473dcaaac92fb957481f",
+        "kala/layout/bn/KalaGoti.json": "ae31f8c64a689dba1e7afdd2d000e8733b8f48cfcd9928b94fbb396ba2fe0d51",
+        "kala/layout/bn/KalaJhor.json": "b2ee62d0f8dc9e2ed6a46d26c5e440ce2443fb61a7094b554345ecc301129ae6",
+        "kala.BaselineTests/Fixtures/OriginalKalaLayouts/KalaGoti.json": "14742dd1776033ca4ad93d17239e4cd40e65132b229ae896e8c797c9e3ad6e5a",
+        "kala.BaselineTests/Fixtures/OriginalKalaLayouts/KalaJhor.json": "c8f9eb5d2d32756c858878dfd6f1c701e970a1250ab53755ff34fcae0f2adbe1",
+        "kala.BaselineTests/SharedKalaLayoutTests.cs": "a6e78ec9c056c23846db20e5d710bdb2a92f49c55fc574dce08c91f6fc7608e2",
+        "kala/Learning/Study/PromptBank.cs": "4592d862a9902faf050837a76a977aa5d742c0dcd068a07d678a8662814c0c91",
+        ".github/workflows/publish-kala.yml": "1174678f7258a5c8c0f3f2dadc8ab1d3118b8c59334823278ac11f77222ef06f"
+      }
+    },
+    "kala-typing-master": {
+      "root": "D:\\git repo\\kala-typing-master",
+      "head": "01b5675d93d0d0a5982d7478f6b79eef2a02e21b",
+      "status_at_snapshot": "",
+      "source_sha256": {
+        "package.json": "3af37c54054ff5e7fece42065740b26244dfc99104b1240ab9f864e6e414eb98",
+        "scripts/import-kala.mjs": "9c0841d6e4390fef8ac01e60ccf8bf7d6f3181c9141630c9b17a61bca1db8879",
+        "src/lib/store.ts": "9da1ee931ae0aaf9c2435b0f4081f8f6c6b3e29cb9655457d22b79db5c890d70",
+        "src/data/layouts.json": "d072d373861f3f22209e1650fdcf1f324bc728fb8bc2349c0e6a2491d67647e4",
+        "src/data/shared-candidates.json": "5f63b2f07054adc9e16185aea31ea699cfdfd2bfac1e47be77f639b69a98b628",
+        "tests/shared-layout.test.ts": "3d9e6bc35b3abbbf59417f1fc4857ccca6316e8c65d9f814958babe182e4ef9f",
+        "RESEARCH.md": "f481a1b88f54c8c66f25cc262705141a83c819d9e34477573cf50ff2e4738442",
+        "artifacts/shared-layout-validation.md": "b43da8953775e78a40f68c0ea824fcde470a7d3c405330c64ff0c0b90a181be5"
+      }
+    },
+    "kala-releases": {
+      "root": "D:\\git repo\\kala-releases",
+      "head": "ca3779594c6f3fd0a48d4e67455c63ecf6aacf7e",
+      "status_at_snapshot": "",
+      "source_sha256": {
+        "AGENTS.md": "6270df0bdf4ec49dcf86aa5bef6aabdc42d4aa117b38ffe2c2e2073b6ef01324",
+        "SITE.md": "324a1d865b23cdfb51d1964740ad29253afad03f859d869e8c3dcbf9bec014b3",
+        "docs/layouts/kala-goti.md": "0a3356440895ea852a94300cab79b9155016b622c76284a9efccebc4f163a2f7",
+        "docs/layouts/kala-jhor.md": "fe345770b5b28d83e3cd26369fd9a66797138640dd4a2d2d349738e78cfc0e87",
+        "docs/layouts/kala-layout.md": "e3f62055dbc80bc5dfd0bdf6d875fb5084b3539f8034c6981f7e0c0036d5063c",
+        "docs/layouts/research-and-comparison.md": "6cd706179e0f310bd4da23cd42d1653acbf44c9283ab8b2a4568220e9cea9200",
+        "docs/reference/layout-research-snapshot.json": "ad4142ab20ee0fa4b82d5f33c6544ef17e0c60c7a6d5c70dbf4f920a7c730380",
+        "site/src/components/KalaHome.astro": "894b40d0ae091f516512c7f93ea6922d4e3f023933d6c085996c9a4f6eeeebb0"
+      }
+    }
+  },
+  "target_arrangements": {
+    "A": "A-18fe73cb912ae3f1",
+    "D": "D-e4a6be48881da590"
+  },
+  "communication_policy": {
+    "development_stage": "Continuous early-stage development; no public restoration announcement",
+    "product_surfaces": "Published layouts, supported benefits, current typing instructions and accurate availability",
+    "research_discussion_location": "kala-layout only",
+    "research_discussion_scope": "Shared/Balance experiments, selection rationale, detailed search evidence and limits",
+    "product_research_link_allowed": true
+  },
+  "goti_research_evidence": {
+    "starts": 8000,
+    "annealing_proposals": 8000000000,
+    "hits": 514,
+    "hit_percent": 6.425,
+    "distinct_saved_endpoints": 241,
+    "same_published_layout": true,
+    "elapsed_wall_seconds": 12746,
+    "global_optimality_proven": false,
+    "new_jhor_run_performed": false
+  }
+}

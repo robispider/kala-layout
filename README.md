@@ -1,25 +1,6 @@
-# Kala Layout: one arrangement, two typing styles
+# kala-layout
 
-**Kala Layout is the public name of the provisional shared key arrangement; Goti and Jhor are its typing styles.** B01 is its technical research identifier. Every symbol keeps its position when styles change. Goti uses hasant/sign vowel entry; Jhor uses context vowels. [Why transition?](docs/SHARED_LAYOUT.md) explains the intended benefit of one remembered map, the mechanical costs and the relearning required.
-
-**Found through four billion search proposals:** 20,000 starts, 200,000 proposals each, plus local search; 113,550 distinct retained arrangements, 961 full qualifying evaluations and two leading trade-offs. Proposals can revisit maps; this is not four billion unique combinations or a proof of optimality. [Search provenance](results/shared-layout-relaxed-v1/interpretation-4b-v1/REPORT.md). Goti builds on the modern fixed-layout tradition of Ekushey UniJoy and Avro/OmicronLab; see [typing-style heritage and credits](docs/TYPING_STYLES.md), including earlier Avro context-vowel automation and the limited scope of Jhor's originality claim.
-
-Previously examined held-out mean modeled effort is **1.854428 (Goti)** and **1.808080 (Jhor)**. Sharing adds about **0.61% / 0.45% effort** versus the original same-style arrangements, with **25.75% / 3.92% more cross-space same-finger distance**. These are model comparisons, not measured learning, speed or comfort. [Current map and rules](docs/LAYOUTS.md), [report](results/shared-publication-v1/REPORT.md), [reproduction](docs/REPRODUCE.md).
-
-```powershell
-$env:PYTHONPATH = "src"
-python -m bangla_dh challenge-verify challenge/shared-v1/reference.json
-python challenge/shared-v1/score.py --template my-shared.json
-python challenge/shared-v1/score.py my-shared.json
-```
-
-The [shared challenge](docs/CHALLENGE.md) accepts one map evaluated in both styles. Its joint eligibility and separate R values are a new season; the original J1 challenge remains legacy. [Shared board](submissions/shared-v1/LEADERBOARD.md). Research exports do not change the installed Kala app; existing installations may retain the original maps. The shared map/exports use MIT; original separate maps retain CC0.
-
-The [shared local certificate](docs/SHARED_CERTIFICATION.md) exhaustively checks all 45,526 alternatives moving two or three symbols. None is jointly eligible and improves one style's R without worsening the other. This is a local non-dominance result, not global optimality.
-
-## Historical original separate-arrangement release
-
-The original description, numbers and commands below describe the original separate-arrangement season. For current reproduction and challenge commands use the links above. In historical commands, use `--season legacy-v1` for builders/verifiers/boards. The old maps, sources, reports and embedded scorer are preserved.
+Current publication: separate original Goti and Jhor. [Selection criterion](docs/PUBLICATION_DECISION.md) · [Goti: eight billion proposals plus local search, 514/8,000 exact reproductions](docs/GOTI_8B.md). Best found under frozen mixed-training J1; no global optimality or human-performance claim. Shared/Balance research remains available as history.
 
 How the **Kala Jhor** (কালা ঝড়) and **Kala Goti** (কালা গতি) Bangla keyboard layouts were found, with everything needed to **run the search yourself, compare the result with ours, and try to beat it**.
 

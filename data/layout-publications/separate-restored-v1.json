@@ -1,0 +1,34 @@
+{
+  "version": "kala-separate-publication-v1",
+  "date": "2026-10-29",
+  "status": "best found under frozen mixed-training J1",
+  "season": "legacy-v1",
+  "challenge_version": "bangla-dh-challenge-v1",
+  "challenge_data": "challenge/challenge-data.json",
+  "leaderboard": "submissions/leaderboard.json",
+  "styles": {
+    "A": {
+      "name": "Kala Goti",
+      "arrangement_id": "A-18fe73cb912ae3f1",
+      "grammar_id": "hasant-sign",
+      "source": "results/mix-search/search/A.json",
+      "export": "results/kala-keyboards/kala-goti.json",
+      "export_sha256": "a2f7e17eb4e62eb4ce2c3999c9dbf7306120306a2e4a3b9e233e9da5c9dbd7a7",
+      "source_sha256": "13f7fafc033c442262739d71637780910a2bfd0c1f479283451aac45a53302f7"
+    },
+    "D": {
+      "name": "Kala Jhor",
+      "arrangement_id": "D-e4a6be48881da590",
+      "grammar_id": "context-vowel",
+      "source": "results/mix-search/search/D.json",
+      "export": "results/kala-keyboards/kala-jhor.json",
+      "export_sha256": "b688a66f630e6cbe7d6d914c081ec1fb67034a4e935b734d5d9b2e9c0257ddef",
+      "source_sha256": "23ba86afb3ca4cba3f929c4f16d88172aaeab7d9dd70557d7267be79fe23cc1d"
+    }
+  },
+  "evidence": [
+    "results/mix-search/REPORT.md",
+    "results/goti-j1-8b-v1/REPORT.md"
+  ],
+  "map_license": "CC0-1.0"
+}

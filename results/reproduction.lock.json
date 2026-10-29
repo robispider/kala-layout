@@ -1,6 +1,15 @@
 {
   "note": "SHA-256 of the canonical JSON of the artefacts that carry the results; check with `python -m bangla_dh check-results`.",
   "groups": {
+    "active publication": {
+      "data/layout-publications/current.json": "a6f2caa4247cf12b1f09a36bb52a4b1f432ea8656e30761e00c8a97c7a0fbf9f",
+      "data/layout-publications/separate-restored-v1.json": "2d7faefff2e96d39e2071e6db7dd357059c4e1d53ea407507e802df9a0974beb",
+      "results/separate-publication-v1/run-manifest.json": "0c6b88978c824c6defe1770e12eb349f976f3f70ed06d42e9bde66929398121a"
+    },
+    "Goti eight-billion archive": {
+      "results/goti-j1-8b-v1/report-data.json": "b2e7f3a4a592617db03471b102c244d2c2839b1de265c61566cb93bee365faff",
+      "results/goti-j1-8b-v1/run-manifest.json": "3554a631a55d05350e003bbc6c83e7fbba2ea8ec5b3d9b93eddfbf49eed99017"
+    },
     "phase2 frequency tables": {
       "results/phase2/frequencies/bnwiki-heldout.json": "c9c2af9f32636949ba829f25f8a9229897cb75c21c95097cf133405c9891fbcc",
       "results/phase2/frequencies/bnwiki-train.json": "ffeb0ba06f57704f9d468631643c2ab3ee55e89ff01fc55721c3b6c1c3564396",

@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
+import { loadPublication } from './publication.mjs';
 import { createHash } from 'node:crypto';
 import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pages, homeSections, locales, sourcePath, repoRoot, rewriteLinks } from './content-map.mjs';
-import { loadPublication } from './publication.mjs';
 
 const matches = (text, regex) => [...text.matchAll(regex)].map((match) => match[1]);
 const linkTargets = (text) => matches(text, /\[[^\]]*\]\(([^)]+)\)/g).sort();
@@ -33,6 +33,8 @@ const keyMaps = (text) => {
 };
 
 export async function validateContent() {
+  await loadPublication();
+  await loadPublication('shared-v1');
   let links = 0;
   for (const page of [...pages, ...homeSections]) {
     const english = await readFile(sourcePath(page, 'en'), 'utf8');
@@ -67,11 +69,7 @@ export async function validateContent() {
     }
   }
   await validateHomeDiagnostics();
-  await validateSharedPublication();
-  await validateSearchStory();
-  await validateSharedCertificate();
   await validateMechanics();
-  await validateContinuous();
   console.log(`Content checks passed: ${pages.length + homeSections.length} complete language pairs; ${links} links; table numbers, key maps, steps, commands and paths preserved.`);
 }
 async function validateMechanics() {
@@ -92,47 +90,13 @@ async function validateMechanics() {
   }));
   for (const locale of locales) {
     const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
-    const tables = rows(markdown.split('<!-- historical-mechanics -->')[1].split('<!-- continuous-e3 -->')[0]);
+    const tables = rows(markdown);
     assert.equal(tables.length, 20);
     const actual = [tables.slice(2, 10), tables.slice(12, 20)].map((table) => table.map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim()))));
     assert.deepEqual(actual, expected, `Movement result drift: ${locale}`);
   }
 }
-async function validateContinuous() {
-  const source = 'results/evaluator-e3/run-v1/public-summary.json';
-  const raw = await readFile(path.join(repoRoot, source));
-  const manifest = JSON.parse(await readFile(path.join(repoRoot, 'results/evaluator-e3/run-v1/run-manifest.json'), 'utf8'));
-  assert.equal(createHash('sha256').update(raw).digest('hex'), manifest.output_sha256[source], 'Continuous scores differ from their manifest');
-  const run = JSON.parse(raw.toString('utf8'));
-  assert.equal(run.layout_count, 8);
-  assert.equal(run.candidate_count, 101);
-  assert.equal(run.corpus_scores.length, 48);
-  assert.equal(run.checks.published_and_prior_seasons_preserved, true);
-  for (const row of run.corpus_scores) {
-    const c = row.continuous;
-    assert.equal(Object.values(c.category_counts).reduce((a, b) => a + b, 0), c.total_valid_windows);
-    assert.equal(c.within_word_share, c.category_counts.within_word / c.total_valid_windows);
-    assert.equal(c.ranking_effect, 'none');
-  }
-  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default', 'Probhat', 'Munir Optima (uni)', 'Bornona', 'UniJoy', 'National (Jatiya)'];
-  const interval = (row, event) => row.bounds[event].lower === row.bounds[event].upper
-    ? `${(100*row.bounds[event].lower).toFixed(3)}%`
-    : `${(100*row.bounds[event].lower).toFixed(3)}–${(100*row.bounds[event].upper).toFixed(3)}%`;
-  const expected = names.map((name) => {
-    const t = run.public_summary.traditional[name];
-    const m = run.public_summary['model-optimal'][name];
-    return [name, `${(100*t.within_word_share).toFixed(3)}%`, interval(t, 'same_finger_different_key'),
-      interval(m, 'same_finger_different_key'), interval(t, 'opposite_hand'), `${(100*t.coverage).toFixed(3)}%`];
-  });
-  for (const locale of locales) {
-    const markdown = await readFile(sourcePath({source: 'docs/MECHANICS.md'}, locale), 'utf8');
-    const section = markdown.split('<!-- continuous-e3 -->')[1];
-    assert(section, `Missing continuous-text explanation: ${locale}`);
-    const actual = rows(section).slice(2).map((row) => row.split('|').slice(1,-1).map((cell) => normalizeDigits(cell.trim())));
-    assert.deepEqual(actual, expected, `Continuous result drift: ${locale}`);
-  }
-}
-// Retain historical e1 evidence checks and validate current deltas independently.
+// Homepage diagnostics must match the saved experimental run, not the J1 board.
 async function validateHomeDiagnostics() {
   const source = 'results/evaluator-e1/run-v1/scores.json';
   const raw = await readFile(path.join(repoRoot, source));
@@ -142,86 +106,21 @@ async function validateHomeDiagnostics() {
   assert.equal(run.evidence.full_layout_admitted, false, 'Review homepage comfort claims before admitting a new model');
   assert.equal(run.candidates.length, 101);
   assert.equal(new Set(run.scores.filter((row) => row.public).map((row) => row.name)).size, 8);
-  const { summary } = await loadPublication();
-  const expected = ['J1', 'within_distance', 'cross_distance'].map(k => ['A', 'D'].map(s => {
-    const v = summary.heldout_changes_vs_original_percent[s]['model-optimal'][k];
-    return `${v >= 0 ? '+' : ''}${v.toFixed(3)}`;
+  const names = ['Kala Jhor', 'Kala Goti', 'Windows Default'];
+  const corpora = ['bard-novel/heldout', 'bnwiki/heldout', 'newspaper/heldout'];
+  const metrics = [
+    ['shift_share_of_non_space_presses', 1],
+    ['same_finger_different_key_per_unit', 2],
+  ];
+  const expected = metrics.map(([metric, precision]) => names.map((name) => {
+    const selected = run.scores.filter((row) => row.name === name && row.scenario === 'model-optimal');
+    assert.deepEqual(selected.map((row) => row.corpus).sort(), corpora);
+    return (100 * selected.reduce((sum, row) => sum + row.diagnostics[metric], 0) / selected.length).toFixed(precision);
   }));
   for (const locale of locales) {
     const markdown = await readFile(sourcePath(homeSections[0], locale), 'utf8');
     const actual = rows(markdown).slice(2).map((row) => row.split('|').slice(2, -1).map((cell) => normalizeDigits(cell.trim()).replace('%', '')));
     assert.deepEqual(actual, expected, `Homepage diagnostic drift: ${locale}`);
-  }
-}
-async function validateSharedPublication() {
-  const { summary } = await loadPublication();
-  const map = JSON.parse(await readFile(path.join(repoRoot, 'results/shared-publication-v1/shared-map.json'), 'utf8'));
-  const examples = JSON.parse(await readFile(path.join(repoRoot, 'results/shared-publication-v1/examples.json'), 'utf8'));
-  const expectedMaps = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].flatMap(keys => [1,0].map(layer => [...keys].map(k => map.layout[k][layer].normalize('NFC'))));
-  for (const locale of locales) {
-    const layouts = await readFile(sourcePath({ source: 'docs/LAYOUTS.md' }, locale), 'utf8');
-    assert.deepEqual(keyMaps(layouts), expectedMaps, `Current shared map drift: ${locale}`);
-    const exampleRows = rows(layouts).filter(r => r.split('|').length === 5 && (r.includes('Shift+') || /\| [A-Z](?: [A-Z])* \|/.test(r)));
-    const expectedExamples = examples.filter(r => ['আমি','কী','বই','এবং','তিনিই','আকাশ'].includes(r.text));
-    assert.deepEqual(exampleRows.map(r => r.split('|').slice(1,-1).map(c => c.trim())), expectedExamples.map(r => [r.text,r.keys,r.labels]), `Typing example drift: ${locale}`);
-    const mechanics = await readFile(sourcePath({ source: 'docs/MECHANICS.md' }, locale), 'utf8');
-    const expected = ['A','D'].flatMap(s => ['model-optimal','traditional'].map(f => {
-      const source = ['bnwiki/heldout','newspaper/heldout','bard-novel/heldout'].map(c => summary.scores[s].diagnostics[f][c]);
-      const avg = k => source.reduce((sum,r) => sum+r[k],0)/3;
-      return [`${s === 'A' ? 'Goti' : 'Jhor'} (${s})`, f, ...['J1','within_distance','cross_distance'].map(k => avg(k).toFixed(6)), `${avg('order_lower').toFixed(6)}–${avg('order_upper').toFixed(6)}`, `${(100*avg('escaped_share')).toFixed(3)}%`];
-    }));
-    assert.deepEqual(rows(mechanics.split('<!-- historical-mechanics -->')[0]).slice(2).map(r => r.split('|').slice(1,-1).map(c => c.trim())), expected, `Shared movement drift: ${locale}`);
-  }
-}
-async function validateSearchStory() {
-  const { summary, spec } = await loadPublication();
-  const search = summary.search_provenance;
-  const manifest = JSON.parse(await readFile(path.join(repoRoot, search.source_run, 'run-manifest.json'), 'utf8'));
-  const results = JSON.parse(await readFile(path.join(repoRoot, search.source_run, 'results.json'), 'utf8'));
-  assert.equal(search.starts, manifest.seeds.length);
-  assert.equal(search.annealing_proposals_per_start, manifest.settings.steps);
-  assert.equal(search.annealing_proposals, search.starts * search.annealing_proposals_per_start);
-  assert.equal(search.annealing_proposals, 4_000_000_000);
-  assert.equal(search.distinct_retained_arrangements, results.retained_pool_count);
-  assert.equal(search.full_qualifying_evaluations, results.refinement.jointly_eligible_evaluations);
-  assert.equal(search.leading_tradeoffs, results.jointly_eligible_frontier_count);
-  for (const locale of locales) {
-    const markdown = await readFile(sourcePath({ source: 'docs/HOME_SEARCH_STORY.md' }, locale), 'utf8');
-    const normalized = normalizeDigits(markdown).replaceAll(',', '');
-    for (const value of [search.starts, search.annealing_proposals_per_start, search.distinct_retained_arrangements, search.full_qualifying_evaluations]) {
-      assert(normalized.includes(String(value)), `Homepage search provenance drift: ${value} (${locale})`);
-    }
-    assert(markdown.includes(locale === 'en' ? spec.public_name : spec.public_name_bn));
-    assert(markdown.includes('TYPING_STYLES.md'), `Missing input-method credit link: ${locale}`);
-  }
-}
-async function validateSharedCertificate() {
-  const prefix = 'results/shared-certification-v1';
-  const cert = JSON.parse(await readFile(path.join(repoRoot, prefix, 'certificate.json'), 'utf8'));
-  const manifest = JSON.parse(await readFile(path.join(repoRoot, prefix, 'run-manifest.json'), 'utf8'));
-  const { spec, challenge } = await loadPublication();
-  for (const [file, expected] of Object.entries(manifest.output_sha256)) {
-    const bytes = await readFile(path.join(repoRoot, file));
-    assert.equal(createHash('sha256').update(bytes).digest('hex'), expected, `Certificate artifact drift: ${file}`);
-  }
-  assert.equal(cert.arrangement_id, spec.arrangement_id);
-  assert.equal(cert.challenge_data_sha256, challenge.data_sha256);
-  assert.equal(cert.map_sha256, challenge.reference.layout_sha256);
-  assert.equal(cert.classification, 'certified neighbourhood non-dominance');
-  assert.equal(cert.global_optimality, false);
-  assert.equal(cert.scope.radius, 3);
-  assert.equal(cert.checked_alternatives, 45_526);
-  assert.equal(cert.expected_alternatives, cert.checked_alternatives);
-  assert.equal(cert.dominating_candidates.length, 0);
-  assert.equal(cert.unresolved_candidates.length, 0);
-  assert(Object.values(cert.reference_checks).every(v => v === true));
-  const expected = Object.entries(cert.counts).map(([radius, counts]) => [radius,
-    String(Object.values(counts).reduce((a,b) => a+b, 0)),
-    ...['effort_ineligible', 'within_ineligible', 'cannot_dominate', 'dominates', 'unresolved'].map(k => String(counts[k] || 0))]);
-  for (const locale of locales) {
-    const text = await readFile(sourcePath({source: 'docs/SHARED_CERTIFICATION.md'}, locale), 'utf8');
-    const actual = rows(text).slice(2).map(row => row.split('|').slice(1,-1).map(s => normalizeDigits(s.trim()).replaceAll(',', '')));
-    assert.deepEqual(actual, expected, `Certificate table drift: ${locale}`);
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await validateContent();

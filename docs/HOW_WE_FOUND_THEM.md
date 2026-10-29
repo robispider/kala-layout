@@ -1,17 +1,6 @@
-# From separate arrangements to one shared map
+# How Kala Jhor and Kala Goti were found
 
-The current provisional result is **Kala Layout** (research identifier B01), one arrangement with Goti (A) and Jhor (D) typing styles. The positions are shared; the vowel-entry recipes differ. [Why the transition?](SHARED_LAYOUT.md) explains the practical rationale and mechanical costs; [current maps](LAYOUTS.md) and the [publication report](../results/shared-publication-v1/REPORT.md) carry the new results.
-
-## The shared-layout stage (28 October 2026)
-
-After the original effort searches, movement/order diagnostics and Balance comparisons examined trade-offs. Cross-scoring existing maps showed that none of five tested originals/Balance leaders qualified under the strict policy in both styles. A dedicated shared search first used strict limits, then a separately recorded relaxed +0.75% effort/+7.5% within-word policy. Its four-billion run retained B01 and B02 as two leading trade-offs; the enhanced pilot did not improve that frontier. B01 was selected provisionally for one remembered arrangement, not because it beats the separate designs mechanically. All style-specific calibration remains frozen. [The comparison](../results/shared-top10-comparison-v1/REPORT.md) preserves the evidence and limitations.
-
-The current shared map now has a [completed local certificate](SHARED_CERTIFICATION.md): all 45,526 alternatives moving two or three symbols were checked. None improves either style's R without worsening the other while meeting both styles' limits. This certifies that neighbourhood only; it supplies no global optimality gap.
-
-## Historical original separate-arrangement research
-
-The account and numeric tables below describe the original season. They do not describe B01's map, search budget or current scores. The old Phase 4 certificates apply only to their stated Wikipedia-trained problems; none certifies the shared publication.
-
+Current publication: the original separate Goti and Jhor arrangements. [Selection criterion](PUBLICATION_DECISION.md) · [Additional Goti evidence](GOTI_8B.md).
 
 Kala Jhor (কালা ঝড়) and Kala Goti (কালা গতি) were found by a computer search, not drawn by hand. This page explains the chain from the texts to the two layouts, what each step checks, and what the results do and do not claim. Every step can be repeated with the commands in [REPRODUCE.md](REPRODUCE.md).
 

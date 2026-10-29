@@ -21,6 +21,8 @@ from .paths import PROJECT_ROOT, RESULTS_ROOT, write_json
 LOCK = RESULTS_ROOT / "reproduction.lock.json"
 VOLATILE = {"seconds", "seconds_total", "cpuHours", "generated_utc", "corpus_sha256", "token_table_sha256", "sha256"}
 GROUPS = {
+    "active publication": ["data/layout-publications/current.json", "data/layout-publications/separate-restored-v1.json", "results/separate-publication-v1/run-manifest.json"],
+    "Goti eight-billion archive": ["results/goti-j1-8b-v1/run-manifest.json", "results/goti-j1-8b-v1/report-data.json"],
     "phase2 frequency tables": ["results/phase2/frequencies/bnwiki-train.json", "results/phase2/frequencies/bnwiki-heldout.json",
                                 "results/phase2/frequencies/optimization-frequencies.json"],
     "phase3 keystroke tables": ["results/phase3/frequencies/*.json"],

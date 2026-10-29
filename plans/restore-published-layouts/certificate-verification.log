@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\git repo\kala-layout\src\bangla_dh\__main__.py", line 5, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\git repo\kala-layout\src\bangla_dh\cli.py", line 597, in main
+    return args.func(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\git repo\kala-layout\src\bangla_dh\cli.py", line 567, in verify_shared
+    verify(args.folder)
+  File "D:\git repo\kala-layout\src\bangla_dh\shared_certification.py", line 512, in verify
+    if actual != digest: raise ValueError('hash mismatch: '+name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: hash mismatch: src/bangla_dh/cli.py

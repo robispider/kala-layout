@@ -1,4 +1,6 @@
-# What is certified for Kala Layout?
+# Historical B01: scoped local certificate
+
+**Historical shared-map research.** This record retains the decision and scope at the time. See the current [selection criterion](PUBLICATION_DECISION.md) and [maps](LAYOUTS.md). Select shared CLI operations explicitly with `--season shared-v1`.
 
 **No eligible rearrangement moving at most three symbols improves either typing style's Balance score without worsening the other.** This is a completed, exhaustive local check of Kala Layout (research identifier B01), covering every two-symbol swap and every three-symbol cycle across all 52 base/Shift positions.
 

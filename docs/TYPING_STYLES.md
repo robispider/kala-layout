@@ -1,12 +1,12 @@
 # Typing styles and credit
 
-**Kala Layout** is one arrangement of keys, with **Goti** and **Jhor** as typing styles. The public name is Kala Layout; B01 is its research identifier. A typing convention and a key arrangement are different contributions: this project searched the positions, while building on established Bangla input methods.
+**Kala Goti** and **Kala Jhor** have separate published key maps and distinct native typing rules. A typing convention and a key arrangement are different contributions: this project searched the positions while building on established Bangla input methods. B01 identifies the historical shared-map experiment.
 
 ## Goti: the established modern fixed-layout convention
 
 The first Goti arrangement used the UniJoy-style grammar, and the shared arrangement keeps it. **Credit goes to Ekushey's UniJoy contributors and to Avro/OmicronLab, including Mehdi Hasan Khan and the Avro team, for the established input-method lineage we build on.** Ekushey publishes UniJoy as its Unicode keyboard input system; Avro's fixed-layout manual documents Modern Typing Style. [Ekushey UniJoy](https://ekushey.org/keyboard-layout/ekusheyr-shadhinota-unijoy-layout/), [Avro fixed-layout manual](https://www.omicronlab.com/download/pdf/Bangla%20Typing%20with%20Fixed%20Keyboard%20Layouts.pdf#page=3), [Mehdi Hasan Khan's account](https://mehdikhan.dev/about/).
 
-Goti's core recipe is consonant followed by vowel sign: ক + ো = কো, using J then X on Kala Layout. A full vowel uses hasant followed by the sign: ্ + ো = ও; অ has its own key. The new arrangement changes the physical positions, not the origin of these conventions. Goti is our name for this style in Kala; we do not claim to have invented modern vowel entry. [Map and examples](LAYOUTS.md).
+Goti's core recipe is consonant followed by vowel sign: ক + ো = কো, using J then R on published Goti. A full vowel uses hasant followed by the sign: ্ + ো = ও; অ has its own key. The new arrangement changes the physical positions, not the origin of these conventions. Goti is our name for this style in Kala; we do not claim to have invented modern vowel entry. [Map and examples](LAYOUTS.md).
 
 ## Visual entry and logical entry
 

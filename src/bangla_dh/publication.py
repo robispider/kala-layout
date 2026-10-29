@@ -38,7 +38,21 @@ def key_layout(layout=None):
     return out
 
 
+def active_descriptor():
+    selector = json.loads((ROOT / 'data/layout-publications/current.json').read_text(encoding='utf-8'))
+    return json.loads((ROOT / selector['descriptor']).read_text(encoding='utf-8'))
+
+
 def current_layout(style):
     if style not in STYLES:
         raise ValueError('current publication supports Goti (A) and Jhor (D)')
-    return shared_layout()
+    spec = active_descriptor()
+    if spec.get('season') == 'shared-v1':
+        return shared_layout()
+    from .mix import mixed_best_layout
+    export = spec['styles'][style]
+    if sha256_file(ROOT / export['source']) != export['source_sha256']:
+        raise ValueError('current publication source hash mismatch')
+    if sha256_file(ROOT / export['export']) != export['export_sha256']:
+        raise ValueError('current publication export hash mismatch')
+    return mixed_best_layout(style)

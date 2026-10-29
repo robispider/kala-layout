@@ -1,15 +1,18 @@
-## What sharing costs
+## Additional layout checks
 
-Kala Layout keeps effort near the separate originals, while all positions stay the same when switching between Goti and Jhor. On the equal mean of three previously examined held-out sources, model-optimal fingering:
+An experimental check compares eight fixed layouts and examines 101 retained search candidates. Two diagnostics show what the combined effort score can hide:
 
-| Change against original same-style arrangement | Goti style | Jhor style |
-| --- | --- | --- |
-| Modeled effort | +0.608% | +0.447% |
-| Within-word same-finger distance | -0.107% | +1.351% |
-| Cross-space same-finger distance | +25.750% | +3.923% |
+| Diagnostic | Kala Jhor | Kala Goti | Windows Default |
+| --- | --- | --- | --- |
+| Shift use (% of non-space key presses) | 8.7% | 8.3% | 13.2% |
+| Same-finger key changes per 100 text units | 1.56 | 1.40 | 5.18 |
 
-One arrangement to remember is the intended benefit. Goti's larger cross-space cost and the relearning needed from both original maps are real trade-offs. Learning, speed and comfort have not been measured. [Why we chose Kala Layout provisionally](SHARED_LAYOUT.md) and [movement checks](MECHANICS.md) explain the limits.
+Each number is an equal-weight average across held-out Wikipedia, newspaper and non-overlapping BARD news, using model-optimal fingering. A key change means consecutive non-space key presses on different physical keys assigned to the same finger; text units include spaces. These are calculated typing patterns, not measured speed or comfort.
 
-The [shared local certificate](SHARED_CERTIFICATION.md) checks all 45,526 alternatives moving two or three symbols: none improves one style's R without worsening the other while meeting both styles' limits. This is a local result, not global optimality.
+Both Kala layouts have lower counts on these two diagnostics than Windows Default under these assumptions. Goti has fewer same-finger key changes and less Shift use than Jhor, while Jhor has lower published J1 effort. The comparison exposes a trade-off, rather than a new overall winner.
 
-The [original experimental report](../results/evaluator-e1/run-v1/REPORT.md) remains historical evidence about the original separate arrangements; its results are not Kala Layout's current diagnostics.
+We also tested the Engram research’s learned key-pair preference table. Its coverage is incomplete, and its predictions have not been independently validated here or tested with Bangla typists, so we publish no whole-layout comfort ranking. The existing J1 results and challenge ranking remain unchanged.
+
+[Read the full experimental report](https://github.com/robispider/kala-layout/blob/main/results/evaluator-e1/run-v1/REPORT.md), including all eight layouts, both fingering scenarios, candidate trade-offs and evidence limitations.
+
+Source-verified Dvorak-7 and Engram movement checks add another trade-off: under traditional fingering, Goti earns more pair credit than Jhor, while Jhor has lower J1. Their pair-score bounds overlap under model-optimal fingering. Windows Default earns more Engram triple-order credit than either Kala layout, with text-escape and modifier limitations. [See all eight layouts and the explanation](MECHANICS.md).
